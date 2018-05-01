@@ -1,0 +1,13 @@
+{
+	"host": "127.0.0.1",
+	"port": "3000",
+	"baseUrl": "http://localhost:3000/",
+	"url": "auth/",
+	"noAuth": "api/",
+	"requestUrl": "http://localhost:3000/api/",
+	"dbUrl": "mongodb://127.0.0.1:27017/test",
+	"dbUser": "simon",
+	"dbPass": "mj123456",
+	"dbName": "light",
+	"SALT_WORK_FACTOR":"10"
+}

@@ -1,6 +1,6 @@
 {
-  "name": "bulb",
-  "short_name": "bulb",
+  "name": "light",
+  "short_name": "light",
   "icons": [
     {
       "src": "/img/icons/android-chrome-192x192.png",

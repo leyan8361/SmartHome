@@ -3,15 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="shortcut icon" href="<%= webpackConfig.output.publicPath %>favicon.ico">
-    <title>bulb</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="shortcut icon" href="<%= webpackConfig.output.publicPath %>favicon.ico">
+		<link rel="shortcut icon" href="<%= webpackConfig.output.publicPath %>favicon.ico" type="image/x-icon" />
+  	<link rel="apple-touch-icon" href="<%= webpackConfig.output.publicPath %>favicon.ico">
+		<meta http-equiv="x-dns-prefetch-control" content="on">
+		<meta name="apple-mobile-web-app-title" content="Smart Bulb">
+		<meta name="MobileOptimized" content="480">
+		<!--[if lt IE 9]>
+      <style> .alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px } .alert-danger { background-color: #f2dede; border-color: #ebccd1; color: #a94442; border-bottom: 1px solid #ebccd1 } .alert-link { color: #843534; font-weight: bold } .topframe { margin: 0; padding-left: 15px; padding-right: 15px; text-align: center; border-radius: 0; position: fixed; left: 0; right: 0; top: 0; z-index: 1000 } </style>
+      <div class="alert alert-danger topframe">
+        你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说！
+        <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a>
+      </div>
+      <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  	<![endif]-->
+    <title>Smart Bulb</title>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but bulb doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>

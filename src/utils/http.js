@@ -1,24 +1,20 @@
 const config = require('config')
 import axios from 'axios'
-import router from '@/routes'
+import router from '@/router'
 import { Message } from 'element-ui'
 import Token from '@/utils/token'
 
 const instance = axios.create({
-	baseURL: config.url,
+	baseURL: config.baseUrl,
 	timeout: 5000,
-	withCredentials:true,
-	proxy: {
-		host: config.host,
-		port: config.port
-	}
+	withCredentials: true
 })
 
 instance.interceptors.request.use(
 	config => {
 		const token = Token.get()
 		if (token) {
-			config.headers.Authorization = `token ${token}`.replace( /(^\")|(\"$)/g, '' )
+      config.headers.common['Authorization'] = 'Bearer ' + token;
 		}
 		return config
 	},

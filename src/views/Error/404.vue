@@ -10,21 +10,15 @@
 </template>
 
 <script>
-// import {Vue}
-export default {
-	name: 'Error',
-	data(){
-		return {
-			waitSecond:5,
-			intervalid:setInterval(this.cutdown, 1000)
-		}
-	},
-	methods: {
-		cutdown() {
-			if (--this.waitSecond == 0) {
-				this.$router.go(-1)
-				clearInterval(this.intervalid)
-			}
+import { Vue,Component } from 'vue-property-decorator'
+@Component
+export default class Error extends Vue {
+	waitSecond = 5
+	intervalid = setInterval(this.cutdown, 1000)
+	cutdown() {
+		if (--this.waitSecond == 0) {
+			this.$router.go(-1)
+			clearInterval(this.intervalid)
 		}
 	}
 }

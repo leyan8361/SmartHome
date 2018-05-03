@@ -7,25 +7,38 @@
 </template>
 
 <script>
-	import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
-	@Component
-	export default class Nav extends Vue {
-
-		@Prop({ required: true, validator: value => { return value >= 0 && value < 3 } })
-		activeItem
-
-		@Prop({ required: true, validator: value => { return value >= 0 && value < 10 } })
-		maxItem
-
-		changeActive({ target:{dataset:{index}} }) {
-			index = Number.parseInt(index)
-			if(index === this.activeItem){
-				return
-			}
-			this.$emit('changeActive', index)
+@Component
+export default class Nav extends Vue {
+	@Prop({
+		required: true,
+		validator: value => {
+			return value >= 0 && value < 3
 		}
+	})
+	activeItem
+
+	@Prop({
+		required: true,
+		validator: value => {
+			return value >= 0 && value < 10
+		}
+	})
+	maxItem
+
+	changeActive({
+		target: {
+			dataset: { index }
+		}
+	}) {
+		index = Number.parseInt(index)
+		if (index === this.activeItem) {
+			return
+		}
+		this.$emit('changeActive', index)
 	}
+}
 </script>
 
 <style lang="stylus">

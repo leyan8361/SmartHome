@@ -1,5 +1,9 @@
 {
-  "compilerOptions": {
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
-	}
+		"target": "es6"
+	},
+	"exclude": ["node_modules"]
 }

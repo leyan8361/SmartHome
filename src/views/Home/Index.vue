@@ -5,17 +5,18 @@
 </template>
 
 <script>
+import { Vue, Component } from 'vue-property-decorator'
 import HomeHeader from './body/Header.vue'
 import HomeMain from './body/Main.vue'
 import HomeFooter from './body/Footer.vue'
-export default {
-	name: 'Index',
+@Component({
 	components: {
 		HomeHeader,
 		HomeMain,
 		HomeFooter
 	}
-}
+})
+export default class Index extends Vue {}
 </script>
 
 <style lang="stylus">

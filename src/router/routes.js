@@ -1,9 +1,9 @@
-import Index from 'views/Home/Index.vue'
-import Error from 'views/Error/404.vue'
+import Index from '@/views/Home/Index.vue'
+import Error from '@/views/Error/404.vue'
 export default [
 	{
 		path: '/',
-		name: 'index',
+		name: 'Index',
 		component: Index
 	},
 	{

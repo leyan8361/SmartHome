@@ -1,11 +1,11 @@
 <template lang="pug">
 el-dialog(title="登录" :visible="isShowLogin" width="25%" top="15vh" custom-class="dialog" :before-close="handleClose" lock-scroll model  center)
-	el-form.form(type="flex" justify="center" align="middle" :model="userInfo" :rules="rules" ref="form" center status-icon label-width="100px")
+	el-form.form(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" center status-icon label-width="100px")
 		el-form-item(label="账号" prop="account")
-			el-input(type="text" v-model.trim="userInfo.account" auto-complete='on' placeholder="账号 / 邮箱" clearable)
+			el-input(type="text" v-model.trim="user.account" auto-complete='on' placeholder="账号 / 邮箱" clearable)
 		el-form-item(label="密码" prop="password")
-			el-input(type="password" v-model.trim="userInfo.password" placeholder="6-12位 数字/字母/英文符号" clearable)
-		el-checkbox.checkbox(v-model="userInfo.keep" checked) 下次自动登录
+			el-input(type="password" v-model.trim="user.password" placeholder="6-12位 数字/字母/英文符号" clearable)
+		el-checkbox.checkbox(v-model="user.keep" checked) 下次自动登录
 	.dialog-footer(slot="footer")
 		el-row
 			el-button.login(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在登录") 登录
@@ -16,68 +16,65 @@ el-dialog(title="登录" :visible="isShowLogin" width="25%" top="15vh" custom-cl
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
-import Regular from 'utils/regular'
-import { checkAccount, checkPassword } from 'utils/form'
-export default {
-	name: 'LoginDialog',
-	data() {
-		return {
-			userInfo: {
-				account: '',
-				password: ''
-			},
-			rules: {
-				account: checkAccount,
-				password: checkPassword
-			},
-			isLoading: false,
-			keep: true
-		}
-	},
+import { Vue, Component, Prop } from 'vue-property-decorator'
+
+import { mapState, mapMutations, mapActions } from 'vuex'
+import { checkAccount, checkPassword } from '@/utils/check'
+
+@Component({
 	computed: {
 		...mapState('dialog', ['isShowLogin'])
 	},
 	methods: {
 		...mapMutations('dialog', ['changeShowStatus', 'replaceLogin']),
-		...mapMutations('user', ['Login','SET_KEEP']),
-		handleClose(done) {
-			this.changeShowStatus({
-				name: 'Login',
-				status: false
-			})
-			done()
-		},
-		submitForm() {
-			this.$refs.form.validate(valid => {
-				if (valid) {
-					this.isLoading = true
-					this.SET_KEEP(this.keep)
-					this.login(this.userInfo)
-						.then(() => {
-							this.loading = false
-							this.$router.push({ path: '/home' })
-						})
-						.catch(() => {
-							this.loading = false
-						})
-				} else {
-					this.$alert('<strong>请仔细核对信息</strong>', '信息错误', {
-						type: 'error',
-						center: true,
-						dangerouslyUseHTMLString: true
+		...mapMutations('user', ['SET_KEEP']),
+		...mapActions('user', 'login')
+	}
+})
+export default class LoginDialog extends Vue {
+	user = {
+		account: '',
+		password: ''
+	}
+	rules = {
+		account: checkAccount,
+		password: checkPassword
+	}
+	isLoading = false
+	keep = true
+	handleClose(done) {
+		this.changeShowStatus({
+			name: 'Login',
+			status: false
+		})
+		done()
+	}
+	submitForm() {
+		this.$refs.form.validate(valid => {
+			if (valid) {
+				this.isLoading = true
+				this.SET_KEEP(this.keep)
+				this.login(this.user).then(response => {
+					this.loading = false
+					if (!response.success) {
+						return this.tip('error', response.message)
+					}
+					this.tip('success', response.message, 2000).then(() => {
+						this.$router.push({ path: '/home' })
 					})
-					return false
-				}
-			})
-		},
-		forgetPwd() {
-			/* 模拟现实 */
-			/* 已给您的手机号或者邮箱发送验证码 */
-			/* 输入验证码，默认123456 */
-			/* 验证正确，跳转到修改密码界面 */
-			/* 错误警告 */
-		}
+				})
+			} else {
+				this.tip('error', '请仔细核对信息！')
+				return false
+			}
+		})
+	}
+	forgetPwd() {
+		/* 模拟现实 */
+		/* 已给您的手机号或者邮箱发送验证码 */
+		/* 输入验证码，默认123456 */
+		/* 验证正确，跳转到修改密码界面 */
+		/* 错误警告 */
 	}
 }
 </script>

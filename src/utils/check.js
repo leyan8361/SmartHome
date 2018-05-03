@@ -6,7 +6,7 @@ export const checkAccount = [
 			if (!value) {
 				return callback(new Error('请输入账号'))
 			}
-			if (!Regular.phone(value) && !Regular.email(value)) {
+			if (!Regular('mobile', value) && !Regular('email', value)) {
 				return callback(new Error('账号为手机或邮箱格式'))
 			}
 			callback()
@@ -20,7 +20,7 @@ export const checkPassword = [
 			if (!value) {
 				return callback(new Error('请输入密码'))
 			}
-			if (!Regular.password(value)) {
+			if (!Regular('password', value)) {
 				return callback(new Error('密码为 6-12 位格式'))
 			}
 			callback()
@@ -48,11 +48,25 @@ export const checkName = [
 export const checkAddress = [
 	{
 		validator: (rule, value, callback) => {
-			if (!value) {
+			if (value.length === 0) {
 				return callback(new Error('请选择您所在的地区'))
 			}
-			if (!value[0] || !value[1] || !value[2]) {
-				return callback(new Error('地址不能为空'))
+			callback()
+		},
+		trigger: eventType
+	}
+]
+export const checkCaptcha = [
+	{
+		validator: (rule, value, callback) => {
+			if (!value) {
+				return callback(new Error('请输入验证码'))
+			}
+			if (typeof value !== 'number') {
+				return callback(new Error('验证码应为数字'))
+			}
+			if (value <= 0 || value > 20) {
+				return callback(new Error('请输入验证码正确计算结果'))
 			}
 			callback()
 		},

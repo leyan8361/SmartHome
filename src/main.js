@@ -1,29 +1,32 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './routes'
+import router from './router'
 import store from './store'
 import './registerServiceWorker'
 
-import http from './utils/http'
-import console from './plugins/console'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css'
 import 'element-ui/lib/theme-chalk/base.css'
 import 'normalize.css/normalize.css'
-import 'css/globals.styl'
+import '@/assets/css/globals.styl'
+Vue.use(Element)
+
+import console from './plugins/console'
+console()
+
+import tip from './plugins/tip'
+Vue.use(tip)
+
 import * as filters from './filters'
-import directives from './directives'
 Object.keys(filters).forEach(key => {
 	Vue.filter(key, filters[key])
 })
 
-console()
+import directives from './directives'
 Vue.use(directives)
-Vue.prototype.$http = http
-Vue.config.productionTip = false
-Vue.use(Element)
 
+Vue.config.productionTip = false
 new Vue({
 	router,
 	store,

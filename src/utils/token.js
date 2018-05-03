@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-const TokenKey = 'Light-Token'
+const TokenKey = 'Smart Home'
 export default {
 	get() {
 		return Cookies.get(TokenKey)

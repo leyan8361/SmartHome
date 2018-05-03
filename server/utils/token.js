@@ -1,18 +1,17 @@
-/* tslint:disable */
 const fs = require('fs')
 const path = require('path')
-const jwt = require('koa-jwt')
+const jwt = require('jsonwebtoken')
 
 module.exports = {
-	generateToken(data = this.name) {
+	async generate(data) {
 		const created = Math.floor(Date.now() / 1000)
 		const exp = created + 3600 * 24 * 30
 
 		const cert = fs.readFileSync(path.resolve('config/rsa_private_key.pem'))
-		const token = jwt.sign({ data, exp }, cert, { algorithm: 'RS256' })
+		const token = await jwt.sign({ data, exp }, cert, { algorithm: 'RS256' })
 		return token
 	},
-	verifyToken(token) {
+	verify(token) {
 		const cert = fs.readFileSync(path.resolve('config/rsa_public_key.pem'))
 		const value = {}
 		try {

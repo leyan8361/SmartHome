@@ -1,7 +1,9 @@
 const path = require('path')
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
-import Regular from '../../utils/regular'
+const Regular = require('../../utils/regular')
+const Token = require('../../utils/token')
+
 const SALT_WORK_FACTOR = 10
 
 const User = new mongoose.Schema(
@@ -9,26 +11,18 @@ const User = new mongoose.Schema(
 		name: {
 			type: String,
 			required: true,
-			trim: true,
-			validate: value => {
-				return value.length >= 2 && value.length <= 8
-			}
+			trim: true
 		},
 		account: {
 			type: String,
 			required: true,
 			trim: true,
-			validate: value => {
-				return Regular.phone(value) || Regular.email(value)
-			}
+			unique: true
 		},
 		password: {
 			type: String,
 			required: true,
-			trim: true,
-			validate: value => {
-				return Regular.password(value)
-			}
+			trim: true
 		},
 		address: {
 			province: {
@@ -46,9 +40,10 @@ const User = new mongoose.Schema(
 				required: false,
 				trim: true
 			}
-		},
+		}
 	},
 	{
+		collection: 'User',
 		timestamps: true,
 		safe: true,
 		wtimeout: 10000
@@ -57,8 +52,8 @@ const User = new mongoose.Schema(
 User.set('toJSON', { getters: true, virtuals: true })
 User.set('toObject', { getters: true, virtuals: true })
 
-User.virtual('address.full').get(() => {
-	return `${this.address.province} ${this.address.city} ${this.address.county}`
+User.virtual('address.full').get(function() {
+	return this.address.province + this.address.city + this.address.county
 })
 
 User.pre('save', function(next) {
@@ -86,7 +81,24 @@ User.methods = {
 				}
 			})
 		})
+	}
+}
+User.statics = {
+	fetch: function(cb) {
+		return this.find({})
+			.sort('update_at')
+			.exec(cb)
 	},
+	findById: function(id, cb) {
+		return this.findOne({ _id: id }).exec(cb)
+	},
+	hasExisted: async function(account) {
+		let result = true
+		await this.findOne({ account: account }, (err, data) => {
+			result = !!data
+		})
+		return result
+	}
 }
 
 module.exports = mongoose.model('User', User)

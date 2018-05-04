@@ -15,6 +15,9 @@ export default {
 		replaceRegistry(state) {
 			state.isShowLogin = true
 			state.isShowRegistry = false
+		},
+		showLogin(state) {
+			state.isShowLogin = true
 		}
 	}
 }

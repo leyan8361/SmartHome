@@ -1,7 +1,6 @@
-
 const path = require('path')
-const User = require('../db/controller/user')
-const Common = require('../db/controller/common')
+const User = require('../controller/user')
+const Common = require('../controller/common')
 
 const api = require('koa-router')()
 

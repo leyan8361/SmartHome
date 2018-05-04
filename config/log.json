@@ -1,0 +1,6 @@
+{
+	"logLevel": "debug",
+	"dir": "logs",
+	"projectName": "SmartHome",
+	"ip": "127.0.0.1"
+}

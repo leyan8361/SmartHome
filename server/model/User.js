@@ -1,8 +1,8 @@
 const path = require('path')
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
-const Regular = require('../../utils/regular')
-const Token = require('../../utils/token')
+const Regular = require('../utils/regular')
+const Token = require('../utils/token')
 
 const SALT_WORK_FACTOR = 10
 

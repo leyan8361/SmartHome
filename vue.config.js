@@ -26,7 +26,7 @@ module.exports = {
 	chainWebpack: config => {},
 	configureWebpack: {
 		resolve: {
-			extensions: ['.vue', '.js', '.ts', '.css', '.styl'],
+			extensions: ['.vue', '.js', '.ts', '.css', '.styl','.json'],
 			alias: {
 				'@': path.resolve('src'),
 				'~': '@/components',
@@ -34,7 +34,7 @@ module.exports = {
 				plugins: '@/plugins',
 				server: path.resolve('server'),
 				model: 'server/model',
-				config: path.resolve('config') + '/config.json',
+				config: path.resolve('config'),
 				api: 'server/api'
 			}
 		}

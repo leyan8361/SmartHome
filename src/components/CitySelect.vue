@@ -5,7 +5,6 @@ el-cascader.cascader(:options="CityInfo" v-model="selections" placeholder="è¯·ä»
 <script>
 import { Component, Vue,Watch } from 'vue-property-decorator'
 import CityInfo from '@/assets/js/city'
-import { Message } from 'element-ui'
 @Component({
 	props:{
 		isInit:{

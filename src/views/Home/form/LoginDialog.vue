@@ -5,7 +5,7 @@ el-dialog(title="登录" :visible="isShowLogin" width="25%" top="15vh" custom-cl
 			el-input(type="text" v-model.trim="user.account" auto-complete='on' placeholder="账号 / 邮箱" clearable)
 		el-form-item(label="密码" prop="password")
 			el-input(type="password" v-model.trim="user.password" placeholder="6-12位 数字/字母/英文符号" clearable)
-		el-checkbox.checkbox(v-model="user.keep" checked) 下次自动登录
+		el-checkbox.checkbox(v-model="keep" checked) 下次自动登录
 	.dialog-footer(slot="footer")
 		el-row
 			el-button.login(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在登录") 登录
@@ -28,7 +28,7 @@ import { checkAccount, checkPassword } from '@/utils/check'
 	methods: {
 		...mapMutations('dialog', ['changeShowStatus', 'replaceLogin']),
 		...mapMutations('user', ['SET_KEEP']),
-		...mapActions('user', 'login')
+		...mapActions('user', ['login'])
 	}
 })
 export default class LoginDialog extends Vue {
@@ -55,11 +55,11 @@ export default class LoginDialog extends Vue {
 				this.isLoading = true
 				this.SET_KEEP(this.keep)
 				this.login(this.user).then(response => {
-					this.loading = false
+					this.isLoading = false
 					if (!response.success) {
 						return this.tip('error', response.message)
 					}
-					this.tip('success', response.message, 2000).then(() => {
+					this.tip('success', response.message).then(() => {
 						this.$router.push({ path: '/home' })
 					})
 				})

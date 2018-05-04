@@ -1,6 +1,9 @@
+const config = require('../config/db.json')
+
 const fs = require('fs')
 const mongoose = require('mongoose')
-module.exports = config => {
+const log = require('./utils/log')
+module.exports = () => {
 	mongoose.set('debug', (coll, method, query, doc, options) => {
 		let logs = {
 			collection: coll,
@@ -13,8 +16,8 @@ module.exports = config => {
 	})
 	mongoose.Promise = global.Promise
 	const options = {
-		user: config.dbUser,
-		pass: config.dbPass,
+		user: config.user,
+		pass: config.password,
 		autoIndex: false,
 		autoReconnect: true,
 		reconnectTries: 10,
@@ -25,13 +28,13 @@ module.exports = config => {
 		bufferMaxEntries: 0
 	}
 	const connection = mongoose.connection
-	connection.openUri(config.dbUrl, options)
+	connection.openUri(config.url + config.db, options)
 
 	connection.once('open', () => {
-		console.log('连接数据库成功 :)')
+		log.success('数据库连接成功 :)')
 	})
 
 	connection.on('error', () => {
-		console.log('连接失败')
+		log.error('数据库连接失败 :(')
 	})
 }

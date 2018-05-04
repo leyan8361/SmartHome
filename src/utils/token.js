@@ -1,14 +1,19 @@
 import Cookies from 'js-cookie'
 
-const TokenKey = 'Smart Home'
+const TokenKey = 'token'
 export default {
-	get() {
-		return Cookies.get(TokenKey)
-	},
-	set(token, options = null) {
-		return Cookies.set(TokenKey, token, options)
-	},
-	remove() {
-		return Cookies.remove(TokenKey)
-	}
+  get() {
+    const token = sessionStorage.getItem(TokenKey)
+    return token ? token : Cookies.get(TokenKey)
+  },
+  set(token, options = null, isKeep = true) {
+    if (!isKeep) {
+      return sessionStorage.setItem(TokenKey, token)
+    }
+    return Cookies.set(TokenKey, token, options)
+  },
+  remove() {
+    const token = sessionStorage.getItem(TokenKey)
+    token ? sessionStorage.removeItem(TokenKey): Cookies.remove(TokenKey)
+  }
 }

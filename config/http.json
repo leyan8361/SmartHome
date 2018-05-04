@@ -1,5 +1,17 @@
 {
-	"loginUrl":"/api/login",
-	"registryUrl":"api/registry",
-	"captcha":"api/captcha"
+	"ip": "127.0.0.1",
+	"port": "3000",
+	"baseUrl": "http://localhost:3000/",
+	"noAuth": "api/",
+	"requestUrl": "http://localhost:3000/api/",
+	"api":{
+		"login": "/api/login",
+		"registry": "api/registry",
+		"captcha": "api/captcha",
+		"exist": "/api/exist"
+	},
+	"auth":{
+		"userInfo":"/auth/userInfo"
+	}
+
 }

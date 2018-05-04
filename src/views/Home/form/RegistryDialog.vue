@@ -27,7 +27,6 @@ el-dialog(title="注册" :visible="isShowRegistry" width="25%" top="8vh" lock-sc
 import { Vue, Component, Watch } from 'vue-property-decorator'
 import CitySelect from '@/components/CitySelect.vue'
 import CaptchaImg from '@/components/CaptchaImg.vue'
-import config from 'config'
 import { mapState, mapMutations, mapActions } from 'vuex'
 import {
 	checkAccount,

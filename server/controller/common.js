@@ -1,6 +1,6 @@
 const svgCaptcha = require('svg-captcha')
 
-class Common {
+module.exports = {
 	async getCaptcha(ctx) {
 		const captcha = await svgCaptcha.createMathExpr({
 			noise: 2,
@@ -9,9 +9,6 @@ class Common {
 			width: 80
 		})
 		ctx.session.captcha = captcha.text
-		console.log(ctx.session.captcha)
-		ctx.body = { success: true, captcha: captcha.data }
+		ctx.body = {success:true,captcha:captcha.data}
 	}
 }
-
-module.exports = new Common()

@@ -1,7 +1,7 @@
 import { Message } from 'element-ui'
 export default {
 	install(Vue, options) {
-		Vue.prototype.tip = (type = 'warning', msg, duration = 1000) => {
+		Vue.prototype.tip = (type = 'warning', msg, duration = 1500) => {
 			return Promise.resolve(Message({
 				message: msg,
 				type: type,

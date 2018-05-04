@@ -1,11 +1,8 @@
 const path = require('path')
-const Common = require('../db/controller/common')
-
+const Common = require('../controller/common')
+const User = require('../controller/user')
 const auth = require('koa-router')()
 
-auth.get('/captcha', verifyToken, Common.getCaptcha)
-auth.get('/exist', verifyToken, User.hasExisted)
-auth.post('/login', User.login)
-auth.post('/registry', User.registry)
+auth.get('/userInfo',User.getUserInfo)
 
 module.exports = auth

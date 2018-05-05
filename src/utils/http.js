@@ -16,7 +16,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
 	config => {
 		const token = Token.get()
-		if (token) {
+		if (token && config.withCredentials) {
 			config.headers.common['Authorization'] = 'Bearer ' + token
 		}
 		return config

@@ -4,13 +4,15 @@ import getters from './getters'
 import dialog from './modules/dialog'
 import common from './modules/common'
 import user from './modules/user'
+import weather from './modules/weather'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
 	modules: {
 		dialog,
 		common,
-		user
+		user,
+		weather
 	},
 	getters
 })

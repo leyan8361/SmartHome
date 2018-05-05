@@ -13,31 +13,35 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
 	if (!Token.get()) {
-    if (auth.whiteList.includes(to.name)) {
+		if (auth.whiteList.includes(to.name)) {
 			return next()
 		}
 		_i.tip('info', '请先登录！')
-		setTimeout(()=>store.commit('dialog/showLogin'),1000)
-		return next({ path: '/' })
+		setTimeout(() => store.commit('dialog/showLogin'), 1000)
+		next({ path: '/' })
 	} else {
 		if (store.getters.status === 'UNLOGIN') {
-			store.commit('user/SET_STATUS','LOGIN')
-			_i.tip('success','登录成功！')
+			store.commit('user/SET_STATUS', 'LOGIN')
+			_i.tip('success', '登录成功！')
 		}
 		if (to.name === 'Index') {
-      return next({ path: '/home' })
+			return next({ path: '/home' })
 		}
 		if (!store.getters.account) {
-			store.dispatch('user/getUserInfo').then(next)
+			store.dispatch('user/getUserInfo').then(() => {
+				store.dispatch('weather/getWeatherInfo').then(next).catch(next)
+			})
 		} else {
-			next()
+			if (!store.getters.now) {
+				store.dispatch('weather/getWeatherInfo').then(next).catch(next)
+			}
 		}
-  }
+	}
 })
 
 router.afterEach((to, from) => {
 	console.log(store.state.user)
-
+	console.log(store.state.weather)
 })
 
 export default router

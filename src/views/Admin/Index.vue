@@ -9,14 +9,18 @@ import {mapState , mapMutations,mapActions} from 'vuex'
 @Component({
 	computed:{
 		...mapState('user',['account','name','address']),
+		...mapState('weather',['enable','weatherInfo']),
 		...mapActions('user',[''])
 	}
 })
 export default class Admin extends Vue{
 	created(){
-		/* 获取天气信息 */
+
 	}
 	mounted(){
+		if(!this.enable){
+			console.log('天气不可用')
+		}
 	}
 }
 </script>

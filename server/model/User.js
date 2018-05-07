@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const log = require('../utils/log')
-const bcryptPass = require('../utils/bcryptPass')
-const writeImg = require('../utils/writeImg')
+const bcryptPass = require('../db/utils/bcryptPass')
+const writeImg = require('../db/utils/writeImg')
 const fileServer = require('../../config/file')
 
 const User = new mongoose.Schema(
@@ -27,7 +27,7 @@ const User = new mongoose.Schema(
 			type: String,
       trim: true,
       default: fileServer.defaultAvatarUrl
-		}, 
+		},
 		address: {
 			province: {
 				type: String,

@@ -1,5 +1,5 @@
 const fs = require('fs')
-const fileServer = require('../../config/file')
+const fileServer = require('../../../config/file')
 module.exports = user => {
 	if (!user.avatar) { return }
 	const imgData = user.avatar.split(',')

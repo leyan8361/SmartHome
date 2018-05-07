@@ -4,8 +4,8 @@ import Routes from './routes'
 import auth from 'config/auth'
 import Token from '@/utils/token'
 import store from '@/store'
+import tip from '@/utils/tip'
 Vue.use(Router)
-const _i = new Vue()
 const router = new Router({
   mode: 'history',
   routes: Routes
@@ -16,13 +16,13 @@ router.beforeEach((to, from, next) => {
 		if (auth.whiteList.includes(to.name)) {
 			return next()
 		}
-		_i.tip('info', '请先登录！')
+		tip.info('请先登录！')
 		setTimeout(() => store.commit('dialog/showLogin'), 1000)
 		next({ path: '/' })
 	} else {
 		if (store.getters.status === 'UNLOGIN') {
 			store.commit('user/SET_STATUS', 'LOGIN')
-			_i.tip('success', '登录成功！')
+			tip.success('登录成功！')
 		}
 		if (to.name === 'Index') {
 			return next({ path: '/home' })

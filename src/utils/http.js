@@ -1,7 +1,7 @@
 import config from 'config/http'
 import axios from 'axios'
 import router from '@/router'
-import { Message } from 'element-ui'
+import tip from '@/utils/tip'
 import Token from '@/utils/token'
 
 const instance = axios.create({
@@ -33,11 +33,11 @@ instance.interceptors.response.use(
 			switch (error.response.status) {
 				case 401:
 					Token.remove()
-					Message({ type: 'error', message: '您的登录信息已失效，请重新登录！' })
+					tip.error('您的登录信息已失效，请重新登录！')
 					router.push('/')
 					break
 				default:
-					Message({ message: `服务器错误！错误代码：${error.response.status}`, type: 'error' })
+					tip.error(`服务器错误！错误代码：${error.response.status}`)
 			}
 			return Promise.reject(error.response.data)
 		}

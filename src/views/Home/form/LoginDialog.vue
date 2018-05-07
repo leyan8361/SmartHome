@@ -20,7 +20,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 
 import { mapState, mapMutations, mapActions } from 'vuex'
 import { checkAccount, checkPassword } from '@/utils/check'
-
+import tip from '@/utils/tip'
 @Component({
 	computed: {
 		...mapState('dialog', ['isShowLogin'])
@@ -57,14 +57,14 @@ export default class LoginDialog extends Vue {
 				this.login(this.user).then(response => {
 					this.isLoading = false
 					if (!response.success) {
-						return this.tip('error', response.message)
+						return tip.error(response.message)
 					}
-					this.tip('success', response.message).then(() => {
+					tip.success(response.message).then(() => {
 						this.$router.push({ path: '/home' })
 					})
 				})
 			} else {
-				this.tip('error', '请仔细核对信息！')
+				tip.error('请仔细核对信息！')
 				return false
 			}
 		})

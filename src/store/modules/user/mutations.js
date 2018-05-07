@@ -5,15 +5,6 @@ export default  {
 		const expires = 365
 		Token.set(token, { expires },state.keep)
 	},
-	SET_NAME: (state, name) => {
-		state.name = name
-	},
-	SET_ACCOUNT: (state, account) => {
-		state.account = account
-	},
-	SET_ADDRESS: (state, address) => {
-		state.address = address
-	},
 	SET_KEEP: (state, keep) => {
 		state.keep = keep
 	},
@@ -21,9 +12,10 @@ export default  {
 		state.status = status
 		sessionStorage.setItem('status',status)
 	},
-	SET_INFO: (state, { name, account, address }) =>{
+	SET_INFO: (state, { name, account, address,avatar }) =>{
 		state.name = name
 		state.account = account
 		state.address = address
+		state.avatar = avatar
 	}
 }

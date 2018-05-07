@@ -1,10 +1,9 @@
-const path = require('path')
 const mongoose = require('mongoose')
-const bcrypt = require('bcryptjs')
-const Regular = require('../utils/regular')
-const Token = require('../utils/token')
 
-const SALT_WORK_FACTOR = 10
+const log = require('../utils/log')
+const bcryptPass = require('../utils/bcryptPass')
+const writeImg = require('../utils/writeImg')
+const fileServer = require('../../config/file')
 
 const User = new mongoose.Schema(
 	{
@@ -24,6 +23,11 @@ const User = new mongoose.Schema(
 			required: true,
 			trim: true
 		},
+		avatar: {
+			type: String,
+      trim: true,
+      default: fileServer.defaultAvatarUrl
+		}, 
 		address: {
 			province: {
 				type: String,
@@ -50,26 +54,19 @@ const User = new mongoose.Schema(
 	}
 )
 User.set('toJSON', { getters: true, virtuals: true })
-User.set('toObject', { getters: true, virtuals: true })
+User.set('toObect', { getters: true, virtuals: true })
 
-User.virtual('address.full').get(function() {
-	return this.address.province + this.address.city + this.address.county
+User.virtual('address.full').get(function () {
+	let full =''
+	Array.prototype.forEach.call(Object.values(this.address), e => { e && (full+=e) })
+	return full
 })
 
-User.pre('save', function(next) {
-	const user = this
-	if (!user.isModified('password')) return next()
-
-	bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) => {
-		if (err) return next(err)
-		bcrypt.hash(user.password, salt, (err, hash) => {
-			if (err) return next(err)
-			user.password = hash
-			next()
-		})
-	})
+User.pre('save', async function (next) {
+	log.success('数据将被保存')
+  await Promise.all([writeImg(this),bcryptPass(this)])
+  next()
 })
-
 User.methods = {
 	comparePassword(newPass, hadBcryptPass) {
 		return new Promise((resolve, reject) => {

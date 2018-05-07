@@ -1,5 +1,8 @@
 <template lang="pug">
 el-row#bottom(:span=24)
+	el-carousel.carousel(:interval="4000" type="card" height="300px")
+		el-carousel-item(v-for="item in 6" :key="item")
+			h3 item
 	el-row.title(tag="h1" class="aTitle") {{titleText}}
 	el-row.content(tag="h3" class="aTitle") {{info}}
 	sub-button.aTitle(:btn-text="btnText")
@@ -48,7 +51,7 @@ export default class Bottom extends Vue {
 
 	.aTitle
 		margin 8vh auto
-		for $item in 1..4
+		for $item in 1..5
 			&:nth-child({$item})
 				opacity 0
 				transform translateY(400px)
@@ -67,4 +70,34 @@ export default class Bottom extends Vue {
 	to
 		opacity 1
 		transform translate(0px)
+
+.carousel
+	position fixed
+	top 100px
+	width 100%
+	opacity 0
+	transform scale(0.3)
+	animation toBig 0.7s ease-out forwards
+
+@keyframes toBig
+	to
+		opacity 1
+		transform scale(1)
+
+.el-carousel__item
+	box-shadow  0 0 20px #ccc
+
+.el-carousel__item:nth-child(2n)
+	background-color #99a9bf
+.el-carousel__item:nth-child(2n+1)
+	background-color #d3dce6
+.el-carousel__item h3 {
+	color #475669
+	font-size 14px
+	opacity 0.75
+	line-height 200px
+	margin 0
+}
+
+
 </style>

@@ -83,7 +83,7 @@ export default class Main extends Vue {
 	margin 0
 	transition .4s
 	.sub-container
-		margin-top 18vh
+		margin-top 15vh
 		transition 0.5s
 		@media screen and (max-width:768px)
 			margin-top 10vh

@@ -1,6 +1,7 @@
 <template lang="pug">
-el-dialog(title="注册" :visible="isShowRegistry" width="25%" top="8vh" lock-scroll model  center custom-class="dialog" :before-close="handleClose")
+el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="8vh" lock-scroll center custom-class="dialog r-dialog" :before-close="handleClose")
 	el-form.form(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" label-width="100px"  center status-ico)
+		avatar-upload(:avatar.sync="user.avatar")
 		el-form-item(label="昵称" prop="name")
 			el-input(type="text" v-model.trim="user.name" placeholder="2-8 位字符" clearable)
 		el-form-item(label="账号" prop="account")
@@ -27,6 +28,7 @@ el-dialog(title="注册" :visible="isShowRegistry" width="25%" top="8vh" lock-sc
 import { Vue, Component, Watch } from 'vue-property-decorator'
 import CitySelect from '@/components/CitySelect.vue'
 import CaptchaImg from '@/components/CaptchaImg.vue'
+import AvatarUpload from '@/components/AvatarUpload.vue'
 import { mapState, mapMutations, mapActions } from 'vuex'
 import {
 	checkAccount,
@@ -35,11 +37,13 @@ import {
 	checkCaptcha
 } from '@/utils/check'
 import Regular from '@/utils/regular'
-import Tip from '@/utils/tip'
+import tip from '@/utils/tip'
+import http from 'config/http'
 @Component({
 	components: {
 		CitySelect,
-		CaptchaImg
+		CaptchaImg,
+		AvatarUpload
 	},
 	computed: {
 		...mapState('dialog', ['isShowRegistry'])
@@ -60,8 +64,10 @@ export default class RegistryDialog extends Vue {
 			city: '',
 			county: ''
 		},
-		captcha: ''
+		captcha: '',
+		avatar:null
 	}
+
 	selections = []
 	disable = false
 	isHad = false
@@ -113,43 +119,55 @@ export default class RegistryDialog extends Vue {
 	existHandle() {
 		this.user.account &&
 			this.$refs.form.validateField('account', errMsg => {
-				if (errMsg) {
-					return
-				}
+				if (errMsg) { return }
 				this.hasExisted(this.user.account).then(isHad => {
 					this.isHad = isHad
 					if (isHad) {
-						this.tip('warning', '您输入的账号已被注册！', 2000)
+						tip.warning('您输入的账号已被注册！', 2000)
 					}
 				})
+			})
+	}
+	toRegistry(){
+		this.registry(this.user)
+			.then(response => {
+				this.isLoading = false
+				if (!response.success) {
+					return tip.error(response.message)
+				}
+        tip.success(response.message, 2000).then(() => {
+          this.changeShowStatus({ name: 'Registry', status: false })
+          this.changeShowStatus({ name: 'Login', status: true })
+        })
 			})
 	}
 	submitForm() {
 		this.$refs.form.validate(valid => {
 			if (valid) {
 				if (!this.user.address.province) {
-					return this.tip('warning', '请选择您所在的地区！')
+					return tip.warning('请选择您所在的地区！')
 				}
 				if (this.isHad) {
-					return this.tip('warning', '您输入的账号已被注册！', 2000)
+					return tip.warning('您输入的账号已被注册！', 2000)
 				}
 				this.isLoading = true
-				this.registry(this.user).then(response => {
-					this.isLoading = false
-					if (!response.success) {
-						return this.tip('error', response.message)
+				if (this.user.avatar) {
+					const reader = new FileReader()
+					reader.readAsDataURL(this.user.avatar)
+					reader.onloadend=()=>{
+						this.user.avatar = reader.result
+						this.toRegistry()
 					}
-					this.tip('success', response.message, 2000).then(() => {
-						this.changeShowStatus({ name: 'Registry', status: false })
-						this.changeShowStatus({ name: 'Login', status: true })
-					})
-				})
+				}else{
+					this.toRegistry()
+				}
 			} else {
-				this.tip('error', '请仔细核对信息！')
+				tip.error('请仔细核对信息！')
 				return false
 			}
 		})
 	}
+
 }
 </script>
 
@@ -169,8 +187,10 @@ font-beautify()
 	letter-spacing 2px
 	font-beautify()
 .dialog
+	position relative
 	box-shadow 0 10px 50px rgb(233, 233, 233)
-	padding 2vw 2vw 0
+	padding 0.7vw 2vw 0
+	border-radius 10px
 	.form
 		margin-left -3vw
 	.dialog-footer
@@ -180,8 +200,12 @@ font-beautify()
 		margin-bottom 3vh
 	.captcha
 		display inline-block
-		width 52%
+		width 58%
 		text-align left
-		margin-right 1.5vw
+		margin-right 1vw
 		transform translateY(-1.5vh)
+.el-dialog__footer
+	padding-bottom 10px
+.r-dialog
+	background radial-gradient(200px at left top,#fff 50%,#f6f6f6 50%)
 </style>

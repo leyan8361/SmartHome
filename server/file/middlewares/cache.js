@@ -1,9 +1,7 @@
 const staticCache = require('koa-static-cache')
-const koaStatic = require('koa-static')
-const path = require('path')
-
+const serve = require('koa-static')
 module.exports = app => {
-	const file = path.resolve('../dist')
+	const file = 'files'
 
 	app.use(async (ctx, next) => {
 		if (ctx.url == '/favicon.ico') return
@@ -15,10 +13,7 @@ module.exports = app => {
 			return
 		}
 	})
-	app.use(
-		staticCache(file, {
-			maxAge: 365 * 24 * 60 * 60
-		})
-	)
-	app.use(koaStatic(file))
+	app.use(staticCache(file, { maxAge: 365 * 24 * 60 * 60 }))
+
+	app.use(serve(file))
 }

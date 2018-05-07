@@ -15,9 +15,6 @@ Vue.use(Element)
 import console from './plugins/console'
 console()
 
-import tip from './plugins/tip'
-Vue.use(tip)
-
 import * as filters from './filters'
 Object.keys(filters).forEach(key => {
 	Vue.filter(key, filters[key])

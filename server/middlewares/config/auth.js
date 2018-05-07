@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken')
 const fs = require('fs')
 const auth = require('../../../config/auth.json')
 const koaJwt = require('koa-jwt')
+
 module.exports = app => {
 	const pub = fs.readFileSync('../config/rsa_public_key.pem')
 	app.use(async (ctx, next) => {
@@ -25,5 +26,5 @@ module.exports = app => {
 		}
 		await next()
 	})
-	app.use(koaJwt({ secret: pub }).unless({ path: [/^\/api\//] }))
+	app.use(koaJwt({ secret: pub }).unless({ path: [/^\/api\//,/^\/user\//] }))
 }

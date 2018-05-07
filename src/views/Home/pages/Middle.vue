@@ -44,7 +44,7 @@ export default class Middle extends Vue {
 		padding 2vh
 		box-shadow -1px 5px 20px 1px #b9b5b5
 		border-radius 2%
-		margin auto 2vw
+		margin 3vh 2vw
 		for $item in 1..3
 			opacity 0
 			transform scale(0.3)

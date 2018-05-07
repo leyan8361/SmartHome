@@ -1,29 +1,19 @@
-import { Message, MessageBox } from 'element-ui'
-const Tip = function(
-	type = 'error',
-	message = '服务器发生错误，<strong>为减少您不必要的损失，请联系服务员</strong>',
-	isBox = false,
-	title = '错误',
-	duration = 1000
-) {
-	if (!isBox) {
-		Message({
-			message: message,
+import { Message } from 'element-ui'
+const config = {
+	center: true,
+	dangerouslyUseHTMLString: true,
+	customClass: 'custom-tip',
+	showClose: true
+}
+const tip = {}
+Array.prototype.forEach.call(['info', 'success', 'warning', 'error'],(type => {
+	tip[type] = (msg, duration = 1500) => {
+		return Promise.resolve(Message({
+			message: msg,
 			type: type,
 			duration: duration,
-			center: true,
-			dangerouslyUseHTMLString: true,
-			customClass: 'tip',
-			showClose: true
-		})
-	} else {
-		MessageBox.alert(message, title, {
-			type: type,
-			center: true,
-			dangerouslyUseHTMLString: true,
-			customClass: 'tip'
-		})
+			...config
+		}))
 	}
-}
-
-export default Tip
+}))
+export default tip

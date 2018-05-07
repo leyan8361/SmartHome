@@ -10,5 +10,4 @@ module.exports = app => {
 	cache(app)
 	auth(app)
 	app.use(bodyParser())
-
 }

@@ -47,10 +47,12 @@ export default {
 		}
 
 		weatherInfo().then(({ weatherInfo, sunInfo, airInfo }) => {
-			console.log({ weatherInfo, sunInfo, airInfo })
 			commit('SET_WEATHER',weatherInfo)
 			commit('SET_SUN',sunInfo)
 			commit('SET_AIR',airInfo)
+		}).catch(err => {
+			console.error(err)
+			commit('SET_ENABLE',false)
 		})
 	}
 

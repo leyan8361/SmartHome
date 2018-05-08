@@ -26,5 +26,5 @@ module.exports = app => {
 		}
 		await next()
 	})
-	app.use(koaJwt({ secret: pub }).unless({ path: [/^\/api\//,/^\/user\//] }))
+	app.use(koaJwt({ secret: pub }).unless({ path: [/^\/api\//] }))
 }

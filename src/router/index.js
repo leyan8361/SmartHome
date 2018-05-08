@@ -20,7 +20,7 @@ router.beforeEach((to, from, next) => {
 		setTimeout(() => store.commit('dialog/showLogin'), 1000)
 		next({ path: '/' })
 	} else {
-		if (store.getters.status === 'UNLOGIN') {
+		if (store.getters.status !== 'LOGIN') {
 			store.commit('user/SET_STATUS', 'LOGIN')
 			tip.success('登录成功！')
 		}

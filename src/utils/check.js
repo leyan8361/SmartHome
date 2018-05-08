@@ -34,11 +34,14 @@ export const checkName = [
 			if (!value) {
 				return callback(new Error('请输入昵称'))
 			}
-			if (value.length > 8) {
-				return callback(new Error('昵称长度不能超过 8 位'))
+			if (value.length > 10) {
+				return callback(new Error('昵称长度不能超过 10 位'))
 			}
 			if (value.length < 2) {
 				return callback(new Error('昵称长度不能少于 2 位'))
+			}
+			if (!Regular('name', value)) {
+				return callback(new Error('昵称只能包含字母，数字，下划线，减号'))
 			}
 			callback()
 		},

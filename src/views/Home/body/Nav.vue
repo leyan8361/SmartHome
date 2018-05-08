@@ -7,25 +7,25 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component} from 'vue-property-decorator'
 
-@Component
+@Component({
+	props:{
+		activeItem:{
+		required: true,
+			validator: value => {
+				return value >= 0 && value < 3
+			}
+		},
+		maxItem:{
+			required: true,
+			validator: value => {
+				return value >= 0 && value < 10
+			}
+		}
+	}
+})
 export default class Nav extends Vue {
-	@Prop({
-		required: true,
-		validator: value => {
-			return value >= 0 && value < 3
-		}
-	})
-	activeItem
-
-	@Prop({
-		required: true,
-		validator: value => {
-			return value >= 0 && value < 10
-		}
-	})
-	maxItem
 
 	changeActive({
 		target: {

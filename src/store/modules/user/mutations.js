@@ -10,7 +10,10 @@ export default  {
 	},
 	SET_STATUS: (state, status) => {
 		state.status = status
-		sessionStorage.setItem('status',status)
+		sessionStorage.setItem('status', status)
+		if (status === 'UNLOGIN') {
+			Token.remove()
+		}
 	},
 	SET_INFO: (state, { name, account, address,avatar }) =>{
 		state.name = name

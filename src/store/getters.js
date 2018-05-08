@@ -3,10 +3,11 @@ export default {
   name: state => state.user.name,
   account: state => state.user.account,
   password: state => state.user.password,
-  address: state => state.user.address,
+	address: state => state.user.address,
+	avatar: state => state.user.avatar,
   status: state => state.user.status,
   cityID: state => state.weather.cityID,
   weatherInfo: state => state.weather.weatherInfo,
   enable: state => state.weather.enable,
-  now: state => state.weather.now
+	now: state => state.weather.now
 }

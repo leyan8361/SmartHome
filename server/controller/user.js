@@ -17,8 +17,8 @@ module.exports =  {
 		const userInfo = {
 			name: user.name,
 			account: user.account,
-			address: user.address,
-			avatar:user.avatar
+			adress: user.address,
+			avatar: user.avatar
 		}
 		ctx.send('登录成功！',{token, userInfo})
 	},
@@ -34,7 +34,7 @@ module.exports =  {
 		}
 		delete userInfo.captcha
 		delete userInfo.checkpass
-   
+
 		const hasSaved = await new User(userInfo).save()
 		if (!hasSaved) {
 			return ctx.sendError('因不可抗拒因素，注册失败！')
@@ -64,7 +64,7 @@ module.exports =  {
 			name: user.name,
 			account: user.account,
 			address: user.address,
-			avatar:user.avatar
+			avatar: user.avatar
 		}
 		ctx.send('信息获取成功！',{userInfo})
 	}

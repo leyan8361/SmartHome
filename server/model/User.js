@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const log = require('../utils/log')
 const bcryptPass = require('../db/utils/bcryptPass')
 const writeImg = require('../db/utils/writeImg')
-const fileServer = require('../../config/file')
+const bcrypt = require('bcryptjs')
 
 const User = new mongoose.Schema(
 	{
@@ -25,8 +25,7 @@ const User = new mongoose.Schema(
 		},
 		avatar: {
 			type: String,
-      trim: true,
-      default: fileServer.defaultAvatarUrl
+      trim: true
 		},
 		address: {
 			province: {
@@ -55,12 +54,6 @@ const User = new mongoose.Schema(
 )
 User.set('toJSON', { getters: true, virtuals: true })
 User.set('toObect', { getters: true, virtuals: true })
-
-User.virtual('address.full').get(function () {
-	let full =''
-	Array.prototype.forEach.call(Object.values(this.address), e => { e && (full+=e) })
-	return full
-})
 
 User.pre('save', async function (next) {
 	log.success('数据将被保存')

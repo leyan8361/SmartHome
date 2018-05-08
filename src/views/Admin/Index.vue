@@ -2,26 +2,29 @@
 el-container
 	layout-aside
 	el-container
-		el-header
-			| Header
-		el-main
-			| Main
-		el-footer
-			| footer
+		layout-header
+		layout-main
+		layout-footer
 </template>
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState , mapMutations,mapActions} from 'vuex'
 import LayoutAside from './layout/Aside.vue'
+import LayoutHeader from './layout/Header.vue'
+import LayoutMain from './layout/Header.vue'
+import LayoutFooter from './layout/Header.vue'
 @Component({
 	components:{
-		LayoutAside
+		LayoutAside,
+		LayoutHeader,
+		LayoutMain,
+		LayoutFooter
 	},
 	computed:{
-		...mapState('user',['account','name','address']),
+		...mapState('user',['account','name','address','avatar']),
+
 		...mapState('weather',['enable','now']),
-		// ...mapActions('user',[''])
 	}
 })
 export default class Admin extends Vue{

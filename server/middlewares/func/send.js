@@ -23,5 +23,4 @@ module.exports = ()=> {
 		ctx.sendError = renderError(ctx)
 		await next()
 	}
-	/*  ctx.sendError('系统异常!') ctx.send(data) */
 }

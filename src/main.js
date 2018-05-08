@@ -10,7 +10,12 @@ import 'element-ui/lib/theme-chalk/display.css'
 import 'element-ui/lib/theme-chalk/base.css'
 import 'normalize.css/normalize.css'
 import '@/assets/css/globals.styl'
+import '@/assets/js/iconfont.js'
 Vue.use(Element)
+
+import IconSvg from '@/components/IconSvg'
+
+Vue.component('icon-svg', IconSvg)
 
 import console from './plugins/console'
 console()

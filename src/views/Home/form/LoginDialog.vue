@@ -16,7 +16,7 @@ el-dialog(title="登录" :visible="isShowLogin" width="25%" top="15vh" custom-cl
 </template>
 
 <script>
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component} from 'vue-property-decorator'
 
 import { mapState, mapMutations, mapActions } from 'vuex'
 import { checkAccount, checkPassword } from '@/utils/check'

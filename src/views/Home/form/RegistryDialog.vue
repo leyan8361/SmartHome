@@ -25,7 +25,7 @@ el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="8vh" lock-sc
 </template>
 
 <script>
-import { Vue, Component, Watch } from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator'
 import CitySelect from '@/components/CitySelect.vue'
 import CaptchaImg from '@/components/CaptchaImg.vue'
 import AvatarUpload from '@/components/AvatarUpload.vue'

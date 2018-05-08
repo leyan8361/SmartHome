@@ -3,16 +3,22 @@
 </template>
 
 <script>
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { mapMutations } from 'vuex'
 
 @Component({
 	methods: {
 		...mapMutations('dialog', ['changeShowStatus']),
+	},
+	props:{
+		btnText:{
+			required: true,
+			type: String
+		}
 	}
 })
 export default class SubButton extends Vue {
-	@Prop({ required: true, type: String }) btnText
+
 }
 </script>
 

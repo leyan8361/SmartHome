@@ -13,7 +13,8 @@ export default {
 				return response
 			})
 			.catch(error => {
-				console.log(error)
+				console.error(error)
+				return {message:error}
 			})
 	},
 	async registry({ commit }, user) {
@@ -24,6 +25,7 @@ export default {
 			})
 			.catch(error => {
 				console.log(error)
+				return {message:error}
 			})
 	},
 	async hasExisted({ state }, account) {
@@ -38,6 +40,7 @@ export default {
 			})
 			.catch(error => {
 				console.log(error)
+				return {message:error}
 			})
 	},
 	async getUserInfo({ state, commit }) {
@@ -48,6 +51,9 @@ export default {
 				commit('SET_INFO',response.userInfo)
 			}
 			return response
+			}).catch(error => {
+				console.log(error)
+				return {message:error}
 		})
 	}
 }

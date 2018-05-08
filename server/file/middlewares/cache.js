@@ -1,10 +1,9 @@
 const staticCache = require('koa-static-cache')
 const serve = require('koa-static')
 module.exports = app => {
-	const file = 'files'
+	const file = '../../files'
 
 	app.use(async (ctx, next) => {
-		if (ctx.url == '/favicon.ico') return
 		await next()
 		ctx.status = 200
 		ctx.set('Cache-Control', 'must-revalidation')

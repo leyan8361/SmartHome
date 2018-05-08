@@ -1,3 +1,5 @@
+import waves from './waves/waves'
+
 export default (Vue) => {
 	Vue.directive('focus', {
 		inserted: function(el) {
@@ -10,4 +12,5 @@ export default (Vue) => {
 			/* <div v-title="'标题内容'"> */
 		}
 	})
+  Vue.directive('waves', waves)
 }

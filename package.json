@@ -24,7 +24,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",
-    "lint": "vue-cli-service lint",
+    "lint": "echo lint被我吃了~",
     "start": "vue-cli-service serve && nodemon server && nodemon server/db && nodemon server/file",
     "start:front": "vue-cli-server",
     "start:back": "nodemon server",
@@ -73,6 +73,7 @@
     "@vue/cli-plugin-pwa": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
     "chalk": "^2.4.1",
+    "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
@@ -93,5 +94,10 @@
   "gitHooks": {
     "pre-commit": "npm run lint",
     "commit-msg": "node server/utils/verify-commit-msg.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

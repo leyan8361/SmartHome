@@ -1,19 +1,23 @@
 {
-	"ip": "127.0.0.1",
-	"port": "3000",
-	"baseUrl": "http://localhost:3000/",
-	"noAuth": "api/",
-	"requestUrl": "http://localhost:3000/api/",
-	"imgUrl":"http://localhost:3000/img/",
-	"api":{
-		"login": "/api/login",
-		"registry": "api/registry",
-		"captcha": "api/captcha",
-		"exist": "/api/exist",
-		"avatar":"/api/avatar"
-	},
-	"auth":{
-		"userInfo":"/auth/userInfo"
-	}
+  "ip": "127.0.0.1",
+  "port": "3000",
+  "baseUrl": "http://localhost:3000/",
+  "noAuth": "api/",
+  "requestUrl": "http://localhost:3000/api/",
+  "imgUrl": "http://localhost:3000/img/",
+  "api": {
+    "login": "/api/login",
+    "registry": "api/registry",
+    "captcha": "api/captcha",
+    "exist": "/api/exist",
+    "avatar": "/api/avatar"
+  },
+  "auth": {
+    "userInfo": "/auth/userInfo",
+    "family": {
+      "userInfo": "/auth/family/userInfo",
+      "member": "auth/family/member"
+    }
+  }
 
 }

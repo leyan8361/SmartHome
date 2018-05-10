@@ -1,12 +1,14 @@
 import config from 'config/http'
 import axios from 'axios'
 import router from '@/router'
-import tip from '@/utils/tip'
-import Token from '@/utils/token'
+import tip from '@/utils/ui/tip'
+import Token from '@/utils/store/token'
+import status from '@/utils/global/status'
+import NProgress from 'nprogress'
 
 const instance = axios.create({
 	baseURL: config.baseUrl,
-	timeout: 10000,
+	timeout: 100000,
 	withCredentials: true,
 	headers: {
 		'Content-Type':'application/json;charset=UTF-8'
@@ -15,9 +17,13 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
 	config => {
-		const token = Token.get()
-		if (token && config.withCredentials) {
-			config.headers.common['Authorization'] = 'Bearer ' + token
+		NProgress.start()
+		if (config.url.indexOf('auth')!==-1) {
+			const token = Token.get()
+			if (token) { config.headers.common['Authorization'] = 'Bearer ' + token }
+			else {
+				status.logOut({hasTip:true,isShowLogin:true})
+			}
 		}
 		return config
 	},
@@ -27,14 +33,13 @@ instance.interceptors.request.use(
 )
 
 instance.interceptors.response.use(
-	response => response.data,
+	response => { NProgress.done(); return response.data },
 	error => {
+		NProgress.done()
 		if (error.response) {
 			switch (error.response.status) {
 				case 401:
-					Token.remove()
-					tip.error('您的登录信息已失效，请重新登录！')
-					router.push('/')
+					status.logOut({hasTip:true,isShowLogin:true})
 					break
 				default:
 					tip.error(`服务器错误！错误代码：${error.response.status}`)

@@ -1,6 +1,7 @@
 <template lang="pug">
-el-main
-	| Main
+el-main.main
+	transition(name="fadeUp")
+		router-view
 </template>
 
 <script>
@@ -13,5 +14,6 @@ export default class Main extends Vue{
 </script>
 
 <style lang="stylus">
-
+.main
+	background #f0f2f5
 </style>

@@ -1,24 +1,25 @@
-import Token from '@/utils/token'
+import Token from '@/utils/store/token'
 export default  {
-	SET_TOKEN: (state, token = Token.get()) => {
+	Token: (state, token = Token.get()) => {
 		state.token = token
 		const expires = 365
 		Token.set(token, { expires },state.keep)
 	},
-	SET_KEEP: (state, keep) => {
+	Keep: (state, keep) => {
 		state.keep = keep
 	},
-	SET_STATUS: (state, status) => {
+	Status: (state, status) => {
 		state.status = status
 		sessionStorage.setItem('status', status)
 		if (status === 'UNLOGIN') {
 			Token.remove()
 		}
 	},
-	SET_INFO: (state, { name, account, address,avatar }) =>{
+	Info: (state, { name, account, address,avatar,news}) =>{
 		state.name = name
 		state.account = account
 		state.address = address
 		state.avatar = avatar
+		state.news = news
 	}
 }

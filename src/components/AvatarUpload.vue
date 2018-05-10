@@ -10,7 +10,7 @@ el-upload( list-type="picture-card" show-file-list :limit="1"
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
-
+import tip from '@/utils/ui/tip'
 @Component
 export default class AvatarUpload extends Vue{
 	dialogImageUrl = ''
@@ -20,10 +20,10 @@ export default class AvatarUpload extends Vue{
 		const isLt2M = file.size / 1024 / 1024 < 2
 
 		if (!isJPGorPNG) {
-			tip.warning('上传头像图片只能是 JPG 或 PNG 格式!')
+			tip.warn('上传头像图片只能是 JPG 或 PNG 格式!')
 		}
 		if (!isLt2M) {
-			tip.warning('上传头像图片大小不能超过 2MB!')
+			tip.warn('上传头像图片大小不能超过 2MB!')
 		}
 		return isJPGorPNG && isLt2M
 	}

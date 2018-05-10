@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Routes from './routes'
 import auth from 'config/auth'
-import Token from '@/utils/token'
+import Token from '@/utils/store/token'
 import store from '@/store'
-import tip from '@/utils/tip'
+import tip from '@/utils/ui/tip'
+import NProgress from 'nprogress'
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
@@ -12,8 +13,10 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+	NProgress.start()
 	if (!Token.get()) {
 		if (auth.whiteList.includes(to.name)) {
+			console.log('白名单路由')
 			return next()
 		}
 		tip.info('请先登录！')
@@ -21,7 +24,7 @@ router.beforeEach((to, from, next) => {
 		next({ path: '/' })
 	} else {
 		if (store.getters.status !== 'LOGIN') {
-			store.commit('user/SET_STATUS', 'LOGIN')
+			store.commit('user/Status', 'LOGIN')
 			tip.success('登录成功！')
 		}
 		if (to.name === 'Index') {
@@ -32,16 +35,17 @@ router.beforeEach((to, from, next) => {
 				store.dispatch('weather/getWeatherInfo').then(next).catch(next)
 			})
 		} else {
-			if (!store.getters.now) {
+			if (!store.getters.cityID) {
 				store.dispatch('weather/getWeatherInfo').then(next).catch(next)
+			} else {
+				next()
 			}
 		}
 	}
 })
 
 router.afterEach((to, from) => {
-	console.log(store.state.user)
-	console.log(store.state.weather)
+	NProgress.done()
 })
 
 export default router

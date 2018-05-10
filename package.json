@@ -29,13 +29,17 @@
     "start:front": "vue-cli-server",
     "start:back": "nodemon server",
     "stop": "pm2 stop server/index.js",
-    "restart": "pm2 restart server/index.js"
+    "restart": "pm2 restart server/index.js",
+    "commit": "git cz",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
-    "chalk": "^2.4.1",
+    "conventional-changelog": "^1.1.24",
+    "echarts": "^4.1.0",
     "element-ui": "^2.3.7",
+    "fundebug-nodejs": "0.0.9",
     "ip": "^1.1.5",
     "js-cookie": "^2.2.0",
     "jsonwebtoken": "^8.2.1",
@@ -51,25 +55,31 @@
     "koa-static": "^4.0.2",
     "koa-static-cache": "^5.1.2",
     "log4js": "^2.5.3",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.17",
     "normalize.css": "^8.0.0",
+    "nprogress": "^0.2.0",
     "register-service-worker": "^1.0.0",
     "svg-captcha": "^1.3.11",
     "vue": "^2.5.16",
     "vue-class-component": "^6.2.0",
     "vue-property-decorator": "^6.0.0",
     "vue-router": "^3.0.1",
+    "vue2-animate": "^2.0.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
     "@vue/cli-plugin-pwa": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
+    "chalk": "^2.4.1",
+    "cz-conventional-changelog": "^2.1.0",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.13"
+    "vue-template-compiler": "^2.5.13",
+    "yorkie": "^1.0.3"
   },
   "browserslist": [
     "> 1%",
@@ -79,5 +89,9 @@
     "Chrome >= 46",
     "ff >= 43",
     "ie >= 9"
-  ]
+  ],
+  "gitHooks": {
+    "pre-commit": "npm run lint",
+    "commit-msg": "node server/utils/verify-commit-msg.js"
+  }
 }

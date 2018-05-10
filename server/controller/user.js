@@ -1,6 +1,10 @@
 const User = require('../model/User')
+const Notice = require('../model/Notice')
 const Token = require('../utils/token')
-
+const writeImg = require('../db/utils/writeImg')
+const bcrypt = require('bcryptjs')
+const { SALT_WORK_FACTOR } = require('../../config/auth')
+const filterNotice = require('../db/utils/filterNotice')
 module.exports =  {
 
 	async login(ctx) {
@@ -9,6 +13,7 @@ module.exports =  {
 		if (!user) {
 			return ctx.sendError('用户不存在！')
 		}
+		console.log(user)
 		const isMatch = await user.comparePassword(password, user.password)
 		if (!isMatch) {
 			return ctx.sendError('密码错误！')
@@ -17,10 +22,32 @@ module.exports =  {
 		const userInfo = {
 			name: user.name,
 			account: user.account,
-			adress: user.address,
-			avatar: user.avatar
+			address: user.address,
+			avatar: user.avatar,
+			news: user.news
 		}
-		ctx.send('登录成功！',{token, userInfo})
+		const value = { token,userInfo }
+		/* 获取消息集合中对应的数据 */
+		const notice = await Notice.find({ $or: [{ receiver: account }, { sender: account }] })
+		value.notice = filterNotice(notice,account)
+		ctx.send('登录成功！',value)
+	},
+
+	async getUserInfo(ctx) {
+		const account = ctx.state.user.data
+		const user = await User.findOne({ account: account })
+		const userInfo = {
+			name: user.name,
+			account: user.account,
+			address: user.address,
+			avatar: user.avatar,
+			news: user.news
+		}
+		const value = { userInfo }
+		const notice = await Notice.find({ $or: [{ receiver: account }, { sender: account }] })
+		value.notice = filterNotice(notice,account)
+		console.log(value)
+		ctx.send('信息获取成功！',value)
 	},
 
 	async registry(ctx) {
@@ -52,20 +79,23 @@ module.exports =  {
 		})
 	},
 
-	async getUserInfo(ctx) {
-		console.log(ctx.state.user)
-		const user = await User.findOne({ account: ctx.state.user.data })
-		if (!user) {
-			ctx.sendError('用户不存在！')
-			return ctx.throw(401, '信息获取失败, 请重新登录！')
-
+	async updateUserInfo(ctx) {
+		const account = ctx.state.user.data
+		const userInfo = ctx.request.body
+		console.log('发送数据~')
+		if (userInfo.avatar) {
+			userInfo.account = account
+			writeImg(userInfo)
 		}
-		const userInfo = {
-			name: user.name,
-			account: user.account,
-			address: user.address,
-			avatar: user.avatar
+		let token
+		if (userInfo.password) {
+			userInfo.password = bcrypt.hashSync(userInfo.password, bcrypt.genSaltSync(Number.parseInt(SALT_WORK_FACTOR)))
+			token = await Token.generate(account)
 		}
-		ctx.send('信息获取成功！',{userInfo})
+		const isUpdated = await User.updateOne({ account }, userInfo)
+		if (!isUpdated) {
+			return ctx.sendError('因不可抗拒因素，您的信息更改失败！')
+		}
+		ctx.send('您的信息已更改成功！',{token})
 	}
 }

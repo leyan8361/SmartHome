@@ -1,4 +1,4 @@
-import Regular from './regular'
+import Regular from '@/utils/tool/regular'
 const eventType = 'blur'
 export const checkAccount = [
 	{
@@ -28,20 +28,23 @@ export const checkPassword = [
 		trigger: eventType
 	}
 ]
-export const checkName = [
+export const checkName = (name='昵称') => [
 	{
 		validator: (rule, value, callback) => {
-			if (!value) {
-				return callback(new Error('请输入昵称'))
+			if (!value && name!=='备注') {
+				return callback(new Error(`请输入${name}`))
+			}
+			if (!value && name === '备注') {
+				return callback()
 			}
 			if (value.length > 10) {
-				return callback(new Error('昵称长度不能超过 10 位'))
+				return callback(new Error(`${name}长度不能超过 10 位`))
 			}
 			if (value.length < 2) {
-				return callback(new Error('昵称长度不能少于 2 位'))
+				return callback(new Error(`${name}长度不能少于 2 位`))
 			}
 			if (!Regular('name', value)) {
-				return callback(new Error('昵称只能包含字母，数字，下划线，减号'))
+				return callback(new Error(`${name}只能包含字母，数字，下划线，减号`))
 			}
 			callback()
 		},

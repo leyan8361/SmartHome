@@ -11,6 +11,10 @@ import 'element-ui/lib/theme-chalk/base.css'
 import 'normalize.css/normalize.css'
 import '@/assets/css/globals.styl'
 import '@/assets/js/iconfont.js'
+import 'vue2-animate/dist/vue2-animate.min.css'
+import 'nprogress/nprogress.css'
+import NProgress from '@/plugins/NProgress'
+Vue.use(NProgress)
 Vue.use(Element)
 
 import IconSvg from '@/components/IconSvg'
@@ -18,7 +22,7 @@ import IconSvg from '@/components/IconSvg'
 Vue.component('icon-svg', IconSvg)
 
 import console from './plugins/console'
-console()
+// console()
 
 import * as filters from './filters'
 Object.keys(filters).forEach(key => {

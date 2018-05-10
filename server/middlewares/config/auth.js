@@ -2,9 +2,10 @@ const jwt = require('jsonwebtoken')
 const fs = require('fs')
 const auth = require('../../../config/auth.json')
 const koaJwt = require('koa-jwt')
+const path = require('path')
 
 module.exports = app => {
-	const pub = fs.readFileSync('../config/rsa_public_key.pem')
+	const pub = fs.readFileSync('D:/desktop/bulb/config/rsa_public_key.pem')
 	app.use(async (ctx, next) => {
 		if (ctx.path.indexOf('/auth') >= 0) {
 			const token = ctx.header.authorization

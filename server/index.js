@@ -6,11 +6,10 @@ const log = require('./utils/log')
 const middleware = require('./middlewares')
 
 const app = new Koa()
-
 middleware(app)
 router(app)
 require('./db')()
 
 app.listen(http.port, http.ip, () => {
-	log.info(`server is running at http://${ip.address()}:${http.port}`)
+  log.info(`server is running at http://${ip.address()}:${http.port}`)
 })

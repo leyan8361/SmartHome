@@ -25,11 +25,17 @@ export default class Error extends Vue {
 </script>
 
 <style lang="stylus">
-body
+#error
+	overflow hidden
+	height 100vh
+	width 100vw
+	min-height 100vh
+	min-width 100vw
 	background-color #0099CC
 	color #FFFFFF
 	font-family Microsoft Yahei, "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif
-	margin-left 100px
+	padding-top 80px
+	padding-left 100px
 	.face
 		font-size 100px
 	p

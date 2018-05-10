@@ -1,14 +1,19 @@
 import http from '@/utils/http'
 import Url from 'config/http'
-import Token from '@/utils/token'
+import Token from '@/utils/store/token'
+import notice from 'config/notice'
 export default {
 	async login({ commit, state }, user) {
 		return await http
 			.post(Url.api.login, user)
 			.then(response => {
 				if (response.success) {
-					commit('SET_TOKEN', response.token)
-					commit('SET_INFO',response.userInfo)
+					console.log(response.userInfo)
+					commit('Info', response.userInfo)
+					commit('Token', response.token)
+					notice.type.forEach(e => {
+						commit(`notice/${e}`, response.notice[e], {root:true})
+					})
 				}
 				return response
 			})
@@ -44,16 +49,29 @@ export default {
 			})
 	},
 	async getUserInfo({ state, commit }) {
-		return await http.get(Url.auth.userInfo, {
-			params: {token:state.token}
-		}).then(response => {
+		return await http.get(Url.auth.userInfo).then(response => {
 			if (response.success) {
-				commit('SET_INFO',response.userInfo)
+				console.log(response.userInfo)
+				commit('Info', response.userInfo)
+				notice.type.forEach(e => {
+					commit(`notice/${e}`, response.notice[e], {root:true})
+				})
 			}
 			return response
 			}).catch(error => {
 				console.log(error)
 				return {message:error}
+		})
+	},
+	async modify({ state, commit }, user) {
+		return await http.post(Url.auth.userInfo,user).then(response => {
+			if (response.success) {
+				response.token && commit('Token', response.token)
+			}
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
 		})
 	}
 }

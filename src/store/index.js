@@ -5,6 +5,8 @@ import dialog from './modules/dialog'
 import common from './modules/common'
 import user from './modules/user'
 import weather from './modules/weather'
+import family from './modules/family'
+import notice from './modules/notice'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -12,7 +14,9 @@ export default new Vuex.Store({
 		dialog,
 		common,
 		user,
-		weather
+		weather,
+		family,
+		notice
 	},
 	getters
 })

@@ -19,15 +19,15 @@ el-dialog(title="登录" :visible="isShowLogin" width="25%" top="15vh" custom-cl
 import { Vue, Component} from 'vue-property-decorator'
 
 import { mapState, mapMutations, mapActions } from 'vuex'
-import { checkAccount, checkPassword } from '@/utils/check'
-import tip from '@/utils/tip'
+import { checkAccount, checkPassword } from '@/utils/form/check'
+import tip from '@/utils/ui/tip'
 @Component({
 	computed: {
 		...mapState('dialog', ['isShowLogin'])
 	},
 	methods: {
 		...mapMutations('dialog', ['changeShowStatus', 'replaceLogin']),
-		...mapMutations('user', ['SET_KEEP']),
+		...mapMutations('user', ['Keep']),
 		...mapActions('user', ['login'])
 	}
 })
@@ -53,14 +53,14 @@ export default class LoginDialog extends Vue {
 		this.$refs.form.validate(valid => {
 			if (valid) {
 				this.isLoading = true
-				this.SET_KEEP(this.keep)
+				this.Keep(this.keep)
 				this.login(this.user).then(response => {
 					this.isLoading = false
 					if (!response.success) {
 						return tip.error(response.message)
 					}
 					tip.success(response.message).then(() => {
-						this.$router.push({ path: '/home' })
+						this.$router.push({ path: '/home', name: 'Home'})
 					})
 				})
 			} else {

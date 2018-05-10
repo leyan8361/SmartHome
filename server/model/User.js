@@ -4,6 +4,7 @@ const log = require('../utils/log')
 const bcryptPass = require('../db/utils/bcryptPass')
 const writeImg = require('../db/utils/writeImg')
 const bcrypt = require('bcryptjs')
+const notice = require('../../config/notice.json')
 
 const User = new mongoose.Schema(
 	{
@@ -42,6 +43,33 @@ const User = new mongoose.Schema(
 				type: String,
 				required: false,
 				trim: true
+			}
+		},
+		private: {
+			type: [String],
+			required: false
+		},
+		news: {
+			[notice.type[0]]: {
+				type: Number,
+				min: 0,
+				required: false,
+				default: 0,
+				max:9999
+			},
+			[notice.type[1]]: {
+				type: Number,
+				min: 0,
+				required: false,
+				default: 0,
+				max:9999
+			},
+			[notice.type[2]]: {
+				type: Number,
+				min: 0,
+				required: false,
+				default: 0,
+				max:9999
 			}
 		}
 	},

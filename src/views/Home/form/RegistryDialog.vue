@@ -25,7 +25,7 @@ el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="8vh" lock-sc
 </template>
 
 <script>
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, } from 'vue-property-decorator'
 import CitySelect from '@/components/CitySelect.vue'
 import CaptchaImg from '@/components/CaptchaImg.vue'
 import AvatarUpload from '@/components/AvatarUpload.vue'
@@ -35,9 +35,9 @@ import {
 	checkPassword,
 	checkName,
 	checkCaptcha
-} from '@/utils/check'
-import Regular from '@/utils/regular'
-import tip from '@/utils/tip'
+} from '@/utils/form/check'
+import Regular from '@/utils/tool/regular'
+import tip from '@/utils/ui/tip'
 import http from 'config/http'
 @Component({
 	components: {
@@ -74,7 +74,7 @@ export default class RegistryDialog extends Vue {
 	isLoading = false
 	isInit = false
 	rules = {
-		name: checkName,
+		name: checkName(),
 		account: checkAccount,
 		captcha: checkCaptcha,
 		password: [
@@ -123,7 +123,7 @@ export default class RegistryDialog extends Vue {
 				this.hasExisted(this.user.account).then(isHad => {
 					this.isHad = isHad
 					if (isHad) {
-						tip.warning('您输入的账号已被注册！', 2000)
+						tip.warn('您输入的账号已被注册！', 2000)
 					}
 				})
 			})
@@ -145,10 +145,10 @@ export default class RegistryDialog extends Vue {
 		this.$refs.form.validate(valid => {
 			if (valid) {
 				if (!this.user.address.province) {
-					return tip.warning('请选择您所在的地区！')
+					return tip.warn('请选择您所在的地区！')
 				}
 				if (this.isHad) {
-					return tip.warning('您输入的账号已被注册！', 2000)
+					return tip.warn('您输入的账号已被注册！', 2000)
 				}
 				this.isLoading = true
 				if (this.user.avatar) {

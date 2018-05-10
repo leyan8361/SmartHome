@@ -1,12 +1,12 @@
 <template lang="pug">
-el-aside(width="200px")
+el-aside.aside-admin(width="250px")
 	.toggle-menu(@click="isCollapse=!isCollapse")
 		icon-svg(name="shouqicaidan" size="1.8")
 	.logo
 		.logo-icon: icon-svg(name="lightbulb" size="2")
 		.logo-text: span Smart Home
-	el-menu.menu(:default-openeds="['1','3']" :collapse="!isCollapse"
-			background-color="#2a3f54" text-color="#b8c7ce" active-text-color="#fff")
+	el-menu.menu(:default-openeds="['2']" :collapse="!isCollapse"
+			background-color="#2D343A" text-color="#b8c7ce" active-text-color="#fff")
 		.user-menu
 			.avatar-menu: img.avatar(:src="avatar" alt="avatar")
 			.user-tip
@@ -27,20 +27,25 @@ el-aside(width="200px")
 		el-submenu(index="2")
 			template(slot="title")
 				i.el-icon-menu
-				span(slot="title") 家庭管理
-			el-menu-item-group
-				template(slot="title") 分组一
-				el-menu-item(index="2-1") 选项一
-				el-menu-item(index="2-2") 选项二
-			el-menu-item-group(title="分组2")
-				el-menu-item(index="2-3") 选项3
-			el-submenu(index="2-4")
-				template(slot="title") 选项4
-				el-menu-item(index="2-4-1") 选项4-1
+				span(slot="title") 我的家人
+			router-link(:to="{name:'FamilySearch'}" tag="li")
+				el-menu-item(index="2-1") 邀请家人
+			el-menu-item(index="2-2") 加入家庭
+			el-menu-item(index="2-3") 退出家庭
+			el-menu-item(index="2-4") 查看成员
 		el-submenu(index="3")
 			template(slot="title")
 				i.el-icon-menu
-				span(slot="title") 日程安排
+				span(slot="title") 消息通知
+			router-link(:to="{name:'NoticeFamily'}" tag="li")
+				el-menu-item(index="2-1") 家庭互动
+			el-menu-item(index="2-2") 电器日志
+			el-menu-item(index="2-3") 天气情况
+			el-menu-item(index="2-4") 使用功耗
+		el-submenu(index="4")
+			template(slot="title")
+				i.el-icon-menu
+				span(slot="title") 高级设置
 			el-menu-item-group
 				template(slot="title") 分组一
 				el-menu-item(index="2-1") 选项一
@@ -87,36 +92,42 @@ export default class Aside extends Vue{
 </script>
 
 <style lang="stylus">
-menu-width = 200px
+.aside-admin
+	box-shadow 2px 0 6px rgba(0,21,41,.35)
+	z-index 999
+	overflow hidden
+menu-width = 250px
 menu-height = 60px
 .logo
 	height menu-height
 	width menu-width
-	background-color #367fa9
+	background-color #303a3f
 	padding-top 10px
 	color #fff
 	position fixed
-	z-index 999
+	z-index 99
 	box-shadow 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12)
 	.svg-icon
 		border-radius 15%
 		padding 2px
 		box-shadow 2px 3px 4px 1px rgba(28, 73, 44, 0.7)
+		transform rotate(340deg)
 .logo-icon
-	margin-left 20px
+	margin-left 50px
 
 .logo-text
 	font-size 90%
 	position relative
-	left 70px
+	left 85px
 	bottom 20px
+	font-family "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif
 	span
 		text-shadow 3px 3px 2px #0f4743
 .toggle-menu
 	position fixed
 	top 13px
-	left 210px
-	color #fff
+	left 270px
+	color #999
 	cursor pointer
 	width 50px
 	height 50px
@@ -128,30 +139,31 @@ menu-height = 60px
 		&:hover
 			transform translateX(-2px)
 .menu
-	overflow hidden
 	margin-top menu-height
-	box-shadow 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+	min-height 100vh
+	letter-spacing 2px
 .menu-footer
 	position fixed
 	bottom 0
-	background-color #2a3f54
+	background-color #272f32
 	height menu-height - 10px
 	width menu-width - 1px
 	text-align center
 	padding-top 8px
-	box-shadow 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12)
+	box-shadow 0px -5px 5px 0 rgba(59,58,60,0.16), -1px -9px 12px 0px rgba(0,0,0,0.12)
 	.svg-icon
 		color #fff
 		font-weight bold
-		margin 0px 10px
+		margin 0px 15px
 		padding 10px
 		border-radius 15%
 		box-shadow inset 2px 0px 6px 1px rgba(174, 178, 178, 0.7)
 .user-menu
 	padding 8px
 	margin-top 10px
-	padding-bottom 0
-	border-bottom solid 1px #ccc
+	padding-bottom 5px
+	border-bottom dashed 0.5px #999
+	font-family "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif
 	.avatar
 		padding 1px
 		transform scale(1.8)
@@ -159,9 +171,9 @@ menu-height = 60px
 		left 25px
 		bottom -10px
 		border-radius 50%
-		background-color #fff
 		box-shadow 0 0 2px 3px rgba(255,255,255,0.7), 0 0 20px 2px #f6f6f6
 		transition .3s
+		background-color #fff
 		&:hover
 			transform scale(2.0)
 	.name-menu

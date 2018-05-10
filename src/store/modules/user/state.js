@@ -1,9 +1,10 @@
-import Token from '@/utils/token'
+import Token from '@/utils/store/token'
 export default {
 	name: '',
 	account: '',
-	address: '',
-	avatar:'',
+	address:'',
+	avatar: '',
+	news:'',
 	token: Token.get(),
 	keep: true,
 	status: sessionStorage.getItem('status')||'UNLOGIN'

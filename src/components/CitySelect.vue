@@ -1,5 +1,5 @@
 <template lang="pug">
-el-cascader.cascader(:options="CityInfo" v-model="selections" placeholder="请仔细填写地址" @change="fillAddress" change-on-select expand-trigger="click" clearable filterable )
+el-cascader.cascader(:options="CityInfo" v-model="selections" placeholder="请仔细填写地址" @change="fillAddress" change-on-select expand-trigger="click" clearable )
 </template>
 
 <script>

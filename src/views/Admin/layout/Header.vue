@@ -86,7 +86,7 @@ export default class Header extends Vue{
 	position fixed
 	border-bottom 1px solid #e6e6e6
 	background #fff
-	padding-top 8px
+	padding-top 8px !important
 	margin-left -20px
 .tongzhi
 	color #000

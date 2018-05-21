@@ -1,53 +1,21 @@
 <template lang="pug">
 .user-main
-	el-row.user-title(:span="24" tag="span" type="flex" align="middle" justify="center") {{title}}
-	close-icon(@click.native="drop")
+	el-row#card-title(:span="24" tag="span" type="flex" align="middle" justify="center") {{ title }}
+	close-icon
 	transition( name="rotateDownLeft" )
 		router-view
 </template>
 
 <script>
-import {Component,Vue} from 'vue-property-decorator'
-import CloseIcon from '@/components/CloseIcon.vue'
+import CloseIcon from '~/CloseIcon.vue'
+import {Vue,Component,Watch} from 'vue-property-decorator'
 @Component({
 	components:{
 		CloseIcon
-	},
-	watch: {
-  '$route' (to, from) {
-		this.filterTitle()
-  }
-}
-
+	}
 })
 export default class Template extends Vue{
-	title='标题党~'
-	isDrop = false
-	created(){
-		this.filterTitle()
-	}
-	filterTitle(){
-		switch(this.$router.currentRoute.name){
-			case 'UserProfile': this.title = '个人主页'
-				break
-			case 'UserModify': this.title = '修改信息'
-				break
-			case 'FamilyInvite': this.title = '邀请家人'
-				break
-			case 'FamilySearch': this.title = '搜索家人'
-				break
-			case 'NoticeFamily': this.title = '家庭消息'
-				break
-			case 'NoticeElectric': this.title = '设备消息'
-				break
-			default: this.title='标题党~'
-				break
-		}
-	}
-	drop(){
-		this.isDrop = true
-		this.$router.push({path:'home',name:'Home'})
-	}
+	title = '标题党'
 }
 </script>
 
@@ -68,7 +36,7 @@ export default class Template extends Vue{
 	position fixed
 	z-index 10
 	cursor default
-	.user-title
+	#card-title
 		font-beautify()
 		letter-spacing 8px
 		font-size 200%

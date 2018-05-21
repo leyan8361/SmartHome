@@ -139,9 +139,10 @@ menu-height = 60px
 		&:hover
 			transform translateX(-2px)
 .menu
-	margin-top menu-height
+	margin-top 100px
 	min-height 100vh
 	letter-spacing 2px
+	overflow hidden
 .menu-footer
 	position fixed
 	bottom 0
@@ -160,7 +161,7 @@ menu-height = 60px
 		box-shadow inset 2px 0px 6px 1px rgba(174, 178, 178, 0.7)
 .user-menu
 	padding 8px
-	margin-top 10px
+	margin-top 75px
 	padding-bottom 5px
 	border-bottom dashed 0.5px #999
 	font-family "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif

@@ -72,8 +72,7 @@ export default class Bottom extends Vue {
 		transform translate(0px)
 
 .carousel
-	position fixed
-	top 100px
+	position fixed !important
 	width 100%
 	opacity 0
 	transform scale(0.3)

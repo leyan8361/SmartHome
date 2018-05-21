@@ -7,7 +7,11 @@ import user from './modules/user'
 import weather from './modules/weather'
 import family from './modules/family'
 import notice from './modules/notice'
+import createLogger from 'vuex/dist/logger'
+
 Vue.use(Vuex)
+
+const strict = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
 	modules: {
@@ -18,5 +22,7 @@ export default new Vuex.Store({
 		family,
 		notice
 	},
-	getters
+	getters,
+	strict,
+	// plugins: strict ? [createLogger()] : []
 })

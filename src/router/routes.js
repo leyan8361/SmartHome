@@ -8,18 +8,26 @@ import FamilyInvite from '@/views/Admin/pages/family/Invite.vue'
 import NoticeFamily from '@/views/Admin/pages/notice/Family.vue'
 import NoticeElectric from '@/views/Admin/pages/notice/Electric.vue'
 import Template from '@/views/Admin/pages/Index.vue'
+// const Template = () =>
+//   import ('@/views/Admin/pages/Index.vue')
 export default [{
   path: '/',
   name: 'Index',
-  component: Index
+  component: Index,
 }, {
   path: '*',
   name: '404',
-  component: Error
+  component: Error,
+  meta: {
+    title: '404 - 页面未找到'
+  },
 }, {
   path: '/home',
   name: 'Home',
   component: Home,
+  meta: {
+    title: '主页'
+  },
   children: [{
     path: 'user',
     name: 'User',
@@ -29,10 +37,16 @@ export default [{
       path: 'profile',
       name: 'UserProfile',
       component: User,
+      meta: {
+        title: '个人主页'
+      },
     }, {
       path: 'modify',
       name: 'UserModify',
       component: UserModify,
+      meta: {
+        title: '修改信息'
+      },
     }]
   }, {
     path: 'family',
@@ -43,10 +57,16 @@ export default [{
       path: 'search',
       name: 'FamilySearch',
       component: FamilySearch,
+      meta: {
+        title: '搜索用户'
+      },
     }, {
       path: 'invite',
       name: 'FamilyInvite',
-      component: FamilyInvite
+      component: FamilyInvite,
+      meta: {
+        title: '邀请共享'
+      },
     }]
   }, {
     path: 'notice',
@@ -57,10 +77,16 @@ export default [{
       path: 'family',
       name: 'NoticeFamily',
       component: NoticeFamily,
-    },{
+      meta: {
+        title: '家庭消息'
+      },
+    }, {
       path: 'electric',
       name: 'NoticeElectric',
       component: NoticeElectric,
+      meta: {
+        title: '设备消息'
+      },
     }]
   }]
 

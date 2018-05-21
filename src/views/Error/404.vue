@@ -1,5 +1,5 @@
 <template lang="pug">
-#error(v-title="'404 - 页面未找到'")
+#error
 	span.face :(
 	p 您访问的页面没有找到。
 		br

@@ -24,9 +24,9 @@ import { mapState, mapMutations, mapActions } from 'vuex'
 
 import Regular from '@/utils/tool/regular'
 import tip from '@/utils/ui/tip'
-import CitySelect from '@/components/CitySelect.vue'
-import PrivateSelect from '@/components/PrivateSelect.vue'
-import AvatarUpload from '@/components/AvatarUpload.vue'
+import CitySelect from '~/CitySelect.vue'
+import PrivateSelect from '~/PrivateSelect.vue'
+import AvatarUpload from '~/AvatarUpload.vue'
 @Component({
 	components: {
 		CitySelect,

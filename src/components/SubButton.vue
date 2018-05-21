@@ -22,7 +22,7 @@ export default class SubButton extends Vue {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .sub-button
 	font-size 110%
 	background-color transparent

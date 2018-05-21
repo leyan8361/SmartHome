@@ -17,7 +17,7 @@ import NProgress from '@/plugins/NProgress'
 Vue.use(NProgress)
 Vue.use(Element)
 
-import IconSvg from '@/components/IconSvg'
+import IconSvg from '~/IconSvg'
 
 Vue.component('icon-svg', IconSvg)
 

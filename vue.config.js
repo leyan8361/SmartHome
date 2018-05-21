@@ -5,8 +5,8 @@ module.exports = {
 	// 比如 https://www.my-app.com/
 	// 如果你的应用时部署在一个子路径下，那么你需要在这里
 	// 指定子路径。比如，如果你的应用部署在
-	// https://www.foobar.com/my-app/
-	// 那么将这个值改为 `/my-app/`
+	// https://wwwasdasd.foobar.com/my-app/
+	// 那么将  这个值改为 `/my-app/`
 	baseUrl: '/',
 
 	// 将构建好的文件输出到哪里
@@ -42,7 +42,7 @@ module.exports = {
 
 	// vue-loader 选项
 	// 查阅 https://vue-loader.vuejs.org/zh-cn/options.html
-	vueLoader: {},
+	// vueLoader: {},
 
 	// 是否为生产环境构建生成 source map？
 	productionSourceMap: true,
@@ -61,7 +61,7 @@ module.exports = {
 
 		// 为所有的 CSS 及其预处理文件开启 CSS Modules。
 		// 这个选项不会影响 `*.vue` 文件。
-		modules: false
+		// modules: false
 	},
 
 	// 在生产环境下为 Babel 和 TypeScript 使用 `thread-loader`
@@ -70,7 +70,7 @@ module.exports = {
 	// 是否使用 `autoDLLPlugin` 分割供应的包？
 	// 也可以是一个在 DLL 包中引入的依赖的显性的数组。
 	// 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/cli-service.md#dll-模式
-	dll: false,
+	// dll: false,
 	// PWA 插件的选项。
 	// 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli-plugin-pwa/README.md
 	pwa: {

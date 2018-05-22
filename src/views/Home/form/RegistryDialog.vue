@@ -62,7 +62,8 @@ export default class RegistryDialog extends Vue {
 		address: {
 			province: '',
 			city: '',
-			county: ''
+			county: '',
+			code:''
 		},
 		captcha: '',
 		avatar:null

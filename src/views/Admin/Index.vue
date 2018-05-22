@@ -24,14 +24,11 @@ import LayoutFooter from './layout/Footer.vue'
 	computed:{
 		...mapState('user',['account','name','address','avatar']),
 
-		...mapState('weather',['enable','now']),
+		...mapState('weather',['now']),
 	}
 })
 export default class Admin extends Vue{
 	mounted(){
-		if(!this.enable){
-			console.log('天气不可用')
-		}
 	}
 }
 </script>

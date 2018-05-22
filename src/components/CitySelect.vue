@@ -3,60 +3,65 @@ el-cascader.cascader(:options="CityInfo" v-model="selections" placeholder="è¯·ä»
 </template>
 
 <script>
-import { Component, Vue,Watch } from 'vue-property-decorator'
-import CityInfo from '@/assets/js/city'
-@Component({
-	props:{
-		isInit:{
-			type:Boolean,
-			default:false
+	import { Component, Vue, Watch } from 'vue-property-decorator'
+	import CityInfo from '@/assets/js/city'
+	@Component({
+		props: {
+			isInit: {
+				type: Boolean,
+				default: false
+			}
 		}
-	}
-})
-export default class CitySelect extends Vue {
-	selections = []
-	CityInfo = CityInfo
-	@Watch('isInit')
-	toInit(value,oldValue){
-		if(value){
-			this.selections = []
+	})
+	export default class CitySelect extends Vue {
+		selections = []
+		CityInfo = CityInfo
+		@Watch('isInit')
+		toInit(value, oldValue) {
+			if (value) {
+				this.selections = []
+			}
 		}
-	}
-	fillAddress() {
-		const s = this.selections
-		const data = this.CityInfo
-		const address = {}
-		area: for (let province in data) {
-			if (data[province].value == s[0]) {
-				address.province = data[province].label
-				if (!s[1]) {
-					break area
-				}
-				for (let city in data[province].children) {
-					if (data[province].children[city].value == s[1]) {
-						address.city = data[province].children[city].label
-						if (!s[2]) {
-							break area
-						}
-						for (let county in data[province].children[city].children) {
-							if (
-								data[province].children[city].children[county].value == s[2]
-							) {
-								address.county =
-									data[province].children[city].children[county].label
-								break area
+		fillAddress() {
+			if(!this.selections[0]){return}
+			const address = {
+				province: this.selections[0],
+				city: this.selections[1],
+				county: this.selections[2]
+			}
+
+			area:
+			for (let province of CityInfo) {
+				if (province.value === address.province) {
+					if (!address.city) {
+						address.code = province.code
+						break area
+					} else {
+						for (let city of province.children) {
+							if (city.value === address.city) {
+								if (!address.county) {
+									address.code = city.code
+									break area
+								} else {
+									for (let county of city.children) {
+										if (county.value === address.county) {
+											address.code = county.code
+											break area
+										}
+									}
+								}
 							}
 						}
 					}
 				}
 			}
+			this.$emit('update:address', address)
 		}
-		address && this.$emit('update:address', address)
 	}
-}
 </script>
 
 <style lang="stylus">
-.cascader
-	width 100%
+	.cascader {
+		width: 100%;
+	}
 </style>

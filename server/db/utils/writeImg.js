@@ -1,17 +1,16 @@
 const fs = require('fs')
 const fileServer = require('../../../config/file')
-module.exports = user => {
-	if (!user.avatar) { user.avatar = fileServer.defaultAvatarUrl;return }
+module.exports = async user => {
+	if (!user.avatar) { return fileServer.defaultAvatarUrl; }
 	const imgData = user.avatar.split(',')
 	const imgEtx = imgData[0].match(/:(.*?);/)[1].split('/')[1]
   const img = '/avatar.' + imgEtx
   const folderPath = fileServer.path + user.account
   const filePath = folderPath + img
 
-  !fs.existsSync(folderPath) && fs.mkdirSync(folderPath)
-  const buf = Buffer.from(imgData[1],'base64')
+  await (!fs.existsSync(folderPath) && fs.mkdirSync(folderPath))
 
-  fs.writeFileSync(filePath, buf)
-	user.avatar = fileServer.url + user.account + img
+	await fs.writeFileSync(filePath, Buffer.from(imgData[1],'base64'))
 
+	return fileServer.url + user.account + img
 }

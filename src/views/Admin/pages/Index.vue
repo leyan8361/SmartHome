@@ -12,10 +12,18 @@ import {Vue,Component,Watch} from 'vue-property-decorator'
 @Component({
 	components:{
 		CloseIcon
+	},
+	watch:{
+		'$route'(to,from){
+			this.title = this.$route.meta.title
+		}
 	}
 })
 export default class Template extends Vue{
 	title = '标题党'
+	created(){
+		this.title = this.$route.meta.title
+	}
 }
 </script>
 
@@ -40,5 +48,5 @@ export default class Template extends Vue{
 		font-beautify()
 		letter-spacing 8px
 		font-size 200%
-		border-bottom dotted 1px #ccc
+		border-bottom dotted 3px #ccc
 </style>

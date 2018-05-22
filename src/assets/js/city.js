@@ -1,3612 +1,13201 @@
-export default [
-	{value: 1, label: '北京市', children: [
-			{value: 1, label: '北京市', children: [
-					{value: 1, label: '东城区'},
-					{value: 2, label: '西城区'},
-					{value: 3, label: '崇文区'},
-					{value: 4, label: '宣武区'},
-					{value: 5, label: '朝阳区'},
-					{value: 6, label: '丰台区'},
-					{value: 7, label: '石景山区'},
-					{value: 8, label: '海淀区'},
-					{value: 9, label: '门头沟区'},
-					{value: 10, label: '房山区'},
-					{value: 11, label: '通州区'},
-					{value: 12, label: '顺义区'},
-					{value: 13, label: '昌平区'},
-					{value: 14, label: '大兴区'},
-					{value: 15, label: '怀柔区'},
-					{value: 16, label: '平谷区'},
-					{value: 17, label: '密云县'},
-					{value: 18, label: '延庆县'}
-			]}
-	]},
-	{value: 2, label: '天津市', children: [
-			{value: 2, label: '天津市', children: [
-					{value: 19, label: '和平区'},
-					{value: 20, label: '河东区'},
-					{value: 21, label: '河西区'},
-					{value: 22, label: '南开区'},
-					{value: 23, label: '河北区'},
-					{value: 24, label: '红桥区'},
-					{value: 25, label: '塘沽区'},
-					{value: 26, label: '汉沽区'},
-					{value: 27, label: '大港区'},
-					{value: 28, label: '东丽区'},
-					{value: 29, label: '西青区'},
-					{value: 30, label: '津南区'},
-					{value: 31, label: '北辰区'},
-					{value: 32, label: '武清区'},
-					{value: 33, label: '宝坻区'},
-					{value: 34, label: '宁河县'},
-					{value: 35, label: '静海县'},
-					{value: 36, label: '蓟县'}
-			]}
-	]},
-	{value: 3, label: '河北省', children: [
-			{value: 3, label: '石家庄市', children: [
-					{value: 37, label: '长安区'},
-					{value: 38, label: '桥东区'},
-					{value: 39, label: '桥西区'},
-					{value: 40, label: '新华区'},
-					{value: 41, label: '井陉矿区'},
-					{value: 42, label: '裕华区'},
-					{value: 43, label: '井陉县'},
-					{value: 44, label: '正定县'},
-					{value: 45, label: '栾城县'},
-					{value: 46, label: '行唐县'},
-					{value: 47, label: '灵寿县'},
-					{value: 48, label: '高邑县'},
-					{value: 49, label: '深泽县'},
-					{value: 50, label: '赞皇县'},
-					{value: 51, label: '无极县'},
-					{value: 52, label: '平山县'},
-					{value: 53, label: '元氏县'},
-					{value: 54, label: '赵县'},
-					{value: 55, label: '辛集市'},
-					{value: 56, label: '藁城市'},
-					{value: 57, label: '晋州市'},
-					{value: 58, label: '新乐市'},
-					{value: 59, label: '鹿泉市'}
-			]},
-			{value: 4, label: '唐山市', children: [
-					{value: 60, label: '路南区'},
-					{value: 61, label: '路北区'},
-					{value: 62, label: '古冶区'},
-					{value: 63, label: '开平区'},
-					{value: 64, label: '丰南区'},
-					{value: 65, label: '丰润区'},
-					{value: 66, label: '滦县'},
-					{value: 67, label: '滦南县'},
-					{value: 68, label: '乐亭县'},
-					{value: 69, label: '迁西县'},
-					{value: 70, label: '玉田县'},
-					{value: 71, label: '唐海县'},
-					{value: 72, label: '遵化市'},
-					{value: 73, label: '迁安市'}
-			]},
-			{value: 5, label: '秦皇岛市', children: [
-					{value: 74, label: '海港区'},
-					{value: 75, label: '山海关区'},
-					{value: 76, label: '北戴河区'},
-					{value: 77, label: '青龙满族自治县'},
-					{value: 78, label: '昌黎县'},
-					{value: 79, label: '抚宁县'},
-					{value: 80, label: '卢龙县'}
-			]},
-			{value: 6, label: '邯郸市', children: [
-					{value: 81, label: '邯山区'},
-					{value: 82, label: '丛台区'},
-					{value: 83, label: '复兴区'},
-					{value: 84, label: '峰峰矿区'},
-					{value: 85, label: '邯郸县'},
-					{value: 86, label: '临漳县'},
-					{value: 87, label: '成安县'},
-					{value: 88, label: '大名县'},
-					{value: 89, label: '涉县'},
-					{value: 90, label: '磁县'},
-					{value: 91, label: '肥乡县'},
-					{value: 92, label: '永年县'},
-					{value: 93, label: '邱县'},
-					{value: 94, label: '鸡泽县'},
-					{value: 95, label: '广平县'},
-					{value: 96, label: '馆陶县'},
-					{value: 97, label: '魏县'},
-					{value: 98, label: '曲周县'},
-					{value: 99, label: '武安市'}
-			]},
-			{value: 7, label: '邢台市', children: [
-					{value: 100, label: '桥东区'},
-					{value: 101, label: '桥西区'},
-					{value: 102, label: '邢台县'},
-					{value: 103, label: '临城县'},
-					{value: 104, label: '内丘县'},
-					{value: 105, label: '柏乡县'},
-					{value: 106, label: '隆尧县'},
-					{value: 107, label: '任县'},
-					{value: 108, label: '南和县'},
-					{value: 109, label: '宁晋县'},
-					{value: 110, label: '巨鹿县'},
-					{value: 111, label: '新河县'},
-					{value: 112, label: '广宗县'},
-					{value: 113, label: '平乡县'},
-					{value: 114, label: '威县'},
-					{value: 115, label: '清河县'},
-					{value: 116, label: '临西县'},
-					{value: 117, label: '南宫市'},
-					{value: 118, label: '沙河市'}
-			]},
-			{value: 8, label: '保定市', children: [
-					{value: 119, label: '新市区'},
-					{value: 120, label: '北市区'},
-					{value: 121, label: '南市区'},
-					{value: 122, label: '满城县'},
-					{value: 123, label: '清苑县'},
-					{value: 124, label: '涞水县'},
-					{value: 125, label: '阜平县'},
-					{value: 126, label: '徐水县'},
-					{value: 127, label: '定兴县'},
-					{value: 128, label: '唐县'},
-					{value: 129, label: '高阳县'},
-					{value: 130, label: '容城县'},
-					{value: 131, label: '涞源县'},
-					{value: 132, label: '望都县'},
-					{value: 133, label: '安新县'},
-					{value: 134, label: '易县'},
-					{value: 135, label: '曲阳县'},
-					{value: 136, label: '蠡县'},
-					{value: 137, label: '顺平县'},
-					{value: 138, label: '博野县'},
-					{value: 139, label: '雄县'},
-					{value: 140, label: '涿州市'},
-					{value: 141, label: '定州市'},
-					{value: 142, label: '安国市'},
-					{value: 143, label: '高碑店市'}
-			]},
-			{value: 9, label: '张家口市', children: [
-					{value: 144, label: '桥东区'},
-					{value: 145, label: '桥西区'},
-					{value: 146, label: '宣化区'},
-					{value: 147, label: '下花园区'},
-					{value: 148, label: '宣化县'},
-					{value: 149, label: '张北县'},
-					{value: 150, label: '康保县'},
-					{value: 151, label: '沽源县'},
-					{value: 152, label: '尚义县'},
-					{value: 153, label: '蔚县'},
-					{value: 154, label: '阳原县'},
-					{value: 155, label: '怀安县'},
-					{value: 156, label: '万全县'},
-					{value: 157, label: '怀来县'},
-					{value: 158, label: '涿鹿县'},
-					{value: 159, label: '赤城县'},
-					{value: 160, label: '崇礼县'}
-			]},
-			{value: 10, label: '承德市', children: [
-					{value: 161, label: '双桥区'},
-					{value: 162, label: '双滦区'},
-					{value: 163, label: '鹰手营子矿区'},
-					{value: 164, label: '承德县'},
-					{value: 165, label: '兴隆县'},
-					{value: 166, label: '平泉县'},
-					{value: 167, label: '滦平县'},
-					{value: 168, label: '隆化县'},
-					{value: 169, label: '丰宁满族自治县'},
-					{value: 170, label: '宽城满族自治县'},
-					{value: 171, label: '围场满族蒙古族自治县'}
-			]},
-			{value: 11, label: '沧州市', children: [
-					{value: 172, label: '新华区'},
-					{value: 173, label: '运河区'},
-					{value: 174, label: '沧县'},
-					{value: 175, label: '青县'},
-					{value: 176, label: '东光县'},
-					{value: 177, label: '海兴县'},
-					{value: 178, label: '盐山县'},
-					{value: 179, label: '肃宁县'},
-					{value: 180, label: '南皮县'},
-					{value: 181, label: '吴桥县'},
-					{value: 182, label: '献县'},
-					{value: 183, label: '孟村回族自治县'},
-					{value: 184, label: '泊头市'},
-					{value: 185, label: '任丘市'},
-					{value: 186, label: '黄骅市'},
-					{value: 187, label: '河间市'}
-			]},
-			{value: 12, label: '廊坊市', children: [
-					{value: 188, label: '安次区'},
-					{value: 189, label: '广阳区'},
-					{value: 190, label: '固安县'},
-					{value: 191, label: '永清县'},
-					{value: 192, label: '香河县'},
-					{value: 193, label: '大城县'},
-					{value: 194, label: '文安县'},
-					{value: 195, label: '大厂回族自治县'},
-					{value: 196, label: '霸州市'},
-					{value: 197, label: '三河市'}
-			]},
-			{value: 13, label: '衡水市', children: [
-					{value: 198, label: '桃城区'},
-					{value: 199, label: '枣强县'},
-					{value: 200, label: '武邑县'},
-					{value: 201, label: '武强县'},
-					{value: 202, label: '饶阳县'},
-					{value: 203, label: '安平县'},
-					{value: 204, label: '故城县'},
-					{value: 205, label: '景县'},
-					{value: 206, label: '阜城县'},
-					{value: 207, label: '冀州市'},
-					{value: 208, label: '深州市'}
-			]}
-	]},
-	{value: 4, label: '山西省', children: [
-			{value: 14, label: '太原市', children: [
-					{value: 209, label: '小店区'},
-					{value: 210, label: '迎泽区'},
-					{value: 211, label: '杏花岭区'},
-					{value: 212, label: '尖草坪区'},
-					{value: 213, label: '万柏林区'},
-					{value: 214, label: '晋源区'},
-					{value: 215, label: '清徐县'},
-					{value: 216, label: '阳曲县'},
-					{value: 217, label: '娄烦县'},
-					{value: 218, label: '古交市'}
-			]},
-			{value: 15, label: '大同市', children: [
-					{value: 219, label: '城区'},
-					{value: 220, label: '矿区'},
-					{value: 221, label: '南郊区'},
-					{value: 222, label: '新荣区'},
-					{value: 223, label: '阳高县'},
-					{value: 224, label: '天镇县'},
-					{value: 225, label: '广灵县'},
-					{value: 226, label: '灵丘县'},
-					{value: 227, label: '浑源县'},
-					{value: 228, label: '左云县'},
-					{value: 229, label: '大同县'}
-			]},
-			{value: 16, label: '阳泉市', children: [
-					{value: 230, label: '城区'},
-					{value: 231, label: '矿区'},
-					{value: 232, label: '郊区'},
-					{value: 233, label: '平定县'},
-					{value: 234, label: '盂县'}
-			]},
-			{value: 17, label: '长治市', children: [
-					{value: 235, label: '城区'},
-					{value: 236, label: '郊区'},
-					{value: 237, label: '长治县'},
-					{value: 238, label: '襄垣县'},
-					{value: 239, label: '屯留县'},
-					{value: 240, label: '平顺县'},
-					{value: 241, label: '黎城县'},
-					{value: 242, label: '壶关县'},
-					{value: 243, label: '长子县'},
-					{value: 244, label: '武乡县'},
-					{value: 245, label: '沁县'},
-					{value: 246, label: '沁源县'},
-					{value: 247, label: '潞城市'}
-			]},
-			{value: 18, label: '晋城市', children: [
-					{value: 248, label: '城区'},
-					{value: 249, label: '沁水县'},
-					{value: 250, label: '阳城县'},
-					{value: 251, label: '陵川县'},
-					{value: 252, label: '泽州县'},
-					{value: 253, label: '高平市'}
-			]},
-			{value: 19, label: '朔州市', children: [
-					{value: 254, label: '朔城区'},
-					{value: 255, label: '平鲁区'},
-					{value: 256, label: '山阴县'},
-					{value: 257, label: '应县'},
-					{value: 258, label: '右玉县'},
-					{value: 259, label: '怀仁县'}
-			]},
-			{value: 20, label: '晋中市', children: [
-					{value: 260, label: '榆次区'},
-					{value: 261, label: '榆社县'},
-					{value: 262, label: '左权县'},
-					{value: 263, label: '和顺县'},
-					{value: 264, label: '昔阳县'},
-					{value: 265, label: '寿阳县'},
-					{value: 266, label: '太谷县'},
-					{value: 267, label: '祁县'},
-					{value: 268, label: '平遥县'},
-					{value: 269, label: '灵石县'},
-					{value: 270, label: '介休市'}
-			]},
-			{value: 21, label: '运城市', children: [
-					{value: 271, label: '盐湖区'},
-					{value: 272, label: '临猗县'},
-					{value: 273, label: '万荣县'},
-					{value: 274, label: '闻喜县'},
-					{value: 275, label: '稷山县'},
-					{value: 276, label: '新绛县'},
-					{value: 277, label: '绛县'},
-					{value: 278, label: '垣曲县'},
-					{value: 279, label: '夏县'},
-					{value: 280, label: '平陆县'},
-					{value: 281, label: '芮城县'},
-					{value: 282, label: '永济市'},
-					{value: 283, label: '河津市'}
-			]},
-			{value: 22, label: '忻州市', children: [
-					{value: 284, label: '忻府区'},
-					{value: 285, label: '定襄县'},
-					{value: 286, label: '五台县'},
-					{value: 287, label: '代县'},
-					{value: 288, label: '繁峙县'},
-					{value: 289, label: '宁武县'},
-					{value: 290, label: '静乐县'},
-					{value: 291, label: '神池县'},
-					{value: 292, label: '五寨县'},
-					{value: 293, label: '岢岚县'},
-					{value: 294, label: '河曲县'},
-					{value: 295, label: '保德县'},
-					{value: 296, label: '偏关县'},
-					{value: 297, label: '原平市'}
-			]},
-			{value: 23, label: '临汾市', children: [
-					{value: 298, label: '尧都区'},
-					{value: 299, label: '曲沃县'},
-					{value: 300, label: '翼城县'},
-					{value: 301, label: '襄汾县'},
-					{value: 302, label: '洪洞县'},
-					{value: 303, label: '古县'},
-					{value: 304, label: '安泽县'},
-					{value: 305, label: '浮山县'},
-					{value: 306, label: '吉县'},
-					{value: 307, label: '乡宁县'},
-					{value: 308, label: '大宁县'},
-					{value: 309, label: '隰县'},
-					{value: 310, label: '永和县'},
-					{value: 311, label: '蒲县'},
-					{value: 312, label: '汾西县'},
-					{value: 313, label: '侯马市'},
-					{value: 314, label: '霍州市'}
-			]},
-			{value: 24, label: '吕梁市', children: [
-					{value: 315, label: '离石区'},
-					{value: 316, label: '文水县'},
-					{value: 317, label: '交城县'},
-					{value: 318, label: '兴县'},
-					{value: 319, label: '临县'},
-					{value: 320, label: '柳林县'},
-					{value: 321, label: '石楼县'},
-					{value: 322, label: '岚县'},
-					{value: 323, label: '方山县'},
-					{value: 324, label: '中阳县'},
-					{value: 325, label: '交口县'},
-					{value: 326, label: '孝义市'},
-					{value: 327, label: '汾阳市'}
-			]}
-	]},
-	{value: 5, label: '内蒙古', children: [
-			{value: 25, label: '呼和浩特市', children: [
-					{value: 328, label: '新城区'},
-					{value: 329, label: '回民区'},
-					{value: 330, label: '玉泉区'},
-					{value: 331, label: '赛罕区'},
-					{value: 332, label: '土默特左旗'},
-					{value: 333, label: '托克托县'},
-					{value: 334, label: '和林格尔县'},
-					{value: 335, label: '清水河县'},
-					{value: 336, label: '武川县'}
-			]},
-			{value: 26, label: '包头市', children: [
-					{value: 337, label: '东河区'},
-					{value: 338, label: '昆都仑区'},
-					{value: 339, label: '青山区'},
-					{value: 340, label: '石拐区'},
-					{value: 341, label: '白云矿区'},
-					{value: 342, label: '九原区'},
-					{value: 343, label: '土默特右旗'},
-					{value: 344, label: '固阳县'},
-					{value: 345, label: '达尔罕茂明安联合旗'}
-			]},
-			{value: 27, label: '乌海市', children: [
-					{value: 346, label: '海勃湾区'},
-					{value: 347, label: '海南区'},
-					{value: 348, label: '乌达区'}
-			]},
-			{value: 28, label: '赤峰市', children: [
-					{value: 349, label: '红山区'},
-					{value: 350, label: '元宝山区'},
-					{value: 351, label: '松山区'},
-					{value: 352, label: '阿鲁科尔沁旗'},
-					{value: 353, label: '巴林左旗'},
-					{value: 354, label: '巴林右旗'},
-					{value: 355, label: '林西县'},
-					{value: 356, label: '克什克腾旗'},
-					{value: 357, label: '翁牛特旗'},
-					{value: 358, label: '喀喇沁旗'},
-					{value: 359, label: '宁城县'},
-					{value: 360, label: '敖汉旗'}
-			]},
-			{value: 29, label: '通辽市', children: [
-					{value: 361, label: '科尔沁区'},
-					{value: 362, label: '科尔沁左翼中旗'},
-					{value: 363, label: '科尔沁左翼后旗'},
-					{value: 364, label: '开鲁县'},
-					{value: 365, label: '库伦旗'},
-					{value: 366, label: '奈曼旗'},
-					{value: 367, label: '扎鲁特旗'},
-					{value: 368, label: '霍林郭勒市'}
-			]},
-			{value: 30, label: '鄂尔多斯市', children: [
-					{value: 369, label: '东胜区'},
-					{value: 370, label: '达拉特旗'},
-					{value: 371, label: '准格尔旗'},
-					{value: 372, label: '鄂托克前旗'},
-					{value: 373, label: '鄂托克旗'},
-					{value: 374, label: '杭锦旗'},
-					{value: 375, label: '乌审旗'},
-					{value: 376, label: '伊金霍洛旗'}
-			]},
-			{value: 31, label: '呼伦贝尔市', children: [
-					{value: 377, label: '海拉尔区'},
-					{value: 378, label: '阿荣旗'},
-					{value: 379, label: '莫力达瓦达斡尔族自治旗'},
-					{value: 380, label: '鄂伦春自治旗'},
-					{value: 381, label: '鄂温克族自治旗'},
-					{value: 382, label: '陈巴尔虎旗'},
-					{value: 383, label: '新巴尔虎左旗'},
-					{value: 384, label: '新巴尔虎右旗'},
-					{value: 385, label: '满洲里市'},
-					{value: 386, label: '牙克石市'},
-					{value: 387, label: '扎兰屯市'},
-					{value: 388, label: '额尔古纳市'},
-					{value: 389, label: '根河市'}
-			]},
-			{value: 32, label: '巴彦淖尔市', children: [
-					{value: 390, label: '临河区'},
-					{value: 391, label: '五原县'},
-					{value: 392, label: '磴口县'},
-					{value: 393, label: '乌拉特前旗'},
-					{value: 394, label: '乌拉特中旗'},
-					{value: 395, label: '乌拉特后旗'},
-					{value: 396, label: '杭锦后旗'}
-			]},
-			{value: 33, label: '乌兰察布市', children: [
-					{value: 397, label: '集宁区'},
-					{value: 398, label: '卓资县'},
-					{value: 399, label: '化德县'},
-					{value: 400, label: '商都县'},
-					{value: 401, label: '兴和县'},
-					{value: 402, label: '凉城县'},
-					{value: 403, label: '察哈尔右翼前旗'},
-					{value: 404, label: '察哈尔右翼中旗'},
-					{value: 405, label: '察哈尔右翼后旗'},
-					{value: 406, label: '四子王旗'},
-					{value: 407, label: '丰镇市'}
-			]},
-			{value: 34, label: '兴安盟', children: [
-					{value: 408, label: '乌兰浩特市'},
-					{value: 409, label: '阿尔山市'},
-					{value: 410, label: '科尔沁右翼前旗'},
-					{value: 411, label: '科尔沁右翼中旗'},
-					{value: 412, label: '扎赉特旗'},
-					{value: 413, label: '突泉县'}
-			]},
-			{value: 35, label: '锡林郭勒盟', children: [
-					{value: 414, label: '二连浩特市'},
-					{value: 415, label: '锡林浩特市'},
-					{value: 416, label: '阿巴嘎旗'},
-					{value: 417, label: '苏尼特左旗'},
-					{value: 418, label: '苏尼特右旗'},
-					{value: 419, label: '东乌珠穆沁旗'},
-					{value: 420, label: '西乌珠穆沁旗'},
-					{value: 421, label: '太仆寺旗'},
-					{value: 422, label: '镶黄旗'},
-					{value: 423, label: '正镶白旗'},
-					{value: 424, label: '正蓝旗'},
-					{value: 425, label: '多伦县'}
-			]},
-			{value: 36, label: '阿拉善盟', children: [
-					{value: 426, label: '阿拉善左旗'},
-					{value: 427, label: '阿拉善右旗'},
-					{value: 428, label: '额济纳旗'}
-			]}
-	]},
-	{value: 6, label: '辽宁省', children: [
-			{value: 37, label: '沈阳市', children: [
-					{value: 429, label: '和平区'},
-					{value: 430, label: '沈河区'},
-					{value: 431, label: '大东区'},
-					{value: 432, label: '皇姑区'},
-					{value: 433, label: '铁西区'},
-					{value: 434, label: '苏家屯区'},
-					{value: 435, label: '东陵区'},
-					{value: 436, label: '新城子区'},
-					{value: 437, label: '于洪区'},
-					{value: 438, label: '辽中县'},
-					{value: 439, label: '康平县'},
-					{value: 440, label: '法库县'},
-					{value: 441, label: '新民市'}
-			]},
-			{value: 38, label: '大连市', children: [
-					{value: 442, label: '中山区'},
-					{value: 443, label: '西岗区'},
-					{value: 444, label: '沙河口区'},
-					{value: 445, label: '甘井子区'},
-					{value: 446, label: '旅顺口区'},
-					{value: 447, label: '金州区'},
-					{value: 448, label: '长海县'},
-					{value: 449, label: '瓦房店市'},
-					{value: 450, label: '普兰店市'},
-					{value: 451, label: '庄河市'}
-			]},
-			{value: 39, label: '鞍山市', children: [
-					{value: 452, label: '铁东区'},
-					{value: 453, label: '铁西区'},
-					{value: 454, label: '立山区'},
-					{value: 455, label: '千山区'},
-					{value: 456, label: '台安县'},
-					{value: 457, label: '岫岩满族自治县'},
-					{value: 458, label: '海城市'}
-			]},
-			{value: 40, label: '抚顺市', children: [
-					{value: 459, label: '新抚区'},
-					{value: 460, label: '东洲区'},
-					{value: 461, label: '望花区'},
-					{value: 462, label: '顺城区'},
-					{value: 463, label: '抚顺县'},
-					{value: 464, label: '新宾满族自治县'},
-					{value: 465, label: '清原满族自治县'}
-			]},
-			{value: 41, label: '本溪市', children: [
-					{value: 466, label: '平山区'},
-					{value: 467, label: '溪湖区'},
-					{value: 468, label: '明山区'},
-					{value: 469, label: '南芬区'},
-					{value: 470, label: '本溪满族自治县'},
-					{value: 471, label: '桓仁满族自治县'}
-			]},
-			{value: 42, label: '丹东市', children: [
-					{value: 472, label: '元宝区'},
-					{value: 473, label: '振兴区'},
-					{value: 474, label: '振安区'},
-					{value: 475, label: '宽甸满族自治县'},
-					{value: 476, label: '东港市'},
-					{value: 477, label: '凤城市'}
-			]},
-			{value: 43, label: '锦州市', children: [
-					{value: 478, label: '古塔区'},
-					{value: 479, label: '凌河区'},
-					{value: 480, label: '太和区'},
-					{value: 481, label: '黑山县'},
-					{value: 482, label: '义县'},
-					{value: 483, label: '凌海市'},
-					{value: 484, label: '北宁市'}
-			]},
-			{value: 44, label: '营口市', children: [
-					{value: 485, label: '站前区'},
-					{value: 486, label: '西市区'},
-					{value: 487, label: '鲅鱼圈区'},
-					{value: 488, label: '老边区'},
-					{value: 489, label: '盖州市'},
-					{value: 490, label: '大石桥市'}
-			]},
-			{value: 45, label: '阜新市', children: [
-					{value: 491, label: '海州区'},
-					{value: 492, label: '新邱区'},
-					{value: 493, label: '太平区'},
-					{value: 494, label: '清河门区'},
-					{value: 495, label: '细河区'},
-					{value: 496, label: '阜新蒙古族自治县'},
-					{value: 497, label: '彰武县'}
-			]},
-			{value: 46, label: '辽阳市', children: [
-					{value: 498, label: '白塔区'},
-					{value: 499, label: '文圣区'},
-					{value: 500, label: '宏伟区'},
-					{value: 501, label: '弓长岭区'},
-					{value: 502, label: '太子河区'},
-					{value: 503, label: '辽阳县'},
-					{value: 504, label: '灯塔市'}
-			]},
-			{value: 47, label: '盘锦市', children: [
-					{value: 505, label: '双台子区'},
-					{value: 506, label: '兴隆台区'},
-					{value: 507, label: '大洼县'},
-					{value: 508, label: '盘山县'}
-			]},
-			{value: 48, label: '铁岭市', children: [
-					{value: 509, label: '银州区'},
-					{value: 510, label: '清河区'},
-					{value: 511, label: '铁岭县'},
-					{value: 512, label: '西丰县'},
-					{value: 513, label: '昌图县'},
-					{value: 514, label: '调兵山市'},
-					{value: 515, label: '开原市'}
-			]},
-			{value: 49, label: '朝阳市', children: [
-					{value: 516, label: '双塔区'},
-					{value: 517, label: '龙城区'},
-					{value: 518, label: '朝阳县'},
-					{value: 519, label: '建平县'},
-					{value: 520, label: '喀喇沁左翼蒙古族自治县'},
-					{value: 521, label: '北票市'},
-					{value: 522, label: '凌源市'}
-			]},
-			{value: 50, label: '葫芦岛市', children: [
-					{value: 523, label: '连山区'},
-					{value: 524, label: '龙港区'},
-					{value: 525, label: '南票区'},
-					{value: 526, label: '绥中县'},
-					{value: 527, label: '建昌县'},
-					{value: 528, label: '兴城市'}
-			]}
-	]},
-	{value: 7, label: '吉林省', children: [
-			{value: 51, label: '长春市', children: [
-					{value: 529, label: '南关区'},
-					{value: 530, label: '宽城区'},
-					{value: 531, label: '朝阳区'},
-					{value: 532, label: '二道区'},
-					{value: 533, label: '绿园区'},
-					{value: 534, label: '双阳区'},
-					{value: 535, label: '农安县'},
-					{value: 536, label: '九台市'},
-					{value: 537, label: '榆树市'},
-					{value: 538, label: '德惠市'}
-			]},
-			{value: 52, label: '吉林市', children: [
-					{value: 539, label: '昌邑区'},
-					{value: 540, label: '龙潭区'},
-					{value: 541, label: '船营区'},
-					{value: 542, label: '丰满区'},
-					{value: 543, label: '永吉县'},
-					{value: 544, label: '蛟河市'},
-					{value: 545, label: '桦甸市'},
-					{value: 546, label: '舒兰市'},
-					{value: 547, label: '磐石市'}
-			]},
-			{value: 53, label: '四平市', children: [
-					{value: 548, label: '铁西区'},
-					{value: 549, label: '铁东区'},
-					{value: 550, label: '梨树县'},
-					{value: 551, label: '伊通满族自治县'},
-					{value: 552, label: '公主岭市'},
-					{value: 553, label: '双辽市'}
-			]},
-			{value: 54, label: '辽源市', children: [
-					{value: 554, label: '龙山区'},
-					{value: 555, label: '西安区'},
-					{value: 556, label: '东丰县'},
-					{value: 557, label: '东辽县'}
-			]},
-			{value: 55, label: '通化市', children: [
-					{value: 558, label: '东昌区'},
-					{value: 559, label: '二道江区'},
-					{value: 560, label: '通化县'},
-					{value: 561, label: '辉南县'},
-					{value: 562, label: '柳河县'},
-					{value: 563, label: '梅河口市'},
-					{value: 564, label: '集安市'}
-			]},
-			{value: 56, label: '白山市', children: [
-					{value: 565, label: '八道江区'},
-					{value: 566, label: '抚松县'},
-					{value: 567, label: '靖宇县'},
-					{value: 568, label: '长白朝鲜族自治县'},
-					{value: 569, label: '江源县'},
-					{value: 570, label: '临江市'}
-			]},
-			{value: 57, label: '松原市', children: [
-					{value: 571, label: '宁江区'},
-					{value: 572, label: '前郭尔罗斯蒙古族自治县'},
-					{value: 573, label: '长岭县'},
-					{value: 574, label: '乾安县'},
-					{value: 575, label: '扶余县'}
-			]},
-			{value: 58, label: '白城市', children: [
-					{value: 576, label: '洮北区'},
-					{value: 577, label: '镇赉县'},
-					{value: 578, label: '通榆县'},
-					{value: 579, label: '洮南市'},
-					{value: 580, label: '大安市'}
-			]},
-			{value: 59, label: '延边', children: [
-					{value: 581, label: '延吉市'},
-					{value: 582, label: '图们市'},
-					{value: 583, label: '敦化市'},
-					{value: 584, label: '珲春市'},
-					{value: 585, label: '龙井市'},
-					{value: 586, label: '和龙市'},
-					{value: 587, label: '汪清县'},
-					{value: 588, label: '安图县'}
-			]}
-	]},
-	{value: 8, label: '黑龙江省', children: [
-			{value: 60, label: '哈尔滨市', children: [
-					{value: 589, label: '道里区'},
-					{value: 590, label: '南岗区'},
-					{value: 591, label: '道外区'},
-					{value: 592, label: '香坊区'},
-					{value: 593, label: '动力区'},
-					{value: 594, label: '平房区'},
-					{value: 595, label: '松北区'},
-					{value: 596, label: '呼兰区'},
-					{value: 597, label: '依兰县'},
-					{value: 598, label: '方正县'},
-					{value: 599, label: '宾县'},
-					{value: 600, label: '巴彦县'},
-					{value: 601, label: '木兰县'},
-					{value: 602, label: '通河县'},
-					{value: 603, label: '延寿县'},
-					{value: 604, label: '阿城市'},
-					{value: 605, label: '双城市'},
-					{value: 606, label: '尚志市'},
-					{value: 607, label: '五常市'}
-			]},
-			{value: 61, label: '齐齐哈尔市', children: [
-					{value: 608, label: '龙沙区'},
-					{value: 609, label: '建华区'},
-					{value: 610, label: '铁锋区'},
-					{value: 611, label: '昂昂溪区'},
-					{value: 612, label: '富拉尔基区'},
-					{value: 613, label: '碾子山区'},
-					{value: 614, label: '梅里斯达斡尔族区'},
-					{value: 615, label: '龙江县'},
-					{value: 616, label: '依安县'},
-					{value: 617, label: '泰来县'},
-					{value: 618, label: '甘南县'},
-					{value: 619, label: '富裕县'},
-					{value: 620, label: '克山县'},
-					{value: 621, label: '克东县'},
-					{value: 622, label: '拜泉县'},
-					{value: 623, label: '讷河市'}
-			]},
-			{value: 62, label: '鸡西市', children: [
-					{value: 624, label: '鸡冠区'},
-					{value: 625, label: '恒山区'},
-					{value: 626, label: '滴道区'},
-					{value: 627, label: '梨树区'},
-					{value: 628, label: '城子河区'},
-					{value: 629, label: '麻山区'},
-					{value: 630, label: '鸡东县'},
-					{value: 631, label: '虎林市'},
-					{value: 632, label: '密山市'}
-			]},
-			{value: 63, label: '鹤岗市', children: [
-					{value: 633, label: '向阳区'},
-					{value: 634, label: '工农区'},
-					{value: 635, label: '南山区'},
-					{value: 636, label: '兴安区'},
-					{value: 637, label: '东山区'},
-					{value: 638, label: '兴山区'},
-					{value: 639, label: '萝北县'},
-					{value: 640, label: '绥滨县'}
-			]},
-			{value: 64, label: '双鸭山市', children: [
-					{value: 641, label: '尖山区'},
-					{value: 642, label: '岭东区'},
-					{value: 643, label: '四方台区'},
-					{value: 644, label: '宝山区'},
-					{value: 645, label: '集贤县'},
-					{value: 646, label: '友谊县'},
-					{value: 647, label: '宝清县'},
-					{value: 648, label: '饶河县'}
-			]},
-			{value: 65, label: '大庆市', children: [
-					{value: 649, label: '萨尔图区'},
-					{value: 650, label: '龙凤区'},
-					{value: 651, label: '让胡路区'},
-					{value: 652, label: '红岗区'},
-					{value: 653, label: '大同区'},
-					{value: 654, label: '肇州县'},
-					{value: 655, label: '肇源县'},
-					{value: 656, label: '林甸县'},
-					{value: 657, label: '杜尔伯特蒙古族自治县'}
-			]},
-			{value: 66, label: '伊春市', children: [
-					{value: 658, label: '伊春区'},
-					{value: 659, label: '南岔区'},
-					{value: 660, label: '友好区'},
-					{value: 661, label: '西林区'},
-					{value: 662, label: '翠峦区'},
-					{value: 663, label: '新青区'},
-					{value: 664, label: '美溪区'},
-					{value: 665, label: '金山屯区'},
-					{value: 666, label: '五营区'},
-					{value: 667, label: '乌马河区'},
-					{value: 668, label: '汤旺河区'},
-					{value: 669, label: '带岭区'},
-					{value: 670, label: '乌伊岭区'},
-					{value: 671, label: '红星区'},
-					{value: 672, label: '上甘岭区'},
-					{value: 673, label: '嘉荫县'},
-					{value: 674, label: '铁力市'}
-			]},
-			{value: 67, label: '佳木斯市', children: [
-					{value: 675, label: '永红区'},
-					{value: 676, label: '向阳区'},
-					{value: 677, label: '前进区'},
-					{value: 678, label: '东风区'},
-					{value: 679, label: '郊区'},
-					{value: 680, label: '桦南县'},
-					{value: 681, label: '桦川县'},
-					{value: 682, label: '汤原县'},
-					{value: 683, label: '抚远县'},
-					{value: 684, label: '同江市'},
-					{value: 685, label: '富锦市'}
-			]},
-			{value: 68, label: '七台河市', children: [
-					{value: 686, label: '新兴区'},
-					{value: 687, label: '桃山区'},
-					{value: 688, label: '茄子河区'},
-					{value: 689, label: '勃利县'}
-			]},
-			{value: 69, label: '牡丹江市', children: [
-					{value: 690, label: '东安区'},
-					{value: 691, label: '阳明区'},
-					{value: 692, label: '爱民区'},
-					{value: 693, label: '西安区'},
-					{value: 694, label: '东宁县'},
-					{value: 695, label: '林口县'},
-					{value: 696, label: '绥芬河市'},
-					{value: 697, label: '海林市'},
-					{value: 698, label: '宁安市'},
-					{value: 699, label: '穆棱市'}
-			]},
-			{value: 70, label: '黑河市', children: [
-					{value: 700, label: '爱辉区'},
-					{value: 701, label: '嫩江县'},
-					{value: 702, label: '逊克县'},
-					{value: 703, label: '孙吴县'},
-					{value: 704, label: '北安市'},
-					{value: 705, label: '五大连池市'}
-			]},
-			{value: 71, label: '绥化市', children: [
-					{value: 706, label: '北林区'},
-					{value: 707, label: '望奎县'},
-					{value: 708, label: '兰西县'},
-					{value: 709, label: '青冈县'},
-					{value: 710, label: '庆安县'},
-					{value: 711, label: '明水县'},
-					{value: 712, label: '绥棱县'},
-					{value: 713, label: '安达市'},
-					{value: 714, label: '肇东市'},
-					{value: 715, label: '海伦市'}
-			]},
-			{value: 72, label: '大兴安岭地区', children: [
-					{value: 716, label: '呼玛县'},
-					{value: 717, label: '塔河县'},
-					{value: 718, label: '漠河县'}
-			]}
-	]},
-	{value: 9, label: '上海市', children: [
-			{value: 73, label: '上海市', children: [
-					{value: 719, label: '黄浦区'},
-					{value: 720, label: '卢湾区'},
-					{value: 721, label: '徐汇区'},
-					{value: 722, label: '长宁区'},
-					{value: 723, label: '静安区'},
-					{value: 724, label: '普陀区'},
-					{value: 725, label: '闸北区'},
-					{value: 726, label: '虹口区'},
-					{value: 727, label: '杨浦区'},
-					{value: 728, label: '闵行区'},
-					{value: 729, label: '宝山区'},
-					{value: 730, label: '嘉定区'},
-					{value: 731, label: '浦东新区'},
-					{value: 732, label: '金山区'},
-					{value: 733, label: '松江区'},
-					{value: 734, label: '青浦区'},
-					{value: 735, label: '南汇区'},
-					{value: 736, label: '奉贤区'},
-					{value: 737, label: '崇明县'}
-			]}
-	]},
-	{value: 10, label: '江苏省', children: [
-			{value: 74, label: '南京市', children: [
-					{value: 738, label: '玄武区'},
-					{value: 739, label: '白下区'},
-					{value: 740, label: '秦淮区'},
-					{value: 741, label: '建邺区'},
-					{value: 742, label: '鼓楼区'},
-					{value: 743, label: '下关区'},
-					{value: 744, label: '浦口区'},
-					{value: 745, label: '栖霞区'},
-					{value: 746, label: '雨花台区'},
-					{value: 747, label: '江宁区'},
-					{value: 748, label: '六合区'},
-					{value: 749, label: '溧水县'},
-					{value: 750, label: '高淳县'}
-			]},
-			{value: 75, label: '无锡市', children: [
-					{value: 751, label: '崇安区'},
-					{value: 752, label: '南长区'},
-					{value: 753, label: '北塘区'},
-					{value: 754, label: '锡山区'},
-					{value: 755, label: '惠山区'},
-					{value: 756, label: '滨湖区'},
-					{value: 757, label: '江阴市'},
-					{value: 758, label: '宜兴市'}
-			]},
-			{value: 76, label: '徐州市', children: [
-					{value: 759, label: '鼓楼区'},
-					{value: 760, label: '云龙区'},
-					{value: 761, label: '九里区'},
-					{value: 762, label: '贾汪区'},
-					{value: 763, label: '泉山区'},
-					{value: 764, label: '丰县'},
-					{value: 765, label: '沛县'},
-					{value: 766, label: '铜山县'},
-					{value: 767, label: '睢宁县'},
-					{value: 768, label: '新沂市'},
-					{value: 769, label: '邳州市'}
-			]},
-			{value: 77, label: '常州市', children: [
-					{value: 770, label: '天宁区'},
-					{value: 771, label: '钟楼区'},
-					{value: 772, label: '戚墅堰区'},
-					{value: 773, label: '新北区'},
-					{value: 774, label: '武进区'},
-					{value: 775, label: '溧阳市'},
-					{value: 776, label: '金坛市'}
-			]},
-			{value: 78, label: '苏州市', children: [
-					{value: 777, label: '沧浪区'},
-					{value: 778, label: '平江区'},
-					{value: 779, label: '金阊区'},
-					{value: 780, label: '虎丘区'},
-					{value: 781, label: '吴中区'},
-					{value: 782, label: '相城区'},
-					{value: 783, label: '常熟市'},
-					{value: 784, label: '张家港市'},
-					{value: 785, label: '昆山市'},
-					{value: 786, label: '吴江市'},
-					{value: 787, label: '太仓市'}
-			]},
-			{value: 79, label: '南通市', children: [
-					{value: 788, label: '崇川区'},
-					{value: 789, label: '港闸区'},
-					{value: 790, label: '海安县'},
-					{value: 791, label: '如东县'},
-					{value: 792, label: '启东市'},
-					{value: 793, label: '如皋市'},
-					{value: 794, label: '通州市'},
-					{value: 795, label: '海门市'}
-			]},
-			{value: 80, label: '连云港市', children: [
-					{value: 796, label: '连云区'},
-					{value: 797, label: '新浦区'},
-					{value: 798, label: '海州区'},
-					{value: 799, label: '赣榆县'},
-					{value: 800, label: '东海县'},
-					{value: 801, label: '灌云县'},
-					{value: 802, label: '灌南县'}
-			]},
-			{value: 81, label: '淮安市', children: [
-					{value: 803, label: '清河区'},
-					{value: 804, label: '楚州区'},
-					{value: 805, label: '淮阴区'},
-					{value: 806, label: '清浦区'},
-					{value: 807, label: '涟水县'},
-					{value: 808, label: '洪泽县'},
-					{value: 809, label: '盱眙县'},
-					{value: 810, label: '金湖县'}
-			]},
-			{value: 82, label: '盐城市', children: [
-					{value: 811, label: '亭湖区'},
-					{value: 812, label: '盐都区'},
-					{value: 813, label: '响水县'},
-					{value: 814, label: '滨海县'},
-					{value: 815, label: '阜宁县'},
-					{value: 816, label: '射阳县'},
-					{value: 817, label: '建湖县'},
-					{value: 818, label: '东台市'},
-					{value: 819, label: '大丰市'}
-			]},
-			{value: 83, label: '扬州市', children: [
-					{value: 820, label: '广陵区'},
-					{value: 821, label: '邗江区'},
-					{value: 822, label: '维扬区'},
-					{value: 823, label: '宝应县'},
-					{value: 824, label: '仪征市'},
-					{value: 825, label: '高邮市'},
-					{value: 826, label: '江都市'}
-			]},
-			{value: 84, label: '镇江市', children: [
-					{value: 827, label: '京口区'},
-					{value: 828, label: '润州区'},
-					{value: 829, label: '丹徒区'},
-					{value: 830, label: '丹阳市'},
-					{value: 831, label: '扬中市'},
-					{value: 832, label: '句容市'}
-			]},
-			{value: 85, label: '泰州市', children: [
-					{value: 833, label: '海陵区'},
-					{value: 834, label: '高港区'},
-					{value: 835, label: '兴化市'},
-					{value: 836, label: '靖江市'},
-					{value: 837, label: '泰兴市'},
-					{value: 838, label: '姜堰市'}
-			]},
-			{value: 86, label: '宿迁市', children: [
-					{value: 839, label: '宿城区'},
-					{value: 840, label: '宿豫区'},
-					{value: 841, label: '沭阳县'},
-					{value: 842, label: '泗阳县'},
-					{value: 843, label: '泗洪县'}
-			]}
-	]},
-	{value: 11, label: '浙江省', children: [
-			{value: 87, label: '杭州市', children: [
-					{value: 844, label: '上城区'},
-					{value: 845, label: '下城区'},
-					{value: 846, label: '江干区'},
-					{value: 847, label: '拱墅区'},
-					{value: 848, label: '西湖区'},
-					{value: 849, label: '滨江区'},
-					{value: 850, label: '萧山区'},
-					{value: 851, label: '余杭区'},
-					{value: 852, label: '桐庐县'},
-					{value: 853, label: '淳安县'},
-					{value: 854, label: '建德市'},
-					{value: 855, label: '富阳市'},
-					{value: 856, label: '临安市'}
-			]},
-			{value: 88, label: '宁波市', children: [
-					{value: 857, label: '海曙区'},
-					{value: 858, label: '江东区'},
-					{value: 859, label: '江北区'},
-					{value: 860, label: '北仑区'},
-					{value: 861, label: '镇海区'},
-					{value: 862, label: '鄞州区'},
-					{value: 863, label: '象山县'},
-					{value: 864, label: '宁海县'},
-					{value: 865, label: '余姚市'},
-					{value: 866, label: '慈溪市'},
-					{value: 867, label: '奉化市'}
-			]},
-			{value: 89, label: '温州市', children: [
-					{value: 868, label: '鹿城区'},
-					{value: 869, label: '龙湾区'},
-					{value: 870, label: '瓯海区'},
-					{value: 871, label: '洞头县'},
-					{value: 872, label: '永嘉县'},
-					{value: 873, label: '平阳县'},
-					{value: 874, label: '苍南县'},
-					{value: 875, label: '文成县'},
-					{value: 876, label: '泰顺县'},
-					{value: 877, label: '瑞安市'},
-					{value: 878, label: '乐清市'}
-			]},
-			{value: 90, label: '嘉兴市', children: [
-					{value: 879, label: '秀城区'},
-					{value: 880, label: '秀洲区'},
-					{value: 881, label: '嘉善县'},
-					{value: 882, label: '海盐县'},
-					{value: 883, label: '海宁市'},
-					{value: 884, label: '平湖市'},
-					{value: 885, label: '桐乡市'}
-			]},
-			{value: 91, label: '湖州市', children: [
-					{value: 886, label: '吴兴区'},
-					{value: 887, label: '南浔区'},
-					{value: 888, label: '德清县'},
-					{value: 889, label: '长兴县'},
-					{value: 890, label: '安吉县'}
-			]},
-			{value: 92, label: '绍兴市', children: [
-					{value: 891, label: '越城区'},
-					{value: 892, label: '绍兴县'},
-					{value: 893, label: '新昌县'},
-					{value: 894, label: '诸暨市'},
-					{value: 895, label: '上虞市'},
-					{value: 896, label: '嵊州市'}
-			]},
-			{value: 93, label: '金华市', children: [
-					{value: 897, label: '婺城区'},
-					{value: 898, label: '金东区'},
-					{value: 899, label: '武义县'},
-					{value: 900, label: '浦江县'},
-					{value: 901, label: '磐安县'},
-					{value: 902, label: '兰溪市'},
-					{value: 903, label: '义乌市'},
-					{value: 904, label: '东阳市'},
-					{value: 905, label: '永康市'}
-			]},
-			{value: 94, label: '衢州市', children: [
-					{value: 906, label: '柯城区'},
-					{value: 907, label: '衢江区'},
-					{value: 908, label: '常山县'},
-					{value: 909, label: '开化县'},
-					{value: 910, label: '龙游县'},
-					{value: 911, label: '江山市'}
-			]},
-			{value: 95, label: '舟山市', children: [
-					{value: 912, label: '定海区'},
-					{value: 913, label: '普陀区'},
-					{value: 914, label: '岱山县'},
-					{value: 915, label: '嵊泗县'}
-			]},
-			{value: 96, label: '台州市', children: [
-					{value: 916, label: '椒江区'},
-					{value: 917, label: '黄岩区'},
-					{value: 918, label: '路桥区'},
-					{value: 919, label: '玉环县'},
-					{value: 920, label: '三门县'},
-					{value: 921, label: '天台县'},
-					{value: 922, label: '仙居县'},
-					{value: 923, label: '温岭市'},
-					{value: 924, label: '临海市'}
-			]},
-			{value: 97, label: '丽水市', children: [
-					{value: 925, label: '莲都区'},
-					{value: 926, label: '青田县'},
-					{value: 927, label: '缙云县'},
-					{value: 928, label: '遂昌县'},
-					{value: 929, label: '松阳县'},
-					{value: 930, label: '云和县'},
-					{value: 931, label: '庆元县'},
-					{value: 932, label: '景宁畲族自治县'},
-					{value: 933, label: '龙泉市'}
-			]}
-	]},
-	{value: 12, label: '安徽省', children: [
-			{value: 98, label: '合肥市', children: [
-					{value: 934, label: '瑶海区'},
-					{value: 935, label: '庐阳区'},
-					{value: 936, label: '蜀山区'},
-					{value: 937, label: '包河区'},
-					{value: 938, label: '长丰县'},
-					{value: 939, label: '肥东县'},
-					{value: 940, label: '肥西县'}
-			]},
-			{value: 99, label: '芜湖市', children: [
-					{value: 941, label: '镜湖区'},
-					{value: 942, label: '马塘区'},
-					{value: 943, label: '新芜区'},
-					{value: 944, label: '鸠江区'},
-					{value: 945, label: '芜湖县'},
-					{value: 946, label: '繁昌县'},
-					{value: 947, label: '南陵县'}
-			]},
-			{value: 100, label: '蚌埠市', children: [
-					{value: 948, label: '龙子湖区'},
-					{value: 949, label: '蚌山区'},
-					{value: 950, label: '禹会区'},
-					{value: 951, label: '淮上区'},
-					{value: 952, label: '怀远县'},
-					{value: 953, label: '五河县'},
-					{value: 954, label: '固镇县'}
-			]},
-			{value: 101, label: '淮南市', children: [
-					{value: 955, label: '大通区'},
-					{value: 956, label: '田家庵区'},
-					{value: 957, label: '谢家集区'},
-					{value: 958, label: '八公山区'},
-					{value: 959, label: '潘集区'},
-					{value: 960, label: '凤台县'}
-			]},
-			{value: 102, label: '马鞍山市', children: [
-					{value: 961, label: '金家庄区'},
-					{value: 962, label: '花山区'},
-					{value: 963, label: '雨山区'},
-					{value: 964, label: '当涂县'}
-			]},
-			{value: 103, label: '淮北市', children: [
-					{value: 965, label: '杜集区'},
-					{value: 966, label: '相山区'},
-					{value: 967, label: '烈山区'},
-					{value: 968, label: '濉溪县'}
-			]},
-			{value: 104, label: '铜陵市', children: [
-					{value: 969, label: '铜官山区'},
-					{value: 970, label: '狮子山区'},
-					{value: 971, label: '郊区'},
-					{value: 972, label: '铜陵县'}
-			]},
-			{value: 105, label: '安庆市', children: [
-					{value: 973, label: '迎江区'},
-					{value: 974, label: '大观区'},
-					{value: 975, label: '郊区'},
-					{value: 976, label: '怀宁县'},
-					{value: 977, label: '枞阳县'},
-					{value: 978, label: '潜山县'},
-					{value: 979, label: '太湖县'},
-					{value: 980, label: '宿松县'},
-					{value: 981, label: '望江县'},
-					{value: 982, label: '岳西县'},
-					{value: 983, label: '桐城市'}
-			]},
-			{value: 106, label: '黄山市', children: [
-					{value: 984, label: '屯溪区'},
-					{value: 985, label: '黄山区'},
-					{value: 986, label: '徽州区'},
-					{value: 987, label: '歙县'},
-					{value: 988, label: '休宁县'},
-					{value: 989, label: '黟县'},
-					{value: 990, label: '祁门县'}
-			]},
-			{value: 107, label: '滁州市', children: [
-					{value: 991, label: '琅琊区'},
-					{value: 992, label: '南谯区'},
-					{value: 993, label: '来安县'},
-					{value: 994, label: '全椒县'},
-					{value: 995, label: '定远县'},
-					{value: 996, label: '凤阳县'},
-					{value: 997, label: '天长市'},
-					{value: 998, label: '明光市'}
-			]},
-			{value: 108, label: '阜阳市', children: [
-					{value: 999, label: '颍州区'},
-					{value: 1000, label: '颍东区'},
-					{value: 1001, label: '颍泉区'},
-					{value: 1002, label: '临泉县'},
-					{value: 1003, label: '太和县'},
-					{value: 1004, label: '阜南县'},
-					{value: 1005, label: '颍上县'},
-					{value: 1006, label: '界首市'}
-			]},
-			{value: 109, label: '宿州市', children: [
-					{value: 1007, label: '埇桥区'},
-					{value: 1008, label: '砀山县'},
-					{value: 1009, label: '萧县'},
-					{value: 1010, label: '灵璧县'},
-					{value: 1011, label: '泗县'}
-			]},
-			{value: 110, label: '巢湖市', children: [
-					{value: 1012, label: '居巢区'},
-					{value: 1013, label: '庐江县'},
-					{value: 1014, label: '无为县'},
-					{value: 1015, label: '含山县'},
-					{value: 1016, label: '和县'}
-			]},
-			{value: 111, label: '六安市', children: [
-					{value: 1017, label: '金安区'},
-					{value: 1018, label: '裕安区'},
-					{value: 1019, label: '寿县'},
-					{value: 1020, label: '霍邱县'},
-					{value: 1021, label: '舒城县'},
-					{value: 1022, label: '金寨县'},
-					{value: 1023, label: '霍山县'}
-			]},
-			{value: 112, label: '亳州市', children: [
-					{value: 1024, label: '谯城区'},
-					{value: 1025, label: '涡阳县'},
-					{value: 1026, label: '蒙城县'},
-					{value: 1027, label: '利辛县'}
-			]},
-			{value: 113, label: '池州市', children: [
-					{value: 1028, label: '贵池区'},
-					{value: 1029, label: '东至县'},
-					{value: 1030, label: '石台县'},
-					{value: 1031, label: '青阳县'}
-			]},
-			{value: 114, label: '宣城市', children: [
-					{value: 1032, label: '宣州区'},
-					{value: 1033, label: '郎溪县'},
-					{value: 1034, label: '广德县'},
-					{value: 1035, label: '泾县'},
-					{value: 1036, label: '绩溪县'},
-					{value: 1037, label: '旌德县'},
-					{value: 1038, label: '宁国市'}
-			]}
-	]},
-	{value: 13, label: '福建省', children: [
-			{value: 115, label: '福州市', children: [
-					{value: 1039, label: '鼓楼区'},
-					{value: 1040, label: '台江区'},
-					{value: 1041, label: '仓山区'},
-					{value: 1042, label: '马尾区'},
-					{value: 1043, label: '晋安区'},
-					{value: 1044, label: '闽侯县'},
-					{value: 1045, label: '连江县'},
-					{value: 1046, label: '罗源县'},
-					{value: 1047, label: '闽清县'},
-					{value: 1048, label: '永泰县'},
-					{value: 1049, label: '平潭县'},
-					{value: 1050, label: '福清市'},
-					{value: 1051, label: '长乐市'}
-			]},
-			{value: 116, label: '厦门市', children: [
-					{value: 1052, label: '思明区'},
-					{value: 1053, label: '海沧区'},
-					{value: 1054, label: '湖里区'},
-					{value: 1055, label: '集美区'},
-					{value: 1056, label: '同安区'},
-					{value: 1057, label: '翔安区'}
-			]},
-			{value: 117, label: '莆田市', children: [
-					{value: 1058, label: '城厢区'},
-					{value: 1059, label: '涵江区'},
-					{value: 1060, label: '荔城区'},
-					{value: 1061, label: '秀屿区'},
-					{value: 1062, label: '仙游县'}
-			]},
-			{value: 118, label: '三明市', children: [
-					{value: 1063, label: '梅列区'},
-					{value: 1064, label: '三元区'},
-					{value: 1065, label: '明溪县'},
-					{value: 1066, label: '清流县'},
-					{value: 1067, label: '宁化县'},
-					{value: 1068, label: '大田县'},
-					{value: 1069, label: '尤溪县'},
-					{value: 1070, label: '沙县'},
-					{value: 1071, label: '将乐县'},
-					{value: 1072, label: '泰宁县'},
-					{value: 1073, label: '建宁县'},
-					{value: 1074, label: '永安市'}
-			]},
-			{value: 119, label: '泉州市', children: [
-					{value: 1075, label: '鲤城区'},
-					{value: 1076, label: '丰泽区'},
-					{value: 1077, label: '洛江区'},
-					{value: 1078, label: '泉港区'},
-					{value: 1079, label: '惠安县'},
-					{value: 1080, label: '安溪县'},
-					{value: 1081, label: '永春县'},
-					{value: 1082, label: '德化县'},
-					{value: 1083, label: '金门县'},
-					{value: 1084, label: '石狮市'},
-					{value: 1085, label: '晋江市'},
-					{value: 1086, label: '南安市'}
-			]},
-			{value: 120, label: '漳州市', children: [
-					{value: 1087, label: '芗城区'},
-					{value: 1088, label: '龙文区'},
-					{value: 1089, label: '云霄县'},
-					{value: 1090, label: '漳浦县'},
-					{value: 1091, label: '诏安县'},
-					{value: 1092, label: '长泰县'},
-					{value: 1093, label: '东山县'},
-					{value: 1094, label: '南靖县'},
-					{value: 1095, label: '平和县'},
-					{value: 1096, label: '华安县'},
-					{value: 1097, label: '龙海市'}
-			]},
-			{value: 121, label: '南平市', children: [
-					{value: 1098, label: '延平区'},
-					{value: 1099, label: '顺昌县'},
-					{value: 1100, label: '浦城县'},
-					{value: 1101, label: '光泽县'},
-					{value: 1102, label: '松溪县'},
-					{value: 1103, label: '政和县'},
-					{value: 1104, label: '邵武市'},
-					{value: 1105, label: '武夷山市'},
-					{value: 1106, label: '建瓯市'},
-					{value: 1107, label: '建阳市'}
-			]},
-			{value: 122, label: '龙岩市', children: [
-					{value: 1108, label: '新罗区'},
-					{value: 1109, label: '长汀县'},
-					{value: 1110, label: '永定县'},
-					{value: 1111, label: '上杭县'},
-					{value: 1112, label: '武平县'},
-					{value: 1113, label: '连城县'},
-					{value: 1114, label: '漳平市'}
-			]},
-			{value: 123, label: '宁德市', children: [
-					{value: 1115, label: '蕉城区'},
-					{value: 1116, label: '霞浦县'},
-					{value: 1117, label: '古田县'},
-					{value: 1118, label: '屏南县'},
-					{value: 1119, label: '寿宁县'},
-					{value: 1120, label: '周宁县'},
-					{value: 1121, label: '柘荣县'},
-					{value: 1122, label: '福安市'},
-					{value: 1123, label: '福鼎市'}
-			]}
-	]},
-	{value: 14, label: '江西省', children: [
-			{value: 124, label: '南昌市', children: [
-					{value: 1124, label: '东湖区'},
-					{value: 1125, label: '西湖区'},
-					{value: 1126, label: '青云谱区'},
-					{value: 1127, label: '湾里区'},
-					{value: 1128, label: '青山湖区'},
-					{value: 1129, label: '南昌县'},
-					{value: 1130, label: '新建县'},
-					{value: 1131, label: '安义县'},
-					{value: 1132, label: '进贤县'}
-			]},
-			{value: 125, label: '景德镇市', children: [
-					{value: 1133, label: '昌江区'},
-					{value: 1134, label: '珠山区'},
-					{value: 1135, label: '浮梁县'},
-					{value: 1136, label: '乐平市'}
-			]},
-			{value: 126, label: '萍乡市', children: [
-					{value: 1137, label: '安源区'},
-					{value: 1138, label: '湘东区'},
-					{value: 1139, label: '莲花县'},
-					{value: 1140, label: '上栗县'},
-					{value: 1141, label: '芦溪县'}
-			]},
-			{value: 127, label: '九江市', children: [
-					{value: 1142, label: '庐山区'},
-					{value: 1143, label: '浔阳区'},
-					{value: 1144, label: '九江县'},
-					{value: 1145, label: '武宁县'},
-					{value: 1146, label: '修水县'},
-					{value: 1147, label: '永修县'},
-					{value: 1148, label: '德安县'},
-					{value: 1149, label: '星子县'},
-					{value: 1150, label: '都昌县'},
-					{value: 1151, label: '湖口县'},
-					{value: 1152, label: '彭泽县'},
-					{value: 1153, label: '瑞昌市'}
-			]},
-			{value: 128, label: '新余市', children: [
-					{value: 1154, label: '渝水区'},
-					{value: 1155, label: '分宜县'}
-			]},
-			{value: 129, label: '鹰潭市', children: [
-					{value: 1156, label: '月湖区'},
-					{value: 1157, label: '余江县'},
-					{value: 1158, label: '贵溪市'}
-			]},
-			{value: 130, label: '赣州市', children: [
-					{value: 1159, label: '章贡区'},
-					{value: 1160, label: '赣县'},
-					{value: 1161, label: '信丰县'},
-					{value: 1162, label: '大余县'},
-					{value: 1163, label: '上犹县'},
-					{value: 1164, label: '崇义县'},
-					{value: 1165, label: '安远县'},
-					{value: 1166, label: '龙南县'},
-					{value: 1167, label: '定南县'},
-					{value: 1168, label: '全南县'},
-					{value: 1169, label: '宁都县'},
-					{value: 1170, label: '于都县'},
-					{value: 1171, label: '兴国县'},
-					{value: 1172, label: '会昌县'},
-					{value: 1173, label: '寻乌县'},
-					{value: 1174, label: '石城县'},
-					{value: 1175, label: '瑞金市'},
-					{value: 1176, label: '南康市'}
-			]},
-			{value: 131, label: '吉安市', children: [
-					{value: 1177, label: '吉州区'},
-					{value: 1178, label: '青原区'},
-					{value: 1179, label: '吉安县'},
-					{value: 1180, label: '吉水县'},
-					{value: 1181, label: '峡江县'},
-					{value: 1182, label: '新干县'},
-					{value: 1183, label: '永丰县'},
-					{value: 1184, label: '泰和县'},
-					{value: 1185, label: '遂川县'},
-					{value: 1186, label: '万安县'},
-					{value: 1187, label: '安福县'},
-					{value: 1188, label: '永新县'},
-					{value: 1189, label: '井冈山市'}
-			]},
-			{value: 132, label: '宜春市', children: [
-					{value: 1190, label: '袁州区'},
-					{value: 1191, label: '奉新县'},
-					{value: 1192, label: '万载县'},
-					{value: 1193, label: '上高县'},
-					{value: 1194, label: '宜丰县'},
-					{value: 1195, label: '靖安县'},
-					{value: 1196, label: '铜鼓县'},
-					{value: 1197, label: '丰城市'},
-					{value: 1198, label: '樟树市'},
-					{value: 1199, label: '高安市'}
-			]},
-			{value: 133, label: '抚州市', children: [
-					{value: 1200, label: '临川区'},
-					{value: 1201, label: '南城县'},
-					{value: 1202, label: '黎川县'},
-					{value: 1203, label: '南丰县'},
-					{value: 1204, label: '崇仁县'},
-					{value: 1205, label: '乐安县'},
-					{value: 1206, label: '宜黄县'},
-					{value: 1207, label: '金溪县'},
-					{value: 1208, label: '资溪县'},
-					{value: 1209, label: '东乡县'},
-					{value: 1210, label: '广昌县'}
-			]},
-			{value: 134, label: '上饶市', children: [
-					{value: 1211, label: '信州区'},
-					{value: 1212, label: '上饶县'},
-					{value: 1213, label: '广丰县'},
-					{value: 1214, label: '玉山县'},
-					{value: 1215, label: '铅山县'},
-					{value: 1216, label: '横峰县'},
-					{value: 1217, label: '弋阳县'},
-					{value: 1218, label: '余干县'},
-					{value: 1219, label: '鄱阳县'},
-					{value: 1220, label: '万年县'},
-					{value: 1221, label: '婺源县'},
-					{value: 1222, label: '德兴市'}
-			]}
-	]},
-	{value: 15, label: '山东省', children: [
-			{value: 135, label: '济南市', children: [
-					{value: 1223, label: '历下区'},
-					{value: 1224, label: '市中区'},
-					{value: 1225, label: '槐荫区'},
-					{value: 1226, label: '天桥区'},
-					{value: 1227, label: '历城区'},
-					{value: 1228, label: '长清区'},
-					{value: 1229, label: '平阴县'},
-					{value: 1230, label: '济阳县'},
-					{value: 1231, label: '商河县'},
-					{value: 1232, label: '章丘市'}
-			]},
-			{value: 136, label: '青岛市', children: [
-					{value: 1233, label: '市南区'},
-					{value: 1234, label: '市北区'},
-					{value: 1235, label: '四方区'},
-					{value: 1236, label: '黄岛区'},
-					{value: 1237, label: '崂山区'},
-					{value: 1238, label: '李沧区'},
-					{value: 1239, label: '城阳区'},
-					{value: 1240, label: '胶州市'},
-					{value: 1241, label: '即墨市'},
-					{value: 1242, label: '平度市'},
-					{value: 1243, label: '胶南市'},
-					{value: 1244, label: '莱西市'}
-			]},
-			{value: 137, label: '淄博市', children: [
-					{value: 1245, label: '淄川区'},
-					{value: 1246, label: '张店区'},
-					{value: 1247, label: '博山区'},
-					{value: 1248, label: '临淄区'},
-					{value: 1249, label: '周村区'},
-					{value: 1250, label: '桓台县'},
-					{value: 1251, label: '高青县'},
-					{value: 1252, label: '沂源县'}
-			]},
-			{value: 138, label: '枣庄市', children: [
-					{value: 1253, label: '市中区'},
-					{value: 1254, label: '薛城区'},
-					{value: 1255, label: '峄城区'},
-					{value: 1256, label: '台儿庄区'},
-					{value: 1257, label: '山亭区'},
-					{value: 1258, label: '滕州市'}
-			]},
-			{value: 139, label: '东营市', children: [
-					{value: 1259, label: '东营区'},
-					{value: 1260, label: '河口区'},
-					{value: 1261, label: '垦利县'},
-					{value: 1262, label: '利津县'},
-					{value: 1263, label: '广饶县'}
-			]},
-			{value: 140, label: '烟台市', children: [
-					{value: 1264, label: '芝罘区'},
-					{value: 1265, label: '福山区'},
-					{value: 1266, label: '牟平区'},
-					{value: 1267, label: '莱山区'},
-					{value: 1268, label: '长岛县'},
-					{value: 1269, label: '龙口市'},
-					{value: 1270, label: '莱阳市'},
-					{value: 1271, label: '莱州市'},
-					{value: 1272, label: '蓬莱市'},
-					{value: 1273, label: '招远市'},
-					{value: 1274, label: '栖霞市'},
-					{value: 1275, label: '海阳市'}
-			]},
-			{value: 141, label: '潍坊市', children: [
-					{value: 1276, label: '潍城区'},
-					{value: 1277, label: '寒亭区'},
-					{value: 1278, label: '坊子区'},
-					{value: 1279, label: '奎文区'},
-					{value: 1280, label: '临朐县'},
-					{value: 1281, label: '昌乐县'},
-					{value: 1282, label: '青州市'},
-					{value: 1283, label: '诸城市'},
-					{value: 1284, label: '寿光市'},
-					{value: 1285, label: '安丘市'},
-					{value: 1286, label: '高密市'},
-					{value: 1287, label: '昌邑市'}
-			]},
-			{value: 142, label: '济宁市', children: [
-					{value: 1288, label: '市中区'},
-					{value: 1289, label: '任城区'},
-					{value: 1290, label: '微山县'},
-					{value: 1291, label: '鱼台县'},
-					{value: 1292, label: '金乡县'},
-					{value: 1293, label: '嘉祥县'},
-					{value: 1294, label: '汶上县'},
-					{value: 1295, label: '泗水县'},
-					{value: 1296, label: '梁山县'},
-					{value: 1297, label: '曲阜市'},
-					{value: 1298, label: '兖州市'},
-					{value: 1299, label: '邹城市'}
-			]},
-			{value: 143, label: '泰安市', children: [
-					{value: 1300, label: '泰山区'},
-					{value: 1301, label: '岱岳区'},
-					{value: 1302, label: '宁阳县'},
-					{value: 1303, label: '东平县'},
-					{value: 1304, label: '新泰市'},
-					{value: 1305, label: '肥城市'}
-			]},
-			{value: 144, label: '威海市', children: [
-					{value: 1306, label: '环翠区'},
-					{value: 1307, label: '文登市'},
-					{value: 1308, label: '荣成市'},
-					{value: 1309, label: '乳山市'}
-			]},
-			{value: 145, label: '日照市', children: [
-					{value: 1310, label: '东港区'},
-					{value: 1311, label: '岚山区'},
-					{value: 1312, label: '五莲县'},
-					{value: 1313, label: '莒县'}
-			]},
-			{value: 146, label: '莱芜市', children: [
-					{value: 1314, label: '莱城区'},
-					{value: 1315, label: '钢城区'}
-			]},
-			{value: 147, label: '临沂市', children: [
-					{value: 1316, label: '兰山区'},
-					{value: 1317, label: '罗庄区'},
-					{value: 1318, label: '河东区'},
-					{value: 1319, label: '沂南县'},
-					{value: 1320, label: '郯城县'},
-					{value: 1321, label: '沂水县'},
-					{value: 1322, label: '苍山县'},
-					{value: 1323, label: '费县'},
-					{value: 1324, label: '平邑县'},
-					{value: 1325, label: '莒南县'},
-					{value: 1326, label: '蒙阴县'},
-					{value: 1327, label: '临沭县'}
-			]},
-			{value: 148, label: '德州市', children: [
-					{value: 1328, label: '德城区'},
-					{value: 1329, label: '陵县'},
-					{value: 1330, label: '宁津县'},
-					{value: 1331, label: '庆云县'},
-					{value: 1332, label: '临邑县'},
-					{value: 1333, label: '齐河县'},
-					{value: 1334, label: '平原县'},
-					{value: 1335, label: '夏津县'},
-					{value: 1336, label: '武城县'},
-					{value: 1337, label: '乐陵市'},
-					{value: 1338, label: '禹城市'}
-			]},
-			{value: 149, label: '聊城市', children: [
-					{value: 1339, label: '东昌府区'},
-					{value: 1340, label: '阳谷县'},
-					{value: 1341, label: '莘县'},
-					{value: 1342, label: '茌平县'},
-					{value: 1343, label: '东阿县'},
-					{value: 1344, label: '冠县'},
-					{value: 1345, label: '高唐县'},
-					{value: 1346, label: '临清市'}
-			]},
-			{value: 150, label: '滨州市', children: [
-					{value: 1347, label: '滨城区'},
-					{value: 1348, label: '惠民县'},
-					{value: 1349, label: '阳信县'},
-					{value: 1350, label: '无棣县'},
-					{value: 1351, label: '沾化县'},
-					{value: 1352, label: '博兴县'},
-					{value: 1353, label: '邹平县'}
-			]},
-			{value: 151, label: '荷泽市', children: [
-					{value: 1354, label: '牡丹区'},
-					{value: 1355, label: '曹县'},
-					{value: 1356, label: '单县'},
-					{value: 1357, label: '成武县'},
-					{value: 1358, label: '巨野县'},
-					{value: 1359, label: '郓城县'},
-					{value: 1360, label: '鄄城县'},
-					{value: 1361, label: '定陶县'},
-					{value: 1362, label: '东明县'}
-			]}
-	]},
-	{value: 16, label: '河南省', children: [
-			{value: 152, label: '郑州市', children: [
-					{value: 1363, label: '中原区'},
-					{value: 1364, label: '二七区'},
-					{value: 1365, label: '管城回族区'},
-					{value: 1366, label: '金水区'},
-					{value: 1367, label: '上街区'},
-					{value: 1368, label: '惠济区'},
-					{value: 1369, label: '中牟县'},
-					{value: 1370, label: '巩义市'},
-					{value: 1371, label: '荥阳市'},
-					{value: 1372, label: '新密市'},
-					{value: 1373, label: '新郑市'},
-					{value: 1374, label: '登封市'}
-			]},
-			{value: 153, label: '开封市', children: [
-					{value: 1375, label: '龙亭区'},
-					{value: 1376, label: '顺河回族区'},
-					{value: 1377, label: '鼓楼区'},
-					{value: 1378, label: '南关区'},
-					{value: 1379, label: '郊区'},
-					{value: 1380, label: '杞县'},
-					{value: 1381, label: '通许县'},
-					{value: 1382, label: '尉氏县'},
-					{value: 1383, label: '开封县'},
-					{value: 1384, label: '兰考县'}
-			]},
-			{value: 154, label: '洛阳市', children: [
-					{value: 1385, label: '老城区'},
-					{value: 1386, label: '西工区'},
-					{value: 1387, label: '廛河回族区'},
-					{value: 1388, label: '涧西区'},
-					{value: 1389, label: '吉利区'},
-					{value: 1390, label: '洛龙区'},
-					{value: 1391, label: '孟津县'},
-					{value: 1392, label: '新安县'},
-					{value: 1393, label: '栾川县'},
-					{value: 1394, label: '嵩县'},
-					{value: 1395, label: '汝阳县'},
-					{value: 1396, label: '宜阳县'},
-					{value: 1397, label: '洛宁县'},
-					{value: 1398, label: '伊川县'},
-					{value: 1399, label: '偃师市'}
-			]},
-			{value: 155, label: '平顶山市', children: [
-					{value: 1400, label: '新华区'},
-					{value: 1401, label: '卫东区'},
-					{value: 1402, label: '石龙区'},
-					{value: 1403, label: '湛河区'},
-					{value: 1404, label: '宝丰县'},
-					{value: 1405, label: '叶县'},
-					{value: 1406, label: '鲁山县'},
-					{value: 1407, label: '郏县'},
-					{value: 1408, label: '舞钢市'},
-					{value: 1409, label: '汝州市'}
-			]},
-			{value: 156, label: '安阳市', children: [
-					{value: 1410, label: '文峰区'},
-					{value: 1411, label: '北关区'},
-					{value: 1412, label: '殷都区'},
-					{value: 1413, label: '龙安区'},
-					{value: 1414, label: '安阳县'},
-					{value: 1415, label: '汤阴县'},
-					{value: 1416, label: '滑县'},
-					{value: 1417, label: '内黄县'},
-					{value: 1418, label: '林州市'}
-			]},
-			{value: 157, label: '鹤壁市', children: [
-					{value: 1419, label: '鹤山区'},
-					{value: 1420, label: '山城区'},
-					{value: 1421, label: '淇滨区'},
-					{value: 1422, label: '浚县'},
-					{value: 1423, label: '淇县'}
-			]},
-			{value: 158, label: '新乡市', children: [
-					{value: 1424, label: '红旗区'},
-					{value: 1425, label: '卫滨区'},
-					{value: 1426, label: '凤泉区'},
-					{value: 1427, label: '牧野区'},
-					{value: 1428, label: '新乡县'},
-					{value: 1429, label: '获嘉县'},
-					{value: 1430, label: '原阳县'},
-					{value: 1431, label: '延津县'},
-					{value: 1432, label: '封丘县'},
-					{value: 1433, label: '长垣县'},
-					{value: 1434, label: '卫辉市'},
-					{value: 1435, label: '辉县市'}
-			]},
-			{value: 159, label: '焦作市', children: [
-					{value: 1436, label: '解放区'},
-					{value: 1437, label: '中站区'},
-					{value: 1438, label: '马村区'},
-					{value: 1439, label: '山阳区'},
-					{value: 1440, label: '修武县'},
-					{value: 1441, label: '博爱县'},
-					{value: 1442, label: '武陟县'},
-					{value: 1443, label: '温县'},
-					{value: 1444, label: '济源市'},
-					{value: 1445, label: '沁阳市'},
-					{value: 1446, label: '孟州市'}
-			]},
-			{value: 160, label: '濮阳市', children: [
-					{value: 1447, label: '华龙区'},
-					{value: 1448, label: '清丰县'},
-					{value: 1449, label: '南乐县'},
-					{value: 1450, label: '范县'},
-					{value: 1451, label: '台前县'},
-					{value: 1452, label: '濮阳县'}
-			]},
-			{value: 161, label: '许昌市', children: [
-					{value: 1453, label: '魏都区'},
-					{value: 1454, label: '许昌县'},
-					{value: 1455, label: '鄢陵县'},
-					{value: 1456, label: '襄城县'},
-					{value: 1457, label: '禹州市'},
-					{value: 1458, label: '长葛市'}
-			]},
-			{value: 162, label: '漯河市', children: [
-					{value: 1459, label: '源汇区'},
-					{value: 1460, label: '郾城区'},
-					{value: 1461, label: '召陵区'},
-					{value: 1462, label: '舞阳县'},
-					{value: 1463, label: '临颍县'}
-			]},
-			{value: 163, label: '三门峡市', children: [
-					{value: 1464, label: '市辖区'},
-					{value: 1465, label: '湖滨区'},
-					{value: 1466, label: '渑池县'},
-					{value: 1467, label: '陕县'},
-					{value: 1468, label: '卢氏县'},
-					{value: 1469, label: '义马市'},
-					{value: 1470, label: '灵宝市'}
-			]},
-			{value: 164, label: '南阳市', children: [
-					{value: 1471, label: '宛城区'},
-					{value: 1472, label: '卧龙区'},
-					{value: 1473, label: '南召县'},
-					{value: 1474, label: '方城县'},
-					{value: 1475, label: '西峡县'},
-					{value: 1476, label: '镇平县'},
-					{value: 1477, label: '内乡县'},
-					{value: 1478, label: '淅川县'},
-					{value: 1479, label: '社旗县'},
-					{value: 1480, label: '唐河县'},
-					{value: 1481, label: '新野县'},
-					{value: 1482, label: '桐柏县'},
-					{value: 1483, label: '邓州市'}
-			]},
-			{value: 165, label: '商丘市', children: [
-					{value: 1484, label: '梁园区'},
-					{value: 1485, label: '睢阳区'},
-					{value: 1486, label: '民权县'},
-					{value: 1487, label: '睢县'},
-					{value: 1488, label: '宁陵县'},
-					{value: 1489, label: '柘城县'},
-					{value: 1490, label: '虞城县'},
-					{value: 1491, label: '夏邑县'},
-					{value: 1492, label: '永城市'}
-			]},
-			{value: 166, label: '信阳市', children: [
-					{value: 1493, label: '浉河区'},
-					{value: 1494, label: '平桥区'},
-					{value: 1495, label: '罗山县'},
-					{value: 1496, label: '光山县'},
-					{value: 1497, label: '新县'},
-					{value: 1498, label: '商城县'},
-					{value: 1499, label: '固始县'},
-					{value: 1500, label: '潢川县'},
-					{value: 1501, label: '淮滨县'},
-					{value: 1502, label: '息县'}
-			]},
-			{value: 167, label: '周口市', children: [
-					{value: 1503, label: '川汇区'},
-					{value: 1504, label: '扶沟县'},
-					{value: 1505, label: '西华县'},
-					{value: 1506, label: '商水县'},
-					{value: 1507, label: '沈丘县'},
-					{value: 1508, label: '郸城县'},
-					{value: 1509, label: '淮阳县'},
-					{value: 1510, label: '太康县'},
-					{value: 1511, label: '鹿邑县'},
-					{value: 1512, label: '项城市'}
-			]},
-			{value: 168, label: '驻马店市', children: [
-					{value: 1513, label: '驿城区'},
-					{value: 1514, label: '西平县'},
-					{value: 1515, label: '上蔡县'},
-					{value: 1516, label: '平舆县'},
-					{value: 1517, label: '正阳县'},
-					{value: 1518, label: '确山县'},
-					{value: 1519, label: '泌阳县'},
-					{value: 1520, label: '汝南县'},
-					{value: 1521, label: '遂平县'},
-					{value: 1522, label: '新蔡县'}
-			]}
-	]},
-	{value: 17, label: '湖北省', children: [
-			{value: 169, label: '武汉市', children: [
-					{value: 1523, label: '江岸区'},
-					{value: 1524, label: '江汉区'},
-					{value: 1525, label: '硚口区'},
-					{value: 1526, label: '汉阳区'},
-					{value: 1527, label: '武昌区'},
-					{value: 1528, label: '青山区'},
-					{value: 1529, label: '洪山区'},
-					{value: 1530, label: '东西湖区'},
-					{value: 1531, label: '汉南区'},
-					{value: 1532, label: '蔡甸区'},
-					{value: 1533, label: '江夏区'},
-					{value: 1534, label: '黄陂区'},
-					{value: 1535, label: '新洲区'}
-			]},
-			{value: 170, label: '黄石市', children: [
-					{value: 1536, label: '黄石港区'},
-					{value: 1537, label: '西塞山区'},
-					{value: 1538, label: '下陆区'},
-					{value: 1539, label: '铁山区'},
-					{value: 1540, label: '阳新县'},
-					{value: 1541, label: '大冶市'}
-			]},
-			{value: 171, label: '十堰市', children: [
-					{value: 1542, label: '茅箭区'},
-					{value: 1543, label: '张湾区'},
-					{value: 1544, label: '郧县'},
-					{value: 1545, label: '郧西县'},
-					{value: 1546, label: '竹山县'},
-					{value: 1547, label: '竹溪县'},
-					{value: 1548, label: '房县'},
-					{value: 1549, label: '丹江口市'}
-			]},
-			{value: 172, label: '宜昌市', children: [
-					{value: 1550, label: '西陵区'},
-					{value: 1551, label: '伍家岗区'},
-					{value: 1552, label: '点军区'},
-					{value: 1553, label: '猇亭区'},
-					{value: 1554, label: '夷陵区'},
-					{value: 1555, label: '远安县'},
-					{value: 1556, label: '兴山县'},
-					{value: 1557, label: '秭归县'},
-					{value: 1558, label: '长阳土家族自治县'},
-					{value: 1559, label: '五峰土家族自治县'},
-					{value: 1560, label: '宜都市'},
-					{value: 1561, label: '当阳市'},
-					{value: 1562, label: '枝江市'}
-			]},
-			{value: 173, label: '襄樊市', children: [
-					{value: 1563, label: '襄城区'},
-					{value: 1564, label: '樊城区'},
-					{value: 1565, label: '襄阳区'},
-					{value: 1566, label: '南漳县'},
-					{value: 1567, label: '谷城县'},
-					{value: 1568, label: '保康县'},
-					{value: 1569, label: '老河口市'},
-					{value: 1570, label: '枣阳市'},
-					{value: 1571, label: '宜城市'}
-			]},
-			{value: 174, label: '鄂州市', children: [
-					{value: 1572, label: '梁子湖区'},
-					{value: 1573, label: '华容区'},
-					{value: 1574, label: '鄂城区'}
-			]},
-			{value: 175, label: '荆门市', children: [
-					{value: 1575, label: '东宝区'},
-					{value: 1576, label: '掇刀区'},
-					{value: 1577, label: '京山县'},
-					{value: 1578, label: '沙洋县'},
-					{value: 1579, label: '钟祥市'}
-			]},
-			{value: 176, label: '孝感市', children: [
-					{value: 1580, label: '孝南区'},
-					{value: 1581, label: '孝昌县'},
-					{value: 1582, label: '大悟县'},
-					{value: 1583, label: '云梦县'},
-					{value: 1584, label: '应城市'},
-					{value: 1585, label: '安陆市'},
-					{value: 1586, label: '汉川市'}
-			]},
-			{value: 177, label: '荆州市', children: [
-					{value: 1587, label: '沙市区'},
-					{value: 1588, label: '荆州区'},
-					{value: 1589, label: '公安县'},
-					{value: 1590, label: '监利县'},
-					{value: 1591, label: '江陵县'},
-					{value: 1592, label: '石首市'},
-					{value: 1593, label: '洪湖市'},
-					{value: 1594, label: '松滋市'}
-			]},
-			{value: 178, label: '黄冈市', children: [
-					{value: 1595, label: '黄州区'},
-					{value: 1596, label: '团风县'},
-					{value: 1597, label: '红安县'},
-					{value: 1598, label: '罗田县'},
-					{value: 1599, label: '英山县'},
-					{value: 1600, label: '浠水县'},
-					{value: 1601, label: '蕲春县'},
-					{value: 1602, label: '黄梅县'},
-					{value: 1603, label: '麻城市'},
-					{value: 1604, label: '武穴市'}
-			]},
-			{value: 179, label: '咸宁市', children: [
-					{value: 1605, label: '咸安区'},
-					{value: 1606, label: '嘉鱼县'},
-					{value: 1607, label: '通城县'},
-					{value: 1608, label: '崇阳县'},
-					{value: 1609, label: '通山县'},
-					{value: 1610, label: '赤壁市'}
-			]},
-			{value: 180, label: '随州市', children: [
-					{value: 1611, label: '曾都区'},
-					{value: 1612, label: '广水市'}
-			]},
-			{value: 181, label: '恩施', children: [
-					{value: 1613, label: '恩施市'},
-					{value: 1614, label: '利川市'},
-					{value: 1615, label: '建始县'},
-					{value: 1616, label: '巴东县'},
-					{value: 1617, label: '宣恩县'},
-					{value: 1618, label: '咸丰县'},
-					{value: 1619, label: '来凤县'},
-					{value: 1620, label: '鹤峰县'}
-			]},
-			{value: 182, label: '神农架', children: [
-					{value: 1621, label: '仙桃市'},
-					{value: 1622, label: '潜江市'},
-					{value: 1623, label: '天门市'},
-					{value: 1624, label: '神农架林区'}
-			]}
-	]},
-	{value: 18, label: '湖南省', children: [
-			{value: 183, label: '长沙市', children: [
-					{value: 1625, label: '芙蓉区'},
-					{value: 1626, label: '天心区'},
-					{value: 1627, label: '岳麓区'},
-					{value: 1628, label: '开福区'},
-					{value: 1629, label: '雨花区'},
-					{value: 1630, label: '长沙县'},
-					{value: 1631, label: '望城县'},
-					{value: 1632, label: '宁乡县'},
-					{value: 1633, label: '浏阳市'}
-			]},
-			{value: 184, label: '株洲市', children: [
-					{value: 1634, label: '荷塘区'},
-					{value: 1635, label: '芦淞区'},
-					{value: 1636, label: '石峰区'},
-					{value: 1637, label: '天元区'},
-					{value: 1638, label: '株洲县'},
-					{value: 1639, label: '攸县'},
-					{value: 1640, label: '茶陵县'},
-					{value: 1641, label: '炎陵县'},
-					{value: 1642, label: '醴陵市'}
-			]},
-			{value: 185, label: '湘潭市', children: [
-					{value: 1643, label: '雨湖区'},
-					{value: 1644, label: '岳塘区'},
-					{value: 1645, label: '湘潭县'},
-					{value: 1646, label: '湘乡市'},
-					{value: 1647, label: '韶山市'}
-			]},
-			{value: 186, label: '衡阳市', children: [
-					{value: 1648, label: '珠晖区'},
-					{value: 1649, label: '雁峰区'},
-					{value: 1650, label: '石鼓区'},
-					{value: 1651, label: '蒸湘区'},
-					{value: 1652, label: '南岳区'},
-					{value: 1653, label: '衡阳县'},
-					{value: 1654, label: '衡南县'},
-					{value: 1655, label: '衡山县'},
-					{value: 1656, label: '衡东县'},
-					{value: 1657, label: '祁东县'},
-					{value: 1658, label: '耒阳市'},
-					{value: 1659, label: '常宁市'}
-			]},
-			{value: 187, label: '邵阳市', children: [
-					{value: 1660, label: '双清区'},
-					{value: 1661, label: '大祥区'},
-					{value: 1662, label: '北塔区'},
-					{value: 1663, label: '邵东县'},
-					{value: 1664, label: '新邵县'},
-					{value: 1665, label: '邵阳县'},
-					{value: 1666, label: '隆回县'},
-					{value: 1667, label: '洞口县'},
-					{value: 1668, label: '绥宁县'},
-					{value: 1669, label: '新宁县'},
-					{value: 1670, label: '城步苗族自治县'},
-					{value: 1671, label: '武冈市'}
-			]},
-			{value: 188, label: '岳阳市', children: [
-					{value: 1672, label: '岳阳楼区'},
-					{value: 1673, label: '云溪区'},
-					{value: 1674, label: '君山区'},
-					{value: 1675, label: '岳阳县'},
-					{value: 1676, label: '华容县'},
-					{value: 1677, label: '湘阴县'},
-					{value: 1678, label: '平江县'},
-					{value: 1679, label: '汨罗市'},
-					{value: 1680, label: '临湘市'}
-			]},
-			{value: 189, label: '常德市', children: [
-					{value: 1681, label: '武陵区'},
-					{value: 1682, label: '鼎城区'},
-					{value: 1683, label: '安乡县'},
-					{value: 1684, label: '汉寿县'},
-					{value: 1685, label: '澧县'},
-					{value: 1686, label: '临澧县'},
-					{value: 1687, label: '桃源县'},
-					{value: 1688, label: '石门县'},
-					{value: 1689, label: '津市市'}
-			]},
-			{value: 190, label: '张家界市', children: [
-					{value: 1690, label: '永定区'},
-					{value: 1691, label: '武陵源区'},
-					{value: 1692, label: '慈利县'},
-					{value: 1693, label: '桑植县'}
-			]},
-			{value: 191, label: '益阳市', children: [
-					{value: 1694, label: '资阳区'},
-					{value: 1695, label: '赫山区'},
-					{value: 1696, label: '南县'},
-					{value: 1697, label: '桃江县'},
-					{value: 1698, label: '安化县'},
-					{value: 1699, label: '沅江市'}
-			]},
-			{value: 192, label: '郴州市', children: [
-					{value: 1700, label: '北湖区'},
-					{value: 1701, label: '苏仙区'},
-					{value: 1702, label: '桂阳县'},
-					{value: 1703, label: '宜章县'},
-					{value: 1704, label: '永兴县'},
-					{value: 1705, label: '嘉禾县'},
-					{value: 1706, label: '临武县'},
-					{value: 1707, label: '汝城县'},
-					{value: 1708, label: '桂东县'},
-					{value: 1709, label: '安仁县'},
-					{value: 1710, label: '资兴市'}
-			]},
-			{value: 193, label: '永州市', children: [
-					{value: 1711, label: '芝山区'},
-					{value: 1712, label: '冷水滩区'},
-					{value: 1713, label: '祁阳县'},
-					{value: 1714, label: '东安县'},
-					{value: 1715, label: '双牌县'},
-					{value: 1716, label: '道县'},
-					{value: 1717, label: '江永县'},
-					{value: 1718, label: '宁远县'},
-					{value: 1719, label: '蓝山县'},
-					{value: 1720, label: '新田县'},
-					{value: 1721, label: '江华瑶族自治县'}
-			]},
-			{value: 194, label: '怀化市', children: [
-					{value: 1722, label: '鹤城区'},
-					{value: 1723, label: '中方县'},
-					{value: 1724, label: '沅陵县'},
-					{value: 1725, label: '辰溪县'},
-					{value: 1726, label: '溆浦县'},
-					{value: 1727, label: '会同县'},
-					{value: 1728, label: '麻阳苗族自治县'},
-					{value: 1729, label: '新晃侗族自治县'},
-					{value: 1730, label: '芷江侗族自治县'},
-					{value: 1731, label: '靖州苗族侗族自治县'},
-					{value: 1732, label: '通道侗族自治县'},
-					{value: 1733, label: '洪江市'}
-			]},
-			{value: 195, label: '娄底市', children: [
-					{value: 1734, label: '娄星区'},
-					{value: 1735, label: '双峰县'},
-					{value: 1736, label: '新化县'},
-					{value: 1737, label: '冷水江市'},
-					{value: 1738, label: '涟源市'}
-			]},
-			{value: 196, label: '湘西', children: [
-					{value: 1739, label: '吉首市'},
-					{value: 1740, label: '泸溪县'},
-					{value: 1741, label: '凤凰县'},
-					{value: 1742, label: '花垣县'},
-					{value: 1743, label: '保靖县'},
-					{value: 1744, label: '古丈县'},
-					{value: 1745, label: '永顺县'},
-					{value: 1746, label: '龙山县'}
-			]}
-	]},
-	{value: 19, label: '广东省', children: [
-			{value: 197, label: '广州市', children: [
-					{value: 1747, label: '东山区'},
-					{value: 1748, label: '荔湾区'},
-					{value: 1749, label: '越秀区'},
-					{value: 1750, label: '海珠区'},
-					{value: 1751, label: '天河区'},
-					{value: 1752, label: '芳村区'},
-					{value: 1753, label: '白云区'},
-					{value: 1754, label: '黄埔区'},
-					{value: 1755, label: '番禺区'},
-					{value: 1756, label: '花都区'},
-					{value: 1757, label: '增城市'},
-					{value: 1758, label: '从化市'}
-			]},
-			{value: 198, label: '韶关市', children: [
-					{value: 1759, label: '武江区'},
-					{value: 1760, label: '浈江区'},
-					{value: 1761, label: '曲江区'},
-					{value: 1762, label: '始兴县'},
-					{value: 1763, label: '仁化县'},
-					{value: 1764, label: '翁源县'},
-					{value: 1765, label: '乳源瑶族自治县'},
-					{value: 1766, label: '新丰县'},
-					{value: 1767, label: '乐昌市'},
-					{value: 1768, label: '南雄市'}
-			]},
-			{value: 199, label: '深圳市', children: [
-					{value: 1769, label: '罗湖区'},
-					{value: 1770, label: '福田区'},
-					{value: 1771, label: '南山区'},
-					{value: 1772, label: '宝安区'},
-					{value: 1773, label: '龙岗区'},
-					{value: 1774, label: '盐田区'}
-			]},
-			{value: 200, label: '珠海市', children: [
-					{value: 1775, label: '香洲区'},
-					{value: 1776, label: '斗门区'},
-					{value: 1777, label: '金湾区'}
-			]},
-			{value: 201, label: '汕头市', children: [
-					{value: 1778, label: '龙湖区'},
-					{value: 1779, label: '金平区'},
-					{value: 1780, label: '濠江区'},
-					{value: 1781, label: '潮阳区'},
-					{value: 1782, label: '潮南区'},
-					{value: 1783, label: '澄海区'},
-					{value: 1784, label: '南澳县'}
-			]},
-			{value: 202, label: '佛山市', children: [
-					{value: 1785, label: '禅城区'},
-					{value: 1786, label: '南海区'},
-					{value: 1787, label: '顺德区'},
-					{value: 1788, label: '三水区'},
-					{value: 1789, label: '高明区'}
-			]},
-			{value: 203, label: '江门市', children: [
-					{value: 1790, label: '蓬江区'},
-					{value: 1791, label: '江海区'},
-					{value: 1792, label: '新会区'},
-					{value: 1793, label: '台山市'},
-					{value: 1794, label: '开平市'},
-					{value: 1795, label: '鹤山市'},
-					{value: 1796, label: '恩平市'}
-			]},
-			{value: 204, label: '湛江市', children: [
-					{value: 1797, label: '赤坎区'},
-					{value: 1798, label: '霞山区'},
-					{value: 1799, label: '坡头区'},
-					{value: 1800, label: '麻章区'},
-					{value: 1801, label: '遂溪县'},
-					{value: 1802, label: '徐闻县'},
-					{value: 1803, label: '廉江市'},
-					{value: 1804, label: '雷州市'},
-					{value: 1805, label: '吴川市'}
-			]},
-			{value: 205, label: '茂名市', children: [
-					{value: 1806, label: '茂南区'},
-					{value: 1807, label: '茂港区'},
-					{value: 1808, label: '电白县'},
-					{value: 1809, label: '高州市'},
-					{value: 1810, label: '化州市'},
-					{value: 1811, label: '信宜市'}
-			]},
-			{value: 206, label: '肇庆市', children: [
-					{value: 1812, label: '端州区'},
-					{value: 1813, label: '鼎湖区'},
-					{value: 1814, label: '广宁县'},
-					{value: 1815, label: '怀集县'},
-					{value: 1816, label: '封开县'},
-					{value: 1817, label: '德庆县'},
-					{value: 1818, label: '高要市'},
-					{value: 1819, label: '四会市'}
-			]},
-			{value: 207, label: '惠州市', children: [
-					{value: 1820, label: '惠城区'},
-					{value: 1821, label: '惠阳区'},
-					{value: 1822, label: '博罗县'},
-					{value: 1823, label: '惠东县'},
-					{value: 1824, label: '龙门县'}
-			]},
-			{value: 208, label: '梅州市', children: [
-					{value: 1825, label: '梅江区'},
-					{value: 1826, label: '梅县'},
-					{value: 1827, label: '大埔县'},
-					{value: 1828, label: '丰顺县'},
-					{value: 1829, label: '五华县'},
-					{value: 1830, label: '平远县'},
-					{value: 1831, label: '蕉岭县'},
-					{value: 1832, label: '兴宁市'}
-			]},
-			{value: 209, label: '汕尾市', children: [
-					{value: 1833, label: '城区'},
-					{value: 1834, label: '海丰县'},
-					{value: 1835, label: '陆河县'},
-					{value: 1836, label: '陆丰市'}
-			]},
-			{value: 210, label: '河源市', children: [
-					{value: 1837, label: '源城区'},
-					{value: 1838, label: '紫金县'},
-					{value: 1839, label: '龙川县'},
-					{value: 1840, label: '连平县'},
-					{value: 1841, label: '和平县'},
-					{value: 1842, label: '东源县'}
-			]},
-			{value: 211, label: '阳江市', children: [
-					{value: 1843, label: '江城区'},
-					{value: 1844, label: '阳西县'},
-					{value: 1845, label: '阳东县'},
-					{value: 1846, label: '阳春市'}
-			]},
-			{value: 212, label: '清远市', children: [
-					{value: 1847, label: '清城区'},
-					{value: 1848, label: '佛冈县'},
-					{value: 1849, label: '阳山县'},
-					{value: 1850, label: '连山壮族瑶族自治县'},
-					{value: 1851, label: '连南瑶族自治县'},
-					{value: 1852, label: '清新县'},
-					{value: 1853, label: '英德市'},
-					{value: 1854, label: '连州市'}
-			]},
-			{value: 213, label: '东莞市', children: []},
-			{value: 214, label: '中山市', children: []},
-			{value: 215, label: '潮州市', children: [
-					{value: 1855, label: '湘桥区'},
-					{value: 1856, label: '潮安县'},
-					{value: 1857, label: '饶平县'}
-			]},
-			{value: 216, label: '揭阳市', children: [
-					{value: 1858, label: '榕城区'},
-					{value: 1859, label: '揭东县'},
-					{value: 1860, label: '揭西县'},
-					{value: 1861, label: '惠来县'},
-					{value: 1862, label: '普宁市'}
-			]},
-			{value: 217, label: '云浮市', children: [
-					{value: 1863, label: '云城区'},
-					{value: 1864, label: '新兴县'},
-					{value: 1865, label: '郁南县'},
-					{value: 1866, label: '云安县'},
-					{value: 1867, label: '罗定市'}
-			]}
-	]},
-	{value: 20, label: '广西省', children: [
-			{value: 218, label: '南宁市', children: [
-					{value: 1868, label: '兴宁区'},
-					{value: 1869, label: '青秀区'},
-					{value: 1870, label: '江南区'},
-					{value: 1871, label: '西乡塘区'},
-					{value: 1872, label: '良庆区'},
-					{value: 1873, label: '邕宁区'},
-					{value: 1874, label: '武鸣县'},
-					{value: 1875, label: '隆安县'},
-					{value: 1876, label: '马山县'},
-					{value: 1877, label: '上林县'},
-					{value: 1878, label: '宾阳县'},
-					{value: 1879, label: '横县'}
-			]},
-			{value: 219, label: '柳州市', children: [
-					{value: 1880, label: '城中区'},
-					{value: 1881, label: '鱼峰区'},
-					{value: 1882, label: '柳南区'},
-					{value: 1883, label: '柳北区'},
-					{value: 1884, label: '柳江县'},
-					{value: 1885, label: '柳城县'},
-					{value: 1886, label: '鹿寨县'},
-					{value: 1887, label: '融安县'},
-					{value: 1888, label: '融水苗族自治县'},
-					{value: 1889, label: '三江侗族自治县'}
-			]},
-			{value: 220, label: '桂林市', children: [
-					{value: 1890, label: '秀峰区'},
-					{value: 1891, label: '叠彩区'},
-					{value: 1892, label: '象山区'},
-					{value: 1893, label: '七星区'},
-					{value: 1894, label: '雁山区'},
-					{value: 1895, label: '阳朔县'},
-					{value: 1896, label: '临桂县'},
-					{value: 1897, label: '灵川县'},
-					{value: 1898, label: '全州县'},
-					{value: 1899, label: '兴安县'},
-					{value: 1900, label: '永福县'},
-					{value: 1901, label: '灌阳县'},
-					{value: 1902, label: '龙胜各族自治县'},
-					{value: 1903, label: '资源县'},
-					{value: 1904, label: '平乐县'},
-					{value: 1905, label: '荔蒲县'},
-					{value: 1906, label: '恭城瑶族自治县'}
-			]},
-			{value: 221, label: '梧州市', children: [
-					{value: 1907, label: '万秀区'},
-					{value: 1908, label: '蝶山区'},
-					{value: 1909, label: '长洲区'},
-					{value: 1910, label: '苍梧县'},
-					{value: 1911, label: '藤县'},
-					{value: 1912, label: '蒙山县'},
-					{value: 1913, label: '岑溪市'}
-			]},
-			{value: 222, label: '北海市', children: [
-					{value: 1914, label: '海城区'},
-					{value: 1915, label: '银海区'},
-					{value: 1916, label: '铁山港区'},
-					{value: 1917, label: '合浦县'}
-			]},
-			{value: 223, label: '防城港市', children: [
-					{value: 1918, label: '港口区'},
-					{value: 1919, label: '防城区'},
-					{value: 1920, label: '上思县'},
-					{value: 1921, label: '东兴市'}
-			]},
-			{value: 224, label: '钦州市', children: [
-					{value: 1922, label: '钦南区'},
-					{value: 1923, label: '钦北区'},
-					{value: 1924, label: '灵山县'},
-					{value: 1925, label: '浦北县'}
-			]},
-			{value: 225, label: '贵港市', children: [
-					{value: 1926, label: '港北区'},
-					{value: 1927, label: '港南区'},
-					{value: 1928, label: '覃塘区'},
-					{value: 1929, label: '平南县'},
-					{value: 1930, label: '桂平市'}
-			]},
-			{value: 226, label: '玉林市', children: [
-					{value: 1931, label: '玉州区'},
-					{value: 1932, label: '容县'},
-					{value: 1933, label: '陆川县'},
-					{value: 1934, label: '博白县'},
-					{value: 1935, label: '兴业县'},
-					{value: 1936, label: '北流市'}
-			]},
-			{value: 227, label: '百色市', children: [
-					{value: 1937, label: '右江区'},
-					{value: 1938, label: '田阳县'},
-					{value: 1939, label: '田东县'},
-					{value: 1940, label: '平果县'},
-					{value: 1941, label: '德保县'},
-					{value: 1942, label: '靖西县'},
-					{value: 1943, label: '那坡县'},
-					{value: 1944, label: '凌云县'},
-					{value: 1945, label: '乐业县'},
-					{value: 1946, label: '田林县'},
-					{value: 1947, label: '西林县'},
-					{value: 1948, label: '隆林各族自治县'}
-			]},
-			{value: 228, label: '贺州市', children: [
-					{value: 1949, label: '八步区'},
-					{value: 1950, label: '昭平县'},
-					{value: 1951, label: '钟山县'},
-					{value: 1952, label: '富川瑶族自治县'}
-			]},
-			{value: 229, label: '河池市', children: [
-					{value: 1953, label: '金城江区'},
-					{value: 1954, label: '南丹县'},
-					{value: 1955, label: '天峨县'},
-					{value: 1956, label: '凤山县'},
-					{value: 1957, label: '东兰县'},
-					{value: 1958, label: '罗城仫佬族自治县'},
-					{value: 1959, label: '环江毛南族自治县'},
-					{value: 1960, label: '巴马瑶族自治县'},
-					{value: 1961, label: '都安瑶族自治县'},
-					{value: 1962, label: '大化瑶族自治县'},
-					{value: 1963, label: '宜州市'}
-			]},
-			{value: 230, label: '来宾市', children: [
-					{value: 1964, label: '兴宾区'},
-					{value: 1965, label: '忻城县'},
-					{value: 1966, label: '象州县'},
-					{value: 1967, label: '武宣县'},
-					{value: 1968, label: '金秀瑶族自治县'},
-					{value: 1969, label: '合山市'}
-			]},
-			{value: 231, label: '崇左市', children: [
-					{value: 1970, label: '江洲区'},
-					{value: 1971, label: '扶绥县'},
-					{value: 1972, label: '宁明县'},
-					{value: 1973, label: '龙州县'},
-					{value: 1974, label: '大新县'},
-					{value: 1975, label: '天等县'},
-					{value: 1976, label: '凭祥市'}
-			]}
-	]},
-	{value: 21, label: '海南省', children: [
-			{value: 232, label: '海口市', children: [
-					{value: 1977, label: '秀英区'},
-					{value: 1978, label: '龙华区'},
-					{value: 1979, label: '琼山区'},
-					{value: 1980, label: '美兰区'}
-			]},
-			{value: 233, label: '三亚市', children: [
-					{value: 1981, label: '五指山市'},
-					{value: 1982, label: '琼海市'},
-					{value: 1983, label: '儋州市'},
-					{value: 1984, label: '文昌市'},
-					{value: 1985, label: '万宁市'},
-					{value: 1986, label: '东方市'},
-					{value: 1987, label: '定安县'},
-					{value: 1988, label: '屯昌县'},
-					{value: 1989, label: '澄迈县'},
-					{value: 1990, label: '临高县'},
-					{value: 1991, label: '白沙黎族自治县'},
-					{value: 1992, label: '昌江黎族自治县'},
-					{value: 1993, label: '乐东黎族自治县'},
-					{value: 1994, label: '陵水黎族自治县'},
-					{value: 1995, label: '保亭黎族苗族自治县'},
-					{value: 1996, label: '琼中黎族苗族自治县'},
-					{value: 1997, label: '西沙群岛'},
-					{value: 1998, label: '南沙群岛'},
-					{value: 1999, label: '中沙群岛的岛礁及其海域'}
-			]}
-	]},
-	{value: 22, label: '重庆市', children: [
-			{value: 234, label: '重庆市', children: [
-					{value: 2000, label: '万州区'},
-					{value: 2001, label: '涪陵区'},
-					{value: 2002, label: '渝中区'},
-					{value: 2003, label: '大渡口区'},
-					{value: 2004, label: '江北区'},
-					{value: 2005, label: '沙坪坝区'},
-					{value: 2006, label: '九龙坡区'},
-					{value: 2007, label: '南岸区'},
-					{value: 2008, label: '北碚区'},
-					{value: 2009, label: '万盛区'},
-					{value: 2010, label: '双桥区'},
-					{value: 2011, label: '渝北区'},
-					{value: 2012, label: '巴南区'},
-					{value: 2013, label: '黔江区'},
-					{value: 2014, label: '长寿区'},
-					{value: 2015, label: '綦江县'},
-					{value: 2016, label: '潼南县'},
-					{value: 2017, label: '铜梁县'},
-					{value: 2018, label: '大足县'},
-					{value: 2019, label: '荣昌县'},
-					{value: 2020, label: '璧山县'},
-					{value: 2021, label: '梁平县'},
-					{value: 2022, label: '城口县'},
-					{value: 2023, label: '丰都县'},
-					{value: 2024, label: '垫江县'},
-					{value: 2025, label: '武隆县'},
-					{value: 2026, label: '忠县'},
-					{value: 2027, label: '开县'},
-					{value: 2028, label: '云阳县'},
-					{value: 2029, label: '奉节县'},
-					{value: 2030, label: '巫山县'},
-					{value: 2031, label: '巫溪县'},
-					{value: 2032, label: '石柱土家族自治县'},
-					{value: 2033, label: '秀山土家族苗族自治县'},
-					{value: 2034, label: '酉阳土家族苗族自治县'},
-					{value: 2035, label: '彭水苗族土家族自治县'},
-					{value: 2036, label: '江津市'},
-					{value: 2037, label: '合川市'},
-					{value: 2038, label: '永川市'},
-					{value: 2039, label: '南川市'}
-			]}
-	]},
-	{value: 23, label: '四川省', children: [
-			{value: 235, label: '成都市', children: [
-					{value: 2040, label: '锦江区'},
-					{value: 2041, label: '青羊区'},
-					{value: 2042, label: '金牛区'},
-					{value: 2043, label: '武侯区'},
-					{value: 2044, label: '成华区'},
-					{value: 2045, label: '龙泉驿区'},
-					{value: 2046, label: '青白江区'},
-					{value: 2047, label: '新都区'},
-					{value: 2048, label: '温江区'},
-					{value: 2049, label: '金堂县'},
-					{value: 2050, label: '双流县'},
-					{value: 2051, label: '郫县'},
-					{value: 2052, label: '大邑县'},
-					{value: 2053, label: '蒲江县'},
-					{value: 2054, label: '新津县'},
-					{value: 2055, label: '都江堰市'},
-					{value: 2056, label: '彭州市'},
-					{value: 2057, label: '邛崃市'},
-					{value: 2058, label: '崇州市'}
-			]},
-			{value: 236, label: '自贡市', children: [
-					{value: 2059, label: '自流井区'},
-					{value: 2060, label: '贡井区'},
-					{value: 2061, label: '大安区'},
-					{value: 2062, label: '沿滩区'},
-					{value: 2063, label: '荣县'},
-					{value: 2064, label: '富顺县'}
-			]},
-			{value: 237, label: '攀枝花市', children: [
-					{value: 2065, label: '东区'},
-					{value: 2066, label: '西区'},
-					{value: 2067, label: '仁和区'},
-					{value: 2068, label: '米易县'},
-					{value: 2069, label: '盐边县'}
-			]},
-			{value: 238, label: '泸州市', children: [
-					{value: 2070, label: '江阳区'},
-					{value: 2071, label: '纳溪区'},
-					{value: 2072, label: '龙马潭区'},
-					{value: 2073, label: '泸县'},
-					{value: 2074, label: '合江县'},
-					{value: 2075, label: '叙永县'},
-					{value: 2076, label: '古蔺县'}
-			]},
-			{value: 239, label: '德阳市', children: [
-					{value: 2077, label: '旌阳区'},
-					{value: 2078, label: '中江县'},
-					{value: 2079, label: '罗江县'},
-					{value: 2080, label: '广汉市'},
-					{value: 2081, label: '什邡市'},
-					{value: 2082, label: '绵竹市'}
-			]},
-			{value: 240, label: '绵阳市', children: [
-					{value: 2083, label: '涪城区'},
-					{value: 2084, label: '游仙区'},
-					{value: 2085, label: '三台县'},
-					{value: 2086, label: '盐亭县'},
-					{value: 2087, label: '安县'},
-					{value: 2088, label: '梓潼县'},
-					{value: 2089, label: '北川羌族自治县'},
-					{value: 2090, label: '平武县'},
-					{value: 2091, label: '江油市'}
-			]},
-			{value: 241, label: '广元市', children: [
-					{value: 2092, label: '市中区'},
-					{value: 2093, label: '元坝区'},
-					{value: 2094, label: '朝天区'},
-					{value: 2095, label: '旺苍县'},
-					{value: 2096, label: '青川县'},
-					{value: 2097, label: '剑阁县'},
-					{value: 2098, label: '苍溪县'}
-			]},
-			{value: 242, label: '遂宁市', children: [
-					{value: 2099, label: '船山区'},
-					{value: 2100, label: '安居区'},
-					{value: 2101, label: '蓬溪县'},
-					{value: 2102, label: '射洪县'},
-					{value: 2103, label: '大英县'}
-			]},
-			{value: 243, label: '内江市', children: [
-					{value: 2104, label: '市中区'},
-					{value: 2105, label: '东兴区'},
-					{value: 2106, label: '威远县'},
-					{value: 2107, label: '资中县'},
-					{value: 2108, label: '隆昌县'}
-			]},
-			{value: 244, label: '乐山市', children: [
-					{value: 2109, label: '市中区'},
-					{value: 2110, label: '沙湾区'},
-					{value: 2111, label: '五通桥区'},
-					{value: 2112, label: '金口河区'},
-					{value: 2113, label: '犍为县'},
-					{value: 2114, label: '井研县'},
-					{value: 2115, label: '夹江县'},
-					{value: 2116, label: '沐川县'},
-					{value: 2117, label: '峨边彝族自治县'},
-					{value: 2118, label: '马边彝族自治县'},
-					{value: 2119, label: '峨眉山市'}
-			]},
-			{value: 245, label: '南充市', children: [
-					{value: 2120, label: '顺庆区'},
-					{value: 2121, label: '高坪区'},
-					{value: 2122, label: '嘉陵区'},
-					{value: 2123, label: '南部县'},
-					{value: 2124, label: '营山县'},
-					{value: 2125, label: '蓬安县'},
-					{value: 2126, label: '仪陇县'},
-					{value: 2127, label: '西充县'},
-					{value: 2128, label: '阆中市'}
-			]},
-			{value: 246, label: '眉山市', children: [
-					{value: 2129, label: '东坡区'},
-					{value: 2130, label: '仁寿县'},
-					{value: 2131, label: '彭山县'},
-					{value: 2132, label: '洪雅县'},
-					{value: 2133, label: '丹棱县'},
-					{value: 2134, label: '青神县'}
-			]},
-			{value: 247, label: '宜宾市', children: [
-					{value: 2135, label: '翠屏区'},
-					{value: 2136, label: '宜宾县'},
-					{value: 2137, label: '南溪县'},
-					{value: 2138, label: '江安县'},
-					{value: 2139, label: '长宁县'},
-					{value: 2140, label: '高县'},
-					{value: 2141, label: '珙县'},
-					{value: 2142, label: '筠连县'},
-					{value: 2143, label: '兴文县'},
-					{value: 2144, label: '屏山县'}
-			]},
-			{value: 248, label: '广安市', children: [
-					{value: 2145, label: '广安区'},
-					{value: 2146, label: '岳池县'},
-					{value: 2147, label: '武胜县'},
-					{value: 2148, label: '邻水县'},
-					{value: 2149, label: '华蓥市'}
-			]},
-			{value: 249, label: '达州市', children: [
-					{value: 2150, label: '通川区'},
-					{value: 2151, label: '达县'},
-					{value: 2152, label: '宣汉县'},
-					{value: 2153, label: '开江县'},
-					{value: 2154, label: '大竹县'},
-					{value: 2155, label: '渠县'},
-					{value: 2156, label: '万源市'}
-			]},
-			{value: 250, label: '雅安市', children: [
-					{value: 2157, label: '雨城区'},
-					{value: 2158, label: '名山县'},
-					{value: 2159, label: '荥经县'},
-					{value: 2160, label: '汉源县'},
-					{value: 2161, label: '石棉县'},
-					{value: 2162, label: '天全县'},
-					{value: 2163, label: '芦山县'},
-					{value: 2164, label: '宝兴县'}
-			]},
-			{value: 251, label: '巴中市', children: [
-					{value: 2165, label: '巴州区'},
-					{value: 2166, label: '通江县'},
-					{value: 2167, label: '南江县'},
-					{value: 2168, label: '平昌县'}
-			]},
-			{value: 252, label: '资阳市', children: [
-					{value: 2169, label: '雁江区'},
-					{value: 2170, label: '安岳县'},
-					{value: 2171, label: '乐至县'},
-					{value: 2172, label: '简阳市'}
-			]},
-			{value: 253, label: '阿坝', children: [
-					{value: 2173, label: '汶川县'},
-					{value: 2174, label: '理县'},
-					{value: 2175, label: '茂县'},
-					{value: 2176, label: '松潘县'},
-					{value: 2177, label: '九寨沟县'},
-					{value: 2178, label: '金川县'},
-					{value: 2179, label: '小金县'},
-					{value: 2180, label: '黑水县'},
-					{value: 2181, label: '马尔康县'},
-					{value: 2182, label: '壤塘县'},
-					{value: 2183, label: '阿坝县'},
-					{value: 2184, label: '若尔盖县'},
-					{value: 2185, label: '红原县'}
-			]},
-			{value: 254, label: '甘孜', children: [
-					{value: 2186, label: '康定县'},
-					{value: 2187, label: '泸定县'},
-					{value: 2188, label: '丹巴县'},
-					{value: 2189, label: '九龙县'},
-					{value: 2190, label: '雅江县'},
-					{value: 2191, label: '道孚县'},
-					{value: 2192, label: '炉霍县'},
-					{value: 2193, label: '甘孜县'},
-					{value: 2194, label: '新龙县'},
-					{value: 2195, label: '德格县'},
-					{value: 2196, label: '白玉县'},
-					{value: 2197, label: '石渠县'},
-					{value: 2198, label: '色达县'},
-					{value: 2199, label: '理塘县'},
-					{value: 2200, label: '巴塘县'},
-					{value: 2201, label: '乡城县'},
-					{value: 2202, label: '稻城县'},
-					{value: 2203, label: '得荣县'}
-			]},
-			{value: 255, label: '凉山', children: [
-					{value: 2204, label: '西昌市'},
-					{value: 2205, label: '木里藏族自治县'},
-					{value: 2206, label: '盐源县'},
-					{value: 2207, label: '德昌县'},
-					{value: 2208, label: '会理县'},
-					{value: 2209, label: '会东县'},
-					{value: 2210, label: '宁南县'},
-					{value: 2211, label: '普格县'},
-					{value: 2212, label: '布拖县'},
-					{value: 2213, label: '金阳县'},
-					{value: 2214, label: '昭觉县'},
-					{value: 2215, label: '喜德县'},
-					{value: 2216, label: '冕宁县'},
-					{value: 2217, label: '越西县'},
-					{value: 2218, label: '甘洛县'},
-					{value: 2219, label: '美姑县'},
-					{value: 2220, label: '雷波县'}
-			]}
-	]},
-	{value: 24, label: '贵州省', children: [
-			{value: 256, label: '贵阳市', children: [
-					{value: 2221, label: '南明区'},
-					{value: 2222, label: '云岩区'},
-					{value: 2223, label: '花溪区'},
-					{value: 2224, label: '乌当区'},
-					{value: 2225, label: '白云区'},
-					{value: 2226, label: '小河区'},
-					{value: 2227, label: '开阳县'},
-					{value: 2228, label: '息烽县'},
-					{value: 2229, label: '修文县'},
-					{value: 2230, label: '清镇市'}
-			]},
-			{value: 257, label: '六盘水市', children: [
-					{value: 2231, label: '钟山区'},
-					{value: 2232, label: '六枝特区'},
-					{value: 2233, label: '水城县'},
-					{value: 2234, label: '盘县'}
-			]},
-			{value: 258, label: '遵义市', children: [
-					{value: 2235, label: '红花岗区'},
-					{value: 2236, label: '汇川区'},
-					{value: 2237, label: '遵义县'},
-					{value: 2238, label: '桐梓县'},
-					{value: 2239, label: '绥阳县'},
-					{value: 2240, label: '正安县'},
-					{value: 2241, label: '道真仡佬族苗族自治县'},
-					{value: 2242, label: '务川仡佬族苗族自治县'},
-					{value: 2243, label: '凤冈县'},
-					{value: 2244, label: '湄潭县'},
-					{value: 2245, label: '余庆县'},
-					{value: 2246, label: '习水县'},
-					{value: 2247, label: '赤水市'},
-					{value: 2248, label: '仁怀市'}
-			]},
-			{value: 259, label: '安顺市', children: [
-					{value: 2249, label: '西秀区'},
-					{value: 2250, label: '平坝县'},
-					{value: 2251, label: '普定县'},
-					{value: 2252, label: '镇宁布依族苗族自治县'},
-					{value: 2253, label: '关岭布依族苗族自治县'},
-					{value: 2254, label: '紫云苗族布依族自治县'}
-			]},
-			{value: 260, label: '铜仁地区', children: [
-					{value: 2255, label: '铜仁市'},
-					{value: 2256, label: '江口县'},
-					{value: 2257, label: '玉屏侗族自治县'},
-					{value: 2258, label: '石阡县'},
-					{value: 2259, label: '思南县'},
-					{value: 2260, label: '印江土家族苗族自治县'},
-					{value: 2261, label: '德江县'},
-					{value: 2262, label: '沿河土家族自治县'},
-					{value: 2263, label: '松桃苗族自治县'},
-					{value: 2264, label: '万山特区'}
-			]},
-			{value: 261, label: '黔西', children: [
-					{value: 2265, label: '兴义市'},
-					{value: 2266, label: '兴仁县'},
-					{value: 2267, label: '普安县'},
-					{value: 2268, label: '晴隆县'},
-					{value: 2269, label: '贞丰县'},
-					{value: 2270, label: '望谟县'},
-					{value: 2271, label: '册亨县'},
-					{value: 2272, label: '安龙县'}
-			]},
-			{value: 262, label: '毕节地区', children: [
-					{value: 2273, label: '毕节市'},
-					{value: 2274, label: '大方县'},
-					{value: 2275, label: '黔西县'},
-					{value: 2276, label: '金沙县'},
-					{value: 2277, label: '织金县'},
-					{value: 2278, label: '纳雍县'},
-					{value: 2279, label: '威宁彝族回族苗族自治县'},
-					{value: 2280, label: '赫章县'}
-			]},
-			{value: 263, label: '黔东', children: [
-					{value: 2281, label: '凯里市'},
-					{value: 2282, label: '黄平县'},
-					{value: 2283, label: '施秉县'},
-					{value: 2284, label: '三穗县'},
-					{value: 2285, label: '镇远县'},
-					{value: 2286, label: '岑巩县'},
-					{value: 2287, label: '天柱县'},
-					{value: 2288, label: '锦屏县'},
-					{value: 2289, label: '剑河县'},
-					{value: 2290, label: '台江县'},
-					{value: 2291, label: '黎平县'},
-					{value: 2292, label: '榕江县'},
-					{value: 2293, label: '从江县'},
-					{value: 2294, label: '雷山县'},
-					{value: 2295, label: '麻江县'},
-					{value: 2296, label: '丹寨县'}
-			]},
-			{value: 264, label: '黔南', children: [
-					{value: 2297, label: '都匀市'},
-					{value: 2298, label: '福泉市'},
-					{value: 2299, label: '荔波县'},
-					{value: 2300, label: '贵定县'},
-					{value: 2301, label: '瓮安县'},
-					{value: 2302, label: '独山县'},
-					{value: 2303, label: '平塘县'},
-					{value: 2304, label: '罗甸县'},
-					{value: 2305, label: '长顺县'},
-					{value: 2306, label: '龙里县'},
-					{value: 2307, label: '惠水县'},
-					{value: 2308, label: '三都水族自治县'}
-			]}
-	]},
-	{value: 25, label: '云南省', children: [
-			{value: 265, label: '昆明市', children: [
-					{value: 2309, label: '五华区'},
-					{value: 2310, label: '盘龙区'},
-					{value: 2311, label: '官渡区'},
-					{value: 2312, label: '西山区'},
-					{value: 2313, label: '东川区'},
-					{value: 2314, label: '呈贡县'},
-					{value: 2315, label: '晋宁县'},
-					{value: 2316, label: '富民县'},
-					{value: 2317, label: '宜良县'},
-					{value: 2318, label: '石林彝族自治县'},
-					{value: 2319, label: '嵩明县'},
-					{value: 2320, label: '禄劝彝族苗族自治县'},
-					{value: 2321, label: '寻甸回族彝族自治县'},
-					{value: 2322, label: '安宁市'}
-			]},
-			{value: 266, label: '曲靖市', children: [
-					{value: 2323, label: '麒麟区'},
-					{value: 2324, label: '马龙县'},
-					{value: 2325, label: '陆良县'},
-					{value: 2326, label: '师宗县'},
-					{value: 2327, label: '罗平县'},
-					{value: 2328, label: '富源县'},
-					{value: 2329, label: '会泽县'},
-					{value: 2330, label: '沾益县'},
-					{value: 2331, label: '宣威市'}
-			]},
-			{value: 267, label: '玉溪市', children: [
-					{value: 2332, label: '红塔区'},
-					{value: 2333, label: '江川县'},
-					{value: 2334, label: '澄江县'},
-					{value: 2335, label: '通海县'},
-					{value: 2336, label: '华宁县'},
-					{value: 2337, label: '易门县'},
-					{value: 2338, label: '峨山彝族自治县'},
-					{value: 2339, label: '新平彝族傣族自治县'},
-					{value: 2340, label: '元江哈尼族彝族傣族自治县'}
-			]},
-			{value: 268, label: '保山市', children: [
-					{value: 2341, label: '隆阳区'},
-					{value: 2342, label: '施甸县'},
-					{value: 2343, label: '腾冲县'},
-					{value: 2344, label: '龙陵县'},
-					{value: 2345, label: '昌宁县'}
-			]},
-			{value: 269, label: '昭通市', children: [
-					{value: 2346, label: '昭阳区'},
-					{value: 2347, label: '鲁甸县'},
-					{value: 2348, label: '巧家县'},
-					{value: 2349, label: '盐津县'},
-					{value: 2350, label: '大关县'},
-					{value: 2351, label: '永善县'},
-					{value: 2352, label: '绥江县'},
-					{value: 2353, label: '镇雄县'},
-					{value: 2354, label: '彝良县'},
-					{value: 2355, label: '威信县'},
-					{value: 2356, label: '水富县'}
-			]},
-			{value: 270, label: '丽江市', children: [
-					{value: 2357, label: '古城区'},
-					{value: 2358, label: '玉龙纳西族自治县'},
-					{value: 2359, label: '永胜县'},
-					{value: 2360, label: '华坪县'},
-					{value: 2361, label: '宁蒗彝族自治县'}
-			]},
-			{value: 271, label: '思茅市', children: [
-					{value: 2362, label: '翠云区'},
-					{value: 2363, label: '普洱哈尼族彝族自治县'},
-					{value: 2364, label: '墨江哈尼族自治县'},
-					{value: 2365, label: '景东彝族自治县'},
-					{value: 2366, label: '景谷傣族彝族自治县'},
-					{value: 2367, label: '镇沅彝族哈尼族拉祜族自治县'},
-					{value: 2368, label: '江城哈尼族彝族自治县'},
-					{value: 2369, label: '孟连傣族拉祜族佤族自治县'},
-					{value: 2370, label: '澜沧拉祜族自治县'},
-					{value: 2371, label: '西盟佤族自治县'}
-			]},
-			{value: 272, label: '临沧市', children: [
-					{value: 2372, label: '临翔区'},
-					{value: 2373, label: '凤庆县'},
-					{value: 2374, label: '云县'},
-					{value: 2375, label: '永德县'},
-					{value: 2376, label: '镇康县'},
-					{value: 2377, label: '双江拉祜族佤族布朗族傣族自治县'},
-					{value: 2378, label: '耿马傣族佤族自治县'},
-					{value: 2379, label: '沧源佤族自治县'}
-			]},
-			{value: 273, label: '楚雄', children: [
-					{value: 2380, label: '楚雄市'},
-					{value: 2381, label: '双柏县'},
-					{value: 2382, label: '牟定县'},
-					{value: 2383, label: '南华县'},
-					{value: 2384, label: '姚安县'},
-					{value: 2385, label: '大姚县'},
-					{value: 2386, label: '永仁县'},
-					{value: 2387, label: '元谋县'},
-					{value: 2388, label: '武定县'},
-					{value: 2389, label: '禄丰县'}
-			]},
-			{value: 274, label: '红河', children: [
-					{value: 2390, label: '个旧市'},
-					{value: 2391, label: '开远市'},
-					{value: 2392, label: '蒙自县'},
-					{value: 2393, label: '屏边苗族自治县'},
-					{value: 2394, label: '建水县'},
-					{value: 2395, label: '石屏县'},
-					{value: 2396, label: '弥勒县'},
-					{value: 2397, label: '泸西县'},
-					{value: 2398, label: '元阳县'},
-					{value: 2399, label: '红河县'},
-					{value: 2400, label: '金平苗族瑶族傣族自治县'},
-					{value: 2401, label: '绿春县'},
-					{value: 2402, label: '河口瑶族自治县'}
-			]},
-			{value: 275, label: '文山', children: [
-					{value: 2403, label: '文山县'},
-					{value: 2404, label: '砚山县'},
-					{value: 2405, label: '西畴县'},
-					{value: 2406, label: '麻栗坡县'},
-					{value: 2407, label: '马关县'},
-					{value: 2408, label: '丘北县'},
-					{value: 2409, label: '广南县'},
-					{value: 2410, label: '富宁县'}
-			]},
-			{value: 276, label: '西双版纳', children: [
-					{value: 2411, label: '景洪市'},
-					{value: 2412, label: '勐海县'},
-					{value: 2413, label: '勐腊县'}
-			]},
-			{value: 277, label: '大理', children: [
-					{value: 2414, label: '大理市'},
-					{value: 2415, label: '漾濞彝族自治县'},
-					{value: 2416, label: '祥云县'},
-					{value: 2417, label: '宾川县'},
-					{value: 2418, label: '弥渡县'},
-					{value: 2419, label: '南涧彝族自治县'},
-					{value: 2420, label: '巍山彝族回族自治县'},
-					{value: 2421, label: '永平县'},
-					{value: 2422, label: '云龙县'},
-					{value: 2423, label: '洱源县'},
-					{value: 2424, label: '剑川县'},
-					{value: 2425, label: '鹤庆县'}
-			]},
-			{value: 278, label: '德宏', children: [
-					{value: 2426, label: '瑞丽市'},
-					{value: 2427, label: '潞西市'},
-					{value: 2428, label: '梁河县'},
-					{value: 2429, label: '盈江县'},
-					{value: 2430, label: '陇川县'}
-			]},
-			{value: 279, label: '怒江', children: [
-					{value: 2431, label: '泸水县'},
-					{value: 2432, label: '福贡县'},
-					{value: 2433, label: '贡山独龙族怒族自治县'},
-					{value: 2434, label: '兰坪白族普米族自治县'}
-			]},
-			{value: 280, label: '迪庆', children: [
-					{value: 2435, label: '香格里拉县'},
-					{value: 2436, label: '德钦县'},
-					{value: 2437, label: '维西傈僳族自治县'}
-			]}
-	]},
-	{value: 26, label: '西藏', children: [
-			{value: 281, label: '拉萨市', children: [
-					{value: 2438, label: '城关区'},
-					{value: 2439, label: '林周县'},
-					{value: 2440, label: '当雄县'},
-					{value: 2441, label: '尼木县'},
-					{value: 2442, label: '曲水县'},
-					{value: 2443, label: '堆龙德庆县'},
-					{value: 2444, label: '达孜县'},
-					{value: 2445, label: '墨竹工卡县'}
-			]},
-			{value: 282, label: '昌都地区', children: [
-					{value: 2446, label: '昌都县'},
-					{value: 2447, label: '江达县'},
-					{value: 2448, label: '贡觉县'},
-					{value: 2449, label: '类乌齐县'},
-					{value: 2450, label: '丁青县'},
-					{value: 2451, label: '察雅县'},
-					{value: 2452, label: '八宿县'},
-					{value: 2453, label: '左贡县'},
-					{value: 2454, label: '芒康县'},
-					{value: 2455, label: '洛隆县'},
-					{value: 2456, label: '边坝县'}
-			]},
-			{value: 283, label: '山南地区', children: [
-					{value: 2457, label: '乃东县'},
-					{value: 2458, label: '扎囊县'},
-					{value: 2459, label: '贡嘎县'},
-					{value: 2460, label: '桑日县'},
-					{value: 2461, label: '琼结县'},
-					{value: 2462, label: '曲松县'},
-					{value: 2463, label: '措美县'},
-					{value: 2464, label: '洛扎县'},
-					{value: 2465, label: '加查县'},
-					{value: 2466, label: '隆子县'},
-					{value: 2467, label: '错那县'},
-					{value: 2468, label: '浪卡子县'}
-			]},
-			{value: 284, label: '日喀则地区', children: [
-					{value: 2469, label: '日喀则市'},
-					{value: 2470, label: '南木林县'},
-					{value: 2471, label: '江孜县'},
-					{value: 2472, label: '定日县'},
-					{value: 2473, label: '萨迦县'},
-					{value: 2474, label: '拉孜县'},
-					{value: 2475, label: '昂仁县'},
-					{value: 2476, label: '谢通门县'},
-					{value: 2477, label: '白朗县'},
-					{value: 2478, label: '仁布县'},
-					{value: 2479, label: '康马县'},
-					{value: 2480, label: '定结县'},
-					{value: 2481, label: '仲巴县'},
-					{value: 2482, label: '亚东县'},
-					{value: 2483, label: '吉隆县'},
-					{value: 2484, label: '聂拉木县'},
-					{value: 2485, label: '萨嘎县'},
-					{value: 2486, label: '岗巴县'}
-			]},
-			{value: 285, label: '那曲地区', children: [
-					{value: 2487, label: '那曲县'},
-					{value: 2488, label: '嘉黎县'},
-					{value: 2489, label: '比如县'},
-					{value: 2490, label: '聂荣县'},
-					{value: 2491, label: '安多县'},
-					{value: 2492, label: '申扎县'},
-					{value: 2493, label: '索县'},
-					{value: 2494, label: '班戈县'},
-					{value: 2495, label: '巴青县'},
-					{value: 2496, label: '尼玛县'}
-			]},
-			{value: 286, label: '阿里地区', children: [
-					{value: 2497, label: '普兰县'},
-					{value: 2498, label: '札达县'},
-					{value: 2499, label: '噶尔县'},
-					{value: 2500, label: '日土县'},
-					{value: 2501, label: '革吉县'},
-					{value: 2502, label: '改则县'},
-					{value: 2503, label: '措勤县'}
-			]},
-			{value: 287, label: '林芝地区', children: [
-					{value: 2504, label: '林芝县'},
-					{value: 2505, label: '工布江达县'},
-					{value: 2506, label: '米林县'},
-					{value: 2507, label: '墨脱县'},
-					{value: 2508, label: '波密县'},
-					{value: 2509, label: '察隅县'},
-					{value: 2510, label: '朗县'}
-			]}
-	]},
-	{value: 27, label: '陕西省', children: [
-			{value: 288, label: '西安市', children: [
-					{value: 2511, label: '新城区'},
-					{value: 2512, label: '碑林区'},
-					{value: 2513, label: '莲湖区'},
-					{value: 2514, label: '灞桥区'},
-					{value: 2515, label: '未央区'},
-					{value: 2516, label: '雁塔区'},
-					{value: 2517, label: '阎良区'},
-					{value: 2518, label: '临潼区'},
-					{value: 2519, label: '长安区'},
-					{value: 2520, label: '蓝田县'},
-					{value: 2521, label: '周至县'},
-					{value: 2522, label: '户县'},
-					{value: 2523, label: '高陵县'}
-			]},
-			{value: 289, label: '铜川市', children: [
-					{value: 2524, label: '王益区'},
-					{value: 2525, label: '印台区'},
-					{value: 2526, label: '耀州区'},
-					{value: 2527, label: '宜君县'}
-			]},
-			{value: 290, label: '宝鸡市', children: [
-					{value: 2528, label: '渭滨区'},
-					{value: 2529, label: '金台区'},
-					{value: 2530, label: '陈仓区'},
-					{value: 2531, label: '凤翔县'},
-					{value: 2532, label: '岐山县'},
-					{value: 2533, label: '扶风县'},
-					{value: 2534, label: '眉县'},
-					{value: 2535, label: '陇县'},
-					{value: 2536, label: '千阳县'},
-					{value: 2537, label: '麟游县'},
-					{value: 2538, label: '凤县'},
-					{value: 2539, label: '太白县'}
-			]},
-			{value: 291, label: '咸阳市', children: [
-					{value: 2540, label: '秦都区'},
-					{value: 2541, label: '杨凌区'},
-					{value: 2542, label: '渭城区'},
-					{value: 2543, label: '三原县'},
-					{value: 2544, label: '泾阳县'},
-					{value: 2545, label: '乾县'},
-					{value: 2546, label: '礼泉县'},
-					{value: 2547, label: '永寿县'},
-					{value: 2548, label: '彬县'},
-					{value: 2549, label: '长武县'},
-					{value: 2550, label: '旬邑县'},
-					{value: 2551, label: '淳化县'},
-					{value: 2552, label: '武功县'},
-					{value: 2553, label: '兴平市'}
-			]},
-			{value: 292, label: '渭南市', children: [
-					{value: 2554, label: '临渭区'},
-					{value: 2555, label: '华县'},
-					{value: 2556, label: '潼关县'},
-					{value: 2557, label: '大荔县'},
-					{value: 2558, label: '合阳县'},
-					{value: 2559, label: '澄城县'},
-					{value: 2560, label: '蒲城县'},
-					{value: 2561, label: '白水县'},
-					{value: 2562, label: '富平县'},
-					{value: 2563, label: '韩城市'},
-					{value: 2564, label: '华阴市'}
-			]},
-			{value: 293, label: '延安市', children: [
-					{value: 2565, label: '宝塔区'},
-					{value: 2566, label: '延长县'},
-					{value: 2567, label: '延川县'},
-					{value: 2568, label: '子长县'},
-					{value: 2569, label: '安塞县'},
-					{value: 2570, label: '志丹县'},
-					{value: 2571, label: '吴旗县'},
-					{value: 2572, label: '甘泉县'},
-					{value: 2573, label: '富县'},
-					{value: 2574, label: '洛川县'},
-					{value: 2575, label: '宜川县'},
-					{value: 2576, label: '黄龙县'},
-					{value: 2577, label: '黄陵县'}
-			]},
-			{value: 294, label: '汉中市', children: [
-					{value: 2578, label: '汉台区'},
-					{value: 2579, label: '南郑县'},
-					{value: 2580, label: '城固县'},
-					{value: 2581, label: '洋县'},
-					{value: 2582, label: '西乡县'},
-					{value: 2583, label: '勉县'},
-					{value: 2584, label: '宁强县'},
-					{value: 2585, label: '略阳县'},
-					{value: 2586, label: '镇巴县'},
-					{value: 2587, label: '留坝县'},
-					{value: 2588, label: '佛坪县'}
-			]},
-			{value: 295, label: '榆林市', children: [
-					{value: 2589, label: '榆阳区'},
-					{value: 2590, label: '神木县'},
-					{value: 2591, label: '府谷县'},
-					{value: 2592, label: '横山县'},
-					{value: 2593, label: '靖边县'},
-					{value: 2594, label: '定边县'},
-					{value: 2595, label: '绥德县'},
-					{value: 2596, label: '米脂县'},
-					{value: 2597, label: '佳县'},
-					{value: 2598, label: '吴堡县'},
-					{value: 2599, label: '清涧县'},
-					{value: 2600, label: '子洲县'}
-			]},
-			{value: 296, label: '安康市', children: [
-					{value: 2601, label: '汉滨区'},
-					{value: 2602, label: '汉阴县'},
-					{value: 2603, label: '石泉县'},
-					{value: 2604, label: '宁陕县'},
-					{value: 2605, label: '紫阳县'},
-					{value: 2606, label: '岚皋县'},
-					{value: 2607, label: '平利县'},
-					{value: 2608, label: '镇坪县'},
-					{value: 2609, label: '旬阳县'},
-					{value: 2610, label: '白河县'}
-			]},
-			{value: 297, label: '商洛市', children: [
-					{value: 2611, label: '商州区'},
-					{value: 2612, label: '洛南县'},
-					{value: 2613, label: '丹凤县'},
-					{value: 2614, label: '商南县'},
-					{value: 2615, label: '山阳县'},
-					{value: 2616, label: '镇安县'},
-					{value: 2617, label: '柞水县'}
-			]}
-	]},
-	{value: 28, label: '甘肃省', children: [
-			{value: 298, label: '兰州市', children: [
-					{value: 2618, label: '城关区'},
-					{value: 2619, label: '七里河区'},
-					{value: 2620, label: '西固区'},
-					{value: 2621, label: '安宁区'},
-					{value: 2622, label: '红古区'},
-					{value: 2623, label: '永登县'},
-					{value: 2624, label: '皋兰县'},
-					{value: 2625, label: '榆中县'}
-			]},
-			{value: 299, label: '嘉峪关市', children: []},
-			{value: 300, label: '金昌市', children: [
-					{value: 2626, label: '金川区'},
-					{value: 2627, label: '永昌县'}
-			]},
-			{value: 301, label: '白银市', children: [
-					{value: 2628, label: '白银区'},
-					{value: 2629, label: '平川区'},
-					{value: 2630, label: '靖远县'},
-					{value: 2631, label: '会宁县'},
-					{value: 2632, label: '景泰县'}
-			]},
-			{value: 302, label: '天水市', children: [
-					{value: 2633, label: '秦城区'},
-					{value: 2634, label: '北道区'},
-					{value: 2635, label: '清水县'},
-					{value: 2636, label: '秦安县'},
-					{value: 2637, label: '甘谷县'},
-					{value: 2638, label: '武山县'},
-					{value: 2639, label: '张家川回族自治县'}
-			]},
-			{value: 303, label: '武威市', children: [
-					{value: 2640, label: '凉州区'},
-					{value: 2641, label: '民勤县'},
-					{value: 2642, label: '古浪县'},
-					{value: 2643, label: '天祝藏族自治县'}
-			]},
-			{value: 304, label: '张掖市', children: [
-					{value: 2644, label: '甘州区'},
-					{value: 2645, label: '肃南裕固族自治县'},
-					{value: 2646, label: '民乐县'},
-					{value: 2647, label: '临泽县'},
-					{value: 2648, label: '高台县'},
-					{value: 2649, label: '山丹县'}
-			]},
-			{value: 305, label: '平凉市', children: [
-					{value: 2650, label: '崆峒区'},
-					{value: 2651, label: '泾川县'},
-					{value: 2652, label: '灵台县'},
-					{value: 2653, label: '崇信县'},
-					{value: 2654, label: '华亭县'},
-					{value: 2655, label: '庄浪县'},
-					{value: 2656, label: '静宁县'}
-			]},
-			{value: 306, label: '酒泉市', children: [
-					{value: 2657, label: '肃州区'},
-					{value: 2658, label: '金塔县'},
-					{value: 2659, label: '安西县'},
-					{value: 2660, label: '肃北蒙古族自治县'},
-					{value: 2661, label: '阿克塞哈萨克族自治县'},
-					{value: 2662, label: '玉门市'},
-					{value: 2663, label: '敦煌市'}
-			]},
-			{value: 307, label: '庆阳市', children: [
-					{value: 2664, label: '西峰区'},
-					{value: 2665, label: '庆城县'},
-					{value: 2666, label: '环县'},
-					{value: 2667, label: '华池县'},
-					{value: 2668, label: '合水县'},
-					{value: 2669, label: '正宁县'},
-					{value: 2670, label: '宁县'},
-					{value: 2671, label: '镇原县'}
-			]},
-			{value: 308, label: '定西市', children: [
-					{value: 2672, label: '安定区'},
-					{value: 2673, label: '通渭县'},
-					{value: 2674, label: '陇西县'},
-					{value: 2675, label: '渭源县'},
-					{value: 2676, label: '临洮县'},
-					{value: 2677, label: '漳县'},
-					{value: 2678, label: '岷县'}
-			]},
-			{value: 309, label: '陇南市', children: [
-					{value: 2679, label: '武都区'},
-					{value: 2680, label: '成县'},
-					{value: 2681, label: '文县'},
-					{value: 2682, label: '宕昌县'},
-					{value: 2683, label: '康县'},
-					{value: 2684, label: '西和县'},
-					{value: 2685, label: '礼县'},
-					{value: 2686, label: '徽县'},
-					{value: 2687, label: '两当县'}
-			]},
-			{value: 310, label: '临夏', children: [
-					{value: 2688, label: '临夏市'},
-					{value: 2689, label: '临夏县'},
-					{value: 2690, label: '康乐县'},
-					{value: 2691, label: '永靖县'},
-					{value: 2692, label: '广河县'},
-					{value: 2693, label: '和政县'},
-					{value: 2694, label: '东乡族自治县'},
-					{value: 2695, label: '积石山保安族东乡族撒拉族自治县'}
-			]},
-			{value: 311, label: '甘南', children: [
-					{value: 2696, label: '合作市'},
-					{value: 2697, label: '临潭县'},
-					{value: 2698, label: '卓尼县'},
-					{value: 2699, label: '舟曲县'},
-					{value: 2700, label: '迭部县'},
-					{value: 2701, label: '玛曲县'},
-					{value: 2702, label: '碌曲县'},
-					{value: 2703, label: '夏河县'}
-			]}
-	]},
-	{value: 29, label: '青海省', children: [
-			{value: 312, label: '西宁市', children: [
-					{value: 2704, label: '城东区'},
-					{value: 2705, label: '城中区'},
-					{value: 2706, label: '城西区'},
-					{value: 2707, label: '城北区'},
-					{value: 2708, label: '大通回族土族自治县'},
-					{value: 2709, label: '湟中县'},
-					{value: 2710, label: '湟源县'}
-			]},
-			{value: 313, label: '海东地区', children: [
-					{value: 2711, label: '平安县'},
-					{value: 2712, label: '民和回族土族自治县'},
-					{value: 2713, label: '乐都县'},
-					{value: 2714, label: '互助土族自治县'},
-					{value: 2715, label: '化隆回族自治县'},
-					{value: 2716, label: '循化撒拉族自治县'}
-			]},
-			{value: 314, label: '海北', children: [
-					{value: 2717, label: '门源回族自治县'},
-					{value: 2718, label: '祁连县'},
-					{value: 2719, label: '海晏县'},
-					{value: 2720, label: '刚察县'}
-			]},
-			{value: 315, label: '黄南', children: [
-					{value: 2721, label: '同仁县'},
-					{value: 2722, label: '尖扎县'},
-					{value: 2723, label: '泽库县'},
-					{value: 2724, label: '河南蒙古族自治县'}
-			]},
-			{value: 316, label: '海南', children: [
-					{value: 2725, label: '共和县'},
-					{value: 2726, label: '同德县'},
-					{value: 2727, label: '贵德县'},
-					{value: 2728, label: '兴海县'},
-					{value: 2729, label: '贵南县'}
-			]},
-			{value: 317, label: '果洛', children: [
-					{value: 2730, label: '玛沁县'},
-					{value: 2731, label: '班玛县'},
-					{value: 2732, label: '甘德县'},
-					{value: 2733, label: '达日县'},
-					{value: 2734, label: '久治县'},
-					{value: 2735, label: '玛多县'}
-			]},
-			{value: 318, label: '玉树', children: [
-					{value: 2736, label: '玉树县'},
-					{value: 2737, label: '杂多县'},
-					{value: 2738, label: '称多县'},
-					{value: 2739, label: '治多县'},
-					{value: 2740, label: '囊谦县'},
-					{value: 2741, label: '曲麻莱县'}
-			]},
-			{value: 319, label: '海西', children: [
-					{value: 2742, label: '格尔木市'},
-					{value: 2743, label: '德令哈市'},
-					{value: 2744, label: '乌兰县'},
-					{value: 2745, label: '都兰县'},
-					{value: 2746, label: '天峻县'}
-			]}
-	]},
-	{value: 30, label: '宁夏', children: [
-			{value: 320, label: '银川市', children: [
-					{value: 2747, label: '兴庆区'},
-					{value: 2748, label: '西夏区'},
-					{value: 2749, label: '金凤区'},
-					{value: 2750, label: '永宁县'},
-					{value: 2751, label: '贺兰县'},
-					{value: 2752, label: '灵武市'}
-			]},
-			{value: 321, label: '石嘴山市', children: [
-					{value: 2753, label: '大武口区'},
-					{value: 2754, label: '惠农区'},
-					{value: 2755, label: '平罗县'}
-			]},
-			{value: 322, label: '吴忠市', children: [
-					{value: 2756, label: '利通区'},
-					{value: 2757, label: '盐池县'},
-					{value: 2758, label: '同心县'},
-					{value: 2759, label: '青铜峡市'}
-			]},
-			{value: 323, label: '固原市', children: [
-					{value: 2760, label: '原州区'},
-					{value: 2761, label: '西吉县'},
-					{value: 2762, label: '隆德县'},
-					{value: 2763, label: '泾源县'},
-					{value: 2764, label: '彭阳县'}
-			]},
-			{value: 324, label: '中卫市', children: [
-					{value: 2765, label: '沙坡头区'},
-					{value: 2766, label: '中宁县'},
-					{value: 2767, label: '海原县'}
-			]}
-	]},
-	{value: 31, label: '新疆', children: [
-			{value: 325, label: '乌鲁木齐市', children: [
-					{value: 2768, label: '天山区'},
-					{value: 2769, label: '沙依巴克区'},
-					{value: 2770, label: '新市区'},
-					{value: 2771, label: '水磨沟区'},
-					{value: 2772, label: '头屯河区'},
-					{value: 2773, label: '达坂城区'},
-					{value: 2774, label: '东山区'},
-					{value: 2775, label: '乌鲁木齐县'}
-			]},
-			{value: 326, label: '克拉玛依市', children: [
-					{value: 2776, label: '独山子区'},
-					{value: 2777, label: '克拉玛依区'},
-					{value: 2778, label: '白碱滩区'},
-					{value: 2779, label: '乌尔禾区'}
-			]},
-			{value: 327, label: '吐鲁番地区', children: [
-					{value: 2780, label: '吐鲁番市'},
-					{value: 2781, label: '鄯善县'},
-					{value: 2782, label: '托克逊县'}
-			]},
-			{value: 328, label: '哈密地区', children: [
-					{value: 2783, label: '哈密市'},
-					{value: 2784, label: '巴里坤哈萨克自治县'},
-					{value: 2785, label: '伊吾县'}
-			]},
-			{value: 329, label: '昌吉', children: [
-					{value: 2786, label: '昌吉市'},
-					{value: 2787, label: '阜康市'},
-					{value: 2788, label: '米泉市'},
-					{value: 2789, label: '呼图壁县'},
-					{value: 2790, label: '玛纳斯县'},
-					{value: 2791, label: '奇台县'},
-					{value: 2792, label: '吉木萨尔县'},
-					{value: 2793, label: '木垒哈萨克自治县'}
-			]},
-			{value: 330, label: '博尔塔拉', children: [
-					{value: 2794, label: '博乐市'},
-					{value: 2795, label: '精河县'},
-					{value: 2796, label: '温泉县'}
-			]},
-			{value: 331, label: '巴音郭楞', children: [
-					{value: 2797, label: '库尔勒市'},
-					{value: 2798, label: '轮台县'},
-					{value: 2799, label: '尉犁县'},
-					{value: 2800, label: '若羌县'},
-					{value: 2801, label: '且末县'},
-					{value: 2802, label: '焉耆回族自治县'},
-					{value: 2803, label: '和静县'},
-					{value: 2804, label: '和硕县'},
-					{value: 2805, label: '博湖县'}
-			]},
-			{value: 332, label: '阿克苏地区', children: [
-					{value: 2806, label: '阿克苏市'},
-					{value: 2807, label: '温宿县'},
-					{value: 2808, label: '库车县'},
-					{value: 2809, label: '沙雅县'},
-					{value: 2810, label: '新和县'},
-					{value: 2811, label: '拜城县'},
-					{value: 2812, label: '乌什县'},
-					{value: 2813, label: '阿瓦提县'},
-					{value: 2814, label: '柯坪县'}
-			]},
-			{value: 333, label: '克孜勒苏柯尔克孜', children: [
-					{value: 2815, label: '阿图什市'},
-					{value: 2816, label: '阿克陶县'},
-					{value: 2817, label: '阿合奇县'},
-					{value: 2818, label: '乌恰县'}
-			]},
-			{value: 334, label: '喀什地区', children: [
-					{value: 2819, label: '喀什市'},
-					{value: 2820, label: '疏附县'},
-					{value: 2821, label: '疏勒县'},
-					{value: 2822, label: '英吉沙县'},
-					{value: 2823, label: '泽普县'},
-					{value: 2824, label: '莎车县'},
-					{value: 2825, label: '叶城县'},
-					{value: 2826, label: '麦盖提县'},
-					{value: 2827, label: '岳普湖县'},
-					{value: 2828, label: '伽师县'},
-					{value: 2829, label: '巴楚县'},
-					{value: 2830, label: '塔什库尔干塔吉克自治县'}
-			]},
-			{value: 335, label: '和田地区', children: [
-					{value: 2831, label: '和田市'},
-					{value: 2832, label: '和田县'},
-					{value: 2833, label: '墨玉县'},
-					{value: 2834, label: '皮山县'},
-					{value: 2835, label: '洛浦县'},
-					{value: 2836, label: '策勒县'},
-					{value: 2837, label: '于田县'},
-					{value: 2838, label: '民丰县'}
-			]},
-			{value: 336, label: '伊犁哈萨克', children: [
-					{value: 2839, label: '伊宁市'},
-					{value: 2840, label: '奎屯市'},
-					{value: 2841, label: '伊宁县'},
-					{value: 2842, label: '察布查尔锡伯自治县'},
-					{value: 2843, label: '霍城县'},
-					{value: 2844, label: '巩留县'},
-					{value: 2845, label: '新源县'},
-					{value: 2846, label: '昭苏县'},
-					{value: 2847, label: '特克斯县'},
-					{value: 2848, label: '尼勒克县'}
-			]},
-			{value: 337, label: '塔城地区', children: [
-					{value: 2849, label: '塔城市'},
-					{value: 2850, label: '乌苏市'},
-					{value: 2851, label: '额敏县'},
-					{value: 2852, label: '沙湾县'},
-					{value: 2853, label: '托里县'},
-					{value: 2854, label: '裕民县'},
-					{value: 2855, label: '和布克赛尔蒙古自治县'}
-			]},
-			{value: 338, label: '阿勒泰地区', children: [
-					{value: 2856, label: '阿勒泰市'},
-					{value: 2857, label: '布尔津县'},
-					{value: 2858, label: '富蕴县'},
-					{value: 2859, label: '福海县'},
-					{value: 2860, label: '哈巴河县'},
-					{value: 2861, label: '青河县'},
-					{value: 2862, label: '吉木乃县'}
-			]},
-			{value: 339, label: '石河子市', children: []},
-			{value: 340, label: '阿拉尔市', children: []},
-			{value: 341, label: '图木舒克市', children: []},
-			{value: 342, label: '五家渠市', children: []}
-	]},
-	{value: 32, label: '香港', children: [
-			{value: 343, label: '香港', children: []}
-	]},
-	{value: 33, label: '澳门', children: [
-			{value: 344, label: '澳门', children: []}
-	]},
-	{value: 34, label: '台湾', children: [
-			{value: 345, label: '台湾', children: []}
-	]}
- ]
+export default [{
+  value: "北京",
+  label: "北京",
+  code: "101010100",
+  "children": [{
+    value: "海淀",
+    label: "海淀",
+    code: "101010200"
+  }, {
+    value: "朝阳",
+    label: "朝阳",
+    code: "101010300"
+  }, {
+    value: "顺义",
+    label: "顺义",
+    code: "101010400"
+  }, {
+    value: "怀柔",
+    label: "怀柔",
+    code: "101010500"
+  }, {
+    value: "通州",
+    label: "通州",
+    code: "101010600"
+  }, {
+    value: "昌平",
+    label: "昌平",
+    code: "101010700"
+  }, {
+    value: "延庆",
+    label: "延庆",
+    code: "101010800"
+  }, {
+    value: "丰台",
+    label: "丰台",
+    code: "101010900"
+  }, {
+    value: "石景山",
+    label: "石景山",
+    code: "101011000"
+  }, {
+    value: "大兴",
+    label: "大兴",
+    code: "101011100"
+  }, {
+    value: "房山",
+    label: "房山",
+    code: "101011200"
+  }, {
+    value: "密云",
+    label: "密云",
+    code: "101011300"
+  }, {
+    value: "门头沟",
+    label: "门头沟",
+    code: "101011400"
+  }, {
+    value: "平谷",
+    label: "平谷",
+    code: "101011500"
+  }, {
+    value: "东城",
+    label: "东城",
+    code: "101011600"
+  }, {
+    value: "西城",
+    label: "西城",
+    code: "101011700"
+  }]
+}, {
+  value: "上海",
+  label: "上海",
+  code: "101020100",
+  "children": [{
+    value: "闵行",
+    label: "闵行",
+    code: "101020200"
+  }, {
+    value: "宝山",
+    label: "宝山",
+    code: "101020300"
+  }, {
+    value: "黄浦",
+    label: "黄浦",
+    code: "101020400"
+  }, {
+    value: "嘉定",
+    label: "嘉定",
+    code: "101020500"
+  }, {
+    value: "浦东新区",
+    label: "浦东新区",
+    code: "101020600"
+  }, {
+    value: "金山",
+    label: "金山",
+    code: "101020700"
+  }, {
+    value: "青浦",
+    label: "青浦",
+    code: "101020800"
+  }, {
+    value: "松江",
+    label: "松江",
+    code: "101020900"
+  }, {
+    value: "奉贤",
+    label: "奉贤",
+    code: "101021000"
+  }, {
+    value: "崇明",
+    label: "崇明",
+    code: "101021100"
+  }, {
+    value: "徐汇",
+    label: "徐汇",
+    code: "101021200"
+  }, {
+    value: "长宁",
+    label: "长宁",
+    code: "101021300"
+  }, {
+    value: "静安",
+    label: "静安",
+    code: "101021400"
+  }, {
+    value: "普陀",
+    label: "普陀",
+    code: "101021500"
+  }, {
+    value: "虹口",
+    label: "虹口",
+    code: "101021600"
+  }, {
+    value: "杨浦",
+    label: "杨浦",
+    code: "101021700"
+  }]
+}, {
+  value: "天津",
+  label: "天津",
+  code: "101030100",
+  "children": [{
+    value: "武清",
+    label: "武清",
+    code: "101030200"
+  }, {
+    value: "宝坻",
+    label: "宝坻",
+    code: "101030300"
+  }, {
+    value: "东丽",
+    label: "东丽",
+    code: "101030400"
+  }, {
+    value: "西青",
+    label: "西青",
+    code: "101030500"
+  }, {
+    value: "北辰",
+    label: "北辰",
+    code: "101030600"
+  }, {
+    value: "宁河",
+    label: "宁河",
+    code: "101030700"
+  }, {
+    value: "和平",
+    label: "和平",
+    code: "101030800"
+  }, {
+    value: "静海",
+    label: "静海",
+    code: "101030900"
+  }, {
+    value: "津南",
+    label: "津南",
+    code: "101031000"
+  }, {
+    value: "滨海新区",
+    label: "滨海新区",
+    code: "101031100"
+  }, {
+    value: "河东",
+    label: "河东",
+    code: "101031200"
+  }, {
+    value: "河西",
+    label: "河西",
+    code: "101031300"
+  }, {
+    value: "蓟州",
+    label: "蓟州",
+    code: "101031400"
+  }, {
+    value: "南开",
+    label: "南开",
+    code: "101031500"
+  }, {
+    value: "河北",
+    label: "河北",
+    code: "101031600"
+  }, {
+    value: "红桥",
+    label: "红桥",
+    code: "101031700"
+  }]
+}, {
+  value: "重庆",
+  label: "重庆",
+  code: "101040100",
+  "children": [{
+    value: "永川",
+    label: "永川",
+    code: "101040200"
+  }, {
+    value: "合川",
+    label: "合川",
+    code: "101040300"
+  }, {
+    value: "南川",
+    label: "南川",
+    code: "101040400"
+  }, {
+    value: "江津",
+    label: "江津",
+    code: "101040500"
+  }, {
+    value: "渝北",
+    label: "渝北",
+    code: "101040700"
+  }, {
+    value: "北碚",
+    label: "北碚",
+    code: "101040800"
+  }, {
+    value: "巴南",
+    label: "巴南",
+    code: "101040900"
+  }, {
+    value: "长寿",
+    label: "长寿",
+    code: "101041000"
+  }, {
+    value: "黔江",
+    label: "黔江",
+    code: "101041100"
+  }, {
+    value: "渝中",
+    label: "渝中",
+    code: "101041200"
+  }, {
+    value: "万州",
+    label: "万州",
+    code: "101041300"
+  }, {
+    value: "涪陵",
+    label: "涪陵",
+    code: "101041400"
+  }, {
+    value: "开县",
+    label: "开县",
+    code: "101041500"
+  }, {
+    value: "城口",
+    label: "城口",
+    code: "101041600"
+  }, {
+    value: "云阳",
+    label: "云阳",
+    code: "101041700"
+  }, {
+    value: "巫溪",
+    label: "巫溪",
+    code: "101041800"
+  }, {
+    value: "奉节",
+    label: "奉节",
+    code: "101041900"
+  }, {
+    value: "巫山",
+    label: "巫山",
+    code: "101042000"
+  }, {
+    value: "潼南",
+    label: "潼南",
+    code: "101042100"
+  }, {
+    value: "垫江",
+    label: "垫江",
+    code: "101042200"
+  }, {
+    value: "梁平",
+    label: "梁平",
+    code: "101042300"
+  }, {
+    value: "忠县",
+    label: "忠县",
+    code: "101042400"
+  }, {
+    value: "石柱",
+    label: "石柱",
+    code: "101042500"
+  }, {
+    value: "大足",
+    label: "大足",
+    code: "101042600"
+  }, {
+    value: "荣昌",
+    label: "荣昌",
+    code: "101042700"
+  }, {
+    value: "铜梁",
+    label: "铜梁",
+    code: "101042800"
+  }, {
+    value: "璧山",
+    label: "璧山",
+    code: "101042900"
+  }, {
+    value: "丰都",
+    label: "丰都",
+    code: "101043000"
+  }, {
+    value: "武隆",
+    label: "武隆",
+    code: "101043100"
+  }, {
+    value: "彭水",
+    label: "彭水",
+    code: "101043200"
+  }, {
+    value: "綦江",
+    label: "綦江",
+    code: "101043300"
+  }, {
+    value: "酉阳",
+    label: "酉阳",
+    code: "101043400"
+  }, {
+    value: "大渡口",
+    label: "大渡口",
+    code: "101043500"
+  }, {
+    value: "秀山",
+    label: "秀山",
+    code: "101043600"
+  }, {
+    value: "江北",
+    label: "江北",
+    code: "101043700"
+  }, {
+    value: "沙坪坝",
+    label: "沙坪坝",
+    code: "101043800"
+  }, {
+    value: "九龙坡",
+    label: "九龙坡",
+    code: "101043900"
+  }, {
+    value: "南岸",
+    label: "南岸",
+    code: "101044000"
+  }, {
+    value: "开州",
+    label: "开州",
+    code: "101044100"
+  }]
+}, {
+  value: "黑龙江",
+  label: "黑龙江",
+  code: "101050101",
+  "children": [{
+    value: "哈尔滨",
+    label: "哈尔滨",
+    code: "101050101",
+    "children": [{
+      value: "双城",
+      label: "双城",
+      code: "101050102"
+    }, {
+      value: "呼兰",
+      label: "呼兰",
+      code: "101050103"
+    }, {
+      value: "阿城",
+      label: "阿城",
+      code: "101050104"
+    }, {
+      value: "宾县",
+      label: "宾县",
+      code: "101050105"
+    }, {
+      value: "依兰",
+      label: "依兰",
+      code: "101050106"
+    }, {
+      value: "巴彦",
+      label: "巴彦",
+      code: "101050107"
+    }, {
+      value: "通河",
+      label: "通河",
+      code: "101050108"
+    }, {
+      value: "方正",
+      label: "方正",
+      code: "101050109"
+    }, {
+      value: "延寿",
+      label: "延寿",
+      code: "101050110"
+    }, {
+      value: "尚志",
+      label: "尚志",
+      code: "101050111"
+    }, {
+      value: "五常",
+      label: "五常",
+      code: "101050112"
+    }, {
+      value: "木兰",
+      label: "木兰",
+      code: "101050113"
+    }, {
+      value: "道里",
+      label: "道里",
+      code: "101050114"
+    }, {
+      value: "南岗",
+      label: "南岗",
+      code: "101050115"
+    }, {
+      value: "道外",
+      label: "道外",
+      code: "101050116"
+    }, {
+      value: "平房",
+      label: "平房",
+      code: "101050117"
+    }, {
+      value: "松北",
+      label: "松北",
+      code: "101050118"
+    }, {
+      value: "香坊",
+      label: "香坊",
+      code: "101050119"
+    }]
+  }, {
+    value: "齐齐哈尔",
+    label: "齐齐哈尔",
+    code: "101050201",
+    "children": [{
+      value: "讷河",
+      label: "讷河",
+      code: "101050202"
+    }, {
+      value: "龙江",
+      label: "龙江",
+      code: "101050203"
+    }, {
+      value: "甘南",
+      label: "甘南",
+      code: "101050204"
+    }, {
+      value: "富裕",
+      label: "富裕",
+      code: "101050205"
+    }, {
+      value: "依安",
+      label: "依安",
+      code: "101050206"
+    }, {
+      value: "拜泉",
+      label: "拜泉",
+      code: "101050207"
+    }, {
+      value: "克山",
+      label: "克山",
+      code: "101050208"
+    }, {
+      value: "克东",
+      label: "克东",
+      code: "101050209"
+    }, {
+      value: "泰来",
+      label: "泰来",
+      code: "101050210"
+    }, {
+      value: "龙沙",
+      label: "龙沙",
+      code: "101050211"
+    }, {
+      value: "建华",
+      label: "建华",
+      code: "101050212"
+    }, {
+      value: "铁锋",
+      label: "铁锋",
+      code: "101050213"
+    }, {
+      value: "昂昂溪",
+      label: "昂昂溪",
+      code: "101050214"
+    }, {
+      value: "富拉尔基",
+      label: "富拉尔基",
+      code: "101050215"
+    }, {
+      value: "碾子山",
+      label: "碾子山",
+      code: "101050216"
+    }, {
+      value: "梅里斯",
+      label: "梅里斯",
+      code: "101050217"
+    }]
+  }, {
+    value: "牡丹江",
+    label: "牡丹江",
+    code: "101050301",
+    "children": [{
+      value: "海林",
+      label: "海林",
+      code: "101050302"
+    }, {
+      value: "穆棱",
+      label: "穆棱",
+      code: "101050303"
+    }, {
+      value: "林口",
+      label: "林口",
+      code: "101050304"
+    }, {
+      value: "绥芬河",
+      label: "绥芬河",
+      code: "101050305"
+    }, {
+      value: "宁安",
+      label: "宁安",
+      code: "101050306"
+    }, {
+      value: "东宁",
+      label: "东宁",
+      code: "101050307"
+    }, {
+      value: "东安",
+      label: "东安",
+      code: "101050308"
+    }, {
+      value: "阳明",
+      label: "阳明",
+      code: "101050309"
+    }, {
+      value: "爱民",
+      label: "爱民",
+      code: "101050310"
+    }, {
+      value: "西安",
+      label: "西安",
+      code: "101050311"
+    }]
+  }, {
+    value: "佳木斯",
+    label: "佳木斯",
+    code: "101050401",
+    "children": [{
+      value: "汤原",
+      label: "汤原",
+      code: "101050402"
+    }, {
+      value: "抚远",
+      label: "抚远",
+      code: "101050403"
+    }, {
+      value: "桦川",
+      label: "桦川",
+      code: "101050404"
+    }, {
+      value: "桦南",
+      label: "桦南",
+      code: "101050405"
+    }, {
+      value: "同江",
+      label: "同江",
+      code: "101050406"
+    }, {
+      value: "富锦",
+      label: "富锦",
+      code: "101050407"
+    }, {
+      value: "向阳",
+      label: "向阳",
+      code: "101050408"
+    }, {
+      value: "前进",
+      label: "前进",
+      code: "101050409"
+    }, {
+      value: "东风",
+      label: "东风",
+      code: "101050410"
+    }, {
+      value: "郊区",
+      label: "郊区",
+      code: "101050411"
+    }]
+  }, {
+    value: "绥化",
+    label: "绥化",
+    code: "101050501",
+    "children": [{
+      value: "肇东",
+      label: "肇东",
+      code: "101050502"
+    }, {
+      value: "安达",
+      label: "安达",
+      code: "101050503"
+    }, {
+      value: "海伦",
+      label: "海伦",
+      code: "101050504"
+    }, {
+      value: "明水",
+      label: "明水",
+      code: "101050505"
+    }, {
+      value: "望奎",
+      label: "望奎",
+      code: "101050506"
+    }, {
+      value: "兰西",
+      label: "兰西",
+      code: "101050507"
+    }, {
+      value: "青冈",
+      label: "青冈",
+      code: "101050508"
+    }, {
+      value: "庆安",
+      label: "庆安",
+      code: "101050509"
+    }, {
+      value: "绥棱",
+      label: "绥棱",
+      code: "101050510"
+    }, {
+      value: "北林",
+      label: "北林",
+      code: "101050511"
+    }]
+  }, {
+    value: "黑河",
+    label: "黑河",
+    code: "101050601",
+    "children": [{
+      value: "嫩江",
+      label: "嫩江",
+      code: "101050602"
+    }, {
+      value: "孙吴",
+      label: "孙吴",
+      code: "101050603"
+    }, {
+      value: "逊克",
+      label: "逊克",
+      code: "101050604"
+    }, {
+      value: "五大连池",
+      label: "五大连池",
+      code: "101050605"
+    }, {
+      value: "北安",
+      label: "北安",
+      code: "101050606"
+    }, {
+      value: "爱辉",
+      label: "爱辉",
+      code: "101050607"
+    }]
+  }, {
+    value: "大兴安岭",
+    label: "大兴安岭",
+    code: "101050701",
+    "children": [{
+      value: "塔河",
+      label: "塔河",
+      code: "101050702"
+    }, {
+      value: "漠河",
+      label: "漠河",
+      code: "101050703"
+    }, {
+      value: "呼玛",
+      label: "呼玛",
+      code: "101050704"
+    }]
+  }, {
+    value: "伊春",
+    label: "伊春",
+    code: "101050801",
+    "children": [{
+      value: "乌伊岭",
+      label: "乌伊岭",
+      code: "101050802"
+    }, {
+      value: "五营",
+      label: "五营",
+      code: "101050803"
+    }, {
+      value: "铁力",
+      label: "铁力",
+      code: "101050804"
+    }, {
+      value: "嘉荫",
+      label: "嘉荫",
+      code: "101050805"
+    }, {
+      value: "南岔",
+      label: "南岔",
+      code: "101050806"
+    }, {
+      value: "友好",
+      label: "友好",
+      code: "101050807"
+    }, {
+      value: "西林",
+      label: "西林",
+      code: "101050808"
+    }, {
+      value: "翠峦",
+      label: "翠峦",
+      code: "101050809"
+    }, {
+      value: "新青",
+      label: "新青",
+      code: "101050810"
+    }, {
+      value: "美溪",
+      label: "美溪",
+      code: "101050811"
+    }, {
+      value: "金山屯",
+      label: "金山屯",
+      code: "101050812"
+    }, {
+      value: "乌马河",
+      label: "乌马河",
+      code: "101050813"
+    }, {
+      value: "汤旺河",
+      label: "汤旺河",
+      code: "101050814"
+    }, {
+      value: "带岭",
+      label: "带岭",
+      code: "101050815"
+    }, {
+      value: "红星",
+      label: "红星",
+      code: "101050816"
+    }, {
+      value: "上甘岭",
+      label: "上甘岭",
+      code: "101050817"
+    }]
+  }, {
+    value: "大庆",
+    label: "大庆",
+    code: "101050901",
+    "children": [{
+      value: "林甸",
+      label: "林甸",
+      code: "101050902"
+    }, {
+      value: "肇州",
+      label: "肇州",
+      code: "101050903"
+    }, {
+      value: "肇源",
+      label: "肇源",
+      code: "101050904"
+    }, {
+      value: "杜尔伯特",
+      label: "杜尔伯特",
+      code: "101050905"
+    }, {
+      value: "萨尔图",
+      label: "萨尔图",
+      code: "101050906"
+    }, {
+      value: "龙凤",
+      label: "龙凤",
+      code: "101050907"
+    }, {
+      value: "让胡路",
+      label: "让胡路",
+      code: "101050908"
+    }, {
+      value: "红岗",
+      label: "红岗",
+      code: "101050909"
+    }, {
+      value: "大同",
+      label: "大同",
+      code: "101050910"
+    }]
+  }, {
+    value: "七台河",
+    label: "七台河",
+    code: "101051001",
+    "children": [{
+      value: "七台河",
+      label: "七台河",
+      code: "101051002"
+    }, {
+      value: "勃利",
+      label: "勃利",
+      code: "101051003"
+    }, {
+      value: "桃山",
+      label: "桃山",
+      code: "101051004"
+    }, {
+      value: "茄子河",
+      label: "茄子河",
+      code: "101051005"
+    }]
+  }, {
+    value: "鸡西",
+    label: "鸡西",
+    code: "101051101",
+    "children": [{
+      value: "虎林",
+      label: "虎林",
+      code: "101051102"
+    }, {
+      value: "密山",
+      label: "密山",
+      code: "101051103"
+    }, {
+      value: "鸡东",
+      label: "鸡东",
+      code: "101051104"
+    }, {
+      value: "鸡冠",
+      label: "鸡冠",
+      code: "101051105"
+    }, {
+      value: "恒山",
+      label: "恒山",
+      code: "101051106"
+    }, {
+      value: "滴道",
+      label: "滴道",
+      code: "101051107"
+    }, {
+      value: "梨树",
+      label: "梨树",
+      code: "101051108"
+    }, {
+      value: "城子河",
+      label: "城子河",
+      code: "101051109"
+    }, {
+      value: "麻山",
+      label: "麻山",
+      code: "101051110"
+    }]
+  }, {
+    value: "鹤岗",
+    label: "鹤岗",
+    code: "101051201",
+    "children": [{
+      value: "绥滨",
+      label: "绥滨",
+      code: "101051202"
+    }, {
+      value: "萝北",
+      label: "萝北",
+      code: "101051203"
+    }, {
+      value: "向阳",
+      label: "向阳",
+      code: "101051204"
+    }, {
+      value: "工农",
+      label: "工农",
+      code: "101051205"
+    }, {
+      value: "南山",
+      label: "南山",
+      code: "101051206"
+    }, {
+      value: "兴安",
+      label: "兴安",
+      code: "101051207"
+    }, {
+      value: "东山",
+      label: "东山",
+      code: "101051208"
+    }, {
+      value: "兴山",
+      label: "兴山",
+      code: "101051209"
+    }]
+  }, {
+    value: "双鸭山",
+    label: "双鸭山",
+    code: "101051301",
+    "children": [{
+      value: "集贤",
+      label: "集贤",
+      code: "101051302"
+    }, {
+      value: "宝清",
+      label: "宝清",
+      code: "101051303"
+    }, {
+      value: "饶河",
+      label: "饶河",
+      code: "101051304"
+    }, {
+      value: "友谊",
+      label: "友谊",
+      code: "101051305"
+    }, {
+      value: "尖山",
+      label: "尖山",
+      code: "101051306"
+    }, {
+      value: "岭东",
+      label: "岭东",
+      code: "101051307"
+    }, {
+      value: "四方台",
+      label: "四方台",
+      code: "101051308"
+    }, {
+      value: "宝山",
+      label: "宝山",
+      code: "101051309"
+    }]
+  }]
+}, {
+  value: "吉林",
+  label: "吉林",
+  code: "101060101",
+  "children": [{
+    value: "长春",
+    label: "长春",
+    code: "101060101",
+    "children": [{
+      value: "农安",
+      label: "农安",
+      code: "101060102"
+    }, {
+      value: "德惠",
+      label: "德惠",
+      code: "101060103"
+    }, {
+      value: "九台",
+      label: "九台",
+      code: "101060104"
+    }, {
+      value: "榆树",
+      label: "榆树",
+      code: "101060105"
+    }, {
+      value: "双阳",
+      label: "双阳",
+      code: "101060106"
+    }, {
+      value: "二道",
+      label: "二道",
+      code: "101060107"
+    }, {
+      value: "南关",
+      label: "南关",
+      code: "101060108"
+    }, {
+      value: "宽城",
+      label: "宽城",
+      code: "101060109"
+    }, {
+      value: "朝阳",
+      label: "朝阳",
+      code: "101060110"
+    }, {
+      value: "绿园",
+      label: "绿园",
+      code: "101060111"
+    }]
+  }, {
+    value: "吉林",
+    label: "吉林",
+    code: "101060201",
+    "children": [{
+      value: "舒兰",
+      label: "舒兰",
+      code: "101060202"
+    }, {
+      value: "永吉",
+      label: "永吉",
+      code: "101060203"
+    }, {
+      value: "蛟河",
+      label: "蛟河",
+      code: "101060204"
+    }, {
+      value: "磐石",
+      label: "磐石",
+      code: "101060205"
+    }, {
+      value: "桦甸",
+      label: "桦甸",
+      code: "101060206"
+    }, {
+      value: "昌邑",
+      label: "昌邑",
+      code: "101060207"
+    }, {
+      value: "龙潭",
+      label: "龙潭",
+      code: "101060208"
+    }, {
+      value: "船营",
+      label: "船营",
+      code: "101060209"
+    }, {
+      value: "丰满",
+      label: "丰满",
+      code: "101060210"
+    }]
+  }, {
+    value: "延边",
+    label: "延边",
+    code: "101060301",
+    "children": [{
+      value: "敦化",
+      label: "敦化",
+      code: "101060302"
+    }, {
+      value: "安图",
+      label: "安图",
+      code: "101060303"
+    }, {
+      value: "汪清",
+      label: "汪清",
+      code: "101060304"
+    }, {
+      value: "和龙",
+      label: "和龙",
+      code: "101060305"
+    }, {
+      value: "延边",
+      label: "延边",
+      code: "101060306"
+    }, {
+      value: "龙井",
+      label: "龙井",
+      code: "101060307"
+    }, {
+      value: "珲春",
+      label: "珲春",
+      code: "101060308"
+    }, {
+      value: "图们",
+      label: "图们",
+      code: "101060309"
+    }]
+  }, {
+    value: "四平",
+    label: "四平",
+    code: "101060401",
+    "children": [{
+      value: "双辽",
+      label: "双辽",
+      code: "101060402"
+    }, {
+      value: "梨树",
+      label: "梨树",
+      code: "101060403"
+    }, {
+      value: "公主岭",
+      label: "公主岭",
+      code: "101060404"
+    }, {
+      value: "伊通",
+      label: "伊通",
+      code: "101060405"
+    }, {
+      value: "铁西",
+      label: "铁西",
+      code: "101060406"
+    }, {
+      value: "铁东",
+      label: "铁东",
+      code: "101060407"
+    }]
+  }, {
+    value: "通化",
+    label: "通化",
+    code: "101060501",
+    "children": [{
+      value: "梅河口",
+      label: "梅河口",
+      code: "101060502"
+    }, {
+      value: "柳河",
+      label: "柳河",
+      code: "101060503"
+    }, {
+      value: "辉南",
+      label: "辉南",
+      code: "101060504"
+    }, {
+      value: "集安",
+      label: "集安",
+      code: "101060505"
+    }, {
+      value: "通化县",
+      label: "通化县",
+      code: "101060506"
+    }, {
+      value: "东昌",
+      label: "东昌",
+      code: "101060507"
+    }, {
+      value: "二道江",
+      label: "二道江",
+      code: "101060508"
+    }]
+  }, {
+    value: "白城",
+    label: "白城",
+    code: "101060601",
+    "children": [{
+      value: "洮南",
+      label: "洮南",
+      code: "101060602"
+    }, {
+      value: "大安",
+      label: "大安",
+      code: "101060603"
+    }, {
+      value: "镇赉",
+      label: "镇赉",
+      code: "101060604"
+    }, {
+      value: "通榆",
+      label: "通榆",
+      code: "101060605"
+    }, {
+      value: "洮北",
+      label: "洮北",
+      code: "101060606"
+    }]
+  }, {
+    value: "辽源",
+    label: "辽源",
+    code: "101060701",
+    "children": [{
+      value: "东丰",
+      label: "东丰",
+      code: "101060702"
+    }, {
+      value: "东辽",
+      label: "东辽",
+      code: "101060703"
+    }, {
+      value: "龙山",
+      label: "龙山",
+      code: "101060704"
+    }, {
+      value: "西安",
+      label: "西安",
+      code: "101060705"
+    }]
+  }, {
+    value: "松原",
+    label: "松原",
+    code: "101060801",
+    "children": [{
+      value: "乾安",
+      label: "乾安",
+      code: "101060802"
+    }, {
+      value: "前郭",
+      label: "前郭",
+      code: "101060803"
+    }, {
+      value: "长岭",
+      label: "长岭",
+      code: "101060804"
+    }, {
+      value: "扶余",
+      label: "扶余",
+      code: "101060805"
+    }, {
+      value: "宁江",
+      label: "宁江",
+      code: "101060806"
+    }]
+  }, {
+    value: "白山",
+    label: "白山",
+    code: "101060901",
+    "children": [{
+      value: "靖宇",
+      label: "靖宇",
+      code: "101060902"
+    }, {
+      value: "临江",
+      label: "临江",
+      code: "101060903"
+    }, {
+      value: "长白",
+      label: "长白",
+      code: "101060905"
+    }, {
+      value: "抚松",
+      label: "抚松",
+      code: "101060906"
+    }, {
+      value: "江源",
+      label: "江源",
+      code: "101060907"
+    }, {
+      value: "浑江",
+      label: "浑江",
+      code: "101060908"
+    }]
+  }]
+}, {
+  value: "辽宁",
+  label: "辽宁",
+  code: "101070101",
+  "children": [{
+    value: "沈阳",
+    label: "沈阳",
+    code: "101070101",
+    "children": [{
+      value: "浑南",
+      label: "浑南",
+      code: "101070102"
+    }, {
+      value: "辽中",
+      label: "辽中",
+      code: "101070103"
+    }, {
+      value: "康平",
+      label: "康平",
+      code: "101070104"
+    }, {
+      value: "法库",
+      label: "法库",
+      code: "101070105"
+    }, {
+      value: "新民",
+      label: "新民",
+      code: "101070106"
+    }, {
+      value: "和平",
+      label: "和平",
+      code: "101070107"
+    }, {
+      value: "沈河",
+      label: "沈河",
+      code: "101070108"
+    }, {
+      value: "大东",
+      label: "大东",
+      code: "101070109"
+    }, {
+      value: "皇姑",
+      label: "皇姑",
+      code: "101070110"
+    }, {
+      value: "铁西",
+      label: "铁西",
+      code: "101070111"
+    }, {
+      value: "苏家屯",
+      label: "苏家屯",
+      code: "101070112"
+    }, {
+      value: "沈北新区",
+      label: "沈北新区",
+      code: "101070113"
+    }, {
+      value: "于洪",
+      label: "于洪",
+      code: "101070114"
+    }, {
+      value: "东陵",
+      label: "东陵",
+      code: "101070115"
+    }]
+  }, {
+    value: "大连",
+    label: "大连",
+    code: "101070201",
+    "children": [{
+      value: "瓦房店",
+      label: "瓦房店",
+      code: "101070202"
+    }, {
+      value: "金州",
+      label: "金州",
+      code: "101070203"
+    }, {
+      value: "普兰店",
+      label: "普兰店",
+      code: "101070204"
+    }, {
+      value: "旅顺",
+      label: "旅顺",
+      code: "101070205"
+    }, {
+      value: "长海",
+      label: "长海",
+      code: "101070206"
+    }, {
+      value: "庄河",
+      label: "庄河",
+      code: "101070207"
+    }, {
+      value: "中山",
+      label: "中山",
+      code: "101070208"
+    }, {
+      value: "西岗",
+      label: "西岗",
+      code: "101070209"
+    }, {
+      value: "沙河口",
+      label: "沙河口",
+      code: "101070210"
+    }, {
+      value: "甘井子",
+      label: "甘井子",
+      code: "101070211"
+    }]
+  }, {
+    value: "鞍山",
+    label: "鞍山",
+    code: "101070301",
+    "children": [{
+      value: "台安",
+      label: "台安",
+      code: "101070302"
+    }, {
+      value: "岫岩",
+      label: "岫岩",
+      code: "101070303"
+    }, {
+      value: "海城",
+      label: "海城",
+      code: "101070304"
+    }, {
+      value: "铁东",
+      label: "铁东",
+      code: "101070305"
+    }, {
+      value: "铁西",
+      label: "铁西",
+      code: "101070306"
+    }, {
+      value: "立山",
+      label: "立山",
+      code: "101070307"
+    }, {
+      value: "千山",
+      label: "千山",
+      code: "101070308"
+    }]
+  }, {
+    value: "抚顺",
+    label: "抚顺",
+    code: "101070401",
+    "children": [{
+      value: "新宾",
+      label: "新宾",
+      code: "101070402"
+    }, {
+      value: "清原",
+      label: "清原",
+      code: "101070403"
+    }, {
+      value: "新抚",
+      label: "新抚",
+      code: "101070405"
+    }, {
+      value: "东洲",
+      label: "东洲",
+      code: "101070406"
+    }, {
+      value: "望花",
+      label: "望花",
+      code: "101070407"
+    }, {
+      value: "顺城",
+      label: "顺城",
+      code: "101070408"
+    }]
+  }, {
+    value: "本溪",
+    label: "本溪",
+    code: "101070501",
+    "children": [{
+      value: "本溪县",
+      label: "本溪县",
+      code: "101070502"
+    }, {
+      value: "平山",
+      label: "平山",
+      code: "101070503"
+    }, {
+      value: "桓仁",
+      label: "桓仁",
+      code: "101070504"
+    }, {
+      value: "溪湖",
+      label: "溪湖",
+      code: "101070505"
+    }, {
+      value: "明山",
+      label: "明山",
+      code: "101070506"
+    }, {
+      value: "南芬",
+      label: "南芬",
+      code: "101070507"
+    }]
+  }, {
+    value: "丹东",
+    label: "丹东",
+    code: "101070601",
+    "children": [{
+      value: "凤城",
+      label: "凤城",
+      code: "101070602"
+    }, {
+      value: "宽甸",
+      label: "宽甸",
+      code: "101070603"
+    }, {
+      value: "东港",
+      label: "东港",
+      code: "101070604"
+    }, {
+      value: "元宝",
+      label: "元宝",
+      code: "101070605"
+    }, {
+      value: "振兴",
+      label: "振兴",
+      code: "101070606"
+    }, {
+      value: "振安",
+      label: "振安",
+      code: "101070607"
+    }]
+  }, {
+    value: "锦州",
+    label: "锦州",
+    code: "101070701",
+    "children": [{
+      value: "凌海",
+      label: "凌海",
+      code: "101070702"
+    }, {
+      value: "古塔",
+      label: "古塔",
+      code: "101070703"
+    }, {
+      value: "义县",
+      label: "义县",
+      code: "101070704"
+    }, {
+      value: "黑山",
+      label: "黑山",
+      code: "101070705"
+    }, {
+      value: "北镇",
+      label: "北镇",
+      code: "101070706"
+    }, {
+      value: "凌河",
+      label: "凌河",
+      code: "101070707"
+    }, {
+      value: "太和",
+      label: "太和",
+      code: "101070708"
+    }]
+  }, {
+    value: "营口",
+    label: "营口",
+    code: "101070801",
+    "children": [{
+      value: "大石桥",
+      label: "大石桥",
+      code: "101070802"
+    }, {
+      value: "盖州",
+      label: "盖州",
+      code: "101070803"
+    }, {
+      value: "站前",
+      label: "站前",
+      code: "101070804"
+    }, {
+      value: "西市",
+      label: "西市",
+      code: "101070805"
+    }, {
+      value: "鲅鱼圈",
+      label: "鲅鱼圈",
+      code: "101070806"
+    }, {
+      value: "老边",
+      label: "老边",
+      code: "101070807"
+    }]
+  }, {
+    value: "阜新",
+    label: "阜新",
+    code: "101070901",
+    "children": [{
+      value: "彰武",
+      label: "彰武",
+      code: "101070902"
+    }, {
+      value: "海州",
+      label: "海州",
+      code: "101070903"
+    }, {
+      value: "新邱",
+      label: "新邱",
+      code: "101070904"
+    }, {
+      value: "太平",
+      label: "太平",
+      code: "101070905"
+    }, {
+      value: "清河门",
+      label: "清河门",
+      code: "101070906"
+    }, {
+      value: "细河",
+      label: "细河",
+      code: "101070907"
+    }]
+  }, {
+    value: "辽阳",
+    label: "辽阳",
+    code: "101071001",
+    "children": [{
+      value: "辽阳县",
+      label: "辽阳县",
+      code: "101071002"
+    }, {
+      value: "灯塔",
+      label: "灯塔",
+      code: "101071003"
+    }, {
+      value: "弓长岭",
+      label: "弓长岭",
+      code: "101071004"
+    }, {
+      value: "白塔",
+      label: "白塔",
+      code: "101071005"
+    }, {
+      value: "文圣",
+      label: "文圣",
+      code: "101071006"
+    }, {
+      value: "宏伟",
+      label: "宏伟",
+      code: "101071007"
+    }, {
+      value: "太子河",
+      label: "太子河",
+      code: "101071008"
+    }]
+  }, {
+    value: "铁岭",
+    label: "铁岭",
+    code: "101071101",
+    "children": [{
+      value: "开原",
+      label: "开原",
+      code: "101071102"
+    }, {
+      value: "昌图",
+      label: "昌图",
+      code: "101071103"
+    }, {
+      value: "西丰",
+      label: "西丰",
+      code: "101071104"
+    }, {
+      value: "调兵山",
+      label: "调兵山",
+      code: "101071105"
+    }, {
+      value: "银州",
+      label: "银州",
+      code: "101071106"
+    }, {
+      value: "清河",
+      label: "清河",
+      code: "101071107"
+    }]
+  }, {
+    value: "朝阳",
+    label: "朝阳",
+    code: "101071201",
+    "children": [{
+      value: "双塔",
+      label: "双塔",
+      code: "101071202"
+    }, {
+      value: "凌源",
+      label: "凌源",
+      code: "101071203"
+    }, {
+      value: "喀左",
+      label: "喀左",
+      code: "101071204"
+    }, {
+      value: "北票",
+      label: "北票",
+      code: "101071205"
+    }, {
+      value: "龙城",
+      label: "龙城",
+      code: "101071206"
+    }, {
+      value: "建平县",
+      label: "建平县",
+      code: "101071207"
+    }]
+  }, {
+    value: "盘锦",
+    label: "盘锦",
+    code: "101071301",
+    "children": [{
+      value: "大洼",
+      label: "大洼",
+      code: "101071302"
+    }, {
+      value: "盘山",
+      label: "盘山",
+      code: "101071303"
+    }, {
+      value: "双台子",
+      label: "双台子",
+      code: "101071304"
+    }, {
+      value: "兴隆台",
+      label: "兴隆台",
+      code: "101071305"
+    }]
+  }, {
+    value: "葫芦岛",
+    label: "葫芦岛",
+    code: "101071401",
+    "children": [{
+      value: "建昌",
+      label: "建昌",
+      code: "101071402"
+    }, {
+      value: "绥中",
+      label: "绥中",
+      code: "101071403"
+    }, {
+      value: "兴城",
+      label: "兴城",
+      code: "101071404"
+    }, {
+      value: "连山",
+      label: "连山",
+      code: "101071405"
+    }, {
+      value: "龙港",
+      label: "龙港",
+      code: "101071406"
+    }, {
+      value: "南票",
+      label: "南票",
+      code: "101071407"
+    }]
+  }]
+}, {
+  value: "内蒙古",
+  label: "内蒙古",
+  code: "101080101",
+  "children": [{
+    value: "呼和浩特",
+    label: "呼和浩特",
+    code: "101080101",
+    "children": [{
+      value: "土左旗",
+      label: "土左旗",
+      code: "101080102"
+    }, {
+      value: "托县",
+      label: "托县",
+      code: "101080103"
+    }, {
+      value: "和林",
+      label: "和林",
+      code: "101080104"
+    }, {
+      value: "清水河",
+      label: "清水河",
+      code: "101080105"
+    }, {
+      value: "赛罕",
+      label: "赛罕",
+      code: "101080106"
+    }, {
+      value: "武川",
+      label: "武川",
+      code: "101080107"
+    }, {
+      value: "新城",
+      label: "新城",
+      code: "101080108"
+    }, {
+      value: "回民",
+      label: "回民",
+      code: "101080109"
+    }, {
+      value: "玉泉",
+      label: "玉泉",
+      code: "101080110"
+    }]
+  }, {
+    value: "包头",
+    label: "包头",
+    code: "101080201",
+    "children": [{
+      value: "白云鄂博",
+      label: "白云鄂博",
+      code: "101080202"
+    }, {
+      value: "土右旗",
+      label: "土右旗",
+      code: "101080204"
+    }, {
+      value: "固阳",
+      label: "固阳",
+      code: "101080205"
+    }, {
+      value: "达茂旗",
+      label: "达茂旗",
+      code: "101080206"
+    }, {
+      value: "东河",
+      label: "东河",
+      code: "101080208"
+    }, {
+      value: "昆都仑",
+      label: "昆都仑",
+      code: "101080209"
+    }, {
+      value: "青山",
+      label: "青山",
+      code: "101080210"
+    }, {
+      value: "石拐",
+      label: "石拐",
+      code: "101080211"
+    }, {
+      value: "九原",
+      label: "九原",
+      code: "101080212"
+    }]
+  }, {
+    value: "乌海",
+    label: "乌海",
+    code: "101080301",
+    "children": [{
+      value: "海勃湾",
+      label: "海勃湾",
+      code: "101080302"
+    }, {
+      value: "海南",
+      label: "海南",
+      code: "101080303"
+    }, {
+      value: "乌达",
+      label: "乌达",
+      code: "101080304"
+    }]
+  }, {
+    value: "乌兰察布",
+    label: "乌兰察布",
+    code: "101080401",
+    "children": [{
+      value: "卓资",
+      label: "卓资",
+      code: "101080402"
+    }, {
+      value: "化德",
+      label: "化德",
+      code: "101080403"
+    }, {
+      value: "商都",
+      label: "商都",
+      code: "101080404"
+    }, {
+      value: "乌兰察布",
+      label: "乌兰察布",
+      code: "101080405"
+    }, {
+      value: "兴和",
+      label: "兴和",
+      code: "101080406"
+    }, {
+      value: "凉城",
+      label: "凉城",
+      code: "101080407"
+    }, {
+      value: "察右前旗",
+      label: "察右前旗",
+      code: "101080408"
+    }, {
+      value: "察右中旗",
+      label: "察右中旗",
+      code: "101080409"
+    }, {
+      value: "察右后旗",
+      label: "察右后旗",
+      code: "101080410"
+    }, {
+      value: "四子王旗",
+      label: "四子王旗",
+      code: "101080411"
+    }, {
+      value: "丰镇",
+      label: "丰镇",
+      code: "101080412"
+    }]
+  }, {
+    value: "通辽",
+    label: "通辽",
+    code: "101080501",
+    "children": [{
+      value: "科左中旗",
+      label: "科左中旗",
+      code: "101080503"
+    }, {
+      value: "科左后旗",
+      label: "科左后旗",
+      code: "101080504"
+    }, {
+      value: "开鲁",
+      label: "开鲁",
+      code: "101080506"
+    }, {
+      value: "库伦",
+      label: "库伦",
+      code: "101080507"
+    }, {
+      value: "奈曼",
+      label: "奈曼",
+      code: "101080508"
+    }, {
+      value: "扎鲁特",
+      label: "扎鲁特",
+      code: "101080509"
+    }, {
+      value: "科尔沁",
+      label: "科尔沁",
+      code: "101080510"
+    }, {
+      value: "霍林郭勒",
+      label: "霍林郭勒",
+      code: "101080512"
+    }]
+  }, {
+    value: "赤峰",
+    label: "赤峰",
+    code: "101080601",
+    "children": [{
+      value: "红山",
+      label: "红山",
+      code: "101080602"
+    }, {
+      value: "阿鲁旗",
+      label: "阿鲁旗",
+      code: "101080603"
+    }, {
+      value: "巴林左旗",
+      label: "巴林左旗",
+      code: "101080605"
+    }, {
+      value: "巴林右旗",
+      label: "巴林右旗",
+      code: "101080606"
+    }, {
+      value: "林西",
+      label: "林西",
+      code: "101080607"
+    }, {
+      value: "克什克腾",
+      label: "克什克腾",
+      code: "101080608"
+    }, {
+      value: "翁牛特",
+      label: "翁牛特",
+      code: "101080609"
+    }, {
+      value: "喀喇沁",
+      label: "喀喇沁",
+      code: "101080611"
+    }, {
+      value: "宁城",
+      label: "宁城",
+      code: "101080613"
+    }, {
+      value: "敖汉",
+      label: "敖汉",
+      code: "101080614"
+    }, {
+      value: "元宝山",
+      label: "元宝山",
+      code: "101080616"
+    }, {
+      value: "松山",
+      label: "松山",
+      code: "101080617"
+    }]
+  }, {
+    value: "鄂尔多斯",
+    label: "鄂尔多斯",
+    code: "101080701",
+    "children": [{
+      value: "达拉特",
+      label: "达拉特",
+      code: "101080703"
+    }, {
+      value: "准格尔",
+      label: "准格尔",
+      code: "101080704"
+    }, {
+      value: "鄂前旗",
+      label: "鄂前旗",
+      code: "101080705"
+    }, {
+      value: "鄂托克",
+      label: "鄂托克",
+      code: "101080708"
+    }, {
+      value: "杭锦旗",
+      label: "杭锦旗",
+      code: "101080709"
+    }, {
+      value: "乌审旗",
+      label: "乌审旗",
+      code: "101080710"
+    }, {
+      value: "伊金霍洛",
+      label: "伊金霍洛",
+      code: "101080711"
+    }, {
+      value: "东胜",
+      label: "东胜",
+      code: "101080713"
+    }]
+  }, {
+    value: "巴彦淖尔",
+    label: "巴彦淖尔",
+    code: "101080801",
+    "children": [{
+      value: "五原",
+      label: "五原",
+      code: "101080802"
+    }, {
+      value: "磴口",
+      label: "磴口",
+      code: "101080803"
+    }, {
+      value: "乌前旗",
+      label: "乌前旗",
+      code: "101080804"
+    }, {
+      value: "乌中旗",
+      label: "乌中旗",
+      code: "101080806"
+    }, {
+      value: "乌后旗",
+      label: "乌后旗",
+      code: "101080807"
+    }, {
+      value: "杭锦后旗",
+      label: "杭锦后旗",
+      code: "101080810"
+    }, {
+      value: "巴彦淖尔",
+      label: "巴彦淖尔",
+      code: "101080811"
+    }]
+  }, {
+    value: "锡林郭勒",
+    label: "锡林郭勒",
+    code: "101080901",
+    "children": [{
+      value: "锡林郭勒",
+      label: "锡林郭勒",
+      code: "101080902"
+    }, {
+      value: "二连浩特",
+      label: "二连浩特",
+      code: "101080903"
+    }, {
+      value: "阿巴嘎",
+      label: "阿巴嘎",
+      code: "101080904"
+    }, {
+      value: "苏左旗",
+      label: "苏左旗",
+      code: "101080906"
+    }, {
+      value: "苏右旗",
+      label: "苏右旗",
+      code: "101080907"
+    }, {
+      value: "东乌旗",
+      label: "东乌旗",
+      code: "101080909"
+    }, {
+      value: "西乌旗",
+      label: "西乌旗",
+      code: "101080910"
+    }, {
+      value: "太仆寺",
+      label: "太仆寺",
+      code: "101080911"
+    }, {
+      value: "镶黄旗",
+      label: "镶黄旗",
+      code: "101080912"
+    }, {
+      value: "正镶白旗",
+      label: "正镶白旗",
+      code: "101080913"
+    }, {
+      value: "正蓝旗",
+      label: "正蓝旗",
+      code: "101080914"
+    }, {
+      value: "多伦",
+      label: "多伦",
+      code: "101080915"
+    }]
+  }, {
+    value: "呼伦贝尔",
+    label: "呼伦贝尔",
+    code: "101081001",
+    "children": [{
+      value: "阿荣旗",
+      label: "阿荣旗",
+      code: "101081003"
+    }, {
+      value: "莫力达瓦",
+      label: "莫力达瓦",
+      code: "101081004"
+    }, {
+      value: "鄂伦春旗",
+      label: "鄂伦春旗",
+      code: "101081005"
+    }, {
+      value: "鄂温克旗",
+      label: "鄂温克旗",
+      code: "101081006"
+    }, {
+      value: "陈旗",
+      label: "陈旗",
+      code: "101081007"
+    }, {
+      value: "新左旗",
+      label: "新左旗",
+      code: "101081008"
+    }, {
+      value: "新右旗",
+      label: "新右旗",
+      code: "101081009"
+    }, {
+      value: "满洲里",
+      label: "满洲里",
+      code: "101081010"
+    }, {
+      value: "牙克石",
+      label: "牙克石",
+      code: "101081011"
+    }, {
+      value: "扎兰屯",
+      label: "扎兰屯",
+      code: "101081012"
+    }, {
+      value: "呼伦贝尔",
+      label: "呼伦贝尔",
+      code: "101081013"
+    }, {
+      value: "额尔古纳",
+      label: "额尔古纳",
+      code: "101081014"
+    }, {
+      value: "根河",
+      label: "根河",
+      code: "101081015"
+    }, {
+      value: "扎赉诺尔",
+      label: "扎赉诺尔",
+      code: "101081017"
+    }]
+  }, {
+    value: "兴安盟",
+    label: "兴安盟",
+    code: "101081101",
+    "children": [{
+      value: "阿尔山",
+      label: "阿尔山",
+      code: "101081102"
+    }, {
+      value: "科右中旗",
+      label: "科右中旗",
+      code: "101081103"
+    }, {
+      value: "扎赉特",
+      label: "扎赉特",
+      code: "101081105"
+    }, {
+      value: "突泉",
+      label: "突泉",
+      code: "101081107"
+    }, {
+      value: "兴安盟",
+      label: "兴安盟",
+      code: "101081108"
+    }, {
+      value: "科右前旗",
+      label: "科右前旗",
+      code: "101081109"
+    }]
+  }, {
+    value: "阿拉善盟",
+    label: "阿拉善盟",
+    code: "101081201",
+    "children": [{
+      value: "阿右旗",
+      label: "阿右旗",
+      code: "101081202"
+    }, {
+      value: "额济纳",
+      label: "额济纳",
+      code: "101081203"
+    }, {
+      value: "阿拉善盟",
+      label: "阿拉善盟",
+      code: "101081213"
+    }]
+  }]
+}, {
+  value: "河北",
+  label: "河北",
+  code: "101090101",
+  "children": [{
+    value: "石家庄",
+    label: "石家庄",
+    code: "101090101",
+    "children": [{
+      value: "井陉",
+      label: "井陉",
+      code: "101090102"
+    }, {
+      value: "正定",
+      label: "正定",
+      code: "101090103"
+    }, {
+      value: "栾城",
+      label: "栾城",
+      code: "101090104"
+    }, {
+      value: "行唐",
+      label: "行唐",
+      code: "101090105"
+    }, {
+      value: "灵寿",
+      label: "灵寿",
+      code: "101090106"
+    }, {
+      value: "高邑",
+      label: "高邑",
+      code: "101090107"
+    }, {
+      value: "深泽",
+      label: "深泽",
+      code: "101090108"
+    }, {
+      value: "赞皇",
+      label: "赞皇",
+      code: "101090109"
+    }, {
+      value: "无极",
+      label: "无极",
+      code: "101090110"
+    }, {
+      value: "平山",
+      label: "平山",
+      code: "101090111"
+    }, {
+      value: "元氏",
+      label: "元氏",
+      code: "101090112"
+    }, {
+      value: "赵县",
+      label: "赵县",
+      code: "101090113"
+    }, {
+      value: "辛集",
+      label: "辛集",
+      code: "101090114"
+    }, {
+      value: "藁城",
+      label: "藁城",
+      code: "101090115"
+    }, {
+      value: "晋州",
+      label: "晋州",
+      code: "101090116"
+    }, {
+      value: "新乐",
+      label: "新乐",
+      code: "101090117"
+    }, {
+      value: "鹿泉",
+      label: "鹿泉",
+      code: "101090118"
+    }, {
+      value: "长安",
+      label: "长安",
+      code: "101090119"
+    }, {
+      value: "桥西",
+      label: "桥西",
+      code: "101090120"
+    }, {
+      value: "新华",
+      label: "新华",
+      code: "101090121"
+    }, {
+      value: "井陉矿区",
+      label: "井陉矿区",
+      code: "101090122"
+    }, {
+      value: "裕华",
+      label: "裕华",
+      code: "101090123"
+    }]
+  }, {
+    value: "保定",
+    label: "保定",
+    code: "101090201",
+    "children": [{
+      value: "满城",
+      label: "满城",
+      code: "101090202"
+    }, {
+      value: "阜平",
+      label: "阜平",
+      code: "101090203"
+    }, {
+      value: "徐水",
+      label: "徐水",
+      code: "101090204"
+    }, {
+      value: "唐县",
+      label: "唐县",
+      code: "101090205"
+    }, {
+      value: "高阳",
+      label: "高阳",
+      code: "101090206"
+    }, {
+      value: "容城",
+      label: "容城",
+      code: "101090207"
+    }, {
+      value: "竞秀",
+      label: "竞秀",
+      code: "101090208"
+    }, {
+      value: "涞源",
+      label: "涞源",
+      code: "101090209"
+    }, {
+      value: "望都",
+      label: "望都",
+      code: "101090210"
+    }, {
+      value: "安新",
+      label: "安新",
+      code: "101090211"
+    }, {
+      value: "易县",
+      label: "易县",
+      code: "101090212"
+    }, {
+      value: "莲池",
+      label: "莲池",
+      code: "101090213"
+    }, {
+      value: "曲阳",
+      label: "曲阳",
+      code: "101090214"
+    }, {
+      value: "蠡县",
+      label: "蠡县",
+      code: "101090215"
+    }, {
+      value: "顺平",
+      label: "顺平",
+      code: "101090216"
+    }, {
+      value: "雄县",
+      label: "雄县",
+      code: "101090217"
+    }, {
+      value: "涿州",
+      label: "涿州",
+      code: "101090218"
+    }, {
+      value: "定州",
+      label: "定州",
+      code: "101090219"
+    }, {
+      value: "安国",
+      label: "安国",
+      code: "101090220"
+    }, {
+      value: "高碑店",
+      label: "高碑店",
+      code: "101090221"
+    }, {
+      value: "涞水",
+      label: "涞水",
+      code: "101090222"
+    }, {
+      value: "定兴",
+      label: "定兴",
+      code: "101090223"
+    }, {
+      value: "清苑",
+      label: "清苑",
+      code: "101090224"
+    }, {
+      value: "博野",
+      label: "博野",
+      code: "101090225"
+    }, {
+      value: "南市",
+      label: "南市",
+      code: "101090226"
+    }]
+  }, {
+    value: "张家口",
+    label: "张家口",
+    code: "101090301",
+    "children": [{
+      value: "宣化",
+      label: "宣化",
+      code: "101090302"
+    }, {
+      value: "张北",
+      label: "张北",
+      code: "101090303"
+    }, {
+      value: "康保",
+      label: "康保",
+      code: "101090304"
+    }, {
+      value: "沽源",
+      label: "沽源",
+      code: "101090305"
+    }, {
+      value: "尚义",
+      label: "尚义",
+      code: "101090306"
+    }, {
+      value: "蔚县",
+      label: "蔚县",
+      code: "101090307"
+    }, {
+      value: "阳原",
+      label: "阳原",
+      code: "101090308"
+    }, {
+      value: "怀安",
+      label: "怀安",
+      code: "101090309"
+    }, {
+      value: "万全",
+      label: "万全",
+      code: "101090310"
+    }, {
+      value: "怀来",
+      label: "怀来",
+      code: "101090311"
+    }, {
+      value: "涿鹿",
+      label: "涿鹿",
+      code: "101090312"
+    }, {
+      value: "赤城",
+      label: "赤城",
+      code: "101090313"
+    }, {
+      value: "崇礼",
+      label: "崇礼",
+      code: "101090314"
+    }, {
+      value: "桥东",
+      label: "桥东",
+      code: "101090315"
+    }, {
+      value: "桥西",
+      label: "桥西",
+      code: "101090316"
+    }, {
+      value: "下花园",
+      label: "下花园",
+      code: "101090317"
+    }]
+  }, {
+    value: "承德",
+    label: "承德",
+    code: "101090401",
+    "children": [{
+      value: "承德",
+      label: "承德",
+      code: "101090402"
+    }, {
+      value: "承德县",
+      label: "承德县",
+      code: "101090403"
+    }, {
+      value: "兴隆",
+      label: "兴隆",
+      code: "101090404"
+    }, {
+      value: "平泉",
+      label: "平泉",
+      code: "101090405"
+    }, {
+      value: "滦平",
+      label: "滦平",
+      code: "101090406"
+    }, {
+      value: "隆化",
+      label: "隆化",
+      code: "101090407"
+    }, {
+      value: "丰宁",
+      label: "丰宁",
+      code: "101090408"
+    }, {
+      value: "宽城",
+      label: "宽城",
+      code: "101090409"
+    }, {
+      value: "围场",
+      label: "围场",
+      code: "101090410"
+    }, {
+      value: "双滦",
+      label: "双滦",
+      code: "101090411"
+    }, {
+      value: "鹰手营子矿",
+      label: "鹰手营子矿",
+      code: "101090412"
+    }]
+  }, {
+    value: "唐山",
+    label: "唐山",
+    code: "101090501",
+    "children": [{
+      value: "丰南",
+      label: "丰南",
+      code: "101090502"
+    }, {
+      value: "丰润",
+      label: "丰润",
+      code: "101090503"
+    }, {
+      value: "滦县",
+      label: "滦县",
+      code: "101090504"
+    }, {
+      value: "滦南",
+      label: "滦南",
+      code: "101090505"
+    }, {
+      value: "乐亭",
+      label: "乐亭",
+      code: "101090506"
+    }, {
+      value: "迁西",
+      label: "迁西",
+      code: "101090507"
+    }, {
+      value: "玉田",
+      label: "玉田",
+      code: "101090508"
+    }, {
+      value: "曹妃甸",
+      label: "曹妃甸",
+      code: "101090509"
+    }, {
+      value: "遵化",
+      label: "遵化",
+      code: "101090510"
+    }, {
+      value: "迁安",
+      label: "迁安",
+      code: "101090511"
+    }, {
+      value: "路南",
+      label: "路南",
+      code: "101090513"
+    }, {
+      value: "路北",
+      label: "路北",
+      code: "101090514"
+    }, {
+      value: "古冶",
+      label: "古冶",
+      code: "101090515"
+    }, {
+      value: "开平",
+      label: "开平",
+      code: "101090516"
+    }]
+  }, {
+    value: "廊坊",
+    label: "廊坊",
+    code: "101090601",
+    "children": [{
+      value: "固安",
+      label: "固安",
+      code: "101090602"
+    }, {
+      value: "永清",
+      label: "永清",
+      code: "101090603"
+    }, {
+      value: "香河",
+      label: "香河",
+      code: "101090604"
+    }, {
+      value: "大城",
+      label: "大城",
+      code: "101090605"
+    }, {
+      value: "文安",
+      label: "文安",
+      code: "101090606"
+    }, {
+      value: "大厂",
+      label: "大厂",
+      code: "101090607"
+    }, {
+      value: "霸州",
+      label: "霸州",
+      code: "101090608"
+    }, {
+      value: "三河",
+      label: "三河",
+      code: "101090609"
+    }, {
+      value: "安次",
+      label: "安次",
+      code: "101090610"
+    }, {
+      value: "广阳",
+      label: "广阳",
+      code: "101090611"
+    }]
+  }, {
+    value: "沧州",
+    label: "沧州",
+    code: "101090701",
+    "children": [{
+      value: "青县",
+      label: "青县",
+      code: "101090702"
+    }, {
+      value: "东光",
+      label: "东光",
+      code: "101090703"
+    }, {
+      value: "海兴",
+      label: "海兴",
+      code: "101090704"
+    }, {
+      value: "盐山",
+      label: "盐山",
+      code: "101090705"
+    }, {
+      value: "肃宁",
+      label: "肃宁",
+      code: "101090706"
+    }, {
+      value: "南皮",
+      label: "南皮",
+      code: "101090707"
+    }, {
+      value: "吴桥",
+      label: "吴桥",
+      code: "101090708"
+    }, {
+      value: "献县",
+      label: "献县",
+      code: "101090709"
+    }, {
+      value: "孟村",
+      label: "孟村",
+      code: "101090710"
+    }, {
+      value: "泊头",
+      label: "泊头",
+      code: "101090711"
+    }, {
+      value: "任丘",
+      label: "任丘",
+      code: "101090712"
+    }, {
+      value: "黄骅",
+      label: "黄骅",
+      code: "101090713"
+    }, {
+      value: "河间",
+      label: "河间",
+      code: "101090714"
+    }, {
+      value: "新华",
+      label: "新华",
+      code: "101090715"
+    }, {
+      value: "沧县",
+      label: "沧县",
+      code: "101090716"
+    }, {
+      value: "运河",
+      label: "运河",
+      code: "101090717"
+    }]
+  }, {
+    value: "衡水",
+    label: "衡水",
+    code: "101090801",
+    "children": [{
+      value: "枣强",
+      label: "枣强",
+      code: "101090802"
+    }, {
+      value: "武邑",
+      label: "武邑",
+      code: "101090803"
+    }, {
+      value: "武强",
+      label: "武强",
+      code: "101090804"
+    }, {
+      value: "饶阳",
+      label: "饶阳",
+      code: "101090805"
+    }, {
+      value: "安平",
+      label: "安平",
+      code: "101090806"
+    }, {
+      value: "故城",
+      label: "故城",
+      code: "101090807"
+    }, {
+      value: "景县",
+      label: "景县",
+      code: "101090808"
+    }, {
+      value: "阜城",
+      label: "阜城",
+      code: "101090809"
+    }, {
+      value: "冀州",
+      label: "冀州",
+      code: "101090810"
+    }, {
+      value: "深州",
+      label: "深州",
+      code: "101090811"
+    }, {
+      value: "桃城",
+      label: "桃城",
+      code: "101090812"
+    }]
+  }, {
+    value: "邢台",
+    label: "邢台",
+    code: "101090901",
+    "children": [{
+      value: "临城",
+      label: "临城",
+      code: "101090902"
+    }, {
+      value: "桥东",
+      label: "桥东",
+      code: "101090903"
+    }, {
+      value: "内丘",
+      label: "内丘",
+      code: "101090904"
+    }, {
+      value: "柏乡",
+      label: "柏乡",
+      code: "101090905"
+    }, {
+      value: "隆尧",
+      label: "隆尧",
+      code: "101090906"
+    }, {
+      value: "南和",
+      label: "南和",
+      code: "101090907"
+    }, {
+      value: "宁晋",
+      label: "宁晋",
+      code: "101090908"
+    }, {
+      value: "巨鹿",
+      label: "巨鹿",
+      code: "101090909"
+    }, {
+      value: "新河",
+      label: "新河",
+      code: "101090910"
+    }, {
+      value: "广宗",
+      label: "广宗",
+      code: "101090911"
+    }, {
+      value: "平乡",
+      label: "平乡",
+      code: "101090912"
+    }, {
+      value: "威县",
+      label: "威县",
+      code: "101090913"
+    }, {
+      value: "清河",
+      label: "清河",
+      code: "101090914"
+    }, {
+      value: "临西",
+      label: "临西",
+      code: "101090915"
+    }, {
+      value: "南宫",
+      label: "南宫",
+      code: "101090916"
+    }, {
+      value: "沙河",
+      label: "沙河",
+      code: "101090917"
+    }, {
+      value: "任县",
+      label: "任县",
+      code: "101090918"
+    }, {
+      value: "桥西",
+      label: "桥西",
+      code: "101090919"
+    }]
+  }, {
+    value: "邯郸",
+    label: "邯郸",
+    code: "101091001",
+    "children": [{
+      value: "峰峰",
+      label: "峰峰",
+      code: "101091002"
+    }, {
+      value: "临漳",
+      label: "临漳",
+      code: "101091003"
+    }, {
+      value: "成安",
+      label: "成安",
+      code: "101091004"
+    }, {
+      value: "大名",
+      label: "大名",
+      code: "101091005"
+    }, {
+      value: "涉县",
+      label: "涉县",
+      code: "101091006"
+    }, {
+      value: "磁县",
+      label: "磁县",
+      code: "101091007"
+    }, {
+      value: "肥乡",
+      label: "肥乡",
+      code: "101091008"
+    }, {
+      value: "永年",
+      label: "永年",
+      code: "101091009"
+    }, {
+      value: "邱县",
+      label: "邱县",
+      code: "101091010"
+    }, {
+      value: "鸡泽",
+      label: "鸡泽",
+      code: "101091011"
+    }, {
+      value: "广平",
+      label: "广平",
+      code: "101091012"
+    }, {
+      value: "馆陶",
+      label: "馆陶",
+      code: "101091013"
+    }, {
+      value: "魏县",
+      label: "魏县",
+      code: "101091014"
+    }, {
+      value: "曲周",
+      label: "曲周",
+      code: "101091015"
+    }, {
+      value: "武安",
+      label: "武安",
+      code: "101091016"
+    }, {
+      value: "邯山",
+      label: "邯山",
+      code: "101091017"
+    }, {
+      value: "丛台",
+      label: "丛台",
+      code: "101091018"
+    }, {
+      value: "复兴",
+      label: "复兴",
+      code: "101091019"
+    }]
+  }, {
+    value: "秦皇岛",
+    label: "秦皇岛",
+    code: "101091101",
+    "children": [{
+      value: "青龙",
+      label: "青龙",
+      code: "101091102"
+    }, {
+      value: "昌黎",
+      label: "昌黎",
+      code: "101091103"
+    }, {
+      value: "抚宁",
+      label: "抚宁",
+      code: "101091104"
+    }, {
+      value: "卢龙",
+      label: "卢龙",
+      code: "101091105"
+    }, {
+      value: "北戴河",
+      label: "北戴河",
+      code: "101091106"
+    }, {
+      value: "海港",
+      label: "海港",
+      code: "101091107"
+    }, {
+      value: "山海关",
+      label: "山海关",
+      code: "101091108"
+    }]
+  }]
+}, {
+  value: "山西",
+  label: "山西",
+  code: "101100101",
+  "children": [{
+    value: "太原",
+    label: "太原",
+    code: "101100101",
+    "children": [{
+      value: "清徐",
+      label: "清徐",
+      code: "101100102"
+    }, {
+      value: "阳曲",
+      label: "阳曲",
+      code: "101100103"
+    }, {
+      value: "娄烦",
+      label: "娄烦",
+      code: "101100104"
+    }, {
+      value: "古交",
+      label: "古交",
+      code: "101100105"
+    }, {
+      value: "尖草坪区",
+      label: "尖草坪区",
+      code: "101100106"
+    }, {
+      value: "小店区",
+      label: "小店区",
+      code: "101100107"
+    }, {
+      value: "迎泽",
+      label: "迎泽",
+      code: "101100108"
+    }, {
+      value: "杏花岭",
+      label: "杏花岭",
+      code: "101100109"
+    }, {
+      value: "万柏林",
+      label: "万柏林",
+      code: "101100110"
+    }, {
+      value: "晋源",
+      label: "晋源",
+      code: "101100111"
+    }]
+  }, {
+    value: "大同",
+    label: "大同",
+    code: "101100201",
+    "children": [{
+      value: "阳高",
+      label: "阳高",
+      code: "101100202"
+    }, {
+      value: "大同县",
+      label: "大同县",
+      code: "101100203"
+    }, {
+      value: "天镇",
+      label: "天镇",
+      code: "101100204"
+    }, {
+      value: "广灵",
+      label: "广灵",
+      code: "101100205"
+    }, {
+      value: "灵丘",
+      label: "灵丘",
+      code: "101100206"
+    }, {
+      value: "浑源",
+      label: "浑源",
+      code: "101100207"
+    }, {
+      value: "左云",
+      label: "左云",
+      code: "101100208"
+    }, {
+      value: "矿区",
+      label: "矿区",
+      code: "101100209"
+    }, {
+      value: "南郊",
+      label: "南郊",
+      code: "101100210"
+    }, {
+      value: "新荣",
+      label: "新荣",
+      code: "101100211"
+    }]
+  }, {
+    value: "阳泉",
+    label: "阳泉",
+    code: "101100301",
+    "children": [{
+      value: "盂县",
+      label: "盂县",
+      code: "101100302"
+    }, {
+      value: "平定",
+      label: "平定",
+      code: "101100303"
+    }, {
+      value: "矿区",
+      label: "矿区",
+      code: "101100304"
+    }, {
+      value: "郊区",
+      label: "郊区",
+      code: "101100305"
+    }]
+  }, {
+    value: "晋中",
+    label: "晋中",
+    code: "101100401",
+    "children": [{
+      value: "榆次",
+      label: "榆次",
+      code: "101100402"
+    }, {
+      value: "榆社",
+      label: "榆社",
+      code: "101100403"
+    }, {
+      value: "左权",
+      label: "左权",
+      code: "101100404"
+    }, {
+      value: "和顺",
+      label: "和顺",
+      code: "101100405"
+    }, {
+      value: "昔阳",
+      label: "昔阳",
+      code: "101100406"
+    }, {
+      value: "寿阳",
+      label: "寿阳",
+      code: "101100407"
+    }, {
+      value: "太谷",
+      label: "太谷",
+      code: "101100408"
+    }, {
+      value: "祁县",
+      label: "祁县",
+      code: "101100409"
+    }, {
+      value: "平遥",
+      label: "平遥",
+      code: "101100410"
+    }, {
+      value: "灵石",
+      label: "灵石",
+      code: "101100411"
+    }, {
+      value: "介休",
+      label: "介休",
+      code: "101100412"
+    }]
+  }, {
+    value: "长治",
+    label: "长治",
+    code: "101100501",
+    "children": [{
+      value: "黎城",
+      label: "黎城",
+      code: "101100502"
+    }, {
+      value: "屯留",
+      label: "屯留",
+      code: "101100503"
+    }, {
+      value: "潞城",
+      label: "潞城",
+      code: "101100504"
+    }, {
+      value: "襄垣",
+      label: "襄垣",
+      code: "101100505"
+    }, {
+      value: "平顺",
+      label: "平顺",
+      code: "101100506"
+    }, {
+      value: "武乡",
+      label: "武乡",
+      code: "101100507"
+    }, {
+      value: "沁县",
+      label: "沁县",
+      code: "101100508"
+    }, {
+      value: "长子",
+      label: "长子",
+      code: "101100509"
+    }, {
+      value: "沁源",
+      label: "沁源",
+      code: "101100510"
+    }, {
+      value: "壶关",
+      label: "壶关",
+      code: "101100511"
+    }, {
+      value: "郊区",
+      label: "郊区",
+      code: "101100512"
+    }]
+  }, {
+    value: "晋城",
+    label: "晋城",
+    code: "101100601",
+    "children": [{
+      value: "沁水",
+      label: "沁水",
+      code: "101100602"
+    }, {
+      value: "阳城",
+      label: "阳城",
+      code: "101100603"
+    }, {
+      value: "陵川",
+      label: "陵川",
+      code: "101100604"
+    }, {
+      value: "高平",
+      label: "高平",
+      code: "101100605"
+    }, {
+      value: "泽州",
+      label: "泽州",
+      code: "101100606"
+    }]
+  }, {
+    value: "临汾",
+    label: "临汾",
+    code: "101100701",
+    "children": [{
+      value: "曲沃",
+      label: "曲沃",
+      code: "101100702"
+    }, {
+      value: "永和",
+      label: "永和",
+      code: "101100703"
+    }, {
+      value: "隰县",
+      label: "隰县",
+      code: "101100704"
+    }, {
+      value: "大宁",
+      label: "大宁",
+      code: "101100705"
+    }, {
+      value: "吉县",
+      label: "吉县",
+      code: "101100706"
+    }, {
+      value: "襄汾",
+      label: "襄汾",
+      code: "101100707"
+    }, {
+      value: "蒲县",
+      label: "蒲县",
+      code: "101100708"
+    }, {
+      value: "汾西",
+      label: "汾西",
+      code: "101100709"
+    }, {
+      value: "洪洞",
+      label: "洪洞",
+      code: "101100710"
+    }, {
+      value: "霍州",
+      label: "霍州",
+      code: "101100711"
+    }, {
+      value: "乡宁",
+      label: "乡宁",
+      code: "101100712"
+    }, {
+      value: "翼城",
+      label: "翼城",
+      code: "101100713"
+    }, {
+      value: "侯马",
+      label: "侯马",
+      code: "101100714"
+    }, {
+      value: "浮山",
+      label: "浮山",
+      code: "101100715"
+    }, {
+      value: "安泽",
+      label: "安泽",
+      code: "101100716"
+    }, {
+      value: "古县",
+      label: "古县",
+      code: "101100717"
+    }, {
+      value: "尧都",
+      label: "尧都",
+      code: "101100718"
+    }]
+  }, {
+    value: "运城",
+    label: "运城",
+    code: "101100801",
+    "children": [{
+      value: "临猗",
+      label: "临猗",
+      code: "101100802"
+    }, {
+      value: "稷山",
+      label: "稷山",
+      code: "101100803"
+    }, {
+      value: "万荣",
+      label: "万荣",
+      code: "101100804"
+    }, {
+      value: "河津",
+      label: "河津",
+      code: "101100805"
+    }, {
+      value: "新绛",
+      label: "新绛",
+      code: "101100806"
+    }, {
+      value: "绛县",
+      label: "绛县",
+      code: "101100807"
+    }, {
+      value: "闻喜",
+      label: "闻喜",
+      code: "101100808"
+    }, {
+      value: "垣曲",
+      label: "垣曲",
+      code: "101100809"
+    }, {
+      value: "永济",
+      label: "永济",
+      code: "101100810"
+    }, {
+      value: "芮城",
+      label: "芮城",
+      code: "101100811"
+    }, {
+      value: "夏县",
+      label: "夏县",
+      code: "101100812"
+    }, {
+      value: "平陆",
+      label: "平陆",
+      code: "101100813"
+    }, {
+      value: "盐湖",
+      label: "盐湖",
+      code: "101100814"
+    }]
+  }, {
+    value: "朔州",
+    label: "朔州",
+    code: "101100901",
+    "children": [{
+      value: "平鲁",
+      label: "平鲁",
+      code: "101100902"
+    }, {
+      value: "山阴",
+      label: "山阴",
+      code: "101100903"
+    }, {
+      value: "右玉",
+      label: "右玉",
+      code: "101100904"
+    }, {
+      value: "应县",
+      label: "应县",
+      code: "101100905"
+    }, {
+      value: "怀仁",
+      label: "怀仁",
+      code: "101100906"
+    }, {
+      value: "朔城",
+      label: "朔城",
+      code: "101100907"
+    }]
+  }, {
+    value: "忻州",
+    label: "忻州",
+    code: "101101001",
+    "children": [{
+      value: "定襄",
+      label: "定襄",
+      code: "101101002"
+    }, {
+      value: "五台县",
+      label: "五台县",
+      code: "101101003"
+    }, {
+      value: "河曲",
+      label: "河曲",
+      code: "101101004"
+    }, {
+      value: "偏关",
+      label: "偏关",
+      code: "101101005"
+    }, {
+      value: "神池",
+      label: "神池",
+      code: "101101006"
+    }, {
+      value: "宁武",
+      label: "宁武",
+      code: "101101007"
+    }, {
+      value: "代县",
+      label: "代县",
+      code: "101101008"
+    }, {
+      value: "繁峙",
+      label: "繁峙",
+      code: "101101009"
+    }, {
+      value: "保德",
+      label: "保德",
+      code: "101101011"
+    }, {
+      value: "静乐",
+      label: "静乐",
+      code: "101101012"
+    }, {
+      value: "岢岚",
+      label: "岢岚",
+      code: "101101013"
+    }, {
+      value: "五寨",
+      label: "五寨",
+      code: "101101014"
+    }, {
+      value: "原平",
+      label: "原平",
+      code: "101101015"
+    }, {
+      value: "忻府",
+      label: "忻府",
+      code: "101101016"
+    }]
+  }, {
+    value: "吕梁",
+    label: "吕梁",
+    code: "101101100",
+    "children": [{
+      value: "离石",
+      label: "离石",
+      code: "101101101"
+    }, {
+      value: "临县",
+      label: "临县",
+      code: "101101102"
+    }, {
+      value: "兴县",
+      label: "兴县",
+      code: "101101103"
+    }, {
+      value: "岚县",
+      label: "岚县",
+      code: "101101104"
+    }, {
+      value: "柳林",
+      label: "柳林",
+      code: "101101105"
+    }, {
+      value: "石楼",
+      label: "石楼",
+      code: "101101106"
+    }, {
+      value: "方山",
+      label: "方山",
+      code: "101101107"
+    }, {
+      value: "交口",
+      label: "交口",
+      code: "101101108"
+    }, {
+      value: "中阳",
+      label: "中阳",
+      code: "101101109"
+    }, {
+      value: "孝义",
+      label: "孝义",
+      code: "101101110"
+    }, {
+      value: "汾阳",
+      label: "汾阳",
+      code: "101101111"
+    }, {
+      value: "文水",
+      label: "文水",
+      code: "101101112"
+    }, {
+      value: "交城",
+      label: "交城",
+      code: "101101113"
+    }]
+  }]
+}, {
+  value: "陕西",
+  label: "陕西",
+  code: "101110101",
+  "children": [{
+    value: "西安",
+    label: "西安",
+    code: "101110101",
+    "children": [{
+      value: "长安",
+      label: "长安",
+      code: "101110102"
+    }, {
+      value: "临潼",
+      label: "临潼",
+      code: "101110103"
+    }, {
+      value: "蓝田",
+      label: "蓝田",
+      code: "101110104"
+    }, {
+      value: "周至",
+      label: "周至",
+      code: "101110105"
+    }, {
+      value: "户县",
+      label: "户县",
+      code: "101110106"
+    }, {
+      value: "高陵",
+      label: "高陵",
+      code: "101110107"
+    }, {
+      value: "新城",
+      label: "新城",
+      code: "101110108"
+    }, {
+      value: "碑林",
+      label: "碑林",
+      code: "101110109"
+    }, {
+      value: "莲湖",
+      label: "莲湖",
+      code: "101110110"
+    }, {
+      value: "灞桥",
+      label: "灞桥",
+      code: "101110111"
+    }, {
+      value: "未央",
+      label: "未央",
+      code: "101110112"
+    }, {
+      value: "雁塔",
+      label: "雁塔",
+      code: "101110113"
+    }, {
+      value: "阎良",
+      label: "阎良",
+      code: "101110114"
+    }]
+  }, {
+    value: "咸阳",
+    label: "咸阳",
+    code: "101110200",
+    "children": [{
+      value: "三原",
+      label: "三原",
+      code: "101110201"
+    }, {
+      value: "礼泉",
+      label: "礼泉",
+      code: "101110202"
+    }, {
+      value: "永寿",
+      label: "永寿",
+      code: "101110203"
+    }, {
+      value: "淳化",
+      label: "淳化",
+      code: "101110204"
+    }, {
+      value: "泾阳",
+      label: "泾阳",
+      code: "101110205"
+    }, {
+      value: "武功",
+      label: "武功",
+      code: "101110206"
+    }, {
+      value: "乾县",
+      label: "乾县",
+      code: "101110207"
+    }, {
+      value: "彬县",
+      label: "彬县",
+      code: "101110208"
+    }, {
+      value: "长武",
+      label: "长武",
+      code: "101110209"
+    }, {
+      value: "旬邑",
+      label: "旬邑",
+      code: "101110210"
+    }, {
+      value: "兴平",
+      label: "兴平",
+      code: "101110211"
+    }, {
+      value: "秦都",
+      label: "秦都",
+      code: "101110212"
+    }, {
+      value: "渭城",
+      label: "渭城",
+      code: "101110213"
+    }]
+  }, {
+    value: "延安",
+    label: "延安",
+    code: "101110300",
+    "children": [{
+      value: "延长",
+      label: "延长",
+      code: "101110301"
+    }, {
+      value: "延川",
+      label: "延川",
+      code: "101110302"
+    }, {
+      value: "子长",
+      label: "子长",
+      code: "101110303"
+    }, {
+      value: "宜川",
+      label: "宜川",
+      code: "101110304"
+    }, {
+      value: "富县",
+      label: "富县",
+      code: "101110305"
+    }, {
+      value: "志丹",
+      label: "志丹",
+      code: "101110306"
+    }, {
+      value: "安塞",
+      label: "安塞",
+      code: "101110307"
+    }, {
+      value: "甘泉",
+      label: "甘泉",
+      code: "101110308"
+    }, {
+      value: "洛川",
+      label: "洛川",
+      code: "101110309"
+    }, {
+      value: "黄陵",
+      label: "黄陵",
+      code: "101110310"
+    }, {
+      value: "黄龙",
+      label: "黄龙",
+      code: "101110311"
+    }, {
+      value: "吴起",
+      label: "吴起",
+      code: "101110312"
+    }, {
+      value: "宝塔",
+      label: "宝塔",
+      code: "101110313"
+    }]
+  }, {
+    value: "榆林",
+    label: "榆林",
+    code: "101110401",
+    "children": [{
+      value: "府谷",
+      label: "府谷",
+      code: "101110402"
+    }, {
+      value: "神木",
+      label: "神木",
+      code: "101110403"
+    }, {
+      value: "佳县",
+      label: "佳县",
+      code: "101110404"
+    }, {
+      value: "定边",
+      label: "定边",
+      code: "101110405"
+    }, {
+      value: "靖边",
+      label: "靖边",
+      code: "101110406"
+    }, {
+      value: "横山",
+      label: "横山",
+      code: "101110407"
+    }, {
+      value: "米脂",
+      label: "米脂",
+      code: "101110408"
+    }, {
+      value: "子洲",
+      label: "子洲",
+      code: "101110409"
+    }, {
+      value: "绥德",
+      label: "绥德",
+      code: "101110410"
+    }, {
+      value: "吴堡",
+      label: "吴堡",
+      code: "101110411"
+    }, {
+      value: "清涧",
+      label: "清涧",
+      code: "101110412"
+    }, {
+      value: "榆阳",
+      label: "榆阳",
+      code: "101110413"
+    }]
+  }, {
+    value: "渭南",
+    label: "渭南",
+    code: "101110501",
+    "children": [{
+      value: "华县",
+      label: "华县",
+      code: "101110502"
+    }, {
+      value: "潼关",
+      label: "潼关",
+      code: "101110503"
+    }, {
+      value: "大荔",
+      label: "大荔",
+      code: "101110504"
+    }, {
+      value: "白水",
+      label: "白水",
+      code: "101110505"
+    }, {
+      value: "富平",
+      label: "富平",
+      code: "101110506"
+    }, {
+      value: "蒲城",
+      label: "蒲城",
+      code: "101110507"
+    }, {
+      value: "澄城",
+      label: "澄城",
+      code: "101110508"
+    }, {
+      value: "合阳",
+      label: "合阳",
+      code: "101110509"
+    }, {
+      value: "韩城",
+      label: "韩城",
+      code: "101110510"
+    }, {
+      value: "华阴",
+      label: "华阴",
+      code: "101110511"
+    }, {
+      value: "临渭",
+      label: "临渭",
+      code: "101110512"
+    }, {
+      value: "华州",
+      label: "华州",
+      code: "101110513"
+    }]
+  }, {
+    value: "商洛",
+    label: "商洛",
+    code: "101110601",
+    "children": [{
+      value: "洛南",
+      label: "洛南",
+      code: "101110602"
+    }, {
+      value: "柞水",
+      label: "柞水",
+      code: "101110603"
+    }, {
+      value: "商州",
+      label: "商州",
+      code: "101110604"
+    }, {
+      value: "镇安",
+      label: "镇安",
+      code: "101110605"
+    }, {
+      value: "丹凤",
+      label: "丹凤",
+      code: "101110606"
+    }, {
+      value: "商南",
+      label: "商南",
+      code: "101110607"
+    }, {
+      value: "山阳",
+      label: "山阳",
+      code: "101110608"
+    }]
+  }, {
+    value: "安康",
+    label: "安康",
+    code: "101110701",
+    "children": [{
+      value: "紫阳",
+      label: "紫阳",
+      code: "101110702"
+    }, {
+      value: "石泉",
+      label: "石泉",
+      code: "101110703"
+    }, {
+      value: "汉阴",
+      label: "汉阴",
+      code: "101110704"
+    }, {
+      value: "旬阳",
+      label: "旬阳",
+      code: "101110705"
+    }, {
+      value: "岚皋",
+      label: "岚皋",
+      code: "101110706"
+    }, {
+      value: "平利",
+      label: "平利",
+      code: "101110707"
+    }, {
+      value: "白河",
+      label: "白河",
+      code: "101110708"
+    }, {
+      value: "镇坪",
+      label: "镇坪",
+      code: "101110709"
+    }, {
+      value: "宁陕",
+      label: "宁陕",
+      code: "101110710"
+    }, {
+      value: "汉滨",
+      label: "汉滨",
+      code: "101110711"
+    }]
+  }, {
+    value: "汉中",
+    label: "汉中",
+    code: "101110801",
+    "children": [{
+      value: "略阳",
+      label: "略阳",
+      code: "101110802"
+    }, {
+      value: "勉县",
+      label: "勉县",
+      code: "101110803"
+    }, {
+      value: "留坝",
+      label: "留坝",
+      code: "101110804"
+    }, {
+      value: "洋县",
+      label: "洋县",
+      code: "101110805"
+    }, {
+      value: "城固",
+      label: "城固",
+      code: "101110806"
+    }, {
+      value: "西乡",
+      label: "西乡",
+      code: "101110807"
+    }, {
+      value: "佛坪",
+      label: "佛坪",
+      code: "101110808"
+    }, {
+      value: "宁强",
+      label: "宁强",
+      code: "101110809"
+    }, {
+      value: "南郑",
+      label: "南郑",
+      code: "101110810"
+    }, {
+      value: "镇巴",
+      label: "镇巴",
+      code: "101110811"
+    }, {
+      value: "汉台",
+      label: "汉台",
+      code: "101110812"
+    }]
+  }, {
+    value: "宝鸡",
+    label: "宝鸡",
+    code: "101110901",
+    "children": [{
+      value: "渭滨",
+      label: "渭滨",
+      code: "101110902"
+    }, {
+      value: "千阳",
+      label: "千阳",
+      code: "101110903"
+    }, {
+      value: "麟游",
+      label: "麟游",
+      code: "101110904"
+    }, {
+      value: "岐山",
+      label: "岐山",
+      code: "101110905"
+    }, {
+      value: "凤翔",
+      label: "凤翔",
+      code: "101110906"
+    }, {
+      value: "扶风",
+      label: "扶风",
+      code: "101110907"
+    }, {
+      value: "眉县",
+      label: "眉县",
+      code: "101110908"
+    }, {
+      value: "太白",
+      label: "太白",
+      code: "101110909"
+    }, {
+      value: "凤县",
+      label: "凤县",
+      code: "101110910"
+    }, {
+      value: "陇县",
+      label: "陇县",
+      code: "101110911"
+    }, {
+      value: "陈仓",
+      label: "陈仓",
+      code: "101110912"
+    }, {
+      value: "金台",
+      label: "金台",
+      code: "101110913"
+    }]
+  }, {
+    value: "铜川",
+    label: "铜川",
+    code: "101111001",
+    "children": [{
+      value: "宜君",
+      label: "宜君",
+      code: "101111003"
+    }, {
+      value: "耀州",
+      label: "耀州",
+      code: "101111004"
+    }, {
+      value: "王益",
+      label: "王益",
+      code: "101111005"
+    }, {
+      value: "印台",
+      label: "印台",
+      code: "101111006"
+    }]
+  }, {
+    value: "杨凌",
+    label: "杨凌",
+    code: "101111101",
+    "children": [{
+      value: "杨陵",
+      label: "杨陵",
+      code: "101111102"
+    }]
+  }]
+}, {
+  value: "山东",
+  label: "山东",
+  code: "101120101",
+  "children": [{
+    value: "济南",
+    label: "济南",
+    code: "101120101",
+    "children": [{
+      value: "长清",
+      label: "长清",
+      code: "101120102"
+    }, {
+      value: "商河",
+      label: "商河",
+      code: "101120103"
+    }, {
+      value: "章丘",
+      label: "章丘",
+      code: "101120104"
+    }, {
+      value: "平阴",
+      label: "平阴",
+      code: "101120105"
+    }, {
+      value: "济阳",
+      label: "济阳",
+      code: "101120106"
+    }, {
+      value: "历下",
+      label: "历下",
+      code: "101120107"
+    }, {
+      value: "市中",
+      label: "市中",
+      code: "101120108"
+    }, {
+      value: "槐荫",
+      label: "槐荫",
+      code: "101120109"
+    }, {
+      value: "天桥",
+      label: "天桥",
+      code: "101120110"
+    }, {
+      value: "历城",
+      label: "历城",
+      code: "101120111"
+    }]
+  }, {
+    value: "青岛",
+    label: "青岛",
+    code: "101120201",
+    "children": [{
+      value: "崂山",
+      label: "崂山",
+      code: "101120202"
+    }, {
+      value: "市南",
+      label: "市南",
+      code: "101120203"
+    }, {
+      value: "即墨",
+      label: "即墨",
+      code: "101120204"
+    }, {
+      value: "胶州",
+      label: "胶州",
+      code: "101120205"
+    }, {
+      value: "黄岛",
+      label: "黄岛",
+      code: "101120206"
+    }, {
+      value: "莱西",
+      label: "莱西",
+      code: "101120207"
+    }, {
+      value: "平度",
+      label: "平度",
+      code: "101120208"
+    }, {
+      value: "市北",
+      label: "市北",
+      code: "101120209"
+    }, {
+      value: "李沧",
+      label: "李沧",
+      code: "101120210"
+    }, {
+      value: "城阳",
+      label: "城阳",
+      code: "101120211"
+    }]
+  }, {
+    value: "淄博",
+    label: "淄博",
+    code: "101120301",
+    "children": [{
+      value: "淄川",
+      label: "淄川",
+      code: "101120302"
+    }, {
+      value: "博山",
+      label: "博山",
+      code: "101120303"
+    }, {
+      value: "高青",
+      label: "高青",
+      code: "101120304"
+    }, {
+      value: "周村",
+      label: "周村",
+      code: "101120305"
+    }, {
+      value: "沂源",
+      label: "沂源",
+      code: "101120306"
+    }, {
+      value: "桓台",
+      label: "桓台",
+      code: "101120307"
+    }, {
+      value: "临淄",
+      label: "临淄",
+      code: "101120308"
+    }, {
+      value: "张店",
+      label: "张店",
+      code: "101120309"
+    }]
+  }, {
+    value: "德州",
+    label: "德州",
+    code: "101120401",
+    "children": [{
+      value: "武城",
+      label: "武城",
+      code: "101120402"
+    }, {
+      value: "临邑",
+      label: "临邑",
+      code: "101120403"
+    }, {
+      value: "齐河",
+      label: "齐河",
+      code: "101120405"
+    }, {
+      value: "乐陵",
+      label: "乐陵",
+      code: "101120406"
+    }, {
+      value: "庆云",
+      label: "庆云",
+      code: "101120407"
+    }, {
+      value: "平原",
+      label: "平原",
+      code: "101120408"
+    }, {
+      value: "宁津",
+      label: "宁津",
+      code: "101120409"
+    }, {
+      value: "夏津",
+      label: "夏津",
+      code: "101120410"
+    }, {
+      value: "禹城",
+      label: "禹城",
+      code: "101120411"
+    }, {
+      value: "德城",
+      label: "德城",
+      code: "101120412"
+    }, {
+      value: "陵城",
+      label: "陵城",
+      code: "101120413"
+    }]
+  }, {
+    value: "烟台",
+    label: "烟台",
+    code: "101120501",
+    "children": [{
+      value: "莱州",
+      label: "莱州",
+      code: "101120502"
+    }, {
+      value: "长岛",
+      label: "长岛",
+      code: "101120503"
+    }, {
+      value: "蓬莱",
+      label: "蓬莱",
+      code: "101120504"
+    }, {
+      value: "龙口",
+      label: "龙口",
+      code: "101120505"
+    }, {
+      value: "招远",
+      label: "招远",
+      code: "101120506"
+    }, {
+      value: "栖霞",
+      label: "栖霞",
+      code: "101120507"
+    }, {
+      value: "福山",
+      label: "福山",
+      code: "101120508"
+    }, {
+      value: "牟平",
+      label: "牟平",
+      code: "101120509"
+    }, {
+      value: "莱阳",
+      label: "莱阳",
+      code: "101120510"
+    }, {
+      value: "海阳",
+      label: "海阳",
+      code: "101120511"
+    }, {
+      value: "芝罘",
+      label: "芝罘",
+      code: "101120512"
+    }, {
+      value: "莱山",
+      label: "莱山",
+      code: "101120513"
+    }]
+  }, {
+    value: "潍坊",
+    label: "潍坊",
+    code: "101120601",
+    "children": [{
+      value: "青州",
+      label: "青州",
+      code: "101120602"
+    }, {
+      value: "寿光",
+      label: "寿光",
+      code: "101120603"
+    }, {
+      value: "临朐",
+      label: "临朐",
+      code: "101120604"
+    }, {
+      value: "昌乐",
+      label: "昌乐",
+      code: "101120605"
+    }, {
+      value: "昌邑",
+      label: "昌邑",
+      code: "101120606"
+    }, {
+      value: "安丘",
+      label: "安丘",
+      code: "101120607"
+    }, {
+      value: "高密",
+      label: "高密",
+      code: "101120608"
+    }, {
+      value: "诸城",
+      label: "诸城",
+      code: "101120609"
+    }, {
+      value: "潍城",
+      label: "潍城",
+      code: "101120610"
+    }, {
+      value: "寒亭",
+      label: "寒亭",
+      code: "101120611"
+    }, {
+      value: "坊子",
+      label: "坊子",
+      code: "101120612"
+    }, {
+      value: "奎文",
+      label: "奎文",
+      code: "101120613"
+    }]
+  }, {
+    value: "济宁",
+    label: "济宁",
+    code: "101120701",
+    "children": [{
+      value: "嘉祥",
+      label: "嘉祥",
+      code: "101120702"
+    }, {
+      value: "微山",
+      label: "微山",
+      code: "101120703"
+    }, {
+      value: "鱼台",
+      label: "鱼台",
+      code: "101120704"
+    }, {
+      value: "兖州",
+      label: "兖州",
+      code: "101120705"
+    }, {
+      value: "金乡",
+      label: "金乡",
+      code: "101120706"
+    }, {
+      value: "汶上",
+      label: "汶上",
+      code: "101120707"
+    }, {
+      value: "泗水",
+      label: "泗水",
+      code: "101120708"
+    }, {
+      value: "梁山",
+      label: "梁山",
+      code: "101120709"
+    }, {
+      value: "曲阜",
+      label: "曲阜",
+      code: "101120710"
+    }, {
+      value: "邹城",
+      label: "邹城",
+      code: "101120711"
+    }, {
+      value: "任城",
+      label: "任城",
+      code: "101120712"
+    }]
+  }, {
+    value: "泰安",
+    label: "泰安",
+    code: "101120801",
+    "children": [{
+      value: "新泰",
+      label: "新泰",
+      code: "101120802"
+    }, {
+      value: "泰山",
+      label: "泰山",
+      code: "101120803"
+    }, {
+      value: "肥城",
+      label: "肥城",
+      code: "101120804"
+    }, {
+      value: "东平",
+      label: "东平",
+      code: "101120805"
+    }, {
+      value: "宁阳",
+      label: "宁阳",
+      code: "101120806"
+    }, {
+      value: "岱岳",
+      label: "岱岳",
+      code: "101120807"
+    }]
+  }, {
+    value: "临沂",
+    label: "临沂",
+    code: "101120901",
+    "children": [{
+      value: "莒南",
+      label: "莒南",
+      code: "101120902"
+    }, {
+      value: "沂南",
+      label: "沂南",
+      code: "101120903"
+    }, {
+      value: "兰陵",
+      label: "兰陵",
+      code: "101120904"
+    }, {
+      value: "临沭",
+      label: "临沭",
+      code: "101120905"
+    }, {
+      value: "郯城",
+      label: "郯城",
+      code: "101120906"
+    }, {
+      value: "蒙阴",
+      label: "蒙阴",
+      code: "101120907"
+    }, {
+      value: "平邑",
+      label: "平邑",
+      code: "101120908"
+    }, {
+      value: "费县",
+      label: "费县",
+      code: "101120909"
+    }, {
+      value: "沂水",
+      label: "沂水",
+      code: "101120910"
+    }, {
+      value: "兰山",
+      label: "兰山",
+      code: "101120911"
+    }, {
+      value: "罗庄",
+      label: "罗庄",
+      code: "101120912"
+    }, {
+      value: "河东",
+      label: "河东",
+      code: "101120913"
+    }]
+  }, {
+    value: "菏泽",
+    label: "菏泽",
+    code: "101121001",
+    "children": [{
+      value: "鄄城",
+      label: "鄄城",
+      code: "101121002"
+    }, {
+      value: "郓城",
+      label: "郓城",
+      code: "101121003"
+    }, {
+      value: "东明",
+      label: "东明",
+      code: "101121004"
+    }, {
+      value: "定陶",
+      label: "定陶",
+      code: "101121005"
+    }, {
+      value: "巨野",
+      label: "巨野",
+      code: "101121006"
+    }, {
+      value: "曹县",
+      label: "曹县",
+      code: "101121007"
+    }, {
+      value: "成武",
+      label: "成武",
+      code: "101121008"
+    }, {
+      value: "单县",
+      label: "单县",
+      code: "101121009"
+    }, {
+      value: "牡丹",
+      label: "牡丹",
+      code: "101121010"
+    }]
+  }, {
+    value: "滨州",
+    label: "滨州",
+    code: "101121101",
+    "children": [{
+      value: "博兴",
+      label: "博兴",
+      code: "101121102"
+    }, {
+      value: "无棣",
+      label: "无棣",
+      code: "101121103"
+    }, {
+      value: "阳信",
+      label: "阳信",
+      code: "101121104"
+    }, {
+      value: "惠民",
+      label: "惠民",
+      code: "101121105"
+    }, {
+      value: "沾化",
+      label: "沾化",
+      code: "101121106"
+    }, {
+      value: "邹平",
+      label: "邹平",
+      code: "101121107"
+    }, {
+      value: "滨城",
+      label: "滨城",
+      code: "101121108"
+    }]
+  }, {
+    value: "东营",
+    label: "东营",
+    code: "101121201",
+    "children": [{
+      value: "河口",
+      label: "河口",
+      code: "101121202"
+    }, {
+      value: "垦利",
+      label: "垦利",
+      code: "101121203"
+    }, {
+      value: "利津",
+      label: "利津",
+      code: "101121204"
+    }, {
+      value: "广饶",
+      label: "广饶",
+      code: "101121205"
+    }]
+  }, {
+    value: "威海",
+    label: "威海",
+    code: "101121301",
+    "children": [{
+      value: "文登",
+      label: "文登",
+      code: "101121302"
+    }, {
+      value: "荣成",
+      label: "荣成",
+      code: "101121303"
+    }, {
+      value: "乳山",
+      label: "乳山",
+      code: "101121304"
+    }, {
+      value: "环翠",
+      label: "环翠",
+      code: "101121307"
+    }]
+  }, {
+    value: "枣庄",
+    label: "枣庄",
+    code: "101121401",
+    "children": [{
+      value: "薛城",
+      label: "薛城",
+      code: "101121402"
+    }, {
+      value: "峄城",
+      label: "峄城",
+      code: "101121403"
+    }, {
+      value: "台儿庄",
+      label: "台儿庄",
+      code: "101121404"
+    }, {
+      value: "滕州",
+      label: "滕州",
+      code: "101121405"
+    }, {
+      value: "市中",
+      label: "市中",
+      code: "101121406"
+    }, {
+      value: "山亭",
+      label: "山亭",
+      code: "101121407"
+    }]
+  }, {
+    value: "日照",
+    label: "日照",
+    code: "101121501",
+    "children": [{
+      value: "五莲",
+      label: "五莲",
+      code: "101121502"
+    }, {
+      value: "莒县",
+      label: "莒县",
+      code: "101121503"
+    }, {
+      value: "东港",
+      label: "东港",
+      code: "101121504"
+    }, {
+      value: "岚山",
+      label: "岚山",
+      code: "101121505"
+    }]
+  }, {
+    value: "莱芜",
+    label: "莱芜",
+    code: "101121601",
+    "children": [{
+      value: "莱城",
+      label: "莱城",
+      code: "101121602"
+    }, {
+      value: "钢城",
+      label: "钢城",
+      code: "101121603"
+    }]
+  }, {
+    value: "聊城",
+    label: "聊城",
+    code: "101121701",
+    "children": [{
+      value: "冠县",
+      label: "冠县",
+      code: "101121702"
+    }, {
+      value: "阳谷",
+      label: "阳谷",
+      code: "101121703"
+    }, {
+      value: "高唐",
+      label: "高唐",
+      code: "101121704"
+    }, {
+      value: "茌平",
+      label: "茌平",
+      code: "101121705"
+    }, {
+      value: "东阿",
+      label: "东阿",
+      code: "101121706"
+    }, {
+      value: "临清",
+      label: "临清",
+      code: "101121707"
+    }, {
+      value: "东昌府",
+      label: "东昌府",
+      code: "101121708"
+    }, {
+      value: "莘县",
+      label: "莘县",
+      code: "101121709"
+    }]
+  }]
+}, {
+  value: "新疆",
+  label: "新疆",
+  code: "101130101",
+  "children": [{
+    value: "乌鲁木齐",
+    label: "乌鲁木齐",
+    code: "101130101",
+    "children": [{
+      value: "天山",
+      label: "天山",
+      code: "101130102"
+    }, {
+      value: "沙依巴克",
+      label: "沙依巴克",
+      code: "101130104"
+    }, {
+      value: "达坂城",
+      label: "达坂城",
+      code: "101130105"
+    }, {
+      value: "新市",
+      label: "新市",
+      code: "101130106"
+    }, {
+      value: "水磨沟",
+      label: "水磨沟",
+      code: "101130107"
+    }, {
+      value: "头屯河",
+      label: "头屯河",
+      code: "101130111"
+    }, {
+      value: "米东",
+      label: "米东",
+      code: "101130112"
+    }, {
+      value: "乌鲁木齐县",
+      label: "乌鲁木齐县",
+      code: "101130113"
+    }]
+  }, {
+    value: "克拉玛依",
+    label: "克拉玛依",
+    code: "101130201",
+    "children": [{
+      value: "乌尔禾",
+      label: "乌尔禾",
+      code: "101130202"
+    }, {
+      value: "白碱滩",
+      label: "白碱滩",
+      code: "101130203"
+    }, {
+      value: "独山子",
+      label: "独山子",
+      code: "101130204"
+    }]
+  }, {
+    value: "石河子",
+    label: "石河子",
+    code: "101130301",
+  }, {
+    value: "昌吉",
+    label: "昌吉",
+    code: "101130401",
+    "children": [{
+      value: "呼图壁",
+      label: "呼图壁",
+      code: "101130402"
+    }, {
+      value: "阜康",
+      label: "阜康",
+      code: "101130404"
+    }, {
+      value: "吉木萨尔",
+      label: "吉木萨尔",
+      code: "101130405"
+    }, {
+      value: "奇台",
+      label: "奇台",
+      code: "101130406"
+    }, {
+      value: "玛纳斯",
+      label: "玛纳斯",
+      code: "101130407"
+    }, {
+      value: "木垒",
+      label: "木垒",
+      code: "101130408"
+    }]
+  }, {
+    value: "吐鲁番",
+    label: "吐鲁番",
+    code: "101130501",
+    "children": [{
+      value: "托克逊",
+      label: "托克逊",
+      code: "101130502"
+    }, {
+      value: "高昌",
+      label: "高昌",
+      code: "101130503"
+    }, {
+      value: "鄯善",
+      label: "鄯善",
+      code: "101130504"
+    }]
+  }, {
+    value: "巴音郭楞",
+    label: "巴音郭楞",
+    code: "101130601",
+    "children": [{
+      value: "轮台",
+      label: "轮台",
+      code: "101130602"
+    }, {
+      value: "尉犁",
+      label: "尉犁",
+      code: "101130603"
+    }, {
+      value: "若羌",
+      label: "若羌",
+      code: "101130604"
+    }, {
+      value: "且末",
+      label: "且末",
+      code: "101130605"
+    }, {
+      value: "和静",
+      label: "和静",
+      code: "101130606"
+    }, {
+      value: "焉耆",
+      label: "焉耆",
+      code: "101130607"
+    }, {
+      value: "和硕",
+      label: "和硕",
+      code: "101130608"
+    }, {
+      value: "巴音郭楞",
+      label: "巴音郭楞",
+      code: "101130609"
+    }, {
+      value: "博湖",
+      label: "博湖",
+      code: "101130612"
+    }]
+  }, {
+    value: "阿拉尔",
+    label: "阿拉尔",
+    code: "101130701",
+  }, {
+    value: "阿克苏",
+    label: "阿克苏",
+    code: "101130801",
+    "children": [{
+      value: "乌什",
+      label: "乌什",
+      code: "101130802"
+    }, {
+      value: "温宿",
+      label: "温宿",
+      code: "101130803"
+    }, {
+      value: "拜城",
+      label: "拜城",
+      code: "101130804"
+    }, {
+      value: "新和",
+      label: "新和",
+      code: "101130805"
+    }, {
+      value: "沙雅",
+      label: "沙雅",
+      code: "101130806"
+    }, {
+      value: "库车",
+      label: "库车",
+      code: "101130807"
+    }, {
+      value: "柯坪",
+      label: "柯坪",
+      code: "101130808"
+    }, {
+      value: "阿瓦提",
+      label: "阿瓦提",
+      code: "101130809"
+    }]
+  }, {
+    value: "喀什",
+    label: "喀什",
+    code: "101130901",
+    "children": [{
+      value: "英吉沙",
+      label: "英吉沙",
+      code: "101130902"
+    }, {
+      value: "塔什库尔干",
+      label: "塔什库尔干",
+      code: "101130903"
+    }, {
+      value: "麦盖提",
+      label: "麦盖提",
+      code: "101130904"
+    }, {
+      value: "莎车",
+      label: "莎车",
+      code: "101130905"
+    }, {
+      value: "叶城",
+      label: "叶城",
+      code: "101130906"
+    }, {
+      value: "泽普",
+      label: "泽普",
+      code: "101130907"
+    }, {
+      value: "巴楚",
+      label: "巴楚",
+      code: "101130908"
+    }, {
+      value: "岳普湖",
+      label: "岳普湖",
+      code: "101130909"
+    }, {
+      value: "伽师",
+      label: "伽师",
+      code: "101130910"
+    }, {
+      value: "疏附",
+      label: "疏附",
+      code: "101130911"
+    }, {
+      value: "疏勒",
+      label: "疏勒",
+      code: "101130912"
+    }]
+  }, {
+    value: "伊犁",
+    label: "伊犁",
+    code: "101131001",
+    "children": [{
+      value: "察布查尔",
+      label: "察布查尔",
+      code: "101131002"
+    }, {
+      value: "尼勒克",
+      label: "尼勒克",
+      code: "101131003"
+    }, {
+      value: "伊宁县",
+      label: "伊宁县",
+      code: "101131004"
+    }, {
+      value: "巩留",
+      label: "巩留",
+      code: "101131005"
+    }, {
+      value: "新源",
+      label: "新源",
+      code: "101131006"
+    }, {
+      value: "昭苏",
+      label: "昭苏",
+      code: "101131007"
+    }, {
+      value: "特克斯",
+      label: "特克斯",
+      code: "101131008"
+    }, {
+      value: "霍城",
+      label: "霍城",
+      code: "101131009"
+    }, {
+      value: "霍尔果斯",
+      label: "霍尔果斯",
+      code: "101131010"
+    }, {
+      value: "奎屯",
+      label: "奎屯",
+      code: "101131011"
+    }, {
+      value: "伊犁",
+      label: "伊犁",
+      code: "101131012"
+    }]
+  }, {
+    value: "塔城",
+    label: "塔城",
+    code: "101131101",
+    "children": [{
+      value: "裕民",
+      label: "裕民",
+      code: "101131102"
+    }, {
+      value: "额敏",
+      label: "额敏",
+      code: "101131103"
+    }, {
+      value: "和布克赛尔",
+      label: "和布克赛尔",
+      code: "101131104"
+    }, {
+      value: "托里",
+      label: "托里",
+      code: "101131105"
+    }, {
+      value: "乌苏",
+      label: "乌苏",
+      code: "101131106"
+    }, {
+      value: "沙湾",
+      label: "沙湾",
+      code: "101131107"
+    }]
+  }, {
+    value: "哈密",
+    label: "哈密",
+    code: "101131201",
+    "children": [{
+      value: "伊州",
+      label: "伊州",
+      code: "101131202"
+    }, {
+      value: "巴里坤",
+      label: "巴里坤",
+      code: "101131203"
+    }, {
+      value: "伊吾",
+      label: "伊吾",
+      code: "101131204"
+    }]
+  }, {
+    value: "和田",
+    label: "和田",
+    code: "101131301",
+    "children": [{
+      value: "皮山",
+      label: "皮山",
+      code: "101131302"
+    }, {
+      value: "策勒",
+      label: "策勒",
+      code: "101131303"
+    }, {
+      value: "墨玉",
+      label: "墨玉",
+      code: "101131304"
+    }, {
+      value: "洛浦",
+      label: "洛浦",
+      code: "101131305"
+    }, {
+      value: "民丰",
+      label: "民丰",
+      code: "101131306"
+    }, {
+      value: "于田",
+      label: "于田",
+      code: "101131307"
+    }]
+  }, {
+    value: "阿勒泰",
+    label: "阿勒泰",
+    code: "101131401",
+    "children": [{
+      value: "哈巴河",
+      label: "哈巴河",
+      code: "101131402"
+    }, {
+      value: "吉木乃",
+      label: "吉木乃",
+      code: "101131405"
+    }, {
+      value: "布尔津",
+      label: "布尔津",
+      code: "101131406"
+    }, {
+      value: "福海",
+      label: "福海",
+      code: "101131407"
+    }, {
+      value: "富蕴",
+      label: "富蕴",
+      code: "101131408"
+    }, {
+      value: "青河",
+      label: "青河",
+      code: "101131409"
+    }, {
+      value: "北屯",
+      label: "北屯",
+      code: "101131410"
+    }, {
+      value: "双河",
+      label: "双河",
+      code: "101131412"
+    }, {
+      value: "可克达拉",
+      label: "可克达拉",
+      code: "101131413"
+    }]
+  }, {
+    value: "克州",
+    label: "克州",
+    code: "101131501",
+    "children": [{
+      value: "乌恰",
+      label: "乌恰",
+      code: "101131502"
+    }, {
+      value: "阿克陶",
+      label: "阿克陶",
+      code: "101131503"
+    }, {
+      value: "阿合奇",
+      label: "阿合奇",
+      code: "101131504"
+    }, {
+      value: "克州",
+      label: "克州",
+      code: "101131505"
+    }]
+  }, {
+    value: "博尔塔拉",
+    label: "博尔塔拉",
+    code: "101131601",
+    "children": [{
+      value: "温泉",
+      label: "温泉",
+      code: "101131602"
+    }, {
+      value: "精河",
+      label: "精河",
+      code: "101131603"
+    }, {
+      value: "博尔塔拉",
+      label: "博尔塔拉",
+      code: "101131604"
+    }, {
+      value: "阿拉山口",
+      label: "阿拉山口",
+      code: "101131606"
+    }]
+  }, {
+    value: "图木舒克",
+    label: "图木舒克",
+    code: "101131701",
+  }, {
+    value: "五家渠",
+    label: "五家渠",
+    code: "101131801",
+  }, {
+    value: "铁门关",
+    label: "铁门关",
+    code: "101131901",
+  }]
+}, {
+  value: "西藏",
+  label: "西藏",
+  code: "101140101",
+  "children": [{
+    value: "拉萨",
+    label: "拉萨",
+    code: "101140101",
+    "children": [{
+      value: "当雄",
+      label: "当雄",
+      code: "101140102"
+    }, {
+      value: "尼木",
+      label: "尼木",
+      code: "101140103"
+    }, {
+      value: "林周",
+      label: "林周",
+      code: "101140104"
+    }, {
+      value: "堆龙德庆",
+      label: "堆龙德庆",
+      code: "101140105"
+    }, {
+      value: "曲水",
+      label: "曲水",
+      code: "101140106"
+    }, {
+      value: "达孜",
+      label: "达孜",
+      code: "101140107"
+    }, {
+      value: "墨竹工卡",
+      label: "墨竹工卡",
+      code: "101140108"
+    }, {
+      value: "城关",
+      label: "城关",
+      code: "101140109"
+    }]
+  }, {
+    value: "日喀则",
+    label: "日喀则",
+    code: "101140201",
+    "children": [{
+      value: "拉孜",
+      label: "拉孜",
+      code: "101140202"
+    }, {
+      value: "南木林",
+      label: "南木林",
+      code: "101140203"
+    }, {
+      value: "聂拉木",
+      label: "聂拉木",
+      code: "101140204"
+    }, {
+      value: "定日",
+      label: "定日",
+      code: "101140205"
+    }, {
+      value: "江孜",
+      label: "江孜",
+      code: "101140206"
+    }, {
+      value: "仲巴",
+      label: "仲巴",
+      code: "101140208"
+    }, {
+      value: "萨嘎",
+      label: "萨嘎",
+      code: "101140209"
+    }, {
+      value: "吉隆",
+      label: "吉隆",
+      code: "101140210"
+    }, {
+      value: "昂仁",
+      label: "昂仁",
+      code: "101140211"
+    }, {
+      value: "定结",
+      label: "定结",
+      code: "101140212"
+    }, {
+      value: "萨迦",
+      label: "萨迦",
+      code: "101140213"
+    }, {
+      value: "谢通门",
+      label: "谢通门",
+      code: "101140214"
+    }, {
+      value: "桑珠孜",
+      label: "桑珠孜",
+      code: "101140215"
+    }, {
+      value: "岗巴",
+      label: "岗巴",
+      code: "101140216"
+    }, {
+      value: "白朗",
+      label: "白朗",
+      code: "101140217"
+    }, {
+      value: "亚东",
+      label: "亚东",
+      code: "101140218"
+    }, {
+      value: "康马",
+      label: "康马",
+      code: "101140219"
+    }, {
+      value: "仁布",
+      label: "仁布",
+      code: "101140220"
+    }]
+  }, {
+    value: "山南",
+    label: "山南",
+    code: "101140301",
+    "children": [{
+      value: "贡嘎",
+      label: "贡嘎",
+      code: "101140302"
+    }, {
+      value: "扎囊",
+      label: "扎囊",
+      code: "101140303"
+    }, {
+      value: "加查",
+      label: "加查",
+      code: "101140304"
+    }, {
+      value: "浪卡子",
+      label: "浪卡子",
+      code: "101140305"
+    }, {
+      value: "错那",
+      label: "错那",
+      code: "101140306"
+    }, {
+      value: "隆子",
+      label: "隆子",
+      code: "101140307"
+    }, {
+      value: "乃东",
+      label: "乃东",
+      code: "101140309"
+    }, {
+      value: "桑日",
+      label: "桑日",
+      code: "101140310"
+    }, {
+      value: "洛扎",
+      label: "洛扎",
+      code: "101140311"
+    }, {
+      value: "措美",
+      label: "措美",
+      code: "101140312"
+    }, {
+      value: "琼结",
+      label: "琼结",
+      code: "101140313"
+    }, {
+      value: "曲松",
+      label: "曲松",
+      code: "101140314"
+    }]
+  }, {
+    value: "林芝",
+    label: "林芝",
+    code: "101140401",
+    "children": [{
+      value: "波密",
+      label: "波密",
+      code: "101140402"
+    }, {
+      value: "米林",
+      label: "米林",
+      code: "101140403"
+    }, {
+      value: "察隅",
+      label: "察隅",
+      code: "101140404"
+    }, {
+      value: "工布江达",
+      label: "工布江达",
+      code: "101140405"
+    }, {
+      value: "朗县",
+      label: "朗县",
+      code: "101140406"
+    }, {
+      value: "墨脱",
+      label: "墨脱",
+      code: "101140407"
+    }, {
+      value: "巴宜",
+      label: "巴宜",
+      code: "101140408"
+    }]
+  }, {
+    value: "昌都",
+    label: "昌都",
+    code: "101140501",
+    "children": [{
+      value: "丁青",
+      label: "丁青",
+      code: "101140502"
+    }, {
+      value: "边坝",
+      label: "边坝",
+      code: "101140503"
+    }, {
+      value: "洛隆",
+      label: "洛隆",
+      code: "101140504"
+    }, {
+      value: "左贡",
+      label: "左贡",
+      code: "101140505"
+    }, {
+      value: "芒康",
+      label: "芒康",
+      code: "101140506"
+    }, {
+      value: "类乌齐",
+      label: "类乌齐",
+      code: "101140507"
+    }, {
+      value: "八宿",
+      label: "八宿",
+      code: "101140508"
+    }, {
+      value: "江达",
+      label: "江达",
+      code: "101140509"
+    }, {
+      value: "察雅",
+      label: "察雅",
+      code: "101140510"
+    }, {
+      value: "贡觉",
+      label: "贡觉",
+      code: "101140511"
+    }, {
+      value: "卡若",
+      label: "卡若",
+      code: "101140512"
+    }]
+  }, {
+    value: "那曲",
+    label: "那曲",
+    code: "101140601",
+    "children": [{
+      value: "尼玛",
+      label: "尼玛",
+      code: "101140602"
+    }, {
+      value: "嘉黎",
+      label: "嘉黎",
+      code: "101140603"
+    }, {
+      value: "班戈",
+      label: "班戈",
+      code: "101140604"
+    }, {
+      value: "安多",
+      label: "安多",
+      code: "101140605"
+    }, {
+      value: "索县",
+      label: "索县",
+      code: "101140606"
+    }, {
+      value: "聂荣",
+      label: "聂荣",
+      code: "101140607"
+    }, {
+      value: "巴青",
+      label: "巴青",
+      code: "101140608"
+    }, {
+      value: "比如",
+      label: "比如",
+      code: "101140609"
+    }, {
+      value: "双湖",
+      label: "双湖",
+      code: "101140610"
+    }, {
+      value: "申扎",
+      label: "申扎",
+      code: "101140611"
+    }]
+  }, {
+    value: "阿里",
+    label: "阿里",
+    code: "101140701",
+    "children": [{
+      value: "改则",
+      label: "改则",
+      code: "101140702"
+    }, {
+      value: "普兰",
+      label: "普兰",
+      code: "101140705"
+    }, {
+      value: "札达",
+      label: "札达",
+      code: "101140706"
+    }, {
+      value: "噶尔",
+      label: "噶尔",
+      code: "101140707"
+    }, {
+      value: "日土",
+      label: "日土",
+      code: "101140708"
+    }, {
+      value: "革吉",
+      label: "革吉",
+      code: "101140709"
+    }, {
+      value: "措勤",
+      label: "措勤",
+      code: "101140710"
+    }]
+  }]
+}, {
+  value: "青海",
+  label: "青海",
+  code: "101150101",
+  "children": [{
+    value: "西宁",
+    label: "西宁",
+    code: "101150101",
+    "children": [{
+      value: "大通",
+      label: "大通",
+      code: "101150102"
+    }, {
+      value: "湟源",
+      label: "湟源",
+      code: "101150103"
+    }, {
+      value: "湟中",
+      label: "湟中",
+      code: "101150104"
+    }, {
+      value: "城东",
+      label: "城东",
+      code: "101150105"
+    }, {
+      value: "城中",
+      label: "城中",
+      code: "101150106"
+    }, {
+      value: "城西",
+      label: "城西",
+      code: "101150107"
+    }, {
+      value: "城北",
+      label: "城北",
+      code: "101150108"
+    }]
+  }, {
+    value: "海东",
+    label: "海东",
+    code: "101150201",
+    "children": [{
+      value: "乐都",
+      label: "乐都",
+      code: "101150202"
+    }, {
+      value: "民和",
+      label: "民和",
+      code: "101150203"
+    }, {
+      value: "互助",
+      label: "互助",
+      code: "101150204"
+    }, {
+      value: "化隆",
+      label: "化隆",
+      code: "101150205"
+    }, {
+      value: "循化",
+      label: "循化",
+      code: "101150206"
+    }, {
+      value: "海东",
+      label: "海东",
+      code: "101150207"
+    }]
+  }, {
+    value: "黄南",
+    label: "黄南",
+    code: "101150301",
+    "children": [{
+      value: "尖扎",
+      label: "尖扎",
+      code: "101150302"
+    }, {
+      value: "泽库",
+      label: "泽库",
+      code: "101150303"
+    }, {
+      value: "河南",
+      label: "河南",
+      code: "101150304"
+    }, {
+      value: "黄南",
+      label: "黄南",
+      code: "101150305"
+    }]
+  }, {
+    value: "海南",
+    label: "海南",
+    code: "101150401",
+    "children": [{
+      value: "海南",
+      label: "海南",
+      code: "101150402"
+    }, {
+      value: "贵德",
+      label: "贵德",
+      code: "101150404"
+    }, {
+      value: "兴海",
+      label: "兴海",
+      code: "101150406"
+    }, {
+      value: "贵南",
+      label: "贵南",
+      code: "101150407"
+    }, {
+      value: "同德",
+      label: "同德",
+      code: "101150408"
+    }]
+  }, {
+    value: "果洛",
+    label: "果洛",
+    code: "101150501",
+    "children": [{
+      value: "班玛",
+      label: "班玛",
+      code: "101150502"
+    }, {
+      value: "甘德",
+      label: "甘德",
+      code: "101150503"
+    }, {
+      value: "达日",
+      label: "达日",
+      code: "101150504"
+    }, {
+      value: "久治",
+      label: "久治",
+      code: "101150505"
+    }, {
+      value: "玛多",
+      label: "玛多",
+      code: "101150506"
+    }, {
+      value: "果洛",
+      label: "果洛",
+      code: "101150507"
+    }]
+  }, {
+    value: "玉树",
+    label: "玉树",
+    code: "101150601",
+    "children": [{
+      value: "称多",
+      label: "称多",
+      code: "101150602"
+    }, {
+      value: "治多",
+      label: "治多",
+      code: "101150603"
+    }, {
+      value: "杂多",
+      label: "杂多",
+      code: "101150604"
+    }, {
+      value: "囊谦",
+      label: "囊谦",
+      code: "101150605"
+    }, {
+      value: "曲麻莱",
+      label: "曲麻莱",
+      code: "101150606"
+    }]
+  }, {
+    value: "海西",
+    label: "海西",
+    code: "101150701",
+    "children": [{
+      value: "海西",
+      label: "海西",
+      code: "101150702"
+    }, {
+      value: "天峻",
+      label: "天峻",
+      code: "101150708"
+    }, {
+      value: "乌兰",
+      label: "乌兰",
+      code: "101150709"
+    }, {
+      value: "茫崖",
+      label: "茫崖",
+      code: "101150712"
+    }, {
+      value: "大柴旦",
+      label: "大柴旦",
+      code: "101150713"
+    }, {
+      value: "格尔木",
+      label: "格尔木",
+      code: "101150714"
+    }, {
+      value: "都兰",
+      label: "都兰",
+      code: "101150715"
+    }, {
+      value: "冷湖",
+      label: "冷湖",
+      code: "101150716"
+    }]
+  }, {
+    value: "海北",
+    label: "海北",
+    code: "101150801",
+    "children": [{
+      value: "门源",
+      label: "门源",
+      code: "101150802"
+    }, {
+      value: "祁连",
+      label: "祁连",
+      code: "101150803"
+    }, {
+      value: "海北",
+      label: "海北",
+      code: "101150804"
+    }, {
+      value: "刚察",
+      label: "刚察",
+      code: "101150806"
+    }]
+  }]
+}, {
+  value: "甘肃",
+  label: "甘肃",
+  code: "101160101",
+  "children": [{
+    value: "兰州",
+    label: "兰州",
+    code: "101160101",
+    "children": [{
+      value: "皋兰",
+      label: "皋兰",
+      code: "101160102"
+    }, {
+      value: "永登",
+      label: "永登",
+      code: "101160103"
+    }, {
+      value: "榆中",
+      label: "榆中",
+      code: "101160104"
+    }, {
+      value: "城关",
+      label: "城关",
+      code: "101160105"
+    }, {
+      value: "七里河",
+      label: "七里河",
+      code: "101160106"
+    }, {
+      value: "西固",
+      label: "西固",
+      code: "101160107"
+    }, {
+      value: "安宁",
+      label: "安宁",
+      code: "101160108"
+    }, {
+      value: "红古",
+      label: "红古",
+      code: "101160109"
+    }]
+  }, {
+    value: "定西",
+    label: "定西",
+    code: "101160201",
+    "children": [{
+      value: "通渭",
+      label: "通渭",
+      code: "101160202"
+    }, {
+      value: "陇西",
+      label: "陇西",
+      code: "101160203"
+    }, {
+      value: "渭源",
+      label: "渭源",
+      code: "101160204"
+    }, {
+      value: "临洮",
+      label: "临洮",
+      code: "101160205"
+    }, {
+      value: "漳县",
+      label: "漳县",
+      code: "101160206"
+    }, {
+      value: "岷县",
+      label: "岷县",
+      code: "101160207"
+    }, {
+      value: "安定",
+      label: "安定",
+      code: "101160208"
+    }]
+  }, {
+    value: "平凉",
+    label: "平凉",
+    code: "101160301",
+    "children": [{
+      value: "泾川",
+      label: "泾川",
+      code: "101160302"
+    }, {
+      value: "灵台",
+      label: "灵台",
+      code: "101160303"
+    }, {
+      value: "崇信",
+      label: "崇信",
+      code: "101160304"
+    }, {
+      value: "华亭",
+      label: "华亭",
+      code: "101160305"
+    }, {
+      value: "庄浪",
+      label: "庄浪",
+      code: "101160306"
+    }, {
+      value: "静宁",
+      label: "静宁",
+      code: "101160307"
+    }, {
+      value: "崆峒",
+      label: "崆峒",
+      code: "101160308"
+    }]
+  }, {
+    value: "庆阳",
+    label: "庆阳",
+    code: "101160401",
+    "children": [{
+      value: "西峰",
+      label: "西峰",
+      code: "101160402"
+    }, {
+      value: "环县",
+      label: "环县",
+      code: "101160403"
+    }, {
+      value: "华池",
+      label: "华池",
+      code: "101160404"
+    }, {
+      value: "合水",
+      label: "合水",
+      code: "101160405"
+    }, {
+      value: "正宁",
+      label: "正宁",
+      code: "101160406"
+    }, {
+      value: "宁县",
+      label: "宁县",
+      code: "101160407"
+    }, {
+      value: "镇原",
+      label: "镇原",
+      code: "101160408"
+    }, {
+      value: "庆城",
+      label: "庆城",
+      code: "101160409"
+    }]
+  }, {
+    value: "武威",
+    label: "武威",
+    code: "101160501",
+    "children": [{
+      value: "民勤",
+      label: "民勤",
+      code: "101160502"
+    }, {
+      value: "古浪",
+      label: "古浪",
+      code: "101160503"
+    }, {
+      value: "凉州",
+      label: "凉州",
+      code: "101160504"
+    }, {
+      value: "天祝",
+      label: "天祝",
+      code: "101160505"
+    }]
+  }, {
+    value: "金昌",
+    label: "金昌",
+    code: "101160601",
+    "children": [{
+      value: "永昌",
+      label: "永昌",
+      code: "101160602"
+    }, {
+      value: "金川",
+      label: "金川",
+      code: "101160603"
+    }]
+  }, {
+    value: "张掖",
+    label: "张掖",
+    code: "101160701",
+    "children": [{
+      value: "肃南",
+      label: "肃南",
+      code: "101160702"
+    }, {
+      value: "民乐",
+      label: "民乐",
+      code: "101160703"
+    }, {
+      value: "临泽",
+      label: "临泽",
+      code: "101160704"
+    }, {
+      value: "高台",
+      label: "高台",
+      code: "101160705"
+    }, {
+      value: "山丹",
+      label: "山丹",
+      code: "101160706"
+    }, {
+      value: "甘州",
+      label: "甘州",
+      code: "101160707"
+    }]
+  }, {
+    value: "酒泉",
+    label: "酒泉",
+    code: "101160801",
+    "children": [{
+      value: "肃州",
+      label: "肃州",
+      code: "101160802"
+    }, {
+      value: "金塔",
+      label: "金塔",
+      code: "101160803"
+    }, {
+      value: "阿克塞",
+      label: "阿克塞",
+      code: "101160804"
+    }, {
+      value: "瓜州",
+      label: "瓜州",
+      code: "101160805"
+    }, {
+      value: "肃北",
+      label: "肃北",
+      code: "101160806"
+    }, {
+      value: "玉门",
+      label: "玉门",
+      code: "101160807"
+    }, {
+      value: "敦煌",
+      label: "敦煌",
+      code: "101160808"
+    }]
+  }, {
+    value: "天水",
+    label: "天水",
+    code: "101160901",
+    "children": [{
+      value: "秦州",
+      label: "秦州",
+      code: "101160902"
+    }, {
+      value: "清水",
+      label: "清水",
+      code: "101160903"
+    }, {
+      value: "秦安",
+      label: "秦安",
+      code: "101160904"
+    }, {
+      value: "甘谷",
+      label: "甘谷",
+      code: "101160905"
+    }, {
+      value: "武山",
+      label: "武山",
+      code: "101160906"
+    }, {
+      value: "张家川",
+      label: "张家川",
+      code: "101160907"
+    }, {
+      value: "麦积",
+      label: "麦积",
+      code: "101160908"
+    }]
+  }, {
+    value: "陇南",
+    label: "陇南",
+    code: "101161001",
+    "children": [{
+      value: "成县",
+      label: "成县",
+      code: "101161002"
+    }, {
+      value: "文县",
+      label: "文县",
+      code: "101161003"
+    }, {
+      value: "宕昌",
+      label: "宕昌",
+      code: "101161004"
+    }, {
+      value: "康县",
+      label: "康县",
+      code: "101161005"
+    }, {
+      value: "西和",
+      label: "西和",
+      code: "101161006"
+    }, {
+      value: "礼县",
+      label: "礼县",
+      code: "101161007"
+    }, {
+      value: "徽县",
+      label: "徽县",
+      code: "101161008"
+    }, {
+      value: "两当",
+      label: "两当",
+      code: "101161009"
+    }, {
+      value: "陇南",
+      label: "陇南",
+      code: "101161010"
+    }]
+  }, {
+    value: "临夏",
+    label: "临夏",
+    code: "101161101",
+    "children": [{
+      value: "康乐",
+      label: "康乐",
+      code: "101161102"
+    }, {
+      value: "永靖",
+      label: "永靖",
+      code: "101161103"
+    }, {
+      value: "广河",
+      label: "广河",
+      code: "101161104"
+    }, {
+      value: "和政",
+      label: "和政",
+      code: "101161105"
+    }, {
+      value: "东乡",
+      label: "东乡",
+      code: "101161106"
+    }, {
+      value: "积石山",
+      label: "积石山",
+      code: "101161107"
+    }]
+  }, {
+    value: "甘南",
+    label: "甘南",
+    code: "101161201",
+    "children": [{
+      value: "临潭",
+      label: "临潭",
+      code: "101161202"
+    }, {
+      value: "卓尼",
+      label: "卓尼",
+      code: "101161203"
+    }, {
+      value: "舟曲",
+      label: "舟曲",
+      code: "101161204"
+    }, {
+      value: "迭部",
+      label: "迭部",
+      code: "101161205"
+    }, {
+      value: "玛曲",
+      label: "玛曲",
+      code: "101161206"
+    }, {
+      value: "碌曲",
+      label: "碌曲",
+      code: "101161207"
+    }, {
+      value: "夏河",
+      label: "夏河",
+      code: "101161208"
+    }, {
+      value: "甘南",
+      label: "甘南",
+      code: "101161209"
+    }]
+  }, {
+    value: "白银",
+    label: "白银",
+    code: "101161301",
+    "children": [{
+      value: "靖远",
+      label: "靖远",
+      code: "101161302"
+    }, {
+      value: "会宁",
+      label: "会宁",
+      code: "101161303"
+    }, {
+      value: "平川",
+      label: "平川",
+      code: "101161304"
+    }, {
+      value: "景泰",
+      label: "景泰",
+      code: "101161305"
+    }]
+  }, {
+    value: "嘉峪关",
+    label: "嘉峪关",
+    code: "101161401",
+  }]
+}, {
+  value: "宁夏",
+  label: "宁夏",
+  code: "101170101",
+  "children": [{
+    value: "银川",
+    label: "银川",
+    code: "101170101",
+    "children": [{
+      value: "永宁",
+      label: "永宁",
+      code: "101170102"
+    }, {
+      value: "灵武",
+      label: "灵武",
+      code: "101170103"
+    }, {
+      value: "贺兰",
+      label: "贺兰",
+      code: "101170104"
+    }, {
+      value: "兴庆",
+      label: "兴庆",
+      code: "101170105"
+    }, {
+      value: "西夏",
+      label: "西夏",
+      code: "101170106"
+    }, {
+      value: "金凤",
+      label: "金凤",
+      code: "101170107"
+    }]
+  }, {
+    value: "石嘴山",
+    label: "石嘴山",
+    code: "101170201",
+    "children": [{
+      value: "惠农",
+      label: "惠农",
+      code: "101170202"
+    }, {
+      value: "平罗",
+      label: "平罗",
+      code: "101170203"
+    }, {
+      value: "大武口",
+      label: "大武口",
+      code: "101170205"
+    }]
+  }, {
+    value: "吴忠",
+    label: "吴忠",
+    code: "101170301",
+    "children": [{
+      value: "同心",
+      label: "同心",
+      code: "101170302"
+    }, {
+      value: "盐池",
+      label: "盐池",
+      code: "101170303"
+    }, {
+      value: "利通",
+      label: "利通",
+      code: "101170304"
+    }, {
+      value: "红寺堡",
+      label: "红寺堡",
+      code: "101170305"
+    }, {
+      value: "青铜峡",
+      label: "青铜峡",
+      code: "101170306"
+    }]
+  }, {
+    value: "固原",
+    label: "固原",
+    code: "101170401",
+    "children": [{
+      value: "西吉",
+      label: "西吉",
+      code: "101170402"
+    }, {
+      value: "隆德",
+      label: "隆德",
+      code: "101170403"
+    }, {
+      value: "泾源",
+      label: "泾源",
+      code: "101170404"
+    }, {
+      value: "原州",
+      label: "原州",
+      code: "101170405"
+    }, {
+      value: "彭阳",
+      label: "彭阳",
+      code: "101170406"
+    }]
+  }, {
+    value: "中卫",
+    label: "中卫",
+    code: "101170501",
+    "children": [{
+      value: "中宁",
+      label: "中宁",
+      code: "101170502"
+    }, {
+      value: "沙坡头",
+      label: "沙坡头",
+      code: "101170503"
+    }, {
+      value: "海原",
+      label: "海原",
+      code: "101170504"
+    }]
+  }]
+}, {
+  value: "河南",
+  label: "河南",
+  code: "101180101",
+  "children": [{
+    value: "郑州",
+    label: "郑州",
+    code: "101180101",
+    "children": [{
+      value: "巩义",
+      label: "巩义",
+      code: "101180102"
+    }, {
+      value: "荥阳",
+      label: "荥阳",
+      code: "101180103"
+    }, {
+      value: "登封",
+      label: "登封",
+      code: "101180104"
+    }, {
+      value: "新密",
+      label: "新密",
+      code: "101180105"
+    }, {
+      value: "新郑",
+      label: "新郑",
+      code: "101180106"
+    }, {
+      value: "中牟",
+      label: "中牟",
+      code: "101180107"
+    }, {
+      value: "上街",
+      label: "上街",
+      code: "101180108"
+    }, {
+      value: "中原",
+      label: "中原",
+      code: "101180109"
+    }, {
+      value: "二七",
+      label: "二七",
+      code: "101180110"
+    }, {
+      value: "管城",
+      label: "管城",
+      code: "101180111"
+    }, {
+      value: "金水",
+      label: "金水",
+      code: "101180112"
+    }, {
+      value: "惠济",
+      label: "惠济",
+      code: "101180113"
+    }]
+  }, {
+    value: "安阳",
+    label: "安阳",
+    code: "101180201",
+    "children": [{
+      value: "汤阴",
+      label: "汤阴",
+      code: "101180202"
+    }, {
+      value: "滑县",
+      label: "滑县",
+      code: "101180203"
+    }, {
+      value: "内黄",
+      label: "内黄",
+      code: "101180204"
+    }, {
+      value: "林州",
+      label: "林州",
+      code: "101180205"
+    }, {
+      value: "文峰",
+      label: "文峰",
+      code: "101180206"
+    }, {
+      value: "北关",
+      label: "北关",
+      code: "101180207"
+    }, {
+      value: "殷都",
+      label: "殷都",
+      code: "101180208"
+    }, {
+      value: "龙安",
+      label: "龙安",
+      code: "101180209"
+    }]
+  }, {
+    value: "新乡",
+    label: "新乡",
+    code: "101180301",
+    "children": [{
+      value: "获嘉",
+      label: "获嘉",
+      code: "101180302"
+    }, {
+      value: "原阳",
+      label: "原阳",
+      code: "101180303"
+    }, {
+      value: "辉县",
+      label: "辉县",
+      code: "101180304"
+    }, {
+      value: "卫辉",
+      label: "卫辉",
+      code: "101180305"
+    }, {
+      value: "延津",
+      label: "延津",
+      code: "101180306"
+    }, {
+      value: "封丘",
+      label: "封丘",
+      code: "101180307"
+    }, {
+      value: "长垣",
+      label: "长垣",
+      code: "101180308"
+    }, {
+      value: "红旗",
+      label: "红旗",
+      code: "101180309"
+    }, {
+      value: "卫滨",
+      label: "卫滨",
+      code: "101180310"
+    }, {
+      value: "凤泉",
+      label: "凤泉",
+      code: "101180311"
+    }, {
+      value: "牧野",
+      label: "牧野",
+      code: "101180312"
+    }]
+  }, {
+    value: "许昌",
+    label: "许昌",
+    code: "101180401",
+    "children": [{
+      value: "鄢陵",
+      label: "鄢陵",
+      code: "101180402"
+    }, {
+      value: "襄城",
+      label: "襄城",
+      code: "101180403"
+    }, {
+      value: "长葛",
+      label: "长葛",
+      code: "101180404"
+    }, {
+      value: "禹州",
+      label: "禹州",
+      code: "101180405"
+    }, {
+      value: "魏都",
+      label: "魏都",
+      code: "101180406"
+    }]
+  }, {
+    value: "平顶山",
+    label: "平顶山",
+    code: "101180501",
+    "children": [{
+      value: "郏县",
+      label: "郏县",
+      code: "101180502"
+    }, {
+      value: "宝丰",
+      label: "宝丰",
+      code: "101180503"
+    }, {
+      value: "汝州",
+      label: "汝州",
+      code: "101180504"
+    }, {
+      value: "叶县",
+      label: "叶县",
+      code: "101180505"
+    }, {
+      value: "舞钢",
+      label: "舞钢",
+      code: "101180506"
+    }, {
+      value: "鲁山",
+      label: "鲁山",
+      code: "101180507"
+    }, {
+      value: "石龙",
+      label: "石龙",
+      code: "101180508"
+    }, {
+      value: "新华",
+      label: "新华",
+      code: "101180509"
+    }, {
+      value: "卫东",
+      label: "卫东",
+      code: "101180510"
+    }, {
+      value: "湛河",
+      label: "湛河",
+      code: "101180511"
+    }]
+  }, {
+    value: "信阳",
+    label: "信阳",
+    code: "101180601",
+    "children": [{
+      value: "息县",
+      label: "息县",
+      code: "101180602"
+    }, {
+      value: "罗山",
+      label: "罗山",
+      code: "101180603"
+    }, {
+      value: "光山",
+      label: "光山",
+      code: "101180604"
+    }, {
+      value: "新县",
+      label: "新县",
+      code: "101180605"
+    }, {
+      value: "淮滨",
+      label: "淮滨",
+      code: "101180606"
+    }, {
+      value: "潢川",
+      label: "潢川",
+      code: "101180607"
+    }, {
+      value: "固始",
+      label: "固始",
+      code: "101180608"
+    }, {
+      value: "商城",
+      label: "商城",
+      code: "101180609"
+    }, {
+      value: "浉河",
+      label: "浉河",
+      code: "101180610"
+    }, {
+      value: "平桥",
+      label: "平桥",
+      code: "101180611"
+    }]
+  }, {
+    value: "南阳",
+    label: "南阳",
+    code: "101180701",
+    "children": [{
+      value: "南召",
+      label: "南召",
+      code: "101180702"
+    }, {
+      value: "方城",
+      label: "方城",
+      code: "101180703"
+    }, {
+      value: "社旗",
+      label: "社旗",
+      code: "101180704"
+    }, {
+      value: "西峡",
+      label: "西峡",
+      code: "101180705"
+    }, {
+      value: "内乡",
+      label: "内乡",
+      code: "101180706"
+    }, {
+      value: "镇平",
+      label: "镇平",
+      code: "101180707"
+    }, {
+      value: "淅川",
+      label: "淅川",
+      code: "101180708"
+    }, {
+      value: "新野",
+      label: "新野",
+      code: "101180709"
+    }, {
+      value: "唐河",
+      label: "唐河",
+      code: "101180710"
+    }, {
+      value: "邓州",
+      label: "邓州",
+      code: "101180711"
+    }, {
+      value: "桐柏",
+      label: "桐柏",
+      code: "101180712"
+    }, {
+      value: "宛城",
+      label: "宛城",
+      code: "101180713"
+    }, {
+      value: "卧龙",
+      label: "卧龙",
+      code: "101180714"
+    }]
+  }, {
+    value: "开封",
+    label: "开封",
+    code: "101180801",
+    "children": [{
+      value: "杞县",
+      label: "杞县",
+      code: "101180802"
+    }, {
+      value: "尉氏",
+      label: "尉氏",
+      code: "101180803"
+    }, {
+      value: "通许",
+      label: "通许",
+      code: "101180804"
+    }, {
+      value: "兰考",
+      label: "兰考",
+      code: "101180805"
+    }, {
+      value: "龙亭",
+      label: "龙亭",
+      code: "101180806"
+    }, {
+      value: "顺河",
+      label: "顺河",
+      code: "101180807"
+    }, {
+      value: "鼓楼",
+      label: "鼓楼",
+      code: "101180808"
+    }, {
+      value: "禹王台",
+      label: "禹王台",
+      code: "101180809"
+    }, {
+      value: "祥符",
+      label: "祥符",
+      code: "101180810"
+    }]
+  }, {
+    value: "洛阳",
+    label: "洛阳",
+    code: "101180901",
+    "children": [{
+      value: "新安",
+      label: "新安",
+      code: "101180902"
+    }, {
+      value: "孟津",
+      label: "孟津",
+      code: "101180903"
+    }, {
+      value: "宜阳",
+      label: "宜阳",
+      code: "101180904"
+    }, {
+      value: "洛宁",
+      label: "洛宁",
+      code: "101180905"
+    }, {
+      value: "伊川",
+      label: "伊川",
+      code: "101180906"
+    }, {
+      value: "嵩县",
+      label: "嵩县",
+      code: "101180907"
+    }, {
+      value: "偃师",
+      label: "偃师",
+      code: "101180908"
+    }, {
+      value: "栾川",
+      label: "栾川",
+      code: "101180909"
+    }, {
+      value: "汝阳",
+      label: "汝阳",
+      code: "101180910"
+    }, {
+      value: "吉利",
+      label: "吉利",
+      code: "101180911"
+    }, {
+      value: "老城",
+      label: "老城",
+      code: "101180912"
+    }, {
+      value: "西工",
+      label: "西工",
+      code: "101180913"
+    }, {
+      value: "瀍河",
+      label: "瀍河",
+      code: "101180914"
+    }, {
+      value: "涧西",
+      label: "涧西",
+      code: "101180915"
+    }, {
+      value: "洛龙",
+      label: "洛龙",
+      code: "101180916"
+    }]
+  }, {
+    value: "商丘",
+    label: "商丘",
+    code: "101181001",
+    "children": [{
+      value: "梁园",
+      label: "梁园",
+      code: "101181002"
+    }, {
+      value: "睢县",
+      label: "睢县",
+      code: "101181003"
+    }, {
+      value: "民权",
+      label: "民权",
+      code: "101181004"
+    }, {
+      value: "虞城",
+      label: "虞城",
+      code: "101181005"
+    }, {
+      value: "柘城",
+      label: "柘城",
+      code: "101181006"
+    }, {
+      value: "宁陵",
+      label: "宁陵",
+      code: "101181007"
+    }, {
+      value: "夏邑",
+      label: "夏邑",
+      code: "101181008"
+    }, {
+      value: "永城",
+      label: "永城",
+      code: "101181009"
+    }, {
+      value: "睢阳",
+      label: "睢阳",
+      code: "101181010"
+    }]
+  }, {
+    value: "焦作",
+    label: "焦作",
+    code: "101181101",
+    "children": [{
+      value: "修武",
+      label: "修武",
+      code: "101181102"
+    }, {
+      value: "武陟",
+      label: "武陟",
+      code: "101181103"
+    }, {
+      value: "沁阳",
+      label: "沁阳",
+      code: "101181104"
+    }, {
+      value: "解放",
+      label: "解放",
+      code: "101181105"
+    }, {
+      value: "博爱",
+      label: "博爱",
+      code: "101181106"
+    }, {
+      value: "温县",
+      label: "温县",
+      code: "101181107"
+    }, {
+      value: "孟州",
+      label: "孟州",
+      code: "101181108"
+    }, {
+      value: "中站",
+      label: "中站",
+      code: "101181109"
+    }, {
+      value: "马村",
+      label: "马村",
+      code: "101181110"
+    }, {
+      value: "山阳",
+      label: "山阳",
+      code: "101181111"
+    }]
+  }, {
+    value: "鹤壁",
+    label: "鹤壁",
+    code: "101181201",
+    "children": [{
+      value: "浚县",
+      label: "浚县",
+      code: "101181202"
+    }, {
+      value: "淇县",
+      label: "淇县",
+      code: "101181203"
+    }, {
+      value: "鹤山",
+      label: "鹤山",
+      code: "101181204"
+    }, {
+      value: "山城",
+      label: "山城",
+      code: "101181205"
+    }, {
+      value: "淇滨",
+      label: "淇滨",
+      code: "101181206"
+    }]
+  }, {
+    value: "濮阳",
+    label: "濮阳",
+    code: "101181301",
+    "children": [{
+      value: "台前",
+      label: "台前",
+      code: "101181302"
+    }, {
+      value: "南乐",
+      label: "南乐",
+      code: "101181303"
+    }, {
+      value: "清丰",
+      label: "清丰",
+      code: "101181304"
+    }, {
+      value: "范县",
+      label: "范县",
+      code: "101181305"
+    }, {
+      value: "华龙",
+      label: "华龙",
+      code: "101181306"
+    }]
+  }, {
+    value: "周口",
+    label: "周口",
+    code: "101181401",
+    "children": [{
+      value: "扶沟",
+      label: "扶沟",
+      code: "101181402"
+    }, {
+      value: "太康",
+      label: "太康",
+      code: "101181403"
+    }, {
+      value: "淮阳",
+      label: "淮阳",
+      code: "101181404"
+    }, {
+      value: "西华",
+      label: "西华",
+      code: "101181405"
+    }, {
+      value: "商水",
+      label: "商水",
+      code: "101181406"
+    }, {
+      value: "项城",
+      label: "项城",
+      code: "101181407"
+    }, {
+      value: "郸城",
+      label: "郸城",
+      code: "101181408"
+    }, {
+      value: "鹿邑",
+      label: "鹿邑",
+      code: "101181409"
+    }, {
+      value: "沈丘",
+      label: "沈丘",
+      code: "101181410"
+    }, {
+      value: "川汇",
+      label: "川汇",
+      code: "101181411"
+    }]
+  }, {
+    value: "漯河",
+    label: "漯河",
+    code: "101181501",
+    "children": [{
+      value: "临颍",
+      label: "临颍",
+      code: "101181502"
+    }, {
+      value: "舞阳",
+      label: "舞阳",
+      code: "101181503"
+    }, {
+      value: "源汇",
+      label: "源汇",
+      code: "101181504"
+    }, {
+      value: "郾城",
+      label: "郾城",
+      code: "101181505"
+    }, {
+      value: "召陵",
+      label: "召陵",
+      code: "101181506"
+    }]
+  }, {
+    value: "驻马店",
+    label: "驻马店",
+    code: "101181601",
+    "children": [{
+      value: "西平",
+      label: "西平",
+      code: "101181602"
+    }, {
+      value: "遂平",
+      label: "遂平",
+      code: "101181603"
+    }, {
+      value: "上蔡",
+      label: "上蔡",
+      code: "101181604"
+    }, {
+      value: "汝南",
+      label: "汝南",
+      code: "101181605"
+    }, {
+      value: "泌阳",
+      label: "泌阳",
+      code: "101181606"
+    }, {
+      value: "平舆",
+      label: "平舆",
+      code: "101181607"
+    }, {
+      value: "新蔡",
+      label: "新蔡",
+      code: "101181608"
+    }, {
+      value: "确山",
+      label: "确山",
+      code: "101181609"
+    }, {
+      value: "正阳",
+      label: "正阳",
+      code: "101181610"
+    }, {
+      value: "驿城",
+      label: "驿城",
+      code: "101181611"
+    }]
+  }, {
+    value: "三门峡",
+    label: "三门峡",
+    code: "101181701",
+    "children": [{
+      value: "灵宝",
+      label: "灵宝",
+      code: "101181702"
+    }, {
+      value: "渑池",
+      label: "渑池",
+      code: "101181703"
+    }, {
+      value: "卢氏",
+      label: "卢氏",
+      code: "101181704"
+    }, {
+      value: "义马",
+      label: "义马",
+      code: "101181705"
+    }, {
+      value: "陕县",
+      label: "陕县",
+      code: "101181706"
+    }, {
+      value: "湖滨",
+      label: "湖滨",
+      code: "101181707"
+    }, {
+      value: "陕州",
+      label: "陕州",
+      code: "101181708"
+    }]
+  }, {
+    value: "济源",
+    label: "济源",
+    code: "101181801",
+  }]
+}, {
+  value: "江苏",
+  label: "江苏",
+  code: "101190101",
+  "children": [{
+    value: "南京",
+    label: "南京",
+    code: "101190101",
+    "children": [{
+      value: "溧水",
+      label: "溧水",
+      code: "101190102"
+    }, {
+      value: "高淳",
+      label: "高淳",
+      code: "101190103"
+    }, {
+      value: "江宁",
+      label: "江宁",
+      code: "101190104"
+    }, {
+      value: "六合",
+      label: "六合",
+      code: "101190105"
+    }, {
+      value: "浦口",
+      label: "浦口",
+      code: "101190107"
+    }, {
+      value: "玄武",
+      label: "玄武",
+      code: "101190108"
+    }, {
+      value: "秦淮",
+      label: "秦淮",
+      code: "101190109"
+    }, {
+      value: "建邺",
+      label: "建邺",
+      code: "101190110"
+    }, {
+      value: "鼓楼",
+      label: "鼓楼",
+      code: "101190111"
+    }, {
+      value: "栖霞",
+      label: "栖霞",
+      code: "101190112"
+    }, {
+      value: "雨花台",
+      label: "雨花台",
+      code: "101190113"
+    }]
+  }, {
+    value: "无锡",
+    label: "无锡",
+    code: "101190201",
+    "children": [{
+      value: "江阴",
+      label: "江阴",
+      code: "101190202"
+    }, {
+      value: "宜兴",
+      label: "宜兴",
+      code: "101190203"
+    }, {
+      value: "锡山",
+      label: "锡山",
+      code: "101190204"
+    }, {
+      value: "惠山",
+      label: "惠山",
+      code: "101190205"
+    }, {
+      value: "滨湖",
+      label: "滨湖",
+      code: "101190206"
+    }, {
+      value: "梁溪",
+      label: "梁溪",
+      code: "101190207"
+    }, {
+      value: "新吴",
+      label: "新吴",
+      code: "101190208"
+    }]
+  }, {
+    value: "镇江",
+    label: "镇江",
+    code: "101190301",
+    "children": [{
+      value: "丹阳",
+      label: "丹阳",
+      code: "101190302"
+    }, {
+      value: "扬中",
+      label: "扬中",
+      code: "101190303"
+    }, {
+      value: "句容",
+      label: "句容",
+      code: "101190304"
+    }, {
+      value: "丹徒",
+      label: "丹徒",
+      code: "101190305"
+    }, {
+      value: "京口",
+      label: "京口",
+      code: "101190306"
+    }, {
+      value: "润州",
+      label: "润州",
+      code: "101190307"
+    }]
+  }, {
+    value: "苏州",
+    label: "苏州",
+    code: "101190401",
+    "children": [{
+      value: "常熟",
+      label: "常熟",
+      code: "101190402"
+    }, {
+      value: "张家港",
+      label: "张家港",
+      code: "101190403"
+    }, {
+      value: "昆山",
+      label: "昆山",
+      code: "101190404"
+    }, {
+      value: "吴中",
+      label: "吴中",
+      code: "101190405"
+    }, {
+      value: "虎丘",
+      label: "虎丘",
+      code: "101190406"
+    }, {
+      value: "吴江",
+      label: "吴江",
+      code: "101190407"
+    }, {
+      value: "太仓",
+      label: "太仓",
+      code: "101190408"
+    }, {
+      value: "相城",
+      label: "相城",
+      code: "101190409"
+    }, {
+      value: "姑苏",
+      label: "姑苏",
+      code: "101190410"
+    }]
+  }, {
+    value: "南通",
+    label: "南通",
+    code: "101190501",
+    "children": [{
+      value: "海安",
+      label: "海安",
+      code: "101190502"
+    }, {
+      value: "如皋",
+      label: "如皋",
+      code: "101190503"
+    }, {
+      value: "如东",
+      label: "如东",
+      code: "101190504"
+    }, {
+      value: "崇川",
+      label: "崇川",
+      code: "101190505"
+    }, {
+      value: "港闸",
+      label: "港闸",
+      code: "101190506"
+    }, {
+      value: "启东",
+      label: "启东",
+      code: "101190507"
+    }, {
+      value: "海门",
+      label: "海门",
+      code: "101190508"
+    }, {
+      value: "通州",
+      label: "通州",
+      code: "101190509"
+    }]
+  }, {
+    value: "扬州",
+    label: "扬州",
+    code: "101190601",
+    "children": [{
+      value: "宝应",
+      label: "宝应",
+      code: "101190602"
+    }, {
+      value: "仪征",
+      label: "仪征",
+      code: "101190603"
+    }, {
+      value: "高邮",
+      label: "高邮",
+      code: "101190604"
+    }, {
+      value: "江都",
+      label: "江都",
+      code: "101190605"
+    }, {
+      value: "邗江",
+      label: "邗江",
+      code: "101190606"
+    }, {
+      value: "广陵",
+      label: "广陵",
+      code: "101190607"
+    }]
+  }, {
+    value: "盐城",
+    label: "盐城",
+    code: "101190701",
+    "children": [{
+      value: "响水",
+      label: "响水",
+      code: "101190702"
+    }, {
+      value: "滨海",
+      label: "滨海",
+      code: "101190703"
+    }, {
+      value: "阜宁",
+      label: "阜宁",
+      code: "101190704"
+    }, {
+      value: "射阳",
+      label: "射阳",
+      code: "101190705"
+    }, {
+      value: "建湖",
+      label: "建湖",
+      code: "101190706"
+    }, {
+      value: "东台",
+      label: "东台",
+      code: "101190707"
+    }, {
+      value: "大丰",
+      label: "大丰",
+      code: "101190708"
+    }, {
+      value: "盐都",
+      label: "盐都",
+      code: "101190709"
+    }, {
+      value: "亭湖",
+      label: "亭湖",
+      code: "101190710"
+    }]
+  }, {
+    value: "徐州",
+    label: "徐州",
+    code: "101190801",
+    "children": [{
+      value: "铜山",
+      label: "铜山",
+      code: "101190802"
+    }, {
+      value: "丰县",
+      label: "丰县",
+      code: "101190803"
+    }, {
+      value: "沛县",
+      label: "沛县",
+      code: "101190804"
+    }, {
+      value: "邳州",
+      label: "邳州",
+      code: "101190805"
+    }, {
+      value: "睢宁",
+      label: "睢宁",
+      code: "101190806"
+    }, {
+      value: "新沂",
+      label: "新沂",
+      code: "101190807"
+    }, {
+      value: "鼓楼",
+      label: "鼓楼",
+      code: "101190808"
+    }, {
+      value: "云龙",
+      label: "云龙",
+      code: "101190809"
+    }, {
+      value: "贾汪",
+      label: "贾汪",
+      code: "101190810"
+    }, {
+      value: "泉山",
+      label: "泉山",
+      code: "101190811"
+    }]
+  }, {
+    value: "淮安",
+    label: "淮安",
+    code: "101190901",
+    "children": [{
+      value: "金湖",
+      label: "金湖",
+      code: "101190902"
+    }, {
+      value: "盱眙",
+      label: "盱眙",
+      code: "101190903"
+    }, {
+      value: "洪泽",
+      label: "洪泽",
+      code: "101190904"
+    }, {
+      value: "涟水",
+      label: "涟水",
+      code: "101190905"
+    }, {
+      value: "淮阴区",
+      label: "淮阴区",
+      code: "101190906"
+    }, {
+      value: "清河",
+      label: "清河",
+      code: "101190907"
+    }, {
+      value: "淮安区",
+      label: "淮安区",
+      code: "101190908"
+    }, {
+      value: "清浦",
+      label: "清浦",
+      code: "101190909"
+    }]
+  }, {
+    value: "连云港",
+    label: "连云港",
+    code: "101191001",
+    "children": [{
+      value: "东海",
+      label: "东海",
+      code: "101191002"
+    }, {
+      value: "赣榆",
+      label: "赣榆",
+      code: "101191003"
+    }, {
+      value: "灌云",
+      label: "灌云",
+      code: "101191004"
+    }, {
+      value: "灌南",
+      label: "灌南",
+      code: "101191005"
+    }, {
+      value: "海州",
+      label: "海州",
+      code: "101191006"
+    }]
+  }, {
+    value: "常州",
+    label: "常州",
+    code: "101191101",
+    "children": [{
+      value: "溧阳",
+      label: "溧阳",
+      code: "101191102"
+    }, {
+      value: "金坛",
+      label: "金坛",
+      code: "101191103"
+    }, {
+      value: "武进",
+      label: "武进",
+      code: "101191104"
+    }, {
+      value: "天宁",
+      label: "天宁",
+      code: "101191105"
+    }, {
+      value: "钟楼",
+      label: "钟楼",
+      code: "101191106"
+    }, {
+      value: "新北",
+      label: "新北",
+      code: "101191107"
+    }]
+  }, {
+    value: "泰州",
+    label: "泰州",
+    code: "101191201",
+    "children": [{
+      value: "兴化",
+      label: "兴化",
+      code: "101191202"
+    }, {
+      value: "泰兴",
+      label: "泰兴",
+      code: "101191203"
+    }, {
+      value: "姜堰",
+      label: "姜堰",
+      code: "101191204"
+    }, {
+      value: "靖江",
+      label: "靖江",
+      code: "101191205"
+    }, {
+      value: "海陵",
+      label: "海陵",
+      code: "101191206"
+    }, {
+      value: "高港",
+      label: "高港",
+      code: "101191207"
+    }]
+  }, {
+    value: "宿迁",
+    label: "宿迁",
+    code: "101191301",
+    "children": [{
+      value: "沭阳",
+      label: "沭阳",
+      code: "101191302"
+    }, {
+      value: "泗阳",
+      label: "泗阳",
+      code: "101191303"
+    }, {
+      value: "泗洪",
+      label: "泗洪",
+      code: "101191304"
+    }, {
+      value: "宿豫",
+      label: "宿豫",
+      code: "101191305"
+    }, {
+      value: "宿城",
+      label: "宿城",
+      code: "101191306"
+    }]
+  }]
+}, {
+  value: "湖北",
+  label: "湖北",
+  code: "101200101",
+  "children": [{
+    value: "武汉",
+    label: "武汉",
+    code: "101200101",
+    "children": [{
+      value: "蔡甸",
+      label: "蔡甸",
+      code: "101200102"
+    }, {
+      value: "黄陂",
+      label: "黄陂",
+      code: "101200103"
+    }, {
+      value: "新洲",
+      label: "新洲",
+      code: "101200104"
+    }, {
+      value: "江夏",
+      label: "江夏",
+      code: "101200105"
+    }, {
+      value: "东西湖",
+      label: "东西湖",
+      code: "101200106"
+    }, {
+      value: "江岸",
+      label: "江岸",
+      code: "101200107"
+    }, {
+      value: "江汉",
+      label: "江汉",
+      code: "101200108"
+    }, {
+      value: "硚口",
+      label: "硚口",
+      code: "101200109"
+    }, {
+      value: "汉阳",
+      label: "汉阳",
+      code: "101200110"
+    }, {
+      value: "武昌",
+      label: "武昌",
+      code: "101200111"
+    }, {
+      value: "青山",
+      label: "青山",
+      code: "101200112"
+    }, {
+      value: "洪山",
+      label: "洪山",
+      code: "101200113"
+    }, {
+      value: "汉南",
+      label: "汉南",
+      code: "101200114"
+    }]
+  }, {
+    value: "襄阳",
+    label: "襄阳",
+    code: "101200201",
+    "children": [{
+      value: "襄州",
+      label: "襄州",
+      code: "101200202"
+    }, {
+      value: "保康",
+      label: "保康",
+      code: "101200203"
+    }, {
+      value: "南漳",
+      label: "南漳",
+      code: "101200204"
+    }, {
+      value: "宜城",
+      label: "宜城",
+      code: "101200205"
+    }, {
+      value: "老河口",
+      label: "老河口",
+      code: "101200206"
+    }, {
+      value: "谷城",
+      label: "谷城",
+      code: "101200207"
+    }, {
+      value: "枣阳",
+      label: "枣阳",
+      code: "101200208"
+    }, {
+      value: "襄城",
+      label: "襄城",
+      code: "101200209"
+    }, {
+      value: "樊城",
+      label: "樊城",
+      code: "101200210"
+    }]
+  }, {
+    value: "鄂州",
+    label: "鄂州",
+    code: "101200301",
+    "children": [{
+      value: "梁子湖",
+      label: "梁子湖",
+      code: "101200302"
+    }, {
+      value: "华容",
+      label: "华容",
+      code: "101200303"
+    }, {
+      value: "鄂城",
+      label: "鄂城",
+      code: "101200304"
+    }]
+  }, {
+    value: "孝感",
+    label: "孝感",
+    code: "101200401",
+    "children": [{
+      value: "安陆",
+      label: "安陆",
+      code: "101200402"
+    }, {
+      value: "云梦",
+      label: "云梦",
+      code: "101200403"
+    }, {
+      value: "大悟",
+      label: "大悟",
+      code: "101200404"
+    }, {
+      value: "应城",
+      label: "应城",
+      code: "101200405"
+    }, {
+      value: "汉川",
+      label: "汉川",
+      code: "101200406"
+    }, {
+      value: "孝昌",
+      label: "孝昌",
+      code: "101200407"
+    }, {
+      value: "孝南",
+      label: "孝南",
+      code: "101200408"
+    }]
+  }, {
+    value: "黄冈",
+    label: "黄冈",
+    code: "101200501",
+    "children": [{
+      value: "红安",
+      label: "红安",
+      code: "101200502"
+    }, {
+      value: "麻城",
+      label: "麻城",
+      code: "101200503"
+    }, {
+      value: "罗田",
+      label: "罗田",
+      code: "101200504"
+    }, {
+      value: "英山",
+      label: "英山",
+      code: "101200505"
+    }, {
+      value: "浠水",
+      label: "浠水",
+      code: "101200506"
+    }, {
+      value: "蕲春",
+      label: "蕲春",
+      code: "101200507"
+    }, {
+      value: "黄梅",
+      label: "黄梅",
+      code: "101200508"
+    }, {
+      value: "武穴",
+      label: "武穴",
+      code: "101200509"
+    }, {
+      value: "团风",
+      label: "团风",
+      code: "101200510"
+    }, {
+      value: "黄州",
+      label: "黄州",
+      code: "101200511"
+    }]
+  }, {
+    value: "黄石",
+    label: "黄石",
+    code: "101200601",
+    "children": [{
+      value: "大冶",
+      label: "大冶",
+      code: "101200602"
+    }, {
+      value: "阳新",
+      label: "阳新",
+      code: "101200603"
+    }, {
+      value: "铁山",
+      label: "铁山",
+      code: "101200604"
+    }, {
+      value: "下陆",
+      label: "下陆",
+      code: "101200605"
+    }, {
+      value: "西塞山",
+      label: "西塞山",
+      code: "101200606"
+    }, {
+      value: "黄石港",
+      label: "黄石港",
+      code: "101200607"
+    }]
+  }, {
+    value: "咸宁",
+    label: "咸宁",
+    code: "101200701",
+    "children": [{
+      value: "赤壁",
+      label: "赤壁",
+      code: "101200702"
+    }, {
+      value: "嘉鱼",
+      label: "嘉鱼",
+      code: "101200703"
+    }, {
+      value: "崇阳",
+      label: "崇阳",
+      code: "101200704"
+    }, {
+      value: "通城",
+      label: "通城",
+      code: "101200705"
+    }, {
+      value: "通山",
+      label: "通山",
+      code: "101200706"
+    }, {
+      value: "咸安",
+      label: "咸安",
+      code: "101200707"
+    }]
+  }, {
+    value: "荆州",
+    label: "荆州",
+    code: "101200801",
+    "children": [{
+      value: "江陵",
+      label: "江陵",
+      code: "101200802"
+    }, {
+      value: "公安",
+      label: "公安",
+      code: "101200803"
+    }, {
+      value: "石首",
+      label: "石首",
+      code: "101200804"
+    }, {
+      value: "监利",
+      label: "监利",
+      code: "101200805"
+    }, {
+      value: "洪湖",
+      label: "洪湖",
+      code: "101200806"
+    }, {
+      value: "松滋",
+      label: "松滋",
+      code: "101200807"
+    }, {
+      value: "沙市",
+      label: "沙市",
+      code: "101200808"
+    }]
+  }, {
+    value: "宜昌",
+    label: "宜昌",
+    code: "101200901",
+    "children": [{
+      value: "远安",
+      label: "远安",
+      code: "101200902"
+    }, {
+      value: "秭归",
+      label: "秭归",
+      code: "101200903"
+    }, {
+      value: "兴山",
+      label: "兴山",
+      code: "101200904"
+    }, {
+      value: "西陵",
+      label: "西陵",
+      code: "101200905"
+    }, {
+      value: "五峰",
+      label: "五峰",
+      code: "101200906"
+    }, {
+      value: "当阳",
+      label: "当阳",
+      code: "101200907"
+    }, {
+      value: "长阳",
+      label: "长阳",
+      code: "101200908"
+    }, {
+      value: "宜都",
+      label: "宜都",
+      code: "101200909"
+    }, {
+      value: "枝江",
+      label: "枝江",
+      code: "101200910"
+    }, {
+      value: "夷陵",
+      label: "夷陵",
+      code: "101200912"
+    }, {
+      value: "伍家岗",
+      label: "伍家岗",
+      code: "101200913"
+    }, {
+      value: "点军",
+      label: "点军",
+      code: "101200914"
+    }, {
+      value: "猇亭",
+      label: "猇亭",
+      code: "101200915"
+    }]
+  }, {
+    value: "恩施",
+    label: "恩施",
+    code: "101201001",
+    "children": [{
+      value: "利川",
+      label: "利川",
+      code: "101201002"
+    }, {
+      value: "建始",
+      label: "建始",
+      code: "101201003"
+    }, {
+      value: "咸丰",
+      label: "咸丰",
+      code: "101201004"
+    }, {
+      value: "宣恩",
+      label: "宣恩",
+      code: "101201005"
+    }, {
+      value: "鹤峰",
+      label: "鹤峰",
+      code: "101201006"
+    }, {
+      value: "来凤",
+      label: "来凤",
+      code: "101201007"
+    }, {
+      value: "巴东",
+      label: "巴东",
+      code: "101201008"
+    }]
+  }, {
+    value: "十堰",
+    label: "十堰",
+    code: "101201101",
+    "children": [{
+      value: "竹溪",
+      label: "竹溪",
+      code: "101201102"
+    }, {
+      value: "郧西",
+      label: "郧西",
+      code: "101201103"
+    }, {
+      value: "郧阳",
+      label: "郧阳",
+      code: "101201104"
+    }, {
+      value: "竹山",
+      label: "竹山",
+      code: "101201105"
+    }, {
+      value: "房县",
+      label: "房县",
+      code: "101201106"
+    }, {
+      value: "丹江口",
+      label: "丹江口",
+      code: "101201107"
+    }, {
+      value: "茅箭",
+      label: "茅箭",
+      code: "101201108"
+    }, {
+      value: "张湾",
+      label: "张湾",
+      code: "101201109"
+    }]
+  }, {
+    value: "神农架",
+    label: "神农架",
+    code: "101201201",
+  }, {
+    value: "随州",
+    label: "随州",
+    code: "101201301",
+    "children": [{
+      value: "广水",
+      label: "广水",
+      code: "101201302"
+    }, {
+      value: "曾都",
+      label: "曾都",
+      code: "101201303"
+    }, {
+      value: "随县",
+      label: "随县",
+      code: "101201304"
+    }]
+  }, {
+    value: "荆门",
+    label: "荆门",
+    code: "101201401",
+    "children": [{
+      value: "钟祥",
+      label: "钟祥",
+      code: "101201402"
+    }, {
+      value: "京山",
+      label: "京山",
+      code: "101201403"
+    }, {
+      value: "掇刀",
+      label: "掇刀",
+      code: "101201404"
+    }, {
+      value: "沙洋",
+      label: "沙洋",
+      code: "101201405"
+    }, {
+      value: "东宝",
+      label: "东宝",
+      code: "101201406"
+    }]
+  }, {
+    value: "天门",
+    label: "天门",
+    code: "101201501",
+  }, {
+    value: "仙桃",
+    label: "仙桃",
+    code: "101201601",
+  }, {
+    value: "潜江",
+    label: "潜江",
+    code: "101201701",
+  }]
+}, {
+  value: "浙江",
+  label: "浙江",
+  code: "101210101",
+  "children": [{
+    value: "杭州",
+    label: "杭州",
+    code: "101210101",
+    "children": [{
+      value: "萧山",
+      label: "萧山",
+      code: "101210102"
+    }, {
+      value: "桐庐",
+      label: "桐庐",
+      code: "101210103"
+    }, {
+      value: "淳安",
+      label: "淳安",
+      code: "101210104"
+    }, {
+      value: "建德",
+      label: "建德",
+      code: "101210105"
+    }, {
+      value: "余杭",
+      label: "余杭",
+      code: "101210106"
+    }, {
+      value: "临安",
+      label: "临安",
+      code: "101210107"
+    }, {
+      value: "富阳",
+      label: "富阳",
+      code: "101210108"
+    }, {
+      value: "上城",
+      label: "上城",
+      code: "101210109"
+    }, {
+      value: "下城",
+      label: "下城",
+      code: "101210110"
+    }, {
+      value: "江干",
+      label: "江干",
+      code: "101210111"
+    }, {
+      value: "拱墅",
+      label: "拱墅",
+      code: "101210112"
+    }, {
+      value: "西湖",
+      label: "西湖",
+      code: "101210113"
+    }, {
+      value: "滨江",
+      label: "滨江",
+      code: "101210114"
+    }]
+  }, {
+    value: "湖州",
+    label: "湖州",
+    code: "101210201",
+    "children": [{
+      value: "长兴",
+      label: "长兴",
+      code: "101210202"
+    }, {
+      value: "安吉",
+      label: "安吉",
+      code: "101210203"
+    }, {
+      value: "德清",
+      label: "德清",
+      code: "101210204"
+    }, {
+      value: "吴兴",
+      label: "吴兴",
+      code: "101210205"
+    }, {
+      value: "南浔",
+      label: "南浔",
+      code: "101210206"
+    }]
+  }, {
+    value: "嘉兴",
+    label: "嘉兴",
+    code: "101210301",
+    "children": [{
+      value: "嘉善",
+      label: "嘉善",
+      code: "101210302"
+    }, {
+      value: "海宁",
+      label: "海宁",
+      code: "101210303"
+    }, {
+      value: "桐乡",
+      label: "桐乡",
+      code: "101210304"
+    }, {
+      value: "平湖",
+      label: "平湖",
+      code: "101210305"
+    }, {
+      value: "海盐",
+      label: "海盐",
+      code: "101210306"
+    }, {
+      value: "南湖",
+      label: "南湖",
+      code: "101210307"
+    }, {
+      value: "秀洲",
+      label: "秀洲",
+      code: "101210308"
+    }]
+  }, {
+    value: "宁波",
+    label: "宁波",
+    code: "101210401",
+    "children": [{
+      value: "海曙",
+      label: "海曙",
+      code: "101210402"
+    }, {
+      value: "慈溪",
+      label: "慈溪",
+      code: "101210403"
+    }, {
+      value: "余姚",
+      label: "余姚",
+      code: "101210404"
+    }, {
+      value: "奉化",
+      label: "奉化",
+      code: "101210405"
+    }, {
+      value: "象山",
+      label: "象山",
+      code: "101210406"
+    }, {
+      value: "江东",
+      label: "江东",
+      code: "101210407"
+    }, {
+      value: "宁海",
+      label: "宁海",
+      code: "101210408"
+    }, {
+      value: "江北",
+      label: "江北",
+      code: "101210409"
+    }, {
+      value: "北仑",
+      label: "北仑",
+      code: "101210410"
+    }, {
+      value: "鄞州",
+      label: "鄞州",
+      code: "101210411"
+    }, {
+      value: "镇海",
+      label: "镇海",
+      code: "101210412"
+    }]
+  }, {
+    value: "绍兴",
+    label: "绍兴",
+    code: "101210501",
+    "children": [{
+      value: "诸暨",
+      label: "诸暨",
+      code: "101210502"
+    }, {
+      value: "上虞",
+      label: "上虞",
+      code: "101210503"
+    }, {
+      value: "新昌",
+      label: "新昌",
+      code: "101210504"
+    }, {
+      value: "嵊州",
+      label: "嵊州",
+      code: "101210505"
+    }, {
+      value: "柯桥",
+      label: "柯桥",
+      code: "101210506"
+    }, {
+      value: "绍兴",
+      label: "绍兴",
+      code: "101210507"
+    }]
+  }, {
+    value: "台州",
+    label: "台州",
+    code: "101210601",
+    "children": [{
+      value: "玉环",
+      label: "玉环",
+      code: "101210603"
+    }, {
+      value: "三门",
+      label: "三门",
+      code: "101210604"
+    }, {
+      value: "天台",
+      label: "天台",
+      code: "101210605"
+    }, {
+      value: "仙居",
+      label: "仙居",
+      code: "101210606"
+    }, {
+      value: "温岭",
+      label: "温岭",
+      code: "101210607"
+    }, {
+      value: "临海",
+      label: "临海",
+      code: "101210610"
+    }, {
+      value: "椒江",
+      label: "椒江",
+      code: "101210611"
+    }, {
+      value: "黄岩",
+      label: "黄岩",
+      code: "101210612"
+    }, {
+      value: "路桥",
+      label: "路桥",
+      code: "101210613"
+    }]
+  }, {
+    value: "温州",
+    label: "温州",
+    code: "101210701",
+    "children": [{
+      value: "泰顺",
+      label: "泰顺",
+      code: "101210702"
+    }, {
+      value: "文成",
+      label: "文成",
+      code: "101210703"
+    }, {
+      value: "平阳",
+      label: "平阳",
+      code: "101210704"
+    }, {
+      value: "瑞安",
+      label: "瑞安",
+      code: "101210705"
+    }, {
+      value: "洞头",
+      label: "洞头",
+      code: "101210706"
+    }, {
+      value: "乐清",
+      label: "乐清",
+      code: "101210707"
+    }, {
+      value: "永嘉",
+      label: "永嘉",
+      code: "101210708"
+    }, {
+      value: "苍南",
+      label: "苍南",
+      code: "101210709"
+    }, {
+      value: "鹿城",
+      label: "鹿城",
+      code: "101210710"
+    }, {
+      value: "龙湾",
+      label: "龙湾",
+      code: "101210711"
+    }, {
+      value: "瓯海",
+      label: "瓯海",
+      code: "101210712"
+    }]
+  }, {
+    value: "丽水",
+    label: "丽水",
+    code: "101210801",
+    "children": [{
+      value: "遂昌",
+      label: "遂昌",
+      code: "101210802"
+    }, {
+      value: "龙泉",
+      label: "龙泉",
+      code: "101210803"
+    }, {
+      value: "缙云",
+      label: "缙云",
+      code: "101210804"
+    }, {
+      value: "青田",
+      label: "青田",
+      code: "101210805"
+    }, {
+      value: "云和",
+      label: "云和",
+      code: "101210806"
+    }, {
+      value: "庆元",
+      label: "庆元",
+      code: "101210807"
+    }, {
+      value: "松阳",
+      label: "松阳",
+      code: "101210808"
+    }, {
+      value: "景宁",
+      label: "景宁",
+      code: "101210809"
+    }, {
+      value: "莲都",
+      label: "莲都",
+      code: "101210810"
+    }]
+  }, {
+    value: "金华",
+    label: "金华",
+    code: "101210901",
+    "children": [{
+      value: "浦江",
+      label: "浦江",
+      code: "101210902"
+    }, {
+      value: "兰溪",
+      label: "兰溪",
+      code: "101210903"
+    }, {
+      value: "义乌",
+      label: "义乌",
+      code: "101210904"
+    }, {
+      value: "东阳",
+      label: "东阳",
+      code: "101210905"
+    }, {
+      value: "武义",
+      label: "武义",
+      code: "101210906"
+    }, {
+      value: "永康",
+      label: "永康",
+      code: "101210907"
+    }, {
+      value: "磐安",
+      label: "磐安",
+      code: "101210908"
+    }, {
+      value: "婺城",
+      label: "婺城",
+      code: "101210909"
+    }, {
+      value: "金东",
+      label: "金东",
+      code: "101210910"
+    }]
+  }, {
+    value: "衢州",
+    label: "衢州",
+    code: "101211001",
+    "children": [{
+      value: "常山",
+      label: "常山",
+      code: "101211002"
+    }, {
+      value: "开化",
+      label: "开化",
+      code: "101211003"
+    }, {
+      value: "龙游",
+      label: "龙游",
+      code: "101211004"
+    }, {
+      value: "江山",
+      label: "江山",
+      code: "101211005"
+    }, {
+      value: "衢江",
+      label: "衢江",
+      code: "101211006"
+    }, {
+      value: "柯城",
+      label: "柯城",
+      code: "101211007"
+    }]
+  }, {
+    value: "舟山",
+    label: "舟山",
+    code: "101211101",
+    "children": [{
+      value: "嵊泗",
+      label: "嵊泗",
+      code: "101211102"
+    }, {
+      value: "岱山",
+      label: "岱山",
+      code: "101211104"
+    }, {
+      value: "普陀",
+      label: "普陀",
+      code: "101211105"
+    }, {
+      value: "定海",
+      label: "定海",
+      code: "101211106"
+    }]
+  }]
+}, {
+  value: "安徽",
+  label: "安徽",
+  code: "101220101",
+  "children": [{
+    value: "合肥",
+    label: "合肥",
+    code: "101220101",
+    "children": [{
+      value: "长丰",
+      label: "长丰",
+      code: "101220102"
+    }, {
+      value: "肥东",
+      label: "肥东",
+      code: "101220103"
+    }, {
+      value: "肥西",
+      label: "肥西",
+      code: "101220104"
+    }, {
+      value: "巢湖",
+      label: "巢湖",
+      code: "101220105"
+    }, {
+      value: "庐江",
+      label: "庐江",
+      code: "101220106"
+    }, {
+      value: "瑶海",
+      label: "瑶海",
+      code: "101220107"
+    }, {
+      value: "庐阳",
+      label: "庐阳",
+      code: "101220108"
+    }, {
+      value: "蜀山",
+      label: "蜀山",
+      code: "101220109"
+    }, {
+      value: "包河",
+      label: "包河",
+      code: "101220110"
+    }]
+  }, {
+    value: "蚌埠",
+    label: "蚌埠",
+    code: "101220201",
+    "children": [{
+      value: "怀远",
+      label: "怀远",
+      code: "101220202"
+    }, {
+      value: "固镇",
+      label: "固镇",
+      code: "101220203"
+    }, {
+      value: "五河",
+      label: "五河",
+      code: "101220204"
+    }, {
+      value: "龙子湖",
+      label: "龙子湖",
+      code: "101220205"
+    }, {
+      value: "蚌山",
+      label: "蚌山",
+      code: "101220206"
+    }, {
+      value: "禹会",
+      label: "禹会",
+      code: "101220207"
+    }, {
+      value: "淮上",
+      label: "淮上",
+      code: "101220208"
+    }]
+  }, {
+    value: "芜湖",
+    label: "芜湖",
+    code: "101220301",
+    "children": [{
+      value: "繁昌",
+      label: "繁昌",
+      code: "101220302"
+    }, {
+      value: "芜湖县",
+      label: "芜湖县",
+      code: "101220303"
+    }, {
+      value: "南陵",
+      label: "南陵",
+      code: "101220304"
+    }, {
+      value: "无为",
+      label: "无为",
+      code: "101220305"
+    }, {
+      value: "镜湖",
+      label: "镜湖",
+      code: "101220306"
+    }, {
+      value: "弋江",
+      label: "弋江",
+      code: "101220307"
+    }, {
+      value: "鸠江",
+      label: "鸠江",
+      code: "101220308"
+    }, {
+      value: "三山",
+      label: "三山",
+      code: "101220309"
+    }]
+  }, {
+    value: "淮南",
+    label: "淮南",
+    code: "101220401",
+    "children": [{
+      value: "凤台",
+      label: "凤台",
+      code: "101220402"
+    }, {
+      value: "潘集",
+      label: "潘集",
+      code: "101220403"
+    }, {
+      value: "大通",
+      label: "大通",
+      code: "101220404"
+    }, {
+      value: "田家庵",
+      label: "田家庵",
+      code: "101220405"
+    }, {
+      value: "谢家集",
+      label: "谢家集",
+      code: "101220406"
+    }, {
+      value: "八公山",
+      label: "八公山",
+      code: "101220407"
+    }, {
+      value: "寿县",
+      label: "寿县",
+      code: "101220408"
+    }]
+  }, {
+    value: "马鞍山",
+    label: "马鞍山",
+    code: "101220501",
+    "children": [{
+      value: "当涂",
+      label: "当涂",
+      code: "101220502"
+    }, {
+      value: "含山",
+      label: "含山",
+      code: "101220503"
+    }, {
+      value: "和县",
+      label: "和县",
+      code: "101220504"
+    }, {
+      value: "花山",
+      label: "花山",
+      code: "101220505"
+    }, {
+      value: "雨山",
+      label: "雨山",
+      code: "101220506"
+    }, {
+      value: "博望",
+      label: "博望",
+      code: "101220507"
+    }]
+  }, {
+    value: "安庆",
+    label: "安庆",
+    code: "101220601",
+    "children": [{
+      value: "太湖",
+      label: "太湖",
+      code: "101220603"
+    }, {
+      value: "潜山",
+      label: "潜山",
+      code: "101220604"
+    }, {
+      value: "怀宁",
+      label: "怀宁",
+      code: "101220605"
+    }, {
+      value: "宿松",
+      label: "宿松",
+      code: "101220606"
+    }, {
+      value: "望江",
+      label: "望江",
+      code: "101220607"
+    }, {
+      value: "岳西",
+      label: "岳西",
+      code: "101220608"
+    }, {
+      value: "桐城",
+      label: "桐城",
+      code: "101220609"
+    }, {
+      value: "迎江",
+      label: "迎江",
+      code: "101220610"
+    }, {
+      value: "大观",
+      label: "大观",
+      code: "101220611"
+    }, {
+      value: "宜秀",
+      label: "宜秀",
+      code: "101220612"
+    }]
+  }, {
+    value: "宿州",
+    label: "宿州",
+    code: "101220701",
+    "children": [{
+      value: "砀山",
+      label: "砀山",
+      code: "101220702"
+    }, {
+      value: "灵璧",
+      label: "灵璧",
+      code: "101220703"
+    }, {
+      value: "泗县",
+      label: "泗县",
+      code: "101220704"
+    }, {
+      value: "萧县",
+      label: "萧县",
+      code: "101220705"
+    }, {
+      value: "埇桥",
+      label: "埇桥",
+      code: "101220706"
+    }]
+  }, {
+    value: "阜阳",
+    label: "阜阳",
+    code: "101220801",
+    "children": [{
+      value: "阜南",
+      label: "阜南",
+      code: "101220802"
+    }, {
+      value: "颍上",
+      label: "颍上",
+      code: "101220803"
+    }, {
+      value: "临泉",
+      label: "临泉",
+      code: "101220804"
+    }, {
+      value: "界首",
+      label: "界首",
+      code: "101220805"
+    }, {
+      value: "太和",
+      label: "太和",
+      code: "101220806"
+    }, {
+      value: "颍州",
+      label: "颍州",
+      code: "101220807"
+    }, {
+      value: "颍东",
+      label: "颍东",
+      code: "101220808"
+    }, {
+      value: "颍泉",
+      label: "颍泉",
+      code: "101220809"
+    }]
+  }, {
+    value: "亳州",
+    label: "亳州",
+    code: "101220901",
+    "children": [{
+      value: "涡阳",
+      label: "涡阳",
+      code: "101220902"
+    }, {
+      value: "利辛",
+      label: "利辛",
+      code: "101220903"
+    }, {
+      value: "蒙城",
+      label: "蒙城",
+      code: "101220904"
+    }, {
+      value: "谯城",
+      label: "谯城",
+      code: "101220905"
+    }]
+  }, {
+    value: "黄山",
+    label: "黄山",
+    code: "101221001",
+    "children": [{
+      value: "黄山区",
+      label: "黄山区",
+      code: "101221002"
+    }, {
+      value: "屯溪",
+      label: "屯溪",
+      code: "101221003"
+    }, {
+      value: "祁门",
+      label: "祁门",
+      code: "101221004"
+    }, {
+      value: "黟县",
+      label: "黟县",
+      code: "101221005"
+    }, {
+      value: "歙县",
+      label: "歙县",
+      code: "101221006"
+    }, {
+      value: "休宁",
+      label: "休宁",
+      code: "101221007"
+    }, {
+      value: "徽州",
+      label: "徽州",
+      code: "101221009"
+    }]
+  }, {
+    value: "滁州",
+    label: "滁州",
+    code: "101221101",
+    "children": [{
+      value: "凤阳",
+      label: "凤阳",
+      code: "101221102"
+    }, {
+      value: "明光",
+      label: "明光",
+      code: "101221103"
+    }, {
+      value: "定远",
+      label: "定远",
+      code: "101221104"
+    }, {
+      value: "全椒",
+      label: "全椒",
+      code: "101221105"
+    }, {
+      value: "来安",
+      label: "来安",
+      code: "101221106"
+    }, {
+      value: "天长",
+      label: "天长",
+      code: "101221107"
+    }, {
+      value: "琅琊",
+      label: "琅琊",
+      code: "101221108"
+    }, {
+      value: "南谯",
+      label: "南谯",
+      code: "101221109"
+    }]
+  }, {
+    value: "淮北",
+    label: "淮北",
+    code: "101221201",
+    "children": [{
+      value: "濉溪",
+      label: "濉溪",
+      code: "101221202"
+    }, {
+      value: "杜集",
+      label: "杜集",
+      code: "101221203"
+    }, {
+      value: "相山",
+      label: "相山",
+      code: "101221204"
+    }, {
+      value: "烈山",
+      label: "烈山",
+      code: "101221205"
+    }]
+  }, {
+    value: "铜陵",
+    label: "铜陵",
+    code: "101221301",
+    "children": [{
+      value: "铜官",
+      label: "铜官",
+      code: "101221302"
+    }, {
+      value: "义安",
+      label: "义安",
+      code: "101221303"
+    }, {
+      value: "郊区",
+      label: "郊区",
+      code: "101221304"
+    }, {
+      value: "枞阳",
+      label: "枞阳",
+      code: "101221305"
+    }]
+  }, {
+    value: "宣城",
+    label: "宣城",
+    code: "101221401",
+    "children": [{
+      value: "泾县",
+      label: "泾县",
+      code: "101221402"
+    }, {
+      value: "旌德",
+      label: "旌德",
+      code: "101221403"
+    }, {
+      value: "宁国",
+      label: "宁国",
+      code: "101221404"
+    }, {
+      value: "绩溪",
+      label: "绩溪",
+      code: "101221405"
+    }, {
+      value: "广德",
+      label: "广德",
+      code: "101221406"
+    }, {
+      value: "郎溪",
+      label: "郎溪",
+      code: "101221407"
+    }, {
+      value: "宣州",
+      label: "宣州",
+      code: "101221408"
+    }]
+  }, {
+    value: "六安",
+    label: "六安",
+    code: "101221501",
+    "children": [{
+      value: "霍邱",
+      label: "霍邱",
+      code: "101221502"
+    }, {
+      value: "金安",
+      label: "金安",
+      code: "101221504"
+    }, {
+      value: "金寨",
+      label: "金寨",
+      code: "101221505"
+    }, {
+      value: "霍山",
+      label: "霍山",
+      code: "101221506"
+    }, {
+      value: "舒城",
+      label: "舒城",
+      code: "101221507"
+    }, {
+      value: "裕安",
+      label: "裕安",
+      code: "101221508"
+    }, {
+      value: "叶集",
+      label: "叶集",
+      code: "101221509"
+    }]
+  }, {
+    value: "池州",
+    label: "池州",
+    code: "101221701",
+    "children": [{
+      value: "东至",
+      label: "东至",
+      code: "101221702"
+    }, {
+      value: "青阳",
+      label: "青阳",
+      code: "101221703"
+    }, {
+      value: "九华山",
+      label: "九华山",
+      code: "101221704"
+    }, {
+      value: "石台",
+      label: "石台",
+      code: "101221705"
+    }, {
+      value: "贵池",
+      label: "贵池",
+      code: "101221706"
+    }]
+  }]
+}, {
+  value: "福建",
+  label: "福建",
+  code: "101230101",
+  "children": [{
+    value: "福州",
+    label: "福州",
+    code: "101230101",
+    "children": [{
+      value: "闽清",
+      label: "闽清",
+      code: "101230102"
+    }, {
+      value: "闽侯",
+      label: "闽侯",
+      code: "101230103"
+    }, {
+      value: "罗源",
+      label: "罗源",
+      code: "101230104"
+    }, {
+      value: "连江",
+      label: "连江",
+      code: "101230105"
+    }, {
+      value: "鼓楼",
+      label: "鼓楼",
+      code: "101230106"
+    }, {
+      value: "永泰",
+      label: "永泰",
+      code: "101230107"
+    }, {
+      value: "平潭",
+      label: "平潭",
+      code: "101230108"
+    }, {
+      value: "台江",
+      label: "台江",
+      code: "101230109"
+    }, {
+      value: "长乐",
+      label: "长乐",
+      code: "101230110"
+    }, {
+      value: "福清",
+      label: "福清",
+      code: "101230111"
+    }, {
+      value: "仓山",
+      label: "仓山",
+      code: "101230112"
+    }, {
+      value: "马尾",
+      label: "马尾",
+      code: "101230113"
+    }, {
+      value: "晋安",
+      label: "晋安",
+      code: "101230114"
+    }]
+  }, {
+    value: "厦门",
+    label: "厦门",
+    code: "101230201",
+    "children": [{
+      value: "同安",
+      label: "同安",
+      code: "101230202"
+    }, {
+      value: "思明",
+      label: "思明",
+      code: "101230203"
+    }, {
+      value: "海沧",
+      label: "海沧",
+      code: "101230204"
+    }, {
+      value: "湖里",
+      label: "湖里",
+      code: "101230205"
+    }, {
+      value: "集美",
+      label: "集美",
+      code: "101230206"
+    }, {
+      value: "翔安",
+      label: "翔安",
+      code: "101230207"
+    }]
+  }, {
+    value: "宁德",
+    label: "宁德",
+    code: "101230301",
+    "children": [{
+      value: "古田",
+      label: "古田",
+      code: "101230302"
+    }, {
+      value: "霞浦",
+      label: "霞浦",
+      code: "101230303"
+    }, {
+      value: "寿宁",
+      label: "寿宁",
+      code: "101230304"
+    }, {
+      value: "周宁",
+      label: "周宁",
+      code: "101230305"
+    }, {
+      value: "福安",
+      label: "福安",
+      code: "101230306"
+    }, {
+      value: "柘荣",
+      label: "柘荣",
+      code: "101230307"
+    }, {
+      value: "福鼎",
+      label: "福鼎",
+      code: "101230308"
+    }, {
+      value: "屏南",
+      label: "屏南",
+      code: "101230309"
+    }, {
+      value: "蕉城",
+      label: "蕉城",
+      code: "101230310"
+    }]
+  }, {
+    value: "莆田",
+    label: "莆田",
+    code: "101230401",
+    "children": [{
+      value: "仙游",
+      label: "仙游",
+      code: "101230402"
+    }, {
+      value: "涵江",
+      label: "涵江",
+      code: "101230404"
+    }, {
+      value: "秀屿",
+      label: "秀屿",
+      code: "101230405"
+    }, {
+      value: "荔城",
+      label: "荔城",
+      code: "101230406"
+    }, {
+      value: "城厢",
+      label: "城厢",
+      code: "101230407"
+    }]
+  }, {
+    value: "泉州",
+    label: "泉州",
+    code: "101230501",
+    "children": [{
+      value: "安溪",
+      label: "安溪",
+      code: "101230502"
+    }, {
+      value: "金门",
+      label: "金门",
+      code: "101230503"
+    }, {
+      value: "永春",
+      label: "永春",
+      code: "101230504"
+    }, {
+      value: "德化",
+      label: "德化",
+      code: "101230505"
+    }, {
+      value: "南安",
+      label: "南安",
+      code: "101230506"
+    }, {
+      value: "惠安",
+      label: "惠安",
+      code: "101230508"
+    }, {
+      value: "晋江",
+      label: "晋江",
+      code: "101230509"
+    }, {
+      value: "石狮",
+      label: "石狮",
+      code: "101230510"
+    }, {
+      value: "鲤城",
+      label: "鲤城",
+      code: "101230511"
+    }, {
+      value: "丰泽",
+      label: "丰泽",
+      code: "101230512"
+    }, {
+      value: "洛江",
+      label: "洛江",
+      code: "101230513"
+    }, {
+      value: "泉港",
+      label: "泉港",
+      code: "101230514"
+    }]
+  }, {
+    value: "漳州",
+    label: "漳州",
+    code: "101230601",
+    "children": [{
+      value: "长泰",
+      label: "长泰",
+      code: "101230602"
+    }, {
+      value: "南靖",
+      label: "南靖",
+      code: "101230603"
+    }, {
+      value: "平和",
+      label: "平和",
+      code: "101230604"
+    }, {
+      value: "龙海",
+      label: "龙海",
+      code: "101230605"
+    }, {
+      value: "漳浦",
+      label: "漳浦",
+      code: "101230606"
+    }, {
+      value: "诏安",
+      label: "诏安",
+      code: "101230607"
+    }, {
+      value: "东山",
+      label: "东山",
+      code: "101230608"
+    }, {
+      value: "云霄",
+      label: "云霄",
+      code: "101230609"
+    }, {
+      value: "华安",
+      label: "华安",
+      code: "101230610"
+    }, {
+      value: "芗城",
+      label: "芗城",
+      code: "101230611"
+    }, {
+      value: "龙文",
+      label: "龙文",
+      code: "101230612"
+    }]
+  }, {
+    value: "龙岩",
+    label: "龙岩",
+    code: "101230701",
+    "children": [{
+      value: "长汀",
+      label: "长汀",
+      code: "101230702"
+    }, {
+      value: "连城",
+      label: "连城",
+      code: "101230703"
+    }, {
+      value: "武平",
+      label: "武平",
+      code: "101230704"
+    }, {
+      value: "上杭",
+      label: "上杭",
+      code: "101230705"
+    }, {
+      value: "永定",
+      label: "永定",
+      code: "101230706"
+    }, {
+      value: "漳平",
+      label: "漳平",
+      code: "101230707"
+    }, {
+      value: "新罗",
+      label: "新罗",
+      code: "101230708"
+    }]
+  }, {
+    value: "三明",
+    label: "三明",
+    code: "101230801",
+    "children": [{
+      value: "宁化",
+      label: "宁化",
+      code: "101230802"
+    }, {
+      value: "清流",
+      label: "清流",
+      code: "101230803"
+    }, {
+      value: "泰宁",
+      label: "泰宁",
+      code: "101230804"
+    }, {
+      value: "将乐",
+      label: "将乐",
+      code: "101230805"
+    }, {
+      value: "建宁",
+      label: "建宁",
+      code: "101230806"
+    }, {
+      value: "明溪",
+      label: "明溪",
+      code: "101230807"
+    }, {
+      value: "沙县",
+      label: "沙县",
+      code: "101230808"
+    }, {
+      value: "尤溪",
+      label: "尤溪",
+      code: "101230809"
+    }, {
+      value: "永安",
+      label: "永安",
+      code: "101230810"
+    }, {
+      value: "大田",
+      label: "大田",
+      code: "101230811"
+    }, {
+      value: "梅列",
+      label: "梅列",
+      code: "101230812"
+    }, {
+      value: "三元",
+      label: "三元",
+      code: "101230813"
+    }]
+  }, {
+    value: "南平",
+    label: "南平",
+    code: "101230901",
+    "children": [{
+      value: "顺昌",
+      label: "顺昌",
+      code: "101230902"
+    }, {
+      value: "光泽",
+      label: "光泽",
+      code: "101230903"
+    }, {
+      value: "邵武",
+      label: "邵武",
+      code: "101230904"
+    }, {
+      value: "武夷山",
+      label: "武夷山",
+      code: "101230905"
+    }, {
+      value: "浦城",
+      label: "浦城",
+      code: "101230906"
+    }, {
+      value: "建阳",
+      label: "建阳",
+      code: "101230907"
+    }, {
+      value: "松溪",
+      label: "松溪",
+      code: "101230908"
+    }, {
+      value: "政和",
+      label: "政和",
+      code: "101230909"
+    }, {
+      value: "建瓯",
+      label: "建瓯",
+      code: "101230910"
+    }, {
+      value: "延平",
+      label: "延平",
+      code: "101230911"
+    }]
+  }]
+}, {
+  value: "江西",
+  label: "江西",
+  code: "101240101",
+  "children": [{
+    value: "南昌",
+    label: "南昌",
+    code: "101240101",
+    "children": [{
+      value: "新建",
+      label: "新建",
+      code: "101240102"
+    }, {
+      value: "南昌县",
+      label: "南昌县",
+      code: "101240103"
+    }, {
+      value: "安义",
+      label: "安义",
+      code: "101240104"
+    }, {
+      value: "进贤",
+      label: "进贤",
+      code: "101240105"
+    }, {
+      value: "东湖",
+      label: "东湖",
+      code: "101240106"
+    }, {
+      value: "西湖",
+      label: "西湖",
+      code: "101240107"
+    }, {
+      value: "青云谱",
+      label: "青云谱",
+      code: "101240108"
+    }, {
+      value: "湾里",
+      label: "湾里",
+      code: "101240109"
+    }, {
+      value: "青山湖",
+      label: "青山湖",
+      code: "101240110"
+    }]
+  }, {
+    value: "九江",
+    label: "九江",
+    code: "101240201",
+    "children": [{
+      value: "瑞昌",
+      label: "瑞昌",
+      code: "101240202"
+    }, {
+      value: "庐山",
+      label: "庐山",
+      code: "101240203"
+    }, {
+      value: "武宁",
+      label: "武宁",
+      code: "101240204"
+    }, {
+      value: "德安",
+      label: "德安",
+      code: "101240205"
+    }, {
+      value: "永修",
+      label: "永修",
+      code: "101240206"
+    }, {
+      value: "湖口",
+      label: "湖口",
+      code: "101240207"
+    }, {
+      value: "彭泽",
+      label: "彭泽",
+      code: "101240208"
+    }, {
+      value: "星子",
+      label: "星子",
+      code: "101240209"
+    }, {
+      value: "都昌",
+      label: "都昌",
+      code: "101240210"
+    }, {
+      value: "浔阳",
+      label: "浔阳",
+      code: "101240211"
+    }, {
+      value: "修水",
+      label: "修水",
+      code: "101240212"
+    }, {
+      value: "共青城",
+      label: "共青城",
+      code: "101240213"
+    }]
+  }, {
+    value: "上饶",
+    label: "上饶",
+    code: "101240301",
+    "children": [{
+      value: "鄱阳",
+      label: "鄱阳",
+      code: "101240302"
+    }, {
+      value: "婺源",
+      label: "婺源",
+      code: "101240303"
+    }, {
+      value: "信州",
+      label: "信州",
+      code: "101240304"
+    }, {
+      value: "余干",
+      label: "余干",
+      code: "101240305"
+    }, {
+      value: "万年",
+      label: "万年",
+      code: "101240306"
+    }, {
+      value: "德兴",
+      label: "德兴",
+      code: "101240307"
+    }, {
+      value: "上饶县",
+      label: "上饶县",
+      code: "101240308"
+    }, {
+      value: "弋阳",
+      label: "弋阳",
+      code: "101240309"
+    }, {
+      value: "横峰",
+      label: "横峰",
+      code: "101240310"
+    }, {
+      value: "铅山",
+      label: "铅山",
+      code: "101240311"
+    }, {
+      value: "玉山",
+      label: "玉山",
+      code: "101240312"
+    }, {
+      value: "广丰",
+      label: "广丰",
+      code: "101240313"
+    }]
+  }, {
+    value: "抚州",
+    label: "抚州",
+    code: "101240401",
+    "children": [{
+      value: "广昌",
+      label: "广昌",
+      code: "101240402"
+    }, {
+      value: "乐安",
+      label: "乐安",
+      code: "101240403"
+    }, {
+      value: "崇仁",
+      label: "崇仁",
+      code: "101240404"
+    }, {
+      value: "金溪",
+      label: "金溪",
+      code: "101240405"
+    }, {
+      value: "资溪",
+      label: "资溪",
+      code: "101240406"
+    }, {
+      value: "宜黄",
+      label: "宜黄",
+      code: "101240407"
+    }, {
+      value: "南城",
+      label: "南城",
+      code: "101240408"
+    }, {
+      value: "南丰",
+      label: "南丰",
+      code: "101240409"
+    }, {
+      value: "黎川",
+      label: "黎川",
+      code: "101240410"
+    }, {
+      value: "东乡",
+      label: "东乡",
+      code: "101240411"
+    }, {
+      value: "临川",
+      label: "临川",
+      code: "101240412"
+    }]
+  }, {
+    value: "宜春",
+    label: "宜春",
+    code: "101240501",
+    "children": [{
+      value: "铜鼓",
+      label: "铜鼓",
+      code: "101240502"
+    }, {
+      value: "宜丰",
+      label: "宜丰",
+      code: "101240503"
+    }, {
+      value: "万载",
+      label: "万载",
+      code: "101240504"
+    }, {
+      value: "上高",
+      label: "上高",
+      code: "101240505"
+    }, {
+      value: "靖安",
+      label: "靖安",
+      code: "101240506"
+    }, {
+      value: "奉新",
+      label: "奉新",
+      code: "101240507"
+    }, {
+      value: "高安",
+      label: "高安",
+      code: "101240508"
+    }, {
+      value: "樟树",
+      label: "樟树",
+      code: "101240509"
+    }, {
+      value: "丰城",
+      label: "丰城",
+      code: "101240510"
+    }, {
+      value: "袁州",
+      label: "袁州",
+      code: "101240511"
+    }]
+  }, {
+    value: "吉安",
+    label: "吉安",
+    code: "101240601",
+    "children": [{
+      value: "吉安县",
+      label: "吉安县",
+      code: "101240602"
+    }, {
+      value: "吉水",
+      label: "吉水",
+      code: "101240603"
+    }, {
+      value: "新干",
+      label: "新干",
+      code: "101240604"
+    }, {
+      value: "峡江",
+      label: "峡江",
+      code: "101240605"
+    }, {
+      value: "永丰",
+      label: "永丰",
+      code: "101240606"
+    }, {
+      value: "永新",
+      label: "永新",
+      code: "101240607"
+    }, {
+      value: "井冈山",
+      label: "井冈山",
+      code: "101240608"
+    }, {
+      value: "万安",
+      label: "万安",
+      code: "101240609"
+    }, {
+      value: "遂川",
+      label: "遂川",
+      code: "101240610"
+    }, {
+      value: "泰和",
+      label: "泰和",
+      code: "101240611"
+    }, {
+      value: "安福",
+      label: "安福",
+      code: "101240612"
+    }, {
+      value: "吉州",
+      label: "吉州",
+      code: "101240614"
+    }, {
+      value: "青原",
+      label: "青原",
+      code: "101240615"
+    }]
+  }, {
+    value: "赣州",
+    label: "赣州",
+    code: "101240701",
+    "children": [{
+      value: "崇义",
+      label: "崇义",
+      code: "101240702"
+    }, {
+      value: "上犹",
+      label: "上犹",
+      code: "101240703"
+    }, {
+      value: "南康",
+      label: "南康",
+      code: "101240704"
+    }, {
+      value: "大余",
+      label: "大余",
+      code: "101240705"
+    }, {
+      value: "信丰",
+      label: "信丰",
+      code: "101240706"
+    }, {
+      value: "宁都",
+      label: "宁都",
+      code: "101240707"
+    }, {
+      value: "石城",
+      label: "石城",
+      code: "101240708"
+    }, {
+      value: "瑞金",
+      label: "瑞金",
+      code: "101240709"
+    }, {
+      value: "于都",
+      label: "于都",
+      code: "101240710"
+    }, {
+      value: "会昌",
+      label: "会昌",
+      code: "101240711"
+    }, {
+      value: "安远",
+      label: "安远",
+      code: "101240712"
+    }, {
+      value: "全南",
+      label: "全南",
+      code: "101240713"
+    }, {
+      value: "龙南",
+      label: "龙南",
+      code: "101240714"
+    }, {
+      value: "定南",
+      label: "定南",
+      code: "101240715"
+    }, {
+      value: "寻乌",
+      label: "寻乌",
+      code: "101240716"
+    }, {
+      value: "兴国",
+      label: "兴国",
+      code: "101240717"
+    }, {
+      value: "赣县",
+      label: "赣县",
+      code: "101240718"
+    }, {
+      value: "章贡",
+      label: "章贡",
+      code: "101240719"
+    }]
+  }, {
+    value: "景德镇",
+    label: "景德镇",
+    code: "101240801",
+    "children": [{
+      value: "乐平",
+      label: "乐平",
+      code: "101240802"
+    }, {
+      value: "浮梁",
+      label: "浮梁",
+      code: "101240803"
+    }, {
+      value: "昌江",
+      label: "昌江",
+      code: "101240804"
+    }, {
+      value: "珠山",
+      label: "珠山",
+      code: "101240805"
+    }]
+  }, {
+    value: "萍乡",
+    label: "萍乡",
+    code: "101240901",
+    "children": [{
+      value: "莲花",
+      label: "莲花",
+      code: "101240902"
+    }, {
+      value: "上栗",
+      label: "上栗",
+      code: "101240903"
+    }, {
+      value: "安源",
+      label: "安源",
+      code: "101240904"
+    }, {
+      value: "芦溪",
+      label: "芦溪",
+      code: "101240905"
+    }, {
+      value: "湘东",
+      label: "湘东",
+      code: "101240906"
+    }]
+  }, {
+    value: "新余",
+    label: "新余",
+    code: "101241001",
+    "children": [{
+      value: "分宜",
+      label: "分宜",
+      code: "101241002"
+    }, {
+      value: "渝水",
+      label: "渝水",
+      code: "101241003"
+    }]
+  }, {
+    value: "鹰潭",
+    label: "鹰潭",
+    code: "101241101",
+    "children": [{
+      value: "余江",
+      label: "余江",
+      code: "101241102"
+    }, {
+      value: "贵溪",
+      label: "贵溪",
+      code: "101241103"
+    }, {
+      value: "月湖",
+      label: "月湖",
+      code: "101241104"
+    }]
+  }]
+}, {
+  value: "湖南",
+  label: "湖南",
+  code: "101250101",
+  "children": [{
+    value: "长沙",
+    label: "长沙",
+    code: "101250101",
+    "children": [{
+      value: "宁乡",
+      label: "宁乡",
+      code: "101250102"
+    }, {
+      value: "浏阳",
+      label: "浏阳",
+      code: "101250103"
+    }, {
+      value: "湘江新区",
+      label: "湘江新区",
+      code: "101250104"
+    }, {
+      value: "望城",
+      label: "望城",
+      code: "101250105"
+    }, {
+      value: "长沙县",
+      label: "长沙县",
+      code: "101250106"
+    }, {
+      value: "芙蓉",
+      label: "芙蓉",
+      code: "101250107"
+    }, {
+      value: "天心",
+      label: "天心",
+      code: "101250108"
+    }, {
+      value: "岳麓",
+      label: "岳麓",
+      code: "101250109"
+    }, {
+      value: "开福",
+      label: "开福",
+      code: "101250110"
+    }, {
+      value: "雨花",
+      label: "雨花",
+      code: "101250111"
+    }]
+  }, {
+    value: "湘潭",
+    label: "湘潭",
+    code: "101250201",
+    "children": [{
+      value: "韶山",
+      label: "韶山",
+      code: "101250202"
+    }, {
+      value: "湘乡",
+      label: "湘乡",
+      code: "101250203"
+    }, {
+      value: "雨湖",
+      label: "雨湖",
+      code: "101250204"
+    }, {
+      value: "岳塘",
+      label: "岳塘",
+      code: "101250205"
+    }]
+  }, {
+    value: "株洲",
+    label: "株洲",
+    code: "101250301",
+    "children": [{
+      value: "攸县",
+      label: "攸县",
+      code: "101250302"
+    }, {
+      value: "醴陵",
+      label: "醴陵",
+      code: "101250303"
+    }, {
+      value: "荷塘",
+      label: "荷塘",
+      code: "101250304"
+    }, {
+      value: "茶陵",
+      label: "茶陵",
+      code: "101250305"
+    }, {
+      value: "炎陵",
+      label: "炎陵",
+      code: "101250306"
+    }, {
+      value: "芦淞",
+      label: "芦淞",
+      code: "101250307"
+    }, {
+      value: "石峰",
+      label: "石峰",
+      code: "101250308"
+    }, {
+      value: "天元",
+      label: "天元",
+      code: "101250309"
+    }]
+  }, {
+    value: "衡阳",
+    label: "衡阳",
+    code: "101250401",
+    "children": [{
+      value: "衡山",
+      label: "衡山",
+      code: "101250402"
+    }, {
+      value: "衡东",
+      label: "衡东",
+      code: "101250403"
+    }, {
+      value: "祁东",
+      label: "祁东",
+      code: "101250404"
+    }, {
+      value: "衡阳县",
+      label: "衡阳县",
+      code: "101250405"
+    }, {
+      value: "常宁",
+      label: "常宁",
+      code: "101250406"
+    }, {
+      value: "衡南",
+      label: "衡南",
+      code: "101250407"
+    }, {
+      value: "耒阳",
+      label: "耒阳",
+      code: "101250408"
+    }, {
+      value: "南岳",
+      label: "南岳",
+      code: "101250409"
+    }, {
+      value: "珠晖",
+      label: "珠晖",
+      code: "101250410"
+    }, {
+      value: "雁峰",
+      label: "雁峰",
+      code: "101250411"
+    }, {
+      value: "石鼓",
+      label: "石鼓",
+      code: "101250412"
+    }, {
+      value: "蒸湘",
+      label: "蒸湘",
+      code: "101250413"
+    }]
+  }, {
+    value: "郴州",
+    label: "郴州",
+    code: "101250501",
+    "children": [{
+      value: "桂阳",
+      label: "桂阳",
+      code: "101250502"
+    }, {
+      value: "嘉禾",
+      label: "嘉禾",
+      code: "101250503"
+    }, {
+      value: "宜章",
+      label: "宜章",
+      code: "101250504"
+    }, {
+      value: "临武",
+      label: "临武",
+      code: "101250505"
+    }, {
+      value: "北湖",
+      label: "北湖",
+      code: "101250506"
+    }, {
+      value: "资兴",
+      label: "资兴",
+      code: "101250507"
+    }, {
+      value: "汝城",
+      label: "汝城",
+      code: "101250508"
+    }, {
+      value: "安仁",
+      label: "安仁",
+      code: "101250509"
+    }, {
+      value: "永兴",
+      label: "永兴",
+      code: "101250510"
+    }, {
+      value: "桂东",
+      label: "桂东",
+      code: "101250511"
+    }, {
+      value: "苏仙",
+      label: "苏仙",
+      code: "101250512"
+    }]
+  }, {
+    value: "常德",
+    label: "常德",
+    code: "101250601",
+    "children": [{
+      value: "安乡",
+      label: "安乡",
+      code: "101250602"
+    }, {
+      value: "桃源",
+      label: "桃源",
+      code: "101250603"
+    }, {
+      value: "汉寿",
+      label: "汉寿",
+      code: "101250604"
+    }, {
+      value: "澧县",
+      label: "澧县",
+      code: "101250605"
+    }, {
+      value: "临澧",
+      label: "临澧",
+      code: "101250606"
+    }, {
+      value: "石门",
+      label: "石门",
+      code: "101250607"
+    }, {
+      value: "津市",
+      label: "津市",
+      code: "101250608"
+    }, {
+      value: "武陵",
+      label: "武陵",
+      code: "101250609"
+    }, {
+      value: "鼎城",
+      label: "鼎城",
+      code: "101250610"
+    }]
+  }, {
+    value: "益阳",
+    label: "益阳",
+    code: "101250700",
+    "children": [{
+      value: "赫山区",
+      label: "赫山区",
+      code: "101250701"
+    }, {
+      value: "南县",
+      label: "南县",
+      code: "101250702"
+    }, {
+      value: "桃江",
+      label: "桃江",
+      code: "101250703"
+    }, {
+      value: "安化",
+      label: "安化",
+      code: "101250704"
+    }, {
+      value: "沅江",
+      label: "沅江",
+      code: "101250705"
+    }, {
+      value: "资阳",
+      label: "资阳",
+      code: "101250706"
+    }]
+  }, {
+    value: "娄底",
+    label: "娄底",
+    code: "101250801",
+    "children": [{
+      value: "双峰",
+      label: "双峰",
+      code: "101250802"
+    }, {
+      value: "冷水江",
+      label: "冷水江",
+      code: "101250803"
+    }, {
+      value: "娄星",
+      label: "娄星",
+      code: "101250804"
+    }, {
+      value: "新化",
+      label: "新化",
+      code: "101250805"
+    }, {
+      value: "涟源",
+      label: "涟源",
+      code: "101250806"
+    }]
+  }, {
+    value: "邵阳",
+    label: "邵阳",
+    code: "101250901",
+    "children": [{
+      value: "隆回",
+      label: "隆回",
+      code: "101250902"
+    }, {
+      value: "洞口",
+      label: "洞口",
+      code: "101250903"
+    }, {
+      value: "新邵",
+      label: "新邵",
+      code: "101250904"
+    }, {
+      value: "邵东",
+      label: "邵东",
+      code: "101250905"
+    }, {
+      value: "绥宁",
+      label: "绥宁",
+      code: "101250906"
+    }, {
+      value: "新宁",
+      label: "新宁",
+      code: "101250907"
+    }, {
+      value: "武冈",
+      label: "武冈",
+      code: "101250908"
+    }, {
+      value: "城步",
+      label: "城步",
+      code: "101250909"
+    }, {
+      value: "邵阳县",
+      label: "邵阳县",
+      code: "101250910"
+    }, {
+      value: "双清",
+      label: "双清",
+      code: "101250911"
+    }, {
+      value: "大祥",
+      label: "大祥",
+      code: "101250912"
+    }, {
+      value: "北塔",
+      label: "北塔",
+      code: "101250913"
+    }]
+  }, {
+    value: "岳阳",
+    label: "岳阳",
+    code: "101251001",
+    "children": [{
+      value: "华容",
+      label: "华容",
+      code: "101251002"
+    }, {
+      value: "湘阴",
+      label: "湘阴",
+      code: "101251003"
+    }, {
+      value: "汨罗",
+      label: "汨罗",
+      code: "101251004"
+    }, {
+      value: "平江",
+      label: "平江",
+      code: "101251005"
+    }, {
+      value: "临湘",
+      label: "临湘",
+      code: "101251006"
+    }, {
+      value: "岳阳楼区",
+      label: "岳阳楼区",
+      code: "101251007"
+    }, {
+      value: "云溪",
+      label: "云溪",
+      code: "101251008"
+    }, {
+      value: "君山",
+      label: "君山",
+      code: "101251009"
+    }]
+  }, {
+    value: "张家界",
+    label: "张家界",
+    code: "101251101",
+    "children": [{
+      value: "桑植",
+      label: "桑植",
+      code: "101251102"
+    }, {
+      value: "慈利",
+      label: "慈利",
+      code: "101251103"
+    }, {
+      value: "武陵源",
+      label: "武陵源",
+      code: "101251104"
+    }, {
+      value: "永定",
+      label: "永定",
+      code: "101251105"
+    }]
+  }, {
+    value: "怀化",
+    label: "怀化",
+    code: "101251201",
+    "children": [{
+      value: "鹤城",
+      label: "鹤城",
+      code: "101251202"
+    }, {
+      value: "沅陵",
+      label: "沅陵",
+      code: "101251203"
+    }, {
+      value: "辰溪",
+      label: "辰溪",
+      code: "101251204"
+    }, {
+      value: "靖州",
+      label: "靖州",
+      code: "101251205"
+    }, {
+      value: "会同",
+      label: "会同",
+      code: "101251206"
+    }, {
+      value: "通道",
+      label: "通道",
+      code: "101251207"
+    }, {
+      value: "麻阳",
+      label: "麻阳",
+      code: "101251208"
+    }, {
+      value: "新晃",
+      label: "新晃",
+      code: "101251209"
+    }, {
+      value: "芷江",
+      label: "芷江",
+      code: "101251210"
+    }, {
+      value: "溆浦",
+      label: "溆浦",
+      code: "101251211"
+    }, {
+      value: "中方",
+      label: "中方",
+      code: "101251212"
+    }, {
+      value: "洪江",
+      label: "洪江",
+      code: "101251213"
+    }]
+  }, {
+    value: "永州",
+    label: "永州",
+    code: "101251401",
+    "children": [{
+      value: "祁阳",
+      label: "祁阳",
+      code: "101251402"
+    }, {
+      value: "东安",
+      label: "东安",
+      code: "101251403"
+    }, {
+      value: "双牌",
+      label: "双牌",
+      code: "101251404"
+    }, {
+      value: "道县",
+      label: "道县",
+      code: "101251405"
+    }, {
+      value: "宁远",
+      label: "宁远",
+      code: "101251406"
+    }, {
+      value: "江永",
+      label: "江永",
+      code: "101251407"
+    }, {
+      value: "蓝山",
+      label: "蓝山",
+      code: "101251408"
+    }, {
+      value: "新田",
+      label: "新田",
+      code: "101251409"
+    }, {
+      value: "江华",
+      label: "江华",
+      code: "101251410"
+    }, {
+      value: "冷水滩",
+      label: "冷水滩",
+      code: "101251411"
+    }, {
+      value: "零陵",
+      label: "零陵",
+      code: "101251412"
+    }]
+  }, {
+    value: "湘西",
+    label: "湘西",
+    code: "101251501",
+    "children": [{
+      value: "保靖",
+      label: "保靖",
+      code: "101251502"
+    }, {
+      value: "永顺",
+      label: "永顺",
+      code: "101251503"
+    }, {
+      value: "古丈",
+      label: "古丈",
+      code: "101251504"
+    }, {
+      value: "凤凰",
+      label: "凤凰",
+      code: "101251505"
+    }, {
+      value: "泸溪",
+      label: "泸溪",
+      code: "101251506"
+    }, {
+      value: "龙山",
+      label: "龙山",
+      code: "101251507"
+    }, {
+      value: "花垣",
+      label: "花垣",
+      code: "101251508"
+    }, {
+      value: "湘西",
+      label: "湘西",
+      code: "101251509"
+    }]
+  }]
+}, {
+  value: "贵州",
+  label: "贵州",
+  code: "101260101",
+  "children": [{
+    value: "贵阳",
+    label: "贵阳",
+    code: "101260101",
+    "children": [{
+      value: "白云",
+      label: "白云",
+      code: "101260102"
+    }, {
+      value: "花溪",
+      label: "花溪",
+      code: "101260103"
+    }, {
+      value: "乌当",
+      label: "乌当",
+      code: "101260104"
+    }, {
+      value: "息烽",
+      label: "息烽",
+      code: "101260105"
+    }, {
+      value: "开阳",
+      label: "开阳",
+      code: "101260106"
+    }, {
+      value: "修文",
+      label: "修文",
+      code: "101260107"
+    }, {
+      value: "清镇",
+      label: "清镇",
+      code: "101260108"
+    }, {
+      value: "云岩",
+      label: "云岩",
+      code: "101260110"
+    }, {
+      value: "南明",
+      label: "南明",
+      code: "101260111"
+    }, {
+      value: "观山湖",
+      label: "观山湖",
+      code: "101260112"
+    }]
+  }, {
+    value: "遵义",
+    label: "遵义",
+    code: "101260201",
+    "children": [{
+      value: "遵义县",
+      label: "遵义县",
+      code: "101260202"
+    }, {
+      value: "仁怀",
+      label: "仁怀",
+      code: "101260203"
+    }, {
+      value: "绥阳",
+      label: "绥阳",
+      code: "101260204"
+    }, {
+      value: "湄潭",
+      label: "湄潭",
+      code: "101260205"
+    }, {
+      value: "凤冈",
+      label: "凤冈",
+      code: "101260206"
+    }, {
+      value: "桐梓",
+      label: "桐梓",
+      code: "101260207"
+    }, {
+      value: "赤水",
+      label: "赤水",
+      code: "101260208"
+    }, {
+      value: "习水",
+      label: "习水",
+      code: "101260209"
+    }, {
+      value: "道真",
+      label: "道真",
+      code: "101260210"
+    }, {
+      value: "正安",
+      label: "正安",
+      code: "101260211"
+    }, {
+      value: "务川",
+      label: "务川",
+      code: "101260212"
+    }, {
+      value: "余庆",
+      label: "余庆",
+      code: "101260213"
+    }, {
+      value: "汇川",
+      label: "汇川",
+      code: "101260214"
+    }, {
+      value: "红花岗",
+      label: "红花岗",
+      code: "101260215"
+    }, {
+      value: "播州",
+      label: "播州",
+      code: "101260216"
+    }]
+  }, {
+    value: "安顺",
+    label: "安顺",
+    code: "101260301",
+    "children": [{
+      value: "普定",
+      label: "普定",
+      code: "101260302"
+    }, {
+      value: "镇宁",
+      label: "镇宁",
+      code: "101260303"
+    }, {
+      value: "平坝",
+      label: "平坝",
+      code: "101260304"
+    }, {
+      value: "紫云",
+      label: "紫云",
+      code: "101260305"
+    }, {
+      value: "关岭",
+      label: "关岭",
+      code: "101260306"
+    }, {
+      value: "西秀",
+      label: "西秀",
+      code: "101260307"
+    }]
+  }, {
+    value: "黔南",
+    label: "黔南",
+    code: "101260401",
+    "children": [{
+      value: "贵定",
+      label: "贵定",
+      code: "101260402"
+    }, {
+      value: "瓮安",
+      label: "瓮安",
+      code: "101260403"
+    }, {
+      value: "长顺",
+      label: "长顺",
+      code: "101260404"
+    }, {
+      value: "福泉",
+      label: "福泉",
+      code: "101260405"
+    }, {
+      value: "惠水",
+      label: "惠水",
+      code: "101260406"
+    }, {
+      value: "龙里",
+      label: "龙里",
+      code: "101260407"
+    }, {
+      value: "罗甸",
+      label: "罗甸",
+      code: "101260408"
+    }, {
+      value: "平塘",
+      label: "平塘",
+      code: "101260409"
+    }, {
+      value: "独山",
+      label: "独山",
+      code: "101260410"
+    }, {
+      value: "三都",
+      label: "三都",
+      code: "101260411"
+    }, {
+      value: "荔波",
+      label: "荔波",
+      code: "101260412"
+    }, {
+      value: "黔南",
+      label: "黔南",
+      code: "101260413"
+    }]
+  }, {
+    value: "黔东南",
+    label: "黔东南",
+    code: "101260501",
+    "children": [{
+      value: "岑巩",
+      label: "岑巩",
+      code: "101260502"
+    }, {
+      value: "施秉",
+      label: "施秉",
+      code: "101260503"
+    }, {
+      value: "镇远",
+      label: "镇远",
+      code: "101260504"
+    }, {
+      value: "黄平",
+      label: "黄平",
+      code: "101260505"
+    }, {
+      value: "黔东南",
+      label: "黔东南",
+      code: "101260506"
+    }, {
+      value: "麻江",
+      label: "麻江",
+      code: "101260507"
+    }, {
+      value: "丹寨",
+      label: "丹寨",
+      code: "101260508"
+    }, {
+      value: "三穗",
+      label: "三穗",
+      code: "101260509"
+    }, {
+      value: "台江",
+      label: "台江",
+      code: "101260510"
+    }, {
+      value: "剑河",
+      label: "剑河",
+      code: "101260511"
+    }, {
+      value: "雷山",
+      label: "雷山",
+      code: "101260512"
+    }, {
+      value: "黎平",
+      label: "黎平",
+      code: "101260513"
+    }, {
+      value: "天柱",
+      label: "天柱",
+      code: "101260514"
+    }, {
+      value: "锦屏",
+      label: "锦屏",
+      code: "101260515"
+    }, {
+      value: "榕江",
+      label: "榕江",
+      code: "101260516"
+    }, {
+      value: "从江",
+      label: "从江",
+      code: "101260517"
+    }]
+  }, {
+    value: "铜仁",
+    label: "铜仁",
+    code: "101260601",
+    "children": [{
+      value: "江口",
+      label: "江口",
+      code: "101260602"
+    }, {
+      value: "玉屏",
+      label: "玉屏",
+      code: "101260603"
+    }, {
+      value: "万山",
+      label: "万山",
+      code: "101260604"
+    }, {
+      value: "思南",
+      label: "思南",
+      code: "101260605"
+    }, {
+      value: "碧江",
+      label: "碧江",
+      code: "101260606"
+    }, {
+      value: "印江",
+      label: "印江",
+      code: "101260607"
+    }, {
+      value: "石阡",
+      label: "石阡",
+      code: "101260608"
+    }, {
+      value: "沿河",
+      label: "沿河",
+      code: "101260609"
+    }, {
+      value: "德江",
+      label: "德江",
+      code: "101260610"
+    }, {
+      value: "松桃",
+      label: "松桃",
+      code: "101260611"
+    }]
+  }, {
+    value: "毕节",
+    label: "毕节",
+    code: "101260701",
+    "children": [{
+      value: "赫章",
+      label: "赫章",
+      code: "101260702"
+    }, {
+      value: "金沙",
+      label: "金沙",
+      code: "101260703"
+    }, {
+      value: "威宁",
+      label: "威宁",
+      code: "101260704"
+    }, {
+      value: "大方",
+      label: "大方",
+      code: "101260705"
+    }, {
+      value: "纳雍",
+      label: "纳雍",
+      code: "101260706"
+    }, {
+      value: "织金",
+      label: "织金",
+      code: "101260707"
+    }, {
+      value: "黔西",
+      label: "黔西",
+      code: "101260708"
+    }, {
+      value: "七星关",
+      label: "七星关",
+      code: "101260709"
+    }]
+  }, {
+    value: "六盘水",
+    label: "六盘水",
+    code: "101260801",
+    "children": [{
+      value: "六枝",
+      label: "六枝",
+      code: "101260802"
+    }, {
+      value: "六盘水",
+      label: "六盘水",
+      code: "101260803"
+    }, {
+      value: "盘县",
+      label: "盘县",
+      code: "101260804"
+    }, {
+      value: "钟山",
+      label: "钟山",
+      code: "101260805"
+    }]
+  }, {
+    value: "黔西南",
+    label: "黔西南",
+    code: "101260901",
+    "children": [{
+      value: "晴隆",
+      label: "晴隆",
+      code: "101260902"
+    }, {
+      value: "兴仁",
+      label: "兴仁",
+      code: "101260903"
+    }, {
+      value: "贞丰",
+      label: "贞丰",
+      code: "101260904"
+    }, {
+      value: "望谟",
+      label: "望谟",
+      code: "101260905"
+    }, {
+      value: "黔西南",
+      label: "黔西南",
+      code: "101260906"
+    }, {
+      value: "安龙",
+      label: "安龙",
+      code: "101260907"
+    }, {
+      value: "册亨",
+      label: "册亨",
+      code: "101260908"
+    }, {
+      value: "普安",
+      label: "普安",
+      code: "101260909"
+    }]
+  }]
+}, {
+  value: "四川",
+  label: "四川",
+  code: "101270101",
+  "children": [{
+    value: "成都",
+    label: "成都",
+    code: "101270101",
+    "children": [{
+      value: "龙泉驿",
+      label: "龙泉驿",
+      code: "101270102"
+    }, {
+      value: "新都",
+      label: "新都",
+      code: "101270103"
+    }, {
+      value: "温江",
+      label: "温江",
+      code: "101270104"
+    }, {
+      value: "金堂",
+      label: "金堂",
+      code: "101270105"
+    }, {
+      value: "双流",
+      label: "双流",
+      code: "101270106"
+    }, {
+      value: "郫县",
+      label: "郫县",
+      code: "101270107"
+    }, {
+      value: "大邑",
+      label: "大邑",
+      code: "101270108"
+    }, {
+      value: "蒲江",
+      label: "蒲江",
+      code: "101270109"
+    }, {
+      value: "新津",
+      label: "新津",
+      code: "101270110"
+    }, {
+      value: "都江堰",
+      label: "都江堰",
+      code: "101270111"
+    }, {
+      value: "彭州",
+      label: "彭州",
+      code: "101270112"
+    }, {
+      value: "邛崃",
+      label: "邛崃",
+      code: "101270113"
+    }, {
+      value: "崇州",
+      label: "崇州",
+      code: "101270114"
+    }, {
+      value: "青白江",
+      label: "青白江",
+      code: "101270115"
+    }, {
+      value: "锦江",
+      label: "锦江",
+      code: "101270116"
+    }, {
+      value: "青羊",
+      label: "青羊",
+      code: "101270117"
+    }, {
+      value: "金牛",
+      label: "金牛",
+      code: "101270118"
+    }, {
+      value: "武侯",
+      label: "武侯",
+      code: "101270119"
+    }, {
+      value: "成华",
+      label: "成华",
+      code: "101270120"
+    }, {
+      value: "简阳",
+      label: "简阳",
+      code: "101270121"
+    }]
+  }, {
+    value: "攀枝花",
+    label: "攀枝花",
+    code: "101270201",
+    "children": [{
+      value: "仁和",
+      label: "仁和",
+      code: "101270202"
+    }, {
+      value: "米易",
+      label: "米易",
+      code: "101270203"
+    }, {
+      value: "盐边",
+      label: "盐边",
+      code: "101270204"
+    }, {
+      value: "东区",
+      label: "东区",
+      code: "101270205"
+    }, {
+      value: "西区",
+      label: "西区",
+      code: "101270206"
+    }]
+  }, {
+    value: "自贡",
+    label: "自贡",
+    code: "101270301",
+    "children": [{
+      value: "富顺",
+      label: "富顺",
+      code: "101270302"
+    }, {
+      value: "荣县",
+      label: "荣县",
+      code: "101270303"
+    }, {
+      value: "自流井",
+      label: "自流井",
+      code: "101270304"
+    }, {
+      value: "贡井",
+      label: "贡井",
+      code: "101270305"
+    }, {
+      value: "大安",
+      label: "大安",
+      code: "101270306"
+    }, {
+      value: "沿滩",
+      label: "沿滩",
+      code: "101270307"
+    }]
+  }, {
+    value: "绵阳",
+    label: "绵阳",
+    code: "101270401",
+    "children": [{
+      value: "三台",
+      label: "三台",
+      code: "101270402"
+    }, {
+      value: "盐亭",
+      label: "盐亭",
+      code: "101270403"
+    }, {
+      value: "安县",
+      label: "安县",
+      code: "101270404"
+    }, {
+      value: "梓潼",
+      label: "梓潼",
+      code: "101270405"
+    }, {
+      value: "北川",
+      label: "北川",
+      code: "101270406"
+    }, {
+      value: "平武",
+      label: "平武",
+      code: "101270407"
+    }, {
+      value: "江油",
+      label: "江油",
+      code: "101270408"
+    }, {
+      value: "涪城",
+      label: "涪城",
+      code: "101270409"
+    }, {
+      value: "游仙",
+      label: "游仙",
+      code: "101270410"
+    }, {
+      value: "安州",
+      label: "安州",
+      code: "101270411"
+    }]
+  }, {
+    value: "南充",
+    label: "南充",
+    code: "101270501",
+    "children": [{
+      value: "南部",
+      label: "南部",
+      code: "101270502"
+    }, {
+      value: "营山",
+      label: "营山",
+      code: "101270503"
+    }, {
+      value: "蓬安",
+      label: "蓬安",
+      code: "101270504"
+    }, {
+      value: "仪陇",
+      label: "仪陇",
+      code: "101270505"
+    }, {
+      value: "西充",
+      label: "西充",
+      code: "101270506"
+    }, {
+      value: "阆中",
+      label: "阆中",
+      code: "101270507"
+    }, {
+      value: "顺庆",
+      label: "顺庆",
+      code: "101270508"
+    }, {
+      value: "高坪",
+      label: "高坪",
+      code: "101270509"
+    }, {
+      value: "嘉陵",
+      label: "嘉陵",
+      code: "101270510"
+    }]
+  }, {
+    value: "达州",
+    label: "达州",
+    code: "101270601",
+    "children": [{
+      value: "宣汉",
+      label: "宣汉",
+      code: "101270602"
+    }, {
+      value: "开江",
+      label: "开江",
+      code: "101270603"
+    }, {
+      value: "大竹",
+      label: "大竹",
+      code: "101270604"
+    }, {
+      value: "渠县",
+      label: "渠县",
+      code: "101270605"
+    }, {
+      value: "万源",
+      label: "万源",
+      code: "101270606"
+    }, {
+      value: "通川",
+      label: "通川",
+      code: "101270607"
+    }, {
+      value: "达川",
+      label: "达川",
+      code: "101270608"
+    }]
+  }, {
+    value: "遂宁",
+    label: "遂宁",
+    code: "101270701",
+    "children": [{
+      value: "蓬溪",
+      label: "蓬溪",
+      code: "101270702"
+    }, {
+      value: "射洪",
+      label: "射洪",
+      code: "101270703"
+    }, {
+      value: "船山",
+      label: "船山",
+      code: "101270704"
+    }, {
+      value: "安居",
+      label: "安居",
+      code: "101270705"
+    }, {
+      value: "大英",
+      label: "大英",
+      code: "101270706"
+    }]
+  }, {
+    value: "广安",
+    label: "广安",
+    code: "101270801",
+    "children": [{
+      value: "岳池",
+      label: "岳池",
+      code: "101270802"
+    }, {
+      value: "武胜",
+      label: "武胜",
+      code: "101270803"
+    }, {
+      value: "邻水",
+      label: "邻水",
+      code: "101270804"
+    }, {
+      value: "华蓥",
+      label: "华蓥",
+      code: "101270805"
+    }, {
+      value: "前锋",
+      label: "前锋",
+      code: "101270806"
+    }]
+  }, {
+    value: "巴中",
+    label: "巴中",
+    code: "101270901",
+    "children": [{
+      value: "通江",
+      label: "通江",
+      code: "101270902"
+    }, {
+      value: "南江",
+      label: "南江",
+      code: "101270903"
+    }, {
+      value: "平昌",
+      label: "平昌",
+      code: "101270904"
+    }, {
+      value: "巴州",
+      label: "巴州",
+      code: "101270905"
+    }, {
+      value: "恩阳",
+      label: "恩阳",
+      code: "101270906"
+    }]
+  }, {
+    value: "泸州",
+    label: "泸州",
+    code: "101271001",
+    "children": [{
+      value: "江阳",
+      label: "江阳",
+      code: "101271002"
+    }, {
+      value: "泸县",
+      label: "泸县",
+      code: "101271003"
+    }, {
+      value: "合江",
+      label: "合江",
+      code: "101271004"
+    }, {
+      value: "叙永",
+      label: "叙永",
+      code: "101271005"
+    }, {
+      value: "古蔺",
+      label: "古蔺",
+      code: "101271006"
+    }, {
+      value: "纳溪",
+      label: "纳溪",
+      code: "101271007"
+    }, {
+      value: "龙马潭",
+      label: "龙马潭",
+      code: "101271008"
+    }]
+  }, {
+    value: "宜宾",
+    label: "宜宾",
+    code: "101271101",
+    "children": [{
+      value: "翠屏",
+      label: "翠屏",
+      code: "101271102"
+    }, {
+      value: "宜宾县",
+      label: "宜宾县",
+      code: "101271103"
+    }, {
+      value: "南溪",
+      label: "南溪",
+      code: "101271104"
+    }, {
+      value: "江安",
+      label: "江安",
+      code: "101271105"
+    }, {
+      value: "长宁",
+      label: "长宁",
+      code: "101271106"
+    }, {
+      value: "高县",
+      label: "高县",
+      code: "101271107"
+    }, {
+      value: "珙县",
+      label: "珙县",
+      code: "101271108"
+    }, {
+      value: "筠连",
+      label: "筠连",
+      code: "101271109"
+    }, {
+      value: "兴文",
+      label: "兴文",
+      code: "101271110"
+    }, {
+      value: "屏山",
+      label: "屏山",
+      code: "101271111"
+    }]
+  }, {
+    value: "内江",
+    label: "内江",
+    code: "101271201",
+    "children": [{
+      value: "东兴",
+      label: "东兴",
+      code: "101271202"
+    }, {
+      value: "威远",
+      label: "威远",
+      code: "101271203"
+    }, {
+      value: "资中",
+      label: "资中",
+      code: "101271204"
+    }, {
+      value: "隆昌",
+      label: "隆昌",
+      code: "101271205"
+    }, {
+      value: "市中",
+      label: "市中",
+      code: "101271206"
+    }]
+  }, {
+    value: "资阳",
+    label: "资阳",
+    code: "101271301",
+    "children": [{
+      value: "安岳",
+      label: "安岳",
+      code: "101271302"
+    }, {
+      value: "乐至",
+      label: "乐至",
+      code: "101271303"
+    }, {
+      value: "雁江",
+      label: "雁江",
+      code: "101271305"
+    }]
+  }, {
+    value: "乐山",
+    label: "乐山",
+    code: "101271401",
+    "children": [{
+      value: "犍为",
+      label: "犍为",
+      code: "101271402"
+    }, {
+      value: "井研",
+      label: "井研",
+      code: "101271403"
+    }, {
+      value: "夹江",
+      label: "夹江",
+      code: "101271404"
+    }, {
+      value: "沐川",
+      label: "沐川",
+      code: "101271405"
+    }, {
+      value: "峨边",
+      label: "峨边",
+      code: "101271406"
+    }, {
+      value: "马边",
+      label: "马边",
+      code: "101271407"
+    }, {
+      value: "峨眉山",
+      label: "峨眉山",
+      code: "101271409"
+    }, {
+      value: "市中",
+      label: "市中",
+      code: "101271410"
+    }, {
+      value: "沙湾",
+      label: "沙湾",
+      code: "101271411"
+    }, {
+      value: "五通桥",
+      label: "五通桥",
+      code: "101271412"
+    }, {
+      value: "金口河",
+      label: "金口河",
+      code: "101271413"
+    }]
+  }, {
+    value: "眉山",
+    label: "眉山",
+    code: "101271501",
+    "children": [{
+      value: "仁寿",
+      label: "仁寿",
+      code: "101271502"
+    }, {
+      value: "彭山",
+      label: "彭山",
+      code: "101271503"
+    }, {
+      value: "洪雅",
+      label: "洪雅",
+      code: "101271504"
+    }, {
+      value: "丹棱",
+      label: "丹棱",
+      code: "101271505"
+    }, {
+      value: "青神",
+      label: "青神",
+      code: "101271506"
+    }, {
+      value: "东坡",
+      label: "东坡",
+      code: "101271507"
+    }]
+  }, {
+    value: "凉山",
+    label: "凉山",
+    code: "101271601",
+    "children": [{
+      value: "木里",
+      label: "木里",
+      code: "101271603"
+    }, {
+      value: "盐源",
+      label: "盐源",
+      code: "101271604"
+    }, {
+      value: "德昌",
+      label: "德昌",
+      code: "101271605"
+    }, {
+      value: "会理",
+      label: "会理",
+      code: "101271606"
+    }, {
+      value: "会东",
+      label: "会东",
+      code: "101271607"
+    }, {
+      value: "宁南",
+      label: "宁南",
+      code: "101271608"
+    }, {
+      value: "普格",
+      label: "普格",
+      code: "101271609"
+    }, {
+      value: "西昌",
+      label: "西昌",
+      code: "101271610"
+    }, {
+      value: "金阳",
+      label: "金阳",
+      code: "101271611"
+    }, {
+      value: "昭觉",
+      label: "昭觉",
+      code: "101271612"
+    }, {
+      value: "喜德",
+      label: "喜德",
+      code: "101271613"
+    }, {
+      value: "冕宁",
+      label: "冕宁",
+      code: "101271614"
+    }, {
+      value: "越西",
+      label: "越西",
+      code: "101271615"
+    }, {
+      value: "甘洛",
+      label: "甘洛",
+      code: "101271616"
+    }, {
+      value: "雷波",
+      label: "雷波",
+      code: "101271617"
+    }, {
+      value: "美姑",
+      label: "美姑",
+      code: "101271618"
+    }, {
+      value: "布拖",
+      label: "布拖",
+      code: "101271619"
+    }]
+  }, {
+    value: "雅安",
+    label: "雅安",
+    code: "101271701",
+    "children": [{
+      value: "名山",
+      label: "名山",
+      code: "101271702"
+    }, {
+      value: "荥经",
+      label: "荥经",
+      code: "101271703"
+    }, {
+      value: "汉源",
+      label: "汉源",
+      code: "101271704"
+    }, {
+      value: "石棉",
+      label: "石棉",
+      code: "101271705"
+    }, {
+      value: "天全",
+      label: "天全",
+      code: "101271706"
+    }, {
+      value: "芦山",
+      label: "芦山",
+      code: "101271707"
+    }, {
+      value: "宝兴",
+      label: "宝兴",
+      code: "101271708"
+    }, {
+      value: "雨城",
+      label: "雨城",
+      code: "101271709"
+    }]
+  }, {
+    value: "甘孜",
+    label: "甘孜",
+    code: "101271801",
+    "children": [{
+      value: "康定",
+      label: "康定",
+      code: "101271802"
+    }, {
+      value: "泸定",
+      label: "泸定",
+      code: "101271803"
+    }, {
+      value: "丹巴",
+      label: "丹巴",
+      code: "101271804"
+    }, {
+      value: "九龙",
+      label: "九龙",
+      code: "101271805"
+    }, {
+      value: "雅江",
+      label: "雅江",
+      code: "101271806"
+    }, {
+      value: "道孚",
+      label: "道孚",
+      code: "101271807"
+    }, {
+      value: "炉霍",
+      label: "炉霍",
+      code: "101271808"
+    }, {
+      value: "新龙",
+      label: "新龙",
+      code: "101271809"
+    }, {
+      value: "德格",
+      label: "德格",
+      code: "101271810"
+    }, {
+      value: "白玉",
+      label: "白玉",
+      code: "101271811"
+    }, {
+      value: "石渠",
+      label: "石渠",
+      code: "101271812"
+    }, {
+      value: "色达",
+      label: "色达",
+      code: "101271813"
+    }, {
+      value: "理塘",
+      label: "理塘",
+      code: "101271814"
+    }, {
+      value: "巴塘",
+      label: "巴塘",
+      code: "101271815"
+    }, {
+      value: "乡城",
+      label: "乡城",
+      code: "101271816"
+    }, {
+      value: "稻城",
+      label: "稻城",
+      code: "101271817"
+    }, {
+      value: "得荣",
+      label: "得荣",
+      code: "101271818"
+    }]
+  }, {
+    value: "阿坝",
+    label: "阿坝",
+    code: "101271901",
+    "children": [{
+      value: "汶川",
+      label: "汶川",
+      code: "101271902"
+    }, {
+      value: "理县",
+      label: "理县",
+      code: "101271903"
+    }, {
+      value: "茂县",
+      label: "茂县",
+      code: "101271904"
+    }, {
+      value: "松潘",
+      label: "松潘",
+      code: "101271905"
+    }, {
+      value: "九寨沟",
+      label: "九寨沟",
+      code: "101271906"
+    }, {
+      value: "金川",
+      label: "金川",
+      code: "101271907"
+    }, {
+      value: "小金",
+      label: "小金",
+      code: "101271908"
+    }, {
+      value: "黑水",
+      label: "黑水",
+      code: "101271909"
+    }, {
+      value: "马尔康",
+      label: "马尔康",
+      code: "101271910"
+    }, {
+      value: "壤塘",
+      label: "壤塘",
+      code: "101271911"
+    }, {
+      value: "若尔盖",
+      label: "若尔盖",
+      code: "101271912"
+    }, {
+      value: "红原",
+      label: "红原",
+      code: "101271913"
+    }]
+  }, {
+    value: "德阳",
+    label: "德阳",
+    code: "101272001",
+    "children": [{
+      value: "中江",
+      label: "中江",
+      code: "101272002"
+    }, {
+      value: "广汉",
+      label: "广汉",
+      code: "101272003"
+    }, {
+      value: "什邡",
+      label: "什邡",
+      code: "101272004"
+    }, {
+      value: "绵竹",
+      label: "绵竹",
+      code: "101272005"
+    }, {
+      value: "罗江",
+      label: "罗江",
+      code: "101272006"
+    }, {
+      value: "旌阳",
+      label: "旌阳",
+      code: "101272007"
+    }]
+  }, {
+    value: "广元",
+    label: "广元",
+    code: "101272101",
+    "children": [{
+      value: "旺苍",
+      label: "旺苍",
+      code: "101272102"
+    }, {
+      value: "青川",
+      label: "青川",
+      code: "101272103"
+    }, {
+      value: "剑阁",
+      label: "剑阁",
+      code: "101272104"
+    }, {
+      value: "苍溪",
+      label: "苍溪",
+      code: "101272105"
+    }, {
+      value: "利州",
+      label: "利州",
+      code: "101272106"
+    }, {
+      value: "昭化",
+      label: "昭化",
+      code: "101272107"
+    }, {
+      value: "朝天",
+      label: "朝天",
+      code: "101272108"
+    }]
+  }]
+}, {
+  value: "广东",
+  label: "广东",
+  code: "101280101",
+  "children": [{
+    value: "广州",
+    label: "广州",
+    code: "101280101",
+    "children": [{
+      value: "番禺",
+      label: "番禺",
+      code: "101280102"
+    }, {
+      value: "从化",
+      label: "从化",
+      code: "101280103"
+    }, {
+      value: "增城",
+      label: "增城",
+      code: "101280104"
+    }, {
+      value: "花都",
+      label: "花都",
+      code: "101280105"
+    }, {
+      value: "荔湾",
+      label: "荔湾",
+      code: "101280106"
+    }, {
+      value: "越秀",
+      label: "越秀",
+      code: "101280107"
+    }, {
+      value: "海珠",
+      label: "海珠",
+      code: "101280108"
+    }, {
+      value: "天河",
+      label: "天河",
+      code: "101280109"
+    }, {
+      value: "白云",
+      label: "白云",
+      code: "101280110"
+    }, {
+      value: "黄埔",
+      label: "黄埔",
+      code: "101280111"
+    }, {
+      value: "南沙",
+      label: "南沙",
+      code: "101280112"
+    }]
+  }, {
+    value: "韶关",
+    label: "韶关",
+    code: "101280201",
+    "children": [{
+      value: "乳源",
+      label: "乳源",
+      code: "101280202"
+    }, {
+      value: "始兴",
+      label: "始兴",
+      code: "101280203"
+    }, {
+      value: "翁源",
+      label: "翁源",
+      code: "101280204"
+    }, {
+      value: "乐昌",
+      label: "乐昌",
+      code: "101280205"
+    }, {
+      value: "仁化",
+      label: "仁化",
+      code: "101280206"
+    }, {
+      value: "南雄",
+      label: "南雄",
+      code: "101280207"
+    }, {
+      value: "新丰",
+      label: "新丰",
+      code: "101280208"
+    }, {
+      value: "曲江",
+      label: "曲江",
+      code: "101280209"
+    }, {
+      value: "浈江",
+      label: "浈江",
+      code: "101280210"
+    }, {
+      value: "武江",
+      label: "武江",
+      code: "101280211"
+    }]
+  }, {
+    value: "惠州",
+    label: "惠州",
+    code: "101280301",
+    "children": [{
+      value: "博罗",
+      label: "博罗",
+      code: "101280302"
+    }, {
+      value: "惠阳",
+      label: "惠阳",
+      code: "101280303"
+    }, {
+      value: "惠东",
+      label: "惠东",
+      code: "101280304"
+    }, {
+      value: "龙门",
+      label: "龙门",
+      code: "101280305"
+    }, {
+      value: "惠城",
+      label: "惠城",
+      code: "101280306"
+    }]
+  }, {
+    value: "梅州",
+    label: "梅州",
+    code: "101280401",
+    "children": [{
+      value: "兴宁",
+      label: "兴宁",
+      code: "101280402"
+    }, {
+      value: "蕉岭",
+      label: "蕉岭",
+      code: "101280403"
+    }, {
+      value: "大埔",
+      label: "大埔",
+      code: "101280404"
+    }, {
+      value: "梅江",
+      label: "梅江",
+      code: "101280405"
+    }, {
+      value: "丰顺",
+      label: "丰顺",
+      code: "101280406"
+    }, {
+      value: "平远",
+      label: "平远",
+      code: "101280407"
+    }, {
+      value: "五华",
+      label: "五华",
+      code: "101280408"
+    }, {
+      value: "梅县",
+      label: "梅县",
+      code: "101280409"
+    }]
+  }, {
+    value: "汕头",
+    label: "汕头",
+    code: "101280501",
+    "children": [{
+      value: "潮阳",
+      label: "潮阳",
+      code: "101280502"
+    }, {
+      value: "澄海",
+      label: "澄海",
+      code: "101280503"
+    }, {
+      value: "南澳",
+      label: "南澳",
+      code: "101280504"
+    }, {
+      value: "龙湖",
+      label: "龙湖",
+      code: "101280505"
+    }, {
+      value: "金平",
+      label: "金平",
+      code: "101280506"
+    }, {
+      value: "濠江",
+      label: "濠江",
+      code: "101280507"
+    }, {
+      value: "潮南",
+      label: "潮南",
+      code: "101280508"
+    }]
+  }, {
+    value: "深圳",
+    label: "深圳",
+    code: "101280601",
+    "children": [{
+      value: "罗湖",
+      label: "罗湖",
+      code: "101280602"
+    }, {
+      value: "福田",
+      label: "福田",
+      code: "101280603"
+    }, {
+      value: "南山",
+      label: "南山",
+      code: "101280604"
+    }, {
+      value: "宝安",
+      label: "宝安",
+      code: "101280605"
+    }, {
+      value: "龙岗",
+      label: "龙岗",
+      code: "101280606"
+    }, {
+      value: "盐田",
+      label: "盐田",
+      code: "101280607"
+    }]
+  }, {
+    value: "珠海",
+    label: "珠海",
+    code: "101280701",
+    "children": [{
+      value: "斗门",
+      label: "斗门",
+      code: "101280702"
+    }, {
+      value: "金湾",
+      label: "金湾",
+      code: "101280703"
+    }, {
+      value: "香洲",
+      label: "香洲",
+      code: "101280704"
+    }]
+  }, {
+    value: "佛山",
+    label: "佛山",
+    code: "101280800",
+    "children": [{
+      value: "顺德",
+      label: "顺德",
+      code: "101280801"
+    }, {
+      value: "三水",
+      label: "三水",
+      code: "101280802"
+    }, {
+      value: "南海",
+      label: "南海",
+      code: "101280803"
+    }, {
+      value: "高明",
+      label: "高明",
+      code: "101280804"
+    }, {
+      value: "禅城",
+      label: "禅城",
+      code: "101280805"
+    }]
+  }, {
+    value: "肇庆",
+    label: "肇庆",
+    code: "101280901",
+    "children": [{
+      value: "广宁",
+      label: "广宁",
+      code: "101280902"
+    }, {
+      value: "四会",
+      label: "四会",
+      code: "101280903"
+    }, {
+      value: "端州",
+      label: "端州",
+      code: "101280904"
+    }, {
+      value: "德庆",
+      label: "德庆",
+      code: "101280905"
+    }, {
+      value: "怀集",
+      label: "怀集",
+      code: "101280906"
+    }, {
+      value: "封开",
+      label: "封开",
+      code: "101280907"
+    }, {
+      value: "高要",
+      label: "高要",
+      code: "101280908"
+    }, {
+      value: "鼎湖",
+      label: "鼎湖",
+      code: "101280909"
+    }]
+  }, {
+    value: "湛江",
+    label: "湛江",
+    code: "101281001",
+    "children": [{
+      value: "吴川",
+      label: "吴川",
+      code: "101281002"
+    }, {
+      value: "雷州",
+      label: "雷州",
+      code: "101281003"
+    }, {
+      value: "徐闻",
+      label: "徐闻",
+      code: "101281004"
+    }, {
+      value: "廉江",
+      label: "廉江",
+      code: "101281005"
+    }, {
+      value: "赤坎",
+      label: "赤坎",
+      code: "101281006"
+    }, {
+      value: "遂溪",
+      label: "遂溪",
+      code: "101281007"
+    }, {
+      value: "坡头",
+      label: "坡头",
+      code: "101281008"
+    }, {
+      value: "霞山",
+      label: "霞山",
+      code: "101281009"
+    }, {
+      value: "麻章",
+      label: "麻章",
+      code: "101281010"
+    }]
+  }, {
+    value: "江门",
+    label: "江门",
+    code: "101281101",
+    "children": [{
+      value: "开平",
+      label: "开平",
+      code: "101281103"
+    }, {
+      value: "新会",
+      label: "新会",
+      code: "101281104"
+    }, {
+      value: "恩平",
+      label: "恩平",
+      code: "101281105"
+    }, {
+      value: "台山",
+      label: "台山",
+      code: "101281106"
+    }, {
+      value: "蓬江",
+      label: "蓬江",
+      code: "101281107"
+    }, {
+      value: "鹤山",
+      label: "鹤山",
+      code: "101281108"
+    }, {
+      value: "江海",
+      label: "江海",
+      code: "101281109"
+    }]
+  }, {
+    value: "河源",
+    label: "河源",
+    code: "101281201",
+    "children": [{
+      value: "紫金",
+      label: "紫金",
+      code: "101281202"
+    }, {
+      value: "连平",
+      label: "连平",
+      code: "101281203"
+    }, {
+      value: "和平",
+      label: "和平",
+      code: "101281204"
+    }, {
+      value: "龙川",
+      label: "龙川",
+      code: "101281205"
+    }, {
+      value: "东源",
+      label: "东源",
+      code: "101281206"
+    }, {
+      value: "源城",
+      label: "源城",
+      code: "101281207"
+    }]
+  }, {
+    value: "清远",
+    label: "清远",
+    code: "101281301",
+    "children": [{
+      value: "连南",
+      label: "连南",
+      code: "101281302"
+    }, {
+      value: "连州",
+      label: "连州",
+      code: "101281303"
+    }, {
+      value: "连山",
+      label: "连山",
+      code: "101281304"
+    }, {
+      value: "阳山",
+      label: "阳山",
+      code: "101281305"
+    }, {
+      value: "佛冈",
+      label: "佛冈",
+      code: "101281306"
+    }, {
+      value: "英德",
+      label: "英德",
+      code: "101281307"
+    }, {
+      value: "清新",
+      label: "清新",
+      code: "101281308"
+    }, {
+      value: "清城",
+      label: "清城",
+      code: "101281309"
+    }]
+  }, {
+    value: "云浮",
+    label: "云浮",
+    code: "101281401",
+    "children": [{
+      value: "罗定",
+      label: "罗定",
+      code: "101281402"
+    }, {
+      value: "新兴",
+      label: "新兴",
+      code: "101281403"
+    }, {
+      value: "郁南",
+      label: "郁南",
+      code: "101281404"
+    }, {
+      value: "云城",
+      label: "云城",
+      code: "101281405"
+    }, {
+      value: "云安",
+      label: "云安",
+      code: "101281406"
+    }]
+  }, {
+    value: "潮州",
+    label: "潮州",
+    code: "101281501",
+    "children": [{
+      value: "饶平",
+      label: "饶平",
+      code: "101281502"
+    }, {
+      value: "潮安",
+      label: "潮安",
+      code: "101281503"
+    }, {
+      value: "湘桥",
+      label: "湘桥",
+      code: "101281504"
+    }]
+  }, {
+    value: "东莞",
+    label: "东莞",
+    code: "101281601",
+  }, {
+    value: "中山",
+    label: "中山",
+    code: "101281701",
+  }, {
+    value: "阳江",
+    label: "阳江",
+    code: "101281801",
+    "children": [{
+      value: "阳春",
+      label: "阳春",
+      code: "101281802"
+    }, {
+      value: "阳东",
+      label: "阳东",
+      code: "101281803"
+    }, {
+      value: "阳西",
+      label: "阳西",
+      code: "101281804"
+    }, {
+      value: "江城",
+      label: "江城",
+      code: "101281805"
+    }]
+  }, {
+    value: "揭阳",
+    label: "揭阳",
+    code: "101281901",
+    "children": [{
+      value: "揭西",
+      label: "揭西",
+      code: "101281902"
+    }, {
+      value: "普宁",
+      label: "普宁",
+      code: "101281903"
+    }, {
+      value: "惠来",
+      label: "惠来",
+      code: "101281904"
+    }, {
+      value: "揭东",
+      label: "揭东",
+      code: "101281905"
+    }, {
+      value: "榕城",
+      label: "榕城",
+      code: "101281906"
+    }]
+  }, {
+    value: "茂名",
+    label: "茂名",
+    code: "101282001",
+    "children": [{
+      value: "高州",
+      label: "高州",
+      code: "101282002"
+    }, {
+      value: "化州",
+      label: "化州",
+      code: "101282003"
+    }, {
+      value: "电白",
+      label: "电白",
+      code: "101282004"
+    }, {
+      value: "信宜",
+      label: "信宜",
+      code: "101282005"
+    }, {
+      value: "茂南",
+      label: "茂南",
+      code: "101282007"
+    }]
+  }, {
+    value: "汕尾",
+    label: "汕尾",
+    code: "101282101",
+    "children": [{
+      value: "海丰",
+      label: "海丰",
+      code: "101282102"
+    }, {
+      value: "陆丰",
+      label: "陆丰",
+      code: "101282103"
+    }, {
+      value: "陆河",
+      label: "陆河",
+      code: "101282104"
+    }]
+  }]
+}, {
+  value: "云南",
+  label: "云南",
+  code: "101290101",
+  "children": [{
+    value: "昆明",
+    label: "昆明",
+    code: "101290101",
+    "children": [{
+      value: "五华",
+      label: "五华",
+      code: "101290102"
+    }, {
+      value: "东川",
+      label: "东川",
+      code: "101290103"
+    }, {
+      value: "寻甸",
+      label: "寻甸",
+      code: "101290104"
+    }, {
+      value: "晋宁",
+      label: "晋宁",
+      code: "101290105"
+    }, {
+      value: "宜良",
+      label: "宜良",
+      code: "101290106"
+    }, {
+      value: "石林",
+      label: "石林",
+      code: "101290107"
+    }, {
+      value: "呈贡",
+      label: "呈贡",
+      code: "101290108"
+    }, {
+      value: "富民",
+      label: "富民",
+      code: "101290109"
+    }, {
+      value: "嵩明",
+      label: "嵩明",
+      code: "101290110"
+    }, {
+      value: "禄劝",
+      label: "禄劝",
+      code: "101290111"
+    }, {
+      value: "安宁",
+      label: "安宁",
+      code: "101290112"
+    }, {
+      value: "盘龙",
+      label: "盘龙",
+      code: "101290114"
+    }, {
+      value: "官渡",
+      label: "官渡",
+      code: "101290115"
+    }, {
+      value: "西山",
+      label: "西山",
+      code: "101290116"
+    }]
+  }, {
+    value: "大理",
+    label: "大理",
+    code: "101290201",
+    "children": [{
+      value: "云龙",
+      label: "云龙",
+      code: "101290202"
+    }, {
+      value: "漾濞",
+      label: "漾濞",
+      code: "101290203"
+    }, {
+      value: "永平",
+      label: "永平",
+      code: "101290204"
+    }, {
+      value: "宾川",
+      label: "宾川",
+      code: "101290205"
+    }, {
+      value: "弥渡",
+      label: "弥渡",
+      code: "101290206"
+    }, {
+      value: "祥云",
+      label: "祥云",
+      code: "101290207"
+    }, {
+      value: "巍山",
+      label: "巍山",
+      code: "101290208"
+    }, {
+      value: "剑川",
+      label: "剑川",
+      code: "101290209"
+    }, {
+      value: "洱源",
+      label: "洱源",
+      code: "101290210"
+    }, {
+      value: "鹤庆",
+      label: "鹤庆",
+      code: "101290211"
+    }, {
+      value: "南涧",
+      label: "南涧",
+      code: "101290212"
+    }]
+  }, {
+    value: "红河",
+    label: "红河",
+    code: "101290301",
+    "children": [{
+      value: "石屏",
+      label: "石屏",
+      code: "101290302"
+    }, {
+      value: "建水",
+      label: "建水",
+      code: "101290303"
+    }, {
+      value: "弥勒",
+      label: "弥勒",
+      code: "101290304"
+    }, {
+      value: "元阳",
+      label: "元阳",
+      code: "101290305"
+    }, {
+      value: "绿春",
+      label: "绿春",
+      code: "101290306"
+    }, {
+      value: "开远",
+      label: "开远",
+      code: "101290307"
+    }, {
+      value: "个旧",
+      label: "个旧",
+      code: "101290308"
+    }, {
+      value: "蒙自",
+      label: "蒙自",
+      code: "101290309"
+    }, {
+      value: "屏边",
+      label: "屏边",
+      code: "101290310"
+    }, {
+      value: "泸西",
+      label: "泸西",
+      code: "101290311"
+    }, {
+      value: "金平",
+      label: "金平",
+      code: "101290312"
+    }, {
+      value: "河口",
+      label: "河口",
+      code: "101290313"
+    }]
+  }, {
+    value: "曲靖",
+    label: "曲靖",
+    code: "101290401",
+    "children": [{
+      value: "沾益",
+      label: "沾益",
+      code: "101290402"
+    }, {
+      value: "陆良",
+      label: "陆良",
+      code: "101290403"
+    }, {
+      value: "富源",
+      label: "富源",
+      code: "101290404"
+    }, {
+      value: "马龙",
+      label: "马龙",
+      code: "101290405"
+    }, {
+      value: "师宗",
+      label: "师宗",
+      code: "101290406"
+    }, {
+      value: "罗平",
+      label: "罗平",
+      code: "101290407"
+    }, {
+      value: "会泽",
+      label: "会泽",
+      code: "101290408"
+    }, {
+      value: "宣威",
+      label: "宣威",
+      code: "101290409"
+    }, {
+      value: "麒麟",
+      label: "麒麟",
+      code: "101290410"
+    }]
+  }, {
+    value: "保山",
+    label: "保山",
+    code: "101290501",
+    "children": [{
+      value: "隆阳",
+      label: "隆阳",
+      code: "101290502"
+    }, {
+      value: "龙陵",
+      label: "龙陵",
+      code: "101290503"
+    }, {
+      value: "施甸",
+      label: "施甸",
+      code: "101290504"
+    }, {
+      value: "昌宁",
+      label: "昌宁",
+      code: "101290505"
+    }, {
+      value: "腾冲",
+      label: "腾冲",
+      code: "101290506"
+    }]
+  }, {
+    value: "文山",
+    label: "文山",
+    code: "101290601",
+    "children": [{
+      value: "西畴",
+      label: "西畴",
+      code: "101290602"
+    }, {
+      value: "马关",
+      label: "马关",
+      code: "101290603"
+    }, {
+      value: "麻栗坡",
+      label: "麻栗坡",
+      code: "101290604"
+    }, {
+      value: "砚山",
+      label: "砚山",
+      code: "101290605"
+    }, {
+      value: "丘北",
+      label: "丘北",
+      code: "101290606"
+    }, {
+      value: "广南",
+      label: "广南",
+      code: "101290607"
+    }, {
+      value: "富宁",
+      label: "富宁",
+      code: "101290608"
+    }]
+  }, {
+    value: "玉溪",
+    label: "玉溪",
+    code: "101290701",
+    "children": [{
+      value: "澄江",
+      label: "澄江",
+      code: "101290702"
+    }, {
+      value: "江川",
+      label: "江川",
+      code: "101290703"
+    }, {
+      value: "通海",
+      label: "通海",
+      code: "101290704"
+    }, {
+      value: "华宁",
+      label: "华宁",
+      code: "101290705"
+    }, {
+      value: "新平",
+      label: "新平",
+      code: "101290706"
+    }, {
+      value: "易门",
+      label: "易门",
+      code: "101290707"
+    }, {
+      value: "峨山",
+      label: "峨山",
+      code: "101290708"
+    }, {
+      value: "元江",
+      label: "元江",
+      code: "101290709"
+    }, {
+      value: "红塔",
+      label: "红塔",
+      code: "101290710"
+    }]
+  }, {
+    value: "楚雄",
+    label: "楚雄",
+    code: "101290801",
+    "children": [{
+      value: "大姚",
+      label: "大姚",
+      code: "101290802"
+    }, {
+      value: "元谋",
+      label: "元谋",
+      code: "101290803"
+    }, {
+      value: "姚安",
+      label: "姚安",
+      code: "101290804"
+    }, {
+      value: "牟定",
+      label: "牟定",
+      code: "101290805"
+    }, {
+      value: "南华",
+      label: "南华",
+      code: "101290806"
+    }, {
+      value: "武定",
+      label: "武定",
+      code: "101290807"
+    }, {
+      value: "禄丰",
+      label: "禄丰",
+      code: "101290808"
+    }, {
+      value: "双柏",
+      label: "双柏",
+      code: "101290809"
+    }, {
+      value: "永仁",
+      label: "永仁",
+      code: "101290810"
+    }]
+  }, {
+    value: "普洱",
+    label: "普洱",
+    code: "101290901",
+    "children": [{
+      value: "景谷",
+      label: "景谷",
+      code: "101290902"
+    }, {
+      value: "景东",
+      label: "景东",
+      code: "101290903"
+    }, {
+      value: "澜沧",
+      label: "澜沧",
+      code: "101290904"
+    }, {
+      value: "思茅",
+      label: "思茅",
+      code: "101290905"
+    }, {
+      value: "墨江",
+      label: "墨江",
+      code: "101290906"
+    }, {
+      value: "江城",
+      label: "江城",
+      code: "101290907"
+    }, {
+      value: "孟连",
+      label: "孟连",
+      code: "101290908"
+    }, {
+      value: "西盟",
+      label: "西盟",
+      code: "101290909"
+    }, {
+      value: "镇沅",
+      label: "镇沅",
+      code: "101290911"
+    }, {
+      value: "宁洱",
+      label: "宁洱",
+      code: "101290912"
+    }]
+  }, {
+    value: "昭通",
+    label: "昭通",
+    code: "101291001",
+    "children": [{
+      value: "鲁甸",
+      label: "鲁甸",
+      code: "101291002"
+    }, {
+      value: "彝良",
+      label: "彝良",
+      code: "101291003"
+    }, {
+      value: "镇雄",
+      label: "镇雄",
+      code: "101291004"
+    }, {
+      value: "威信",
+      label: "威信",
+      code: "101291005"
+    }, {
+      value: "巧家",
+      label: "巧家",
+      code: "101291006"
+    }, {
+      value: "绥江",
+      label: "绥江",
+      code: "101291007"
+    }, {
+      value: "永善",
+      label: "永善",
+      code: "101291008"
+    }, {
+      value: "盐津",
+      label: "盐津",
+      code: "101291009"
+    }, {
+      value: "大关",
+      label: "大关",
+      code: "101291010"
+    }, {
+      value: "水富",
+      label: "水富",
+      code: "101291011"
+    }, {
+      value: "昭阳",
+      label: "昭阳",
+      code: "101291012"
+    }]
+  }, {
+    value: "临沧",
+    label: "临沧",
+    code: "101291101",
+    "children": [{
+      value: "沧源",
+      label: "沧源",
+      code: "101291102"
+    }, {
+      value: "耿马",
+      label: "耿马",
+      code: "101291103"
+    }, {
+      value: "双江",
+      label: "双江",
+      code: "101291104"
+    }, {
+      value: "凤庆",
+      label: "凤庆",
+      code: "101291105"
+    }, {
+      value: "永德",
+      label: "永德",
+      code: "101291106"
+    }, {
+      value: "云县",
+      label: "云县",
+      code: "101291107"
+    }, {
+      value: "镇康",
+      label: "镇康",
+      code: "101291108"
+    }, {
+      value: "临翔",
+      label: "临翔",
+      code: "101291109"
+    }]
+  }, {
+    value: "怒江",
+    label: "怒江",
+    code: "101291201",
+    "children": [{
+      value: "福贡",
+      label: "福贡",
+      code: "101291203"
+    }, {
+      value: "兰坪",
+      label: "兰坪",
+      code: "101291204"
+    }, {
+      value: "泸水",
+      label: "泸水",
+      code: "101291205"
+    }, {
+      value: "贡山",
+      label: "贡山",
+      code: "101291207"
+    }]
+  }, {
+    value: "迪庆",
+    label: "迪庆",
+    code: "101291301",
+    "children": [{
+      value: "德钦",
+      label: "德钦",
+      code: "101291302"
+    }, {
+      value: "维西",
+      label: "维西",
+      code: "101291303"
+    }, {
+      value: "迪庆",
+      label: "迪庆",
+      code: "101291305"
+    }]
+  }, {
+    value: "丽江",
+    label: "丽江",
+    code: "101291401",
+    "children": [{
+      value: "永胜",
+      label: "永胜",
+      code: "101291402"
+    }, {
+      value: "华坪",
+      label: "华坪",
+      code: "101291403"
+    }, {
+      value: "宁蒗",
+      label: "宁蒗",
+      code: "101291404"
+    }, {
+      value: "古城",
+      label: "古城",
+      code: "101291405"
+    }, {
+      value: "玉龙",
+      label: "玉龙",
+      code: "101291406"
+    }]
+  }, {
+    value: "德宏",
+    label: "德宏",
+    code: "101291501",
+    "children": [{
+      value: "陇川",
+      label: "陇川",
+      code: "101291503"
+    }, {
+      value: "盈江",
+      label: "盈江",
+      code: "101291504"
+    }, {
+      value: "瑞丽",
+      label: "瑞丽",
+      code: "101291506"
+    }, {
+      value: "梁河",
+      label: "梁河",
+      code: "101291507"
+    }, {
+      value: "芒市",
+      label: "芒市",
+      code: "101291508"
+    }]
+  }, {
+    value: "西双版纳",
+    label: "西双版纳",
+    code: "101291601",
+    "children": [{
+      value: "西双版纳",
+      label: "西双版纳",
+      code: "101291602"
+    }, {
+      value: "勐海",
+      label: "勐海",
+      code: "101291603"
+    }, {
+      value: "勐腊",
+      label: "勐腊",
+      code: "101291605"
+    }]
+  }]
+}, {
+  value: "广西",
+  label: "广西",
+  code: "101300101",
+  "children": [{
+    value: "南宁",
+    label: "南宁",
+    code: "101300101",
+    "children": [{
+      value: "兴宁",
+      label: "兴宁",
+      code: "101300102"
+    }, {
+      value: "邕宁",
+      label: "邕宁",
+      code: "101300103"
+    }, {
+      value: "横县",
+      label: "横县",
+      code: "101300104"
+    }, {
+      value: "隆安",
+      label: "隆安",
+      code: "101300105"
+    }, {
+      value: "马山",
+      label: "马山",
+      code: "101300106"
+    }, {
+      value: "上林",
+      label: "上林",
+      code: "101300107"
+    }, {
+      value: "武鸣",
+      label: "武鸣",
+      code: "101300108"
+    }, {
+      value: "宾阳",
+      label: "宾阳",
+      code: "101300109"
+    }, {
+      value: "青秀",
+      label: "青秀",
+      code: "101300110"
+    }, {
+      value: "江南",
+      label: "江南",
+      code: "101300111"
+    }, {
+      value: "西乡塘",
+      label: "西乡塘",
+      code: "101300112"
+    }, {
+      value: "良庆",
+      label: "良庆",
+      code: "101300113"
+    }]
+  }, {
+    value: "崇左",
+    label: "崇左",
+    code: "101300201",
+    "children": [{
+      value: "天等",
+      label: "天等",
+      code: "101300202"
+    }, {
+      value: "龙州",
+      label: "龙州",
+      code: "101300203"
+    }, {
+      value: "凭祥",
+      label: "凭祥",
+      code: "101300204"
+    }, {
+      value: "大新",
+      label: "大新",
+      code: "101300205"
+    }, {
+      value: "扶绥",
+      label: "扶绥",
+      code: "101300206"
+    }, {
+      value: "宁明",
+      label: "宁明",
+      code: "101300207"
+    }, {
+      value: "江州",
+      label: "江州",
+      code: "101300208"
+    }]
+  }, {
+    value: "柳州",
+    label: "柳州",
+    code: "101300301",
+    "children": [{
+      value: "柳城",
+      label: "柳城",
+      code: "101300302"
+    }, {
+      value: "城中",
+      label: "城中",
+      code: "101300303"
+    }, {
+      value: "鹿寨",
+      label: "鹿寨",
+      code: "101300304"
+    }, {
+      value: "柳江",
+      label: "柳江",
+      code: "101300305"
+    }, {
+      value: "融安",
+      label: "融安",
+      code: "101300306"
+    }, {
+      value: "融水",
+      label: "融水",
+      code: "101300307"
+    }, {
+      value: "三江",
+      label: "三江",
+      code: "101300308"
+    }, {
+      value: "鱼峰",
+      label: "鱼峰",
+      code: "101300309"
+    }, {
+      value: "柳南",
+      label: "柳南",
+      code: "101300310"
+    }, {
+      value: "柳北",
+      label: "柳北",
+      code: "101300311"
+    }]
+  }, {
+    value: "来宾",
+    label: "来宾",
+    code: "101300401",
+    "children": [{
+      value: "忻城",
+      label: "忻城",
+      code: "101300402"
+    }, {
+      value: "金秀",
+      label: "金秀",
+      code: "101300403"
+    }, {
+      value: "象州",
+      label: "象州",
+      code: "101300404"
+    }, {
+      value: "武宣",
+      label: "武宣",
+      code: "101300405"
+    }, {
+      value: "合山",
+      label: "合山",
+      code: "101300406"
+    }, {
+      value: "兴宾",
+      label: "兴宾",
+      code: "101300407"
+    }]
+  }, {
+    value: "桂林",
+    label: "桂林",
+    code: "101300501",
+    "children": [{
+      value: "秀峰",
+      label: "秀峰",
+      code: "101300502"
+    }, {
+      value: "龙胜",
+      label: "龙胜",
+      code: "101300503"
+    }, {
+      value: "永福",
+      label: "永福",
+      code: "101300504"
+    }, {
+      value: "临桂",
+      label: "临桂",
+      code: "101300505"
+    }, {
+      value: "兴安",
+      label: "兴安",
+      code: "101300506"
+    }, {
+      value: "灵川",
+      label: "灵川",
+      code: "101300507"
+    }, {
+      value: "全州",
+      label: "全州",
+      code: "101300508"
+    }, {
+      value: "灌阳",
+      label: "灌阳",
+      code: "101300509"
+    }, {
+      value: "阳朔",
+      label: "阳朔",
+      code: "101300510"
+    }, {
+      value: "恭城",
+      label: "恭城",
+      code: "101300511"
+    }, {
+      value: "平乐",
+      label: "平乐",
+      code: "101300512"
+    }, {
+      value: "荔浦",
+      label: "荔浦",
+      code: "101300513"
+    }, {
+      value: "资源",
+      label: "资源",
+      code: "101300514"
+    }, {
+      value: "叠彩",
+      label: "叠彩",
+      code: "101300515"
+    }, {
+      value: "象山",
+      label: "象山",
+      code: "101300516"
+    }, {
+      value: "七星",
+      label: "七星",
+      code: "101300517"
+    }, {
+      value: "雁山",
+      label: "雁山",
+      code: "101300518"
+    }]
+  }, {
+    value: "梧州",
+    label: "梧州",
+    code: "101300601",
+    "children": [{
+      value: "藤县",
+      label: "藤县",
+      code: "101300602"
+    }, {
+      value: "万秀",
+      label: "万秀",
+      code: "101300603"
+    }, {
+      value: "苍梧",
+      label: "苍梧",
+      code: "101300604"
+    }, {
+      value: "蒙山",
+      label: "蒙山",
+      code: "101300605"
+    }, {
+      value: "岑溪",
+      label: "岑溪",
+      code: "101300606"
+    }, {
+      value: "长洲",
+      label: "长洲",
+      code: "101300607"
+    }, {
+      value: "龙圩",
+      label: "龙圩",
+      code: "101300608"
+    }]
+  }, {
+    value: "贺州",
+    label: "贺州",
+    code: "101300701",
+    "children": [{
+      value: "昭平",
+      label: "昭平",
+      code: "101300702"
+    }, {
+      value: "富川",
+      label: "富川",
+      code: "101300703"
+    }, {
+      value: "钟山",
+      label: "钟山",
+      code: "101300704"
+    }, {
+      value: "八步",
+      label: "八步",
+      code: "101300705"
+    }, {
+      value: "平桂",
+      label: "平桂",
+      code: "101300706"
+    }]
+  }, {
+    value: "贵港",
+    label: "贵港",
+    code: "101300801",
+    "children": [{
+      value: "桂平",
+      label: "桂平",
+      code: "101300802"
+    }, {
+      value: "平南",
+      label: "平南",
+      code: "101300803"
+    }, {
+      value: "港北",
+      label: "港北",
+      code: "101300804"
+    }, {
+      value: "港南",
+      label: "港南",
+      code: "101300805"
+    }, {
+      value: "覃塘",
+      label: "覃塘",
+      code: "101300806"
+    }]
+  }, {
+    value: "玉林",
+    label: "玉林",
+    code: "101300901",
+    "children": [{
+      value: "博白",
+      label: "博白",
+      code: "101300902"
+    }, {
+      value: "北流",
+      label: "北流",
+      code: "101300903"
+    }, {
+      value: "容县",
+      label: "容县",
+      code: "101300904"
+    }, {
+      value: "陆川",
+      label: "陆川",
+      code: "101300905"
+    }, {
+      value: "兴业",
+      label: "兴业",
+      code: "101300906"
+    }, {
+      value: "玉州",
+      label: "玉州",
+      code: "101300907"
+    }, {
+      value: "福绵",
+      label: "福绵",
+      code: "101300908"
+    }]
+  }, {
+    value: "百色",
+    label: "百色",
+    code: "101301001",
+    "children": [{
+      value: "那坡",
+      label: "那坡",
+      code: "101301002"
+    }, {
+      value: "田阳",
+      label: "田阳",
+      code: "101301003"
+    }, {
+      value: "德保",
+      label: "德保",
+      code: "101301004"
+    }, {
+      value: "靖西",
+      label: "靖西",
+      code: "101301005"
+    }, {
+      value: "田东",
+      label: "田东",
+      code: "101301006"
+    }, {
+      value: "平果",
+      label: "平果",
+      code: "101301007"
+    }, {
+      value: "隆林",
+      label: "隆林",
+      code: "101301008"
+    }, {
+      value: "西林",
+      label: "西林",
+      code: "101301009"
+    }, {
+      value: "乐业",
+      label: "乐业",
+      code: "101301010"
+    }, {
+      value: "凌云",
+      label: "凌云",
+      code: "101301011"
+    }, {
+      value: "田林",
+      label: "田林",
+      code: "101301012"
+    }, {
+      value: "右江",
+      label: "右江",
+      code: "101301013"
+    }]
+  }, {
+    value: "钦州",
+    label: "钦州",
+    code: "101301101",
+    "children": [{
+      value: "浦北",
+      label: "浦北",
+      code: "101301102"
+    }, {
+      value: "灵山",
+      label: "灵山",
+      code: "101301103"
+    }, {
+      value: "钦南",
+      label: "钦南",
+      code: "101301104"
+    }, {
+      value: "钦北",
+      label: "钦北",
+      code: "101301105"
+    }]
+  }, {
+    value: "河池",
+    label: "河池",
+    code: "101301201",
+    "children": [{
+      value: "天峨",
+      label: "天峨",
+      code: "101301202"
+    }, {
+      value: "东兰",
+      label: "东兰",
+      code: "101301203"
+    }, {
+      value: "巴马",
+      label: "巴马",
+      code: "101301204"
+    }, {
+      value: "环江",
+      label: "环江",
+      code: "101301205"
+    }, {
+      value: "罗城",
+      label: "罗城",
+      code: "101301206"
+    }, {
+      value: "宜州",
+      label: "宜州",
+      code: "101301207"
+    }, {
+      value: "凤山",
+      label: "凤山",
+      code: "101301208"
+    }, {
+      value: "南丹",
+      label: "南丹",
+      code: "101301209"
+    }, {
+      value: "都安",
+      label: "都安",
+      code: "101301210"
+    }, {
+      value: "大化",
+      label: "大化",
+      code: "101301211"
+    }, {
+      value: "金城江",
+      label: "金城江",
+      code: "101301212"
+    }]
+  }, {
+    value: "北海",
+    label: "北海",
+    code: "101301301",
+    "children": [{
+      value: "合浦",
+      label: "合浦",
+      code: "101301302"
+    }, {
+      value: "海城",
+      label: "海城",
+      code: "101301304"
+    }, {
+      value: "银海",
+      label: "银海",
+      code: "101301305"
+    }, {
+      value: "铁山港",
+      label: "铁山港",
+      code: "101301306"
+    }]
+  }, {
+    value: "防城港",
+    label: "防城港",
+    code: "101301401",
+    "children": [{
+      value: "上思",
+      label: "上思",
+      code: "101301402"
+    }, {
+      value: "东兴",
+      label: "东兴",
+      code: "101301403"
+    }, {
+      value: "港口",
+      label: "港口",
+      code: "101301404"
+    }, {
+      value: "防城",
+      label: "防城",
+      code: "101301405"
+    }]
+  }]
+}, {
+  value: "海南",
+  label: "海南",
+  code: "101310101",
+  "children": [{
+    value: "海口",
+    label: "海口",
+    code: "101310101",
+    "children": [{
+      value: "秀英",
+      label: "秀英",
+      code: "101310102"
+    }, {
+      value: "龙华",
+      label: "龙华",
+      code: "101310103"
+    }, {
+      value: "琼山",
+      label: "琼山",
+      code: "101310104"
+    }, {
+      value: "美兰",
+      label: "美兰",
+      code: "101310105"
+    }]
+  }, {
+    value: "三亚",
+    label: "三亚",
+    code: "101310201",
+    "children": [{
+      value: "海棠",
+      label: "海棠",
+      code: "101310213"
+    }, {
+      value: "吉阳",
+      label: "吉阳",
+      code: "101310218"
+    }, {
+      value: "天涯",
+      label: "天涯",
+      code: "101310219"
+    }, {
+      value: "崖州",
+      label: "崖州",
+      code: "101310223"
+    }]
+  }, {
+    value: "东方",
+    label: "东方",
+    code: "101310202",
+  }, {
+    value: "临高",
+    label: "临高",
+    code: "101310203",
+  }, {
+    value: "澄迈",
+    label: "澄迈",
+    code: "101310204",
+  }, {
+    value: "儋州",
+    label: "儋州",
+    code: "101310205",
+  }, {
+    value: "昌江",
+    label: "昌江",
+    code: "101310206",
+  }, {
+    value: "白沙",
+    label: "白沙",
+    code: "101310207",
+  }, {
+    value: "琼中",
+    label: "琼中",
+    code: "101310208",
+  }, {
+    value: "定安",
+    label: "定安",
+    code: "101310209",
+  }, {
+    value: "屯昌",
+    label: "屯昌",
+    code: "101310210",
+  }, {
+    value: "琼海",
+    label: "琼海",
+    code: "101310211",
+  }, {
+    value: "文昌",
+    label: "文昌",
+    code: "101310212",
+  }, {
+    value: "保亭",
+    label: "保亭",
+    code: "101310214",
+  }, {
+    value: "万宁",
+    label: "万宁",
+    code: "101310215",
+  }, {
+    value: "陵水",
+    label: "陵水",
+    code: "101310216",
+  }, {
+    value: "乐东",
+    label: "乐东",
+    code: "101310221",
+  }, {
+    value: "五指山",
+    label: "五指山",
+    code: "101310222",
+  }, {
+    value: "三沙",
+    label: "三沙",
+    code: "101310301",
+    "children": [{
+      value: "西沙",
+      label: "西沙",
+      code: "101310302"
+    }, {
+      value: "中沙",
+      label: "中沙",
+      code: "101310303"
+    }, {
+      value: "南沙",
+      label: "南沙",
+      code: "101310304"
+    }]
+  }]
+}, {
+  value: "香港",
+  label: "香港",
+  code: "101320101",
+  "children": [{
+    value: "九龙",
+    label: "九龙",
+    code: "101320102"
+  }, {
+    value: "新界",
+    label: "新界",
+    code: "101320103"
+  }]
+}, {
+  value: "澳门",
+  label: "澳门",
+  code: "101330101",
+  "children": [{
+    value: "氹仔岛",
+    label: "氹仔岛",
+    code: "101330102"
+  }, {
+    value: "路环岛",
+    label: "路环岛",
+    code: "101330103"
+  }]
+}, {
+  value: "台湾",
+  label: "台湾",
+  code: "101340101",
+  "children": [{
+    value: "台北",
+    label: "台北",
+    code: "101340101",
+    "children": [{
+      value: "桃园",
+      label: "桃园",
+      code: "101340102"
+    }, {
+      value: "新竹",
+      label: "新竹",
+      code: "101340103"
+    }, {
+      value: "宜兰",
+      label: "宜兰",
+      code: "101340104"
+    }]
+  }, {
+    value: "高雄",
+    label: "高雄",
+    code: "101340201",
+    "children": [{
+      value: "嘉义",
+      label: "嘉义",
+      code: "101340202"
+    }, {
+      value: "台南",
+      label: "台南",
+      code: "101340203"
+    }, {
+      value: "台东",
+      label: "台东",
+      code: "101340204"
+    }, {
+      value: "屏东",
+      label: "屏东",
+      code: "101340205"
+    }]
+  }, {
+    value: "台中",
+    label: "台中",
+    code: "101340401",
+    "children": [{
+      value: "苗栗",
+      label: "苗栗",
+      code: "101340402"
+    }, {
+      value: "彰化",
+      label: "彰化",
+      code: "101340403"
+    }, {
+      value: "南投",
+      label: "南投",
+      code: "101340404"
+    }, {
+      value: "花莲",
+      label: "花莲",
+      code: "101340405"
+    }, {
+      value: "云林",
+      label: "云林",
+      code: "101340406"
+    }]
+  }]
+}]

@@ -1,6 +1,6 @@
 const koaSession = require('koa-session')
 module.exports = session = app => {
-	app.keys = ['captcha']
+	app.keys = ['captcha','cityID']
 
 	app.use(
 		koaSession(

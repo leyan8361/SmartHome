@@ -1,18 +1,20 @@
 <template lang="pug">
 el-main.main
-	transition(v-if="isHome" name="fadeDown")
-		.home-main
-			icon-sunny
-			icon-rainy
-			icon-cloudy
-			icon-flurries
-			icon-storm
-			icon-shower
-	transition(v-else name="fadeUp")
+	transition(name="fadeUp")
 		router-view
 </template>
 
 <script>
+/*
+	//- transition(v-if="isHome" name="fadeDown")
+	//- 	.home-main
+	//- 		icon-sunny
+	//- 		icon-rainy
+	//- 		icon-cloudy
+	//- 		icon-flurries
+	//- 		icon-storm
+	//- 		icon-shower
+*/
 import {Component,Vue} from 'vue-property-decorator'
 import IconSunny from '~/weather/Sunny.vue'
 import IconRainy from '~/weather/Rainy.vue'
@@ -46,6 +48,7 @@ export default class Main extends Vue{
 <style lang="stylus">
 .main
 	background #f0f2f5
+	overflow hidden !important
 .home-main
 	padding 200px
 	height 100vh

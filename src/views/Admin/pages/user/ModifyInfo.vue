@@ -37,8 +37,7 @@ import AvatarUpload from '~/AvatarUpload.vue'
 		...mapState('user', ['name'])
 	},
 	methods:{
-		...mapActions('user', ['modify']),
-		...mapMutations('weather', ['CityID'])
+		...mapActions('user', ['modify'])
 	}
 })
 export default class ModifyInfo extends Vue {
@@ -49,7 +48,8 @@ export default class ModifyInfo extends Vue {
 		address: {
 			province: '',
 			city: '',
-			county: ''
+			county: '',
+			code:''
 		},
 		avatar: null,
 		private:[]
@@ -86,8 +86,6 @@ export default class ModifyInfo extends Vue {
 				}
 				if(this.user.address.province){
 					updatedInfo.address = this.user.address
-					/* 清除城市ID，重新拉取天气信息 */
-					this.CityID()
 				}
 				if(this.user.password){
 					/* 重新设置 Token */

@@ -43,6 +43,11 @@ const User = new mongoose.Schema(
 				type: String,
 				required: false,
 				trim: true
+			},
+			code: {
+				type: String,
+				required: true,
+				trim:true
 			}
 		},
 		private: {
@@ -84,9 +89,12 @@ User.set('toJSON', { getters: true, virtuals: true })
 User.set('toObect', { getters: true, virtuals: true })
 
 User.pre('save', async function (next) {
-	log.success('数据将被保存')
-  await Promise.all([writeImg(this),bcryptPass(this)])
-  next()
+
+	const [avatar, password] = await Promise.all([writeImg(this), bcryptPass(this)])
+	this.avatar = avatar
+	this.password = password
+
+	next()
 })
 User.methods = {
 	comparePassword(newPass, hadBcryptPass) {

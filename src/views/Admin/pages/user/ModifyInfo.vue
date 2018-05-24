@@ -91,11 +91,11 @@ export default class ModifyInfo extends Vue {
 					/* 重新设置 Token */
 					updatedInfo.password = this.user.password
 				}
-				if(this.user.private.length>0){
+				if(this.user.private.length > 0){
 					this.user.private.includes('public') && (this.user.private = [])
 					updatedInfo.private = this.user.private
 				}
-				this.isLoading=true
+				this.isLoading = true
 				if (this.user.avatar) {
 					/* 重新生成图片 */
 					const reader = new FileReader()

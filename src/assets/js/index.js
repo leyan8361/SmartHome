@@ -7,7 +7,7 @@ fs.readFile('./code.txt', 'utf-8',(err, data) => {
 	const area = []
 	const provinces = []
 	let citys = []
-	const second=[]
+	const second = []
 	const regex = /^(?<code>\d+) (?<county>[^\s]+) (?<province>[^\s]+) (?<city>[^\s]+)$/gm
 
 	const address = data.replace(regex, (...e) => {
@@ -82,9 +82,9 @@ fs.readFile('./code.txt', 'utf-8',(err, data) => {
 			}
 		}
 	})
-	fs.writeFile('./city.js', JSON.stringify(area), err => {
-		if (err) {
-			return `写入失败`
+	fs.writeFile('./city.js', JSON.stringify(area), error => {
+		if (error) {
+			return '写入失败'
 		}
 	})
 })

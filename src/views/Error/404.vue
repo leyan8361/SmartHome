@@ -16,7 +16,7 @@ export default class Error extends Vue {
 	waitSecond = 5
 	intervalid = setInterval(this.cutdown, 1000)
 	cutdown() {
-		if (--this.waitSecond == 0) {
+		if (--this.waitSecond === 0) {
 			this.$router.go(-1)
 			clearInterval(this.intervalid)
 		}

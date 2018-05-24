@@ -65,7 +65,7 @@ export default class Header extends Vue{
 		console.log(this.news)
 		setInterval(()=>{
 			if(this.i === this.words.length){
-				this.i=0
+				this.i = 0
 			}
 			this.tipWord = this.words[this.i++]
 		},5000)

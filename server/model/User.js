@@ -109,22 +109,5 @@ User.methods = {
 		})
 	}
 }
-User.statics = {
-	fetch: function(cb) {
-		return this.find({})
-			.sort('update_at')
-			.exec(cb)
-	},
-	findById: function(id, cb) {
-		return this.findOne({ _id: id }).exec(cb)
-	},
-	hasExisted: async function(account) {
-		let result = true
-		await this.findOne({ account: account }, (err, data) => {
-			result = !!data
-		})
-		return result
-	}
-}
 
 module.exports = mongoose.model('User', User)

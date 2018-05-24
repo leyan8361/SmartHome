@@ -25,7 +25,7 @@ export default class User extends Vue{
 		let result = ''
 		address.forEach(e=>{
 			if(e){
-				result +=e
+				result += e
 			}
 		})
 		return result

@@ -7,5 +7,5 @@ export default {
 	news:'',
 	token: Token.get(),
 	keep: true,
-	status: sessionStorage.getItem('status')||'UNLOGIN'
+	status: sessionStorage.getItem('status') || 'UNLOGIN'
 }

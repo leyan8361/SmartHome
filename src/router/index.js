@@ -12,7 +12,7 @@ const router = new Router({
   routes: Routes
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to,from, next) => {
 	NProgress.start()
 
 	if (to.meta.title) {
@@ -43,13 +43,14 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to, from) => {
+	store.commit('ui/home',to.name === 'Home')
 	NProgress.done()
 })
 
 router.onError((to, from) => {
 	NProgress.done()
 	tip.error('发生一点小问题~')
-	next({ path: '/',name:'Index' })
+	router.push({ path: '/',name:'Index' })
 })
 
 export default router

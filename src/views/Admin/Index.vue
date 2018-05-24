@@ -14,6 +14,7 @@ import LayoutAside from './layout/Aside.vue'
 import LayoutHeader from './layout/Header.vue'
 import LayoutMain from './layout/Main.vue'
 import LayoutFooter from './layout/Footer.vue'
+
 @Component({
 	components:{
 		LayoutAside,
@@ -24,7 +25,7 @@ import LayoutFooter from './layout/Footer.vue'
 	computed:{
 		...mapState('user',['account','name','address','avatar']),
 
-		...mapState('weather',['now']),
+		...mapState('weather',['now'])
 	}
 })
 export default class Admin extends Vue{

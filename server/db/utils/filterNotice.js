@@ -4,20 +4,20 @@ module.exports = (notice, account) => {
 	if (notice.length === 0) { return }
 	const result = {}
 	config.type.forEach(e => {
-		result[e]={receive:[],send:[]}
+		result[e] = {receive:[],send:[]}
 	})
 	notice.forEach(e => {
 		if (e.sender === account) {
 			[].push.call(result[e.type].send,{
 				receiver: e.receiver,
         message: e.message,
-        time: moment(e.createdAt).fromNow()
+        date: moment(e.createdAt).fromNow()
 			})
 		} else if (e.receiver === account) {
 			[].push.call(result[e.type].receive,{
 				sender: e.sender,
         message: e.message,
-        time: moment(e.createdAt).fromNow()
+        date: moment(e.createdAt).fromNow()
 			})
 		}
 	})

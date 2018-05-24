@@ -5,7 +5,6 @@ const writeImg = require('../db/utils/writeImg')
 const bcrypt = require('bcryptjs')
 const { SALT_WORK_FACTOR } = require('../../config/auth')
 const filterNotice = require('../db/utils/filterNotice')
-const getCityID = require('../db/utils/cityID')
 const bcryptPass = require('../db/utils/bcryptPass')
 const getWeatherInfo = require('../utils/weather')
 
@@ -30,7 +29,7 @@ module.exports = {
 			news: user.news
 		}
 		const [token,notice,weather] = await Promise.all([Token.generate(account),Notice.find({ $or: [{ receiver: account }, { sender: account }] }),getWeatherInfo(user.address.code)])
-		const value = { token, userInfo,weather,notice:filterNotice(notice, account) }
+		const value = { token,userInfo,weather,notice:filterNotice(notice, account) }
 
 		ctx.send('信息获取成功！',value)
 	},
@@ -45,14 +44,14 @@ module.exports = {
 			news: user.news
 		}
 
-		const [notice,weather]= await Promise.all([Notice.find({ $or: [{ receiver: account }, { sender: account }] }),getWeatherInfo(user.address.code)])
+		const [notice,weather] = await Promise.all([Notice.find({ $or: [{ receiver: account }, { sender: account }] }),getWeatherInfo(user.address.code)])
 		const value = { userInfo,weather,notice:filterNotice(notice, account) }
 
 		ctx.send('信息获取成功！',value)
 	},
 	async registry(ctx) {
 		const userInfo = ctx.request.body
-		if (ctx.session.captcha != userInfo.captcha) {
+		if (ctx.session.captcha !== userInfo.captcha.toString()) {
 			return ctx.sendError('验证码错误！')
 		}
 		const isHad = await User.findOne({ account: userInfo.account })

@@ -55,11 +55,11 @@ export default class InviteFamily extends Vue{
 	}
 	getAddress(){
 		const address = Object.values(this.result.address)
-		if(!address || address.length===0){
-			return this.user.address='*****'
+		if(!address || address.length === 0){
+			return this.user.address = '*****'
 		}
 		let value = ''
-		address.forEach(e=>{ if(e){ value +=e } })
+		address.forEach(e=>{ if(e){ value += e } })
 		this.user.address = value
 	}
 	submitForm() {
@@ -73,7 +73,7 @@ export default class InviteFamily extends Vue{
 			if (!response.success) {
 				return notice.error(response.message)
 			}
-			notice.success(response.message).then(() => {
+			notice.success(response.message,'成功').then(() => {
 				this.$router.push({name:'NoticeFamily'})
 			})
 		})

@@ -2,7 +2,7 @@ function pluralize(time, label) {
   if (time === 1) {
     return time + label
   }
-  return time + label + 's'
+  return `${time + label }s`
 }
 
 export function timeAgo(time) {
@@ -11,9 +11,9 @@ export function timeAgo(time) {
     return pluralize(~~(between / 60), ' minute')
   } else if (between < 86400) {
     return pluralize(~~(between / 3600), ' hour')
-  } else {
-    return pluralize(~~(between / 86400), ' day')
   }
+  return pluralize(~~(between / 86400), ' day')
+
 }
 
 export function parseTime(time, cFormat) {
@@ -21,7 +21,7 @@ export function parseTime(time, cFormat) {
     return null
   }
 
-  if ((time + '').length === 10) {
+  if (`${time }`.length === 10) {
     time = +time * 1000
   }
 
@@ -41,15 +41,17 @@ export function parseTime(time, cFormat) {
     s: date.getSeconds(),
     a: date.getDay()
   }
-  const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
+  const timeStr = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
     let value = formatObj[key]
-    if (key === 'a') return ['一', '二', '三', '四', '五', '六', '日'][value - 1]
+    if (key === 'a') {
+      return ['一', '二', '三', '四', '五', '六', '日'][value - 1]
+    }
     if (result.length > 0 && value < 10) {
-      value = '0' + value
+      value = `0${ value}`
     }
     return value || 0
   })
-  return time_str
+  return timeStr
 }
 
 export function formatTime(time, option) {
@@ -62,28 +64,45 @@ export function formatTime(time, option) {
   if (diff < 30) {
     return '刚刚'
   } else if (diff < 3600) { // less 1 hour
-    return Math.ceil(diff / 60) + '分钟前'
+    return `${Math.ceil(diff / 60) }分钟前`
   } else if (diff < 3600 * 24) {
-    return Math.ceil(diff / 3600) + '小时前'
+    return `${Math.ceil(diff / 3600) }小时前`
   } else if (diff < 3600 * 24 * 2) {
     return '1天前'
   }
   if (option) {
     return parseTime(time, option)
-  } else {
-    return d.getMonth() + 1 + '月' + d.getDate() + '日' + d.getHours() + '时' + d.getMinutes() + '分'
   }
+  return `${d.getMonth() + 1 }月${ d.getDate() }日${ d.getHours() }时${ d.getMinutes() }分`
+
 }
 
 /* 数字 格式化*/
 export function nFormatter(num, digits) {
-  const si = [
-    { value: 1E18, symbol: 'E' },
-    { value: 1E15, symbol: 'P' },
-    { value: 1E12, symbol: 'T' },
-    { value: 1E9, symbol: 'G' },
-    { value: 1E6, symbol: 'M' },
-    { value: 1E3, symbol: 'k' }
+  const si = [{
+      value: 1E18,
+      symbol: 'E'
+    },
+    {
+      value: 1E15,
+      symbol: 'P'
+    },
+    {
+      value: 1E12,
+      symbol: 'T'
+    },
+    {
+      value: 1E9,
+      symbol: 'G'
+    },
+    {
+      value: 1E6,
+      symbol: 'M'
+    },
+    {
+      value: 1E3,
+      symbol: 'k'
+    }
   ]
   for (let i = 0; i < si.length; i++) {
     if (num >= si[i].value) {

@@ -28,10 +28,10 @@ export const checkPassword = [
 		trigger: eventType
 	}
 ]
-export const checkName = (name='昵称') => [
+export const checkName = (name = '昵称') => [
 	{
 		validator: (rule, value, callback) => {
-			if (!value && name!=='备注') {
+			if (!value && name !== '备注') {
 				return callback(new Error(`请输入${name}`))
 			}
 			if (!value && name === '备注') {

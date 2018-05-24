@@ -15,7 +15,7 @@ module.exports = {
 			avatar: user.avatar
 		}
 		if (user.private.length > 0) {
-			user.private.forEach(e => { result[e]=null })
+			user.private.forEach(e => { result[e] = null })
 		}
 		ctx.send('查找成功！',result)
 	},
@@ -33,7 +33,7 @@ module.exports = {
 		if (!hasSaved) {
 			return ctx.sendError('因不可抗拒因素，消息发送失败！')
 		}
-		await User.updateOne({ account: receiver }, { $inc: { "news.family": 1 } })
+		await User.updateOne({ account: receiver }, { $inc: { 'news.family': 1 } })
 		ctx.send('邀请成功！')
 	}
 }

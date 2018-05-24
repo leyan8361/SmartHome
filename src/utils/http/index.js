@@ -16,16 +16,16 @@ const instance = axios.create({
 })
 
 instance.interceptors.request.use(
-	config => {
+	httpConfig => {
 		NProgress.start()
-		if (config.url.indexOf('auth')!==-1) {
+		if (httpConfig.url.indexOf('auth') !== -1) {
 			const token = Token.get()
-			if (token) { config.headers.common['Authorization'] = 'Bearer ' + token }
+			if (token) { httpConfig.headers.common['Authorization'] = `Bearer ${ token}` }
 			else {
 				status.logOut({hasTip:true,isShowLogin:true})
 			}
 		}
-		return config
+		return httpConfig
 	},
 	err => {
 		return Promise.reject(err)

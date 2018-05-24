@@ -3,7 +3,7 @@ import Url from 'config/http'
 
 export default {
 	async search({ commit, state }, account) {
-		return await http.get(Url.auth.family.userInfo,
+		return http.get(Url.auth.family.userInfo,
 			{ params: { account } }).then(response => {
 			if (response.success) {
 				commit('Result',response)
@@ -15,7 +15,7 @@ export default {
 		})
 	},
 	async invite({ commit, state }, verification) {
-		return await http.post(Url.auth.family.member, verification).then(response => {
+		return http.post(Url.auth.family.member, verification).then(response => {
 			console.log(response)
 			if (response.success) {
 			}

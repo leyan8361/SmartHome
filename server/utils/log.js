@@ -1,5 +1,5 @@
 const chalk = require('chalk')
-const {log} = console
+const { log } = console
 module.exports = (function() {
 
   const logs = [{
@@ -26,4 +26,4 @@ module.exports = (function() {
     result[e.type] = text => { log(toLog.call(e).call(null, text)) }
 	})
 	return result
-})()
+}())

@@ -8,7 +8,7 @@ import { mapMutations } from 'vuex'
 
 @Component({
 	methods: {
-		...mapMutations('dialog', ['changeShowStatus']),
+		...mapMutations('dialog', ['changeShowStatus'])
 	},
 	props:{
 		btnText:{

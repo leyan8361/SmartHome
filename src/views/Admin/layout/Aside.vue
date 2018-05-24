@@ -73,21 +73,26 @@ el-aside.aside-admin(width="250px")
 			icon-svg(name="shezhi" size="2.1")
 		el-tooltip(content="分享" placement="top" )
 			icon-svg(name="fenxiang1" size="2.1")
-		el-tooltip(content="退出" placement="top" )
+		el-tooltip(content="退出" placement="top" @click.native="dropOut")
 			icon-svg(name="logout" size="2.1")
 </template>
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState} from 'vuex'
+import status from '@/utils/global/status'
+
 
 @Component({
 	computed:{
-		...mapState('user',['account','name','address','avatar']),
+		...mapState('user',['account','name','address','avatar'])
 	}
 })
 export default class Aside extends Vue{
 	isCollapse = true
+	dropOut(){
+		status.logOut({hasTip:false,isShowLogin:false})
+	}
 }
 </script>
 

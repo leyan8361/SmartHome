@@ -29,10 +29,10 @@ export default class Template extends Vue{
 
 <style lang="stylus">
 @import '../../../assets/css/func'
-.user-main
-	margin 80px
+.user-mai
+	margin 80p
 	height 80vh
-	min-height 80vh
+	min-heiht 80vh
 	width 50vw
 	overflow hidden
 	left 27%

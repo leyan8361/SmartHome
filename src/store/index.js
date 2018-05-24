@@ -7,6 +7,7 @@ import user from './modules/user'
 import weather from './modules/weather'
 import family from './modules/family'
 import notice from './modules/notice'
+import ui from './modules/ui'
 import createLogger from 'vuex/dist/logger'
 
 Vue.use(Vuex)
@@ -20,9 +21,10 @@ export default new Vuex.Store({
 		user,
 		weather,
 		family,
-		notice
+		notice,
+		ui
 	},
 	getters,
-	strict,
+	strict
 	// plugins: strict ? [createLogger()] : []
 })

@@ -1,5 +1,5 @@
 import Token from '@/utils/store/token'
-export default  {
+export default {
 	Token: (state, token = Token.get()) => {
 		state.token = token
 		const expires = 365

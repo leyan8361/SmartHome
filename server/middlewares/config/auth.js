@@ -16,7 +16,7 @@ module.exports = app => {
 			try {
 				const payload = await jwt.verify(token.split(' ')[1], pub)
 			} catch (e) {
-				if ('TokenExpiredError' === e.name) {
+				if (e.name === 'TokenExpiredError') {
 					ctx.sendError('token已过期, 请重新登录！')
 					ctx.throw(401, 'token expired,请及时本地保存数据！')
 				}
@@ -27,5 +27,5 @@ module.exports = app => {
 		}
 		await next()
 	})
-	app.use(koaJwt({ secret: pub }).unless({ path: [/^\/api\//] }))
+	app.use(koaJwt({ secret: pub }).unless({ path: [/^\/api/,/^\/home/,/^\\/] }))
 }

@@ -1,6 +1,14 @@
 <template lang="pug">
 el-main.main
-	transition(name="fadeUp")
+	transition(v-if="isHome" name="fadeDown")
+		.home-main
+			icon-sunny
+			icon-rainy
+			icon-cloudy
+			icon-flurries
+			icon-storm
+			icon-shower
+	transition(v-else name="fadeUp")
 		router-view
 </template>
 
@@ -16,6 +24,8 @@ el-main.main
 	//- 		icon-shower
 */
 import {Component,Vue} from 'vue-property-decorator'
+import {mapState} from 'vuex'
+
 import IconSunny from '~/weather/Sunny.vue'
 import IconRainy from '~/weather/Rainy.vue'
 import IconCloudy from '~/weather/Cloudy.vue'
@@ -31,17 +41,11 @@ import IconShower from '~/weather/Shower.vue'
 		IconStorm,
 		IconShower
 	},
-	watch:{
-		'$router'(to,from){
-			this.isHome = this.$router.currentRoute.name === 'Home'
-		}
+	computed:{
+		...mapState('ui',['isHome'])
 	}
 })
 export default class Main extends Vue{
-	isHome = false
-	created(){
-		this.isHome = this.$router.currentRoute.name === 'Home'
-	}
 }
 </script>
 

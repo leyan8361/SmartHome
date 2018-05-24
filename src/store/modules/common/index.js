@@ -4,7 +4,7 @@ export default {
 	namespaced: true,
 	actions: {
 		async getCaptcha({ state }) {
-			return await http.get(Url.api.captcha)
+			return http.get(Url.api.captcha)
 		}
 	}
 }

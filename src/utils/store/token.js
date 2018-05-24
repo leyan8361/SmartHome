@@ -14,6 +14,6 @@ export default {
   },
   remove() {
     const token = sessionStorage.getItem(TokenKey)
-    token ? sessionStorage.removeItem(TokenKey): Cookies.remove(TokenKey)
+    token ? sessionStorage.removeItem(TokenKey) : Cookies.remove(TokenKey)
   }
 }

@@ -25,7 +25,7 @@ el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="8vh" lock-sc
 </template>
 
 <script>
-import { Vue, Component, } from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator'
 import CitySelect from '~/CitySelect.vue'
 import CaptchaImg from '~/CaptchaImg.vue'
 import AvatarUpload from '~/AvatarUpload.vue'
@@ -155,7 +155,7 @@ export default class RegistryDialog extends Vue {
 				if (this.user.avatar) {
 					const reader = new FileReader()
 					reader.readAsDataURL(this.user.avatar)
-					reader.onloadend=()=>{
+					reader.onloadend = ()=>{
 						this.user.avatar = reader.result
 						this.toRegistry()
 					}

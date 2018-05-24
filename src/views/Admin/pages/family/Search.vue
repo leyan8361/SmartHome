@@ -21,6 +21,7 @@ import notice from '@/utils/ui/notice'
 		...mapActions('family',['search'])
 	}
 })
+
 export default class FamilySearch extends Vue{
 	user={ account:'' }
 	rules = { account: checkAccount}

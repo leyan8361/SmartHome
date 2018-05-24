@@ -1,9 +1,9 @@
-module.exports =  (ctx, msg, commonInfo) => {
+module.exports = (ctx, msg, commonInfo) => {
 	const getClientIp = () => {
 		return ctx.request.headers['x-forwarded-for'] ||
-         (ctx.request.connection && ctx.request.connection.remoteAddress) ||
+         ctx.request.connection && ctx.request.connection.remoteAddress ||
          ctx.request.socket.remoteAddress ||
-         (ctx.request.connection.socket && ctx.request.connection.socket.remoteAddress) || null
+         ctx.request.connection.socket && ctx.request.connection.socket.remoteAddress || null
 	}
 	const {
 		method, // 请求方法 get post或其他

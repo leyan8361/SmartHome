@@ -27,7 +27,7 @@ import RegistryDialog from '../form/RegistryDialog.vue'
 		MainBottom,
 		LoginDialog,
 		RegistryDialog
-	},
+	}
 })
 export default class Main extends Vue {
 	activeItem = 1

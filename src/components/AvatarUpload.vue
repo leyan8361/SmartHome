@@ -1,38 +1,33 @@
 <template lang="pug">
-el-upload( list-type="picture-card" show-file-list :limit="1"
-	:on-preview="handlePictureCardPreview" :on-remove = "handleAvatarRemove"
+el-upload(list-type="picture-card" show-file-list :limit="1"
+	:on-remove = "handleAvatarRemove"
   :before-upload="beforeAvatarUpload" :http-request="handleUpLoad")
 	i.el-icon-plus
-	span.avatar-tip 头像
-	el-dialog.img-dialog(:visible.sync="dialogVisible" append-to-body width="25%" lock-scroll center)
-	img(width="100%" :src="dialogImageUrl")
 </template>
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import tip from '@/utils/ui/tip'
+import {Message} from 'element-ui'
 @Component
 export default class AvatarUpload extends Vue{
-	dialogImageUrl = ''
-	dialogVisible = false
 	beforeAvatarUpload(file) {
 		const isJPGorPNG = file.type === 'image/jpeg' || file.type === 'image/png'
 		const isLt2M = file.size / 1024 / 1024 < 2
 
 		if (!isJPGorPNG) {
-			tip.warn('上传头像图片只能是 JPG 或 PNG 格式!')
+			tip.warning('上传头像图片只能是 JPG 或 PNG 格式!')
 		}
 		if (!isLt2M) {
-			tip.warn('上传头像图片大小不能超过 2MB!')
+			tip.warning('上传头像图片大小不能超过 2MB!')
 		}
 		return isJPGorPNG && isLt2M
 	}
 	handleUpLoad(request) {
+		if(!request.file){
+			return tip.error('请重新上传头像！')
+		}
 		this.$emit('update:avatar', request.file)
-	}
-	handlePictureCardPreview(file) {
-		this.dialogImageUrl = file.url
-		this.dialogVisible = true
 	}
 	handleAvatarRemove(){
 		this.$emit('update:avatar', null)
@@ -115,5 +110,11 @@ imgSize = 80px
 	transition all .2s
 	text-shadow 1px 1px 2px #ccc
 }
-
+.el-upload-list__item-preview{
+	display: none !important;
+}
+.el-upload-list__item-delete{
+	margin-left: -4px !important;
+	transform:scale(1.5);
+}
 </style>

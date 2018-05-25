@@ -20,20 +20,15 @@ module.exports = {
 		ctx.send('查找成功！',result)
 	},
 	async invite(ctx) {
-		const sender = ctx.state.user.data
-		const { message,receiver } = ctx.request.body
-		const type = 'family'
+		const { message,receiver,sender } = ctx.request.body
 		const noticeInfo = {
 			sender,
 			receiver,
 			message,
-			type
+			type:'family'
 		}
-		const hasSaved = await new Notice(noticeInfo).save()
-		if (!hasSaved) {
-			return ctx.sendError('因不可抗拒因素，消息发送失败！')
-		}
-		await User.updateOne({ account: receiver }, { $inc: { 'news.family': 1 } })
+		await Promise.all([User.updateOne({ account: receiver.account }, { $inc: { 'news.family': 1 } }),new Notice(noticeInfo).save()])
+
 		ctx.send('邀请成功！')
 	}
 }

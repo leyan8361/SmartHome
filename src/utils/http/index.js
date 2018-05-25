@@ -41,6 +41,9 @@ instance.interceptors.response.use(
 				case 401:
 					status.logOut({hasTip:true,isShowLogin:true})
 					break
+				case 500:
+					status.logOut({hasTip:true,isShowLogin:true})
+					break
 				default:
 					tip.error(`服务器错误！错误代码：${error.response.status}`)
 			}

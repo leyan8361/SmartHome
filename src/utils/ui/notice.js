@@ -5,7 +5,7 @@ const config = {
 	showClose: true
 }
 const notice = {}
-Array.prototype.forEach.call(['info', 'success', 'warn', 'error'],type => {
+Array.prototype.forEach.call(['info', 'success', 'warning', 'error'],type => {
 	notice[type] = (msg, title = '错误',duration = 1200,position = 'top-right',offset = 0) => {
 		return Promise.resolve(Notification({
 			message: msg,

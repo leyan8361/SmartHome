@@ -3,9 +3,16 @@ const config = require('../../config/notice.json')
 const Notice = new mongoose.Schema(
 	{
 		receiver: {
-			type: String,
-			required: true,
-			trim:true
+			account: {
+				type: String,
+				required: true,
+				trim:true
+			},
+			name: {
+				type: String,
+				required: true,
+				trim:true
+			}
 		},
 		message: {
 			type: String,
@@ -13,9 +20,16 @@ const Notice = new mongoose.Schema(
 			trim:true
 		},
 		sender: {
-			type: String,
-			required: true,
-			trim:true
+			account: {
+				type: String,
+				required: true,
+				trim:true
+			},
+			name: {
+				type: String,
+				required: true,
+				trim:true
+			}
 		},
 		type: {
 			type: String,

@@ -35,7 +35,7 @@ router.beforeEach((to,from, next) => {
 			return next({ path: '/home',name:'Home' })
 		}
 		if (!store.getters.account) {
-			store.dispatch('user/getUserInfo').then(next).catch(next)
+			store.dispatch('user/getUserInfo').then(next).catch(()=>next({ path: '/',name:'Index' }))
 		} else {
 			next()
 		}

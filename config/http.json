@@ -17,7 +17,11 @@
     "family": {
       "userInfo": "/auth/family/userInfo",
       "member": "auth/family/member"
-    }
+		},
+		"news":{
+			"family":"/auth/news/family"
+		}
+
   }
 
 }

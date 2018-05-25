@@ -17,8 +17,7 @@ export default {
 	async invite({ commit, state }, verification) {
 		return http.post(Url.auth.family.member, verification).then(response => {
 			console.log(response)
-			if (response.success) {
-			}
+
 			return response
 		}).catch(error => {
 			console.log(error)

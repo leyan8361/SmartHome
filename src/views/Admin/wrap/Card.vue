@@ -19,7 +19,7 @@ import {Vue,Component,Watch} from 'vue-property-decorator'
 		}
 	}
 })
-export default class Template extends Vue{
+export default class Card extends Vue{
 	title = '标题党'
 	created(){
 		this.title = this.$route.meta.title
@@ -29,8 +29,8 @@ export default class Template extends Vue{
 
 <style lang="stylus">
 @import '../../../assets/css/func'
-.user-mai
-	margin 80p
+.user-main
+	margin 80px
 	height 80vh
 	min-heiht 80vh
 	width 50vw

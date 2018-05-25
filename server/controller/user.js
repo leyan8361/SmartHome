@@ -4,7 +4,7 @@ const Token = require('../utils/token')
 const writeImg = require('../db/utils/writeImg')
 const bcrypt = require('bcryptjs')
 const { SALT_WORK_FACTOR } = require('../../config/auth')
-const filterNotice = require('../db/utils/filterNotice')
+const getNotice = require('../db/utils/getNotice')
 const bcryptPass = require('../db/utils/bcryptPass')
 const getWeatherInfo = require('../utils/weather')
 
@@ -28,8 +28,8 @@ module.exports = {
 			avatar: user.avatar,
 			news: user.news
 		}
-		const [token,notice,weather] = await Promise.all([Token.generate(account),Notice.find({ $or: [{ receiver: account }, { sender: account }] }),getWeatherInfo(user.address.code)])
-		const value = { token,userInfo,weather,notice:filterNotice(notice, account) }
+		const [token,notice,weather] = await Promise.all([Token.generate(account),getNotice(account),getWeatherInfo(user.address.code)])
+		const value = { token,userInfo,weather,notice }
 
 		ctx.send('信息获取成功！',value)
 	},
@@ -44,8 +44,8 @@ module.exports = {
 			news: user.news
 		}
 
-		const [notice,weather] = await Promise.all([Notice.find({ $or: [{ receiver: account }, { sender: account }] }),getWeatherInfo(user.address.code)])
-		const value = { userInfo,weather,notice:filterNotice(notice, account) }
+		const [notice,weather] = await Promise.all([getNotice(account),getWeatherInfo(user.address.code)])
+		const value = { userInfo,weather,notice}
 
 		ctx.send('信息获取成功！',value)
 	},
@@ -107,5 +107,10 @@ module.exports = {
 			}
 			ctx.send('您的信息已更改成功！',{_token})
 		})
+	},
+
+	async newsToZero(ctx) {
+		const account = ctx.state.user.data
+		await User.updateOne({account},{ news: { [ctx.params.type]: 0 } }) && ctx.send('消息数目已清空！')
 	}
 }

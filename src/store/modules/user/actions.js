@@ -57,7 +57,7 @@ export default {
 
 			}
 			return response
-			}).catch(error => {
+		}).catch(error => {
 				console.log(error)
 				return {message:error}
 		})
@@ -67,6 +67,15 @@ export default {
 			if (response.success) {
 				response.token && commit('Token', response.token)
 			}
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
+	},
+	async newsToZero({ commit },type) {
+		return http.delete(Url.auth.news[type]).then(response => {
+			response.success && commit('News',0)
 			return response
 		}).catch(error => {
 			console.log(error)

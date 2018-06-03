@@ -1,28 +1,36 @@
 <template lang="pug">
 .captcha-wrap
-	span(v-html="captcha" @click="handleCaptcha()")
+	span(v-html="captcha" @click="handleCaptcha")
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator'
-import { mapActions } from 'vuex'
+import { Component, Vue ,Watch } from 'vue-property-decorator'
+import { mapActions,mapState } from 'vuex'
 
 @Component({
+	computed: {
+		...mapState('dialog', ['isShowRegistry'])
+	},
 	methods: {
 		...mapActions('common', ['getCaptcha'])
 	}
 })
 export default class CaptchaImg extends Vue {
 	captcha = ''
+
+	created() {
+		this.handleCaptcha()
+	}
+
 	handleCaptcha() {
 		this.getCaptcha().then(res => {
-			if (res.success) {
-				this.captcha = res.captcha
-			}
+			this.captcha = res.captcha
 		})
 	}
-	mounted() {
-		this.handleCaptcha()
+
+	@Watch('isShowRegistry')
+	isGetCaptcha(isShow) {
+		isShow && this.handleCaptcha()
 	}
 }
 </script>

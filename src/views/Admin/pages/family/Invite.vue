@@ -26,13 +26,14 @@ import config from 'config/file'
 	},
 	methods:{
 		...mapActions('family',['invite']),
-		...mapMutations('ui',['setFamilyTab'])
+		...mapMutations('ui',['setFamilyTab']),
+		...mapMutations('notice','addNotice')
 	},
 	watch:{
-		'$router'(to,from){
+		'$route'(to,from){
 			if(!this.result.account){
-					this.$router.push({name:'Home'})
-				}
+				this.$router.push({name:'Home'})
+			}
 			this.user.avatar = this.result.avatar || config.defaultAvatarUrl
 			this.user.name = this.result.name || '*****'
 			this.user.account = this.result.account
@@ -77,6 +78,7 @@ export default class InviteFamily extends Vue{
 			}
 			notice.success(response.message,'成功').then(() => {
 				this.setFamilyTab('other')
+				this.addNotice(verification,'family')
 				this.$router.push({name:'NoticeFamily'})
 			})
 		})

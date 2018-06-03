@@ -1,7 +1,7 @@
 <template lang="pug">
 el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="8vh" lock-scroll center custom-class="dialog r-dialog" :before-close="handleClose")
 	el-form.form(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" label-width="100px"  center status-ico)
-		avatar-upload(:avatar.sync="user.avatar")
+		avatar-upload(:avatar.sync="user.avatar" :is-init="isInit")
 		el-form-item(label="昵称" prop="name")
 			el-input(type="text" v-model.trim="user.name" placeholder="2-8 位字符" clearable)
 		el-form-item(label="账号" prop="account")
@@ -19,7 +19,7 @@ el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="8vh" lock-sc
 	.dialog-footer(slot="footer")
 		el-row
 			el-button.registry(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在注册") 注册
-			el-button(@click="isInit=true,$refs.form.resetFields()") 重置
+			el-button(@click="isInit=!isInit,$refs.form.resetFields()") 重置
 		el-row
 			el-button(type="text" @click="replaceRegistry") 登录已有账号
 </template>
@@ -50,7 +50,8 @@ import http from 'config/http'
 	},
 	methods: {
 		...mapMutations('dialog', ['changeShowStatus', 'replaceRegistry']),
-		...mapActions('user', ['registry', 'hasExisted'])
+		...mapActions('user', ['registry', 'hasExisted']),
+		...mapMutations('user', ['setAccount'])
 	}
 })
 export default class RegistryDialog extends Vue {
@@ -123,9 +124,7 @@ export default class RegistryDialog extends Vue {
 				if (errMsg) { return }
 				this.hasExisted(this.user.account).then(isHad => {
 					this.isHad = isHad
-					if (isHad) {
-						tip.warning('您输入的账号已被注册！', 2000)
-					}
+					if (isHad) { tip.warning('您输入的账号已被注册！', 2000) }
 				})
 			})
 	}
@@ -136,10 +135,11 @@ export default class RegistryDialog extends Vue {
 				if (!response.success) {
 					return tip.error(response.message)
 				}
-        tip.success(response.message, 2000).then(() => {
-          this.changeShowStatus({ name: 'Registry', status: false })
-          this.changeShowStatus({ name: 'Login', status: true })
-        })
+				this.setAccount(this.user.account)
+        tip.success(response.message, 2000).then(this.replaceRegistry)
+			}).catch(e=>{
+				console.log(e)
+				tip.error(e)
 			})
 	}
 	submitForm() {
@@ -152,7 +152,7 @@ export default class RegistryDialog extends Vue {
 					return tip.warning('您输入的账号已被注册！', 2000)
 				}
 				this.isLoading = true
-				if (this.user.avatar) {
+				if (this.user.avatar && typeof this.user.avatar === 'object') {
 					const reader = new FileReader()
 					reader.readAsDataURL(this.user.avatar)
 					reader.onloadend = ()=>{

@@ -1,29 +1,5 @@
 const path = require('path')
 module.exports = {
-	// 项目部署的基础路径
-	// 我们默认假设你的应用将会部署在域名的根部，
-	// 比如 https://www.my-app.com/
-	// 如果你的应用时部署在一个子路径下，那么你需要在这里
-	// 指定子路径。比如，如果你的应用部署在
-	// https://wwwasdasd.foobar.com/my-app/
-	// 那么将  这个值改为 `/my-app/`
-	baseUrl: '/',
-
-	// 将构建好的文件输出到哪里
-	outputDir: 'dist',
-
-	// 是否在保存的时候使用 `eslint-loader` 进行检查。
-	// 有效的值：`ture` | `false` | `"error"`
-	// 当设置为 `"error"` 时，检查出的错误会触发编译失败。
-	lintOnSave: false,
-
-	// 使用带有浏览器内编译器的完整构建版本
-	// 查阅 https://cn.vuejs.org/v2/guide/installation.html#运行时-编译器-vs-只包含运行时
-	compiler: false,
-
-	// 调整内部的 webpack 配置。
-	// 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/webpack.md
-	chainWebpack: config => {},
 	configureWebpack: {
 		resolve: {
 			extensions: ['.vue', '.js', '.ts', '.css', '.styl','.json'],
@@ -84,7 +60,7 @@ module.exports = {
 		// open: process.platform === 'darwin',
 		host: '127.0.0.1',
 		port: 8080,
-		https: false,
+		// https: false,
 		hotOnly: true,
 		hot: true,
 		open: true,
@@ -96,9 +72,9 @@ module.exports = {
 		// 		secure: false,
 		// 	}
 		// }, // string | Object
-		before: app => {
+		// before: app => {
 			// `app` 是一个 express 实例
-		}
+		// }
 	},
 
 	// 三方插件的选项

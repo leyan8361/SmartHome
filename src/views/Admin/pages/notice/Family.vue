@@ -67,7 +67,6 @@ import {mapState,mapActions,mapMutations} from 'vuex'
 	methods:{
 		...mapActions('user',['newsToZero']),
 		...mapMutations('ui',['setFamilyTab'])
-
 	},
 	watch:{
 		'$route'(to,from){
@@ -84,7 +83,6 @@ export default class NoticeFamily extends Vue{
 		!!this.news && this.newsToZero('family')
 		if(this.familyTab === 'other'){
 			this.setFamilyTab('send')
-			// family.send = this.getSendNotice()
 		}else if(this.familyTab === 'send'){
 			this.sendFamilyTab('receive')
 		}

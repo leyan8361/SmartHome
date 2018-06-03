@@ -24,5 +24,8 @@ export default {
 	},
 	News(state, news){
 		state.news = news
+	},
+	setAccount(state, account) {
+		state.account = account
 	}
 }

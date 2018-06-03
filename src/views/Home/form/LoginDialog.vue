@@ -4,7 +4,7 @@ el-dialog(title="登录" :visible="isShowLogin" width="25%" top="15vh" custom-cl
 		el-form-item(label="账号" prop="account")
 			el-input(type="text" v-model.trim="user.account" auto-complete='on' placeholder="账号 / 邮箱" clearable)
 		el-form-item(label="密码" prop="password")
-			el-input(type="password" v-model.trim="user.password" placeholder="6-12位 数字/字母/英文符号" clearable)
+			el-input(type="password" v-model.trim="user.password" placeholder="6-12位 数字/字母/英文符号" clearable ref="passInput")
 		el-checkbox.checkbox(v-model="keep" checked) 下次自动登录
 	.dialog-footer(slot="footer")
 		el-row
@@ -23,12 +23,18 @@ import { checkAccount, checkPassword } from '@/utils/form/check'
 import tip from '@/utils/ui/tip'
 @Component({
 	computed: {
-		...mapState('dialog', ['isShowLogin'])
+		...mapState('dialog', ['isShowLogin']),
+		...mapState('user', ['account'])
 	},
 	methods: {
 		...mapMutations('dialog', ['changeShowStatus', 'replaceLogin']),
 		...mapMutations('user', ['Keep']),
 		...mapActions('user', ['login'])
+	},
+	watch:{
+		isShowLogin(isShow){
+			isShow && this.Init()
+		}
 	}
 })
 export default class LoginDialog extends Vue {
@@ -42,11 +48,12 @@ export default class LoginDialog extends Vue {
 	}
 	isLoading = false
 	keep = true
+	Init(){
+		this.user.account = this.account || ''
+		this.refs.passInput.focus()
+	}
 	handleClose(done) {
-		this.changeShowStatus({
-			name: 'Login',
-			status: false
-		})
+		this.changeShowStatus({ name: 'Login', status: false })
 		done()
 	}
 	submitForm() {
@@ -70,7 +77,6 @@ export default class LoginDialog extends Vue {
 		})
 	}
 	forgetPwd() {
-		/* 模拟现实 */
 		/* 已给您的手机号或者邮箱发送验证码 */
 		/* 输入验证码，默认123456 */
 		/* 验证正确，跳转到修改密码界面 */

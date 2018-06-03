@@ -1,8 +1,8 @@
 const config = require('../../../config/notice.json')
 const moment = require('moment/min/moment-with-locales')
 const Notice = require('../../model/Notice')
-module.exports = async account => {
-	const notice = await Notice.find({ $or: [{ 'receiver.account': account }, { 'sender.account': account }] })
+module.exports = async (account,condition = { $or: [{ 'receiver.account': account }, { 'sender.account': account }] }) => {
+	const notice = await Notice.find(condition)
 
 	if (!notice || notice.length === 0) { return }
 	const result = {}

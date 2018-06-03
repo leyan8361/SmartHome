@@ -15,9 +15,6 @@ export default class PrivateSelect extends Vue{
 		value:'avatar',
 		label:'头像'
 	},{
-		value: 'name',
-		label: '昵称'
-	},{
 		value: 'address',
 		label: '地址'
 	},{

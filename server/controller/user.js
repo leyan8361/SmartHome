@@ -1,5 +1,4 @@
 const User = require('../model/User')
-const Notice = require('../model/Notice')
 const Token = require('../utils/token')
 const writeImg = require('../db/utils/writeImg')
 const bcrypt = require('bcryptjs')

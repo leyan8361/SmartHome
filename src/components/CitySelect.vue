@@ -3,24 +3,22 @@ el-cascader.cascader(:options="CityInfo" v-model="selections" placeholder="è¯·ä»
 </template>
 
 <script>
-	import { Component, Vue, Watch } from 'vue-property-decorator'
+	import { Component, Vue, Watch} from 'vue-property-decorator'
 	import CityInfo from '@/assets/js/city'
+
 	@Component({
-		props: {
-			isInit: {
-				type: Boolean,
-				default: false
-			}
+		props:{
+			isInit:Boolean
 		}
 	})
 	export default class CitySelect extends Vue {
 		selections = []
 		CityInfo = CityInfo
+
+
 		@Watch('isInit')
 		toInit(value, oldValue) {
-			if (value) {
-				this.selections = []
-			}
+			this.selections = []
 		}
 		fillAddress() {
 			if(!this.selections[0]){return}
@@ -61,7 +59,6 @@ el-cascader.cascader(:options="CityInfo" v-model="selections" placeholder="è¯·ä»
 </script>
 
 <style lang="stylus">
-	.cascader {
-		width: 100%;
-	}
+.cascader
+	width 100%
 </style>

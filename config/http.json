@@ -20,6 +20,9 @@
 		},
 		"news":{
 			"family":"/auth/news/family"
+		},
+		"notice":{
+			"family":"/auth/notice/family"
 		}
 
   }

@@ -21,12 +21,8 @@ module.exports = {
 	},
 	async invite(ctx) {
 		const { message,receiver,sender } = ctx.request.body
-		const noticeInfo = {
-			sender,
-			receiver,
-			message,
-			type:'family'
-		}
+		const noticeInfo = { sender, receiver, message, type:'family' }
+
 		await Promise.all([User.updateOne({ account: receiver.account }, { $inc: { 'news.family': 1 } }),new Notice(noticeInfo).save()])
 
 		ctx.send('邀请成功！')

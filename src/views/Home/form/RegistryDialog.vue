@@ -36,7 +36,7 @@ import {
 	checkName,
 	checkCaptcha
 } from '@/utils/form/check'
-import Regular from '@/utils/tool/regular'
+import Regular from '@/utils/regular'
 import tip from '@/utils/ui/tip'
 import http from 'config/http'
 @Component({

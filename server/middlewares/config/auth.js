@@ -3,9 +3,10 @@ const fs = require('fs')
 const auth = require('../../../config/auth.json')
 const koaJwt = require('koa-jwt')
 const path = require('path')
+const {publicKey} = require('../../../config/key')
 
 module.exports = app => {
-	const pub = fs.readFileSync('D:/desktop/bulb/config/rsa_public_key.pem')
+	const pub = fs.readFileSync(publicKey)
 	app.use(async (ctx, next) => {
 		if (ctx.path.indexOf('/auth') >= 0) {
 			const token = ctx.header.authorization

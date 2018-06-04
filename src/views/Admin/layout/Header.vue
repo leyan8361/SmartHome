@@ -8,7 +8,7 @@
 			el-col.notice(:span="10" :push="9")
 				router-link(:to="{name:'NoticeFamily'}")
 					el-col.family(:span="2")
-						el-tooltip(content="您收到新的家庭消息了！" placement="bottom" :disabled="news.family===0")
+						el-tooltip(:content="`${news.family?'您收到新的家庭消息了':'家庭消息'}`" placement="bottom")
 							el-badge(:value="news.family" :max="10" :hidden="news.family===0")
 								icon-svg.notice-icon(name="jiatingfang" size="1.2")
 				router-link(:to="{name:'NoticeElectric'}")

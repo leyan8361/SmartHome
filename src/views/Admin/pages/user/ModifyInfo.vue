@@ -22,7 +22,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { mapState, mapMutations, mapActions } from 'vuex'
 
-import Regular from '@/utils/tool/regular'
+import Regular from '@/utils/regular'
 import tip from '@/utils/ui/tip'
 import CitySelect from '~/CitySelect.vue'
 import PrivateSelect from '~/PrivateSelect.vue'

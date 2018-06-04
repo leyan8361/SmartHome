@@ -5,8 +5,8 @@ const config = {
 	customClass: 'custom-tip',
 	showClose: true
 }
-const tip = {}
-Array.prototype.forEach.call(['info', 'success', 'warning', 'error'],type => {
+
+export default ['info', 'success', 'warning', 'error'].reduce((tip, type) => {
 	tip[type] = (msg, duration = 1500) => {
 		return Promise.resolve(Message({
 			message: msg,
@@ -15,5 +15,5 @@ Array.prototype.forEach.call(['info', 'success', 'warning', 'error'],type => {
 			...config
 		}))
 	}
-})
-export default tip
+	return tip
+}, {})

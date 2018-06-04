@@ -1,4 +1,4 @@
-import Regular from '@/utils/tool/regular'
+import Regular from '@/utils/regular'
 const eventType = 'blur'
 export const checkAccount = [
 	{

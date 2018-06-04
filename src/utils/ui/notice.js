@@ -4,8 +4,7 @@ const config = {
 	customClass: 'custom-notice',
 	showClose: true
 }
-const notice = {}
-Array.prototype.forEach.call(['info', 'success', 'warning', 'error'],type => {
+export default ['info', 'success', 'warning', 'error'].reduce((notice, type) => {
 	notice[type] = (msg, title = '错误',duration = 1200,position = 'top-right',offset = 0) => {
 		return Promise.resolve(Notification({
 			message: msg,
@@ -17,5 +16,5 @@ Array.prototype.forEach.call(['info', 'success', 'warning', 'error'],type => {
 			...config
 		}))
 	}
-})
-export default notice
+	return notice
+}, {})

@@ -27,8 +27,6 @@
     "lint": "eslint --ext .js server & eslint --ext .js,.vue src",
     "postlint": "eslint --fix .js server && eslint --fix .js,.vue src",
     "start": "vue-cli-service serve && nodemon server && nodemon server/db && nodemon server/file",
-    "start:front": "vue-cli-server",
-    "start:back": "nodemon server",
     "stop": "pm2 stop server/index.js",
     "restart": "pm2 restart server/index.js",
     "precommit": "git add -A",
@@ -101,7 +99,7 @@
   ],
   "gitHooks": {
     "pre-commit": "npm run lint",
-    "commit-msg": "node server/utils/verify-commit-msg.js"
+    "commit-msg": "node server/utils/commit"
   },
   "config": {
     "commitizen": {

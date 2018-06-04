@@ -33,7 +33,7 @@ import tip from '@/utils/ui/tip'
 	},
 	watch:{
 		isShowLogin(isShow){
-			isShow && this.Init()
+			isShow && this.account && this.Init()
 		}
 	}
 })

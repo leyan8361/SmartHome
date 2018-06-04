@@ -1,9 +1,9 @@
-const config = require('../../config/db.json')
-
-const fs = require('fs')
 const mongoose = require('mongoose')
+const config = require('../../config/db.json')
 const log = require('../utils/log')
+
 module.exports = () => {
+
 	mongoose.set('debug', (coll, method, query, doc, options) => {
 		let logs = {
 			collection: coll,
@@ -14,7 +14,9 @@ module.exports = () => {
 		}
 		console.log(logs)
 	})
+
 	mongoose.Promise = global.Promise
+
 	const options = {
 		user: config.user,
 		pass: config.password,

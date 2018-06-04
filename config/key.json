@@ -1,0 +1,4 @@
+{
+	"privateKey":"D:/desktop/bulb/config/rsa_private_key.pem",
+	"publicKey": "D:/desktop/bulb/config/rsa_public_key.pem"
+}

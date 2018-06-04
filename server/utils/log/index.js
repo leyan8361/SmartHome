@@ -1,6 +1,6 @@
 const chalk = require('chalk')
-const { log } = console
-module.exports = (function() {
+const logObj = (function() {
+	const { log } = console
 
   const logs = [{
     type: 'error',
@@ -18,12 +18,14 @@ module.exports = (function() {
     type: 'debug',
     func: chalk.bold.white.bgGreenBright
 		}]
+
   const isDebug = process.execArgv[0] && process.execArgv[0].includes('inspect',5)
   const toLog = isDebug ? () => text => text : function(){return this.func}
 
-  const result = {}
-  logs.forEach(e => {
-    result[e.type] = text => { log(toLog.call(e).call(null, text)) }
-	})
-	return result
+	return logs.reduce((_log,e) => {
+		_log[e.type] = text => { log(toLog.call(e).call(null, text)) }
+		return _log
+	}, {})
 }())
+
+module.exports = logObj

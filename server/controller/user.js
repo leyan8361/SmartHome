@@ -1,11 +1,14 @@
+const bcrypt = require('bcryptjs')
+
+const { SALT_WORK_FACTOR } = require('../../config/auth')
+
 const User = require('../model/User')
 const Token = require('../utils/token')
-const writeImg = require('../db/utils/writeImg')
-const bcrypt = require('bcryptjs')
-const { SALT_WORK_FACTOR } = require('../../config/auth')
-const getNotice = require('../db/utils/getNotice')
-const bcryptPass = require('../db/utils/bcryptPass')
-const getWeatherInfo = require('../utils/weather')
+
+const { writeImg, bcryptPass } = require('../utils/db/user')
+
+const { getNotice } = require('../utils/db/notice')
+const { getWeather } = require('../utils/http')
 
 module.exports = {
 
@@ -27,7 +30,7 @@ module.exports = {
 			avatar: user.avatar,
 			news: user.news
 		}
-		const [token,notice,weather] = await Promise.all([Token.generate(account),getNotice(account),getWeatherInfo(user.address.code)])
+		const [token,notice,weather] = await Promise.all([Token.generate(account),getNotice(account),getWeather(user.address.code)])
 		const value = { token,userInfo,weather,notice }
 
 		ctx.send('信息获取成功！',value)
@@ -43,7 +46,7 @@ module.exports = {
 			news: user.news
 		}
 
-		const [notice,weather] = await Promise.all([getNotice(account),getWeatherInfo(user.address.code)])
+		const [notice,weather] = await Promise.all([getNotice(account),getWeather(user.address.code)])
 		const value = { userInfo,weather,notice}
 
 		ctx.send('信息获取成功！',value)

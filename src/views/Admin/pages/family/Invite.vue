@@ -27,17 +27,11 @@ import config from 'config/file'
 	methods:{
 		...mapActions('family',['invite']),
 		...mapMutations('ui',['setFamilyTab']),
-		...mapMutations('notice','addNotice')
+		...mapMutations('notice',['addNotice'])
 	},
 	watch:{
 		'$route'(to,from){
-			if(!this.result.account){
-				this.$router.push({name:'Home'})
-			}
-			this.user.avatar = this.result.avatar || config.defaultAvatarUrl
-			this.user.name = this.result.name || '*****'
-			this.user.account = this.result.account
-			this.getAddress()
+			this.Init()
 		}
 	}
 })
@@ -46,8 +40,11 @@ export default class InviteFamily extends Vue{
 	isLoading = false
 	message = ''
 	created(){
+		this.Init()
+	}
+	Init(){
 		if(!this.result.account){
-			this.$router.push({name:'Home'})
+			this.$router.push({name:'FamilySearch'})
 		}
 		this.user.avatar = this.result.avatar || config.defaultAvatarUrl
 		this.user.name = this.result.name || '*****'
@@ -60,9 +57,8 @@ export default class InviteFamily extends Vue{
 		if(!address || address.length === 0){
 			return this.user.address = '*****'
 		}
-		let value = ''
-		address.forEach(e=>{ if(e){ value += e } })
-		this.user.address = value
+		address.pop()
+		this.user.address = address
 	}
 	submitForm() {
 		this.isLoading = true
@@ -76,9 +72,9 @@ export default class InviteFamily extends Vue{
 			if (!response.success) {
 				return notice.error(response.message)
 			}
+			this.setFamilyTab('other')
+			this.addNotice({...verification, type : 'family' })
 			notice.success(response.message,'成功').then(() => {
-				this.setFamilyTab('other')
-				this.addNotice(verification,'family')
 				this.$router.push({name:'NoticeFamily'})
 			})
 		})

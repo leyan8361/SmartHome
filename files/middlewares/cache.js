@@ -1,7 +1,7 @@
 const staticCache = require('koa-static-cache')
 const serve = require('koa-static')
 module.exports = app => {
-	const file = '../../files'
+	const file = '../../assets'
 
 	app.use(async (ctx, next) => {
 		await next()

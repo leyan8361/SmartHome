@@ -1,6 +1,5 @@
 const onerror = require('koa-onerror')
 const koaLogger = require('koa-logger')
-const log = require('../../utils/log')
 
 module.exports = app => {
   onerror(app)
@@ -9,6 +8,6 @@ module.exports = app => {
 		const start = new Date()
 		await next()
 		const ms = new Date() - start
-		log.info(`${ctx.method} ${ctx.url} - ${ms}ms`)
+		console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 	})
 }

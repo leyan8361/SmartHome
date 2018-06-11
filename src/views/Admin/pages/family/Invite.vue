@@ -64,7 +64,7 @@ export default class InviteFamily extends Vue{
 		this.isLoading = true
 		const verification = {
 			message:this.message || `我是${this.name}`,
-			receiver:{name:this.result.account,account:this.result.account},
+			receiver:{name:this.result.name,account:this.result.account},
 			sender:{name:this.name,account:this.account}
 		}
 		this.invite(verification).then(response => {

@@ -18,6 +18,6 @@ export default {
 
 		const date = moment().fromNow()
 		// Vue.set(state[type], 'send',[].concat.call(state[type].send,{ date, message, receiver }))
-		state[type].send.push({ date, message, receiver })
+		state[type].send.unshift({ date, message, receiver })
 	}
 }

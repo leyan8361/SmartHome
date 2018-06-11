@@ -7,6 +7,8 @@ import FamilySearch from '@/views/Admin/pages/family/Search.vue'
 import FamilyInvite from '@/views/Admin/pages/family/Invite.vue'
 import NoticeFamily from '@/views/Admin/pages/notice/Family.vue'
 import NoticeElectric from '@/views/Admin/pages/notice/Electric.vue'
+import ElectricAdmin from '@/views/Admin/pages/electric/Admin.vue'
+import ElectricView from '@/views/Admin/pages/electric/View.vue'
 import Card from '@/views/Admin/wrap/Card.vue'
 // const Card = () =>
 //   import ('@/views/Admin/pages/Index.vue')
@@ -88,6 +90,27 @@ export default [{
         title: '设备消息'
       }
     }]
-  }]
+		}, {
+			path: 'electric',
+			name:'electric',
+			redirect: '/home',
+			component: Card,
+			children: [{
+				path: 'admin',
+				name: 'ElectricAdmin',
+				component: ElectricAdmin,
+				meta: {
+					title: '管理设备'
+
+				}
+			},{
+				path: 'views',
+				name: 'ElectricView',
+				component: ElectricView,
+				meta: {
+					title:'查看设备'
+				}
+			}]
+	}]
 
 }]

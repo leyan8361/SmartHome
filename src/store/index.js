@@ -7,6 +7,7 @@ import user from './modules/user'
 import weather from './modules/weather'
 import family from './modules/family'
 import notice from './modules/notice'
+import electrics from './modules/electrics'
 import ui from './modules/ui'
 import createLogger from 'vuex/dist/logger'
 
@@ -22,6 +23,7 @@ export default new Vuex.Store({
 		weather,
 		family,
 		notice,
+		electrics,
 		ui
 	},
 	getters,

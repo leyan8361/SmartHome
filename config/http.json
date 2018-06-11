@@ -23,6 +23,9 @@
 		},
 		"notice":{
 			"family":"/auth/notice/family"
+		},
+		"electric":{
+			"bulb":"/auth/electric/bulb"
 		}
 
   }

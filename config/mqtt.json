@@ -1,5 +1,9 @@
 {
 	"localIP":"192.168.43.183",
 	"prot": 1883,
-	"clientId":"SmartHomeClient"
+	"clientId":"SmartHomeClient",
+	"subscribeTopics":[],
+	"publicTopics":[],
+	"username":"Simon",
+	"password":"123456"
 }

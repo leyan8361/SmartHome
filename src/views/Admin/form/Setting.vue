@@ -1,0 +1,5 @@
+	el-tooltip(content="根据天气、生活习惯智能调节灯泡" placeholder="top" :disabled='disable')
+			el-form-item(label="自动模式" prop="automodel")
+				el-checkbox(v-model="bulb.automodel" @change='disable=true')
+		el-form-item(label="高级设置" prop="setting")
+			el-checkbox(v-model="bulb.setting")

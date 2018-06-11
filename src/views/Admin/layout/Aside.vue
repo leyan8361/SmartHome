@@ -5,7 +5,7 @@ el-aside.aside-admin(width="250px")
 	.logo
 		.logo-icon: icon-svg(name="lightbulb" size="2")
 		.logo-text: span Smart Home
-	el-menu.menu(:default-openeds="['2']" :collapse="!isCollapse"
+	el-menu.menu(:default-openeds="['1','2']" :collapse="!isCollapse"
 			background-color="#2D343A" text-color="#b8c7ce" active-text-color="#fff")
 		.user-menu
 			.avatar-menu: img.avatar(:src="avatar" alt="avatar")
@@ -16,19 +16,16 @@ el-aside.aside-admin(width="250px")
 			template(slot="title")
 				i.el-icon-message
 				span(slot="title") 我的设备
-			el-menu-item-group(title="分组一")
-				el-menu-item(index="1-1" v-waves) 选项1
-				el-menu-item(index="1-2") 选项2
-			el-menu-item-group(title="分组二")
-				el-menu-item(index="1-3") 选项3
-			el-submenu(index="1-4")
-				template(slot="title") 选项4
-				el-menu-item(index="1-4-1") 选项4-1
+			router-link(:to="{name:'ElectricView'}" tag="li"  v-waves)
+				el-menu-item(index="1-1") 查看设备
+			router-link(:to="{name:'ElectricAdmin'}" tag="li"  v-waves)
+				el-menu-item(index="1-2") 管理设备
+			el-menu-item(index="1-3") 高级设置
 		el-submenu(index="2")
 			template(slot="title")
 				i.el-icon-menu
 				span(slot="title") 我的家人
-			router-link(:to="{name:'FamilySearch'}" tag="li")
+			router-link(:to="{name:'FamilySearch'}" tag="li"  v-waves)
 				el-menu-item(index="2-1") 邀请家人
 			el-menu-item(index="2-2") 加入家庭
 			el-menu-item(index="2-3") 退出家庭
@@ -37,7 +34,7 @@ el-aside.aside-admin(width="250px")
 			template(slot="title")
 				i.el-icon-menu
 				span(slot="title") 消息通知
-			router-link(:to="{name:'NoticeFamily'}" tag="li")
+			router-link(:to="{name:'NoticeFamily'}" tag="li" v-waves)
 				el-menu-item(index="2-1") 家庭邀请
 			el-menu-item(index="2-2") 电器日志
 			el-menu-item(index="2-3") 天气情况

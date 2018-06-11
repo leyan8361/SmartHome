@@ -58,12 +58,12 @@ import status from '@/utils/global/status'
 })
 export default class Header extends Vue{
 	test=5
-	words = ['天热多加衣服,高级设置可一键离家哦~','高级设置可一键离家哦~','置可一键离家asdsad']
+	words = ['天热多加衣服,高级设置可一键离家哦~','高级设置可一键离家哦~','测试公告']
 	tipWord = ''
+	intervalId=''
 	i=0
 	mounted(){
-		console.log(this.news)
-		setInterval(()=>{
+		this.intervalId = setInterval(()=>{
 			if(this.i === this.words.length){
 				this.i = 0
 			}
@@ -72,6 +72,9 @@ export default class Header extends Vue{
 	}
 	dropOut(){
 		status.logOut({hasTip:false,isShowLogin:false})
+	}
+	beforeDestroy(){
+    clearInterval(this.intervalId)
 	}
 }
 </script>

@@ -4,7 +4,7 @@ const Notice = require('../../../model/Notice')
 
 module.exports = {
 	async getNotice(account,condition = { $or: [{ 'receiver.account': account }, { 'sender.account': account }] }){
-		const notice = await Notice.find(condition)
+		const notice = await Notice.find(condition).sort({createdAt:-1})
 
 		if (!notice || notice.length === 0) { return }
 
@@ -19,7 +19,7 @@ module.exports = {
 			}
 
 			[].push.call(result[e.type][type],{
-				[el]: e[el],
+				[el]: { name: e[el].name, account: e[el].account },
 				message: e.message,
 				date:moment(e.createdAt).fromNow()
 			})

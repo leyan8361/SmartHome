@@ -1,5 +1,4 @@
 const mosca = require('mosca')
-const mqtt = require('mqtt')
 const Auth = require('./auth')
 
 const { dbUrl: url } = require('../config/db')
@@ -24,9 +23,9 @@ const Server = new mosca.Server({
 })
 
 Server.on('ready', async () => {
-	Server.authenticate = Auth.authenticate
-	Server.authorizePublish = Auth.authorizePublish
-	Server.authorizeSubscribe = Auth.authorizeSubscribe
+	// Server.authenticate = Auth.authenticate
+	// Server.authorizePublish = Auth.authorizePublish
+	// Server.authorizeSubscribe = Auth.authorizeSubscribe
 
 	console.log('MQTT 服务器开启成功！1883 端口')
 })

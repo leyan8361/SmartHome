@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\Simon\\Documents\\Arduino\\libraries\\arduino_769720\\src",
+                "E:\\arduino-nightly\\libraries\\Firmata",
+                "C:\\Users\\Simon\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.4.1\\libraries\\ESP8266WiFi\\src",
+                "C:\\Users\\Simon\\Documents\\Arduino\\libraries\\PubSubClient\\src",
+                "C:\\Users\\Simon\\Documents\\Arduino\\libraries\\pubsubclient-2.6\\src",
+                "C:\\Users\\Simon\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.4.1\\cores\\esp8266"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "C:\\Users\\Simon\\Documents\\Arduino\\libraries\\arduino_769720\\src",
+                    "E:\\arduino-nightly\\libraries\\Firmata",
+                    "C:\\Users\\Simon\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.4.1\\libraries\\ESP8266WiFi\\src",
+                    "C:\\Users\\Simon\\Documents\\Arduino\\libraries\\PubSubClient\\src",
+                    "C:\\Users\\Simon\\Documents\\Arduino\\libraries\\pubsubclient-2.6\\src",
+                    "C:\\Users\\Simon\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.4.1\\cores\\esp8266"
+                ]
+            },
+            "intelliSenseMode": "msvc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

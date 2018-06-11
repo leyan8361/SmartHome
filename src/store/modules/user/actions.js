@@ -11,8 +11,9 @@ export default {
 					console.log(response.userInfo)
 					commit('Info', response.userInfo)
 					commit('Token', response.token)
-					dispatch('weather/setInfo',response.weather, {root:true})
-					response.notice && dispatch('notice/setInfo',response.notice, {root:true})
+					;['weather', 'notice', 'electric'].forEach(e => {
+						e && dispatch(`${e}/setInfo`,response[e], {root:true})
+					})
 				}
 				return response
 			})
@@ -50,11 +51,11 @@ export default {
 	async getUserInfo({ state, commit,dispatch }) {
 		return http.get(Url.auth.userInfo).then(response => {
 			if (response.success) {
-				console.log(response.userInfo)
+				console.log(response)
 				commit('Info', response.userInfo)
-				dispatch('weather/setInfo',response.weather, {root:true})
-				response.notice && dispatch('notice/setInfo',response.notice, {root:true})
-
+				;['weather', 'notice', 'electrics'].forEach(e => {
+					e && dispatch(`${e}/setInfo`,response[e], {root:true})
+				})
 			}
 			return response
 		}).catch(error => {

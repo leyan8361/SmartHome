@@ -1,17 +1,18 @@
-import Index from '@/views/Home/Index.vue'
-import Error from '@/views/Error/404.vue'
-import Home from '@/views/Admin/Index.vue'
-import User from '@/views/Admin/pages/user/Index.vue'
-import UserModify from '@/views/Admin/pages/user/ModifyInfo.vue'
-import FamilySearch from '@/views/Admin/pages/family/Search.vue'
-import FamilyInvite from '@/views/Admin/pages/family/Invite.vue'
-import NoticeFamily from '@/views/Admin/pages/notice/Family.vue'
-import NoticeElectric from '@/views/Admin/pages/notice/Electric.vue'
-import ElectricAdmin from '@/views/Admin/pages/electric/Admin.vue'
-import ElectricView from '@/views/Admin/pages/electric/View.vue'
-import Card from '@/views/Admin/wrap/Card.vue'
+import Index from '@/views/Home/Index'
+import Error from '@/views/Error/404'
+import Home from '@/views/Admin/Index'
+import User from '@/views/Admin/pages/user/Index'
+import UserModify from '@/views/Admin/pages/user/ModifyInfo'
+import FamilySearch from '@/views/Admin/pages/family/Search'
+import FamilyInvite from '@/views/Admin/pages/family/Invite'
+import NoticeFamily from '@/views/Admin/pages/notice/Family'
+import NoticeElectric from '@/views/Admin/pages/notice/Electric'
+import ElectricAdmin from '@/views/Admin/pages/electric/Admin'
+import ElectricView from '@/views/Admin/pages/electric/View'
+import WeatherInfo from '@/views/Admin/pages/weather/Index'
+import Card from '@/views/Admin/wrap/Card'
 // const Card = () =>
-//   import ('@/views/Admin/pages/Index.vue')
+//   import ('@/views/Admin/pages/Index')
 export default [{
   path: '/',
   name: 'Index',

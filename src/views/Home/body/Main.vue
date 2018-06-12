@@ -12,12 +12,12 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator'
 import Global from '@/utils/global'
-import HomeNav from './Nav.vue'
-import MainTop from '../pages/Top.vue'
-import MainMiddle from '../pages/Middle.vue'
-import MainBottom from '../pages/Bottom.vue'
-import LoginDialog from '../form/LoginDialog.vue'
-import RegistryDialog from '../form/RegistryDialog.vue'
+import HomeNav from './Nav'
+import MainTop from '../pages/Top'
+import MainMiddle from '../pages/Middle'
+import MainBottom from '../pages/Bottom'
+import LoginDialog from '../form/LoginDialog'
+import RegistryDialog from '../form/RegistryDialog'
 
 @Component({
 	components: {

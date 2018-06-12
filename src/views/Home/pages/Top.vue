@@ -10,8 +10,8 @@ el-container
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
-import IconArrow from '~/IconArrow.vue'
-import SubButton from '~/SubButton.vue'
+import IconArrow from '~/icons/IconArrow'
+import SubButton from '~/element/SubButton'
 
 @Component({
 	components: {

@@ -8,7 +8,7 @@
 
 <script>
 	import { Component, Vue } from 'vue-property-decorator'
-	import BulbSvg from '~/BulbSvg.vue'
+	import BulbSvg from '~/bulb/BulbSvg'
 	@Component({
 		props: {
 			bulb: Object
@@ -32,7 +32,7 @@
 </script>
 
 <style lang="stylus">
-	@import '../assets/css/func';
+	@import '../../assets/css/func';
 
 	.bulb {
 		margin-top: 80px;

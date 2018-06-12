@@ -18,7 +18,7 @@
 			bulb: Object
 		}
 	})
-	export default class BulbVue extends Vue {
+	export default class BulbSvg extends Vue {
 		get brightness(){
 			let brightness = this.bulb.brightness / 255
 			brightness = Math.min(brightness,0.1)

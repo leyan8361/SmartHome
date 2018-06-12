@@ -6,9 +6,9 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import HomeHeader from './body/Header.vue'
-import HomeMain from './body/Main.vue'
-import HomeFooter from './body/Footer.vue'
+import HomeHeader from './body/Header'
+import HomeMain from './body/Main'
+import HomeFooter from './body/Footer'
 @Component({
 	components: {
 		HomeHeader,

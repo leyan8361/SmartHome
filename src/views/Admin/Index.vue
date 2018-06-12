@@ -10,10 +10,10 @@ el-container
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState , mapMutations,mapActions} from 'vuex'
-import LayoutAside from './layout/Aside.vue'
-import LayoutHeader from './layout/Header.vue'
-import LayoutMain from './layout/Main.vue'
-import LayoutFooter from './layout/Footer.vue'
+import LayoutAside from './layout/Aside'
+import LayoutHeader from './layout/Header'
+import LayoutMain from './layout/Main'
+import LayoutFooter from './layout/Footer'
 
 @Component({
 	components:{

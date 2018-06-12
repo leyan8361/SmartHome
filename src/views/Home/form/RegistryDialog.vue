@@ -26,9 +26,9 @@ el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="8vh" lock-sc
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import CitySelect from '~/CitySelect.vue'
-import CaptchaImg from '~/CaptchaImg.vue'
-import AvatarUpload from '~/AvatarUpload.vue'
+import CitySelect from '~/form/CitySelect'
+import CaptchaImg from '~/form/CaptchaImg'
+import AvatarUpload from '~/form/AvatarUpload'
 import { mapState, mapMutations, mapActions } from 'vuex'
 import {
 	checkAccount,

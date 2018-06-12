@@ -24,9 +24,9 @@ import { mapState, mapMutations, mapActions } from 'vuex'
 
 import Regular from '@/utils/regular'
 import tip from '@/utils/ui/tip'
-import CitySelect from '~/CitySelect.vue'
-import PrivateSelect from '~/PrivateSelect.vue'
-import AvatarUpload from '~/AvatarUpload.vue'
+import CitySelect from '~/form/CitySelect'
+import PrivateSelect from '~/form/PrivateSelect'
+import AvatarUpload from '~/form/AvatarUpload'
 @Component({
 	components: {
 		CitySelect,
@@ -140,7 +140,7 @@ export default class ModifyInfo extends Vue {
 		margin-left -4px !important
 		transform scale(1.5)
 .user-form-tip
-	top 30px
+	top 20px
 	font-beautify()
 	font-size 70%
 	position relative

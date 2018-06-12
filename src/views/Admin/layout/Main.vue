@@ -1,45 +1,21 @@
 <template lang="pug">
 el-main.main
-	transition(v-if="isHome" name="fadeDown")
+	transition(v-if="isHome" name="rotate")
 		.home-main
-			icon-sunny
-			icon-rainy
-			icon-cloudy
-			icon-flurries
-			icon-storm
-			icon-shower
-	transition(v-else name="fadeUp")
+			weather-info
+	transition(v-else name="rotate")
 		router-view
 </template>
 
 <script>
-/*
-	//- transition(v-if="isHome" name="fadeDown")
-	//- 	.home-main
-	//- 		icon-sunny
-	//- 		icon-rainy
-	//- 		icon-cloudy
-	//- 		icon-flurries
-	//- 		icon-storm
-	//- 		icon-shower
-*/
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState} from 'vuex'
 
-import IconSunny from '~/weather/Sunny.vue'
-import IconRainy from '~/weather/Rainy.vue'
-import IconCloudy from '~/weather/Cloudy.vue'
-import IconFlurries from '~/weather/Flurries.vue'
-import IconStorm from '~/weather/Storm.vue'
-import IconShower from '~/weather/Shower.vue'
+import WeatherInfo from '~/weather/Index'
+
 @Component({
 	components:{
-		IconSunny,
-		IconRainy,
-		IconCloudy,
-		IconFlurries,
-		IconStorm,
-		IconShower
+		WeatherInfo
 	},
 	computed:{
 		...mapState('ui',['isHome'])

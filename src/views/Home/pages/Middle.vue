@@ -8,7 +8,7 @@ el-row#middle(:span=24)
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
-import IconArrow from '~/IconArrow.vue'
+import IconArrow from '~/icons/IconArrow'
 @Component({
 	components: {
 		IconArrow

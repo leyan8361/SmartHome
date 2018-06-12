@@ -11,7 +11,7 @@ el-row#bottom(:span=24)
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
-import SubButton from '~/SubButton.vue'
+import SubButton from '~/element/SubButton'
 @Component({
 	components: {
 		SubButton

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
@@ -17,7 +17,7 @@ import NProgress from '@/plugins/NProgress'
 Vue.use(NProgress)
 Vue.use(Element)
 
-import IconSvg from '~/IconSvg'
+import IconSvg from '~/icons/Index'
 
 Vue.component('icon-svg', IconSvg)
 

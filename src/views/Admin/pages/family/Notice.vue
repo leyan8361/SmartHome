@@ -69,7 +69,7 @@ export default class FamilyNotice extends Vue{
 </script>
 
 <style lang="stylus">
-@import '../assets/css/func'
+@import '../../../../assets/css/func'
 
 .unread-row
 	background oldlace

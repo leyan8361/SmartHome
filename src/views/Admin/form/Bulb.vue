@@ -18,7 +18,7 @@ el-dialog(title="设置" :visible="isShowBulb" width="28%" top="15vh" custom-cla
 
 <script>
 	import { Component, Vue } from 'vue-property-decorator'
-	import BulbCheckBox from '~/BulbCheckBox'
+	import BulbCheckBox from '~/bulb/CheckBox'
 	import { mapActions } from 'vuex'
 	import notice from '@/utils/ui/notice'
 
@@ -56,10 +56,10 @@ el-dialog(title="设置" :visible="isShowBulb" width="28%" top="15vh" custom-cla
 		}
 
 		submitForm() {
+			!this.bulb.name && (this.bulb.name = this._bulb.name)
 			if(JSON.stringify(this.bulb) === JSON.stringify(this._bulb)){
 				return
 			}
-			!this.bulb.name && (this.bulb.name = this._bulb.name)
 			this.isLoading = true
 			this.updateBulb(this.bulb).then(e=>{
 				this.isLoading = false

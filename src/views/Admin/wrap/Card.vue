@@ -2,12 +2,12 @@
 .user-main
 	el-row#card-title(:span="24" tag="span" type="flex" align="middle" justify="center") {{ title }}
 	close-icon
-	transition( name="rotateDownLeft" )
+	transition(name="bounce")
 		router-view
 </template>
 
 <script>
-import CloseIcon from '~/CloseIcon.vue'
+import CloseIcon from '~/icons/CloseIcon'
 import {Vue,Component,Watch} from 'vue-property-decorator'
 @Component({
 	components:{

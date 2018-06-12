@@ -10,7 +10,7 @@
 <script>
 import { Component,Vue } from 'vue-property-decorator'
 import { mapState,mapActions,mapMutations } from 'vuex'
-import NoticePanel from '~/FamilyNotice'
+import NoticePanel from '@/views/Admin/pages/family/Notice'
 @Component({
 	computed:{
 		...mapState('user',['news']),

@@ -11,7 +11,7 @@ export default {
 					console.log(response.userInfo)
 					commit('Info', response.userInfo)
 					commit('Token', response.token)
-					;['weather', 'notice', 'electric'].forEach(e => {
+					;['weather', 'notice', 'electrics'].forEach(e => {
 						e && dispatch(`${e}/setInfo`,response[e], {root:true})
 					})
 				}

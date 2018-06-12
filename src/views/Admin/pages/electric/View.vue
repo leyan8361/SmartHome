@@ -34,9 +34,6 @@ import BulbForm from '@/views/Admin/form/Bulb'
 	components:{
 		BulbInfo,
 		BulbForm
-	},
-	'$router'(to,from){
-		this.Init()
 	}
 })
 export default class ElectricAdmin extends Vue{
@@ -45,11 +42,8 @@ export default class ElectricAdmin extends Vue{
 	changeCurrBulb(index){
 		this.bulb = this.bulbs[index]
 	}
-	Init(){
-		this.bulb = this.bulbs[0]
-	}
 	created(){
-		this.Init()
+		this.bulb = this.bulbs[0]
 	}
 
 }

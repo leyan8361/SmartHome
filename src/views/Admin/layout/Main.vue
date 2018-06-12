@@ -4,7 +4,7 @@ el-main.main
 		.home-main
 			weather-info
 	transition(v-else name="rotate")
-		router-view
+		router-view(:key="Date.now()")
 </template>
 
 <script>

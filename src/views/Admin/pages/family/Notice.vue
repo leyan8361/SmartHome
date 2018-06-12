@@ -35,20 +35,12 @@ import { mapState,mapMutations } from 'vuex'
 	},
 	props:{
 		data:Array
-	},
-	watch:{
-		'$route'(to,from){
-			this.Init()
-		}
 	}
 })
 export default class FamilyNotice extends Vue{
 	key = 'sender'
 	label = '发送者'
 	created(){
-		this.Init()
-	}
-	Init(){
 		if(this.data[0].receiver.account.length !== 0){
 			this.key = 'receiver'
 			this.label = '接收者'

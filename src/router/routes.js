@@ -31,69 +31,69 @@ export default [{
   meta: {
     title: '主页'
   },
-  children: [{
-    path: 'user',
-    name: 'User',
-    redirect: '/home',
-    component: Card,
-    children: [{
-      path: 'profile',
-      name: 'UserProfile',
-      component: User,
-      meta: {
-        title: '个人主页'
-      }
-    }, {
-      path: 'modify',
-      name: 'UserModify',
-      component: UserModify,
-      meta: {
-        title: '修改信息'
-      }
-    }]
-  }, {
-    path: 'family',
-    name: 'Family',
-    redirect: '/home',
-    component: Card,
-    children: [{
-      path: 'search',
-      name: 'FamilySearch',
-      component: FamilySearch,
-      meta: {
-        title: '搜索用户'
-      }
-    }, {
-      path: 'invite',
-      name: 'FamilyInvite',
-      component: FamilyInvite,
-      meta: {
-        title: '邀请共享'
-      }
-    }]
-  }, {
-    path: 'notice',
-    name: 'Notice',
-    redirect: '/home',
-    component: Card,
-    children: [{
-      path: 'family',
-      name: 'NoticeFamily',
-      component: NoticeFamily,
-      meta: {
-        title: '家庭消息'
-      }
-    }, {
-      path: 'electric',
-      name: 'NoticeElectric',
-      component: NoticeElectric,
-      meta: {
-        title: '设备消息'
-      }
-    }]
+		children: [{
+			path: 'user',
+			name: 'User',
+			redirect: '/home',
+			component: Card,
+			children: [{
+				path: 'profile',
+				name: 'UserProfile',
+				component: User,
+				meta: {
+					title: '个人主页'
+				}
+			}, {
+				path: 'modify',
+				name: 'UserModify',
+				component: UserModify,
+				meta: {
+					title: '修改信息'
+				}
+			}]
+		}, {
+			path: 'family',
+			name: 'Family',
+			redirect: '/home',
+			component: Card,
+			children: [{
+				path: 'search',
+				name: 'FamilySearch',
+				component: FamilySearch,
+				meta: {
+					title: '搜索用户'
+				}
+			}, {
+				path: 'invite',
+				name: 'FamilyInvite',
+				component: FamilyInvite,
+				meta: {
+					title: '邀请共享'
+				}
+			}]
+		}, {
+			path: 'notice',
+			name: 'Notice',
+			redirect: '/home',
+			component: Card,
+			children: [{
+				path: 'family',
+				name: 'NoticeFamily',
+				component: NoticeFamily,
+				meta: {
+					title: '家庭消息'
+				}
+			}, {
+				path: 'electric',
+				name: 'NoticeElectric',
+				component: NoticeElectric,
+				meta: {
+					title: '设备消息'
+				}
+			}]
 		}, {
 			path: 'electric',
-			name:'electric',
+			name: 'electric',
 			redirect: '/home',
 			component: Card,
 			children: [{
@@ -104,12 +104,25 @@ export default [{
 					title: '管理设备'
 
 				}
-			},{
+			}, {
 				path: 'views',
 				name: 'ElectricView',
 				component: ElectricView,
 				meta: {
-					title:'查看设备'
+					title: '查看设备'
+				}
+			}]
+		}, {
+			path: 'weather',
+			name: 'weather',
+			redirect: '/home',
+			component: Card,
+			children: [{
+				path: 'info',
+				name: 'WeatherInfo',
+				component: WeatherInfo,
+				meta: {
+					title: '天气信息'
 				}
 			}]
 	}]

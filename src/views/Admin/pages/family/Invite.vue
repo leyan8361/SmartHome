@@ -28,11 +28,6 @@ import config from 'config/file'
 		...mapActions('family',['invite']),
 		...mapMutations('ui',['setFamilyTab']),
 		...mapMutations('notice',['addNotice'])
-	},
-	watch:{
-		'$route'(to,from){
-			this.Init()
-		}
 	}
 })
 export default class InviteFamily extends Vue{
@@ -40,9 +35,6 @@ export default class InviteFamily extends Vue{
 	isLoading = false
 	message = ''
 	created(){
-		this.Init()
-	}
-	Init(){
 		if(!this.result.account){
 			this.$router.push({name:'FamilySearch'})
 		}

@@ -21,11 +21,6 @@ import NoticePanel from '@/views/Admin/pages/family/Notice'
 		...mapActions('user',['newsToZero']),
 		...mapMutations('ui',['setFamilyTab'])
 	},
-	watch:{
-		'$route'(to,from){
-			this.Init()
-		}
-	},
 	components:{
 		NoticePanel
 	}
@@ -33,9 +28,6 @@ import NoticePanel from '@/views/Admin/pages/family/Notice'
 
 export default class NoticeFamily extends Vue{
 	created(){
-		this.Init()
-	}
-	Init(){
 		!!this.news && this.newsToZero('family')
 		if(this.familyTab === 'other'){
 			this.setFamilyTab('send')

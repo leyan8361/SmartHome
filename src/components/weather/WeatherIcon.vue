@@ -21,9 +21,6 @@ component(:is="view")
 			IconStorm,
 			IconShower
 		},
-		'$route'(to, from) {
-			this.Init()
-		},
 		props:{
 			weather:{
 				type:String,
@@ -38,9 +35,6 @@ component(:is="view")
 	export default class Weather extends Vue {
 		view = 'IconSunny'
 		created() {
-			this.Init()
-		}
-		Init() {
 			const weather = this.weather
 			const code = +this.code
 			if (

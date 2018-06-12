@@ -3,7 +3,7 @@
 	el-row#card-title(:span="24" tag="span" type="flex" align="middle" justify="center") {{ title }}
 	close-icon
 	transition(name="bounce")
-		router-view
+		router-view(:key="Date.now()")
 </template>
 
 <script>
@@ -12,11 +12,6 @@ import {Vue,Component,Watch} from 'vue-property-decorator'
 @Component({
 	components:{
 		CloseIcon
-	},
-	watch:{
-		'$route'(to,from){
-			this.title = this.$route.meta.title
-		}
 	}
 })
 export default class Card extends Vue{

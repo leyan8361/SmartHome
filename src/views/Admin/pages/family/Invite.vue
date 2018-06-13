@@ -75,7 +75,6 @@ export default class InviteFamily extends Vue{
 </script>
 
 <style lang="stylus">
-@import '../../../../assets/css/func'
 .user-avatar img
 	height 120px
 	width 120px

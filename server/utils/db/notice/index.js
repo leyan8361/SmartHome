@@ -1,6 +1,6 @@
 const moment = require('moment')
-const config = require('../../../../config/notice.json')
-const Notice = require('../../../model/Notice')
+const config = require('config/notice')
+const Notice = require('model/Notice')
 
 module.exports = {
 	async getNotice(account,condition = { $or: [{ 'receiver.account': account }, { 'sender.account': account }] }){

@@ -76,8 +76,6 @@ el-dialog(title="设置" :visible="isShowBulb" width="28%" top="15vh" custom-cla
 </script>
 
 <style lang="stylus">
-	@import '../../../assets/css/func.styl';
-
 	.bulb-dialog {
 		font-beautify();
 		z-index: 99999 !important;

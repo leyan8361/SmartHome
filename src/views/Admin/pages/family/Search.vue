@@ -52,7 +52,6 @@ export default class FamilySearch extends Vue{
 </script>
 
 <style lang="stylus">
-@import '../../../../assets/css/func'
 .family-add
 	.el-form-item__label,.family-form-tip
 		font-beautify()

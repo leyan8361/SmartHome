@@ -30,7 +30,6 @@ export default class Middle extends Vue {
 </script>
 
 <style lang="stylus">
-@import '../../../assets/css/animation'
 
 #middle
 	height 100vh

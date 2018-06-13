@@ -23,7 +23,6 @@ export default class Card extends Vue{
 </script>
 
 <style lang="stylus">
-@import '../../../assets/css/func'
 .user-main
 	margin 80px
 	height 80vh

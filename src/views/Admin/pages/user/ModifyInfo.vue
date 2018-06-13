@@ -117,7 +117,6 @@ export default class ModifyInfo extends Vue {
 </script>
 
 <style lang="stylus">
-@import '../../../../assets/css/func'
 .user-modify
 	position relative
 	width 100%

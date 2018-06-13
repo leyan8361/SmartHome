@@ -50,7 +50,6 @@ export default class ElectricAdmin extends Vue{
 </script>
 
 <style lang="stylus">
-@import '../../../../assets/css/func'
 .tip-when-no-electric
 	font-beautify()
 	margin 120px

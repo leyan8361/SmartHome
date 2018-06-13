@@ -1,7 +1,7 @@
 const logger = require('./log')
 const onerror = require('koa-onerror')
 const koaLogger = require('koa-logger')
-const log = require('../../utils/log')
+const log = require('utils/log')
 const fundebug = require('fundebug-nodejs')
 
 module.exports = app => {

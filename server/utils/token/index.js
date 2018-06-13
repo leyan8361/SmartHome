@@ -1,6 +1,6 @@
 const fs = require('fs')
 const jwt = require('jsonwebtoken')
-const { privateKey } = require('../../../config/key')
+const { privateKey } = require('config/key')
 module.exports = {
 	async generate(data) {
 		const created = Math.floor(Date.now() / 1000)

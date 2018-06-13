@@ -40,8 +40,9 @@
 							el-dropdown-item(@click.native="dropOut")
 								icon-svg(name="logout" size="1.2")
 								|退出系统
-			.setting
-				el-button(type="text"): icon-svg.notice-icon(name="shezhi2" size="1.5")
+			el-tooltip(content="高级设置")
+				.setting
+					el-button(type="text"): icon-svg.notice-icon(name="shezhi2" size="1.5")
 </template>
 
 <script>
@@ -80,7 +81,6 @@ export default class Header extends Vue{
 </script>
 
 <style lang="stylus">
-@import '../../../assets/css/variables'
 
 .admin-header
 	width 100vw

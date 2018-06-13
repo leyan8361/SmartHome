@@ -3,7 +3,7 @@ const koaStatic = require('koa-static')
 const path = require('path')
 
 module.exports = app => {
-	const file = path.resolve('../dist')
+	const file = path.resolve('dist')
 
 	app.use(
 		staticCache(file, {

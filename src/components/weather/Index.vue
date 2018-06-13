@@ -21,24 +21,10 @@ import filterWeatherInfo from '@/utils/weather'
 		WeatherIcon
 	},
 	computed: {
-		...mapState('weather', ['now','forecast','lifeStyle','sun'])
+		...mapState('weather', ['now'])
 	}
 })
 export default class WeatherInfo extends Vue{
-	weather='晴'
-	code=1
-	wind={
-		direction:'西北', //风向
-		power:3, //风力
-		speed:15 //风速
-	}
-
-	temperature = 30 //温度
-	humidity = 40 //相对湿度
-
-	precipitation = 0 //降水量
-	seeing = 10 //能见度 单位公里
-
 	created(){
 		Object.assign(this,filterWeatherInfo(this.now))
 	}
@@ -46,7 +32,6 @@ export default class WeatherInfo extends Vue{
 </script>
 
 <style lang="stylus">
-@import '../../assets/css/func'
 .weather-info
 	font-beautify()
 	position absolute
@@ -59,6 +44,8 @@ export default class WeatherInfo extends Vue{
 	padding 100px
 	.weather-base-info
 		margin-top 70px
+		z-index 999
+		opacity .8
 		& *
 			padding 10px
 	.more-info-weather-link

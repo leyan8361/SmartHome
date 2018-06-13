@@ -1,6 +1,6 @@
-const User = require('../model/User')
-const Family = require('../model/Family')
-const Notice = require('../model/Notice')
+const User = require('model/User')
+const Family = require('model/Family')
+const Notice = require('model/Notice')
 module.exports = {
 	async search(ctx) {
 		const { account } = ctx.request.query

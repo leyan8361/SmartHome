@@ -1,7 +1,8 @@
 const fs = require('fs')
-const config = require('../../../../config/file')
 const bcrypt = require('bcryptjs')
-const { SALT_WORK_FACTOR } = require('../../../../config/auth')
+const config = require('config/file')
+const { SALT_WORK_FACTOR } = require('config/auth')
+
 module.exports = {
 	async writeImg(user) {
 		if (!user.avatar) { return config.defaultAvatarUrl }

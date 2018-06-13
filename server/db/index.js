@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const config = require('../../config/db.json')
-const log = require('../utils/log')
+const config = require('config/db')
+const log = require('utils/log')
 
 module.exports = () => {
 

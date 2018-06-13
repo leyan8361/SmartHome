@@ -41,7 +41,6 @@ export default class Top extends Vue {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../assets/css/animation'
 .aside
 	position fixed
 	bottom 8vh

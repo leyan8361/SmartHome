@@ -1,5 +1,5 @@
-const Electric = require('../model/Electric')
-const Client = require('../utils/mqtt')
+const Electric = require('model/Electric')
+const Client = require('utils/mqtt')
 
 module.exports = {
 	async updateBulb(ctx) {

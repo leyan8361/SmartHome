@@ -1,10 +1,9 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 
-const log = require('../utils/log')
-const { writeImg, bcryptPass } = require('../utils/db/user')
+const { writeImg, bcryptPass } = require('utils/db/user')
 
-const notice = require('../../config/notice')
+const notice = require('config/notice')
 
 const User = new mongoose.Schema(
 	{

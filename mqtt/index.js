@@ -1,12 +1,14 @@
+require('module-alias/register')
+
 const mosca = require('mosca')
 const Auth = require('./auth')
 
-const { dbUrl: url } = require('../config/db')
-const { localIP: IP, port, clientId } = require('../config/mqtt')
+const { dbUrl: url } = require('config/db')
+const { localIP: host, port, clientId } = require('config/mqtt')
 
 const Server = new mosca.Server({
 	port,
-	host: IP,
+	host,
 	backend: {
 		type: 'mongo',
 		url,

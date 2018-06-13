@@ -26,7 +26,6 @@ export default class Bottom extends Vue {
 </script>
 
 <style lang="stylus">
-@import '../../../assets/css/animation'
 
 #bottom
 	height 100vh

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const config = require('../../config/notice.json')
+const config = require('config/notice')
 const Notice = new mongoose.Schema(
 	{
 		receiver: {

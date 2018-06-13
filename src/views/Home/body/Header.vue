@@ -32,7 +32,6 @@ export default class Header extends Vue {
 </script>
 
 <style lang="stylus">
-@import '../../../assets/css/variables'
 
 .header
 	width 100vw

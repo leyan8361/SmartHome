@@ -1,5 +1,4 @@
-const mosca = require('mosca')
-const AuthModel = require('../server/model/Auth')
+const AuthModel = require('model/Auth')
 
 class Auth extends Array {
 	constructor(data) {

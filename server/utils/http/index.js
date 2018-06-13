@@ -1,5 +1,5 @@
 const axios = require('axios')
-const config = require('../../../config/weather')
+const config = require('config/weather')
 
 module.exports = {
 	async getWeather(cityID) {

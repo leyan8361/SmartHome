@@ -1,8 +1,8 @@
-const Common = require('../controller/common')
-const User = require('../controller/user')
-const Family = require('../controller/family')
-const Notice = require('../controller/notice')
-const Electric = require('../controller/electric')
+const Common = require('controller/common')
+const User = require('controller/user')
+const Family = require('controller/family')
+const Notice = require('controller/notice')
+const Electric = require('controller/electric')
 
 const auth = require('koa-router')()
 const fami = require('koa-router')()

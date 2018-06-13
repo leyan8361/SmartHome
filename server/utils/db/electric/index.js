@@ -1,4 +1,4 @@
-const Electric = require('../../../model/Electric')
+const Electric = require('model/Electric')
 
 module.exports = {
 	async getElectrics(account) {

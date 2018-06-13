@@ -32,8 +32,6 @@
 </script>
 
 <style lang="stylus">
-	@import '../../assets/css/func';
-
 	.bulb {
 		margin-top: 80px;
 	}

@@ -1,9 +1,7 @@
 const jwt = require('jsonwebtoken')
 const fs = require('fs')
-const auth = require('../../../config/auth.json')
 const koaJwt = require('koa-jwt')
-const path = require('path')
-const {publicKey} = require('../../../config/key')
+const {publicKey} = require('config/key')
 
 module.exports = app => {
 	const pub = fs.readFileSync(publicKey)

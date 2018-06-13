@@ -1,7 +1,7 @@
 const log4js = require('log4js')
 const access = require('./access') // 引入日志输出信息的封装文件
 const path = require('path')
-const config = require('../../../config/log.json')
+const config = require('config/log')
 const methods = ['trace', 'debug', 'info', 'warn', 'error', 'fatal', 'mark']
 
 // 提取默认公用参数对象

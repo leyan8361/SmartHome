@@ -1,17 +1,28 @@
 const path = require('path')
+
 module.exports = {
-	configureWebpack: {
-		resolve: {
-			extensions: ['.vue', '.js', '.ts', '.css', '.styl','.json'],
-			alias: {
-				'@': path.resolve('src'),
-				'~': '@/components',
-				img: '@/assets/img',
-				plugins: '@/plugins',
-				server: path.resolve('server'),
-				model: 'server/model',
-				config: path.resolve('config'),
-				api: 'server/api'
+	configureWebpack: config => {
+		// 为生产环境修改配置...
+		if (process.env.NODE_ENV === 'production') {
+			//html文件引入绝对地址
+			config.output.publicPath = ''//不生成.map文件
+			config.devtool = false
+		} else {
+			// 为开发环境修改配置...
+		}
+		return {
+			resolve: {
+				extensions: ['.vue', '.js', '.ts', '.css', '.styl', '.json'],
+				alias: {
+					'@': path.resolve('src'),
+					'~': '@/components',
+					img: '@/assets/img',
+					plugins: '@/plugins',
+					server: path.resolve('server'),
+					config: path.resolve('config'),
+					api: 'server/api',
+					model:'./server/model'
+				}
 			}
 		}
 	},
@@ -21,19 +32,28 @@ module.exports = {
 	// vueLoader: {},
 
 	// 是否为生产环境构建生成 source map？
-	productionSourceMap: true,
+	productionSourceMap: false,
 
 	// CSS 相关选项
 	css: {
 		// 将组件内的 CSS 提取到一个单独的 CSS 文件 (只用在生产环境中)
-		extract: true,
+		// extract: true,
 
 		// 是否开启 CSS source map？
-		sourceMap: false,
+		// sourceMap: false,
 
 		// 为预处理器的 loader 传递自定义选项。比如传递给
 		// sass-loader 时，使用 `{ sass: { ... } }`。
-		loaderOptions: {}
+		loaderOptions: {
+			stylus: {
+				'resolve url': true,
+				import: [
+					path.resolve(__dirname, './src/assets/css/func.styl'),
+					path.resolve(__dirname, './src/assets/css/variables.styl'),
+					path.resolve(__dirname, './src/assets/css/animation.styl')
+				] // 指向自定义主题文件
+			}
+		}
 
 		// 为所有的 CSS 及其预处理文件开启 CSS Modules。
 		// 这个选项不会影响 `*.vue` 文件。
@@ -63,7 +83,7 @@ module.exports = {
 		// https: false,
 		hotOnly: true,
 		hot: true,
-		open: true,
+		open: true
 		// 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/cli-service.md#配置代理
 		// proxy: {
 		// 	'/api': {
@@ -73,7 +93,7 @@ module.exports = {
 		// 	}
 		// }, // string | Object
 		// before: app => {
-			// `app` 是一个 express 实例
+		// `app` 是一个 express 实例
 		// }
 	},
 

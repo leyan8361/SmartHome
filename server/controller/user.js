@@ -1,15 +1,11 @@
-const bcrypt = require('bcryptjs')
+const User = require('model/User')
+const Token = require('utils/token')
 
-const { SALT_WORK_FACTOR } = require('../../config/auth')
+const { writeImg, bcryptPass } = require('utils/db/user')
 
-const User = require('../model/User')
-const Token = require('../utils/token')
-
-const { writeImg, bcryptPass } = require('../utils/db/user')
-
-const { getNotice } = require('../utils/db/notice')
-const { getElectrics } = require('../utils/db/electric')
-const { getWeather } = require('../utils/http')
+const { getNotice } = require('utils/db/notice')
+const { getElectrics } = require('utils/db/electric')
+const { getWeather } = require('utils/http')
 
 module.exports = {
 

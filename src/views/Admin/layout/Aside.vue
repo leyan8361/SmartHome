@@ -33,11 +33,12 @@ el-aside.aside-admin(width="250px")
 		el-submenu(index="3")
 			template(slot="title")
 				i.el-icon-menu
-				span(slot="title") 消息通知
+				span(slot="title") 消息信息
 			router-link(:to="{name:'NoticeFamily'}" tag="li" v-waves)
 				el-menu-item(index="2-1") 家庭邀请
 			el-menu-item(index="2-2") 电器日志
-			el-menu-item(index="2-3") 天气情况
+			router-link(:to="{name:'WeatherInfo'}" tag="li"  v-waves)
+				el-menu-item(index="2-3") 天气情况
 			el-menu-item(index="2-4") 使用功耗
 		el-submenu(index="4")
 			template(slot="title")

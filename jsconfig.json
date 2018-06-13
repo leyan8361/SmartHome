@@ -1,5 +1,16 @@
 {
 	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"config": ["./config"],
+			"model": ["./server/model"],
+			"controller": ["./server/controller"],
+			"db": ["./server/db"],
+			"utils": ["./server/utils"],
+			"middlewares": ["./server/middlewares"],
+			"routes": ["./server/routes"],
+			"dist": ["./dist"]
+		},
 		"allowSyntheticDefaultImports": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,

@@ -1,11 +1,11 @@
 <template lang="pug">
 	.weather-info(:span="24" type="flex" align="middle" justify="center")
-		weather-icon(:weather="weather" :code="code")
+		weather-icon.weather-icon(:weather="now.weather" :code="now.code")
 		el-row.weather-base-info
 			.weather-weather
-				| {{weather}}
+				| {{now.weather}}
 			.weather-temperature
-				| {{temperature+'℃'}}
+				| {{now.temperature+'℃'}}
 		router-link.more-info-weather-link(:to="{name:'WeatherInfo'}" v-waves)
 			| 更多信息
 </template>
@@ -37,17 +37,21 @@ export default class WeatherInfo extends Vue{
 	position absolute
 	top 15%
 	left 20%
-	height 300px
+	height 250px
 	width 300px
 	box-shadow 2px 3px 10px #ccc
 	border-radius 10px
-	padding 100px
+	padding 50px 100px
+	.weather-icon
+		position absolute
+		top 25%
+		left 50%
 	.weather-base-info
 		margin-top 70px
 		z-index 999
 		opacity .8
 		& *
-			padding 10px
+			padding 8px 10px
 	.more-info-weather-link
 		display block
 		text-decoration none

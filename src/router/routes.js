@@ -10,6 +10,7 @@ import NoticeElectric from '@/views/Admin/pages/notice/Electric'
 import ElectricAdmin from '@/views/Admin/pages/electric/Admin'
 import ElectricView from '@/views/Admin/pages/electric/View'
 import WeatherInfo from '@/views/Admin/pages/weather/Index'
+import WeatherForecast from '@/views/Admin/pages/weather/Forecast'
 import Card from '@/views/Admin/wrap/Card'
 // const Card = () =>
 //   import ('@/views/Admin/pages/Index')
@@ -123,6 +124,13 @@ export default [{
 				component: WeatherInfo,
 				meta: {
 					title: '天气信息'
+				}
+			},{
+				path:'forecast',
+				name:'WeatherForecast',
+				component:WeatherForecast,
+				meta:{
+					title:'天气预报'
 				}
 			}]
 	}]

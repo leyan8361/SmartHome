@@ -16,10 +16,11 @@
 						el-tooltip(content="设备状态有更新了！" placement="bottom" )
 							el-badge(:value="test" :max="10")
 								icon-svg.notice-icon(name="icon" size="1.2")
-				el-col.weather(:span="2")
-					el-tooltip(content="天气信息有更新！" placement="bottom")
-						el-badge(is-dot)
-							icon-svg.notice-icon(name="shouye" size="1.2")
+				router-link(:to="{name:'WeatherInfo'}")
+					el-col.weather(:span="2")
+						el-tooltip(:content="`${localDate!=currDate?'今天的天气信息更新了！':'天气信息'}`" placement="bottom")
+							el-badge(:is-dot="localDate!=currDate")
+								icon-svg.notice-icon(name="shouye" size="1.2")
 			el-col.person(:span="2" :push="2")
 				.user
 					.avatar-wrap: img.avatar(:src="avatar" alt="avatar")
@@ -63,6 +64,11 @@ export default class Header extends Vue{
 	tipWord = ''
 	intervalId=''
 	i=0
+	currDate = new Date().getDate()
+	localDate = localStorage.localDate
+	created(){
+		!this.localDate && (localStorage.localDate = this.currDate)
+	}
 	mounted(){
 		this.intervalId = setInterval(()=>{
 			if(this.i === this.words.length){

@@ -1,7 +1,7 @@
 export default {
-	async setInfo({ commit },{ weatherInfo, sunInfo, airInfo }) {
+	async setInfo({ commit },weatherInfo) {
 		commit('Weather',weatherInfo)
-		commit('Sun',sunInfo)
-		commit('Air',airInfo)
+		// commit('Sun',sunInfo)
+		// commit('Air',airInfo)
 	}
 }

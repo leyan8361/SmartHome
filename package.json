@@ -24,16 +24,18 @@
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
 		"test": "vue-cli-service test",
-		"prelint": "eslint --ext .js server & eslint --ext .js,.vue src",
-		"lint": "eslint --fix .js server && eslint --fix .js,.vue src",
-		"amend": "git add -A && git commit --amend --no-edit",
 		"start": "vue-cli-service serve && nodemon server && nodemon server/db && nodemon server/file",
 		"stop": "pm2 stop server/index.js",
 		"restart": "pm2 restart server/index.js",
-		"precommit": "git add -A",
-		"commit": "git cz",
 		"version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-		"reset": "firmata-party uno --debug"
+		"reset": "firmata-party uno --debug",
+
+		"prelint": "eslint --ext .js server & eslint --ext .js,.vue src",
+		"lint": "eslint --fix .js server && eslint --fix .js,.vue src",
+		"amend": "git add -A && git commit --amend --no-edit",
+		"precommit": "git add -A && npm run lint",
+		"commit": "git cz",
+		"postcommit":"npm run amend"
 	},
 	"dependencies": {
 		"axios": "^0.18.0",
@@ -106,7 +108,7 @@
 		"ie >= 9"
 	],
 	"gitHooks": {
-		"pre-commit": "npm run lint",
+		"pre-commit": "echo lint被我吃了~",
 		"commit-msg": "node server/utils/commit"
 	},
 	"config": {

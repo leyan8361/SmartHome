@@ -5,21 +5,21 @@ import store from './store'
 import './registerServiceWorker'
 
 import Element from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import 'element-ui/lib/theme-chalk/display.css'
-import 'element-ui/lib/theme-chalk/base.css'
-import 'normalize.css/normalize.css'
-import '@/assets/css/globals.styl'
-import '@/assets/css/func.styl'
-import '@/assets/js/iconfont.js'
-import 'vue2-animate/dist/vue2-animate.min.css'
-import 'nprogress/nprogress.css'
-import NProgress from '@/plugins/NProgress'
-Vue.use(NProgress)
+import 'element-ui/lib/theme-chalk/index'
+import 'element-ui/lib/theme-chalk/display'
+import 'element-ui/lib/theme-chalk/base'
 Vue.use(Element)
 
-import IconSvg from '~/icons/Index'
+import 'normalize.css/normalize'
+import '@/assets/css/globals'
+import 'vue2-animate/dist/vue2-animate.min'
 
+import 'nprogress/nprogress'
+import NProgress from '@/plugins/NProgress'
+Vue.use(NProgress)
+
+import '@/assets/js/iconfont'
+import IconSvg from '~/icons/Index'
 Vue.component('icon-svg', IconSvg)
 
 import console from './plugins/console'

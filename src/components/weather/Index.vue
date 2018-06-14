@@ -1,13 +1,13 @@
 <template lang="pug">
-	.weather-info(:span="24" type="flex" align="middle" justify="center")
-		weather-icon.weather-icon(:weather="now.weather" :code="now.code")
-		el-row.weather-base-info
-			.weather-weather
-				| {{now.weather}}
-			.weather-temperature
-				| {{now.temperature+'℃'}}
-		router-link.more-info-weather-link(:to="{name:'WeatherInfo'}" v-waves)
-			| 更多信息
+.weather-info(:span="24" type="flex" align="middle" justify="center")
+	weather-icon.weather-icon(:weather="now.weather" :code="now.code")
+	el-row.weather-base-info
+		.weather-weather
+			| {{now.weather}}
+		.weather-temperature
+			| {{now.temperature+'℃'}}
+	router-link.more-info-weather-link(:to="{name:'WeatherInfo'}" v-waves)
+		| 更多信息
 </template>
 
 <script>
@@ -34,7 +34,7 @@ export default class WeatherInfo extends Vue{
 <style lang="stylus">
 .weather-info
 	font-beautify()
-	position absolute
+	position fixed
 	top 15%
 	left 20%
 	height 250px

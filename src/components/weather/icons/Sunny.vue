@@ -4,7 +4,7 @@
 <style lang="stylus">
 .sunny
 	font-size 1em
-	color #f0f2f5
+	color #f6f6f6
 
 .sun
 	width 2.5em

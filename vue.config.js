@@ -12,7 +12,7 @@ module.exports = {
 		}
 		return {
 			resolve: {
-				extensions: ['.vue', '.js', '.ts', '.css', '.styl', '.json'],
+				extensions: ['.vue', '.js', '.ts', '.css', '.styl', '.json','.jsx','.mjs'],
 				alias: {
 					'@': path.resolve('src'),
 					'~': '@/components',

@@ -19,14 +19,7 @@
 	})
 	export default class SetBulb extends Vue {
 		get bulbStatus() {
-			return `${this.bulb.name}(${this.bulb.status ? '开' : '关'})`
-		}
-		get bulbInfo(){
-			return `
-				亮度：${this.bulb.brightness}
-				颜色：${this.bulb.color}
-				自动模式：${this.bulb.automodel}
-			`
+			return `${this.bulb.name}(${this.bulb.showStatus})`
 		}
 	}
 </script>

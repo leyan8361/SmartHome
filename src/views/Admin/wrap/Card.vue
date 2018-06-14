@@ -2,20 +2,31 @@
 .user-main
 	el-row#card-title(:span="24" tag="span" type="flex" align="middle" justify="center") {{ title }}
 	close-icon
-	transition(name="bounce")
+	transition(:name="animation")
 		router-view(:key="Date.now()")
 </template>
 
 <script>
 import CloseIcon from '~/icons/CloseIcon'
 import {Vue,Component,Watch} from 'vue-property-decorator'
+import {getRandomAnimation} from '@/utils/ui/animation'
+
 @Component({
 	components:{
 		CloseIcon
+	},
+	watch:{
+		'$route'(to,from){
+			this.changeAnimation()
+		}
 	}
 })
 export default class Card extends Vue{
 	title = '标题党'
+	animation = getRandomAnimation()
+	changeAnimation(){
+		this.animation = getRandomAnimation()
+	}
 	created(){
 		this.title = this.$route.meta.title
 	}

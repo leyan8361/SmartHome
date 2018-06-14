@@ -18,6 +18,7 @@ export default {
 	Info(state, { name, account, address,avatar,news}){
 		state.name = name
 		state.account = account
+		'code' in address && delete address.code
 		state.address = address
 		state.avatar = avatar
 		state.news = news

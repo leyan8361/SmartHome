@@ -25,7 +25,7 @@
 				.user
 					.avatar-wrap: img.avatar(:src="avatar" alt="avatar")
 					el-dropdown
-						span.el-dropdown-link(class="name" v-text="name")
+						span.user-right-name(class="name" v-text="name")
 						el-dropdown-menu.dropmenu(slot="dropdown")
 							el-dropdown-item
 								router-link(:to="{name:'UserProfile'}" tag="li")
@@ -183,4 +183,6 @@ export default class Header extends Vue{
 	text-shadow 0 0 1px #ccc
 	.svg-icon
 		margin-right 20px
+.user-right-name
+	letter-spacing 2px
 </style>

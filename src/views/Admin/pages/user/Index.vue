@@ -6,9 +6,14 @@
 	el-row.user-account(v-text="`账号：${account}`" :span="24" tag="span" type="flex" align="middle" justify="center")
 	el-row.user-address(v-text="`地址：${getAddress}`" :span="24" tag="span" type="flex" align="middle" justify="center")
 	el-row.user-family(:span="24" type="flex" align="middle" justify="center")
-		| 家庭关系
+		router-link(:to="{name:'UserFamily'}" tag="a")
+			| 家庭关系
 	el-row.user-electric(:span="24" type="flex" align="middle" justify="center")
-		| 电器
+		router-link(:to="{name:'UserElectrics'}" tag="a")
+			| 家具信息
+	el-row.user-usagelog(:span="24" type="flex" align="middle" justify="center")
+		router-link(:to="{name:'UserUsagelog'}" tag="a")
+			| 使用日志
 </template>
 
 <script>
@@ -16,19 +21,17 @@ import {Component,Vue} from 'vue-property-decorator'
 import {mapState} from 'vuex'
 @Component({
 	computed:{
-		...mapState('user',['name','account','address','avatar'])
+		...mapState('user',['name','account','address','avatar']),
+		...mapState('electrics',['bulbs'])
+
 	}
 })
 export default class User extends Vue{
 	get getAddress(){
-		const address = Object.values(this.address)
-		let result = ''
-		address.forEach(e=>{
-			if(e){
-				result += e
-			}
-		})
-		return result
+		return Object.values(this.address).join()
+	}
+	created(){
+
 	}
 }
 </script>
@@ -52,8 +55,25 @@ export default class User extends Vue{
 		&:hover
 			transition .2s
 			transform scale(1.05)
-.user-family,.user-electric
-	border-top dotted 1px #ccc
+.user-family
+	margin-top 20px
+.user-family,.user-electric,.user-usagelog
 	padding-top 20px
 	font-beautify()
+	border dashed 1px #ccc
+	& a
+		color transparent
+		text-shadow 0 0 1px #000
+		border-bottom 0px solid #ccc
+		transition .5s
+		border-radius 3px
+		background-color #fefefe
+		&:hover
+			border-bottom-width 5px
+			opacity .8
+			color #000
+			background-color #fff
+			text-shadow 0 0 10px #666
+			transform translateY(-2px)
+			letter-spacing 5px
 </style>

@@ -10,7 +10,7 @@
 	top 50%
 	left 30%
 	font-size 1em
-	color #f0f2f5
+	color #f6f6f6
 
 .cloud
 	position absolute

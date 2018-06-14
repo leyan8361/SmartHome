@@ -1,16 +1,16 @@
 <template lang="pug">
 el-main.main
-	transition(v-if="isHome" name="rotate")
+	transition(v-if="isHome" :name="animation")
 		.home-main
 			weather-info
-	transition(v-else name="rotate")
+	transition(v-else :name="animation")
 		router-view(:key="Date.now()")
 </template>
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState} from 'vuex'
-
+import {getRandomAnimation} from '@/utils/ui/animation'
 import WeatherInfo from '~/weather/Index'
 
 @Component({
@@ -19,19 +19,28 @@ import WeatherInfo from '~/weather/Index'
 	},
 	computed:{
 		...mapState('ui',['isHome'])
+	},
+	watch:{
+		'$route'(to,from){
+			this.changeAnimation()
+		}
 	}
 })
 export default class Main extends Vue{
+	animation = getRandomAnimation()
+	changeAnimation(){
+		this.animation = getRandomAnimation()
+	}
 }
 </script>
 
 <style lang="stylus">
 .main
-	background #f0f2f5
+	background #f6f6f6
 	overflow hidden !important
 .home-main
-	padding 200px
 	height 100vh
+	max-height 100vh
 	width 100vw
 
 </style>

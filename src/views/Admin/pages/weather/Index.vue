@@ -59,11 +59,11 @@ export default class WeatherInfo extends Vue{
 	.weather-icon
 		position absolute
 		left 25%
-		top 30%
+		top 28%
 	.weather-base-info
 		font-size .8em
 		position absolute
-		left 20%
+		left 19%
 		top 40%
 		& *
 			padding 10px 5px

@@ -5,7 +5,8 @@ export default {
       name:'',
       status:'',
       color:'',
-      brightness:'',
+			brightness:'',
+			showStatus:'',
       autoModel:false
     }
   ]

@@ -82,30 +82,27 @@ module.exports = {
 		const userInfo = ctx.request.body
 
 		let _token, avatar, password
-		Promise.resolve().then(async () => {
-			userInfo.account = account
+		userInfo.account = account
 
-			if (userInfo.avatar && userInfo.password) {
-				[avatar, password,_token] = await Promise.all([writeImg(userInfo), bcryptPass(userInfo),Token.generate(account)])
+		if (userInfo.avatar && userInfo.password) {
+			[avatar, password,_token] = await Promise.all([writeImg(userInfo), bcryptPass(userInfo),Token.generate(account)])
 
-				userInfo.avatar = avatar
+			userInfo.avatar = avatar
+			userInfo.password = password
+
+		} else {
+			if (userInfo.avatar) {
+				userInfo.avatar = await writeImg(userInfo)
+			} else if (userInfo.password) {
+				[password,_token] = await Promise.all([bcryptPass(userInfo),Token.generate(account)])
 				userInfo.password = password
-
-			} else {
-				if (userInfo.avatar) {
-					userInfo.avatar = await writeImg(userInfo)
-				} else if (userInfo.password) {
-					[password,_token] = await Promise.all([bcryptPass(userInfo),Token.generate(account)])
-					userInfo.password = password
-				}
 			}
-		}).then(async () => {
-			const isUpdated = await User.updateOne({ account }, userInfo)
-			if (!isUpdated) {
-				return ctx.sendError('因不可抗拒因素，您的信息更改失败！')
-			}
-			ctx.send('您的信息已更改成功！',{_token})
-		})
+		}
+		const isUpdated = await User.updateOne({ account }, userInfo)
+		if (!isUpdated) {
+			return ctx.sendError('因不可抗拒因素，您的信息更改失败！')
+		}
+		ctx.send('您的信息已更改成功！',{_token})
 	},
 
 	async newsToZero(ctx) {

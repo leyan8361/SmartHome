@@ -85,7 +85,7 @@ export default class Aside extends Vue{
 .aside-admin
 	box-shadow 2px 0 6px rgba(0,21,41,.35)
 	z-index 999
-	overflow hidden
+	overflow hidden !important
 menu-width = 250px
 menu-height = 60px
 .logo

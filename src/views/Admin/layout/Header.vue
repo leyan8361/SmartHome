@@ -1,11 +1,11 @@
 <template lang="pug">
 	el-header.admin-header
 		el-row(:span="24" type="flex" align="middle")
-			el-col.announcement(:span="6" :push="1")
+			el-col.announcement(:span="12" :push="1")
 				icon-svg(name="tongzhi" size="1.5")
 				span.tip-word(v-text="tipWord")
 				.tip-label 小贴士
-			el-col.notice(:span="10" :push="9")
+			el-col.notice(:span="10" :push="3")
 				router-link(:to="{name:'NoticeFamily'}")
 					el-col.family(:span="2")
 						el-tooltip(:content="`${news.family?'您收到新的家庭消息了':'家庭消息'}`" placement="bottom")
@@ -60,7 +60,7 @@ import status from '@/utils/global/status'
 })
 export default class Header extends Vue{
 	test=5
-	words = ['天热多加衣服,高级设置可一键离家哦~','高级设置可一键离家哦~','测试公告']
+	words = ['设置自动调节模式，可根据您的生活习惯以及天气情况准确掌握开灯时间','为了您的方便，我们提供了一键离家功能~','可以按照下班时间，准时开灯哦','一键关闭家中所有电器，让生活更安心','控制电器的前提是 电器已连接家中局域网哦~','如果想单独控制电器，电器的 id 号 需与已有电器的 id 号互不相同哦~']
 	tipWord = ''
 	intervalId=''
 	i=0
@@ -68,6 +68,8 @@ export default class Header extends Vue{
 	localDate = localStorage.localDate
 	created(){
 		!this.localDate && (localStorage.localDate = this.currDate)
+		/* eslint-disable eqeqeq*/
+		this.currDate != this.localDate && (localStorage.localDate = this.currDate)
 	}
 	mounted(){
 		this.intervalId = setInterval(()=>{

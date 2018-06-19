@@ -9,7 +9,7 @@
 			el-row: | 颜色：{{bulb.color}}
 		el-row(:span="24" type="flex" align="middle" justify="center")
 			el-button.open-setting(type="primary" @click="isShowBulb=true") 打开设置
-		bulb-form(:is-show-bulb.sync="isShowBulb" :bulb.sync="bulb")
+		bulb-form(:is-show-bulb.sync="isShowBulb" :bulb.sync="bulb" :index="index")
 	.tip-when-no-electric(v-else)
 		el-row.title(:span="24" type="flex" align="middle" justify="center")
 			| 您还没有自己的器~
@@ -39,8 +39,10 @@ import BulbForm from '@/views/Admin/form/Bulb'
 export default class ElectricAdmin extends Vue{
 	bulb={ }
 	isShowBulb = false
+	index = 0
 	changeCurrBulb(index){
 		this.bulb = this.bulbs[index]
+		this.index = index
 	}
 	created(){
 		this.bulb = this.bulbs[0]

@@ -3,6 +3,7 @@ el-main.main
 	transition(v-if="isHome" :name="animation")
 		.home-main
 			weather-info
+			electric-setting
 	transition(v-else :name="animation")
 		router-view(:key="Date.now()")
 </template>
@@ -12,10 +13,12 @@ import {Component,Vue} from 'vue-property-decorator'
 import {mapState} from 'vuex'
 import {getRandomAnimation} from '@/utils/ui/animation'
 import WeatherInfo from '~/weather/Index'
+import ElectricSetting from '~/electric/Index'
 
 @Component({
 	components:{
-		WeatherInfo
+		WeatherInfo,
+		ElectricSetting
 	},
 	computed:{
 		...mapState('ui',['isHome'])

@@ -2,10 +2,10 @@
 .weather-info(:span="24" type="flex" align="middle" justify="center")
 	weather-icon.weather-icon(:weather="now.weather" :code="now.code")
 	el-row.weather-base-info
-		.weather-weather
-			| {{now.weather}}
-		.weather-temperature
-			| {{now.temperature+'℃'}}
+		el-row
+			| {{now.weather + '·' + now.temperature+'℃'}}
+		el-row
+			| {{address.city + '·' + address.county}}
 	router-link.more-info-weather-link(:to="{name:'WeatherInfo'}" v-waves)
 		| 更多信息
 </template>
@@ -21,14 +21,11 @@ import filterWeatherInfo from '@/utils/weather'
 		WeatherIcon
 	},
 	computed: {
-		...mapState('weather', ['now'])
+		...mapState('weather', ['now']),
+		...mapState('user', ['address'])
 	}
 })
-export default class WeatherInfo extends Vue{
-	created(){
-		Object.assign(this,filterWeatherInfo(this.now))
-	}
-}
+export default class WeatherInfo extends Vue{}
 </script>
 
 <style lang="stylus">
@@ -36,7 +33,7 @@ export default class WeatherInfo extends Vue{
 	font-beautify()
 	position fixed
 	top 15%
-	left 20%
+	left 25%
 	height 250px
 	width 300px
 	box-shadow 2px 3px 10px #ccc
@@ -48,12 +45,16 @@ export default class WeatherInfo extends Vue{
 		left 50%
 	.weather-base-info
 		margin-top 70px
+		margin-left -20px
 		z-index 999
 		opacity .8
+		width 150px
+		text-align center
 		& *
 			padding 8px 10px
 	.more-info-weather-link
 		display block
+		cursor pointer
 		text-decoration none
 		font-size .7em
 		margin-top 5px

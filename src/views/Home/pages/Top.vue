@@ -20,7 +20,7 @@ import SubButton from '~/element/SubButton'
 	}
 })
 export default class Top extends Vue {
-	infos = ['开启全新的生活方式', '物联时代', '用设备管理设备', '让家具不再简单']
+	infos = ['开启全新的生活方式', '物联时代', '用设备管理设备', '让电器不再简单']
 	btnText = '了解更多'
 	img = require('img/device.png')
 	isShow = false

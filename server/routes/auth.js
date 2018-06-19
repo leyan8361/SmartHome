@@ -16,7 +16,13 @@ auth.delete('/news/:type',User.newsToZero)
 fami.get('/userInfo',Family.search)
 fami.post('/member',Family.invite)
 
-electric.post('/bulb',Electric.updateBulb)
+electric.post('/bulb', Electric.updateBulb)
+electric.delete('/bulb',Electric.deleteBulb)
+electric.put('/bulb', Electric.renameBulb)
+electric.patch('/bulb', Electric.addBulb)
+
+electric.post('/bulbs',Electric.switchBulbs)
+electric.get('/bulbs',Electric.switchBulbsStatus)
 
 // notice.get('/family')
 

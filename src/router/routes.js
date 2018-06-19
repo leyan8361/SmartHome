@@ -14,6 +14,8 @@ import NoticeElectric from '@/views/Admin/pages/notice/Electric'
 
 import ElectricAdmin from '@/views/Admin/pages/electric/Admin'
 import ElectricView from '@/views/Admin/pages/electric/View'
+import ElectricSetting from '@/views/Admin/pages/electric/Setting'
+
 
 import WeatherInfo from '@/views/Admin/pages/weather/Index'
 import WeatherForecast from '@/views/Admin/pages/weather/Forecast'
@@ -63,7 +65,7 @@ export default [{
 				name: 'UserElectrics',
 				component: UserElectrics,
 				meta: {
-					title: '家具信息'
+					title: '电器信息'
 				}
 			}]
 		}, {
@@ -125,6 +127,13 @@ export default [{
 				component: ElectricView,
 				meta: {
 					title: '查看设备'
+				}
+			}, {
+				path: 'setting',
+				name: 'ElectricSetting',
+				component: ElectricSetting,
+				meta: {
+					title: '高级设置'
 				}
 			}]
 		}, {

@@ -20,7 +20,8 @@ el-aside.aside-admin(width="250px")
 				el-menu-item(index="1-1") 查看设备
 			router-link(:to="{name:'ElectricAdmin'}" tag="li"  v-waves)
 				el-menu-item(index="1-2") 管理设备
-			el-menu-item(index="1-3") 高级设置
+			router-link(:to="{name:'ElectricSetting'}" tag="li"  v-waves)
+				el-menu-item(index="1-3") 高级设置
 		el-submenu(index="2")
 			template(slot="title")
 				i.el-icon-menu

@@ -10,7 +10,7 @@
 			| 家庭关系
 	el-row.user-electric(:span="24" type="flex" align="middle" justify="center")
 		router-link(:to="{name:'UserElectrics'}" tag="a")
-			| 家具信息
+			| 电器信息
 	el-row.user-usagelog(:span="24" type="flex" align="middle" justify="center")
 		router-link(:to="{name:'UserUsagelog'}" tag="a")
 			| 使用日志

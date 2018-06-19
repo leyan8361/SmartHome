@@ -57,8 +57,9 @@ module.exports = {
 		if (isHad) {
 			return ctx.sendError('账号已存在！')
 		}
-		delete userInfo.captcha
-		delete userInfo.checkpass
+
+		Reflect.deleteProperty(userInfo,'captcha')
+		Reflect.deleteProperty(userInfo,'checkpass')
 
 		const hasSaved = await new User(userInfo).save()
 		if (!hasSaved) {

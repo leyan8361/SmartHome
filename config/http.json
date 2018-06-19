@@ -25,7 +25,8 @@
 			"family":"/auth/notice/family"
 		},
 		"electric":{
-			"bulb":"/auth/electric/bulb"
+			"bulb":"/auth/electric/bulb",
+			"bulbs":"/auth/electric/bulbs"
 		}
 
   }

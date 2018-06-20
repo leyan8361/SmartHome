@@ -4,6 +4,8 @@ el-main.main
 		.home-main
 			weather-info
 			electric-setting
+			electric-usagelog
+			electric-quantity
 	transition(v-else :name="animation")
 		router-view(:key="Date.now()")
 </template>
@@ -14,6 +16,8 @@ import {mapState} from 'vuex'
 import {getRandomAnimation} from '@/utils/ui/animation'
 import WeatherInfo from '~/weather/Index'
 import ElectricSetting from '~/electric/Index'
+import ElectricUsagelog from '~/Usagelog/Index'
+import ElectricQuantity from '~/electric/Quantity'
 
 @Component({
 	components:{

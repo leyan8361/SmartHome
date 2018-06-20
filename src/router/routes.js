@@ -5,6 +5,7 @@ import Home from '@/views/Admin/Index'
 import User from '@/views/Admin/pages/user/Index'
 import UserModify from '@/views/Admin/pages/user/ModifyInfo'
 import UserElectrics from '@/views/Admin/pages/user/Electrics'
+import UserFamily from '@/views/Admin/pages/user/Family'
 
 import FamilySearch from '@/views/Admin/pages/family/Search'
 import FamilyInvite from '@/views/Admin/pages/family/Invite'
@@ -15,6 +16,7 @@ import NoticeElectric from '@/views/Admin/pages/notice/Electric'
 import ElectricAdmin from '@/views/Admin/pages/electric/Admin'
 import ElectricView from '@/views/Admin/pages/electric/View'
 import ElectricSetting from '@/views/Admin/pages/electric/Setting'
+import ElectricScripts from '@/views/Admin/pages/scripts/Index'
 
 
 import WeatherInfo from '@/views/Admin/pages/weather/Index'
@@ -66,6 +68,13 @@ export default [{
 				component: UserElectrics,
 				meta: {
 					title: '电器信息'
+				}
+			},{
+				path: 'family',
+				name: 'UserFamily',
+				component: UserFamily,
+				meta: {
+					title: '家庭信息'
 				}
 			}]
 		}, {
@@ -133,7 +142,14 @@ export default [{
 				name: 'ElectricSetting',
 				component: ElectricSetting,
 				meta: {
-					title: '高级设置'
+					title: '高级指令'
+				}
+			},{
+				path: 'scripts',
+				name: 'ElectricScripts',
+				component: ElectricScripts,
+				meta: {
+					title: '管理指令'
 				}
 			}]
 		}, {

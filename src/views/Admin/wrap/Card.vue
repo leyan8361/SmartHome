@@ -1,5 +1,8 @@
 <template lang="pug">
 .user-main
+	el-breadcrumb.breadcrumb(separator="/")
+		el-breadcrumb-item.home-link(:to="{name:'Home'}") 首页
+		el-breadcrumb-item {{title}}
 	el-row#card-title(:span="24" tag="span" type="flex" align="middle" justify="center") {{ title }}
 	close-icon
 	transition(:name="animation")
@@ -53,5 +56,14 @@ export default class Card extends Vue{
 		font-beautify()
 		letter-spacing 8px
 		font-size 200%
-		border-bottom dotted 3px #ccc
+		border-bottom dotted 3px #cc
+.breadcrumb
+	position absolute
+	cursor pointer
+	z-index 666
+	padding 10px
+	color #666
+	text-shadow 0 0 1px #ccc
+	letter-spacing 1px
+	// .home-link:hover
 </style>

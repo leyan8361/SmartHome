@@ -41,9 +41,7 @@
 							el-dropdown-item(@click.native="dropOut")
 								icon-svg(name="logout" size="1.2")
 								|退出系统
-			el-tooltip(content="高级设置")
-				.setting
-					el-button(type="text"): icon-svg.notice-icon(name="shezhi2" size="1.5")
+			.setting: el-button(type="text" @click.native="$router.push({name:'ElectricSetting'})"): icon-svg.notice-icon(name="shezhi2" size="1.5")
 </template>
 
 <script>
@@ -68,8 +66,6 @@ export default class Header extends Vue{
 	localDate = localStorage.localDate
 	created(){
 		!this.localDate && (localStorage.localDate = this.currDate)
-		/* eslint-disable eqeqeq*/
-		this.currDate != this.localDate && (localStorage.localDate = this.currDate)
 	}
 	mounted(){
 		this.intervalId = setInterval(()=>{

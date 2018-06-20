@@ -1,7 +1,5 @@
 import http from '@/utils/http'
 import Url from 'config/http'
-import Token from '@/utils/store/token'
-import notice from 'config/notice'
 export default {
 	async login({ commit, state,dispatch }, user) {
 		return http
@@ -11,7 +9,7 @@ export default {
 					console.log(response.userInfo)
 					commit('Info', response.userInfo)
 					commit('Token', response.token)
-					;['weather', 'notice', 'electrics'].forEach(e => {
+					;['weather', 'notice', 'electrics','scripts'].forEach(e => {
 						e && dispatch(`${e}/setInfo`,response[e], {root:true})
 					})
 				}
@@ -53,7 +51,7 @@ export default {
 			if (response.success) {
 				console.log(response)
 				commit('Info', response.userInfo)
-				;['weather', 'notice', 'electrics'].forEach(e => {
+				;['weather', 'notice', 'electrics','scripts'].forEach(e => {
 					e && dispatch(`${e}/setInfo`,response[e], {root:true})
 				})
 			}

@@ -1,6 +1,7 @@
 <template lang="pug">
 	.bulb-checkbox
-		input.l(type="checkbox" v-model="status" @change="$emit('update:status',status)")
+		el-tooltip(:content="`${status?'已开启':'已关闭'}`")
+			input.l(type="checkbox" v-model="status" @change="$emit('update:status',status)")
 </template>
 
 <script>
@@ -24,6 +25,7 @@ export default class BulbCheckBox extends Vue{}
 <style lang="stylus">
 .bulb-checkbox {
 	text-align: center;
+	transform  translateX(-50px)
 }
 .l {
 	background-color: rgba(0,0,0,0.7);

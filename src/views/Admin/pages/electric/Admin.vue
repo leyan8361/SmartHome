@@ -1,6 +1,6 @@
 <template lang="pug">
 .electric-admin-component
-	el-table.electrics-admin-table(:data="bulbs")
+	el-table.electrics-admin-table(:data="bulbs" v-if="bulbs.length!==0" stripe)
 		el-table-column(prop="name" label="备注")
 		el-table-column(prop="id" label="ID")
 		el-table-column(prop="showStatus" label="状态")
@@ -10,6 +10,8 @@
 			template(slot-scope="scope")
 				el-button(@click.native.prevent="renameElectric(scope.$index)" type="primary" size="mini") 重命名
 				el-button(@click.native.prevent="deleteElectric(scope.$index)" type="danger" size="mini") 删除
+	.when-bulbs-is-null(v-else :span="24" type="flex" align="middle" justify="center")
+		| 您目前还没有自己的电器哦~
 	.electric-add(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="success" @click.native.prevent="isShowAddDialog=true" round) 增加电器
 	bulb-add(:is-show-add-dialog.sync="isShowAddDialog")
@@ -82,4 +84,7 @@ export default class ElectricAdmin extends Vue{
 	bottom 60px
 	& *
 		padding 5px 0
+.when-bulbs-is-null
+	margin 100px auto 50px
+
 </style>

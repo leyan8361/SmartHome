@@ -1,6 +1,6 @@
 <template lang="pug">
 el-form.family-add(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" label-width="100px"  center status-ico)
-	el-form-item.item-account(label="账号" prop="account")
+	el-form-item.item-account(label="账号")
 		el-input(type="text" v-model.trim="user.account" placeholder="账号 / 邮箱" clearable)
 	el-row.invite(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm" :loading="isLoading") 查找

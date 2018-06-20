@@ -19,7 +19,8 @@ const Client = AsyncMQTT.connect(
 )
 
 Client.on('connect', connack => {
-	console.log(`已连接到MQTT服务器: ${connack}`)
+	console.log('已连接到MQTT服务器:')
+	console.log(connack)
 
 	// Client.subscribe(subscribeTopics).then(e => {
 

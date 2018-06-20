@@ -30,9 +30,6 @@ export default class User extends Vue{
 	get getAddress(){
 		return Object.values(this.address).join()
 	}
-	created(){
-
-	}
 }
 </script>
 

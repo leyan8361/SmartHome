@@ -6,8 +6,8 @@
 import {Component,Vue} from 'vue-property-decorator'
 
 @Component
-export default class ElectricList extends Vue{
-	
+export default class Usagelog extends Vue{
+
 }
 </script>
 

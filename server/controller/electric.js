@@ -16,7 +16,7 @@ module.exports = {
 			Client.publish('bulb', payload),
 			Electric.updateOne({ $and: [{ master: account }, { id: bulb.id }] }, bulb)
 		])
-
+		
 		isDBSuccess
 			? ctx.send('状态信息更新成功！')
 			: ctx.sendError('状态消息因不可抗因素更新失败！')

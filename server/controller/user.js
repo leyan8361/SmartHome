@@ -6,6 +6,7 @@ const { writeImg, bcryptPass } = require('utils/db/user')
 const { getNotice } = require('utils/db/notice')
 const { getElectrics } = require('utils/db/electric')
 const { getWeather } = require('utils/http')
+const { getScripts } = require('utils/db/scripts')
 
 module.exports = {
 
@@ -27,8 +28,8 @@ module.exports = {
 			avatar: user.avatar,
 			news: user.news
 		}
-		const [token,notice,weather,electrics] = await Promise.all([Token.generate(account),getNotice(account),getWeather(user.address.code),getElectrics(account)])
-		const value = { token,userInfo,weather,notice,electrics }
+		const [token,notice,weather,electrics,scripts] = await Promise.all([Token.generate(account),getNotice(account),getWeather(user.address.code),getElectrics(account),getScripts(account)])
+		const value = { token,userInfo,weather,notice,electrics,scripts }
 
 		ctx.send('信息获取成功！',value)
 	},
@@ -43,8 +44,8 @@ module.exports = {
 			news: user.news
 		}
 
-		const [notice,weather,electrics] = await Promise.all([getNotice(account),getWeather(user.address.code),getElectrics(account)])
-		const value = { userInfo,weather,notice,electrics}
+		const [notice,weather,electrics,scripts] = await Promise.all([getNotice(account),getWeather(user.address.code),getElectrics(account),getScripts(account)])
+		const value = { userInfo,weather,notice,electrics,scripts}
 
 		ctx.send('信息获取成功！',value)
 	},

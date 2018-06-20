@@ -27,7 +27,8 @@
 		"electric":{
 			"bulb":"/auth/electric/bulb",
 			"bulbs":"/auth/electric/bulbs"
-		}
+		},
+		"script":"/auth/script"
 
   }
 

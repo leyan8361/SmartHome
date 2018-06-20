@@ -33,14 +33,6 @@ const Electric = new mongoose.Schema(
 			required: true,
 			max: 300,
 			min: 0
-		},
-    autoModel:{
-      type:Boolean,
-      default:true,
-      required:false
-		},
-		setting: {
-			required:false
 		}
 	},
 	{

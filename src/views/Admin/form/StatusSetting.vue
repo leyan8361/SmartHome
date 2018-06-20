@@ -2,24 +2,24 @@
 el-dialog(title="状态设置" :visible="isShowSetting" width="28%" top="15vh" custom-class="bulb-dialog"
 :before-close="handleClose" lock-scroll center append-to-body)
 	el-form.bulb-setting(:span="24" type="flex" align="middle" justify="center" :model="bulb" label-width="100px"  center status-ico)
-		el-form-item(label="状态" prop="status")
+		el-form-item(label="状态")
 			bulb-check-box.bulb-checkbox(:status.sync="bulb.status")
-		el-form-item(label="亮度" prop="brightness")
+		el-form-item(label="亮度")
 			el-slider(v-model="bulb.brightness")
-		el-form-item(label="颜色" prop="color")
-			el-select(v-model="bulb.color" placeholder="请选择" clearable)
-				el-option(v-for="color in colors" :key="color.value" :label="color.label" :value="color.value")
-		el-form-item(label="电器" prop="selectBulbs")
-			el-select.bulb-select-item(v-model="bulb.selectBulbs" placeholder="请选择" @change="selectSomeBulbs" clearable multiple )
-				el-option(v-for="(item,index) in allBulbs" :key="index" :label="item.label" :value="item.value")
+		el-form-item(label="颜色")
+			bulb-color-select(:color.sync="bulb.color")
+		el-form-item(label="电器")
+			bulb-selection(:selectBulbs.sync="bulb.selectBulbs" :bulbs="bulbs")
 	.dialog-bulb--footer(slot="footer")
 		el-row(:span="24" type="flex" align="middle" justify="center")
-			el-button.login(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在更新") 更新状态
+			el-button(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在更新") 更新状态
 </template>
 
 <script>
 	import { Component, Vue } from 'vue-property-decorator'
 	import BulbCheckBox from '~/bulb/CheckBox'
+	import BulbSelection from '~/bulb/Selection'
+	import BulbColorSelect from '~/bulb/ColorSelect'
 	import { mapActions,mapState } from 'vuex'
 	import notice from '@/utils/ui/notice'
 
@@ -32,7 +32,9 @@ el-dialog(title="状态设置" :visible="isShowSetting" width="28%" top="15vh" c
 			}
 		},
 		components: {
-			BulbCheckBox
+			BulbCheckBox,
+			BulbSelection,
+			BulbColorSelect
 		},
 		methods: {
 			...mapActions('electrics', ['switchBulbs'])
@@ -43,43 +45,15 @@ el-dialog(title="状态设置" :visible="isShowSetting" width="28%" top="15vh" c
 	})
 	export default class StatusSetting extends Vue {
 		isLoading = false
-		colors = [
-			{ value: '暖白光' },
-			{ value: '自然光' },
-			{ value: '冷白光' },
-			{ value: '正白光' }
-		]
 		bulb={
 			selectBulbs:[],
 			status:true,
 			brightness:100,
 			color:'自然光'
 		}
-		allBulbs=[]
-		created(){
-			if(this.allBulbs.length !== 0){
-				return
-			}
-			this.bulbs.forEach(e=>{
-				this.allBulbs.push({
-					value:e.id,
-					label:e.name
-				})
-			})
-			this.allBulbs.push({
-				label:'全部',
-				value:'0'
-			})
-		}
-		selectSomeBulbs(){
-			if(this.bulb.selectBulbs.includes('0')){
-				this.bulb.selectBulbs = ['0']
-			}
-		}
-		handleClose() {
+		handleClose(){
 			this.$emit('update:isShowSetting', false)
 		}
-
 		submitForm() {
 			if(this.bulb.selectBulbs.length === 0){
 				return notice.warning('请选择一个电器','错误')
@@ -114,7 +88,4 @@ el-dialog(title="状态设置" :visible="isShowSetting" width="28%" top="15vh" c
 		margin-right 10px
 	.el-form-item__label
 		margin-left -15px
-	.bulb-select-item
-		text-shadow none
-		font-weight bold
 </style>

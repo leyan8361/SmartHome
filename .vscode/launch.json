@@ -8,7 +8,13 @@
 			"runtimeExecutable": "nodemon",
 			"program": "${workspaceFolder}/server/index.js",
 			"restart": true,
-			"runtimeArgs": ["--nolazy"],
+			"protocol": "inspector",	//相当于--inspect了
+			"sourceMaps": true,
+			// "console": "integratedTerminal",
+			// "internalConsoleOptions": "neverOpen",
+			"runtimeArgs": [	//对应nodemon --inspect之后除了启动文件之外的其他配置
+				"--nolazy"
+			],
 			"preLaunchTask": "",
 			"env": {
 				"NODE_ENV": "development"

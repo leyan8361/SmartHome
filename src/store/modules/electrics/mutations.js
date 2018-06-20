@@ -1,9 +1,9 @@
 export default{
-  setBulbs(state,bulbs){
-		state.bulbs = bulbs
+	setBulbs(state, bulbs) {
 		bulbs.forEach(e =>{
 			e.showStatus = e.status ? '开' : '关'
 		})
+		state.bulbs = bulbs
 	},
 	setTheBulb(state, bulb) {
 		const { index } = bulb

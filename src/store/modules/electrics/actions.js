@@ -5,8 +5,8 @@ export default {
 		commit('setBulbs',bulbs)
 	},
 	async updateBulb({ commit }, bulb) {
-		commit('setTheBulb',bulb)
 		return http.post(Url.auth.electric.bulb,bulb).then(response => {
+			response.success && commit('setTheBulb',bulb)
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -14,9 +14,8 @@ export default {
 		})
 	},
 	async switchBulbs({ commit },bulb) {
-		commit('setAllBulbs', bulb)
-
 		return http.post(Url.auth.electric.bulbs, bulb).then(response => {
+			response.success && commit('setAllBulbs', bulb)
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -24,8 +23,8 @@ export default {
 		})
 	},
 	async switchBulbsStatus({ commit },status) {
-		commit('setBulbsStatus', status)
 		return http.get(Url.auth.electric.bulbs, { params: { status } }).then(response => {
+			response.success && commit('setBulbsStatus', status)
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -33,8 +32,8 @@ export default {
 		})
 	},
 	async addBulb({ commit }, bulb) {
-		commit('addBulb', bulb)
 		return http.patch(Url.auth.electric.bulb,bulb).then(response => {
+			response.success && commit('addBulb', bulb)
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -42,8 +41,8 @@ export default {
 		})
 	},
 	async deleteBulb({ commit }, id) {
-		commit('deleteBulbById', id)
 		return http.delete(Url.auth.electric.bulb, { params: { id } }).then(response => {
+			response.success && commit('deleteBulbById', id)
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -51,8 +50,8 @@ export default {
 		})
 	},
 	async renameBulb({ commit }, bulb) {
-		commit('renameBulbById', bulb)
 		return http.put(Url.auth.electric.bulb,bulb).then(response => {
+		response.success && commit('renameBulbById', bulb)
 			return response
 		}).catch(error => {
 			console.log(error)

@@ -12,17 +12,11 @@ const Scripts = new mongoose.Schema(
 			trim: true,
 			required:true
 		},
-		disable: {
+		disabled: {
 			type: Boolean,
 			default:false
 		},
 
-		account: {
-			type: String,
-			required: true,
-			trim: true,
-			unique: true
-		},
 		address: {
 			province: {
 				type: String,
@@ -147,6 +141,29 @@ const Scripts = new mongoose.Schema(
 					required:false
 				}
 			}
+		},
+		showName: {
+			type: String,
+			trim:true
+		},
+		showStatus: {
+			type: String,
+			enum:['开','关'],
+			default: '开',
+			trim:true
+		},
+		showBrightness: {
+			type: String,
+			default: '100%',
+			trim:true
+		},
+		showDuration: {
+			type: String,
+			trim:true
+		},
+		showCodition: {
+			type: String,
+			trim:true
 		}
 	},
 	{

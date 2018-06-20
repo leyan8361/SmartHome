@@ -20,7 +20,7 @@
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
-import { mapActions ,mapState } from 'vuex'
+import { mapActions ,mapState,mapMutations } from 'vuex'
 
 import OperatingForm from '@/views/Admin/pages/scripts/OperatingForm'
 import CoditionForm from '@/views/Admin/pages/scripts/CoditionForm'
@@ -34,11 +34,13 @@ import notice from '@/utils/ui/notice'
 		DurationForm
 	},
 	methods:{
-		...mapActions('scripts',['addScript'])
+		...mapActions('scripts',['addScript']),
+		...mapMutations('scripts',['setScripts']),
+		...mapMutations('ui',['finishFormCountToZero'])
 	},
 	computed:{
 		...mapState('ui',['scriptFormFinishCount']),
-		...mapState('user',['account','address'])
+		...mapState('user',['address'])
 	}
 })
 export default class ScriptIndex extends Vue{
@@ -74,7 +76,6 @@ export default class ScriptIndex extends Vue{
 		this.isLoading = true
 		this.script = {
 			scriptID:Date.now(),
-			account:this.account,
 			address:this.address,
 			...this.operating,
 			...this.codition,
@@ -82,11 +83,16 @@ export default class ScriptIndex extends Vue{
 		}
 		this.addScript(this.script).then(e=>{
 			this.isLoading = false
+			console.log(e.scripts)
 			if(e.success){
+				this.setScripts(e.scripts)
 				notice.success(e.message,'成功')
+				this.finishFormCountToZero()
 			}else{
 				notice.error(e.message,'失败')
 			}
+		}).then(()=>{
+			this.$router.push({name:'ScriptsAdmin'})
 		})
 	}
 }

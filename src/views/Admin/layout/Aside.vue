@@ -17,44 +17,48 @@ el-aside.aside-admin(width="250px")
 				i.el-icon-star-off
 				span(slot="title") 我的电器
 			router-link(:to="{name:'ElectricView'}" tag="li"  v-waves)
-				el-menu-item(index="1-1") 查看电器
+				el-menu-item(index="1-1") 设置电器
 			router-link(:to="{name:'ElectricAdmin'}" tag="li"  v-waves)
 				el-menu-item(index="1-2") 管理电器
-			router-link(:to="{name:'ElectricSetting'}" tag="li"  v-waves)
-				el-menu-item(index="1-3") 高级指令
-			router-link(:to="{name:'ElectricScripts'}" tag="li"  v-waves)
-				el-menu-item(index="1-4") 管理指令
 			router-link(:to="{name:'UserElectrics'}" tag="li"  v-waves)
-				el-menu-item(index="1-5") 电器列表
+				el-menu-item(index="1-3") 查看电器
 		el-submenu(index="2")
+			template(slot="title")
+				i.el-icon-setting
+				span(slot="title") 我的指令
+			router-link(:to="{name:'ScriptsAdd'}" tag="li"  v-waves)
+				el-menu-item(index="1-4") 添加指令
+			router-link(:to="{name:'ScriptsAdmin'}" tag="li"  v-waves)
+				el-menu-item(index="1-5") 管理指令
+		el-submenu(index="3")
 			template(slot="title")
 				i.el-icon-menu
 				span(slot="title") 我的家人
 			router-link(:to="{name:'FamilySearch'}" tag="li"  v-waves)
-				el-menu-item(index="2-1") 邀请家人
-			el-menu-item(index="2-2") 加入家庭
+				el-menu-item(index="3-1") 邀请家人
+			el-menu-item(index="3-2") 加入家庭
 			router-link(:to="{name:'UserFamily'}" tag="li"  v-waves)
-				el-menu-item(index="2-3") 查看成员
-		el-submenu(index="3")
-			template(slot="title")
-				i.el-icon-news
-				span(slot="title") 个人信息
-			router-link(:to="{name:'NoticeFamily'}" tag="li" v-waves)
-				el-menu-item(index="3-1") 个人主页
-			router-link(:to="{name:'WeatherInfo'}" tag="li"  v-waves)
-				el-menu-item(index="3-2") 修改信息
+				el-menu-item(index="3-3") 查看成员
 		el-submenu(index="4")
 			template(slot="title")
-				i.el-icon-bell
-				span(slot="title") 消息通知
+				i.el-icon-news
+				span(slot="title") 我的信息
 			router-link(:to="{name:'NoticeFamily'}" tag="li" v-waves)
-				el-menu-item(index="4-1") 家庭邀请
-			el-menu-item(index="4-2") 电器日志
+				el-menu-item(index="4-1") 我的主页
 			router-link(:to="{name:'WeatherInfo'}" tag="li"  v-waves)
-				el-menu-item(index="4-3") 天气情况
-			el-menu-item(index="4-4") 使用功耗
+				el-menu-item(index="4-2") 修改信息
+		el-submenu(index="5")
+			template(slot="title")
+				i.el-icon-bell
+				span(slot="title") 我的通知
+			router-link(:to="{name:'NoticeFamily'}" tag="li" v-waves)
+				el-menu-item(index="5-1") 家庭邀请
+			el-menu-item(index="5-2") 电器日志
+			router-link(:to="{name:'WeatherInfo'}" tag="li"  v-waves)
+				el-menu-item(index="5-3") 天气情况
+			el-menu-item(index="5-4") 使用功耗
 	.menu-footer
-		router-link(:to="{name:'ElectricSetting'}" tag="a" v-waves)
+		router-link(:to="{name:'ScriptsAdmin'}" tag="a" v-waves)
 			el-tooltip(content="设置" placement="top" )
 				icon-svg(name="shezhi" size="2.1")
 		el-tooltip(content="分享" placement="top" )

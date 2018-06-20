@@ -15,7 +15,9 @@ auth.get('/userInfo',User.getUserInfo)
 auth.post('/userInfo', User.updateUserInfo)
 auth.delete('/news/:type',User.newsToZero)
 
-auth.post('/script', Scripts.addScript)
+auth.put('/script', Scripts.addScript)
+auth.post('/script', Scripts.disableScript)
+auth.delete('/script', Scripts.deleteScript)
 
 fami.get('/userInfo',Family.search)
 fami.post('/member',Family.invite)

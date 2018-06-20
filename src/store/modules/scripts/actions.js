@@ -5,9 +5,9 @@ export default {
 		commit('setScripts',scripts)
 	},
 	async deleteScriptByIndex({ commit,state }, index) {
-		const id = state.scripts[index].scriptID
-		commit('deleteScript', index)
-		return http.delete(Url.auth.script,{params:{id}}).then(response => {
+		const { scriptID } = state.scripts[index]
+		return http.delete(Url.auth.script,{params:{scriptID}}).then(response => {
+			response.success && commit('deleteScript', index)
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -15,9 +15,9 @@ export default {
 		})
 	},
 	async disableScriptByIndex({ commit,state }, index) {
-		const id = state.scripts[index].scriptID
-		commit('disableScript', index)
-		return http.put(Url.auth.script,id).then(response => {
+		const { scriptID, disabled } = state.scripts[index]
+		return http.post(Url.auth.script, { scriptID,disabled }).then(response => {
+			response.success && commit('disabledScript', index)
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -25,8 +25,7 @@ export default {
 		})
 	},
 	async addScript({ commit, state }, script) {
-		commit('addScript', script)
-		return http.post(Url.auth.script,script).then(response => {
+		return http.put(Url.auth.script,script).then(response => {
 			return response
 		}).catch(error => {
 			console.log(error)

@@ -37,6 +37,7 @@ import notice from '@/utils/ui/notice'
 	}
 })
 export default class DurationForm extends Vue{
+	firstSave = false
 	weaks = [{
 			value:'每周一',label:'每周一'
 		},{
@@ -58,19 +59,19 @@ export default class DurationForm extends Vue{
 		{value:'仅明天',label:'仅明天'},
 		{value:'仅后天',label:'仅后天'},
 		{value:'每周',label:'每周',children:[{
-			value:'每周一',label:'一'
+			value:'每周一',label:'每周一'
 		},{
-			value:'每周二',label:'二'
+			value:'每周二',label:'每周二'
 		},{
-			value:'每周三',label:'三'
+			value:'每周三',label:'每周三'
 		},{
-			value:'每周四',label:'四'
+			value:'每周四',label:'每周四'
 		},{
-			value:'每周五',label:'五'
+			value:'每周五',label:'每周五'
 		},{
-			value:'每周六',label:'六'
+			value:'每周六',label:'每周六'
 		},{
-			value:'每周日',label:'日'
+			value:'每周日',label:'每周日'
 	}]}]
 	verify(){
 		if(!this.duration.startDuration && !this.duration.specificDuration){
@@ -82,10 +83,18 @@ export default class DurationForm extends Vue{
 		if(!this.verify()){
 			return notice.warning('请选择一个时间','错误')
 		}
+		if(this.duration.startDuration && this.duration.startDuration.length === 2){
+			const day = this.duration.startDuration[1]
+			if(this.duration.endDuration && this.duration.endDuration.length !== 0){
+				if(day === this.duration.endDuration[0]){
+					return notice.warning('不能选择相同星期','错误')
+				}
+			}
+		}
 		this.finishScriptForm({isFinish:true,id:3})
 		this.$emit('update:isShowDurationForm', false)
 		this.$emit('update:duration',this.duration)
-		notice.success('保存成功！快去增加您的指令吧~','成功')
+		!this.firstSave && notice.success('保存成功！快去增加您的指令吧~','成功') && (this.firstSave = true)
 	}
 }
 </script>

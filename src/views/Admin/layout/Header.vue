@@ -41,7 +41,7 @@
 							el-dropdown-item(@click.native="dropOut")
 								icon-svg(name="logout" size="1.2")
 								|退出系统
-			.setting: el-button(type="text" @click.native="$router.push({name:'ElectricSetting'})"): icon-svg.notice-icon(name="shezhi2" size="1.5")
+			.setting: el-button(type="text" @click.native="$router.push({name:'ScriptsAdmin'})"): icon-svg.notice-icon(name="shezhi2" size="1.5")
 </template>
 
 <script>

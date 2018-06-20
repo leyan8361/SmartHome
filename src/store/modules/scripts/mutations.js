@@ -5,8 +5,8 @@ export default {
 	deleteScript(state, index) {
 		state.scripts.splice(index,1)
 	},
-	disableScript(state, index) {
-		state.scripts[index].disable = true
+	disabledScript(state, index) {
+		state.scripts[index].disabled = !state.scripts[index].disabled
 	},
 	addScript(state, script) {
 		state.scripts.push(script)

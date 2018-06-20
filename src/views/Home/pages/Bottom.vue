@@ -60,7 +60,7 @@ export default class Bottom extends Vue {
 		margin 8vh 10vw
 	.footer
 		position fixed
-		bottom 0
+		bottom 10px
 		width 40vw
 		left 30%
 		margin 0

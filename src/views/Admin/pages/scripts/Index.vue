@@ -34,19 +34,21 @@ import notice from '@/utils/ui/notice'
 		DurationForm
 	},
 	methods:{
-		...mapActions('scripts','addScript')
+		...mapActions('scripts',['addScript'])
 	},
 	computed:{
-		...mapState('ui',['scriptFormFinishCount'])
+		...mapState('ui',['scriptFormFinishCount']),
+		...mapState('user',['account','address'])
 	}
 })
 export default class ScriptIndex extends Vue{
 	isShowOperatingForm=false
 	isShowCoditionForm=false
 	isShowDurationForm=false
-	notice
+
 	operating = {
-		selectBulbs:[],
+		ids:[],
+		name:[],
 		status:true,
 		brightness:100,
 		color:'自然光'
@@ -72,6 +74,8 @@ export default class ScriptIndex extends Vue{
 		this.isLoading = true
 		this.script = {
 			scriptID:Date.now(),
+			account:this.account,
+			address:this.address,
 			...this.operating,
 			...this.codition,
 			...this.duration

@@ -28,7 +28,9 @@ import {mapState} from 'vuex'
 })
 export default class User extends Vue{
 	get getAddress(){
-		return Object.values(this.address).join()
+		const values = Object.values(this.address)
+		values.pop()
+		return values.join()
 	}
 }
 </script>

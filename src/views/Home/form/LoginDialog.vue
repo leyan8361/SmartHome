@@ -1,12 +1,12 @@
 <template lang="pug">
-el-dialog(title="登录" :visible="isShowLogin" width="25%" top="15vh" custom-class="dialog" :before-close="handleClose" lock-scroll model  center)
+el-dialog(title="登录" :visible="isShowLogin" width="26%" top="15vh" custom-class="dialog" :before-close="handleClose" lock-scroll model  center)
 	el-form.form(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" center status-icon label-width="100px")
 		el-form-item(label="账号" prop="account")
 			el-input(type="text" v-model.trim="user.account" auto-complete='on' placeholder="账号 / 邮箱" clearable)
 		el-form-item(label="密码" prop="password")
 			el-input(type="password" v-model.trim="user.password" placeholder="6-12位 数字/字母/英文符号" clearable ref="passInput")
 		el-checkbox.checkbox(v-model="keep" checked) 下次自动登录
-	.dialog-footer(slot="footer")
+	.dialog-login-footer(slot="footer")
 		el-row
 			el-button.login(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在登录") 登录
 			el-button(@click="$refs.form.resetFields()") 重置
@@ -85,20 +85,21 @@ export default class LoginDialog extends Vue {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .dialog
-	box-shadow 0 10px 50px rgb(233, 233, 233)
+	box-shadow: 0 10px 50px rgb(233, 233, 233) !important;
+	border-radius: 10px !important;
 	.form
-		margin-left -3vw
+		margin-left -3vw !important
 	.checkbox
-		margin-left 3vw
-	.dialog-footer
-		margin-top -2vh
+		margin-left 3vw !important
+	.dialog-login-footer
+		margin-top -2vh !important
 	.last-line
-		margin-left 3vw
+		margin-left 3vw !important
+		margin-top 2vh !important
 	.login
-		margin-right 3vw
-		margin-bottom 3vh
+		margin-right 3vw !important
 	.forgetPwd
 		color #999
 	.forgetPwd:after

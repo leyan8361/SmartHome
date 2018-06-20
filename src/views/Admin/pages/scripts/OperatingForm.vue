@@ -9,7 +9,7 @@ lock-scroll center append-to-body :close-on-click-modal="false" :close-on-press-
 		el-form-item(label="颜色")
 			bulb-color-select(:color.sync="operating.color")
 		el-form-item(label="电器")
-			bulb-selection(:select-bulbs.sync="operating.selectBulbs" :bulbs="bulbs")
+			bulb-selection(:select-bulbs.sync="operating.ids" :bulbs="bulbs")
 	el-row(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm") 保存指令
 </template>
@@ -47,7 +47,7 @@ import notice from '@/utils/ui/notice'
 })
 export default class OperatingForm extends Vue{
 	verify(){
-		if(this.operating.selectBulbs.length === 0){
+		if(this.operating.ids.length === 0){
 			return false
 		}
 		return true
@@ -56,6 +56,17 @@ export default class OperatingForm extends Vue{
 		if(!this.verify()){
 			return notice.warning('请选择一个电器','错误')
 		}
+		if(!this.operating.ids.includes('0')){
+			this.operating.ids.forEach(id=>{
+				const { name } = this.bulbs.find(bulb=>bulb.id === id)
+				this.operating.name.push(name)
+			})
+		}else{
+			this.bulbs.forEach(bulb=>{
+				this.operating.name.push(bulb.name)
+			})
+		}
+
 		this.finishScriptForm({isFinish:true,id:1})
 		this.$emit('update:operating',this.operating)
 		this.$emit('update:isShowOperatingForm', false)

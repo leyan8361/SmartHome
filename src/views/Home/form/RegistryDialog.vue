@@ -1,6 +1,6 @@
 <template lang="pug">
-el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="8vh" lock-scroll center custom-class="dialog r-dialog" :before-close="handleClose")
-	el-form.form(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" label-width="100px"  center status-ico)
+el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="10vh" lock-scroll center custom-class="dialog r-dialog" :before-close="handleClose")
+	el-form.form(:model="user" :rules="rules" ref="form" label-width="100px"  center status-ico)
 		avatar-upload(:avatar.sync="user.avatar" :is-init="isInit")
 		el-form-item(label="昵称" prop="name")
 			el-input(type="text" v-model.trim="user.name" placeholder="2-8 位字符" clearable)
@@ -173,40 +173,30 @@ export default class RegistryDialog extends Vue {
 </script>
 
 <style lang="stylus">
-font-beautify()
-	color #333
-	font-weight 300
-	text-decoration none
-	transition all 0.5s
-	text-shadow rgb(69, 45, 45) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 2px
-	font-family "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif
 .el-dialog__title
-	font-size 150%
-	letter-spacing 4px
-	font-beautify()
+	font-size 150% !important
+	letter-spacing 4px !important
+	font-beautify() !important
 .el-form-item__label
-	letter-spacing 2px
-	font-beautify()
+	letter-spacing 2px !important
+	font-beautify() !important
 .dialog
-	position relative
+	position relative !important
 	box-shadow 0 10px 50px rgb(233, 233, 233)
-	padding 0.7vw 2vw 0
-	border-radius 10px
-	.form
-		margin-left -3vw
+	padding 0.7vw 0 0 2vw !important
+	border-radius 10px !important
 	.dialog-footer
-		margin-top -5vh
+		margin-top -5vh !important
 	.registry
-		margin-right 3vw
-		margin-bottom 3vh
+		margin-right 3vw !important
+		margin-bottom 3vh !important
 	.captcha
-		display inline-block
-		width 58%
-		text-align left
-		margin-right 1vw
-		transform translateY(-1.5vh)
+		display inline-block !important
+		width 58% !important
+		text-align left  !important
+		transform translateY(-1.5vh)   !important
 .el-dialog__footer
-	padding-bottom 10px
+	padding-bottom 10px !important
 .r-dialog
-	background radial-gradient(200px at left top,#fff 50%,#f6f6f6 50%)
+	background radial-gradient(200px at left top,#fff 50%,#f6f6f6 50%) !important
 </style>

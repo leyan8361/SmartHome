@@ -38,6 +38,26 @@ import notice from '@/utils/ui/notice'
 })
 export default class DurationForm extends Vue{
 	weaks = [{
+			value:'每周一',label:'每周一'
+		},{
+			value:'每周二',label:'每周二'
+		},{
+			value:'每周三',label:'每周三'
+		},{
+			value:'每周四',label:'每周四'
+		},{
+			value:'每周五',label:'每周五'
+		},{
+			value:'每周六',label:'每周六'
+		},{
+			value:'每周日',label:'每周日'
+	}]
+	times = [
+		{value:'每天',label:'每天'},
+		{value:'仅今天',label:'仅今天'},
+		{value:'仅明天',label:'仅明天'},
+		{value:'仅后天',label:'仅后天'},
+		{value:'每周',label:'每周',children:[{
 			value:'每周一',label:'一'
 		},{
 			value:'每周二',label:'二'
@@ -51,14 +71,7 @@ export default class DurationForm extends Vue{
 			value:'每周六',label:'六'
 		},{
 			value:'每周日',label:'日'
-	}]
-	times = [
-		{value:'每天',label:'每天'},
-		{value:'仅今天',label:'仅今天'},
-		{value:'仅明天',label:'仅明天'},
-		{value:'仅后天',label:'仅后天'},
-		{value:'每周',label:'每周',children:this.weaks}
-	]
+	}]}]
 	verify(){
 		if(!this.duration.startDuration && !this.duration.specificDuration){
 			return false

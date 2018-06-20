@@ -18,7 +18,6 @@ export default {
 	Info(state, { name, account, address,avatar,news}){
 		state.name = name
 		state.account = account
-		address.hasOwnProperty('code') && Reflect.deleteProperty(address,'code')
 		state.address = address
 		state.avatar = avatar
 		state.news = news

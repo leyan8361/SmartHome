@@ -7,34 +7,51 @@ const Scripts = new mongoose.Schema(
 			required: true,
 			trim:true
 		},
+		scriptID: {
+			type: String,
+			trim: true,
+			required:true
+		},
 		disable: {
 			type: Boolean,
 			default:false
 		},
-		id: {
+
+		account: {
 			type: String,
 			required: true,
-			trim:true
+			trim: true,
+			unique: true
+		},
+		address: {
+			province: {
+				type: String,
+				required: true,
+				trim: true
+			},
+			city: {
+				type: String,
+				required: false,
+				trim: true
+			},
+			county: {
+				type: String,
+				required: false,
+				trim: true
+			},
+			code: {
+				type: String,
+				required: true,
+				trim:true
+			}
+		},
+
+		ids: {
+			type: [String],
+			required: true
 		},
 		name:{
-			type: String,
-			trim: true,
-			required:false
-		},
-		relation: {
-			type: Boolean,
-			default:false
-		},
-		duration: {
-			type: String,
-			required: false,
-			enum: ['每天', '仅今天', '仅明天','仅后天','每周几','每月几','指定时间'],
-			default: '每天',
-			trim:true
-		},
-		scriptID: {
-			type: String,
-			trim: true,
+			type: [String],
 			required:true
 		},
 		status: {
@@ -54,14 +71,44 @@ const Scripts = new mongoose.Schema(
 			max: 300,
 			min: 0
 		},
-		startExec: {
-			type: String,
+
+		weather: {
+			type: [String],
 			required:false
+		},
+		startExec: {
+			hour: {
+				type: String,
+				required:false
+			},
+			minutes: {
+				type: String,
+				required:false
+			},
+			second: {
+				type: String,
+				required:false
+			}
 		},
 		endExec: {
-			type: String,
-			required:false
+			hour: {
+				type: String,
+				required:false
+			},
+			minutes: {
+				type: String,
+				required:false
+			},
+			second: {
+				type: String,
+				required:false
+			}
 		},
+		relation: {
+			type: Boolean,
+			default:false
+		},
+
 		startDuration: {
 			type: String,
 			required: false,
@@ -71,9 +118,35 @@ const Scripts = new mongoose.Schema(
 			type: String,
 			required:false
 		},
-		weather: {
-			type: String,
-			required:false
+		specificDuration: {
+			start: {
+				year: {
+					type: String,
+					required:false
+				},
+				month: {
+					type: String,
+					required:false
+				},
+				day: {
+					type: String,
+					required:false
+				}
+			},
+			end: {
+				year: {
+					type: String,
+					required:false
+				},
+				month: {
+					type: String,
+					required:false
+				},
+				day: {
+					type: String,
+					required:false
+				}
+			}
 		}
 	},
 	{
@@ -86,5 +159,5 @@ const Scripts = new mongoose.Schema(
 Scripts.set('toJSON', { getters: true, virtuals: true })
 Scripts.set('toObect', { getters: true, virtuals: true })
 
-
-module.exports = mongoose.model('Scripts',Scripts)
+const ScriptsModel = mongoose.models.Scripts || mongoose.model('Scripts',Scripts)
+module.exports = ScriptsModel

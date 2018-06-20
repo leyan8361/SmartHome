@@ -27,6 +27,9 @@ export default {
 
 			}
 			state.scriptFormFinishCount = id + n
+		},
+		finishFormCountToZero(state) {
+			state.scriptFormFinishCount = 0
 		}
 	}
 }

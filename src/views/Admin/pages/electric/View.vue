@@ -10,20 +10,14 @@
 		el-row(:span="24" type="flex" align="middle" justify="center")
 			el-button.open-setting(type="primary" @click="isShowBulb=true") 打开设置
 		bulb-form(:is-show-bulb.sync="isShowBulb" :bulb.sync="bulb" :index="index")
-	.tip-when-no-electric(v-else)
-		el-row.title(:span="24" type="flex" align="middle" justify="center")
-			| 您还没有自己的器~
-		el-row.content(:span="24" type="flex" align="middle" justify="center")
-			| 快去添加自己家中的电器吧~
-		el-row.btn-add-electric(:span="24" type="flex" align="middle" justify="center")
-			el-button(type="primary" @click="$router.push({name:'ElectricAdmin'})") 添加电器
-
+	electric-is-null(v-else)
 </template>
 
 <script>
 import { Component,Vue} from 'vue-property-decorator'
 import {mapState } from 'vuex'
 import BulbInfo from '~/bulb/Index'
+import ElectricIsNull from '~/electric/ElectricIsNull'
 
 import BulbForm from '@/views/Admin/form/Bulb'
 
@@ -33,7 +27,8 @@ import BulbForm from '@/views/Admin/form/Bulb'
 	},
 	components:{
 		BulbInfo,
-		BulbForm
+		BulbForm,
+		ElectricIsNull
 	}
 })
 export default class ElectricAdmin extends Vue{
@@ -52,16 +47,6 @@ export default class ElectricAdmin extends Vue{
 </script>
 
 <style lang="stylus">
-.tip-when-no-electric
-	font-beautify()
-	margin 120px
-	.title
-		padding-bottom 40px
-	.btn-add-electric
-		padding 20px
-		margin-top 50px
-		letter-spacing 2px
-
 .electric-show
 	margin-top 20px
 	.electric-carousel

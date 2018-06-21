@@ -5,53 +5,59 @@ const Codition = require('./lib/codition')
 const Job = require('./lib/job')
 
 class Task{
-	constructor(job,codition, duration,indentify) {
-		for (let [key, value] of Object.entries(indentify)) {
-			this[key] = value
+
+	constructor(job, codition, duration, indentify) {
+		if (indentify && Object.keys(indentify).length !== 0) {
+			Object.keys(indentify).forEach(e => {
+				this[e] = indentify[e]
+			})
 		}
 
 		this._run = schedule.scheduleJob
 		this.schedules = null
 
-		if (codition.weather && codition.weather.length > 0 && codition.startExec && codition.relation) {
-			this.relation = true
-			this.hour = codition.startExec.hour
-			this.minute = codition.startExec.minutes
-			this.second = codition.startExec.second
-		}
-
 		//如果存在天气 每15分钟需要重新解析一下
 		if (codition.weather && codition.weather.length > 0) {
-			this.weatherJob = schedule.scheduleJob('15 * * * *', async () => {
-				this.weatherCodition = await Codition.ResolveWeather(codition.weather, this.address)
-				this.runWithWeather()
-			})
+			this.weather = codition.weather
+			this.weatherJob = schedule.scheduleJob('15 * * * *', this.runWeatherJob)
+			this.runWeatherJob()
+
+			if (codition.startExec && codition.relation) {
+				this.relation = true
+				this.hour = codition.startExec.hour
+				this.minute = codition.startExec.minutes
+				this.second = codition.startExec.second
+			}
 		}
 
 		this.execCodition = Codition.ResolveExec(codition.startExec)
 
-		this.durationJob = schedule.scheduleJob('0 0 0 * * *', () => {
-			// '是否处在指定日期范围'
-			const {start,end,specific} = duration
-			if (specific && specific.start && Object.value(specific.start).length > 0) {
-				this.duration = Duration.ResolveSpecific(specific)
-			} else {
-				this.duration = Duration.ResolveDuration(start, end)
-			}
-			!this.duration && this.stop()
-		})
+		this.duration = duration
+		this.durationJob = schedule.scheduleJob('0 0 0 * * *', this.runDurationJob)
+		this.runDurationJob()
 
 		this.job = Job.Resolve(job, this.account)
 	}
+	async runWeatherJob() {
+		this.weatherCodition = await Codition.ResolveWeather(this.weather, this.address)
+		this.runWithWeather()
+	}
+	runDurationJob() {
+		// '是否处在指定日期范围'
+		const {start,end,specific} = this.duration
+		if (specific && specific.start && Object.values(specific.start).length > 0) {
+			this.duration = Duration.ResolveSpecific(specific)
+		} else {
+			this.duration = Duration.ResolveDuration(start, end)
+		}
+		!this.duration && this.stop()
+	}
 	debug() {
-		if (!this.codition) {
+		if (!this.weatherCodition || !this.execCodition) {
 			this.message = '任务的运行条件未定义！'
 		}
 		if (!this.job) {
 			this.message = '任务的具体工作未定义！'
-		}
-		if (!this.duration) {
-			this.message = '任务的运行时间未定义！'
 		}
 		if (this.message) {
 			this.disabled = true
@@ -131,3 +137,5 @@ class Task{
 		})
 	}
 }
+
+module.exports = Task

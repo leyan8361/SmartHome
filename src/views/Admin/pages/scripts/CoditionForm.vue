@@ -3,7 +3,7 @@ el-dialog(title="触发条件" :visible="isShowCoditionForm"  width="28%" top="1
 lock-scroll center append-to-body :close-on-click-modal="false" :close-on-press-escape="false" :show-close="false")
 	el-form(:span="24" type="flex" align="middle" justify="center" :model="codition" label-width="100px"  center status-ico)
 		el-form-item(label="触发时间")
-			el-time-picker(v-model="codition.startExec" placeholder="请选择触发指令的时间")
+			el-time-picker.time-picker(v-model="codition.startExec" placeholder="请选择触发指令的时间")
 		el-form-item(label="天气条件")
 			codition-weather(:weather.sync="codition.weather")
 		el-form-item(label="条件关系")
@@ -65,5 +65,6 @@ export default class CoditionForm extends Vue{
 </script>
 
 <style lang="stylus">
-
+.time-picker
+	width 99% !important
 </style>

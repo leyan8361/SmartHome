@@ -24,6 +24,9 @@ export default class BulbSelection extends Vue{
 				label:e.name
 			})
 		})
+		if(this.allBulbs.length < 2){
+			return
+		}
 		this.allBulbs.push({
 			label:'全部',
 			value:'0'

@@ -81,7 +81,7 @@ module.exports = {
 			disabled: false
 		}
 
-		Tasks.push(job,codition, duration,indentify)
+		Tasks.add(job,codition, duration,indentify)
 		const scripts = await Scripts.find(
 			{ master: account },
 			{ master: 0, address: 0, _id: 0, _v: 0 }

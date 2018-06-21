@@ -6,7 +6,7 @@
 		el-step(title="执行时间" description="执行指令的时间，可指定某一时间范围、每周的某一天等")
 	.add-script-setting
 		el-row(:span="24" type="flex" align="middle" justify="center")
-			el-button(@click.native="isShowOperatingForm=true" round) 操作指令
+			el-button(:class="{'is-disabled':bulbs.length===0}" @click.native="bulbs.length===0?$notify({type:'warning',title: '别急',message: '您必须有电器才能添加指令哦',duration:1000}):isShowOperatingForm=true" round) 操作指令
 		el-row(:span="24" type="flex" align="middle" justify="center")
 			el-button(:class="{'is-disabled':scriptFormFinishCount<1}" @click.native="scriptFormFinishCount<1?$notify({type:'warning',title: '别急',message: '请先完成操作指令表单',duration:1000}):isShowCoditionForm=true" round) 触发条件
 		el-row(:span="24" type="flex" align="middle" justify="center")
@@ -40,7 +40,8 @@ import notice from '@/utils/ui/notice'
 	},
 	computed:{
 		...mapState('ui',['scriptFormFinishCount']),
-		...mapState('user',['address'])
+		...mapState('user',['address']),
+		...mapState('electrics',['bulbs'])
 	}
 })
 export default class ScriptIndex extends Vue{

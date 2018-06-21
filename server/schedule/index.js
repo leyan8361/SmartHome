@@ -4,7 +4,7 @@ class Tasks extends Array{
 	constructor() {
 		super()
 	}
-	push(job, codition, duration, indentify) {
+	add(job, codition, duration, indentify) {
 		const task = new Task(job, codition, duration, indentify)
 		task.run()
 		this.push(task)

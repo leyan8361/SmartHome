@@ -3,18 +3,18 @@
 	el-row.electric-setting-title
 		| 电器设置
 	el-row.electric-settings
-		el-row.electric-setting-button(@click.native="turnBulbs(false)")
+		el-row.electric-setting-button(@click.native="bulbs.length===0?$notify({type:'warning',title: '别急',message: '您必须有电器才能添加指令哦',duration:1000}):turnBulbs(false)")
 			| 一键关灯
-		el-row.electric-setting-button(@click.native="turnBulbs(true)")
+		el-row.electric-setting-button(@click.native="bulbs.length===0?$notify({type:'warning',title: '别急',message: '您必须有电器才能添加指令哦',duration:1000}):turnBulbs(true)")
 			| 一键开灯
-		el-row.electric-setting-button(@click.native="isShowSetting=true")
+		el-row.electric-setting-button(@click.native="bulbs.length===0?$notify({type:'warning',title: '别急',message: '您必须有电器才能添加指令哦',duration:1000}):isShowSetting=true")
 			| 状态设置
 		status-setting(:is-show-setting.sync="isShowSetting")
 </template>
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
-import {mapActions} from 'vuex'
+import {mapActions,mapState} from 'vuex'
 import notice from '@/utils/ui/notice'
 import StatusSetting from '@/views/Admin/form/StatusSetting'
 
@@ -24,6 +24,9 @@ import StatusSetting from '@/views/Admin/form/StatusSetting'
 	},
 	methods:{
 		...mapActions('electrics',['switchBulbsStatus'])
+	},
+	computed:{
+		...mapState('electrics',['bulbs'])
 	}
 })
 export default class Electric extends Vue{

@@ -1,5 +1,4 @@
 const { generateRule } = require('utils/task')
-const schedule = require('node-schedule')
 const { getWeather, isSunnyorCloudy, getSunMoveTime } = require('utils/http')
 
 module.exports = {
@@ -34,5 +33,6 @@ module.exports = {
 				rules.push(generateRule(up))
 			}
 		}
+		return rules
 	}
 }

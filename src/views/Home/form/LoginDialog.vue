@@ -50,7 +50,6 @@ export default class LoginDialog extends Vue {
 	keep = true
 	Init(){
 		this.user.account = this.account || ''
-		this.refs.passInput.focus()
 	}
 	handleClose(done) {
 		this.changeShowStatus({ name: 'Login', status: false })

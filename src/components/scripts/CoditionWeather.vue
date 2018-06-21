@@ -1,5 +1,5 @@
 <template lang="pug">
-el-select(v-model="weather" placeholder="请选择触发的天气" @change="$emit('update:weather',weather)" clearable )
+el-select(v-model="weather" placeholder="请选择触发的天气" @change="$emit('update:weather',weather)" clearable multiple)
 	el-option(v-for="(item,index) in weathers" :key="index" :label="item.value" :value="item.value")
 </template>
 

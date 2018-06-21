@@ -1,8 +1,7 @@
 <template lang="pug">
-el-table(v-if="data.length!==0" :data="data" border
+el-table(v-if="data.length!==0" :data="data" stripe
 	:row-class-name="unReadRows" style="width:120%"
-	height="400" max-height="400" tooltip-effect="dark"
-	@current-change="handleCurrentChange" @selection-change="handleSelectionChange")
+	height="400" max-height="400")
 	el-table-column(prop="date" label="日期" width="120")
 	el-table-column(:label="label" width="160")
 		template(slot-scope="scope")
@@ -14,8 +13,8 @@ el-table(v-if="data.length!==0" :data="data" border
 	el-table-column(prop="message" label="内容")
 	el-table-column(v-if="key==='sender'" label="操作")
 		template(slot-scope="scope")
-			el-button(size="mini" type="primary") 加入共享
-			el-button(size="mini" type="danger") 残忍拒绝
+			el-button(size="mini" type="primary" @click.native="handleJoin") 加入共享
+			el-button(size="mini" type="danger" @click.native="handleRefuse") 残忍拒绝
 .tip-when-no-notice(v-else)
 	el-row.title(:span="24" type="flex" align="middle" justify="center")
 		| 看来您还没有心仪的人~
@@ -27,7 +26,7 @@ el-table(v-if="data.length!==0" :data="data" border
 
 <script>
 import { Component,Vue} from 'vue-property-decorator'
-import { mapState,mapMutations } from 'vuex'
+import { mapState,mapActions } from 'vuex'
 
 @Component({
 	computed:{
@@ -35,6 +34,9 @@ import { mapState,mapMutations } from 'vuex'
 	},
 	props:{
 		data:Array
+	},
+	methods:{
+		...mapActions('family',['join','refuse'])
 	}
 })
 export default class FamilyNotice extends Vue{
@@ -51,11 +53,11 @@ export default class FamilyNotice extends Vue{
 			return 'unread-row'
 		}
 	}
-	handleCurrentChange(val) {
-		this.currentRow = val
+	handleJoin(){
+
 	}
-	handleSelectionChange(val) {
-		this.multipleSelection = val
+	handleRefuse(){
+		
 	}
 }
 </script>

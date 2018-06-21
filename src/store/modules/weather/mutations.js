@@ -2,7 +2,6 @@ import filterWeatherInfo from '@/utils/weather'
 
 export default {
 	Weather(state, weather) {
-		console.log(weather)
 		const { sr: up, ss: down } = weather.daily_forecast[0]
 		weather.forecast = weather.daily_forecast
 		;['now', 'forecast', 'lifestyle'].forEach(e => {

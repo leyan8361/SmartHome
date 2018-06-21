@@ -124,6 +124,7 @@
 		"utils": "./server/utils",
 		"middlewares": "./server/middlewares",
 		"routes": "./server/routes",
-		"dist": "./dist"
+		"dist": "./dist",
+		"schedule":"./server/schedule"
 	}
 }

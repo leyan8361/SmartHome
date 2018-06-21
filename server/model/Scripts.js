@@ -18,26 +18,9 @@ const Scripts = new mongoose.Schema(
 		},
 
 		address: {
-			province: {
-				type: String,
-				required: true,
-				trim: true
-			},
-			city: {
-				type: String,
-				required: false,
-				trim: true
-			},
-			county: {
-				type: String,
-				required: false,
-				trim: true
-			},
-			code: {
-				type: String,
-				required: true,
-				trim:true
-			}
+			type: String,
+			required: true,
+			trim:true
 		},
 
 		ids: {
@@ -71,20 +54,6 @@ const Scripts = new mongoose.Schema(
 			required:false
 		},
 		startExec: {
-			hour: {
-				type: String,
-				required:false
-			},
-			minutes: {
-				type: String,
-				required:false
-			},
-			second: {
-				type: String,
-				required:false
-			}
-		},
-		endExec: {
 			hour: {
 				type: String,
 				required:false

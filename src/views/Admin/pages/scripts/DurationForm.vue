@@ -9,7 +9,7 @@ lock-scroll center append-to-body :close-on-click-modal="false" :close-on-press-
 				el-cascader(:disabled="duration.startDuration.length<2 || duration.specificDuration!==null" v-model="duration.endDuration" placeholder="请选择结束指令的时间" :options="weaks" clearable)
 		el-form-item(label="指定执行")
 			el-tooltip(content="如果设置该选项，以上两项默认失效")
-				el-date-picker(v-model="duration.specificDuration"
+				el-date-picker(v-model="duration.specificDuration" :picker-options="pickerOptions"
 				type="daterange" start-placeholder="开始日期" end-placeholder="结束日期")
 	el-row(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm") 保存时间
@@ -19,7 +19,7 @@ lock-scroll center append-to-body :close-on-click-modal="false" :close-on-press-
 import {Component,Vue} from 'vue-property-decorator'
 import { mapMutations } from 'vuex'
 import notice from '@/utils/ui/notice'
-
+import task from '@/utils/task'
 @Component({
 	props:{
 		isShowDurationForm:{
@@ -38,6 +38,11 @@ import notice from '@/utils/ui/notice'
 })
 export default class DurationForm extends Vue{
 	firstSave = false
+	pickerOptions = {
+		disabledDate(time) {
+			return time.getTime() < Date.now()
+		}
+	}
 	weaks = [{
 			value:'每周一',label:'每周一'
 		},{
@@ -55,9 +60,6 @@ export default class DurationForm extends Vue{
 	}]
 	times = [
 		{value:'每天',label:'每天'},
-		{value:'仅今天',label:'仅今天'},
-		{value:'仅明天',label:'仅明天'},
-		{value:'仅后天',label:'仅后天'},
 		{value:'每周',label:'每周',children:[{
 			value:'每周一',label:'每周一'
 		},{
@@ -84,13 +86,17 @@ export default class DurationForm extends Vue{
 			return notice.warning('请选择一个时间','错误')
 		}
 		if(this.duration.startDuration && this.duration.startDuration.length === 2){
-			const day = this.duration.startDuration[1]
 			if(this.duration.endDuration && this.duration.endDuration.length !== 0){
-				if(day === this.duration.endDuration[0]){
-					return notice.warning('不能选择相同星期','错误')
+				const start = this.duration.startDuration[1]
+				const end = this.duration.endDuration[0]
+				if(task.filterWeek(start) >= task.filterWeek(end)){
+					return notice.warning('选择星期只能从大到小哦','错误')
 				}
 			}
 		}
+
+		console.log(this.duration.specificDuration)
+
 		this.finishScriptForm({isFinish:true,id:3})
 		this.$emit('update:isShowDurationForm', false)
 		this.$emit('update:duration',this.duration)

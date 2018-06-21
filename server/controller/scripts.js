@@ -1,5 +1,6 @@
 const Scripts = require('model/Scripts')
-const {filterTime,filterDate} = require('utils/db/scripts')
+const { filterTime, filterDate } = require('utils/db/scripts')
+const Tasks = require('schedule/index')
 
 module.exports = {
 	async addScript(ctx) {
@@ -8,7 +9,6 @@ module.exports = {
 
 		script.master = account
 		script.startExec = filterTime(script.startExec)
-		script.endExec = filterTime(script.endExec)
 
 		if (script.startDuration && script.startDuration.length > 0) {
 			script.startDuration = script.startDuration[script.startDuration.length > 1 ? 1 : 0]
@@ -22,9 +22,11 @@ module.exports = {
 			script.showDuration += `至${script.endDuration}`
 		}
 		if (script.specificDuration && script.specificDuration.length > 1) {
-			script.specificDuration.start = filterDate(script.specificDuration[0])
+			script.specificDuratio.start = filterDate(script.specificDuration[0])
 			script.specificDuration.end = filterDate(script.specificDuration[1])
-			script.showDuration = `${Object.values(script.specificDuration.start).join('.') } 至 ${ Object.values(script.specificDuration.end).join('.')}`
+			script.showDuration = `${Object.values(
+				script.specificDuration.start
+			).join('.')} 至 ${Object.values(script.specificDuration.end).join('.')}`
 		}
 		if (script.ids.includes('0')) {
 			script.showName = '全部'
@@ -43,9 +45,6 @@ module.exports = {
 		if (script.startExec) {
 			showExecTime = Object.values(script.startExec).join(':')
 		}
-		if (script.endExec) {
-			showExecTime += `至${Object.values(script.endExec).join(':')}`
-		}
 
 		if (showWeather && showExecTime) {
 			let showRelation = script.relation ? ' 且 ' : ' 或 '
@@ -58,13 +57,45 @@ module.exports = {
 		if (!isSaveSuccess) {
 			return ctx.sendError('因不可抗拒因素，指令增加失败！')
 		}
-		const scripts = await Scripts.find({ master: account }, {master:0,address:0,_id:0,_v:0})
-		ctx.send('指令增加成功！', {scripts})
+
+		const codition = {
+			weather: script.weather,
+			startExec: script.startExec,
+			relation:script.relation
+		}
+		const duration = {
+			start: script.startDuration,
+			end: script.endDuration,
+			specific:script.specificDuration
+		}
+		const job = {
+			bulbs: script.ids,
+			status: script.status,
+			color: script.color,
+			brightness: script.brightness
+		}
+		const indentify = {
+			master:account,
+			id: script.scriptID,
+			address: script.address,
+			disabled: false
+		}
+
+		Tasks.push(job,codition, duration,indentify)
+		const scripts = await Scripts.find(
+			{ master: account },
+			{ master: 0, address: 0, _id: 0, _v: 0 }
+		)
+		ctx.send('指令增加成功！', { scripts })
 	},
 	async disableScript(ctx) {
 		const account = ctx.state.user.data
-		const { scriptID,disabled } = ctx.request.body
-		const isDisableSuccess = await Scripts.updateOne({ $and: [{ master: account }, { scriptID }] }, { disabled:!disabled})
+		const { scriptID, disabled } = ctx.request.body
+		const isDisableSuccess = await Scripts.updateOne(
+			{ $and: [{ master: account }, { scriptID }] },
+			{ disabled: !disabled }
+		)
+		Tasks.disabledToggleById(scriptID)
 		const showText = disabled ? '启用' : '禁用'
 		if (!isDisableSuccess) {
 			return ctx.sendError(`因不可抗拒因素，指令${showText}失败！`)
@@ -74,7 +105,10 @@ module.exports = {
 	async deleteScript(ctx) {
 		const account = ctx.state.user.data
 		const { scriptID } = ctx.request.query
-		const isDeleteSuccess = await Scripts.deleteOne({ $and: [{ master: account }, { scriptID }] })
+		const isDeleteSuccess = await Scripts.deleteOne({
+			$and: [{ master: account }, { scriptID }]
+		})
+		Tasks.deleteById(scriptID)
 		if (!isDeleteSuccess) {
 			return ctx.sendError('因不可抗拒因素，指令删除失败！')
 		}

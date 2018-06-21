@@ -19,5 +19,27 @@ module.exports = {
 			.then(({ data: { HeWeather6: { '0': weatherInfo } } })=>weatherInfo)
 			.catch(e=>{ console.error(e) })
 
+	},
+	isSunnyorCloudy(weather) {
+		const info = weather.now.cond_txt
+		let result = true
+		if (info.includes('阴') || info.includes('雨') || info.includes('雪') || info.includes('沙尘暴')) {
+			result = false
+		}
+		return result
+	},
+	getSunMoveTime(weather) {
+		const { sr, ss } = weather.daily_forecast[0]
+		const srTimes = sr.split(':')
+		const ssTimes = ss.split(':')
+		const up = {
+			hour: srTimes[0],
+			minute:srTimes[1]
+		}
+		const down = {
+			hour: ssTimes[0],
+			minute:ssTimes[1]
+		}
+		return {up,down}
 	}
 }

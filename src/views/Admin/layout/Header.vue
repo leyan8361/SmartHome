@@ -49,8 +49,6 @@ import {Component,Vue} from 'vue-property-decorator'
 import {mapState,mapMutations,mapActions} from 'vuex'
 import status from '@/utils/global/status'
 @Component({
-	methods:{
-	},
 	computed:{
 		...mapState('user',['account','name','address','avatar','news']),
 		...mapState('notice',['family'])
@@ -65,7 +63,10 @@ export default class Header extends Vue{
 	currDate = new Date().getDate()
 	localDate = localStorage.localDate
 	created(){
-		!this.localDate && (localStorage.localDate = this.currDate)
+		/* eslint-disable eqeqeq */
+		if(!this.localDate || this.currDate != this.localDate){
+			localStorage.localDate = this.currDate
+		}
 	}
 	mounted(){
 		this.intervalId = setInterval(()=>{

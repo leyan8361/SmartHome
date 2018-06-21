@@ -2,11 +2,8 @@
 el-dialog(title="触发条件" :visible="isShowCoditionForm"  width="28%" top="10vh" custom-class="bulb-dialog"
 lock-scroll center append-to-body :close-on-click-modal="false" :close-on-press-escape="false" :show-close="false")
 	el-form(:span="24" type="flex" align="middle" justify="center" :model="codition" label-width="100px"  center status-ico)
-		el-form-item(label="开始时间")
-			el-time-picker(v-model="codition.startExec" placeholder="请选择触发的开始时间")
-		el-form-item(label="结束时间")
-			el-tooltip(content="如果未选择该选项，默认无结束时间；反之，等到结束时间之后，电器将切换为指令之前的状态")
-				el-time-picker(:disabled="codition.startExec===null" v-model="codition.endExec" placeholder="请选择触发的结束时间")
+		el-form-item(label="触发时间")
+			el-time-picker(v-model="codition.startExec" placeholder="请选择触发指令的时间")
 		el-form-item(label="天气条件")
 			codition-weather(:weather.sync="codition.weather")
 		el-form-item(label="条件关系")
@@ -53,9 +50,14 @@ export default class CoditionForm extends Vue{
 		if(!this.verify()){
 			return notice.warning('请选择一个条件','错误')
 		}
+		if(this.codition.weather && this.codition.weather.length > 0){
+			if(this.codition.weather.includes('晴天') && this.codition.weather.includes('阴天')){
+				return notice.warning('晴天与阴天不能同时选择哦','错误')
+			}
+		}
 		this.finishScriptForm({isFinish:true,id:2})
 
-		this.$emit('update:operating',this.operating)
+		this.$emit('update:codition',this.codition)
 		this.$emit('update:isShowCoditionForm', false)
 
 	}

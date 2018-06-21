@@ -57,7 +57,6 @@ export default class ScriptIndex extends Vue{
 	}
 	codition = {
 		startExec:null,
-		endExec:null,
 		weather:[],
 		relation:false
 	}
@@ -76,7 +75,7 @@ export default class ScriptIndex extends Vue{
 		this.isLoading = true
 		this.script = {
 			scriptID:Date.now(),
-			address:this.address,
+			address:this.address.code,
 			...this.operating,
 			...this.codition,
 			...this.duration

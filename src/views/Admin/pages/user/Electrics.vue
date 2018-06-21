@@ -27,4 +27,7 @@ export default class User extends Vue{
 .user-electric-component
 	margin-top 20px
 	padding 20px
+.electrics-table
+	box-shadow 0 2px 10px #ccc
+	border-radius 5px
 </style>

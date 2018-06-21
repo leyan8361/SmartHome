@@ -1,7 +1,7 @@
 <template lang="pug">
 .electric-setting-component
 	.scripts-list
-		el-table(v-if="scripts.length!==0" :data="scripts" :row-class-name="disabledRowClass" stripe)
+		el-table.scripts-table(v-if="scripts.length!==0" :data="scripts" :row-class-name="disabledRowClass" stripe )
 			el-table-column(prop="showName" label="电器" width="78")
 			el-table-column(prop="showStatus" label="状态" width="40")
 			el-table-column(prop="showBrightness" label="亮度" width="70")
@@ -94,4 +94,7 @@ export default class ScriptsAdmin extends Vue{
 .script-disabled-button
 	transform translateY(-2px) !important
 	border-radius 0px !important
+.scripts-table
+	box-shadow 0 2px 10px #ccc
+	border-radius 5px
 </style>

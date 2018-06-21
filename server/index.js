@@ -11,6 +11,7 @@ const app = new Koa()
 middleware(app)
 router(app)
 require('db')()
+require('schedule')()
 
 app.listen(http.port, http.ip, () => {
   log.info(`server is running at http://${ip.address()}:${http.port}`)

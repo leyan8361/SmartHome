@@ -32,9 +32,10 @@
 		"prelint": "eslint --ext .js server & eslint --ext .js,.vue src",
 		"lint": "eslint --fix .js server && eslint --fix .js,.vue src",
 		"amend": "git add -A && git commit --amend --no-edit",
+		"postamend" : "git push -f origin master",
 		"precommit": "git add -A && npm run lint",
 		"commit": "git cz",
-		"postcommit": "npm run amend"
+		"postcommit": "npm run amend --no-edit"
 	},
 	"dependencies": {
 		"axios": "^0.18.0",

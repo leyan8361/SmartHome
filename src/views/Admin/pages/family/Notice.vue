@@ -57,7 +57,7 @@ export default class FamilyNotice extends Vue{
 
 	}
 	handleRefuse(){
-		
+
 	}
 }
 </script>

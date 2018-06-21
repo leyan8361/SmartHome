@@ -1,10 +1,10 @@
-const { generateRule } = require('utils/task')
+// const { generateRule } = require('utils/task')
 const { getWeather, isSunnyorCloudy, getSunMoveTime } = require('utils/http')
 
 module.exports = {
-	ResolveExec(startExec) {
-		if (startExec && Object.values(startExec).length !== 0) {
-			return generateRule(startExec)
+	ResolveExec(time) {
+		if (time && Object.values(time).length !== 0) {
+			return `${time.second} ${time.minute || time.minutes} ${time.hour} * * *`
 		}
 	},
 	async ResolveWeather(weather,address) {
@@ -27,10 +27,10 @@ module.exports = {
 		if (isContainSun) {
 			const { down, up } = getSunMoveTime(weatherInfo)
 			if (weather.includes('太阳下山')) {
-				rules.push(generateRule(down))
+				rules.push(`${down.second} ${down.minute || down.minutes} ${down.hour} * * *`)
 			}
 			if (weather.includes('太阳升起')) {
-				rules.push(generateRule(up))
+				rules.push(`${up.second} ${up.minute || up.minutes} ${up.hour} * * *`)
 			}
 		}
 		return rules

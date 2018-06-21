@@ -6,41 +6,42 @@ const Job = require('./lib/job')
 
 class Task{
 
-	constructor(job, codition, duration, indentify) {
-		if (indentify && Object.keys(indentify).length !== 0) {
-			Object.keys(indentify).forEach(e => {
-				this[e] = indentify[e]
-			})
-		}
+	async save(job, codition, duration, indentify) {
+		Object.keys(indentify).forEach(e => { this[e] = indentify[e] })
 
 		this._run = schedule.scheduleJob
-		this.schedules = null
+		this.schedules = {}
+		this.job = Job.Resolve(job, this.master)
+
+		await this.generatorCodition(codition)
+		this.generatorDuration(duration)
+
+		return this
+	}
+
+	generatorDuration(duration) {
+		this.duration = duration
+		this.durationJob = schedule.scheduleJob('0 0 0 * * *', this.runDurationJob)
+		this.runDurationJob()
+	}
+	async generatorCodition(codition) {
+		this.execCodition = await Codition.ResolveExec(codition.startExec)
 
 		//如果存在天气 每15分钟需要重新解析一下
 		if (codition.weather && codition.weather.length > 0) {
 			this.weather = codition.weather
 			this.weatherJob = schedule.scheduleJob('15 * * * *', this.runWeatherJob)
-			this.runWeatherJob()
+			await this.runWeatherJob()
 
 			if (codition.startExec && codition.relation) {
 				this.relation = true
-				this.hour = codition.startExec.hour
-				this.minute = codition.startExec.minutes
-				this.second = codition.startExec.second
+				;['hour', 'minutes', 'second'].forEach(e => { this[e] = codition.startExec[e] })
 			}
 		}
-
-		this.execCodition = Codition.ResolveExec(codition.startExec)
-
-		this.duration = duration
-		this.durationJob = schedule.scheduleJob('0 0 0 * * *', this.runDurationJob)
-		this.runDurationJob()
-
-		this.job = Job.Resolve(job, this.account)
 	}
 	async runWeatherJob() {
 		this.weatherCodition = await Codition.ResolveWeather(this.weather, this.address)
-		this.runWithWeather()
+		await this.runWithWeather()
 	}
 	runDurationJob() {
 		// '是否处在指定日期范围'
@@ -53,7 +54,7 @@ class Task{
 		!this.duration && this.stop()
 	}
 	debug() {
-		if (!this.weatherCodition || !this.execCodition) {
+		if (!this.weatherCodition && !this.execCodition) {
 			this.message = '任务的运行条件未定义！'
 		}
 		if (!this.job) {
@@ -64,19 +65,19 @@ class Task{
 			log.error(this.message)
 		}
 	}
-	run() {
+	async run() {
 		this.debug()
 		if (this.disabled) {
 			return {message:this.message,success:false}
 		}
-		this.runWithWeather()
+		await this.runWithWeather()
 		this.runWithExec()
 
 		this.message = `${this.id} 号任务已运行！`
 		log.success(this.message)
 		return {message:this.message,success:true}
 	}
-	runWithWeather() {
+	async runWithWeather() {
 		if (!this.weatherCodition || this.weatherCodition.length === 0) {
 			return
 		}
@@ -85,21 +86,19 @@ class Task{
 			if (time.getHours() < this.hour) {
 				return
 			}
-			if (time.getHours() === this.hour && time.getMinutes() < this.minute) {
+			if (time.getHours() === this.hour && time.getMinutes() < this.minutes) {
 				return
 			}
 		}
+		let ine = 0
 		// 目前处于晴天或者阴天，符合运行条件，直接运行
 		if (this.weatherCodition[0] === 'run') {
-			this.job()
-			this.weatherCodition.shift()
+			await this.job()
+			ine = 1
 		}
-		['sunUp', 'sunDown'].forEach(e => {
-			if (this.weatherCodition[0]) {
-				this.schedules[e] && this.schedules[e].cancel()
-				this.schedules[e] = this._run(this.weatherCodition[0], this.job)
-				this.weatherCodition.shift()
-			}
+		['sunUp', 'sunDown'].forEach((e,i) => {
+			this.schedules[e] && this.schedules[e].cancel()
+			this.schedules[e] = this._run(this.weatherCodition[i + ine], this.job)
 		})
 	}
 	runWithExec() {

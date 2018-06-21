@@ -1,6 +1,7 @@
 const Scripts = require('model/Scripts')
 const { filterTime, filterDate } = require('utils/db/scripts')
-const Tasks = require('schedule/index')
+const { generateTask } = require('utils/task')
+const Tasks = require('schedule/tasks')
 
 module.exports = {
 	async addScript(ctx) {
@@ -11,7 +12,8 @@ module.exports = {
 		script.startExec = filterTime(script.startExec)
 
 		if (script.startDuration && script.startDuration.length > 0) {
-			script.startDuration = script.startDuration[script.startDuration.length > 1 ? 1 : 0]
+			script.startDuration =
+				script.startDuration[script.startDuration.length > 1 ? 1 : 0]
 			script.showDuration = script.startDuration
 		}
 		if (script.endDuration && script.endDuration.length > 0) {
@@ -22,7 +24,7 @@ module.exports = {
 			script.showDuration += `至${script.endDuration}`
 		}
 		if (script.specificDuration && script.specificDuration.length > 1) {
-			script.specificDuratio.start = filterDate(script.specificDuration[0])
+			script.specificDuration.start = filterDate(script.specificDuration[0])
 			script.specificDuration.end = filterDate(script.specificDuration[1])
 			script.showDuration = `${Object.values(
 				script.specificDuration.start
@@ -53,39 +55,18 @@ module.exports = {
 			script.showCodition = showExecTime ? showExecTime : showWeather
 		}
 
-		const isSaveSuccess = await new Scripts(script).save()
+		const [isSaveSuccess,scripts] = await Promise.all([
+			new Scripts(script).save(),
+			Scripts.find(
+				{ master: account },
+				{ master: 0, address: 0, _id: 0, _v: 0 }
+			),
+			generateTask(script)
+		])
 		if (!isSaveSuccess) {
 			return ctx.sendError('因不可抗拒因素，指令增加失败！')
 		}
 
-		const codition = {
-			weather: script.weather,
-			startExec: script.startExec,
-			relation:script.relation
-		}
-		const duration = {
-			start: script.startDuration,
-			end: script.endDuration,
-			specific:script.specificDuration
-		}
-		const job = {
-			bulbs: script.ids,
-			status: script.status,
-			color: script.color,
-			brightness: script.brightness
-		}
-		const indentify = {
-			master:account,
-			id: script.scriptID,
-			address: script.address,
-			disabled: false
-		}
-
-		Tasks.add(job,codition, duration,indentify)
-		const scripts = await Scripts.find(
-			{ master: account },
-			{ master: 0, address: 0, _id: 0, _v: 0 }
-		)
 		ctx.send('指令增加成功！', { scripts })
 	},
 	async disableScript(ctx) {

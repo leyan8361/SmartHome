@@ -1,6 +1,6 @@
 <template lang="pug">
 .electric-admin-component
-	el-table.electrics-admin-table(:data="bulbs" v-if="bulbs.length!==0" stripe)
+	el-table.electrics-admin-table(:data="bulbs" v-if="bulbs.length!==0" stripe height="470")
 		el-table-column(prop="name" label="备注")
 		el-table-column(prop="id" label="ID")
 		el-table-column(prop="showStatus" label="状态")

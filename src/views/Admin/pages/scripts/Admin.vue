@@ -1,9 +1,9 @@
 <template lang="pug">
 .electric-setting-component
 	.scripts-list
-		el-table.scripts-table(v-if="scripts.length!==0" :data="scripts" :row-class-name="disabledRowClass" stripe )
+		el-table.scripts-table(v-if="scripts.length!==0" :data="scripts" :row-class-name="disabledRowClass" stripe :height="scripts.length<5?420:470")
 			el-table-column(prop="showName" label="电器" width="78")
-			el-table-column(prop="showStatus" label="状态" width="40")
+			el-table-column(prop="showStatus" label="状态" width="60")
 			el-table-column(prop="showBrightness" label="亮度" width="70")
 			el-table-column(prop="color" label="颜色" width="70")
 			el-table-column(prop="showCodition" label="触发条件")
@@ -18,7 +18,7 @@
 				| 目前暂无指令哦
 			.script-add-button(:span="24" type="flex" align="middle" justify="center")
 				el-button(type="success" @click.native.prevent="$router.push({name:'ScriptsAdd'})" round) 增加指令
-	.electric-setting-tip
+	.electric-setting-tip(v-show="scripts.length<5")
 		el-row
 			| 设置触发条件，将自动执行您的指令。
 		el-row
@@ -75,6 +75,7 @@ export default class ScriptsAdmin extends Vue{
 	font-size .8em
 	bottom 60px
 	padding-left 10px
+	z-index 333
 	& *
 		padding 5px 0
 .disabled-row

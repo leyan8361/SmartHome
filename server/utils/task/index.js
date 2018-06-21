@@ -1,6 +1,32 @@
 const schedule = require('node-schedule')
+const Tasks = require('schedule/tasks')
 
 module.exports = {
+	async generateTask(script) {
+		const codition = {
+			weather: script.weather,
+			startExec: script.startExec,
+			relation:script.relation
+		}
+		const duration = {
+			start: script.startDuration,
+			end: script.endDuration,
+			specific:script.specificDuration
+		}
+		const job = {
+			bulbs: script.ids,
+			status: script.status,
+			color: script.color,
+			brightness: script.brightness
+		}
+		const indentify = {
+			master:script.account,
+			id: script.scriptID,
+			address: script.address,
+			disabled: false
+		}
+		await Tasks.add(job,codition, duration,indentify)
+	},
 	filterWeek(time) {
 		if (!time) {
 			return

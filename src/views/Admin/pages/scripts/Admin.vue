@@ -20,9 +20,7 @@
 				el-button(type="success" @click.native.prevent="$router.push({name:'ScriptsAdd'})" round) 增加指令
 	.electric-setting-tip(v-show="scripts.length<5")
 		el-row
-			| 设置触发条件，将自动执行您的指令。
-		el-row
-			| 比如：下班之后时间开灯、阴天自动开灯、根据睡觉时间，自动关灯等。
+			textra(:data="words" :timer="1.5" :sequence="true" :infinite="true")
 </template>
 
 <script>
@@ -39,7 +37,7 @@ import notice from '@/utils/ui/notice'
 	}
 })
 export default class ScriptsAdmin extends Vue{
-
+	words = ['设置触发条件，将自动执行您的指令。','比如：下班之后时间开灯、阴天自动开灯、根据睡觉时间，自动关灯等。']
 	disabledRowClass({row,rowIndex}){
 		if(this.scripts[rowIndex].disabled){
 			return 'disabled-row'

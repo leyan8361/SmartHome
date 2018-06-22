@@ -4,7 +4,8 @@ el-form.family-add(type="flex" justify="center" align="middle" :model="user" :ru
 		el-input(type="text" v-model.trim="user.account" placeholder="账号 / 邮箱" clearable)
 	el-row.invite(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm" :loading="isLoading") 查找
-	el-row.user-form-tip(:span="24" tag="span" class="family-form-tip") tip: 对方同意邀请后，您的智能家居将被共享。
+	el-row.user-form-tip(:span="24" tag="span" class="family-form-tip")
+		textra(:data="words" :timer="1" :sequence="true" :infinite="true")
 
 </template>
 
@@ -23,6 +24,7 @@ import notice from '@/utils/ui/notice'
 })
 
 export default class FamilySearch extends Vue{
+	words = ['tip: 对方同意邀请后，您的智能家居将被共享。']
 	user={ account:'' }
 	rules = { account: checkAccount}
 	isLoading = false

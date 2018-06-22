@@ -9,9 +9,7 @@
 		el-button.submit-button(type="success" @click="submitForm" ) 马上反馈
 	.feedback-tip(:span="24" type="flex" align="middle" justify="center")
 		el-row
-			| 非常感谢您对我们的提出宝贵的意见
-		el-row
-			| 我们将在 1-3 个工作日内，给您反馈
+			textra(:data="words" :timer="1.5" :sequence="true" :infinite="true")
 </template>
 
 <script>
@@ -28,6 +26,7 @@ import {mapActions,mapState} from 'vuex'
 	}
 })
 export default class Feedback extends Vue{
+	words=['非常感谢您对我们的提出宝贵的意见','我们将在 1-3 个工作日内，给您反馈']
 	feedback = {
 		rate:null,
 		evaluation:null
@@ -61,7 +60,6 @@ export default class Feedback extends Vue{
 		font-beautify()
 		font-size .9em
 		padding 10px
-		border-top dashed 1px #ccc
 		& *
 			padding 5px 0
 </style>

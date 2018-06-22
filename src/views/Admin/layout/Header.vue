@@ -3,8 +3,8 @@
 		el-row(:span="24" type="flex" align="middle")
 			el-col.announcement(:span="12" :push="1")
 				icon-svg(name="tongzhi" size="1.5")
-				span.tip-word(v-text="tipWord")
 				.tip-label 小贴士
+				textra.tip-word(:data="words" :timer="1.5" :sequence="true" :infinite="true")
 			el-col.notice(:span="10" :push="3")
 				router-link(:to="{name:'NoticeFamily'}")
 					el-col.family(:span="2")
@@ -43,8 +43,9 @@
 								icon-svg(name="logout" size="1.2")
 								|退出系统
 			.setting
-				el-tooltip(content="分享" placement="bottom" )
-					el-button(type="text" @click.native="$router.push({name:'ScriptsAdmin'})")
+				el-popover(placement="bottom" width="250" trigger="click")
+					social-sharing
+					el-button(type="text" slot="reference")
 						icon-svg.notice-icon(name="fenxiang1" size="1.5")
 </template>
 
@@ -52,18 +53,20 @@
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState,mapMutations,mapActions} from 'vuex'
 import status from '@/utils/global/status'
+import SocialSharing from '~/element/SocialSharing'
+
 @Component({
 	computed:{
 		...mapState('user',['account','name','address','avatar','news']),
 		...mapState('notice',['family'])
+	},
+	components:{
+		SocialSharing
 	}
 })
 export default class Header extends Vue{
 	test=5
 	words = ['设置自动调节模式，可根据您的生活习惯以及天气情况准确掌握开灯时间','为了您的方便，我们提供了一键离家功能~','可以按照下班时间，准时开灯哦','一键关闭家中所有电器，让生活更安心','控制电器的前提是 电器已连接家中局域网哦~','如果想单独控制电器，电器的 id 号 需与已有电器的 id 号互不相同哦~']
-	tipWord = ''
-	intervalId=''
-	i=0
 	currDate = new Date().getDate()
 	localDate = localStorage.localDate
 	created(){
@@ -72,20 +75,10 @@ export default class Header extends Vue{
 			localStorage.localDate = this.currDate
 		}
 	}
-	mounted(){
-		this.intervalId = setInterval(()=>{
-			if(this.i === this.words.length){
-				this.i = 0
-			}
-			this.tipWord = this.words[this.i++]
-		},5000)
-	}
 	dropOut(){
 		status.logOut({hasTip:false,isShowLogin:false})
 	}
-	beforeDestroy(){
-    clearInterval(this.intervalId)
-	}
+
 }
 </script>
 
@@ -109,26 +102,15 @@ export default class Header extends Vue{
 	margin-top 3px
 	color #999
 .tip-word
+	position absolute
+	left 45px
+	bottom 19px
 	font-size 85%
-	margin-left 12px
-	position relative
-	bottom 4px
 	letter-spacing 2px
 	color #333
 	font-weight 300
-	transition all 0.5s
 	text-shadow rgb(69, 45, 45) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px
 	font-family "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif
-	opacity 0
-	bottom 10px
-	animation toSkew 2s infinite alternate
-@keyframes toSkew
-	50%
-		opacity 0
-		bottom 10px
-	100%
-		opacity 1
-		bottom 4px
 .user
 	position fixed
 	background-color #ccc

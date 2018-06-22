@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 
+import Textra from 'vue-textra'
+Vue.use(Textra)
+
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index'
 import 'element-ui/lib/theme-chalk/display'

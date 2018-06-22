@@ -11,7 +11,8 @@
 			el-input(type="text" v-model.trim="message" :placeholder="`我是${name}`" clearable)
 	el-row.invite-button(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm" :loading="isLoading") 邀请共享
-	.family-form-tip-c tip: 对方同意邀请后，您的智能家居将被共享。
+	.family-form-tip-c
+		textra(:data="words" :timer="1" :sequence="true" :infinite="true")
 </template>
 
 <script>
@@ -31,6 +32,7 @@ import config from 'config/file'
 	}
 })
 export default class InviteFamily extends Vue{
+	words = ['tip: 对方同意邀请后，您的智能家居将被共享。']
 	user = {}
 	isLoading = false
 	message = ''
@@ -108,6 +110,6 @@ export default class InviteFamily extends Vue{
 	font-beautify()
 	font-size 80%
 	position relative
-	margin-top 20px
+	margin-top 30px
 	left 21%
 </style>

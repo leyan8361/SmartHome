@@ -32,7 +32,7 @@
 		"prelint": "eslint --ext .js server & eslint --ext .js,.vue src",
 		"lint": "eslint --fix .js server && eslint --fix .js,.vue src",
 		"amend": "git add -A && git commit --amend --no-edit",
-		"postamend" : "git push -f origin master",
+		"postamend": "git push -f origin master",
 		"precommit": "git add -A && npm run lint",
 		"commit": "git cz",
 		"postcommit": "npm run amend --no-edit"
@@ -96,6 +96,7 @@
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.1",
 		"vue-template-compiler": "^2.5.13",
+		"vue-textra": "^1.0.2",
 		"yorkie": "^1.0.3"
 	},
 	"browserslist": [
@@ -126,6 +127,6 @@
 		"middlewares": "./server/middlewares",
 		"routes": "./server/routes",
 		"dist": "./dist",
-		"schedule":"./server/schedule"
+		"schedule": "./server/schedule"
 	}
 }

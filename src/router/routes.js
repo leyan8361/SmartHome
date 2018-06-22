@@ -6,6 +6,7 @@ import User from '@/views/Admin/pages/user/Index'
 import UserModify from '@/views/Admin/pages/user/ModifyInfo'
 import UserElectrics from '@/views/Admin/pages/user/Electrics'
 import UserFamily from '@/views/Admin/pages/user/Family'
+import UserFeedback from '@/views/Admin/pages/feedback/Index'
 
 import FamilySearch from '@/views/Admin/pages/family/Search'
 import FamilyInvite from '@/views/Admin/pages/family/Invite'
@@ -83,6 +84,14 @@ export default [
 						component: UserFamily,
 						meta: {
 							title: '家庭信息'
+						}
+					},
+					{
+						path: 'feedback',
+						name: 'UserFeedback',
+						component: UserFeedback,
+						meta: {
+							title: '意见反馈'
 						}
 					}
 				]

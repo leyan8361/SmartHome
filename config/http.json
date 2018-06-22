@@ -28,8 +28,8 @@
 			"bulb":"/auth/electric/bulb",
 			"bulbs":"/auth/electric/bulbs"
 		},
-		"script":"/auth/script"
-
+		"script":"/auth/script",
+		"feedback":"/auth/feedback"
   }
 
 }

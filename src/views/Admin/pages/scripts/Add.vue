@@ -83,7 +83,6 @@ export default class ScriptIndex extends Vue{
 		}
 		this.addScript(this.script).then(e=>{
 			this.isLoading = false
-			console.log(e.scripts)
 			if(e.success){
 				this.setScripts(e.scripts)
 				notice.success(e.message,'成功')

@@ -9,6 +9,7 @@ import family from './modules/family'
 import notice from './modules/notice'
 import electrics from './modules/electrics'
 import scripts from './modules/scripts'
+import feedback from './modules/feedback'
 import ui from './modules/ui'
 import createLogger from 'vuex/dist/logger'
 
@@ -26,6 +27,7 @@ export default new Vuex.Store({
 		notice,
 		electrics,
 		scripts,
+		feedback,
 		ui
 	},
 	getters,

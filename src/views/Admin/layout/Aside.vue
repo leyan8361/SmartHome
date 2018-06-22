@@ -38,7 +38,7 @@ el-aside.aside-admin(width="250px")
 				el-menu-item(index="3-1") 邀请家人
 			el-menu-item(index="3-2") 加入家庭
 			router-link(:to="{name:'UserFamily'}" tag="li"  v-waves)
-				el-menu-item(index="3-3") 查看成员
+				el-menu-item(index="3-3") 家庭关系
 		el-submenu(index="4")
 			template(slot="title")
 				i.el-icon-news
@@ -58,30 +58,35 @@ el-aside.aside-admin(width="250px")
 				el-menu-item(index="5-3") 天气情况
 			el-menu-item(index="5-4") 使用功耗
 	.menu-footer
-		router-link(:to="{name:'ScriptsAdmin'}" tag="a" v-waves)
-			el-tooltip(content="设置" placement="top" )
-				icon-svg(name="shezhi" size="2.1")
-		el-tooltip(content="分享" placement="top" )
-			icon-svg(name="fenxiang1" size="2.1")
+		el-tooltip(content="简繁切换" placement="top" @click.native="translatePage")
+			icon-svg(name="qiehuan-xue" size="2.1")
+		el-tooltip(content="护眼" placement="top" @click.native="switchNightModel")
+			icon-svg(name="iconfontzhaomingdianzi" size="2.1")
 		el-tooltip(content="退出" placement="top" @click.native="dropOut")
 			icon-svg(name="logout" size="2.1")
 </template>
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
-import {mapState} from 'vuex'
+import {mapState,mapMutations} from 'vuex'
 import status from '@/utils/global/status'
-
+import translatePage from '@/plugins/translate'
 
 @Component({
 	computed:{
 		...mapState('user',['account','name','address','avatar'])
+	},
+	methods:{
+		...mapMutations('ui',['switchNightModel'])
 	}
 })
 export default class Aside extends Vue{
 	isCollapse = true
 	dropOut(){
 		status.logOut({hasTip:false,isShowLogin:false})
+	}
+	translatePage(){
+		translatePage()
 	}
 }
 </script>
@@ -147,6 +152,7 @@ menu-height = 60px
 	text-align center
 	padding-top 8px
 	box-shadow 0px -5px 5px 0 rgba(59,58,60,0.16), -1px -9px 12px 0px rgba(0,0,0,0.12)
+	cursor pointer
 	.svg-icon
 		color #fff
 		font-weight bold

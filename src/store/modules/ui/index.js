@@ -1,9 +1,12 @@
+import getNightModel from '@/utils/ui/nightModel'
+
 export default {
 	namespaced: true,
 	state: {
 		isHome: '',
 		familyTab: 'receive',
-		scriptFormFinishCount:0
+		scriptFormFinishCount: 0,
+		isNightModel:getNightModel()
 	},
 	mutations: {
 		home(state, isHome) {
@@ -23,13 +26,20 @@ export default {
 			if (state.scriptFormFinishCount >= id && n === 0) {
 				return
 			}
-			if (state.scriptFormFinishCount > id && n === -1) {
-
-			}
 			state.scriptFormFinishCount = id + n
 		},
 		finishFormCountToZero(state) {
 			state.scriptFormFinishCount = 0
+		},
+		switchNightModel(state) {
+			let night = sessionStorage.getItem('night') || '0'
+			if (night === '0') {
+				state.isNightModel = true
+				sessionStorage.setItem('night', '1')
+			} else {
+				state.isNightModel = false
+				sessionStorage.setItem('night', '0')
+			}
 		}
 	}
 }

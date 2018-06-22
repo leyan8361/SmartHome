@@ -13,7 +13,7 @@
 								icon-svg.notice-icon(name="jiatingfang" size="1.2")
 				router-link(:to="{name:'NoticeElectric'}")
 					el-col.electric(:span="2")
-						el-tooltip(content="设备状态有更新了！" placement="bottom" )
+						el-tooltip(content="电器状态有更新了！" placement="bottom" )
 							el-badge(:value="test" :max="10")
 								icon-svg.notice-icon(name="icon" size="1.2")
 				router-link(:to="{name:'WeatherInfo'}")
@@ -36,12 +36,16 @@
 									icon-svg(name="guanlikehu" size="1.2")
 									|修改信息
 							el-dropdown-item
-								icon-svg(name="icon20101" size="1.2")
-								|查看帮助
+								router-link(:to="{name:'UserFeedback'}" tag="li")
+									icon-svg(name="icon20101" size="1.2")
+									|意见反馈
 							el-dropdown-item(@click.native="dropOut")
 								icon-svg(name="logout" size="1.2")
 								|退出系统
-			.setting: el-button(type="text" @click.native="$router.push({name:'ScriptsAdmin'})"): icon-svg.notice-icon(name="shezhi2" size="1.5")
+			.setting
+				el-tooltip(content="分享" placement="bottom" )
+					el-button(type="text" @click.native="$router.push({name:'ScriptsAdmin'})")
+						icon-svg.notice-icon(name="fenxiang1" size="1.5")
 </template>
 
 <script>

@@ -98,4 +98,5 @@ export default class ScriptsAdmin extends Vue{
 .scripts-table
 	box-shadow 0 2px 10px #ccc
 	border-radius 5px
+	background-color transparent !important
 </style>

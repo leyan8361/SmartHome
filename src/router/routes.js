@@ -12,7 +12,7 @@ import FamilySearch from '@/views/Admin/pages/family/Search'
 import FamilyInvite from '@/views/Admin/pages/family/Invite'
 
 import NoticeFamily from '@/views/Admin/pages/notice/Family'
-import NoticeElectric from '@/views/Admin/pages/notice/Electric'
+import NoticeUsagelog from '@/views/Admin/pages/notice/Usagelog'
 
 import ElectricAdmin from '@/views/Admin/pages/electric/Admin'
 import ElectricView from '@/views/Admin/pages/electric/View'
@@ -136,10 +136,10 @@ export default [
 					},
 					{
 						path: 'electric',
-						name: 'NoticeElectric',
-						component: NoticeElectric,
+						name: 'NoticeUsagelog',
+						component: NoticeUsagelog,
 						meta: {
-							title: '设备消息'
+							title: '操作日志'
 						}
 					}
 				]

@@ -1,7 +1,5 @@
 <template lang="pug">
 el-aside.aside-admin(width="250px")
-	.toggle-menu(@click="isCollapse=!isCollapse")
-		icon-svg(name="shouqicaidan" size="1.8")
 	.logo
 		.logo-icon: icon-svg(name="lightbulb" size="2")
 		.logo-text: span Smart Home
@@ -53,7 +51,8 @@ el-aside.aside-admin(width="250px")
 				span(slot="title") 我的通知
 			router-link(:to="{name:'NoticeFamily'}" tag="li" v-waves)
 				el-menu-item(index="5-1") 家庭邀请
-			el-menu-item(index="5-2") 电器日志
+			router-link(:to="{name:'NoticeUsagelog'}" tag="li"  v-waves)
+				el-menu-item(index="5-2") 电器日志
 			router-link(:to="{name:'WeatherInfo'}" tag="li"  v-waves)
 				el-menu-item(index="5-3") 天气情况
 			el-menu-item(index="5-4") 使用功耗
@@ -123,21 +122,6 @@ menu-height = 60px
 	font-family "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif
 	span
 		text-shadow 3px 3px 2px #0f4743
-.toggle-menu
-	position fixed
-	top 13px
-	left 270px
-	color #999
-	cursor pointer
-	width 50px
-	height 50px
-	z-index 999
-	.svg-icon
-		transition .2s
-		padding 2px
-		box-shadow inset 2px 0px 6px 1px rgba(26,65,65,0.7)
-		&:hover
-			transform translateX(-2px)
 .menu
 	margin-top 100px
 	min-height 100vh

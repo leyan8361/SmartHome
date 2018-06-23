@@ -15,6 +15,7 @@ module.exports = {
 		}
 		const job = {
 			bulbs: script.ids,
+			name:script.name,
 			status: script.status,
 			color: script.color,
 			brightness: script.brightness

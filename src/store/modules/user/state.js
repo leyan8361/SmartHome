@@ -4,7 +4,7 @@ export default {
 	account: '',
 	address:'',
 	avatar: '',
-	news:'',
+	news: {},
 	token: Token.get(),
 	keep: true,
 	status: sessionStorage.getItem('status') || 'UNLOGIN'

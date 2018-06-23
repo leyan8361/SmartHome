@@ -1,6 +1,8 @@
 const Electric = require('model/Electric')
 const Client = require('utils/mqtt')
 const pubBulbs = require('utils/mqtt/pubBulbs')
+const Usagelog = require('model/Usagelog')
+const { getUsagelog } = require('utils/db/usagelog')
 
 module.exports = {
 	async updateBulb(ctx) {
@@ -9,23 +11,35 @@ module.exports = {
 
 		const { id, status, color, brightness } = bulb
 
-		/* REVIEW: 目前传输数据：状态，亮度，颜色 */
-		let payload = `${id},${status ? '开灯' : '关灯'},${color},${brightness}`
+		const showStatus = status ? '开灯' : '关灯'
+		let payload = `${id},${showStatus},${color},${brightness}`
+
+		const usagelog = { ...bulb, showStatus,master:account }
 
 		const [, isDBSuccess] = await Promise.all([
 			Client.publish('bulb', payload),
-			Electric.updateOne({ $and: [{ master: account }, { id: bulb.id }] }, bulb)
+			Electric.updateOne({ $and: [{ master: account }, { id: bulb.id }] }, bulb),
+			new Usagelog(usagelog).save()
 		])
-		
+		const usagelogs = await getUsagelog(account)
+
 		isDBSuccess
-			? ctx.send('状态信息更新成功！')
+			? ctx.send('状态信息更新成功！', {usagelogs})
 			: ctx.sendError('状态消息因不可抗因素更新失败！')
 	},
 	async switchBulbs(ctx) {
 		const account = ctx.state.user.data
 		const bulb = ctx.request.body
 
-		const { status, color, brightness, selectBulbs: bulbs } = bulb
+		const { status, color, brightness, ids: bulbs,name } = bulb
+
+		const usagelog = {
+			name: '全部',
+			id: '0',
+			showStatus: status ? '开灯' : '关灯',
+			master:account,
+			status, color, brightness
+		}
 
 		const conditions = [{ master: account }]
 		const ids = []
@@ -36,19 +50,24 @@ module.exports = {
 				or.$or.push({ id })
 			})
 			conditions.push(or)
+			usagelog.id = ids.join()
+			usagelog.name = name.join()
 		} else {
 			ids.push('0')
 		}
 
-		Reflect.deleteProperty(bulb, 'selectBulbs')
+		Reflect.deleteProperty(bulb, 'ids')
 
 		const [, isDBSuccess] = await Promise.all([
 			pubBulbs(ids, { status, color, brightness }),
-			Electric.updateMany({ $and: conditions }, bulb)
+			Electric.updateMany({ $and: conditions }, bulb),
+			new Usagelog(usagelog).save()
 		])
 
+		const usagelogs = await getUsagelog(account)
+
 		if (isDBSuccess) {
-			ctx.send('状态更新成功！')
+			ctx.send('状态更新成功！',{usagelogs})
 		} else {
 			ctx.sendError('因不可抗因素修改失败！')
 		}
@@ -60,13 +79,22 @@ module.exports = {
 		const showStatus = status ? '开灯' : '关灯'
 
 		const payload = `0,${showStatus}`
+		const usagelog = {
+			name: '全部',
+			id: '0',
+			master:account,
+			status,
+			showStatus
+		}
 		const [, isDBSuccess] = await Promise.all([
 			Client.publish('bulb', payload),
-			Electric.updateMany({ master: account }, { status })
+			Electric.updateMany({ master: account }, { status }),
+			new Usagelog(usagelog).save()
 		])
+		const usagelogs = await getUsagelog(account)
 
 		if (isDBSuccess) {
-			ctx.send(`电器${showStatus}成功！`)
+			ctx.send(`电器${showStatus}成功！`,{usagelogs})
 		} else {
 			ctx.sendError('因不可抗因素修改失败！')
 		}

@@ -11,10 +11,10 @@
 						el-tooltip(:content="`${news.family?'您收到新的家庭消息了':'家庭消息'}`" placement="bottom")
 							el-badge(:value="news.family" :max="10" :hidden="news.family===0")
 								icon-svg.notice-icon(name="jiatingfang" size="1.2")
-				router-link(:to="{name:'NoticeElectric'}")
+				router-link(:to="{name:'NoticeUsagelog'}")
 					el-col.electric(:span="2")
-						el-tooltip(content="电器状态有更新了！" placement="bottom" )
-							el-badge(:value="test" :max="10")
+						el-tooltip(:content="`${news.electric?'电器状态有更新了！':'电器消息'}`" placement="bottom" )
+							el-badge(:value="news.electric" :max="10" :hidden="news.electric===0")
 								icon-svg.notice-icon(name="icon" size="1.2")
 				router-link(:to="{name:'WeatherInfo'}")
 					el-col.weather(:span="2")
@@ -58,14 +58,14 @@ import SocialSharing from '~/element/SocialSharing'
 @Component({
 	computed:{
 		...mapState('user',['account','name','address','avatar','news']),
-		...mapState('notice',['family'])
+		...mapState('notice',['family']),
+		...mapState('usagelog',['usagelogs'])
 	},
 	components:{
 		SocialSharing
 	}
 })
 export default class Header extends Vue{
-	test=5
 	words = ['设置自动调节模式，可根据您的生活习惯以及天气情况准确掌握开灯时间','为了您的方便，我们提供了一键离家功能~','可以按照下班时间，准时开灯哦','一键关闭家中所有电器，让生活更安心','控制电器的前提是 电器已连接家中局域网哦~','如果想单独控制电器，电器的 id 号 需与已有电器的 id 号互不相同哦~']
 	currDate = new Date().getDate()
 	localDate = localStorage.localDate
@@ -120,7 +120,10 @@ export default class Header extends Vue{
 	cursor pointer
 	box-shadow 1px -1px 19px 0px #ccc
 	font-family "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif
-
+.announcement
+	margin-left -20px
+.notice
+	margin-left 30px
 .avatar-wrap
 	display inline-block
 	border-radius 50%
@@ -136,8 +139,6 @@ export default class Header extends Vue{
 		padding 5px
 		border-radius 15%
 		transform scale(1.8)
-.announcement
-	margin-left 20px
 .name
 	font-weight bold
 	color #fff
@@ -166,8 +167,6 @@ export default class Header extends Vue{
 	width 10%
 	text-align center
 	text-shadow 0 0 1px #ccc
-	.svg-icon
-		margin-right 20px
 .user-right-name
 	letter-spacing 2px
 </style>

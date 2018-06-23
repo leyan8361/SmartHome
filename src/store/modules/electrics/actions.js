@@ -4,27 +4,48 @@ export default {
 	async setInfo({ commit }, bulbs) {
 		commit('setBulbs',bulbs)
 	},
-	async updateBulb({ commit }, bulb) {
+	async updateBulb({ commit,dispatch }, bulb) {
 		return http.post(Url.auth.electric.bulb,bulb).then(response => {
-			response.success && commit('setTheBulb',bulb)
+			if (response.success) {
+				commit('setTheBulb',bulb)
+				commit('user/electricNewAdd', null,{root:true})
+				// dispatch('usagelog/refresh', null,{root:true})
+				commit('usagelog/setUsagelogs',response.usagelogs,{root:true})
+			}
 			return response
 		}).catch(error => {
 			console.log(error)
 			return {message:error}
 		})
 	},
-	async switchBulbs({ commit },bulb) {
+	async switchBulbs({ state,commit,dispatch }, bulb) {
+		if (!bulb.ids.includes('0')) {
+			bulb.name = []
+			bulb.ids.forEach(id => {
+				bulb.name.push(state.bulbs.find(e=>e.id === id).name)
+			})
+		}
 		return http.post(Url.auth.electric.bulbs, bulb).then(response => {
-			response.success && commit('setAllBulbs', bulb)
+			if (response.success) {
+				commit('setAllBulbs', bulb)
+				commit('user/electricNewAdd', null,{root:true})
+				// dispatch('usagelog/refresh', null,{root:true})
+				commit('usagelog/setUsagelogs',response.usagelogs,{root:true})
+			}
 			return response
 		}).catch(error => {
 			console.log(error)
 			return {message:error}
 		})
 	},
-	async switchBulbsStatus({ commit },status) {
+	async switchBulbsStatus({ commit,dispatch },status) {
 		return http.get(Url.auth.electric.bulbs, { params: { status } }).then(response => {
-			response.success && commit('setBulbsStatus', status)
+			if (response.success) {
+				commit('setBulbsStatus', status)
+				commit('user/electricNewAdd', null,{root:true})
+				// dispatch('usagelog/refresh', null,{root:true})
+				commit('usagelog/setUsagelogs',response.usagelogs,{root:true})
+			}
 			return response
 		}).catch(error => {
 			console.log(error)

@@ -4,7 +4,7 @@
 		| 分享列表
 	ul.share-list
 		li(v-for="(way,index) in Object.keys(shareList)" :key="index")
-			el-tooltip(:content="`分享至${shareList[way].title}`")
+			el-tooltip(:content="`分享到${shareList[way].title}`")
 				a(:class="way" target="_blank" :href="shareList[way].link" :data-title="shareList[way].title")
 					icon-svg(:name="shareList[way].icon" size="1.5")
 </template>

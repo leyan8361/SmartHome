@@ -28,7 +28,7 @@ import NoticePanel from '@/views/Admin/pages/family/Notice'
 
 export default class NoticeFamily extends Vue{
 	created(){
-		!!this.news && this.newsToZero('family')
+		!!this.news.family && this.newsToZero('family')
 		if(this.familyTab === 'other'){
 			this.setFamilyTab('send')
 		}else if(this.familyTab === 'send'){

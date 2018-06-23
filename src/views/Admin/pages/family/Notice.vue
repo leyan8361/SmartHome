@@ -2,7 +2,7 @@
 el-table(v-if="data.length!==0" :data="data" stripe
 	:row-class-name="unReadRows" style="width:120%"
 	height="400" max-height="400")
-	el-table-column(prop="date" label="日期" width="120")
+	el-table-column(prop="date" label="时间" width="120")
 	el-table-column(:label="label" width="160")
 		template(slot-scope="scope")
 			el-popover(trigger="hover" placement="top")
@@ -30,7 +30,7 @@ import { mapState,mapActions } from 'vuex'
 
 @Component({
 	computed:{
-		...mapState('user',['news'])
+		...mapState('ui',['otherNews'])
 	},
 	props:{
 		data:Array
@@ -49,7 +49,7 @@ export default class FamilyNotice extends Vue{
 		}
 	}
 	unReadRows({row,rowIndex}){
-		for(let i = 0;i < this.news.family;++i){
+		for(let i = 0;i < this.otherNews.family;++i){
 			return 'unread-row'
 		}
 	}

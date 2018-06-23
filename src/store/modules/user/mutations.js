@@ -3,29 +3,36 @@ export default {
 	Token(state, token = Token.get()) {
 		state.token = token
 		const expires = 365
-		Token.set(token, { expires },state.keep)
+		Token.set(token, { expires }, state.keep)
 	},
 	Keep(state, keep) {
 		state.keep = keep
 	},
-	Status(state, status){
+	Status(state, status) {
 		state.status = status
 		sessionStorage.setItem('status', status)
 		if (status === 'UNLOGIN') {
 			Token.remove()
 		}
 	},
-	Info(state, { name, account, address,avatar,news}){
+	Info(state, { name, account, address, avatar, news }) {
 		state.name = name
 		state.account = account
 		state.address = address
 		state.avatar = avatar
 		state.news = news
 	},
-	News(state, news){
-		state.news = news
+	News(state, type) {
+		state.news[type] = 0
 	},
 	setAccount(state, account) {
 		state.account = account
+	},
+	electricNewAdd(state) {
+		if (!state.news.electric) {
+			state.news.electric = 1
+		} else {
+			state.news.electric++
+		}
 	}
 }

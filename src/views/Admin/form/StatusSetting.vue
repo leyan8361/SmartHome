@@ -9,7 +9,7 @@ el-dialog(title="状态设置" :visible="isShowSetting" width="28%" top="15vh" c
 		el-form-item(label="颜色")
 			bulb-color-select(:color.sync="bulb.color")
 		el-form-item(label="电器")
-			bulb-selection(:selectBulbs.sync="bulb.selectBulbs" :bulbs="bulbs")
+			bulb-selection(:ids.sync="bulb.ids" :bulbs="bulbs")
 	.dialog-bulb--footer(slot="footer")
 		el-row(:span="24" type="flex" align="middle" justify="center")
 			el-button(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在更新") 更新状态
@@ -46,7 +46,7 @@ el-dialog(title="状态设置" :visible="isShowSetting" width="28%" top="15vh" c
 	export default class StatusSetting extends Vue {
 		isLoading = false
 		bulb={
-			selectBulbs:[],
+			ids:[],
 			status:true,
 			brightness:100,
 			color:'自然光'
@@ -55,7 +55,7 @@ el-dialog(title="状态设置" :visible="isShowSetting" width="28%" top="15vh" c
 			this.$emit('update:isShowSetting', false)
 		}
 		submitForm() {
-			if(this.bulb.selectBulbs.length === 0){
+			if(this.bulb.ids.length === 0){
 				return notice.warning('请选择一个电器','错误')
 			}
 			this.switchBulbs(this.bulb).then(e=>{

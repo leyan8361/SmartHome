@@ -19,7 +19,8 @@
       "member": "auth/family/member"
 		},
 		"news":{
-			"family":"/auth/news/family"
+			"family":"/auth/news/family",
+			"electric":"/auth/news/electric"
 		},
 		"notice":{
 			"family":"/auth/notice/family"
@@ -29,7 +30,8 @@
 			"bulbs":"/auth/electric/bulbs"
 		},
 		"script":"/auth/script",
-		"feedback":"/auth/feedback"
+		"feedback":"/auth/feedback",
+		"usagelog":"/auth/usagelog"
   }
 
 }

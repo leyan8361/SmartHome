@@ -7,6 +7,7 @@ const { getNotice } = require('utils/db/notice')
 const { getElectrics } = require('utils/db/electric')
 const { getWeather } = require('utils/http')
 const { getScripts } = require('utils/db/scripts')
+const { getUsagelog } = require('utils/db/usagelog')
 
 module.exports = {
 
@@ -28,8 +29,8 @@ module.exports = {
 			avatar: user.avatar,
 			news: user.news
 		}
-		const [token,notice,weather,electrics,scripts] = await Promise.all([Token.generate(account),getNotice(account),getWeather(user.address.code),getElectrics(account),getScripts(account)])
-		const value = { token,userInfo,weather,notice,electrics,scripts }
+		const [token,notice,weather,electrics,scripts,usagelog] = await Promise.all([Token.generate(account),getNotice(account),getWeather(user.address.code),getElectrics(account),getScripts(account),getUsagelog(account)])
+		const value = { token,userInfo,weather,notice,electrics,scripts,usagelog }
 
 		ctx.send('信息获取成功！',value)
 	},
@@ -44,8 +45,8 @@ module.exports = {
 			news: user.news
 		}
 
-		const [notice,weather,electrics,scripts] = await Promise.all([getNotice(account),getWeather(user.address.code),getElectrics(account),getScripts(account)])
-		const value = { userInfo,weather,notice,electrics,scripts}
+		const [notice,weather,electrics,scripts,usagelog] = await Promise.all([getNotice(account),getWeather(user.address.code),getElectrics(account),getScripts(account),getUsagelog(account)])
+		const value = { userInfo,weather,notice,electrics,scripts,usagelog }
 
 		ctx.send('信息获取成功！',value)
 	},

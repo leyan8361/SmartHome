@@ -9,7 +9,7 @@ export default {
 					console.log(response.userInfo)
 					commit('Info', response.userInfo)
 					commit('Token', response.token)
-					;['weather', 'notice', 'electrics','scripts'].forEach(e => {
+					;['weather', 'notice', 'electrics','scripts','usagelog'].forEach(e => {
 						e && dispatch(`${e}/setInfo`,response[e], {root:true})
 					})
 				}
@@ -51,7 +51,7 @@ export default {
 			if (response.success) {
 				console.log(response)
 				commit('Info', response.userInfo)
-				;['weather', 'notice', 'electrics','scripts'].forEach(e => {
+				;['weather', 'notice', 'electrics','scripts','usagelog'].forEach(e => {
 					e && dispatch(`${e}/setInfo`,response[e], {root:true})
 				})
 			}
@@ -72,9 +72,12 @@ export default {
 			return {message:error}
 		})
 	},
-	async newsToZero({ commit },type) {
+	async newsToZero({ state,commit },type) {
 		return http.delete(Url.auth.news[type]).then(response => {
-			response.success && commit('News',0)
+			if (response.success) {
+				commit(`ui/set-${type}New`,state.news[type], {root:true})
+				commit('News',type)
+			}
 			return response
 		}).catch(error => {
 			console.log(error)

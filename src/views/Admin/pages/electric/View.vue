@@ -31,7 +31,7 @@ import BulbForm from '@/views/Admin/form/Bulb'
 		ElectricIsNull
 	}
 })
-export default class ElectricAdmin extends Vue{
+export default class ElectricView extends Vue{
 	bulb={ }
 	isShowBulb = false
 	index = 0

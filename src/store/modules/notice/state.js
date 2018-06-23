@@ -1,4 +1,7 @@
+// REVIEW: Over-Engineering Disaster area...
+
 import notice from 'config/notice'
+
 export default {
 	[notice.type[0]]: {
 		send: [],

@@ -1,5 +1,5 @@
 <template lang="pug">
-el-select.bulb-select-item(v-model="selectBulbs" placeholder="请选择" @change="selectSomeBulbs" clearable multiple )
+el-select.bulb-select-item(v-model="ids" placeholder="请选择" @change="selectSomeBulbs" clearable multiple )
 	el-option(v-for="(item,index) in allBulbs" :key="index" :label="item.label" :value="item.value")
 </template>
 
@@ -13,7 +13,7 @@ import {Component,Vue} from 'vue-property-decorator'
 })
 export default class BulbSelection extends Vue{
 	allBulbs=[]
-	selectBulbs = []
+	ids = []
 	created(){
 		if(this.allBulbs.length !== 0){
 			return
@@ -33,10 +33,10 @@ export default class BulbSelection extends Vue{
 		})
 	}
 	selectSomeBulbs(){
-		if(this.selectBulbs.includes('0')){
-			this.selectBulbs = ['0']
+		if(this.ids.includes('0')){
+			this.ids = ['0']
 		}
-		this.$emit('update:selectBulbs',this.selectBulbs)
+		this.$emit('update:ids',this.ids)
 	}
 }
 </script>

@@ -4,6 +4,7 @@ el-main.main
 		.home-main
 			weather-info
 			electric-card
+			usagelog-chart
 	transition(v-else :name="animation")
 		router-view(:key="Date.now()")
 </template>
@@ -14,13 +15,13 @@ import {mapState} from 'vuex'
 import {getRandomAnimation} from '@/utils/ui/animation'
 import WeatherInfo from '~/weather/Index'
 import ElectricCard from '~/electric/Index'
-// import ElectricUsagelog from '~/Usagelog/Index'
-// import ElectricQuantity from '~/electric/Quantity'
+import UsagelogChart from '~/Usagelog/Chart'
 
 @Component({
 	components:{
 		WeatherInfo,
-		ElectricCard
+		ElectricCard,
+		UsagelogChart
 	},
 	computed:{
 		...mapState('ui',['isHome'])

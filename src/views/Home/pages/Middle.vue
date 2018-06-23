@@ -2,7 +2,7 @@
 el-row#middle(:span=24)
 	el-col.item(v-for="i in 3" :key="i" :span=7)
 		el-row.wrap(:style="{borderBottomColor:bottomColor[i-1]}"): img(:src="i|getImg")
-		el-row.content(class="aTitle") {{infos[i-1]}}
+		el-row.content(class="aTitle" v-html="infos[i-1]")
 	icon-arrow
 </template>
 
@@ -21,11 +21,11 @@ import IconArrow from '~/icons/IconArrow'
 })
 export default class Middle extends Vue {
 	infos = [
-		'一个全新的生活方式,一个全新的生活方式,一个全新的生活方式,一个全新的生活方式,式,一个全新的生活方式,一个全新的生式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一活方式,一个全新的生活方式,一个式,一个全新的生活方全新的生活方',
-		'物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物联时代物式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一联时代',
-		'用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设备管理设备用设式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一式,式,一个全新的生活方式,一备管理设备'
+		'<p>物物相连的时代</p><br/><p>一个全新的生活方式</p><br/><p>信息产业发展的第三次浪潮</p>',
+		'<p>我们不生产家居</p><br/><p>我们只为她注入思想</p><br/><p>给您带来超酷的科技体验</p>',
+		'<p>情怀所致，以人为本</p><br/><p>专业，让我们更具情怀</p><br/><p>十年深耕 ，让我们更具专业</p>'
 	]
-	bottomColor = ['#5cb8de', '#77d8cc', '#ea7676']
+	bottomColor = ['#5cb8de', '#ea7676','#77d8cc']
 }
 </script>
 
@@ -41,6 +41,7 @@ export default class Middle extends Vue {
 	.item
 		height 70vh
 		padding 2vh
+		padding-top 7vh
 		box-shadow -1px 5px 20px 1px #b9b5b5
 		border-radius 2%
 		margin 3vh 2vw

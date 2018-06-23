@@ -30,7 +30,10 @@ export default [
 	{
 		path: '/',
 		name: 'Index',
-		component: Index
+		component: Index,
+		meta: {
+			title: 'Smart Home'
+		}
 	},
 	{
 		path: '*',

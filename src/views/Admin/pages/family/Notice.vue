@@ -1,5 +1,5 @@
 <template lang="pug">
-el-table(v-if="data.length!==0" :data="data" stripe
+el-table(v-if="data.length!==0" :data="data"
 	:row-class-name="unReadRows" style="width:120%"
 	height="400" max-height="400")
 	el-table-column(prop="date" label="时间" width="120")
@@ -26,14 +26,12 @@ el-table(v-if="data.length!==0" :data="data" stripe
 
 <script>
 import { Component,Vue} from 'vue-property-decorator'
-import { mapState,mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 @Component({
-	computed:{
-		...mapState('ui',['otherNews'])
-	},
 	props:{
-		data:Array
+		data:Array,
+		unReadNews:Number
 	},
 	methods:{
 		...mapActions('family',['join','refuse'])
@@ -49,7 +47,7 @@ export default class FamilyNotice extends Vue{
 		}
 	}
 	unReadRows({row,rowIndex}){
-		for(let i = 0;i < this.otherNews.family;++i){
+		if(rowIndex < this.unReadNews){
 			return 'unread-row'
 		}
 	}

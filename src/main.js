@@ -7,6 +7,19 @@ import './registerServiceWorker'
 import Textra from 'vue-textra'
 Vue.use(Textra)
 
+import VeLine from 'v-charts/lib/line.common'
+Vue.component(VeLine.name, VeLine)
+
+import VeHistogram from 'v-charts/lib/histogram.common'
+Vue.component(VeHistogram.name, VeHistogram)
+
+import VePie from 'v-charts/lib/pie.common'
+Vue.component(VePie.name, VePie)
+
+// import VeTree from 'v-charts/lib/tree.common'
+// Vue.component(VeTree.name, VeTree)
+
+
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index'
 import 'element-ui/lib/theme-chalk/display'

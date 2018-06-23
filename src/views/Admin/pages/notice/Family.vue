@@ -2,7 +2,7 @@
 .notice-family
 	el-tabs(v-model="familyTab" @tab-click='handleClick')
 		el-tab-pane.notice-family-table(label="收到消息" name="receive")
-			notice-panel(:data="family.receive")
+			notice-panel(:data="family.receive" :un-read-news="unReadNews")
 		el-tab-pane.notice-family-table(label="发送消息" name="send")
 			notice-panel(:data="family.send")
 </template>
@@ -27,7 +27,9 @@ import NoticePanel from '@/views/Admin/pages/family/Notice'
 })
 
 export default class NoticeFamily extends Vue{
+	unReadNews = 0
 	created(){
+		this.unReadNews = this.news.family
 		!!this.news.family && this.newsToZero('family')
 		if(this.familyTab === 'other'){
 			this.setFamilyTab('send')

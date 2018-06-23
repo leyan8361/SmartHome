@@ -25,7 +25,7 @@ import { mapMutations } from 'vuex'
 	}
 })
 export default class Header extends Vue {
-	title = '智能家居管理系统'
+	title = 'Smart Home'
 	loginText = '登录'
 	registryText = '注册'
 }

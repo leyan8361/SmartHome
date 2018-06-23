@@ -4,6 +4,5 @@ export default {
 	isHome: '',
 	familyTab: 'receive',
 	scriptFormFinishCount: 0,
-	isNightModel: getNightModel(),
-	otherNews: {}
+	isNightModel: getNightModel()
 }

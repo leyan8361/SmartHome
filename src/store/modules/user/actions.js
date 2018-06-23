@@ -75,7 +75,6 @@ export default {
 	async newsToZero({ state,commit },type) {
 		return http.delete(Url.auth.news[type]).then(response => {
 			if (response.success) {
-				commit(`ui/set-${type}New`,state.news[type], {root:true})
 				commit('News',type)
 			}
 			return response

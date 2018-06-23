@@ -32,11 +32,5 @@ export default {
 			state.isNightModel = false
 			sessionStorage.setItem('night', '0')
 		}
-	},
-	'set-familyNew'(state,news){
-		state.otherNews.family = news
-	},
-	'set-electricNew'(state,news){
-		state.otherNews.electric = news
 	}
 }

@@ -167,6 +167,8 @@ export default class Header extends Vue{
 	width 10%
 	text-align center
 	text-shadow 0 0 1px #ccc
+	& li *
+		margin 0 6px
 .user-right-name
 	letter-spacing 2px
 </style>

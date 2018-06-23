@@ -41,7 +41,7 @@ import { mapMutations } from 'vuex'
 export default class CoditionForm extends Vue{
 	disableCount = 0
 	verify(){
-		if(!this.codition.startExec && this.codition.weather.length === 0){
+		if(!this.codition.startExec && !this.codition.weather.length){
 			return false
 		}
 		return true

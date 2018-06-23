@@ -1,8 +1,6 @@
 import notice from 'config/notice'
 import moment from 'moment'
 
-// import Vue from 'vue'
-
 export default {
 	[notice.type[0]](state, family) {
 		state[notice.type[0]] = family
@@ -17,7 +15,9 @@ export default {
 		moment.locale('zh-cn')
 
 		const date = moment().fromNow()
-		// Vue.set(state[type], 'send',[].concat.call(state[type].send,{ date, message, receiver }))
-		state[type].send.unshift({ date, message, receiver })
+		state[type].send.unshift({ date, message, receiver,status:'未回应' })
+	},
+	setNoticeStatus(state, { id,status,type }) {
+		[].find.call(state[type].receive, e => e.id === id).status = status
 	}
 }

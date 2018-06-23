@@ -55,7 +55,7 @@ el-dialog(title="状态设置" :visible="isShowSetting" width="28%" top="15vh" c
 			this.$emit('update:isShowSetting', false)
 		}
 		submitForm() {
-			if(this.bulb.ids.length === 0){
+			if(!this.bulb.ids.length){
 				return notice.warning('请选择一个电器','错误')
 			}
 			this.switchBulbs(this.bulb).then(e=>{

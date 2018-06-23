@@ -23,7 +23,10 @@ auth
 
 auth.put('/feedback', Feedback.addFeedback).get('/usagelog',Usagelog.refresh)
 
-fami.get('/userInfo', Family.search).post('/member', Family.invite)
+fami.
+	get('/userInfo', Family.search).
+	put('/invite', Family.invite).
+	post('/invite', Family.refuse)
 
 electric
 	.post('/bulb', Electric.updateBulb)

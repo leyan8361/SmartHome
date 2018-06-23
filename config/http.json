@@ -1,6 +1,7 @@
 {
   "ip": "127.0.0.1",
-  "port": "3000",
+	"port": "3000",
+	"home": "http://127.0.0.1:8080/",
   "baseUrl": "http://localhost:3000/",
   "noAuth": "api/",
   "requestUrl": "http://localhost:3000/api/",
@@ -16,7 +17,8 @@
     "userInfo": "/auth/userInfo",
     "family": {
       "userInfo": "/auth/family/userInfo",
-      "member": "auth/family/member"
+			"member": "auth/family/member",
+			"invite": "auth/family/invite"
 		},
 		"news":{
 			"family":"/auth/news/family",

@@ -2,7 +2,7 @@ const moment = require('moment')
 
 export default {
 	setUsagelogs(state, usagelogs) {
-		if (!usagelogs || usagelogs.length === 0) {
+		if (!usagelogs || !usagelogs.length) {
 			return
 		}
 		moment.locale('zh-cn')

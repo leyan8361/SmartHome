@@ -9,13 +9,13 @@ export default {
 	},
 	finishScriptForm(state, { isFinish, id }) {
 		const n = isFinish ? 0 : -1
-		if (n === -1 && state.scriptFormFinishCount === 0) {
+		if (n === -1 && !state.scriptFormFinishCount) {
 			return
 		}
-		if (n === 0 && state.scriptFormFinishCount === 3) {
+		if (!n && state.scriptFormFinishCount === 3) {
 			return
 		}
-		if (state.scriptFormFinishCount >= id && n === 0) {
+		if (state.scriptFormFinishCount >= id && !n) {
 			return
 		}
 		state.scriptFormFinishCount = id + n

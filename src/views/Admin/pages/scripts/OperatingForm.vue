@@ -47,7 +47,7 @@ import notice from '@/utils/ui/notice'
 })
 export default class OperatingForm extends Vue{
 	verify(){
-		if(this.operating.ids.length === 0){
+		if(!this.operating.ids.length){
 			return false
 		}
 		return true

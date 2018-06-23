@@ -51,7 +51,7 @@ const getType = type => {
 }
 const filterForecastInfo = (weather, index) => {
 	const result = {}
-	result.date = index === 0 ? '明天' : '后天'
+	result.date = index ? '后天' : '明天'
 
 	result.day = {}
 	result.night = {}

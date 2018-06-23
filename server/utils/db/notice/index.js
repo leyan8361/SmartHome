@@ -6,7 +6,7 @@ module.exports = {
 	async getNotice(account,condition = { $or: [{ 'receiver.account': account }, { 'sender.account': account }] }){
 		const notice = await Notice.find(condition).sort({createdAt:-1})
 
-		if (!notice || notice.length === 0) { return }
+		if (!notice || !notice.length) { return }
 
 		moment.locale('zh-cn')
 
@@ -20,8 +20,10 @@ module.exports = {
 
 			[].push.call(result[e.type][type],{
 				[el]: { name: e[el].name, account: e[el].account },
-				message: e.message,
-				date:moment(e.createdAt).fromNow()
+				message: e.system ? e.sysMessage[el] : e.message,
+				date: moment(e.createdAt).fromNow(),
+				status: e.system ? '系统消息' : e.status,
+				id:e.id
 			})
 			return result
 

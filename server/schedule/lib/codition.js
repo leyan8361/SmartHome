@@ -3,7 +3,7 @@ const { getWeather, isSunnyorCloudy, getSunMoveTime } = require('utils/http')
 
 module.exports = {
 	ResolveExec(time) {
-		if (time && Object.values(time).length !== 0) {
+		if (time && Object.values(time).length) {
 			return `${time.second} ${time.minute || time.minutes} ${time.hour} * * *`
 		}
 	},

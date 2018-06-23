@@ -15,7 +15,7 @@ export default class BulbSelection extends Vue{
 	allBulbs=[]
 	ids = []
 	created(){
-		if(this.allBulbs.length !== 0){
+		if(this.allBulbs && this.allBulbs.length ){
 			return
 		}
 		this.bulbs.forEach(e=>{

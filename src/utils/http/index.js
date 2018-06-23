@@ -1,6 +1,5 @@
 import config from 'config/http'
 import axios from 'axios'
-import router from '@/router'
 import tip from '@/utils/ui/tip'
 import Token from '@/utils/store/token'
 import status from '@/utils/global/status'

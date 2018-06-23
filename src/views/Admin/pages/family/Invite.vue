@@ -48,7 +48,7 @@ export default class InviteFamily extends Vue{
 	}
 	getAddress(){
 		const address = Object.values(this.result.address)
-		if(!address || address.length === 0){
+		if(!address || !address.length ){
 			return this.user.address = '*****'
 		}
 		address.pop()
@@ -67,7 +67,7 @@ export default class InviteFamily extends Vue{
 				return notice.error(response.message)
 			}
 			this.setFamilyTab('other')
-			this.addNotice({...verification, type : 'family' })
+			this.addNotice({...verification, type : 'family'})
 			notice.success(response.message,'成功').then(() => {
 				this.$router.push({name:'NoticeFamily'})
 			})

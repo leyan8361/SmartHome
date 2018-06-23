@@ -1,7 +1,14 @@
 const mongoose = require('mongoose')
 const config = require('config/notice')
+const User = require('model/User')
+
 const Notice = new mongoose.Schema(
 	{
+		id: {
+			type: String,
+			trim: true,
+			required:true
+		},
 		receiver: {
 			account: {
 				type: String,
@@ -36,6 +43,28 @@ const Notice = new mongoose.Schema(
 			required: true,
 			enum: config.type,
 			lowercase:true
+		},
+		status: {
+			type: String,
+			required: false,
+			enum: ['已加入', '已拒绝', '未回应'],
+			default:'未回应'
+		},
+		system: {
+			type: Boolean,
+			default:false
+		},
+		sysMessage: {
+			sender: {
+				type: String,
+				required: false,
+				trim:true
+			},
+			receiver: {
+				type: String,
+				required: false,
+				trim:true
+			}
 		}
 	},
 	{
@@ -45,6 +74,12 @@ const Notice = new mongoose.Schema(
 		wtimeout: 10000
 	}
 )
+Notice.pre('save', async function (next) {
+	const { account } = this.receiver
+	const news = `news.${this.type}`
+	await User.updateOne({ account }, { $inc: { [news]: 1 } })
+	next()
+})
 Notice.set('toJSON', { getters: true, virtuals: true })
 Notice.set('toObect', { getters: true, virtuals: true })
 

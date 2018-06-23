@@ -15,7 +15,7 @@ import {mapState} from 'vuex'
 import {getRandomAnimation} from '@/utils/ui/animation'
 import WeatherInfo from '~/weather/Index'
 import ElectricCard from '~/electric/Index'
-import UsagelogChart from '~/Usagelog/Chart'
+import UsagelogChart from '~/usagelog/Chart'
 
 @Component({
 	components:{

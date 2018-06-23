@@ -2,14 +2,20 @@
 .usagelog-char-component
 	.usagelog-char-title(:span="24" type="flex" align="middle" justify="center")
 		| 操作日志
-	ve-histogram(:data="chartData" :settings="chartSettings")
+	.usagelog-char(v-if="usagelogs.length!==0")
+		ve-histogram(:data="chartData" :settings="chartSettings")
+	usagelog-is-null(v-else :bulbs-are-null="bulbs.length===0")
 </template>
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
 import { mapState } from 'vuex'
+import UsagelogIsNull from '~/usagelog/UsagelogIsNull'
 
 @Component({
+	components:{
+		UsagelogIsNull
+	},
 	computed: {
 		...mapState('usagelog', ['usagelogs']),
 		...mapState('electrics', ['bulbs'])

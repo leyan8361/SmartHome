@@ -2,8 +2,9 @@
 el-table(v-if="data.length!==0" :data="data"
 	:row-class-name="unReadRows" style="width:120%"
 	height="400" max-height="400")
-	el-table-column(prop="date" label="时间" width="120")
-	el-table-column(:label="label" width="160")
+	el-table-column(prop="date" label="时间" width="100")
+	el-table-column(prop="status" label="状态" width="100")
+	el-table-column(:label="label" width="150")
 		template(slot-scope="scope")
 			el-popover(trigger="hover" placement="top")
 				p 账号：{{scope.row[key].account}}
@@ -11,10 +12,10 @@ el-table(v-if="data.length!==0" :data="data"
 				.name-wrapper(slot="reference")
 					el-tag(size="medium") {{scope.row[key].name}}
 	el-table-column(prop="message" label="内容")
-	el-table-column(v-if="key==='sender'" label="操作")
-		template(slot-scope="scope")
-			el-button(size="mini" type="primary" @click.native="handleJoin") 加入共享
-			el-button(size="mini" type="danger" @click.native="handleRefuse") 残忍拒绝
+	el-table-column(v-if="key==='sender'" label="操作" width="200")
+		template(slot-scope="scope" v-if="scope.row.status==='未回应'")
+			el-button(size="mini" type="primary" @click.native="handleJoin(scope.row)") 加入共享
+			el-button(size="mini" type="danger" @click.native="handleRefuse(scope.row)") 残忍拒绝
 .tip-when-no-notice(v-else)
 	el-row.title(:span="24" type="flex" align="middle" justify="center")
 		| 看来您还没有心仪的人~
@@ -26,22 +27,27 @@ el-table(v-if="data.length!==0" :data="data"
 
 <script>
 import { Component,Vue} from 'vue-property-decorator'
-import { mapActions } from 'vuex'
+import { mapActions,mapState,mapMutations } from 'vuex'
+import notice from '@/utils/ui/notice'
 
 @Component({
 	props:{
 		data:Array,
 		unReadNews:Number
 	},
+	computed:{
+		...mapState('user',['account','name'])
+	},
 	methods:{
-		...mapActions('family',['join','refuse'])
+		...mapActions('family',['join','refuse']),
+		...mapMutations('notice',['setNoticeStatus'])
 	}
 })
 export default class FamilyNotice extends Vue{
 	key = 'sender'
 	label = '发送者'
 	created(){
-		if(this.data[0].receiver.account.length !== 0){
+		if(this.data[0].receiver && this.data[0].receiver.account.length ){
 			this.key = 'receiver'
 			this.label = '接收者'
 		}
@@ -54,8 +60,23 @@ export default class FamilyNotice extends Vue{
 	handleJoin(){
 
 	}
-	handleRefuse(){
-
+	handleRefuse({sender:receiver,status,id}){
+		const receipts = {
+			sender:{
+				name:this.name,
+				account:this.account
+			},
+			receiver,
+			id
+		}
+		this.refuse(receipts).then(e=>{
+			if(e.success){
+				this.setNoticeStatus({id,status:'已拒绝',type:'family'})
+				notice.success(e.message,'成功')
+			}else{
+				notice.error(e.message,'失败')
+			}
+		})
 	}
 }
 </script>

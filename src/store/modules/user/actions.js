@@ -6,7 +6,7 @@ export default {
 			.post(Url.api.login, user)
 			.then(response => {
 				if (response.success) {
-					console.log(response.userInfo)
+					console.log(response)
 					commit('Info', response.userInfo)
 					commit('Token', response.token)
 					;['weather', 'notice', 'electrics','scripts','usagelog'].forEach(e => {

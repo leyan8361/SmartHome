@@ -78,7 +78,7 @@ class Task{
 		return {message:this.message,success:true}
 	}
 	async runWithWeather() {
-		if (!this.weatherCodition || this.weatherCodition.length === 0) {
+		if (!this.weatherCodition || !this.weatherCodition.length ) {
 			return
 		}
 		if (this.relation) {
@@ -105,7 +105,7 @@ class Task{
 		if (!this.execCodition) {
 			return
 		}
-		if (this.relation && (!this.weatherCodition || this.weatherCodition.length === 0)) {
+		if (this.relation && (!this.weatherCodition || !this.weatherCodition.length )) {
 			return
 		}
 		this.schedules.execTime && this.schedules.execTime.cancel()
@@ -128,7 +128,7 @@ class Task{
 	}
 	stop() {
 		const tasks = Object.values(this.schedules)
-		if (!tasks || tasks.length === 0) {
+		if (!tasks || !tasks.length ) {
 			return
 		}
 		tasks.forEach(task => {

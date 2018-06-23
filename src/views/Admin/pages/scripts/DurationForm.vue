@@ -86,7 +86,7 @@ export default class DurationForm extends Vue{
 			return notice.warning('请选择一个时间','错误')
 		}
 		if(this.duration.startDuration && this.duration.startDuration.length === 2){
-			if(this.duration.endDuration && this.duration.endDuration.length !== 0){
+			if(this.duration.endDuration && this.duration.endDuration.length){
 				const start = this.duration.startDuration[1]
 				const end = this.duration.endDuration[0]
 				if(task.filterWeek(start) >= task.filterWeek(end)){

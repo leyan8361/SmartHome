@@ -1,9 +1,9 @@
 <template lang="pug">
 .notice-family
-	el-tabs(v-model="familyTab" @tab-click='handleClick')
-		el-tab-pane.notice-family-table(label="收到消息" name="receive")
+	el-tabs(v-model="familyTab")
+		el-tab-pane(label="收到消息" name="receive")
 			notice-panel(:data="family.receive" :un-read-news="unReadNews")
-		el-tab-pane.notice-family-table(label="发送消息" name="send")
+		el-tab-pane(label="发送消息" name="send")
 			notice-panel(:data="family.send")
 </template>
 

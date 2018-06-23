@@ -54,7 +54,7 @@ export const checkName = (name = '昵称') => [
 export const checkAddress = [
 	{
 		validator: (rule, value, callback) => {
-			if (value.length === 0) {
+			if (!value.length ) {
 				return callback(new Error('请选择您所在的地区'))
 			}
 			callback()

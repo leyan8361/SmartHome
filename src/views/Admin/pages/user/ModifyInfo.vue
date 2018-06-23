@@ -63,7 +63,7 @@ export default class ModifyInfo extends Vue {
 		checkpass: [ { validator: (rule, value, callback) => { if (!value) { if(!this.user.password){ return callback() } return callback(new Error('请输入密码！')) } if (!Regular('password', value)) { return callback(new Error('密码为 6-12 位格式')) } if (value !== this.user.password && this.user.password) { return callback(new Error('您两次输入的密码不一致')) } callback() }, trigger: 'blur' } ]
 	}
 	toModify(updatedInfo) {
-		if(Object.keys(updatedInfo).length === 0){
+		if(!updatedInfo || !Object.keys(updatedInfo).length ){
 			this.isLoading = false
 			return tip.info('你让我改啥啊，凶~')
 		}

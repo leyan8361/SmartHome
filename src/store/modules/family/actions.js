@@ -12,8 +12,8 @@ export default {
 			return {message:error}
 		})
 	},
-	async invite(verification) {
-		return http.post(Url.auth.family.member, verification).then(response => {
+	async invite({ commit }, verification) {
+		return http.put(Url.auth.family.invite, verification).then(response => {
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -23,7 +23,12 @@ export default {
 	async join({ commit }) {
 
 	},
-	async refuse() {
-
+	async refuse({ commit }, receipts) {
+		return http.post(Url.auth.family.invite,receipts).then(response => {
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
 	}
 }

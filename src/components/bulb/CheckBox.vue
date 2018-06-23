@@ -1,7 +1,7 @@
 <template lang="pug">
-	.bulb-checkbox
-		el-tooltip(:content="`${status?'已开启':'已关闭'}`")
-			input.l(type="checkbox" v-model="status" @change="$emit('update:status',status)")
+.bulb-checkbox
+	el-tooltip(:content="`${status?'已开启':'已关闭'}`")
+		input.l(type="checkbox" v-model="status" @change="$emit('update:status',status)")
 </template>
 
 <script>

@@ -9,29 +9,18 @@ el-container
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
-import {mapState , mapMutations,mapActions} from 'vuex'
-import LayoutAside from './layout/Aside'
-import LayoutHeader from './layout/Header'
-import LayoutMain from './layout/Main'
-import LayoutFooter from './layout/Footer'
+import LayoutAside from '~/layout/Aside'
+import LayoutHeader from '~/layout/Header'
+import LayoutMain from '~/layout/Main'
 
 @Component({
 	components:{
 		LayoutAside,
 		LayoutHeader,
-		LayoutMain,
-		LayoutFooter
-	},
-	computed:{
-		...mapState('user',['account','name','address','avatar']),
-
-		...mapState('weather',['now'])
+		LayoutMain
 	}
 })
-export default class Admin extends Vue{
-	mounted(){
-	}
-}
+export default class Admin extends Vue{}
 </script>
 
 <style lang="stylus">

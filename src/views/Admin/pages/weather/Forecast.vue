@@ -30,7 +30,7 @@
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import { mapState } from 'vuex'
-import WeatherIcon from '~/weather/WeatherIcon'
+import WeatherIcon from '~/weather/Icon'
 
 @Component({
 	components:{

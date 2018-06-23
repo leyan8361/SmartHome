@@ -50,7 +50,7 @@ router.afterEach((to, from) => {
 router.onError((to, from) => {
 	NProgress.done()
 	tip.error('发生一点小问题~')
-	router.push({ path: '/',name:'Index' })
+	router.push({ name:'Index' })
 })
 
 export default router

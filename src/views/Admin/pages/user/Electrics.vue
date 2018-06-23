@@ -12,7 +12,7 @@
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState} from 'vuex'
-import ElectricIsNull from '~/electric/ElectricIsNull'
+import ElectricIsNull from '~/electric/IsNull'
 
 @Component({
 	computed:{
@@ -22,7 +22,7 @@ import ElectricIsNull from '~/electric/ElectricIsNull'
 		ElectricIsNull
 	}
 })
-export default class User extends Vue{}
+export default class UserElectrics extends Vue{}
 </script>
 
 <style lang="stylus">

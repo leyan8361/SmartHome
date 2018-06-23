@@ -14,11 +14,13 @@
     "avatar": "/api/avatar"
   },
   "auth": {
-    "userInfo": "/auth/userInfo",
+		"userInfo": "/auth/userInfo",
+		"user":{
+			"search":"/auth/user/search"
+		},
     "family": {
-      "userInfo": "/auth/family/userInfo",
-			"member": "auth/family/member",
-			"invite": "auth/family/invite"
+			"invite":"/auth/family/invite",
+			"member": "/auth/family/member"
 		},
 		"news":{
 			"family":"/auth/news/family",

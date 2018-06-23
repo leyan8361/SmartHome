@@ -22,9 +22,9 @@
 import {Component,Vue} from 'vue-property-decorator'
 import { mapActions ,mapState,mapMutations } from 'vuex'
 
-import OperatingForm from '@/views/Admin/pages/scripts/OperatingForm'
-import CoditionForm from '@/views/Admin/pages/scripts/CoditionForm'
-import DurationForm from '@/views/Admin/pages/scripts/DurationForm'
+import OperatingForm from '~/dialog/script/OperatingForm'
+import CoditionForm from '~/dialog/script/CoditionForm'
+import DurationForm from '~/dialog/script/DurationForm'
 import notice from '@/utils/ui/notice'
 
 @Component({
@@ -44,7 +44,7 @@ import notice from '@/utils/ui/notice'
 		...mapState('electrics',['bulbs'])
 	}
 })
-export default class ScriptIndex extends Vue{
+export default class ScriptAdd extends Vue{
 	isShowOperatingForm=false
 	isShowCoditionForm=false
 	isShowDurationForm=false

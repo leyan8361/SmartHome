@@ -6,14 +6,12 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import HomeHeader from './body/Header'
-import HomeMain from './body/Main'
-import HomeFooter from './body/Footer'
+import HomeHeader from '~/home/Header'
+import HomeMain from '~/home/Main'
 @Component({
 	components: {
 		HomeHeader,
-		HomeMain,
-		HomeFooter
+		HomeMain
 	}
 })
 export default class Index extends Vue {}

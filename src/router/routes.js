@@ -3,12 +3,13 @@ import Error from '@/views/Error/404'
 import Home from '@/views/Admin/Index'
 
 import User from '@/views/Admin/pages/user/Index'
-import UserModify from '@/views/Admin/pages/user/ModifyInfo'
+import UserModify from '@/views/Admin/pages/user/Modify'
 import UserElectrics from '@/views/Admin/pages/user/Electrics'
 import UserFamily from '@/views/Admin/pages/user/Family'
-import UserFeedback from '@/views/Admin/pages/feedback/Index'
+import UserSearch from '@/views/Admin/pages/user/Search'
+import UserFeedback from '@/views/Admin/pages/user/Feedback'
 
-import FamilySearch from '@/views/Admin/pages/family/Search'
+import FamilyCreate from '@/views/Admin/pages/family/Create'
 import FamilyInvite from '@/views/Admin/pages/family/Invite'
 
 import NoticeFamily from '@/views/Admin/pages/notice/Family'
@@ -20,12 +21,12 @@ import ElectricView from '@/views/Admin/pages/electric/View'
 import ScriptsAdmin from '@/views/Admin/pages/scripts/Admin'
 import ScriptsAdd from '@/views/Admin/pages/scripts/Add'
 
-import WeatherInfo from '@/views/Admin/pages/weather/Index'
+import Weather from '@/views/Admin/pages/weather/Index'
 import WeatherForecast from '@/views/Admin/pages/weather/Forecast'
 
 import Card from '@/views/Admin/wrap/Card'
-// const Card = () =>
-//   import ('@/views/Admin/pages/Index')
+// const Card = () => import ('@/views/Admin/pages/Index')
+
 export default [
 	{
 		path: '/',
@@ -96,6 +97,14 @@ export default [
 						meta: {
 							title: '意见反馈'
 						}
+					},
+					{
+						path: 'search',
+						name: 'UserSearch',
+						component: UserSearch,
+						meta: {
+							title: '搜索用户'
+						}
 					}
 				]
 			},
@@ -106,11 +115,11 @@ export default [
 				component: Card,
 				children: [
 					{
-						path: 'search',
-						name: 'FamilySearch',
-						component: FamilySearch,
+						path: 'create',
+						name: 'FamilyCreate',
+						component: FamilyCreate,
 						meta: {
-							title: '搜索用户'
+							title: '创建家庭'
 						}
 					},
 					{
@@ -145,11 +154,12 @@ export default [
 							title: '操作日志'
 						}
 					}
+
 				]
 			},
 			{
 				path: 'electric',
-				name: 'electric',
+				name: 'Electric',
 				redirect: '/home',
 				component: Card,
 				children: [
@@ -173,14 +183,14 @@ export default [
 			},
 			{
 				path: 'weather',
-				name: 'weather',
+				name: 'Weather',
 				redirect: '/home',
 				component: Card,
 				children: [
 					{
 						path: 'info',
-						name: 'WeatherInfo',
-						component: WeatherInfo,
+						name: 'Weather',
+						component: Weather,
 						meta: {
 							title: '天气信息'
 						}
@@ -197,7 +207,7 @@ export default [
 			},
 			{
 				path: 'scripts',
-				name: 'scripts',
+				name: 'Scripts',
 				redirect: '/home',
 				component: Card,
 				children: [

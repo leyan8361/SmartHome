@@ -7,23 +7,26 @@ const Family = new mongoose.Schema(
 			required: true,
 			trim:true
 		},
-		account: {
+		displayName: {
+			type: String,
+			required: false,
+			trim:true
+		},
+		avatar: {
+			type: String,
+			required: false,
+			trim:true
+		},
+		founder: {
 			type: String,
 			required: true,
 			trim:true
 		},
-		record: {
-			user: {
-				type: String,
-				required: true,
-				trim:true
-			},
-			operating: {
-				type: String,
-				required: true,
-				trim:true
-			}
+		admin: {
+			type: [String],
+			required: false
 		}
+
 	},
 	{
 		collection: 'Family',

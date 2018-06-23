@@ -17,9 +17,7 @@ import { mapMutations } from 'vuex'
 		}
 	}
 })
-export default class SubButton extends Vue {
-
-}
+export default class SubButton extends Vue {}
 </script>
 
 <style lang="stylus" scoped>

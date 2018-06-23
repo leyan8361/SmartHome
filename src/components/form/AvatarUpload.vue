@@ -6,46 +6,46 @@ el-upload(list-type="picture-card" show-file-list :limit="1"
 </template>
 
 <script>
-	import { Component, Vue, Watch } from 'vue-property-decorator'
-	import tip from '@/utils/ui/tip'
-	import { Message } from 'element-ui'
+import { Component, Vue, Watch } from 'vue-property-decorator'
+import tip from '@/utils/ui/tip'
+import { Message } from 'element-ui'
 
-	@Component({
-		props:{
-			isInit:Boolean
-		}
-	})
-	export default class AvatarUpload extends Vue {
-
-		@Watch('isInit')
-		toInit(value, oldValue) {
-			this.$refs.avatar.clearFiles()
-		}
-
-		beforeAvatarUpload(file) {
-			const isJPGorPNG = file.type === 'image/jpeg' || file.type === 'image/png'
-			const isLt2M = file.size / 1024 / 1024 < 2
-
-			if (!isJPGorPNG) {
-				tip.warning('上传头像图片只能是 JPG 或 PNG 格式!')
-			}
-			if (!isLt2M) {
-				tip.warning('上传头像图片大小不能超过 2MB!')
-			}
-			return isJPGorPNG && isLt2M
-		}
-
-		handleUpLoad(request) {
-			if (!request.file) {
-				return tip.error('请重新上传头像！')
-			}
-			this.$emit('update:avatar', request.file)
-		}
-
-		handleAvatarRemove() {
-			this.$emit('update:avatar', null)
-		}
+@Component({
+	props:{
+		isInit:Boolean
 	}
+})
+export default class AvatarUpload extends Vue {
+
+	@Watch('isInit')
+	toInit(value, oldValue) {
+		this.$refs.avatar.clearFiles()
+	}
+
+	beforeAvatarUpload(file) {
+		const isJPGorPNG = file.type === 'image/jpeg' || file.type === 'image/png'
+		const isLt2M = file.size / 1024 / 1024 < 2
+
+		if (!isJPGorPNG) {
+			tip.warning('上传头像图片只能是 JPG 或 PNG 格式!')
+		}
+		if (!isLt2M) {
+			tip.warning('上传头像图片大小不能超过 2MB!')
+		}
+		return isJPGorPNG && isLt2M
+	}
+
+	handleUpLoad(request) {
+		if (!request.file) {
+			return tip.error('请重新上传头像！')
+		}
+		this.$emit('update:avatar', request.file)
+	}
+
+	handleAvatarRemove() {
+		this.$emit('update:avatar', null)
+	}
+}
 </script>
 
 <style lang="stylus">

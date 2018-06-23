@@ -37,7 +37,7 @@
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import { mapState } from 'vuex'
-import WeatherIcon from '~/weather/WeatherIcon'
+import WeatherIcon from '~/weather/Icon'
 
 @Component({
 	components:{
@@ -47,7 +47,7 @@ import WeatherIcon from '~/weather/WeatherIcon'
 		...mapState('weather', ['now','forecast','lifestyle'])
 	}
 })
-export default class WeatherInfo extends Vue{
+export default class WeatherIndex extends Vue{
 	forecastDates = ['明天','后天']
 }
 

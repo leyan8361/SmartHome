@@ -82,5 +82,15 @@ export default {
 			console.log(error)
 			return {message:error}
 		})
+	},
+	async search({ commit }, account) {
+		return http.get(Url.auth.user.search,
+			{ params: { account } }).then(response => {
+			response.success &&	commit('Result',response)
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
 	}
 }

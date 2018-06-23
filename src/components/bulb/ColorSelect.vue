@@ -15,7 +15,7 @@ import {Component,Vue} from 'vue-property-decorator'
 		}
 	}
 })
-export default class ColorSelect extends Vue{
+export default class BulbColorSelect extends Vue{
 	colors = [
 		{ value: '暖白光' },
 		{ value: '自然光' },

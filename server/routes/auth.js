@@ -1,6 +1,6 @@
 const User = require('controller/user')
 const Family = require('controller/family')
-// const Notice = require('controller/notice')
+const Notice = require('controller/notice')
 const Electric = require('controller/electric')
 const Usagelog = require('controller/usagelog')
 const Scripts = require('controller/scripts')
@@ -8,13 +8,14 @@ const Feedback = require('controller/feedback')
 
 const auth = require('koa-router')()
 const fami = require('koa-router')()
-// const notice = require('koa-router')()
+const notice = require('koa-router')()
 const electric = require('koa-router')()
 
 auth
 	.get('/userInfo', User.getUserInfo)
 	.post('/userInfo', User.updateUserInfo)
 	.delete('/news/:type', User.newsToZero)
+	.get('/user/search',User.search)
 
 auth
 	.put('/script', Scripts.addScript)
@@ -23,10 +24,9 @@ auth
 
 auth.put('/feedback', Feedback.addFeedback).get('/usagelog',Usagelog.refresh)
 
-fami.
-	get('/userInfo', Family.search).
-	put('/invite', Family.invite).
-	post('/invite', Family.refuse)
+notice.post('/family',Notice.refuse)
+
+fami.post('/invite',Family.invite)
 
 electric
 	.post('/bulb', Electric.updateBulb)

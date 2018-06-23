@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import CloseIcon from '~/icons/CloseIcon'
 import {Vue,Component,Watch} from 'vue-property-decorator'
 import {getRandomAnimation} from '@/utils/ui/animation'
+import CloseIcon from '~/icons/CloseIcon'
 
 @Component({
 	components:{

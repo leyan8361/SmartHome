@@ -21,6 +21,9 @@ export default class Error extends Vue {
 			clearInterval(this.intervalid)
 		}
 	}
+	beforeDestroy(){
+		clearInterval(this.intervalid)
+	}
 }
 </script>
 

@@ -31,14 +31,14 @@ import config from 'config/file'
 		...mapMutations('notice',['addNotice'])
 	}
 })
-export default class InviteFamily extends Vue{
+export default class FamilyInvite extends Vue{
 	words = ['tip: 对方同意邀请后，您的智能家居将被共享。']
 	user = {}
 	isLoading = false
 	message = ''
 	created(){
 		if(!this.result.account){
-			this.$router.push({name:'FamilySearch'})
+			this.$router.push({name:'UserSearch'})
 		}
 		this.user.avatar = this.result.avatar || config.defaultAvatarUrl
 		this.user.name = this.result.name || '*****'

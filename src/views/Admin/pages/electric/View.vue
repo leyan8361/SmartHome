@@ -3,7 +3,7 @@
 	.electric-show(v-if="bulbs.length!==0")
 		el-carousel.electric-carousel(trigger="click" :autoplay="false" @change="changeCurrBulb")
 			el-carousel-item.electric-carousel-item(v-for="(bulb,index) in bulbs" :key="index" )
-				bulb-info(:bulb="bulb")
+				bulb-card(:bulb="bulb")
 		.curr-bulb-info(:span="24" type="flex" align="middle" justify="center")
 			el-row: | 亮度：{{bulb.brightness + '%'}}
 			el-row: | 颜色：{{bulb.color}}
@@ -16,17 +16,16 @@
 <script>
 import { Component,Vue} from 'vue-property-decorator'
 import {mapState } from 'vuex'
-import BulbInfo from '~/bulb/Index'
-import ElectricIsNull from '~/electric/ElectricIsNull'
-
-import BulbForm from '@/views/Admin/form/Bulb'
+import BulbCard from '~/bulb/Card'
+import ElectricIsNull from '~/electric/IsNull'
+import BulbForm from '~/dialog/bulb/Form'
 
 @Component({
 	computed:{
 		...mapState('electrics',['bulbs'])
 	},
 	components:{
-		BulbInfo,
+		BulbCard,
 		BulbForm,
 		ElectricIsNull
 	}

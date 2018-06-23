@@ -1,4 +1,7 @@
 import notice from 'config/notice'
+import http from '@/utils/http'
+import Url from 'config/http'
+
 export default {
 	async setInfo({ commit }, notices) {
 		if (!notices) {
@@ -8,5 +11,13 @@ export default {
 		family && commit(notice.type[0], family)
 		weather && commit(notice.type[1], weather)
 		electric && commit(notice.type[2], electric)
+	},
+	async refuse({ commit }, receipts) {
+		return http.post(Url.auth.notice.family,receipts).then(response => {
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
 	}
 }

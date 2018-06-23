@@ -35,7 +35,7 @@ import NProgress from '@/plugins/NProgress'
 Vue.use(NProgress)
 
 import '@/assets/js/iconfont'
-import IconSvg from '~/icons/Index'
+import IconSvg from '~/icons/IconSvg'
 Vue.component('icon-svg', IconSvg)
 
 import console from './plugins/console'

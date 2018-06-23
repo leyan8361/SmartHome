@@ -111,5 +111,24 @@ module.exports = {
 	async newsToZero(ctx) {
 		const account = ctx.state.user.data
 		await User.updateOne({account},{ news: { [ctx.params.type]: 0 } }) && ctx.send('消息数目已清空！')
+	},
+	async search(ctx) {
+		const { account } = ctx.request.query
+		const user = await User.findOne({ account: account })
+		if (!user) {
+			return ctx.sendError('用户不存在！')
+		}
+		const result = {
+			name: user.name,
+			account: user.account,
+			address: user.address,
+			avatar: user.avatar
+		}
+		if (user.private.length > 0) {
+			user.private.forEach(e => {
+				result[e] = null
+			})
+		}
+		ctx.send('查找成功！', result)
 	}
 }

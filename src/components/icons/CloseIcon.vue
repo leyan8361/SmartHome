@@ -1,5 +1,5 @@
 <template lang="pug">
-.user-close(@click="$router.push({path:'home',name:'Home'})"): i.el-icon-close
+.user-close(@click="$router.push({name:'Home'})"): i.el-icon-close
 </template>
 <style lang="stylus">
 .user-close

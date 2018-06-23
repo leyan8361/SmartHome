@@ -26,8 +26,8 @@
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState,mapActions } from 'vuex'
-import BulbAdd from '@/views/Admin/form/BulbAdd'
 import notice from '@/utils/ui/notice'
+import BulbAdd from '~/dialog/bulb/Add'
 
 @Component({
 	computed:{

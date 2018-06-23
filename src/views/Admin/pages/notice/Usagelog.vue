@@ -13,7 +13,7 @@
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import { mapState,mapActions } from 'vuex'
-import UsagelogIsNull from '~/usagelog/UsagelogIsNull'
+import UsagelogIsNull from '~/usagelog/IsNull'
 
 @Component({
 	components:{

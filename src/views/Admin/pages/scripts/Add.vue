@@ -1,5 +1,5 @@
 <template lang="pug">
-.electric-script-admin
+.electric-script-add
 	el-steps(:active="scriptFormFinishCount" finish-status="success" align-center )
 		el-step(title="操作指令" description="指令的具体操作，可控制多个电器")
 		el-step(title="触发条件" description="触发指令的条件，可选择特定的时间、天气等因素")
@@ -98,7 +98,7 @@ export default class ScriptAdd extends Vue{
 </script>
 
 <style lang="stylus">
-.electric-script-admin
+.electric-script-add
 	padding-top 40px
 .relation-checkbox
 	transform translateX(-80px)

@@ -5,7 +5,8 @@ const Family = new mongoose.Schema(
 		name: {
 			type: String,
 			required: true,
-			trim:true
+			trim: true,
+			unique: true
 		},
 		displayName: {
 			type: String,
@@ -25,6 +26,10 @@ const Family = new mongoose.Schema(
 		admin: {
 			type: [String],
 			required: false
+		},
+		user: {
+			type: [String],
+			required: false
 		}
 
 	},
@@ -35,6 +40,7 @@ const Family = new mongoose.Schema(
 		wtimeout: 10000
 	}
 )
+
 Family.set('toJSON', { getters: true, virtuals: true })
 Family.set('toObect', { getters: true, virtuals: true })
 

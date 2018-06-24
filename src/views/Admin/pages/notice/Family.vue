@@ -1,5 +1,5 @@
 <template lang="pug">
-.notice-family
+.notice-family-component
 	el-tabs(v-model="familyTab")
 		el-tab-pane(label="收到消息" name="receive")
 			notice-panel(:data="family.receive" :un-read-news="unReadNews")
@@ -41,12 +41,6 @@ export default class NoticeFamily extends Vue{
 </script>
 
 <style lang="stylus">
-.notice-family
+.notice-family-component
 	margin-top 30px
-.el-table
-	letter-spacing 2px
-	color #333
-	font-weight 300
-	text-shadow 0 0 1px #ccc
-	font-family "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif
 </style>

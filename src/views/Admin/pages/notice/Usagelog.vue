@@ -1,5 +1,5 @@
 <template lang="pug">
-.usagelog-component
+.notice-usagelog-component
 	el-table.usagelog-table(v-if="usagelogs.length!==0" :data="usagelogs" :row-class-name="unReadRows" :height="470")
 		el-table-column(prop="date" label="时间")
 		el-table-column(prop="name" label="操作电器")
@@ -45,7 +45,7 @@ export default class NoticeUsagelog extends Vue{
 <style lang="stylus">
 .unread-row
 	background oldlace !important
-.usagelog-component
+.notice-usagelog-component
 	margin-top 20px
 	border-radius 10px
 </style>

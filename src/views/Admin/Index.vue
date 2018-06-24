@@ -4,7 +4,6 @@ el-container
 	el-container
 		layout-header
 		layout-main
-		layout-footer
 </template>
 
 <script>

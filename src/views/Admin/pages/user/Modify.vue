@@ -1,5 +1,5 @@
 <template lang="pug">
-.user-modify(type="flex" justify="center" align="middle")
+.user-modify-component(type="flex" justify="center" align="middle")
 	.avatar-wrap-form: avatar-upload(:avatar.sync="user.avatar")
 	el-form.user-form(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" label-width="100px"  center status-ico)
 		el-form-item(label="昵称" prop="name")
@@ -117,7 +117,7 @@ export default class UserModify extends Vue {
 </script>
 
 <style lang="stylus">
-.user-modify
+.user-modify-component
 	position relative
 	width 100%
 	height 100%

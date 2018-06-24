@@ -1,12 +1,12 @@
 <template lang="pug">
-el-form.family-add(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" label-width="100px"  center status-ico)
-	el-form-item.item-account(label="账号")
-		el-input(type="text" v-model.trim="user.account" placeholder="账号 / 邮箱" clearable)
-	el-row.invite(:span="24" type="flex" align="middle" justify="center")
-		el-button(type="primary" @click="submitForm" :loading="isLoading") 查找
-	el-row.user-form-tip(:span="24" tag="span" class="family-form-tip")
-		textra(:data="words" :timer="1" :sequence="true" :infinite="true")
-
+.user-search-component
+	el-form.user-search(type="flex" justify="center" align="middle" :model="user" :rules="rules" ref="form" label-width="100px"  center status-ico)
+		el-form-item.item-account(label="账号")
+			el-input(type="text" v-model.trim="user.account" placeholder="账号 / 邮箱" clearable)
+		el-row.invite(:span="24" type="flex" align="middle" justify="center")
+			el-button(type="primary" @click="submitForm" :loading="isLoading") 查找
+		el-row.user-form-tip(:span="24" tag="span" class="family-form-tip")
+			textra(:data="words" :timer="1" :sequence="true" :infinite="true")
 </template>
 
 <script>
@@ -54,7 +54,7 @@ export default class UserSearch extends Vue{
 </script>
 
 <style lang="stylus">
-.family-add
+.user-search
 	.el-form-item__label,.family-form-tip
 		font-beautify()
 	.el-form-item__label

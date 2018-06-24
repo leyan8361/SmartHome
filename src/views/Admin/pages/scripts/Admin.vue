@@ -1,5 +1,5 @@
 <template lang="pug">
-.electric-setting-component
+.script-admin-component
 	.scripts-list
 		el-table.scripts-table(v-if="scripts.length!==0" :data="scripts" :row-class-name="disabledRowClass" stripe :height="scripts.length<5?420:470")
 			el-table-column(prop="showName" label="电器" width="78")
@@ -18,7 +18,7 @@
 				| 目前暂无指令哦
 			.script-add-button(:span="24" type="flex" align="middle" justify="center")
 				el-button(type="success" @click.native.prevent="$router.push({name:'ScriptsAdd'})" round) 增加指令
-	.electric-setting-tip(v-show="scripts.length<5")
+	.script-admin-tip(v-show="scripts.length<5")
 		el-row
 			textra(:data="words" :timer="1.5" :sequence="true" :infinite="true")
 </template>
@@ -66,9 +66,9 @@ export default class ScriptsAdmin extends Vue{
 </script>
 
 <style lang="stylus">
-.electric-setting-component
+.script-admin-component
 	font-beautify()
-.electric-setting-tip
+.script-admin-tip
 	position fixed
 	font-size .8em
 	bottom 60px

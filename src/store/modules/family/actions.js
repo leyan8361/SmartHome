@@ -6,13 +6,23 @@ export default {
 
 	},
 	async create({ commit }, family) {
-
+		return http.put(Url.auth.family.family,family).then(response => {
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
 	},
 	async hasExisted({ commit }, name) {
-
+		return http.get(Url.auth.family.family,{params:{name}}).then(response => {
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
 	},
   async invite({ commit }, verification) {
-		return http.put(Url.auth.family.invite, verification).then(response => {
+		return http.put(Url.auth.family.family, verification).then(response => {
 			return response
 		}).catch(error => {
 			console.log(error)

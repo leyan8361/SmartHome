@@ -1,5 +1,5 @@
 <template lang="pug">
-.invite-family
+.family-invite-component
 	.user-info
 		el-row.user-avatar(:span="24" type="flex" align="middle" justify="center")
 			img(:src="user.avatar")
@@ -40,7 +40,7 @@ export default class FamilyInvite extends Vue{
 		if(!this.result.account){
 			this.$router.push({name:'UserSearch'})
 		}
-		this.user.avatar = this.result.avatar || config.defaultAvatarUrl
+		this.user.avatar = this.result.avatar || config.avatar.user
 		this.user.name = this.result.name || '*****'
 		this.user.account = this.result.account
 		this.user.address = this.result.address || '*****'

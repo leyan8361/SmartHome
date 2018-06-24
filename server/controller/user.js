@@ -72,7 +72,7 @@ module.exports = {
 
 	async hasExisted(ctx) {
 		const { account } = ctx.request.query
-		await User.findOne({ account:account }, (err, data) => {
+		await User.findOne({ account }, (err, data) => {
 			if (err) {
 				return ctx.sendError(err)
 			}

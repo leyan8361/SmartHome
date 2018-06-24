@@ -1,5 +1,5 @@
 <template lang="pug">
-.feedback-component
+.user-feedback-component
 	el-form.feedback-form(:model="feedback" label-width="100px"  center status-ico)
 		el-form-item(label="等级评分")
 			el-rate.feedback-rate(v-model="feedback.rate" show-text)
@@ -44,7 +44,7 @@ export default class UserFeedback extends Vue{
 </script>
 
 <style lang="stylus">
-.feedback-component
+.user-feedback-component
 	margin-top 20px
 	.feedback-form
 		width 400px

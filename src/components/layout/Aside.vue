@@ -35,9 +35,11 @@ el-aside.aside-admin(width="250px")
 			router-link(:to="{name:'FamilyCreate'}" tag="li"  v-waves)
 				el-menu-item(index="3-1") 创建家庭
 			el-menu-item(index="3-2") 加入家庭
+			router-link(:to="{name:'FamilyAdmin'}" tag="li"  v-waves)
+				el-menu-item(index="3-4") 家庭管理
 			router-link(:to="{name:'UserFamily'}" tag="li"  v-waves)
-				el-menu-item(index="3-3") 家庭成员
-			el-menu-item(index="3-4") 共享管理
+				el-menu-item(index="3-5") 家庭成员
+			el-menu-item(index="3-6") 共享管理
 		el-submenu(index="4")
 			template(slot="title")
 				i.el-icon-news

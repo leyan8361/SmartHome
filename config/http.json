@@ -19,8 +19,8 @@
 			"search":"/auth/user/search"
 		},
     "family": {
-			"invite":"/auth/family/invite",
-			"member": "/auth/family/member"
+			"member": "/auth/family/member",
+			"family":"/auth/family/family"
 		},
 		"news":{
 			"family":"/auth/news/family",

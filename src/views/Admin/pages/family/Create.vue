@@ -5,7 +5,7 @@
 		el-form-item(label="家庭名字")
 			el-input(v-model.trim="family.name" type="text" placeholder="提供给用户搜索的名字" clearable @change="existHandle")
 		el-form-item(label="展示名字")
-			el-tooltip(content="如果未提供展示名字，则默认家庭名字" :disabled="disabled")
+			el-tooltip(content="如果未提供展示名字，则默认为家庭名字" :disabled="disabled")
 				el-input(v-model.trim="family.displayName" type="text" placeholder="展示给家庭成员的名字" clearable @input="disabled=true")
 	el-row(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在创建") 创建家庭
@@ -44,8 +44,8 @@ export default class FamilyCreate extends Vue{
 		}
 		this.hasExisted(this.family.name).then(e=>{
 			if(e.success){
-				this.hasExistedWithName = e.isHad
-				e.isHad && notice.warning('您的家庭名字已被人注册','错误')
+				this.hasExistedWithName = e.hasExisted
+				e.hasExisted && notice.warning('您的家庭名字已被人注册','错误')
 			}
 		})
 	}
@@ -54,23 +54,47 @@ export default class FamilyCreate extends Vue{
 			notice.warning('请输入家庭名字','错误')
 			return false
 		}
+		if(this.family.name.length > 8){
+			notice.warning('家庭名字过长哦','错误')
+			return false
+		}
+		if(this.family.displayName && this.family.displayName.length > 8){
+			notice.warning('家庭名字过长哦','错误')
+			return false
+		}
 		if(this.hasExistedWithName){
 			notice.warning('您的家庭名字已被人注册','错误')
 			return false
 		}
 		return true
 	}
-	submitForm(){
-		if(!this.verify()){
-			return
-		}
-		this.create(this.family).then(e=>{
+	toCreate(family){
+		this.create(family).then(e=>{
 			if(e.success){
-				notice.success(e.message,'成功')
+				notice.success(e.message,'成功').then(()=>{
+					this.$router.push({name:'FamilyAdmin'})
+				})
 			}else{
 				notice.error(e.message,'失败')
 			}
 		})
+	}
+	submitForm(){
+		if(!this.verify()){
+			return
+		}
+		const family = this.family
+		if(this.family.avatar){
+				/* 重新生成图片 */
+				const reader = new FileReader()
+				reader.readAsDataURL(this.family.avatar)
+				reader.onloadend = () => {
+					family.avatar = reader.result
+					this.toCreate(family)
+				}
+		}else{
+			this.toCreate(family)
+		}
 	}
 }
 </script>

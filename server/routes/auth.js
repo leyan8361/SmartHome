@@ -26,7 +26,10 @@ auth.put('/feedback', Feedback.addFeedback).get('/usagelog',Usagelog.refresh)
 
 notice.post('/family',Notice.refuse)
 
-fami.post('/invite',Family.invite)
+fami
+	.post('/family', Family.invite)
+	.get('/family',Family.hasExisted)
+	.put('/family',Family.create)
 
 electric
 	.post('/bulb', Electric.updateBulb)

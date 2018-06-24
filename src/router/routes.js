@@ -11,6 +11,7 @@ import UserFeedback from '@/views/Admin/pages/user/Feedback'
 
 import FamilyCreate from '@/views/Admin/pages/family/Create'
 import FamilyInvite from '@/views/Admin/pages/family/Invite'
+import FamilyAdmin from '@/views/Admin/pages/family/Admin'
 
 import NoticeFamily from '@/views/Admin/pages/notice/Family'
 import NoticeUsagelog from '@/views/Admin/pages/notice/Usagelog'
@@ -103,7 +104,7 @@ export default [
 						name: 'UserSearch',
 						component: UserSearch,
 						meta: {
-							title: '搜索用户'
+							title: '邀请用户'
 						}
 					}
 				]
@@ -126,6 +127,14 @@ export default [
 						path: 'invite',
 						name: 'FamilyInvite',
 						component: FamilyInvite,
+						meta: {
+							title: '邀请共享'
+						}
+					},
+					{
+						path: 'admin',
+						name: 'FamilyAdmin',
+						component: FamilyAdmin,
 						meta: {
 							title: '邀请共享'
 						}

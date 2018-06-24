@@ -1,5 +1,5 @@
 <template lang="pug">
-.electric-admin
+.electric-view-component
 	.electric-show(v-if="bulbs.length!==0")
 		el-carousel.electric-carousel(trigger="click" :autoplay="false" @change="changeCurrBulb")
 			el-carousel-item.electric-carousel-item(v-for="(bulb,index) in bulbs" :key="index" )

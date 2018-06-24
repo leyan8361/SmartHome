@@ -20,7 +20,8 @@
 		},
     "family": {
 			"member": "/auth/family/member",
-			"family":"/auth/family/family"
+			"family":"/auth/family/family",
+			"name":"/auth/family/name"
 		},
 		"news":{
 			"family":"/auth/news/family",

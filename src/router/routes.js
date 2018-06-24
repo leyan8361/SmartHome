@@ -12,6 +12,8 @@ import UserFeedback from '@/views/Admin/pages/user/Feedback'
 import FamilyCreate from '@/views/Admin/pages/family/Create'
 import FamilyInvite from '@/views/Admin/pages/family/Invite'
 import FamilyAdmin from '@/views/Admin/pages/family/Admin'
+import FamilyJoin from '@/views/Admin/pages/family/Join'
+import FamilySearch from '@/views/Admin/pages/family/Search'
 
 import NoticeFamily from '@/views/Admin/pages/notice/Family'
 import NoticeUsagelog from '@/views/Admin/pages/notice/Usagelog'
@@ -22,7 +24,7 @@ import ElectricView from '@/views/Admin/pages/electric/View'
 import ScriptsAdmin from '@/views/Admin/pages/scripts/Admin'
 import ScriptsAdd from '@/views/Admin/pages/scripts/Add'
 
-import Weather from '@/views/Admin/pages/weather/Index'
+import WeatherIndex from '@/views/Admin/pages/weather/Index'
 import WeatherForecast from '@/views/Admin/pages/weather/Forecast'
 
 import Card from '@/views/Admin/wrap/Card'
@@ -104,7 +106,7 @@ export default [
 						name: 'UserSearch',
 						component: UserSearch,
 						meta: {
-							title: '邀请用户'
+							title: '邀请家人'
 						}
 					}
 				]
@@ -136,7 +138,23 @@ export default [
 						name: 'FamilyAdmin',
 						component: FamilyAdmin,
 						meta: {
-							title: '邀请共享'
+							title: '家庭管理'
+						}
+					},
+					{
+						path: 'join',
+						name: 'FamilyJoin',
+						component: FamilyJoin,
+						meta: {
+							title: '加入家庭'
+						}
+					},
+					{
+						path: 'search',
+						name: 'FamilySearch',
+						component: FamilySearch,
+						meta: {
+							title: '搜索家庭'
 						}
 					}
 				]
@@ -198,8 +216,8 @@ export default [
 				children: [
 					{
 						path: 'info',
-						name: 'Weather',
-						component: Weather,
+						name: 'WeatherIndex',
+						component: WeatherIndex,
 						meta: {
 							title: '天气信息'
 						}

@@ -21,7 +21,3 @@ import LayoutMain from '~/layout/Main'
 })
 export default class Admin extends Vue{}
 </script>
-
-<style lang="stylus">
-
-</style>

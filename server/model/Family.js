@@ -23,11 +23,11 @@ const Family = new mongoose.Schema(
 			required: true,
 			trim:true
 		},
-		admin: {
+		admins: {
 			type: [String],
 			required: false
 		},
-		user: {
+		users: {
 			type: [String],
 			required: false
 		}

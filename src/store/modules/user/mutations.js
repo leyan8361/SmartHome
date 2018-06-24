@@ -15,12 +15,13 @@ export default {
 			Token.remove()
 		}
 	},
-	Info(state, { name, account, address, avatar, news }) {
+	Info(state, { name, account, address, avatar, news,families }) {
 		state.name = name
 		state.account = account
 		state.address = address
 		state.avatar = avatar
 		state.news = news
+		state.families = families
 	},
 	News(state, type) {
 		state.news[type] = 0
@@ -34,5 +35,14 @@ export default {
 		} else {
 			state.news.electric++
 		}
+	},
+	setResult(state, { name, account, address, avatar }) {
+		state.result.name = name
+		state.result.account = account
+		state.result.address = address
+		state.result.avatar = avatar
+	},
+	addFamily(state, family) {
+		state.families.push(family)
 	}
 }

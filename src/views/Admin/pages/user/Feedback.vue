@@ -22,7 +22,7 @@ import {mapActions,mapState} from 'vuex'
 		...mapState('user',['name'])
 	},
 	methods:{
-		...mapActions('feedback',['addFeedback'])
+		...mapActions('user',['addFeedback'])
 	}
 })
 export default class UserFeedback extends Vue{

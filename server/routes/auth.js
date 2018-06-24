@@ -28,8 +28,10 @@ notice.post('/family',Notice.refuse)
 
 fami
 	.post('/family', Family.invite)
-	.get('/family',Family.hasExisted)
+	.get('/family',Family.search)
 	.put('/family',Family.create)
+	.get('/name',Family.hasExisted)
+	.put('/member',Family.join)
 
 electric
 	.post('/bulb', Electric.updateBulb)

@@ -1,6 +1,7 @@
 <template lang="pug">
-el-select.bulb-select-item(v-model="ids" placeholder="请选择" @change="selectSomeBulbs" clearable multiple )
-	el-option(v-for="(item,index) in allBulbs" :key="index" :label="item.label" :value="item.value")
+.bulb-selection
+	el-select.bulb-select-item(v-model="ids" placeholder="请选择" @change="selectSomeBulbs" clearable multiple )
+		el-option(v-for="(item,index) in allBulbs" :key="index" :label="item.label" :value="item.value")
 </template>
 
 <script>

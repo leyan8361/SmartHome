@@ -53,6 +53,10 @@ const User = new mongoose.Schema(
 			type: [String],
 			required: false
 		},
+		families: {
+			type: [String],
+			required: false
+		},
 		news: {
 			[notice.type[0]]: {
 				type: Number,

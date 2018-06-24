@@ -27,7 +27,8 @@ module.exports = {
 			account: user.account,
 			address: user.address,
 			avatar: user.avatar,
-			news: user.news
+			news: user.news,
+			families:user.families
 		}
 		const [token,notice,weather,electrics,scripts,usagelog] = await Promise.all([Token.generate(account),getNotice(account),getWeather(user.address.code),getElectrics(account),getScripts(account),getUsagelog(account)])
 		const value = { token,userInfo,weather,notice,electrics,scripts,usagelog }
@@ -42,7 +43,8 @@ module.exports = {
 			account: user.account,
 			address: user.address,
 			avatar: user.avatar,
-			news: user.news
+			news: user.news,
+			families:user.families
 		}
 
 		const [notice,weather,electrics,scripts,usagelog] = await Promise.all([getNotice(account),getWeather(user.address.code),getElectrics(account),getScripts(account),getUsagelog(account)])

@@ -8,6 +8,7 @@
 import { Vue, Component } from 'vue-property-decorator'
 import HomeHeader from '~/home/Header'
 import HomeMain from '~/home/Main'
+
 @Component({
 	components: {
 		HomeHeader,

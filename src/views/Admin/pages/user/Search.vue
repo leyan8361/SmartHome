@@ -4,8 +4,8 @@
 		el-form-item.item-account(label="账号")
 			el-input(type="text" v-model.trim="user.account" placeholder="账号 / 邮箱" clearable)
 		el-row.invite(:span="24" type="flex" align="middle" justify="center")
-			el-button(type="primary" @click="submitForm" :loading="isLoading") 查找
-		el-row.user-form-tip(:span="24" tag="span" class="family-form-tip")
+			el-button(type="primary" @click="submitForm" :loading="isLoading" size="small") 查找用户
+		el-row.user-search-tip(:span="24" tag="span")
 			textra(:data="words" :timer="1" :sequence="true" :infinite="true")
 </template>
 
@@ -16,7 +16,7 @@ import {mapActions,mapState} from 'vuex'
 import notice from '@/utils/ui/notice'
 @Component({
 	computed:{
-		...mapState('user',['account'])
+		...mapState('user',['account','families'])
 	},
 	methods:{
 		...mapActions('user',['search'])
@@ -28,6 +28,13 @@ export default class UserSearch extends Vue{
 	user={ account:'' }
 	rules = { account: checkAccount}
 	isLoading = false
+	created(){
+		if(!this.families || !this.families.length){
+			return notice.warning('您当前暂无家庭，请先创建一个家庭','错误',()=>{
+				this.$router.push({name:'FamilyCreate'})
+			})
+		}
+	}
 	submitForm() {
 		this.$refs.form.validate(valid => {
 			if (valid) {
@@ -54,7 +61,7 @@ export default class UserSearch extends Vue{
 </script>
 
 <style lang="stylus">
-.user-search
+.user-search-component
 	.el-form-item__label,.family-form-tip
 		font-beautify()
 	.el-form-item__label
@@ -70,7 +77,8 @@ export default class UserSearch extends Vue{
 	width 100%
 	left 12%
 	transform scale(1.2)
-.family-form-tip
+.user-search-tip
+	font-beautify()
 	position relative
 	top 180px !important
 	font-size 85% !important

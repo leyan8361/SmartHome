@@ -86,7 +86,15 @@ export default {
 	async search({ commit }, account) {
 		return http.get(Url.auth.user.search,
 			{ params: { account } }).then(response => {
-			response.success &&	commit('Result',response)
+			response.success &&	commit('setResult',response)
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
+	},
+	async addFeedback(context,feedback) {
+		return http.put(Url.auth.feedback, feedback).then(response => {
 			return response
 		}).catch(error => {
 			console.log(error)

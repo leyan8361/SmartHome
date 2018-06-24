@@ -1,23 +1,28 @@
 <template lang="pug">
 #app
-	transition(name="fade")
+	transition(:name="animation")
 		router-view
 	night-model
 </template>
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import NightModel from '~/element/NightModel'
+import {getRandomAnimation} from '@/utils/ui/animation'
+
 @Component({
 	components:{
 		NightModel
+	},
+	watch:{
+		'$route'(to,from){
+			this.changeAnimation()
+		}
 	}
 })
-export default class App extends Vue{}
+export default class App extends Vue{
+	animation = getRandomAnimation()
+	changeAnimation(){
+		this.animation = getRandomAnimation()
+	}
+}
 </script>
-<style lang="stylus">
-.fade-enter-active, .fade-leave-active
-  transition opacity .5s
-
-.fade-enter, .fade-leave-to
-  opacity 0
-</style>

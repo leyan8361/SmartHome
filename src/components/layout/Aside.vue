@@ -34,12 +34,14 @@ el-aside.aside-admin(width="250px")
 				span(slot="title") 我的家庭
 			router-link(:to="{name:'FamilyCreate'}" tag="li"  v-waves)
 				el-menu-item(index="3-1") 创建家庭
-			el-menu-item(index="3-2") 加入家庭
+			router-link(:to="{name:'FamilySearch'}" tag="li"  v-waves)
+				el-menu-item(index="3-2") 加入家庭
+			router-link(:to="{name:'UserSearch'}" tag="li"  v-waves)
+				el-menu-item(index="3-3") 邀请家人
 			router-link(:to="{name:'FamilyAdmin'}" tag="li"  v-waves)
 				el-menu-item(index="3-4") 家庭管理
 			router-link(:to="{name:'UserFamily'}" tag="li"  v-waves)
 				el-menu-item(index="3-5") 家庭成员
-			el-menu-item(index="3-6") 共享管理
 		el-submenu(index="4")
 			template(slot="title")
 				i.el-icon-news
@@ -56,7 +58,7 @@ el-aside.aside-admin(width="250px")
 				el-menu-item(index="5-1") 家庭邀请
 			router-link(:to="{name:'NoticeUsagelog'}" tag="li"  v-waves)
 				el-menu-item(index="5-2") 电器日志
-			router-link(:to="{name:'Weather'}" tag="li"  v-waves)
+			router-link(:to="{name:'WeatherIndex'}" tag="li"  v-waves)
 				el-menu-item(index="5-3") 天气情况
 			el-menu-item(index="5-4") 使用功耗
 	.menu-footer

@@ -1,6 +1,7 @@
 <template lang="pug">
-el-select(v-model="color" placeholder="请选择" @change="$emit('update:color',color)" clearable)
-	el-option(v-for="color in colors" :key="color.value" :label="color.label" :value="color.value")
+.bulb-colorselect
+	el-select(v-model="color" placeholder="请选择" @change="$emit('update:color',color)" clearable)
+		el-option(v-for="color in colors" :key="color.value" :label="color.label" :value="color.value")
 </template>
 
 <script>
@@ -24,7 +25,3 @@ export default class BulbColorSelect extends Vue{
 	]
 }
 </script>
-
-<style lang="stylus">
-
-</style>

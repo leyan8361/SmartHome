@@ -6,9 +6,11 @@
 		el-row(v-text="`昵称：${user.name}`" :span="24" tag="span" type="flex" align="middle" justify="center")
 		el-row(v-text="`账号：${user.account}`" :span="24" tag="span" type="flex" align="middle" justify="center")
 		el-row(v-text="`地址：${user.address}`" :span="24" tag="span" type="flex" align="middle" justify="center")
-	el-form.invite-form(type="flex" justify="center" align="middle" ref="form" label-width="100px"  center status-ico)
+	el-form.invite-form(v-model="sender" label-width="100px"  center status-ico)
 		el-form-item(label="验证消息")
-			el-input(type="text" v-model.trim="message" :placeholder="`我是${name}`" clearable)
+			el-input.invite-form-message(type="text" v-model.trim="sender.message" :placeholder="`我是${name}`" clearable)
+		el-form-item(label="加入家庭")
+			family-selection(:family.sync="sender.families" :user-families="families")
 	el-row.invite-button(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm" :loading="isLoading") 邀请共享
 	.family-form-tip-c
@@ -20,10 +22,13 @@ import {Component,Vue} from 'vue-property-decorator'
 import {mapState,mapActions,mapMutations} from 'vuex'
 import notice from '@/utils/ui/notice'
 import config from 'config/file'
+import FamilySelection from '~/family/Selection'
 @Component({
+	components:{
+		FamilySelection
+	},
 	computed:{
-		...mapState('family',['result']),
-		...mapState('user',['name','account'])
+		...mapState('user',['name','account','result','families'])
 	},
 	methods:{
 		...mapActions('family',['invite']),
@@ -35,7 +40,10 @@ export default class FamilyInvite extends Vue{
 	words = ['tip: 对方同意邀请后，您的智能家居将被共享。']
 	user = {}
 	isLoading = false
-	message = ''
+	sender={
+		message:'',
+		families:[]
+	}
 	created(){
 		if(!this.result.account){
 			this.$router.push({name:'UserSearch'})
@@ -55,9 +63,12 @@ export default class FamilyInvite extends Vue{
 		this.user.address = address
 	}
 	submitForm() {
+		if(!this.sender.families || !this.sender.families.length){
+			return notice.warning('请选择一个家庭哦','错误')
+		}
 		this.isLoading = true
 		const verification = {
-			message:this.message || `我是${this.name}`,
+			message:this.sender.message || `我是${this.name}，快来${this.sender.families.join('、')}家庭和我共享设备吧`,
 			receiver:{name:this.result.name,account:this.result.account},
 			sender:{name:this.name,account:this.account}
 		}
@@ -106,6 +117,8 @@ export default class FamilyInvite extends Vue{
 	font-beautify()
 	.invite-button
 		margin 0
+	.invite-form-message
+		width 245px !important
 .family-form-tip-c
 	font-beautify()
 	font-size 80%

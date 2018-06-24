@@ -5,7 +5,7 @@
 	el-row.content(:span="24" type="flex" align="middle" justify="center")
 		| 快去添加自己家中的电器吧~
 	el-row.btn-add-electric(:span="24" type="flex" align="middle" justify="center")
-		el-button(type="primary" @click="$router.push({name:'ElectricAdmin'})") 添加电器
+		el-button(type="primary" @click="$router.push({name:'ElectricAdd'})") 添加电器
 </template>
 
 <script>

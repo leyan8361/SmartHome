@@ -15,7 +15,7 @@ module.exports = {
 		const { account,password } = ctx.request.body
 		const user = await User.findOne({ account: account })
 		if (!user) {
-			return ctx.sendError('用户不存在！')
+			return ctx.sendError('您输入的账号不存在！')
 		}
 		console.log(user)
 		const isMatch = await user.comparePassword(password, user.password)

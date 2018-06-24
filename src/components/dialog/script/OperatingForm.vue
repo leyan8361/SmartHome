@@ -54,7 +54,7 @@ export default class OperatingForm extends Vue{
 	}
 	submitForm(){
 		if(!this.verify()){
-			return notice.warning('请选择一个电器','错误')
+			return notice.warning('请选择一个电器')
 		}
 		if(!this.operating.ids.includes('0')){
 			this.operating.ids.forEach(id=>{

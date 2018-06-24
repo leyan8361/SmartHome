@@ -132,7 +132,7 @@ class Task{
 			return
 		}
 		tasks.forEach(task => {
-			task.cancel()
+			task && this.schedules[task].cancel()
 		})
 	}
 }

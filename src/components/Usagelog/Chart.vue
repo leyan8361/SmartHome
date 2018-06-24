@@ -51,7 +51,7 @@ export default class UsagelogChart extends Vue {
 			if (curr.brightness === '保持原状') {
 				curr.brightness = 100
 			} else {
-				curr.brightness.slice(-1)
+				curr.brightness && curr.brightness.slice(-1)
 				curr.brightness = +curr.brightness
 			}
 			const hash = {

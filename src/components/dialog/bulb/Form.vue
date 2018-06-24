@@ -12,7 +12,7 @@ el-dialog(title="设置" :visible="isShowBulb" width="28%" top="15vh" custom-cla
 			bulb-color-select(:color.sync="bulb.color")
 	.dialog-bulb--footer(slot="footer")
 		el-row(:span="24" type="flex" align="middle" justify="center")
-			el-button(type="primary" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在更新") 更新状态
+			el-button(type="primary" @click="submitForm" :loading="isLoading") 更新状态
 </template>
 
 <script>

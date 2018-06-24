@@ -53,7 +53,7 @@ export default {
 		})
 	},
 	async addBulb({ commit }, bulb) {
-		return http.patch(Url.auth.electric.bulb,bulb).then(response => {
+		return http.put(Url.auth.electric.bulb,bulb).then(response => {
 			response.success && commit('addBulb', bulb)
 			return response
 		}).catch(error => {
@@ -71,7 +71,7 @@ export default {
 		})
 	},
 	async renameBulb({ commit }, bulb) {
-		return http.put(Url.auth.electric.bulb,bulb).then(response => {
+		return http.patch(Url.auth.electric.bulb,bulb).then(response => {
 		response.success && commit('renameBulbById', bulb)
 			return response
 		}).catch(error => {

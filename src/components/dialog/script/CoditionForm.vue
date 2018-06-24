@@ -48,11 +48,11 @@ export default class CoditionForm extends Vue{
 	}
 	submitForm(){
 		if(!this.verify()){
-			return notice.warning('请选择一个条件','错误')
+			return notice.warning('请选择一个条件')
 		}
 		if(this.codition.weather && this.codition.weather.length > 0){
 			if(this.codition.weather.includes('晴天') && this.codition.weather.includes('阴天')){
-				return notice.warning('晴天与阴天不能同时选择哦','错误')
+				return notice.warning('晴天与阴天不能同时选择哦')
 			}
 		}
 		this.finishScriptForm({isFinish:true,id:2})

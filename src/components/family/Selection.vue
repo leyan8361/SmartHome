@@ -1,6 +1,6 @@
 <template lang="pug">
 .family-selection
-	el-select.family-select-item(v-model="family" placeholder="请选择所要共享家庭" @change="selectHandle" clearable multiple )
+	el-select.family-select-item(v-model="family" placeholder="请选择所要共享家庭" @change="$emit('update:family',family)" clearable multiple )
 		el-option(v-for="(item,index) in allFamily" :key="index" :label="item.label" :value="item.value")
 </template>
 
@@ -21,23 +21,10 @@ export default class FamilySelection extends Vue{
 		}
 		this.userFamilies.forEach(e=>{
 			this.allFamily.push({
-				value:e,
-				label:e
+				value:e.name,
+				label:e.displayName
 			})
 		})
-		if(this.allFamily.length < 2){
-			return
-		}
-		this.allFamily.push({
-			label:'全部',
-			value:'全部'
-		})
-	}
-	selectHandle(){
-		if(this.family.includes('全部')){
-			this.family = ['全部']
-		}
-		this.$emit('update:family',this.family)
 	}
 }
 </script>

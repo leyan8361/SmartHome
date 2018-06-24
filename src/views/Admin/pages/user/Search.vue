@@ -30,7 +30,7 @@ export default class UserSearch extends Vue{
 	isLoading = false
 	created(){
 		if(!this.families || !this.families.length){
-			return notice.warning('您当前暂无家庭，请先创建一个家庭','错误',()=>{
+			return notice.warning('您当前暂无家庭，请先创建一个家庭').then(()=>{
 				this.$router.push({name:'FamilyCreate'})
 			})
 		}

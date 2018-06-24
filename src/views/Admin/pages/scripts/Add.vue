@@ -12,7 +12,7 @@
 		el-row(:span="24" type="flex" align="middle" justify="center")
 			el-button(:class="{'is-disabled':scriptFormFinishCount<2}" @click.native="scriptFormFinishCount<2?$notify({type:'warning',title: '别急',message: '请先完成之前表单',duration:1000}):isShowDurationForm=true" round) 持续时间
 		el-row(:span="24" type="flex" align="middle" justify="center")
-			el-button.submit-button(:class="{'is-disabled':scriptFormFinishCount<3}" type="success" @click="submitForm" v-loading.fullscreen.lock="isLoading" element-loading-text="正在增加") 增加指令
+			el-button.submit-button(:class="{'is-disabled':scriptFormFinishCount<3}" type="success" @click="submitForm" :loading="isLoading") 增加指令
 	operating-form(:is-show-operating-form.sync="isShowOperatingForm" :operating.sync="operating")
 	codition-form(:is-show-codition-form.sync="isShowCoditionForm" :codition.sync="codition")
 	duration-form(:is-show-duration-form.sync="isShowDurationForm" :duration.sync="duration")
@@ -35,7 +35,6 @@ import notice from '@/utils/ui/notice'
 	},
 	methods:{
 		...mapActions('scripts',['addScript']),
-		...mapMutations('scripts',['setScripts']),
 		...mapMutations('ui',['finishFormCountToZero'])
 	},
 	computed:{
@@ -84,7 +83,6 @@ export default class ScriptAdd extends Vue{
 		this.addScript(this.script).then(e=>{
 			this.isLoading = false
 			if(e.success){
-				this.setScripts(e.scripts)
 				notice.success(e.message,'成功')
 				this.finishFormCountToZero()
 			}else{

@@ -6,7 +6,7 @@
 		el-form-item(label="宝贵意见")
 			el-input.feedback-input(type="textarea" v-model.trim="feedback.evaluation")
 	el-row(:span="24" type="flex" align="middle" justify="center")
-		el-button.submit-button(type="success" @click="submitForm" ) 马上反馈
+		el-button.submit-button(type="success" @click="submitForm" :loading="isLoading") 马上反馈
 	.feedback-tip(:span="24" type="flex" align="middle" justify="center")
 		el-row
 			textra(:data="words" :timer="1.5" :sequence="true" :infinite="true")
@@ -31,12 +31,15 @@ export default class UserFeedback extends Vue{
 		rate:null,
 		evaluation:null
 	}
+	isLoading = false
 	submitForm(){
 		if(!this.feedback.rate && !this.feedback.evaluation){
-			notice.warning('您还没有提供意见哦~','错误')
+			notice.warning('您还没有提供意见哦~')
 		}
+		this.isLoading = true
 		this.feedback.name = this.name
 		this.addFeedback(this.feedback).then(e=>{
+			this.isLoading = false
 			notice.success(e.message,'成功')
 		})
 	}

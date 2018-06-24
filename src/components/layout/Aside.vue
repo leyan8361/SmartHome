@@ -18,16 +18,16 @@ el-aside.aside-admin(width="250px")
 				el-menu-item(index="1-1") 设置电器
 			router-link(:to="{name:'ElectricAdmin'}" tag="li"  v-waves)
 				el-menu-item(index="1-2") 管理电器
-			router-link(:to="{name:'UserElectrics'}" tag="li"  v-waves)
-				el-menu-item(index="1-3") 查看电器
+			router-link(:to="{name:'ElectricAdd'}" tag="li"  v-waves)
+				el-menu-item(index="1-3") 添加电器
 		el-submenu(index="2")
 			template(slot="title")
 				i.el-icon-setting
 				span(slot="title") 我的指令
 			router-link(:to="{name:'ScriptsAdd'}" tag="li"  v-waves)
-				el-menu-item(index="1-4") 添加指令
+				el-menu-item(index="2-1") 添加指令
 			router-link(:to="{name:'ScriptsAdmin'}" tag="li"  v-waves)
-				el-menu-item(index="1-5") 管理指令
+				el-menu-item(index="2-2") 管理指令
 		el-submenu(index="3")
 			template(slot="title")
 				i.el-icon-menu
@@ -46,7 +46,7 @@ el-aside.aside-admin(width="250px")
 			template(slot="title")
 				i.el-icon-news
 				span(slot="title") 我的信息
-			router-link(:to="{name:'NoticeFamily'}" tag="li" v-waves)
+			router-link(:to="{name:'UserProfile'}" tag="li" v-waves)
 				el-menu-item(index="4-1") 我的主页
 			router-link(:to="{name:'UserModify'}" tag="li"  v-waves)
 				el-menu-item(index="4-2") 修改信息

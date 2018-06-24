@@ -42,7 +42,10 @@ export default class FamilyJoin extends Vue{
     this.isLoading = true
 		const verification = {
 			message:this.message || `我是${this.name}`,
-			receiver:{name:this.result.name},
+			receiver:{
+				name:this.result.name,
+				displayName:this.result.displayName
+			},
       sender:{
 				name:this.name,
 				account:this.account

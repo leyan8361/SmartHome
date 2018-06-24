@@ -11,27 +11,53 @@ const Family = new mongoose.Schema(
 		displayName: {
 			type: String,
 			required: false,
-			trim:true
+			trim: true
 		},
 		avatar: {
 			type: String,
 			required: false,
-			trim:true
+			trim: true
 		},
 		founder: {
-			type: String,
-			required: true,
-			trim:true
+			name: {
+				type: String,
+				required: false,
+				trim: true
+			},
+			account: {
+				type: String,
+				required: false,
+				trim: true
+			}
 		},
-		admins: {
-			type: [String],
-			required: false
-		},
-		users: {
-			type: [String],
-			required: false
-		}
-
+		admins: [
+			{
+				name: {
+					type: String,
+					required: false,
+					trim: true
+				},
+				account: {
+					type: String,
+					required: false,
+					trim: true
+				}
+			}
+		],
+		users: [
+			{
+				name: {
+					type: String,
+					required: false,
+					trim: true
+				},
+				account: {
+					type: String,
+					required: false,
+					trim: true
+				}
+			}
+		]
 	},
 	{
 		collection: 'Family',
@@ -44,5 +70,4 @@ const Family = new mongoose.Schema(
 Family.set('toJSON', { getters: true, virtuals: true })
 Family.set('toObect', { getters: true, virtuals: true })
 
-
-module.exports = mongoose.model('Family',Family)
+module.exports = mongoose.model('Family', Family)

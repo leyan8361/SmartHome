@@ -26,6 +26,8 @@ export default {
 	},
 	async addScript({ commit, state }, script) {
 		return http.put(Url.auth.script,script).then(response => {
+			response.success && commit('setScripts', response.scripts)
+			console.log(response.scripts)
 			return response
 		}).catch(error => {
 			console.log(error)

@@ -12,7 +12,7 @@
 		router-link(:to="{name:'UserElectrics'}" tag="a")
 			| 电器信息
 	el-row.user-usagelog(:span="24" type="flex" align="middle" justify="center")
-		router-link(:to="{name:'UserUsagelog'}" tag="a")
+		router-link(:to="{name:'NoticeUsagelog'}" tag="a")
 			| 使用日志
 </template>
 

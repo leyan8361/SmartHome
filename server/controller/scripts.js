@@ -54,15 +54,14 @@ module.exports = {
 		} else {
 			script.showCodition = showExecTime ? showExecTime : showWeather
 		}
-
-		const [isSaveSuccess,scripts] = await Promise.all([
+		const [isSaveSuccess] = await Promise.all([
 			new Scripts(script).save(),
-			Scripts.find(
-				{ master: account },
-				{ master: 0, address: 0, _id: 0, _v: 0 }
-			),
 			generateTask(script)
 		])
+		const scripts = await Scripts.find(
+			{ master: account },
+			{ master: 0, address: 0, _id: 0, _v: 0 }
+		)
 		if (!isSaveSuccess) {
 			return ctx.sendError('因不可抗拒因素，指令增加失败！')
 		}

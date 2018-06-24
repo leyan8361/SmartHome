@@ -1,6 +1,6 @@
 <template lang="pug">
 .electric-admin-component
-	el-table.electrics-admin-table(:data="bulbs" v-if="bulbs.length!==0" stripe height="470")
+	el-table.electrics-admin-table(:data="bulbs" v-if="bulbs.length!==0" stripe height="450")
 		el-table-column(prop="name" label="备注")
 		el-table-column(prop="id" label="ID")
 		el-table-column(prop="showStatus" label="状态")
@@ -13,35 +13,23 @@
 	.when-bulbs-is-null(v-else :span="24" type="flex" align="middle" justify="center")
 		| 您目前还没有自己的电器哦~
 	.electric-add(:span="24" type="flex" align="middle" justify="center")
-		el-button(type="success" @click.native.prevent="isShowAddDialog=true" round) 增加电器
-	bulb-add(:is-show-add-dialog.sync="isShowAddDialog")
-	.bulb-add-tip
-		h3.bulb-add-tip-title: | 增加电器前提
-		el-row
-			| 1. 电器已连接家中局域网
-		el-row
-			| 2. 如果想单独控制电器，电器的 id 号 需与已有电器的 id 号互不相同
+		el-button(type="success" @click.native.prevent="$router.push({name:'ElectricAdd'})" round) 增加电器
 </template>
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
 import {mapState,mapActions } from 'vuex'
 import notice from '@/utils/ui/notice'
-import BulbAdd from '~/dialog/bulb/Add'
 
 @Component({
 	computed:{
 		...mapState('electrics',['bulbs'])
-	},
-	components:{
-		BulbAdd
 	},
 	methods:{
 		...mapActions('electrics',['deleteBulb','renameBulb'])
 	}
 })
 export default class ElectricAdmin extends Vue{
-	isShowAddDialog = false
 	deleteElectric(index){
 		this.deleteBulb(this.bulbs[index].id).then(e=>{
 			if(e.success){
@@ -74,17 +62,13 @@ export default class ElectricAdmin extends Vue{
 <style lang="stylus">
 .electric-admin-component
 	margin-top 20px
-	padding 20px
+	padding 0px
 	font-beautify()
 .electric-add
 	margin-top 50px
-.bulb-add-tip
-	font-size .8em
-	position fixed
-	bottom 60px
-	& *
-		padding 5px 0
 .when-bulbs-is-null
 	margin 100px auto 50px
-
+.electrics-admin-table
+	box-shadow 0 2px 10px #ccc
+	border-radius 5px
 </style>

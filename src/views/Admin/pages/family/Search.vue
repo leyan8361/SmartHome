@@ -4,7 +4,7 @@
 		el-form-item(label="家庭名字")
 			el-input(type="text" v-model.trim="family.name" placeholder="创建家庭时，独一无二的家庭名字" clearable)
 	el-row(:span="24" type="flex" align="middle" justify="center")
-		el-button(type="primary" @click="submitForm") 查找家庭
+		el-button(type="primary" @click="submitForm" :loading="isLoading") 查找家庭
 	el-row.family-search-tip
 		textra(:data="words" :timer="1" :sequence="true" :infinite="true")
 </template>
@@ -27,16 +27,17 @@ export default class FamilySearch extends Vue{
 	family= {
 		name:''
 	}
+	isLoading = false
 	verify(){
 		if(!this.family.name){
 			return false
 		}
 		if(this.family.name.length > 8){
-			notice.warning('您输入的用户名太长','错误')
+			notice.warning('您输入的用户名太长')
 			return false
 		}
-		if(this.families && this.families.includes(this.family.name)){
-			notice.warning('您已加入了该家庭','错误')
+		if(this.families && [].find.call(this.families ,e=>e.name === this.family.name)){
+			notice.warning('您已加入了该家庭')
 			return false
 		}
 		return true
@@ -45,9 +46,11 @@ export default class FamilySearch extends Vue{
 		if(!this.verify()){
 			return
 		}
+		this.isLoading = true
 		this.search(this.family.name).then(response => {
+			this.isLoading = false
 			if (!response.success) {
-				return notice.warning(response.message,'错误')
+				return notice.warning(response.message)
 			}
 			notice.success(response.message,'成功').then(() => {
 				this.$router.push({name:'FamilyJoin'})

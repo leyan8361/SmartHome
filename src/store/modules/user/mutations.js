@@ -43,6 +43,10 @@ export default {
 		state.result.avatar = avatar
 	},
 	addFamily(state, family) {
-		state.families.push(family)
+		const _family = {
+			name: family.name,
+			displayName: family.displayName || family.name
+		}
+		state.families.push(_family)
 	}
 }

@@ -41,19 +41,22 @@ module.exports = {
 			return ctx.sendError('您的家庭名字已被人注册！')
 		}
 
-		family.founder = account
+		family.founder = { account, name: family.userName }
+		Reflect.deleteProperty(family, 'userName')
+
 		if (!family.displayName) {
 			family.displayName = name
 		}
 
 		family.avatar = await writeImg(family)
 
+		const newFamily = {
+			name,
+			displayName: family.displayName
+		}
 		const [isSaveSuccess] = await Promise.all([
 			new Family(family).save(),
-			User.updateOne(
-				{ account, families: { $ne: name } },
-				{ $push: { families: name } }
-			)
+			User.updateOne({ account }, { $push: { families: newFamily } })
 		])
 
 		isSaveSuccess
@@ -63,7 +66,7 @@ module.exports = {
 	async join(ctx) {
 		const { message, sender, receiver } = ctx.request.body
 		const { account } = sender
-		const { family } = receiver
+		const { name } = receiver
 
 		const notice = {
 			sender,
@@ -74,19 +77,13 @@ module.exports = {
 		}
 		const [{ admins, founder }] = await Promise.all([
 			// 找到家庭中的管理层的账号
-			Family.findOne({ family }, { admins: 1, founder: 1 }),
+			Family.findOne({ name }, { admins: 1, founder: 1 }),
 
 			// 把当前用户加入到家庭的用户组
-			Family.updateOne(
-				{ family, users: { $ne: account } },
-				{ $push: { users: account } }
-			),
+			Family.updateOne({ name }, { $push: { users: sender } }),
 
 			//用户的家庭组中增加 加入的家庭名
-			User.updateOne(
-				{ account, families: { $ne: family } },
-				{ $push: { families: family } }
-			),
+			User.updateOne({ account }, { $push: { families: receiver } }),
 
 			// 用户消息通知中增加消息
 			new Notice(notice).save()
@@ -95,18 +92,12 @@ module.exports = {
 		//管理层的用户汇集
 		admins.push(founder)
 
-		// 找到所有管理层的用户的名字与账号，模拟 收到消息者的格式
-		const managers = await User.find(
-			{ account: { $in: admins } },
-			{ name: 1, account: 1 }
-		)
-
 		// 异步发布消息数组
 		const syncFunc = []
-		managers.forEach(receiver => {
+		admins.forEach(_receiver => {
 			const noticeInfo = {
 				sender,
-				receiver,
+				receiver: _receiver,
 				message,
 				type: 'family',
 				id: Date.now().toString()
@@ -116,5 +107,35 @@ module.exports = {
 		await Promise.all(syncFunc)
 
 		ctx.send('加入成功，等待管理员的审核！')
+	},
+	async member(ctx) {
+		const { families: names } = ctx.request.query
+		const families = await Family.find({ name: { $in: names } })
+
+		const members = []
+
+		families.forEach(e => {
+			const family = { name: e.name, displayName: e.displayName }
+			members.push({
+				family,
+				user: e.founder,
+				tag: '创建者'
+			})
+			e.admins.forEach(a => {
+				members.push({
+					family,
+					user: a,
+					tag: '管理员'
+				})
+			})
+			e.users.forEach(u => {
+				members.push({
+					family,
+					user: u,
+					tag: '成员'
+				})
+			})
+		})
+		return ctx.send('家庭成员获取成功', { members })
 	}
 }

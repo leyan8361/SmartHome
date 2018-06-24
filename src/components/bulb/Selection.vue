@@ -37,7 +37,7 @@ export default class BulbSelection extends Vue{
 		if(this.ids.includes('0')){
 			this.ids = ['0']
 		}
-		this.$emit('update:ids',this.ids)
+		this.$emit('update:selectBulbs',this.ids)
 	}
 }
 </script>

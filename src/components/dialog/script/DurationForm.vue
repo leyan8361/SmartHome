@@ -83,14 +83,14 @@ export default class DurationForm extends Vue{
 	}
 	submitForm(){
 		if(!this.verify()){
-			return notice.warning('请选择一个时间','错误')
+			return notice.warning('请选择一个时间')
 		}
 		if(this.duration.startDuration && this.duration.startDuration.length === 2){
 			if(this.duration.endDuration && this.duration.endDuration.length){
 				const start = this.duration.startDuration[1]
 				const end = this.duration.endDuration[0]
 				if(task.filterWeek(start) >= task.filterWeek(end)){
-					return notice.warning('选择星期只能从大到小哦','错误')
+					return notice.warning('选择星期只能从大到小哦')
 				}
 			}
 		}

@@ -20,6 +20,7 @@ import NoticeUsagelog from '@/views/Admin/pages/notice/Usagelog'
 
 import ElectricAdmin from '@/views/Admin/pages/electric/Admin'
 import ElectricView from '@/views/Admin/pages/electric/View'
+import ElectricAdd from '@/views/Admin/pages/electric/Add'
 
 import ScriptsAdmin from '@/views/Admin/pages/scripts/Admin'
 import ScriptsAdd from '@/views/Admin/pages/scripts/Add'
@@ -204,6 +205,14 @@ export default [
 						component: ElectricView,
 						meta: {
 							title: '设置电器'
+						}
+					},
+					{
+						path: 'add',
+						name: 'ElectricAdd',
+						component: ElectricAdd,
+						meta: {
+							title: '添加电器'
 						}
 					}
 				]

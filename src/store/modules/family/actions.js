@@ -12,7 +12,7 @@ export default {
 	},
 	async create({ commit }, family) {
 		return http.put(Url.auth.family.family,family).then(response => {
-			response.success && commit('user/addFamily',family.name,{root:true})
+			response.success && commit('user/addFamily',family,{root:true})
 			return response
 		}).catch(error => {
 			console.log(error)
@@ -38,6 +38,14 @@ export default {
 	},
 	async hasExisted({ commit }, name) {
 		return http.get(Url.auth.family.name,{params:{name}}).then(response => {
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
+	},
+	async member({ commit }, families) {
+		return http.get(Url.auth.family.member,{params:{families}}).then(response => {
 			return response
 		}).catch(error => {
 			console.log(error)

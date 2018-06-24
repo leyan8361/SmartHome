@@ -14,31 +14,36 @@ module.exports = {
 		const showStatus = status ? '开灯' : '关灯'
 		let payload = `${id},${showStatus},${color},${brightness}`
 
-		const usagelog = { ...bulb, showStatus,master:account }
+		const usagelog = { ...bulb, showStatus, master: account }
 
 		const [, isDBSuccess] = await Promise.all([
 			Client.publish('bulb', payload),
-			Electric.updateOne({ $and: [{ master: account }, { id: bulb.id }] }, bulb),
+			Electric.updateOne(
+				{ $and: [{ master: account }, { id: bulb.id }] },
+				bulb
+			),
 			new Usagelog(usagelog).save()
 		])
 		const usagelogs = await getUsagelog(account)
 
 		isDBSuccess
-			? ctx.send('状态信息更新成功！', {usagelogs})
+			? ctx.send('状态信息更新成功！', { usagelogs })
 			: ctx.sendError('状态消息因不可抗因素更新失败！')
 	},
 	async switchBulbs(ctx) {
 		const account = ctx.state.user.data
 		const bulb = ctx.request.body
 
-		const { status, color, brightness, ids: bulbs,name } = bulb
+		const { status, color, brightness, ids: bulbs, name } = bulb
 
 		const usagelog = {
 			name: '全部',
 			id: '0',
 			showStatus: status ? '开灯' : '关灯',
-			master:account,
-			status, color, brightness
+			master: account,
+			status,
+			color,
+			brightness
 		}
 
 		const conditions = [{ master: account }]
@@ -67,7 +72,7 @@ module.exports = {
 		const usagelogs = await getUsagelog(account)
 
 		if (isDBSuccess) {
-			ctx.send('状态更新成功！',{usagelogs})
+			ctx.send('状态更新成功！', { usagelogs })
 		} else {
 			ctx.sendError('因不可抗因素修改失败！')
 		}
@@ -82,7 +87,7 @@ module.exports = {
 		const usagelog = {
 			name: '全部',
 			id: '0',
-			master:account,
+			master: account,
 			status,
 			showStatus
 		}
@@ -94,7 +99,7 @@ module.exports = {
 		const usagelogs = await getUsagelog(account)
 
 		if (isDBSuccess) {
-			ctx.send(`电器${showStatus}成功！`,{usagelogs})
+			ctx.send(`电器${showStatus}成功！`, { usagelogs })
 		} else {
 			ctx.sendError('因不可抗因素修改失败！')
 		}
@@ -102,24 +107,32 @@ module.exports = {
 	async deleteBulb(ctx) {
 		const account = ctx.state.user.data
 		const { id } = ctx.query
-		const isSuccess = await Electric.deleteOne({ $and: [{ master: account }, { id }] })
+		const isSuccess = await Electric.deleteOne({
+			$and: [{ master: account }, { id }]
+		})
 		isSuccess ? ctx.send('删除成功') : ctx.sendError('因不可抗因素删除失败！')
 	},
 	async renameBulb(ctx) {
 		const account = ctx.state.user.data
-		const {name,id} = ctx.request.body
-		const isSuccess = await Electric.updateOne({ $and: [{ master: account }, { id }] }, {name})
-		isSuccess ? ctx.send('重命名成功') : ctx.sendError('因不可抗因素重命名失败！')
+		const { name, id } = ctx.request.body
+		const isSuccess = await Electric.updateOne(
+			{ $and: [{ master: account }, { id }] },
+			{ name }
+		)
+		isSuccess
+			? ctx.send('重命名成功')
+			: ctx.sendError('因不可抗因素重命名失败！')
 	},
 	async addBulb(ctx) {
 		const account = ctx.state.user.data
 		const bulb = ctx.request.body
-		const {id,showStatus,color,brightness} = bulb
-
-		const isSaveSuccess = await new Electric({ ...bulb, master: account }).save()
+		const { id, showStatus, color, brightness } = bulb
 
 		const payload = `${id},${showStatus},${color},${brightness}`
-		await Client.publish('bulb', payload)
+		const [isSaveSuccess] = await Promise.all([
+			new Electric({ ...bulb, master: account }).save(),
+			Client.publish('bulb', payload)
+		])
 
 		if (isSaveSuccess) {
 			ctx.send('电器增加成功！')

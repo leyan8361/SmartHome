@@ -1,17 +1,64 @@
 <template lang="pug">
 .user-family-component
-	| 用户家庭成员~
+	el-table.family-table(v-if="families.length!==0" :data="members" :height="470" stripe)
+		el-table-column(label="家庭")
+			template(slot-scope="scope")
+				el-popover(trigger="hover" placement="top")
+					p 家庭名称：{{scope.row.family.name}}
+					p 展示名称：{{scope.row.family.displayName}}
+					.name-wrapper(slot="reference")
+						el-tag(size="medium") {{scope.row.family.displayName}}
+		el-table-column(label="成员")
+			template(slot-scope="scope")
+				el-popover(trigger="hover" placement="top")
+					p 账号：{{scope.row.user.account}}
+					p 昵称：{{scope.row.user.name}}
+					.name-wrapper(slot="reference")
+						el-tag(size="medium") {{scope.row.user.name}}
+		el-table-column(prop="tag" label="权限")
+	.families-is-null(v-else)
+		el-row(:span="24" type="flex" align="middle" justify="center")
+			| 您当前暂无家庭哦
+		el-row(:span="24" type="flex" align="middle" justify="center")
+			| 自己创建一个家庭吧！
+		el-row(:span="24" type="flex" align="middle" justify="center")
+			el-button(type="success" @click.native.prevent="$router.push({name:'FamilyCreate'})" round) 马上创建
 </template>
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
+import {mapActions,mapState} from 'vuex'
+import notice from '@/utils/ui/notice'
 
-@Component
+@Component({
+	computed:{
+		...mapState('user',['families'])
+	},
+	methods:{
+		...mapActions('family',['member'])
+	}
+})
 export default class UserFamily extends Vue{
-
+	members = []
+	created(){
+		const families = this.families.map(e=>e.name)
+		this.member(families).then(e=>{
+			if(e.success){
+				this.members = e.members
+			}
+		})
+	}
 }
 </script>
 
 <style lang="stylus">
-
+.family-table
+	box-shadow 0 2px 10px #ccc
+	border-radius 5px
+.user-family-component
+	font-beautify()
+	.families-is-null
+		margin 150px
+		& *
+			padding 15px
 </style>

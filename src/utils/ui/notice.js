@@ -5,14 +5,14 @@ const config = {
 	showClose: true
 }
 export default ['info', 'success', 'warning', 'error'].reduce((notice, type) => {
-	notice[type] = (msg, title = '错误',duration = 1200,position = 'top-right',offset = 0) => {
+	notice[type] = (message, title = '错误',duration = 1000,position = 'top-right',offset = 0) => {
 		return Promise.resolve(Notification({
-			message: msg,
-			title:title,
-			type: type,
-			position: position,
-			offset:offset,
-			duration: duration,
+			message,
+			title,
+			type,
+			position,
+			offset,
+			duration,
 			...config
 		}))
 	}

@@ -53,10 +53,18 @@ const User = new mongoose.Schema(
 			type: [String],
 			required: false
 		},
-		families: {
-			type: [String],
-			required: false
-		},
+		families: [{
+			name:{
+				type: String,
+				required: false,
+				trim:true
+			},
+			displayName:{
+				type: String,
+				required: false,
+				trim:true
+			}
+		}],
 		news: {
 			[notice.type[0]]: {
 				type: Number,

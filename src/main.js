@@ -31,7 +31,7 @@ import '@/assets/css/globals'
 import '@/assets/css/element'
 import 'vue2-animate/dist/vue2-animate.min'
 
-import 'nprogress/nprogress'
+import 'nprogress/nprogress.css'
 import NProgress from '@/plugins/NProgress'
 Vue.use(NProgress)
 

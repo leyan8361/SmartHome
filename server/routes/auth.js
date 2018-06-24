@@ -32,6 +32,7 @@ fami
 	.put('/family',Family.create)
 	.get('/name',Family.hasExisted)
 	.put('/member',Family.join)
+	.get('/member',Family.member)
 
 electric
 	.post('/bulb', Electric.updateBulb)

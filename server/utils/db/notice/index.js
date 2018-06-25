@@ -23,7 +23,8 @@ module.exports = {
 				message: e.system ? e.sysMessage[el] : e.message,
 				date: moment(e.createdAt).fromNow(),
 				status: e.system ? '系统消息' : e.status,
-				id:e.id
+				id: e.id,
+				families:e.families
 			})
 			return result
 

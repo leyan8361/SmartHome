@@ -65,18 +65,28 @@ export default class FamilyInvite extends Vue{
 	getFamilyDisplayName(){
 		return [].map.call(this.sender.families,e=>{
 			return [].find.call(this.families,f=>f.name === e).displayName
-		}).join('、')
+		})
 	}
 	submitForm() {
 		if(!this.sender.families || !this.sender.families.length){
 			return notice.warning('请选择一个家庭哦')
 		}
 		this.isLoading = true
+		const familyDisplayNames = this.getFamilyDisplayName()
+		const families = []
+		familyDisplayNames.forEach((e,i)=>{
+			families.push({
+				name:this.sender.families[i],
+				displayName:e
+			})
+		})
 		const verification = {
-			message:this.sender.message || `我是${this.name}，快来${this.getFamilyDisplayName()}家庭和我共享设备吧`,
+			message:this.sender.message || `我是${this.name}，快来${familyDisplayNames.join('、')}家庭和我共享设备吧`,
 			receiver:{name:this.result.name,account:this.result.account},
-			sender:{name:this.name,account:this.account}
+			sender:{name:this.name,account:this.account},
+			families
 		}
+
 		this.invite(verification).then(response => {
 			this.isLoading = false
 			if (!response.success) {

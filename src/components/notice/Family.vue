@@ -39,8 +39,7 @@ import notice from '@/utils/ui/notice'
 		...mapState('user',['account','name'])
 	},
 	methods:{
-		...mapActions('family',['join']),
-		...mapActions('notice',['refuse']),
+		...mapActions('notice',['refuse','agree']),
 		...mapMutations('notice',['setNoticeStatus'])
 	}
 })
@@ -58,8 +57,23 @@ export default class NoticeFamily extends Vue{
 			return 'unread-row'
 		}
 	}
-	handleJoin(){
-
+	handleJoin({sender:receiver,id,families}){
+		const receipts = {
+			receiver,
+			id,
+			families,
+			sender : {
+				name:this.name,
+				account:this.account
+			}
+		}
+		this.agree(receipts).then(e=>{
+			if(e.success){
+				notice.success(e.message,'成功')
+			}else{
+				notice.error(e.message,'失败')
+			}
+		})
 	}
 	handleRefuse({sender:receiver,status,id}){
 		const receipts = {
@@ -72,7 +86,6 @@ export default class NoticeFamily extends Vue{
 		}
 		this.refuse(receipts).then(e=>{
 			if(e.success){
-				this.setNoticeStatus({id,status:'已拒绝',type:'family'})
 				notice.success(e.message,'成功')
 			}else{
 				notice.error(e.message,'失败')

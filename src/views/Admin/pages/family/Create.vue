@@ -77,7 +77,7 @@ export default class FamilyCreate extends Vue{
 		this.create(family).then(e=>{
 			if(e.success){
 				notice.success(e.message,'成功').then(()=>{
-					this.$router.push({name:'FamilyAdmin'})
+					this.$router.push({name:'UserSearch'})
 				})
 			}else{
 				notice.error(e.message,'失败')

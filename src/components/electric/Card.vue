@@ -9,9 +9,9 @@
 			| 一键开灯
 		el-row.electric-setting-button(@click.native="bulbs.length===0?$notify({type:'warning',title: '别急',message: '您必须有电器才能控制小灯哦',duration:1000}):isShowSetting=true")
 			| 状态设置
-		el-tooltip(content="根据您平时的操作时间、天气情况，自主调节电器状态")
-			el-row.electric-setting-button(@click.native="bulbs.length===0?$notify({type:'warning',title: '别急',message: '您必须有电器才能控制小灯哦',duration:1000}):toggleAutoModel()")
-				| {{showCurrModel + '自动模式'}}
+		// el-tooltip(content="根据您平时的操作时间、天气情况，自主调节电器状态")
+		// 	el-row.electric-setting-button(@click.native="bulbs.length===0?$notify({type:'warning',title: '别急',message: '您必须有电器才能控制小灯哦',duration:1000}):toggleAutoModel()")
+		// 		| {{showCurrModel + '自动模式'}}
 		bulb-setting(:is-show-setting.sync="isShowSetting")
 </template>
 
@@ -63,7 +63,7 @@ export default class ElectricCard extends Vue{
 	position fixed
 	top 58%
 	left 30%
-	height 290px
+	height 250px
 	width 300px
 	box-shadow 2px 3px 10px #ccc
 	border-radius 10px

@@ -14,6 +14,16 @@ export default {
 	},
 	async refuse({ commit }, receipts) {
 		return http.post(Url.auth.notice.family,receipts).then(response => {
+			response.success && commit('setNoticeStatus',{id:receipts.id,status:'已拒绝',type:'family'})
+			return response
+		}).catch(error => {
+			console.log(error)
+			return {message:error}
+		})
+	},
+	async agree({ commit }, receipts) {
+		return http.put(Url.auth.notice.family,receipts).then(response => {
+			response.success && commit('setNoticeStatus',{id:receipts.id,status:'已加入',type:'family'})
 			return response
 		}).catch(error => {
 			console.log(error)

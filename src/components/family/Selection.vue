@@ -1,7 +1,7 @@
 <template lang="pug">
 .family-selection
-	el-select.family-select-item(v-model="family" placeholder="请选择所要共享家庭" @change="$emit('update:family',family)" clearable multiple )
-		el-option(v-for="(item,index) in allFamily" :key="index" :label="item.label" :value="item.value")
+	el-select.family-selection(v-model="family" placeholder="请选择所要共享家庭" @change="$emit('update:family',family)" clearable multiple )
+		el-option.family-selection-item(v-for="(item,index) in allFamily" :key="index" :label="item.label" :value="item.value")
 </template>
 
 <script>
@@ -30,5 +30,6 @@ export default class FamilySelection extends Vue{
 </script>
 
 <style lang="stylus">
-
+.family-selection-item
+	width 240px
 </style>

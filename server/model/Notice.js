@@ -38,6 +38,18 @@ const Notice = new mongoose.Schema(
 				trim:true
 			}
 		},
+		families: [{
+			name:{
+				type: String,
+				required: false,
+				trim:true
+			},
+			displayName:{
+				type: String,
+				required: false,
+				trim:true
+			}
+		}],
 		type: {
 			type: String,
 			required: true,

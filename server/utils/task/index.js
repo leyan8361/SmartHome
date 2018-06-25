@@ -1,4 +1,3 @@
-/*  */
 const schedule = require('node-schedule')
 require('schedule/tasks')
 

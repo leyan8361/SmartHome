@@ -24,7 +24,9 @@ auth
 
 auth.put('/feedback', Feedback.addFeedback).get('/usagelog',Usagelog.refresh)
 
-notice.post('/family',Notice.refuse)
+notice
+	.post('/family', Notice.refuse)
+	.put('/family',Notice.agree)
 
 fami
 	.post('/family', Family.invite)

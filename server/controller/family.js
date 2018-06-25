@@ -5,11 +5,12 @@ const { writeImg } = require('utils/db/family')
 
 module.exports = {
 	async invite(ctx) {
-		const { message, receiver, sender } = ctx.request.body
+		const { message, receiver, sender,families } = ctx.request.body
 		const noticeInfo = {
 			sender,
 			receiver,
 			message,
+			families,
 			type: 'family',
 			id: Date.now().toString()
 		}

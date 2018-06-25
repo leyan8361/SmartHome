@@ -39,6 +39,13 @@ export default class MainBottom extends Vue {
 	min-width 100vw
 	overflow hidden
 	padding 3vw
+	.el-carousel__item
+		box-shadow  0 0 20px #ccc
+		opacity .5
+	.el-carousel__item:nth-child(2n)
+		background-color #99a9bf
+	.el-carousel__item:nth-child(2n+1)
+		background-color #d3dce6
 	.title
 		font-size 200%
 	.sub-button
@@ -69,13 +76,6 @@ export default class MainBottom extends Vue {
 		width 40vw
 		left 30%
 		margin 0
-		.el-carousel__item
-			box-shadow  0 0 20px #ccc
-			opacity .5
-		.el-carousel__item:nth-child(2n)
-			background-color #99a9bf
-		.el-carousel__item:nth-child(2n+1)
-			background-color #d3dce6
 
 @keyframes toShow
 	to

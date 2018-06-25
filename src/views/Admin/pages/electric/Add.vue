@@ -4,12 +4,12 @@
 		el-form-item(label="状态")
 			bulb-check-box.bulb-checkbox(:status.sync="bulb.status")
 		el-form-item(label="亮度")
-			el-slider(v-model="bulb.brightness")
+			el-slider.brightness-slider(v-model="bulb.brightness")
 		el-form-item(label="颜色")
 			bulb-color-select(:color.sync="bulb.color")
-		el-form-item(label="ID")
+		el-form-item.electric-form-input(label="ID")
 			el-input(type="text" v-model.trim="bulb.id" auto-complete='on' placeholder="产品上面的 ID 号" clearable)
-		el-form-item(label="备注")
+		el-form-item.electric-form-input(label="备注")
 			el-input(type="text" v-model.trim="bulb.name" auto-complete='on' placeholder="最多16位字符" clearable)
 	el-row(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm" :loading="isLoading") 增加电器
@@ -91,4 +91,9 @@ export default class BulbAdd extends Vue{
 	bottom 60px
 	& *
 		padding 5px 0
+.brightness-slider
+	width 80%
+
+.electric-form-input
+	width 86%
 </style>

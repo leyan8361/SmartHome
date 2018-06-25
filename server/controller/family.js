@@ -109,7 +109,7 @@ module.exports = {
 		ctx.send('加入成功，等待管理员的审核！')
 	},
 	async member(ctx) {
-		const { families: names } = ctx.request.query
+		const names = ctx.request.query.names.split(',')
 		const families = await Family.find({ name: { $in: names } })
 
 		const members = []

@@ -45,7 +45,7 @@ export default {
 		})
 	},
 	async member({ commit }, families) {
-		return http.get(Url.auth.family.member,{params:{families}}).then(response => {
+		return http.get(Url.auth.family.member,{params:{names:families.join()}}).then(response => {
 			return response
 		}).catch(error => {
 			console.log(error)

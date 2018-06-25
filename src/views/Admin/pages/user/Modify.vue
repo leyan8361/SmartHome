@@ -73,8 +73,7 @@ export default class UserModify extends Vue {
 				return tip.error(response.message)
 			}
 			tip.success(response.message, 2000)
-			/* 刷新页面，重新获取用户信息 */
-			this.$router.go(0)
+			this.$router.push({name:'User'})
 		})
 	}
 	submitForm() {

@@ -1,7 +1,8 @@
+/* global Tasks:true */
 const Scripts = require('model/Scripts')
 const { filterTime, filterDate } = require('utils/db/scripts')
 const { generateTask } = require('utils/task')
-const Tasks = require('schedule/tasks')
+require('schedule/tasks')
 
 module.exports = {
 	async addScript(ctx) {

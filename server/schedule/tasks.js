@@ -47,4 +47,4 @@ class Tasks extends Array{
 	}
 }
 
-module.exports = new Tasks()
+global.Tasks = global.Tasks || new Tasks()

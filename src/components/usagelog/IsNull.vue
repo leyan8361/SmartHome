@@ -27,9 +27,11 @@ export default class UsagelogIsNull extends Vue{
 .when-usagelogs-is-null
 	font-beautify()
 	margin 140px auto
+	font-size .9em
 	.controll-electric-button
 		margin-top 50px
 	.usagelogs-tip
 		& *
 			margin 20px 0
+			white-space nowrap
 </style>

@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 const Bulb = new mongoose.Schema(
 	{
-		id: {
+		ClientID: {
 			type: String,
 			trim: true,
 			required:true
 		},
-		color: {
+		Color: {
 			type: String,
 			required: false,
 			enum: ['暖白光', '自然光', '正白光','冷白光'],

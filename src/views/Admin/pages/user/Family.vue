@@ -55,6 +55,7 @@ export default class UserFamily extends Vue{
 .family-table
 	box-shadow 0 2px 10px #ccc
 	border-radius 5px
+	margin-top 20px
 .user-family-component
 	font-beautify()
 	.families-is-null

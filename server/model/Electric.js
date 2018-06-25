@@ -18,7 +18,7 @@ const Electric = new mongoose.Schema(
     name:{
       type: String,
 			trim: true,
-			required:false,
+			required:false,	
       default:'灯泡'
     },
 		color: {

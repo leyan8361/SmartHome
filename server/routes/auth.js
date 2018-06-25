@@ -45,6 +45,7 @@ electric
 // notice.get('/family')
 
 auth.use('/family', fami.routes()).use(fami.allowedMethods())
+auth.use('/notice', notice.routes()).use(notice.allowedMethods())
 auth.use('/electric', electric.routes()).use(electric.allowedMethods())
 
 module.exports = auth

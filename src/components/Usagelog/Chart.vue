@@ -19,6 +19,11 @@ import UsagelogIsNull from '~/usagelog/IsNull'
 	computed: {
 		...mapState('usagelog', ['usagelogs']),
 		...mapState('electrics', ['bulbs'])
+	},
+	watch:{
+		'$route'(){
+			this.toInit()
+		}
 	}
 })
 export default class UsagelogChart extends Vue {
@@ -38,7 +43,7 @@ export default class UsagelogChart extends Vue {
 		columns: ['date', 'id', 'status', 'brightness','color'],
 		rows: []
 	}
-	created(){
+	toInit(){
 		const logs = this.usagelogs.slice()
 		this.chartData.rows = logs.reduce((arr,curr) => {
 			if(curr.id === '0'){
@@ -65,6 +70,9 @@ export default class UsagelogChart extends Vue {
 			arr.push(curr)
 			return arr
 		},[])
+	}
+	created(){
+		this.toInit()
 	}
 }
 </script>

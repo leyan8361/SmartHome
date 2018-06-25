@@ -62,6 +62,7 @@ export default {
 		})
 	},
 	async modify({ state, commit }, user) {
+		commit('setUserInfo',user)
 		return http.post(Url.auth.userInfo,user).then(response => {
 			if (response.success) {
 				response.token && commit('Token', response.token)

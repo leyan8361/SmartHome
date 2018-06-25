@@ -48,5 +48,13 @@ export default {
 			displayName: family.displayName || family.name
 		}
 		state.families.push(_family)
+	},
+	setUserInfo(state, user) {
+		if (user.name) {
+			state.name = user.name
+		}
+		if (user.address) {
+			state.address = user.address
+		}
 	}
 }

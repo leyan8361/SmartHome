@@ -67,7 +67,7 @@ export default class ElectricAdmin extends Vue{
 .electric-add
 	margin-top 50px
 .when-bulbs-is-null
-	margin 100px auto 50px
+	margin 150px auto 50px
 .electrics-admin-table
 	box-shadow 0 2px 10px #ccc
 	border-radius 5px

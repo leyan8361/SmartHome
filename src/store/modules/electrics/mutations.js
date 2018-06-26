@@ -17,12 +17,23 @@ export default{
 		})
 	},
 	setAllBulbs(state, bulb) {
-		state.bulbs.forEach(e => {
-			Object.keys(bulb).forEach(key => {
-				e[key] = bulb[key]
-			})
-			e.showStatus = e.status ? '开' : '关'
+		const isAll = bulb.ids.includes('0')
+		bulb.ids.forEach(currId => {
+			const e = state.bulbs.find(o=>o.id === currId)
+			if (e || isAll) {
+				if (bulb.status) {
+					e.status = bulb.status
+					e.showStatus = bulb.status ? '开' : '关'
+				}
+				if (bulb.brightness) {
+					e.brightness = bulb.brightness
+				}
+				if (bulb.color) {
+					e.color = bulb.color
+				}
+			}
 		})
+
 	},
 	deleteBulbById(state, id) {
 		state.bulbs.forEach((e, i) => {

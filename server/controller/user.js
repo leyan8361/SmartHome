@@ -124,7 +124,8 @@ module.exports = {
 			name: user.name,
 			account: user.account,
 			address: user.address,
-			avatar: user.avatar
+			avatar: user.avatar,
+			families:user.families
 		}
 		if (user.private.length > 0) {
 			user.private.forEach(e => {

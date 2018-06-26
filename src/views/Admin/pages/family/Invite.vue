@@ -10,7 +10,7 @@
 		el-form-item(label="验证消息")
 			el-input.invite-form-message(type="text" v-model.trim="sender.message" :placeholder="`我是${name}`" clearable)
 		el-form-item(label="加入家庭")
-			family-selection(:family.sync="sender.families" :user-families="families")
+			family-selection(:family.sync="sender.families" :user-families="families" :other-user-families="result.families")
 	el-row.invite-button(:span="24" type="flex" align="middle" justify="center")
 		el-button(type="primary" @click="submitForm" :loading="isLoading") 邀请共享
 	.family-form-tip-c

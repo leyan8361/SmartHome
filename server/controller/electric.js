@@ -35,7 +35,8 @@ module.exports = {
 		const bulb = ctx.request.body
 
 		const { status, color, brightness, ids: bulbs, name } = bulb
-
+    Reflect.deleteProperty(bulb,'ids')
+    Reflect.deleteProperty(bulb,'name')
 		const usagelog = {
 			name: '全部',
 			id: '0',
@@ -61,8 +62,6 @@ module.exports = {
 			ids.push('0')
 		}
 
-		Reflect.deleteProperty(bulb, 'ids')
-
 		const [, isDBSuccess] = await Promise.all([
 			pubBulbs(ids, { status, color, brightness }),
 			Electric.updateMany({ $and: conditions }, bulb),
@@ -83,7 +82,6 @@ module.exports = {
 
 		const showStatus = status ? '开灯' : '关灯'
 
-		const payload = `0,${showStatus}`
 		const usagelog = {
 			name: '全部',
 			id: '0',
@@ -91,12 +89,18 @@ module.exports = {
 			status,
 			showStatus
 		}
-		const [, isDBSuccess] = await Promise.all([
-			Client.publish('bulb', payload),
+		const [isDBSuccess,bulbs] = await Promise.all([
 			Electric.updateMany({ master: account }, { status }),
+			Electric.find({ master: account }),
 			new Usagelog(usagelog).save()
 		])
-		const usagelogs = await getUsagelog(account)
+
+		const syncFuncs = [getUsagelog(account)]
+		bulbs.forEach(bulb => {
+			const payload = `0,${showStatus},${bulb.color},${bulb.brightness}`
+			syncFuncs.push(Client.publish('bulb', payload))
+		})
+		const [usagelogs] = await Promise.all(syncFuncs)
 
 		if (isDBSuccess) {
 			ctx.send(`电器${showStatus}成功！`, { usagelogs })

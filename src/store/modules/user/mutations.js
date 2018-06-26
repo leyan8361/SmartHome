@@ -36,11 +36,12 @@ export default {
 			state.news.electric++
 		}
 	},
-	setResult(state, { name, account, address, avatar }) {
+	setResult(state, { name, account, address, avatar,families }) {
 		state.result.name = name
 		state.result.account = account
 		state.result.address = address
 		state.result.avatar = avatar
+		state.result.families = families
 	},
 	addFamily(state, family) {
 		const _family = {

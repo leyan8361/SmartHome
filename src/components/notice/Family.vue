@@ -36,7 +36,7 @@ import notice from '@/utils/ui/notice'
 		unReadNews:Number
 	},
 	computed:{
-		...mapState('user',['account','name'])
+		...mapState('user',['account','name','families'])
 	},
 	methods:{
 		...mapActions('notice',['refuse','agree']),
@@ -57,7 +57,25 @@ export default class NoticeFamily extends Vue{
 			return 'unread-row'
 		}
 	}
+	toJoin(receipts){
+		this.agree(receipts).then(e=>{
+			if(e.success){
+				notice.success(e.message,'成功')
+			}else{
+				notice.error(e.message,'失败')
+			}
+		})
+	}
 	handleJoin({sender:receiver,id,families}){
+		const conflictFamily = []
+		this.families.forEach(e=>{
+			families.forEach((o,i)=>{
+				if(o.name === e.name){
+					conflictFamily.push(e)
+					families.splice(i,1)
+				}
+			})
+		})
 		const receipts = {
 			receiver,
 			id,
@@ -67,13 +85,17 @@ export default class NoticeFamily extends Vue{
 				account:this.account
 			}
 		}
-		this.agree(receipts).then(e=>{
-			if(e.success){
-				notice.success(e.message,'成功')
-			}else{
-				notice.error(e.message,'失败')
-			}
-		})
+		if(conflictFamily.length){
+			this.$confirm(`由于您与对方有共同家庭，经过筛选，您将加入${families.map(e=>e.displayName).join('、')}家庭, 是否继续?`, '提示', {
+				confirmButtonText: '继续',
+				cancelButtonText: '取消',
+				type: 'info'
+			}).then(()=>{
+				this.toJoin(receipts)
+			}).catch(()=>{})
+		}else{
+			this.toJoin(receipts)
+		}
 	}
 	handleRefuse({sender:receiver,status,id}){
 		const receipts = {

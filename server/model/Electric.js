@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const Usagelog = require('model/Usagelog')
+
 const Electric = new mongoose.Schema(
 	{
 		id: {
@@ -18,7 +20,7 @@ const Electric = new mongoose.Schema(
     name:{
       type: String,
 			trim: true,
-			required:false,	
+			required:false,
       default:'灯泡'
     },
 		color: {
@@ -42,6 +44,22 @@ const Electric = new mongoose.Schema(
 		wtimeout: 10000
 	}
 )
+
+Electric.pre('update', async function (next) {
+	// const {status,master,color,brightness} = this
+	// const usagelog = {
+	// 	name: '全部',
+	// 	id: '0',
+	// 	showStatus: status ? '开灯' : '关灯',
+	// 	master,
+	// 	status,
+	// 	color,
+	// 	brightness
+	// }
+	// await new Usagelog(usagelog).save()
+	next()
+})
+
 Electric.set('toJSON', { getters: true, virtuals: true })
 Electric.set('toObect', { getters: true, virtuals: true })
 

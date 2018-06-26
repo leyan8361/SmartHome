@@ -25,9 +25,9 @@ export default {
 				bulb.name.push(state.bulbs.find(e=>e.id === id).name)
 			})
 		}
+		commit('setAllBulbs', bulb)
 		return http.post(Url.auth.electric.bulbs, bulb).then(response => {
 			if (response.success) {
-				commit('setAllBulbs', bulb)
 				commit('user/electricNewAdd', null,{root:true})
 				// dispatch('usagelog/refresh', null,{root:true})
 				commit('usagelog/setUsagelogs',response.usagelogs,{root:true})

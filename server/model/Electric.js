@@ -35,7 +35,21 @@ const Electric = new mongoose.Schema(
 			required: true,
 			max: 300,
 			min: 0
-		}
+		},
+		consumption: [{
+			useTime: {
+				type:Number,
+				required: false,
+				min: 0,
+				default:Date.now()
+			},
+			usageAmount: {
+				type: Number,
+				required: false,
+				min: 0,
+				default:100
+			}
+		}]
 	},
 	{
 		collection: 'Electric',

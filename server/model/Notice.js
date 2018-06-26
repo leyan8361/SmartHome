@@ -38,7 +38,7 @@ const Notice = new mongoose.Schema(
 				trim:true
 			}
 		},
-		families: [{
+		families: [{ // 邀请加入家庭通知 的 家庭信息
 			name:{
 				type: String,
 				required: false,

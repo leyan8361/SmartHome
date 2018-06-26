@@ -13,6 +13,7 @@ router(app)
 require('db')()
 
 require('schedule')()
+require('consumption')()
 
 app.listen(http.port, http.ip, () => {
   log.info(`server is running at http://${ip.address()}:${http.port}`)

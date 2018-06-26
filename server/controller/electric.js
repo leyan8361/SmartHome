@@ -16,12 +16,15 @@ module.exports = {
 
 		const usagelog = { ...bulb, showStatus, master: account }
 
+		const codition = { $and: [{ master: account }, { id: bulb.id }] }
+
+		const usageAmount = status ? +brightness : 0
+		const data = { useTime: Date.now(), usageAmount }
+
 		const [, isDBSuccess] = await Promise.all([
 			Client.publish('bulb', payload),
-			Electric.updateOne(
-				{ $and: [{ master: account }, { id: bulb.id }] },
-				bulb
-			),
+			Electric.updateOne(codition, bulb),
+			Electric.updateOne(codition, { $push: { consumption: data } }),
 			new Usagelog(usagelog).save()
 		])
 		const usagelogs = await getUsagelog(account)
@@ -35,8 +38,8 @@ module.exports = {
 		const bulb = ctx.request.body
 
 		const { status, color, brightness, ids: bulbs, name } = bulb
-    Reflect.deleteProperty(bulb,'ids')
-    Reflect.deleteProperty(bulb,'name')
+		Reflect.deleteProperty(bulb, 'ids')
+		Reflect.deleteProperty(bulb, 'name')
 		const usagelog = {
 			name: '全部',
 			id: '0',
@@ -62,9 +65,15 @@ module.exports = {
 			ids.push('0')
 		}
 
+		const updateCodition = { $and: conditions }
+
+		const usageAmount = status ? +brightness : 0
+		const data = { useTime: Date.now(), usageAmount }
+
 		const [, isDBSuccess] = await Promise.all([
 			pubBulbs(ids, { status, color, brightness }),
-			Electric.updateMany({ $and: conditions }, bulb),
+			Electric.updateMany(updateCodition, bulb),
+			Electric.updateMany(updateCodition, { $push: { consumption: data } }),
 			new Usagelog(usagelog).save()
 		])
 
@@ -89,7 +98,8 @@ module.exports = {
 			status,
 			showStatus
 		}
-		const [isDBSuccess,bulbs] = await Promise.all([
+
+		const [isDBSuccess, bulbs] = await Promise.all([
 			Electric.updateMany({ master: account }, { status }),
 			Electric.find({ master: account }),
 			new Usagelog(usagelog).save()
@@ -98,6 +108,16 @@ module.exports = {
 		const syncFuncs = [getUsagelog(account)]
 		bulbs.forEach(bulb => {
 			const payload = `0,${showStatus},${bulb.color},${bulb.brightness}`
+
+			const usageAmount = status ? +bulb.brightness : 0
+			const data = { useTime: Date.now(), usageAmount }
+
+			syncFuncs.push(
+				Electric.updateOne(
+					{ master: account },
+					{ $push: { consumption: data } }
+				)
+			)
 			syncFuncs.push(Client.publish('bulb', payload))
 		})
 		const [usagelogs] = await Promise.all(syncFuncs)

@@ -28,10 +28,16 @@ module.exports = {
 			ids.push('0')
 		}
 
+		const updateCondition = { $and: conditions }
+
+		const usageAmount = status ? +brightness : 0
+		const data = { useTime: Date.now(), usageAmount }
+
 		return async function() {
 			await Promise.all([
 				pubBulbs(ids, { status, color, brightness }),
-				Electric.updateMany({ $and: conditions }, { status, color, brightness }),
+				Electric.updateMany(updateCondition, { status, color, brightness }),
+				Electric.updateMany(updateCondition, { $push: { consumption: data } }),
 				new Usagelog(usagelog).save()
 			])
 		}

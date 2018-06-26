@@ -46,7 +46,7 @@ class Task{
 	runDurationJob() {
 		// '是否处在指定日期范围'
 		const {start,end,specific} = this.duration
-		if (specific && specific.start && Object.values(specific.start).length > 0) {
+		if (specific && specific.start && Object.values(specific.start).length) {
 			this.duration = Duration.ResolveSpecific(specific)
 		} else {
 			this.duration = Duration.ResolveDuration(start, end)

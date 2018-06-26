@@ -87,7 +87,18 @@ const User = new mongoose.Schema(
 				default: 0,
 				max:9999
 			}
-		}
+		},
+		electricity: [{ // 使用总电量 date为日期，consumption 为那日期的使用电量,单位度
+			date: {
+				type:String,
+				required:false
+			},
+			consumption: {
+				type: Number,
+				required: false,
+				min:0
+			}
+		}]
 	},
 	{
 		collection: 'User',
@@ -118,6 +129,12 @@ User.methods = {
 				}
 			})
 		})
+	},
+	getTotalElectricity() {
+		return this.electricity.reduce((total, { consumption }) => {
+			total += consumption
+			return total
+		},0)
 	}
 }
 

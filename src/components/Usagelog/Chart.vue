@@ -1,8 +1,8 @@
 <template lang="pug">
-.usagelog-char-component
-	.usagelog-char-title(:span="24" type="flex" align="middle" justify="center")
+.usagelog-chart-component
+	.usagelog-chart-title(:span="24" type="flex" align="middle" justify="center")
 		| 操作日志
-	.usagelog-char(v-if="usagelogs.length!==0")
+	.usagelog-chart(v-if="usagelogs.length!==0" :span="24" type="flex" align="middle" justify="center")
 		ve-histogram(:data="chartData" :settings="chartSettings")
 	usagelog-is-null(v-else :bulbs-are-null="bulbs.length===0")
 </template>
@@ -44,6 +44,9 @@ export default class UsagelogChart extends Vue {
 		rows: []
 	}
 	toInit(){
+		if(this.chartData.rows.length){
+			return
+		}
 		const logs = this.usagelogs.slice()
 		this.chartData.rows = logs.reduce((arr,curr) => {
 			if(curr.id === '0'){
@@ -78,15 +81,15 @@ export default class UsagelogChart extends Vue {
 </script>
 
 <style lang="stylus">
-.usagelog-char-component
+.usagelog-chart-component
 	position fixed
 	top 15%
-	left 65%
+	left 72%
 	box-shadow 2px 3px 10px #ccc
 	border-radius 10px
-	padding 50px 100px
-	width 500px
-	.usagelog-char-title
+	padding 50px 10px
+	width 400px
+	.usagelog-chart-title
 		font-beautify()
 		font-size 1.5em
 		margin-bottom 20px

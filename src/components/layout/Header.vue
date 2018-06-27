@@ -14,7 +14,7 @@
 				router-link(:to="{name:'NoticeUsagelog'}")
 					el-col.electric(:span="2")
 						el-tooltip(:content="`${news.electric?'电器状态有更新了！':'电器消息'}`" placement="bottom" )
-							el-badge(:value="news.electric" :max="10" :hidden="news.electric===0")
+							el-badge(:value="news.electric" :max="99" :hidden="news.electric===0")
 								icon-svg.notice-icon(name="icon" size="1.2")
 				router-link(:to="{name:'WeatherIndex'}")
 					el-col.weather(:span="2")

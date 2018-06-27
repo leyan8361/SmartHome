@@ -33,7 +33,7 @@ export default class WeatherCard extends Vue{}
 	font-beautify()
 	position fixed
 	top 15%
-	left 30%
+	left 49%
 	height 250px
 	width 300px
 	box-shadow 2px 3px 10px #ccc

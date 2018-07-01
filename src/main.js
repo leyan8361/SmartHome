@@ -40,7 +40,7 @@ import IconSvg from '~/icons/IconSvg'
 Vue.component('icon-svg', IconSvg)
 
 import console from './plugins/console'
-// console()
+console()
 
 import * as filters from './filters'
 Object.keys(filters).forEach(key => {

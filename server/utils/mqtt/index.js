@@ -1,6 +1,5 @@
 const AsyncMQTT = require('./async-mqtt')
-const config = require('config/mqtt')
-const { localIP, port, clientId, subscribeTopics, username, password } = config
+const { localIP, port, clientId, subscribeTopics, username, password } = require('config/mqtt')
 
 const Client = AsyncMQTT.connect(
 	`mqtt://${localIP}`,

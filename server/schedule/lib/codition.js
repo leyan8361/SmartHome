@@ -11,9 +11,8 @@ module.exports = {
 		const rules = []
 
 		const weatherInfo = await getWeather(address)
-
-		const isContainSunny = weather.includes('晴天')
-		const isContainCloudy = weather.includes('阴天')
+		const isContainSunny = Array.isArray(weather) && weather.includes('晴天')
+		const isContainCloudy = Array.isArray(weather) && weather.includes('阴天')
 		if (isContainCloudy || isContainSunny) {
 			const weatherStatus = isSunnyorCloudy(weatherInfo)
 			if (

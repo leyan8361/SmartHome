@@ -6,7 +6,7 @@
 			| {{now.weather + '·' + now.temperature+'℃'}}
 		el-row
 			| {{ address.county?`${this.address.city}.${this.address.county}`:`${this.address.province}.${this.address.city}` }}
-	router-link.more-info-weather-link(:to="{name:'WeatherIndex'}" v-waves)
+	router-link.more-info-weather-link(:to="{name:'WeatherIndex'}" waves)
 		| 更多信息
 </template>
 

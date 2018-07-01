@@ -5,6 +5,7 @@ const Auth = require('./auth')
 
 const { dbUrl: url } = require('config/db')
 const { localIP: host, port, clientId } = require('config/mqtt')
+const log = require('utils/log')
 
 const Server = new mosca.Server({
 	port,
@@ -28,8 +29,7 @@ Server.on('ready', async () => {
 	// Server.authenticate = Auth.authenticate
 	// Server.authorizePublish = Auth.authorizePublish
 	// Server.authorizeSubscribe = Auth.authorizeSubscribe
-
-	console.log('MQTT 服务器开启成功！1883 端口')
+	log.success(`MQTT Server is Runing at ${port}`)
 })
 
 Server.on('clientConnected', client => {

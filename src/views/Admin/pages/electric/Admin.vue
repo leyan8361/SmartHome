@@ -12,8 +12,8 @@
 				el-button(@click.native.prevent="deleteElectric(scope.$index)" type="danger" size="mini") 删除
 	.when-bulbs-is-null(v-else :span="24" type="flex" align="middle" justify="center")
 		| 您目前还没有自己的电器哦~
-	.electric-add(:span="24" type="flex" align="middle" justify="center")
-		el-button(type="success" @click.native.prevent="$router.push({name:'ElectricAdd'})" round) 增加电器
+		.electric-add(:span="24" type="flex" align="middle" justify="center")
+			el-button(type="success" @click.native.prevent="$router.push({name:'ElectricAdd'})" round) 增加电器
 </template>
 
 <script>

@@ -21,7 +21,7 @@ module.exports = {
 			brightness: script.brightness
 		}
 		const indentify = {
-			master:script.account,
+			master:script.account || script.master,
 			id: script.scriptID,
 			address: script.address,
 			disabled: false

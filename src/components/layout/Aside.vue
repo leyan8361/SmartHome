@@ -128,7 +128,6 @@ menu-height = 60px
 	span
 		text-shadow 3px 3px 2px #0f4743
 .menu
-	margin-top 100px
 	min-height 100vh
 	letter-spacing 2px
 	overflow hidden

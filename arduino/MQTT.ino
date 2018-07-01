@@ -2,7 +2,9 @@
 #include <ESP8266WiFi.h>
 #include <string.h>
 
-const char* server = "192.168.43.183";
+const char* server = "60.191.74.24";
+const int port = 17017;
+
 const char* ClientID = "SmartHome";
 
 WiFiClient espClient;
@@ -52,7 +54,7 @@ void reconnect(){
 }
 
 void MQTTSetup(){
-	client.setServer(server, 1883);
+	client.setServer(server, port);
   client.setCallback(callback);
 }
 
@@ -63,18 +65,3 @@ void MQTTLoop(){
 
   client.loop();
 }
-
-
-// char* msgStr="";
-// void TopicPublish(){
-//   // 建立MQTT訊息（JSON格式的字串）
-//   msgStr = msgStr + "{\"temp\":" + (19 + random(10)) + ",\"humid\":" + 20 + "}";
-//   // 把String字串轉換成字元陣列格式
-//   msgStr.toCharArray(json, 25);
-//   // 發布MQTT主題與訊息
-//   client.publish(topic, json);
-//   // 清空MQTT訊息內容
-//   msgStr = "";
-
-//   delay(5000);
-// }

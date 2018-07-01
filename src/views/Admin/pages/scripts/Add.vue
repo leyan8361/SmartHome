@@ -100,7 +100,7 @@ export default class ScriptAdd extends Vue{
 .add-script-setting *
 	font-beautify()
 	text-shadow 0 0 1px #ccc
-	margin 15px 0
+	margin 8px 0
 	& button:not(.submit-button)
 		width 95%
 		border-radius 30px !important

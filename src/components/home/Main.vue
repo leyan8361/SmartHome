@@ -62,7 +62,7 @@ export default class Main extends Vue {
 	goTo(target) {
 		this.activeItem = target
 	}
-	preLoad(name = 'iframe', src = '//tomotoes.com/blog') {
+	preLoad(name = 'iframe', src = '//softbei.cn') {
 		// const _iframe = document.createElement(name)
 		// _iframe.style.display = 'none'
 		// _iframe.src = src

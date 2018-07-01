@@ -1,10 +1,14 @@
+require('module-alias/register')
+
 const Koa = require('koa')
 const middleware = require('./middlewares')
+const { port } = require('config/file')
+
+const log = require('utils/log')
 
 const app = new Koa()
 middleware(app)
 
-app.listen(8000, () => {
-	//REVIEW: 如果线上 搭建文件服务器很困难，可以把文件服务器集成到后台服务器，带宽什么的 无所谓了
-  console.log('文件服务器开启成功！8000 端口')
+app.listen(port, () => {
+	log.success(`Static Files Server is Runing at ${port}`)
 })

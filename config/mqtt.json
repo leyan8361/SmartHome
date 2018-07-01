@@ -1,9 +1,9 @@
 {
-	"localIP":"192.168.43.183",
-	"prot": 1883,
+	"localIP":"172.16.3.211",
+	"port": 1883,
 	"clientId":"SmartHomeClient",
-	"subscribeTopics":[],
-	"publicTopics":[],
+	"subscribeTopics":["bulb"],
+	"publicTopics":["bulb"],
 	"username":"Simon",
 	"password":"123456"
 }

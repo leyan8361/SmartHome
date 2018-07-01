@@ -7,7 +7,7 @@ const int maxValue = 255;
 const int ID = 3;
 
 /* payload: ID,[关/开]灯,颜色,亮度 */
-void updateBulb(String payload){
+void updateBulb(String payload) {
 
  const int firstIndex = payload.indexOf(',');
 
@@ -58,7 +58,9 @@ void updateBulb(String payload){
 # 3 "d:\\Desktop\\bulb\\arduino\\MQTT.ino" 2
 # 4 "d:\\Desktop\\bulb\\arduino\\MQTT.ino" 2
 
-const char* server = "192.168.43.183";
+const char* server = "60.191.74.24";
+const int port = 17017;
+
 const char* ClientID = "SmartHome";
 
 WiFiClient espClient;
@@ -108,7 +110,7 @@ void reconnect(){
 }
 
 void MQTTSetup(){
- client.setServer(server, 1883);
+ client.setServer(server, port);
   client.setCallback(callback);
 }
 

@@ -1,4 +1,4 @@
-const Scripts = require('model/scripts')
+const Scripts = require('model/Scripts')
 
 module.exports = {
 	async getScripts(account) {

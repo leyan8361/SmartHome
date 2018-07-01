@@ -9,13 +9,13 @@ const int ID = 3;
 /* payload: ID,[关/开]灯,颜色,亮度 */
 #line 8 "d:\\Desktop\\bulb\\arduino\\Bulb.ino"
 void updateBulb(String payload);
-#line 11 "d:\\Desktop\\bulb\\arduino\\MQTT.ino"
+#line 13 "d:\\Desktop\\bulb\\arduino\\MQTT.ino"
 void callback(char* topic, byte* payload, unsigned int length);
-#line 33 "d:\\Desktop\\bulb\\arduino\\MQTT.ino"
+#line 35 "d:\\Desktop\\bulb\\arduino\\MQTT.ino"
 void reconnect();
-#line 54 "d:\\Desktop\\bulb\\arduino\\MQTT.ino"
+#line 56 "d:\\Desktop\\bulb\\arduino\\MQTT.ino"
 void MQTTSetup();
-#line 59 "d:\\Desktop\\bulb\\arduino\\MQTT.ino"
+#line 61 "d:\\Desktop\\bulb\\arduino\\MQTT.ino"
 void MQTTLoop();
 #line 6 "d:\\Desktop\\bulb\\arduino\\WiFi.ino"
 void WiFiConnect();
@@ -24,7 +24,7 @@ void setup();
 #line 10 "d:\\Desktop\\bulb\\arduino\\index.ino"
 void loop();
 #line 8 "d:\\Desktop\\bulb\\arduino\\Bulb.ino"
-void updateBulb(String payload){
+void updateBulb(String payload) {
 
 	const int firstIndex = payload.indexOf(',');
 
@@ -76,7 +76,9 @@ void updateBulb(String payload){
 #include <ESP8266WiFi.h>
 #include <string.h>
 
-const char* server = "192.168.43.183";
+const char* server = "60.191.74.24";
+const int port = 17017;
+
 const char* ClientID = "SmartHome";
 
 WiFiClient espClient;
@@ -126,7 +128,7 @@ void reconnect(){
 }
 
 void MQTTSetup(){
-	client.setServer(server, 1883);
+	client.setServer(server, port);
   client.setCallback(callback);
 }
 

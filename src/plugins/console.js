@@ -1,7 +1,7 @@
 export default function() {
 	if (window.console && window.console.log) {
 		console.log(
-			'\n %c Smart Home %c http://tomotoes.com \n',
+			'\n %c Smart Home %c http://softbei.cn \n',
 			'color:#FFFFFB;background:#ffa628;padding:5px 0;border-radius:.5rem 0 0 .5rem;',
 			'background: #efefef;padding:5px 0 5px;border-radius:0 .5rem .5rem 0;'
 		)

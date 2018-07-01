@@ -16,7 +16,7 @@ import {website,title,describe} from 'config/share'
 @Component
 export default class SocialSharing extends Vue {
 	title = '智能家居管理系统'
-	website = 'https://tomotoes.com'
+	website = 'https://softbei.cn'
 	shareList = {
 		weibo: {
 			link: `http://service.weibo.com/share/share.php?url=${website}&title=${title}`,

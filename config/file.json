@@ -1,14 +1,15 @@
 {
+	"port":8080,
 	"avatar":{
-		"user":"http://localhost:8000/common/img/user/avatar.png",
-		"family":"http://localhost:8000/common/img/family/avatar.png",
+		"user":"http://60.191.74.24:17014/common/img/user/avatar.png",
+		"family":"http://60.191.74.24:17014/common/img/family/avatar.png",
 		"path":{
-			"user":"D:/Desktop/bulb/assets/avatar/user/",
-			"family":"D:/Desktop/bulb/assets/avatar/family/"
+			"user":"/usr/SmartHome/assets/avatar/user/",
+			"family":"/usr/SmartHome/assets/avatar/family/"
 		},
 		"url":{
-			"user":"http://127.0.0.1:8000/avatar/user/",
-			"family":"http://127.0.0.1:8000/avatar/family/"
+			"user":"http://60.191.74.24:17014/avatar/user/",
+			"family":"http://60.191.74.24:17014/avatar/family/"
 		}
 	}
 }

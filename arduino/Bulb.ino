@@ -5,7 +5,7 @@ const int maxValue = 255;
 const int ID = 3;
 
 /* payload: ID,[关/开]灯,颜色,亮度 */
-void updateBulb(String payload){
+void updateBulb(String payload) {
 
 	const int firstIndex = payload.indexOf(',');
 
@@ -47,6 +47,16 @@ void updateBulb(String payload){
 
 		Serial.print("修改的颜色为：");
 		Serial.println(color);
+
+		if(color.indexOf("自然光")!=-1){
+			// 2号引脚 高电平 12号引脚底电频
+		}else if(color.indexof("自然光")!=-1){
+
+		}else if(color.indexOf("正白光")!=-1){
+
+		}else if(color.indexOf("冷白光")!=-1){
+
+		}
 
 	}
 

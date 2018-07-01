@@ -1,4 +1,4 @@
 {
-	"privateKey":"D:/desktop/bulb/config/rsa_private_key.pem",
-	"publicKey": "D:/desktop/bulb/config/rsa_public_key.pem"
+	"privateKey":"/usr/SmartHome/config/rsa_private_key.pem",
+	"publicKey": "/usr/SmartHome/config/rsa_public_key.pem"
 }

@@ -45,18 +45,23 @@ class Task{
 	}
 	runDurationJob() {
 		// '是否处在指定日期范围'
-		const duration = {}
-		;['start', 'end', 'specific'].forEach(e => {
-			if (this.duration[e]) {
-				duration[e] = this.duration[e]
+		try {
+			const duration = {}
+			;['start', 'end', 'specific'].forEach(e => {
+				if (Reflect.has(this.duration,e)) {
+					duration[e] = this.duration[e] || ''
+				}
+			})
+			if (duration.specific && duration.specific.start && Object.values(duration.specific.start).length) {
+				this.duration = Duration.ResolveSpecific(duration.specific)
+			} else {
+				this.duration = Duration.ResolveDuration(duration.start, duration.end)
 			}
-		})
-		if (duration.specific && duration.specific.start && Object.values(duration.specific.start).length) {
-			this.duration = Duration.ResolveSpecific(duration.specific)
-		} else {
-			this.duration = Duration.ResolveDuration(duration.start, duration.end)
+			!this.duration && this.stop()
+		} catch (error) {
+			log.error('判断日期功能出错')
+			this.stop()
 		}
-		!this.duration && this.stop()
 	}
 	debug() {
 		if (!this.weatherCodition && !this.execCodition) {

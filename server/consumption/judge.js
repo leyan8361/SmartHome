@@ -8,9 +8,6 @@ module.exports = async () => {
 	const users = await User.find()
 	moment.locale('zh-cn')
 
-	if (!users || !users.length) {
-		return
-	}
 	users.forEach(async user => {
 		const bulbs = await Electric.find(
 			{ master: user.account },
@@ -19,22 +16,26 @@ module.exports = async () => {
 		if (!bulbs || !bulbs.length) {
 			return
 		}
-		let todayUsageAmount = bulbs.reduce((total, bulb) => {
-			total += filterConsumption(bulb.consumption)
-			return total
-		}, 0)
+		try {
+			const todayUsageAmount = bulbs.reduce((total, bulb) => {
+				return total + filterConsumption(bulb.consumption)
+			}, 0)
 
-		const data = {
-			date: moment().subtract(1, 'day'),
-			consumption: todayUsageAmount / 1000
+			const data = {
+				date: moment().subtract(1, 'day'),
+				consumption: todayUsageAmount / 1000
+			}
+			await Promise.all([
+				User.updateOne(
+					{ account: user.account },
+					{ $push: { electricity: data } }
+				),
+				Electric.updateMany({ master: user.account }, { consumption: [] })
+			])
+			log.success('电器使用电量统计完成！')
+		} catch (error) {
+			await Electric.updateMany({ master: user.account }, { consumption: [] })
+			log.error('统计电量功能出现问题')
 		}
-		await Promise.all([
-			User.updateOne(
-				{ account: user.account },
-				{ $push: { electricity: data } }
-			),
-			Electric.updateMany({ master: user.account }, { consumption: [] })
-		])
-		log.success('电器使用电量统计完成！')
 	})
 }

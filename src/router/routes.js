@@ -28,6 +28,8 @@ import ScriptsAdd from '@/views/Admin/pages/scripts/Add'
 import WeatherIndex from '@/views/Admin/pages/weather/Index'
 import WeatherForecast from '@/views/Admin/pages/weather/Forecast'
 
+import ConsumptionIndex from '@/views/Admin/pages/consumption/Index'
+
 import Card from '@/views/Admin/wrap/Card'
 // const Card = () => import ('@/views/Admin/pages/Index')
 
@@ -261,6 +263,22 @@ export default [
 						component: ScriptsAdd,
 						meta: {
 							title: '添加指令'
+						}
+					}
+				]
+			},
+			{
+				path: 'consumption',
+				name: 'Consumption',
+				redirect: '/home',
+				component: Card,
+				children: [
+					{
+						path: 'views',
+						name: 'ConsumptionIndex',
+						component: ConsumptionIndex,
+						meta: {
+							title: '电器功耗'
 						}
 					}
 				]

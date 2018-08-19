@@ -23,6 +23,9 @@ import UsagelogIsNull from '~/usagelog/IsNull'
 	watch:{
 		'$route'(){
 			this.toInit()
+		},
+		'usagelogs'(){
+			this.toInit()
 		}
 	}
 })
@@ -44,9 +47,6 @@ export default class UsagelogChart extends Vue {
 		rows: []
 	}
 	toInit(){
-		if(this.chartData.rows.length){
-			return
-		}
 		const logs = this.usagelogs.slice()
 		this.chartData.rows = logs.reduce((arr,curr) => {
 			if(curr.id === '0'){
@@ -59,8 +59,7 @@ export default class UsagelogChart extends Vue {
 			if (curr.brightness === '保持原状') {
 				curr.brightness = 100
 			} else {
-				curr.brightness && curr.brightness.slice(-1)
-				curr.brightness = +curr.brightness
+				curr.brightness = Number.parseInt(curr.brightness)
 			}
 			const hash = {
 				'保持原状': 100,

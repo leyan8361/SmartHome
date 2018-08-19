@@ -26,7 +26,7 @@ export default class MainBottom extends Vue {
 	titleText = '让我们开始吧！'
 	info = '<p>我们做智能家居的初衷就是全民普及全屋无线智能家居，让所有人都用得起、用得上。</p><br/><p>我们理解的“智能家居”，不是捧上天的“智能”，而是切实带给人的“方便”。</p><br/><p>我们不做噱头，不做“高大上”，不一味追求“颜值”，要知道：“羊毛出在羊身上”。</p><br/><p>但我们对产品性价比和稳定性的追求从未停止！</p>'
 	btnText = '加入我们'
-	footerText = 'Copyright © 2017.物联时代 All rights reserved.'
+	footerText = 'Copyright © 2018.物联时代 All rights reserved.'
 }
 </script>
 

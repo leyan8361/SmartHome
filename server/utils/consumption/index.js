@@ -1,16 +1,22 @@
 const { Power } = require('config/bulb')
 module.exports = {
 	filterConsumption(consumption) {
-		consumption[consumption.length] = {
-			useTime: Date.now()
+		let result = 0
+
+		const { length } = consumption
+
+		consumption[length] = {
+			useTime:Date.now()
 		}
-		return consumption.reduce((total,currValue,currIndex) => {
-			const time = Math.floor(currValue.useTime / 1000)
-			const nextTime = Math.floor(consumption[currIndex + 1].useTime / 1000)
+
+		for (let i = 0; i < length; ++i){
+			const time = Math.floor(consumption[i].useTime / 1000)
+			const nextTime = Math.floor(consumption[i + 1].useTime / 1000)
 			const useHour = (nextTime - time) / 3600
-			const usePower = 100 / currValue.usageAmount
-			total += Power * usePower * useHour
-			return total
-		},0)
+			const usePower = 100 / consumption[i].usageAmount
+
+			result += Power * usePower * useHour
+		}
+		return result
 	}
 }

@@ -1,7 +1,7 @@
 {
   "ip": "127.0.0.1",
 	"port": "8000",
-	"home": "http://60.191.74.24:17014/",
+	"home": "http://softbei.cn:17014/",
   "baseUrl": "http://60.191.74.24:17015/",
   "api": {
     "login": "/api/login",

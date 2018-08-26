@@ -72,8 +72,9 @@ export default class UserModify extends Vue {
 			if (!response.success) {
 				return tip.error(response.message)
 			}
-			tip.success(response.message, 2000)
-			this.$router.push({name:'User'})
+			tip.success(response.message, 1500).then(()=>{
+				this.$router.go({name:'User'})
+			})
 		})
 	}
 	submitForm() {
@@ -96,7 +97,7 @@ export default class UserModify extends Vue {
 				}
 				this.isLoading = true
 				if (this.user.avatar) {
-					/* 重新生成图片 */
+
 					const reader = new FileReader()
 					reader.readAsDataURL(this.user.avatar)
 					reader.onloadend = () => {

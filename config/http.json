@@ -1,8 +1,8 @@
 {
   "ip": "127.0.0.1",
-	"port": "8000",
-	"home": "http://softbei.cn:17014/",
-  "baseUrl": "http://60.191.74.24:17015/",
+	"port": "3000",
+	"home": "http://127.0.0.1:8080/",
+  "baseUrl": "http://127.0.0.1:3000/",
   "api": {
     "login": "/api/login",
     "registry": "api/registry",
@@ -12,6 +12,7 @@
   },
   "auth": {
 		"userInfo": "/auth/userInfo",
+		"audio": "/auth/audio",
 		"user":{
 			"search":"/auth/user/search"
 		},
@@ -33,7 +34,11 @@
 		},
 		"script":"/auth/script",
 		"feedback":"/auth/feedback",
-		"usagelog":"/auth/usagelog"
+		"usagelog":"/auth/usagelog",
+		"forecast":{
+			"bulb": "/auth/forecast/bulb",
+			"bulbs": "/auth/forecast/bulbs"
+		}
   }
 
 }

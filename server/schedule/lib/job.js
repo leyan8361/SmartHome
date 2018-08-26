@@ -31,7 +31,7 @@ module.exports = {
 		const updateCondition = { $and: conditions }
 
 		const usageAmount = status ? +brightness : 0
-		const data = { useTime: Date.now(), usageAmount }
+		const data = { usageTime: Date.now(), usageAmount }
 
 		return async function() {
 			await Promise.all([

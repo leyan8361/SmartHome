@@ -1,6 +1,6 @@
 # SmartHome
 
-:bulb: 智能家居管理系统 http://softbei.cn:17014 
+:bulb: 智能家居管理系统 http://softbei.cn:17014
 
 > 基于 BS 的综合管理系统
 
@@ -38,7 +38,7 @@
 
   框架：Vue
 
-  Vue 插件：vue-class-component 、vue-property-decorator 
+  Vue 插件：vue-class-component 、vue-property-decorator
 
   HTML 预处理：Pug
 
@@ -50,26 +50,26 @@
 
   界面：ElementUI
 
-​   数据可视化：echarts 、v-charts 
+​   数据可视化：echarts 、v-charts
 
 ​   通信：axios
 
-   动画：vue2-animate 、nprogress 、vue-textra 
+   动画：vue2-animate 、nprogress 、vue-textra
 
    数据流：vuex
 
-   路由：vue-router 
+   路由：vue-router
 
 
 
 
 2. 安全：
 
-   加密：bcrypt 
+   加密：bcrypt
 
-   通信：jsonwebtoken 
+   通信：jsonwebtoken
 
-   
+
 
 
 3. 工具
@@ -86,15 +86,15 @@
 
   命令行：chalk
 
-  git规范：commitizen ，conventional-changelog ，cz-conventional-changelog 、yorkie 
+  git规范：commitizen ，conventional-changelog ，cz-conventional-changelog 、yorkie
 
   定时器：node-schedule
 
-  PWA：register-service-worker 
+  PWA：register-service-worker
 
-  验证码：svg-captcha 
+  验证码：svg-captcha
 
-  远程监控：fundebug-nodejs 
+  远程监控：fundebug-nodejs
 
   天气接口：和风
 
@@ -102,19 +102,19 @@
 
   移动端：PWA
 
-  
+
 
 
 4. 服务管理
 
   PM2 、nodemon、Docker、travis
 
-  
+
 
 
 5. 测试：mosca
 
-   
+
 
 6. 硬件
 
@@ -122,13 +122,13 @@
 
   开发：Arduino
 
-  
+
 
 7. 后端：
 
   框架：Koa
 
-  通信解析：koa-body，koa-body-parser 
+  通信解析：koa-body，koa-body-parser
 
   权限：koa-jwt，koa-session
 
@@ -138,18 +138,18 @@
 
   路由：koa-router
 
-  静态文件：koa-static 
+  静态文件：koa-static
 
   缓存：koa-static-cache
 
-  
+
 
 8. 数据库
 
   数据库：MongoDB
   控制：Mongoose
 
-  
+
 
 
 
@@ -183,12 +183,12 @@
 
    > mongod
 
-   
+
 
 2. 数据库初始化
 
 ```bash
-mongo   
+mongo
 
 use SmartHome
 
@@ -239,8 +239,12 @@ RESTful 规范
 
 ## TODO
 
-权限控制硬件
-忘记密码
+多电器
+
+
 性能调优
-多语言
-多主题
+
+智能推荐
+功耗预测
+语音识别
+故障预测

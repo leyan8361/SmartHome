@@ -19,7 +19,6 @@ Vue.component(VePie.name, VePie)
 // import VeTree from 'v-charts/lib/tree.common'
 // Vue.component(VeTree.name, VeTree)
 
-
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index'
 import 'element-ui/lib/theme-chalk/display'
@@ -54,5 +53,5 @@ Vue.config.productionTip = false
 new Vue({
 	store,
 	router,
-	render: (h) => h(App)
+	render: h => h(App)
 }).$mount('#app')

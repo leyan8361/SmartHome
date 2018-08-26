@@ -8,7 +8,7 @@
 			"runtimeExecutable": "nodemon",
 			"program": "${workspaceFolder}/server/index.js",
 			"restart": true,
-			"protocol": "inspector",	//相当于--inspect了
+			"protocol": "inspector",
 			"sourceMaps": true,
 			// "console": "integratedTerminal",
 			// "internalConsoleOptions": "neverOpen",

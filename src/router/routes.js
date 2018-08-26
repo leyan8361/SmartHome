@@ -29,6 +29,8 @@ import WeatherIndex from '@/views/Admin/pages/weather/Index'
 import WeatherForecast from '@/views/Admin/pages/weather/Forecast'
 
 import ConsumptionIndex from '@/views/Admin/pages/consumption/Index'
+import ConsumptionSingleResult from '@/views/Admin/pages/consumption/SingleResult'
+import ConsumptionAllResult from '@/views/Admin/pages/consumption/AllResult'
 
 import Card from '@/views/Admin/wrap/Card'
 // const Card = () => import ('@/views/Admin/pages/Index')
@@ -184,7 +186,6 @@ export default [
 							title: '操作日志'
 						}
 					}
-
 				]
 			},
 			{
@@ -278,7 +279,23 @@ export default [
 						name: 'ConsumptionIndex',
 						component: ConsumptionIndex,
 						meta: {
-							title: '电器功耗'
+							title: '预测统计'
+						}
+					},
+					{
+						path: 'single',
+						name: 'ConsumptionSingleResult',
+						component: ConsumptionSingleResult,
+						meta: {
+							title: '预测结果'
+						}
+					},
+					{
+						path: 'all',
+						name: 'ConsumptionAllResult',
+						component: ConsumptionAllResult,
+						meta: {
+							title: '统计结果'
 						}
 					}
 				]

@@ -2,11 +2,10 @@ const Electric = require('model/Electric')
 const User = require('model/User')
 const log = require('utils/log')
 const { filterConsumption } = require('utils/consumption')
-const moment = require('moment')
+const time = require('utils/time')
 
 module.exports = async () => {
 	const users = await User.find()
-	moment.locale('zh-cn')
 
 	users.forEach(async user => {
 		const bulbs = await Electric.find(
@@ -17,19 +16,34 @@ module.exports = async () => {
 			return
 		}
 		try {
+			let todayUsageTime = 0
+			const todayUsageData = []
+
 			const todayUsageAmount = bulbs.reduce((total, bulb) => {
-				return total + filterConsumption(bulb.consumption)
+				const serviceData = filterConsumption(bulb.consumption)
+				serviceData.usageDate = time.getYesterday()
+				todayUsageData.push(serviceData)
+				todayUsageTime += serviceData.usageTime
+				return total + serviceData.usageAmount
 			}, 0)
 
-			const data = {
-				date: moment().subtract(1, 'day'),
-				consumption: todayUsageAmount / 1000
+			bulbs.forEach(async (bulb, idx) => {
+				todayUsageData[idx].usageRate =
+					(todayUsageData[idx].usageTime / todayUsageTime).toFixed(2)
+
+				await Electric.updateOne(
+					{ master: user.account, id: bulb.id },
+					{ $push: { serviceData: todayUsageData[idx] } }
+				)
+			})
+
+			const electricity = {
+				usageDate: time.getYesterday(),
+				usageAmount: (todayUsageAmount / 1000).toFixed(2),
+				usageTime: todayUsageTime.toFixed(1)
 			}
 			await Promise.all([
-				User.updateOne(
-					{ account: user.account },
-					{ $push: { electricity: data } }
-				),
+				User.updateOne({ account: user.account }, { $push: { electricity } }),
 				Electric.updateMany({ master: user.account }, { consumption: [] })
 			])
 			log.success('电器使用电量统计完成！')

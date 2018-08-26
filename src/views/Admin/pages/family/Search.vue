@@ -69,5 +69,5 @@ export default class FamilySearch extends Vue{
 		margin-bottom 40px
 	&-tip
 		font-size .9em
-		margin-top 100px
+		margin 160px 20px 0 0 
 </style>

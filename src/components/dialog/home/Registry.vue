@@ -5,7 +5,7 @@ el-dialog(title="注册" :visible="isShowRegistry" width="26%" top="10vh" lock-s
 		el-form-item(label="昵称" prop="name")
 			el-input(type="text" v-model.trim="user.name" placeholder="2-8 位字符" clearable)
 		el-form-item(label="账号" prop="account")
-			el-input(type="text" v-model.trim="user.account" placeholder="账号 / 邮箱" clearable @change="existHandle")
+			el-input(type="text" v-model.trim="user.account" placeholder="手机号 / 邮箱" clearable @change="existHandle")
 		el-form-item(label="密码" prop="password")
 			el-input(type="password" v-model.trim="user.password" placeholder="6-12位 数字/字母/英文符号" clearable)
 		el-form-item(label="确定密码" prop="checkpass")
@@ -183,7 +183,7 @@ export default class HomeRegistry extends Vue {
 .dialog
 	position relative !important
 	box-shadow 0 10px 50px rgb(233, 233, 233)
-	padding 0.7vw 0 0 2vw !important
+	padding 0.7vw 0 0 2vw
 	border-radius 10px !important
 	.dialog-footer
 		margin-top -5vh !important
@@ -199,4 +199,6 @@ export default class HomeRegistry extends Vue {
 	padding-bottom 10px !important
 .r-dialog
 	background radial-gradient(200px at left top,#fff 50%,#f6f6f6 50%) !important
+	padding 0.7vw 0 0 3vw !important
+
 </style>

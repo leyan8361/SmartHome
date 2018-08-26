@@ -21,7 +21,7 @@ el-aside.aside-admin(width="250px")
 			router-link(:to="{name:'ElectricAdd'}" tag="li"  v-waves)
 				el-menu-item(index="1-3") 添加电器
 			router-link(:to="{name:'ConsumptionIndex'}" tag="li"  v-waves)
-				el-menu-item(index="1-4") 电器功耗
+				el-menu-item(index="1-4") 预测统计
 		el-submenu(index="2")
 			template(slot="title")
 				i.el-icon-setting

@@ -4,10 +4,11 @@ const Duration = require('./lib/duration')
 const Codition = require('./lib/codition')
 const Job = require('./lib/job')
 
-class Task{
-
+class Task {
 	async save(job, codition, duration, indentify) {
-		Object.keys(indentify).forEach(e => { this[e] = indentify[e] })
+		Object.keys(indentify).forEach(e => {
+			this[e] = indentify[e]
+		})
 
 		this._run = schedule.scheduleJob
 		this.schedules = {}
@@ -20,27 +21,34 @@ class Task{
 	}
 
 	generatorDuration(duration) {
+		const that = this
 		this.duration = duration
-		this.durationJob = schedule.scheduleJob('0 0 0 * * *', this.runDurationJob)
+		this.durationJob = this._run('0 0 0 * * *', this.runDurationJob.bind(that))
 		this.runDurationJob()
 	}
 	async generatorCodition(codition) {
+		const that = this
 		this.execCodition = await Codition.ResolveExec(codition.startExec)
 
 		//如果存在天气 每15分钟需要重新解析一下
 		if (codition.weather && codition.weather.length > 0) {
 			this.weather = codition.weather
-			this.weatherJob = schedule.scheduleJob('15 * * * *', this.runWeatherJob)
+			this.weatherJob = this._run('15 * * * *', this.runWeatherJob.bind(that))
 			await this.runWeatherJob()
 
 			if (codition.startExec && codition.relation) {
 				this.relation = true
-				;['hour', 'minutes', 'second'].forEach(e => { this[e] = codition.startExec[e] })
+				;['hour', 'minutes', 'second'].forEach(e => {
+					this[e] = codition.startExec[e]
+				})
 			}
 		}
 	}
 	async runWeatherJob() {
-		this.weatherCodition = await Codition.ResolveWeather(this.weather, this.address)
+		this.weatherCodition = await Codition.ResolveWeather(
+			this.weather,
+			this.address
+		)
 		await this.runWithWeather()
 	}
 	runDurationJob() {
@@ -48,11 +56,15 @@ class Task{
 		try {
 			const duration = {}
 			;['start', 'end', 'specific'].forEach(e => {
-				if (Reflect.has(this.duration,e)) {
+				if (Reflect.has(this.duration, e)) {
 					duration[e] = this.duration[e] || ''
 				}
 			})
-			if (duration.specific && duration.specific.start && Object.values(duration.specific.start).length) {
+			if (
+				duration.specific &&
+				duration.specific.start &&
+				Object.values(duration.specific.start).length
+			) {
 				this.duration = Duration.ResolveSpecific(duration.specific)
 			} else {
 				this.duration = Duration.ResolveDuration(duration.start, duration.end)
@@ -78,17 +90,18 @@ class Task{
 	async run() {
 		this.debug()
 		if (this.disabled) {
-			return {message:this.message,success:false}
+			return { message: this.message, success: false }
 		}
 		await this.runWithWeather()
 		this.runWithExec()
 
 		this.message = `${this.id} 号任务已运行！`
 		log.success(this.message)
-		return {message:this.message,success:true}
+		return { message: this.message, success: true }
 	}
 	async runWithWeather() {
-		if (!this.weatherCodition || !this.weatherCodition.length ) {
+		const that = this
+		if (!this.weatherCodition || !this.weatherCodition.length) {
 			return
 		}
 		if (this.relation) {
@@ -106,26 +119,33 @@ class Task{
 			await this.job()
 			ine = 1
 		}
-		['sunUp', 'sunDown'].forEach((e,i) => {
+		['sunUp', 'sunDown'].forEach((e, i) => {
 			this.schedules[e] && this.schedules[e].cancel()
-			this.schedules[e] = this._run(this.weatherCodition[i + ine], this.job)
+			this.schedules[e] = this._run(
+				this.weatherCodition[i + ine],
+				this.job.bind(that)
+			)
 		})
 	}
 	runWithExec() {
+		const that = this
 		if (!this.execCodition) {
 			return
 		}
-		if (this.relation && (!this.weatherCodition || !this.weatherCodition.length )) {
+		if (
+			this.relation &&
+			(!this.weatherCodition || !this.weatherCodition.length)
+		) {
 			return
 		}
 		this.schedules.execTime && this.schedules.execTime.cancel()
-		this.schedules.execTime = this._run(this.execCodition, this.job)
+		this.schedules.execTime = this._run(this.execCodition, this.job.bind(that))
 	}
 	stopByTask(task) {
 		if (!this.schedules) {
 			this.message = '暂无运行中的任务！'
 			log.error(this.message)
-			return {success:false,message:this.message}
+			return { success: false, message: this.message }
 		}
 		for (let [key, value] of Object.entries(this.schedules)) {
 			if (key === task) {
@@ -134,11 +154,11 @@ class Task{
 		}
 		this.message = `${task} 任务暂停成功`
 		log.success(this.message)
-		return {message:this.message,success:true}
+		return { message: this.message, success: true }
 	}
 	stop() {
 		const tasks = Object.values(this.schedules)
-		if (!tasks || !tasks.length ) {
+		if (!tasks || !tasks.length) {
 			return
 		}
 		tasks.forEach(task => {

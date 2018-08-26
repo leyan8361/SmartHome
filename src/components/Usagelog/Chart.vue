@@ -86,10 +86,13 @@ export default class UsagelogChart extends Vue {
 	left 72%
 	box-shadow 2px 3px 10px #ccc
 	border-radius 10px
-	padding 50px 10px
+	padding 20px 10px 0px
 	width 400px
 	.usagelog-chart-title
 		font-beautify()
 		font-size 1.5em
 		margin-bottom 20px
+	.usagelog-chart
+		margin-bottom -50px
+		transform scaleY(1)
 </style>

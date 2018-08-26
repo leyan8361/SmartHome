@@ -6,6 +6,7 @@ el-main.main
 			electric-card
 			consumption-card
 			usagelog-chart
+			audio-recorder
 	transition(v-else :name="animation")
 		router-view(:key="Date.now()")
 </template>
@@ -18,13 +19,15 @@ import WeatherCard from '~/weather/Card'
 import ElectricCard from '~/electric/Card'
 import UsagelogChart from '~/usagelog/Chart'
 import ConsumptionCard from '~/consumption/Card'
+import AudioRecorder from '~/audio/Recorder'
 
 @Component({
 	components:{
 		WeatherCard,
 		ElectricCard,
 		UsagelogChart,
-		ConsumptionCard
+		ConsumptionCard,
+		AudioRecorder
 	},
 	computed:{
 		...mapState('ui',['isHome'])
@@ -40,6 +43,9 @@ export default class LayoutMain extends Vue{
 	changeAnimation(){
 		this.animation = getRandomAnimation()
 	}
+	callback (msg) {
+		console.debug('Event: ', msg)
+	}
 }
 </script>
 
@@ -51,5 +57,4 @@ export default class LayoutMain extends Vue{
 	height 100vh
 	max-height 100vh
 	width 100vw
-
 </style>

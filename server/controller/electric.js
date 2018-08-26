@@ -19,7 +19,7 @@ module.exports = {
 		const codition = { $and: [{ master: account }, { id: bulb.id }] }
 
 		const usageAmount = status ? +brightness : 0
-		const data = { useTime: Date.now(), usageAmount }
+		const data = { usageTime: Date.now(), usageAmount }
 
 		const [, isDBSuccess] = await Promise.all([
 			Client.publish('bulb', payload),
@@ -68,7 +68,7 @@ module.exports = {
 		const updateCodition = { $and: conditions }
 
 		const usageAmount = status ? +brightness : 0
-		const data = { useTime: Date.now(), usageAmount }
+		const data = { usageTime: Date.now(), usageAmount }
 
 		const [, isDBSuccess] = await Promise.all([
 			pubBulbs(ids, { status, color, brightness }),
@@ -110,7 +110,7 @@ module.exports = {
 			const payload = `0,${showStatus},${bulb.color},${bulb.brightness}`
 
 			const usageAmount = status ? +bulb.brightness : 0
-			const data = { useTime: Date.now(), usageAmount }
+			const data = { usageTime: Date.now(), usageAmount }
 
 			syncFuncs.push(
 				Electric.updateOne(
@@ -162,6 +162,19 @@ module.exports = {
 			ctx.send('电器增加成功！')
 		} else {
 			ctx.sendError('因不可抗因素增加失败！')
+		}
+	},
+	async getServiceDataWithSingleBulb(ctx) {
+		const account = ctx.state.user.data
+		const { bulb } = ctx.request.query
+		const serviceData = await Electric.findOne(
+			{ master: account, id: bulb },
+			{ serviceData: 1 }
+		)
+		if (serviceData) {
+			ctx.send('电器数据获取成功！', { serviceData })
+		} else {
+			ctx.sendError('电器数据获取失败！')
 		}
 	}
 }

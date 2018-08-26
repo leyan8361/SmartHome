@@ -11,6 +11,8 @@ import electrics from './modules/electrics'
 import scripts from './modules/scripts'
 import usagelog from './modules/usagelog'
 import ui from './modules/ui'
+import audio from './modules/audio'
+import forecast from './modules/forecast'
 import createLogger from 'vuex/dist/logger'
 
 Vue.use(Vuex)
@@ -28,7 +30,9 @@ export default new Vuex.Store({
 		electrics,
 		scripts,
 		usagelog,
-		ui
+		ui,
+		audio,
+		forecast
 	},
 	getters,
 	strict:false

@@ -25,7 +25,7 @@ const User = new mongoose.Schema(
 		},
 		avatar: {
 			type: String,
-      trim: true
+			trim: true
 		},
 		address: {
 			province: {
@@ -46,59 +46,70 @@ const User = new mongoose.Schema(
 			code: {
 				type: String,
 				required: true,
-				trim:true
+				trim: true
 			}
 		},
 		private: {
 			type: [String],
 			required: false
 		},
-		families: [{
-			name:{
-				type: String,
-				required: false,
-				trim:true
-			},
-			displayName:{
-				type: String,
-				required: false,
-				trim:true
+		families: [
+			{
+				name: {
+					type: String,
+					required: false,
+					trim: true
+				},
+				displayName: {
+					type: String,
+					required: false,
+					trim: true
+				}
 			}
-		}],
+		],
 		news: {
 			[notice.type[0]]: {
 				type: Number,
 				min: 0,
 				required: false,
 				default: 0,
-				max:9999
+				max: 9999
 			},
 			[notice.type[1]]: {
 				type: Number,
 				min: 0,
 				required: false,
 				default: 0,
-				max:9999
+				max: 9999
 			},
 			[notice.type[2]]: {
 				type: Number,
 				min: 0,
 				required: false,
 				default: 0,
-				max:9999
+				max: 9999
 			}
 		},
-		electricity: [{ // 使用总电量 date为日期，consumption 为那日期的使用电量,单位度
-			date: {
-				type:String,
-				required:false
-			},
-			consumption: {
-				type: Number,
-				required: false,
-				min:0
+		electricity: [
+			{
+				// 使用总电量 date为日期，consumption 为那日期的使用电量,单位度
+				usageDate: {
+					type: String,
+					required: false
+				},
+				usageAmount: {
+					type: Number,
+					required: false,
+					min: 0
+				},
+				usageTime:{
+					type: Number,
+					required: false,
+					min: 0,
+					default: 5
+				}
 			}
-		}]
+		]
 	},
 	{
 		collection: 'User',
@@ -110,9 +121,11 @@ const User = new mongoose.Schema(
 User.set('toJSON', { getters: true, virtuals: true })
 User.set('toObect', { getters: true, virtuals: true })
 
-User.pre('save', async function (next) {
-
-	const [avatar, password] = await Promise.all([writeImg(this), bcryptPass(this)])
+User.pre('save', async function(next) {
+	const [avatar, password] = await Promise.all([
+		writeImg(this),
+		bcryptPass(this)
+	])
 	this.avatar = avatar
 	this.password = password
 
@@ -131,10 +144,10 @@ User.methods = {
 		})
 	},
 	getTotalElectricity() {
-		return this.electricity.reduce((total, { consumption }) => {
-			total += consumption
+		return this.electricity.reduce((total, { usageAmount }) => {
+			total += usageAmount
 			return total
-		},0)
+		}, 0)
 	}
 }
 

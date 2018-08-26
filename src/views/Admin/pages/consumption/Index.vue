@@ -1,11 +1,11 @@
 <template lang="pug">
 .consumption-index-component
-	.consumption-chart(v-if="bulbs.length!==0")
-		ve-line(:data="chartLineData" :setting="chartSetting")
-		.consumption-fore-cast-info
-			.consumption-forecast(:span="24" type="flex" align="middle" justify="center" v-html="getForecastElectrics()")
-			.consumption-forecast(:span="24" type="flex" align="middle" justify="center" v-html="getNowInfo()")
-			.consumption-forecast(:span="24" type="flex" align="middle" justify="center" v-html="getForecastInfo()")
+	.consumption-form(v-if="bulbs.length!==0")
+		el-row(:span="24" type="flex" align="middle" justify="center")
+			el-select(v-model="appliance" placeholder="请选择需要预测的电器")
+				el-option(v-for="item in bulbs" :key="item.id" :label="item.name" :value="item.id")
+		el-row(:span="24" type="flex" align="middle" justify="center")
+			el-button.pre-button(type="primary" @click="predictive" :loading="isLoading") 开始预测
 		.consumption-tip(:span="24" type="flex" align="middle" justify="center")
 			textra(:data="words" :timer="1" :sequence="true" :infinite="true")
 	consumption-is-null(v-else)
@@ -13,9 +13,9 @@
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
-import { mapState } from 'vuex'
+import { mapState,mapActions } from 'vuex'
 import ConsumptionIsNull from '~/consumption/IsNull'
-
+import notice from '@/utils/ui/notice'
 @Component({
 	components:{
 		ConsumptionIsNull
@@ -27,40 +27,45 @@ import ConsumptionIsNull from '~/consumption/IsNull'
 		'$route'(){
 			this.toInit()
 		}
+	},
+	methods:{
+		...mapActions('forecast',['getServiceDataWithSingleBulb','getServiceDataWithAllBulb'])
 	}
 })
 export default class Consumption extends Vue{
-	getNowInfo(){
-		return `<p>您本月份已耗电 <strong>${this.electricify}</strong> 度</p>`
-	}
-	getForecastInfo(){
-		return `<p>预测本月将耗电 <strong>${this.electricifyWithForecast}</strong> 度</p>`
-	}
-	getForecastElectrics(){
-		return `<p>预测电器还可用 <strong>${this.electricsLife}</strong> 年</p>`
-	}
+	isLoading = false
+	appliance = ''
 	words = ['我们将在每天凌晨自动更新了您的功耗信息~','使用人工智能分析电器能耗曲线，预判使用寿命。']
-	chartSetting = {
-		xAxisType: 'time'
-	}
-	chartLineData = {
-		columns: ['日期', '功耗', '电量', '使用率'],
-		rows: [
-			{ '日期': '2018-06-01', '功耗': 1393, '电量': 1093, '使用率': 0.32 },
-			{ '日期': '2018-06-02', '功耗': 3530, '电量': 3230, '使用率': 0.26 },
-			{ '日期': '2018-06-03', '功耗': 2923, '电量': 2623, '使用率': 0.76 },
-			{ '日期': '2018-06-05', '功耗': 1723, '电量': 1423, '使用率': 0.49 },
-			{ '日期': '2018-06-10', '功耗': 3792, '电量': 3492, '使用率': 0.323 },
-			{ '日期': '2018-06-20', '功耗': 4593, '电量': 4293, '使用率': 0.78 }
-		]
-	}
 	toInit(){
-		this.electricify = this.chartLineData.rows.reduce((total,{'电量':value})=>total + value,0) / 1000
-		this.electricifyWithForecast = this.chartLineData.rows.reduce((total,{'电量':value})=>total + value,0) / 1000 + 5
-		this.electricsLife = 2
+		if(!this.bulbs.find(e=>e.id === 0)){
+			this.bulbs.push({ name:'所有电器', id:0 })
+		}
 	}
 	created(){
 		this.toInit()
+	}
+	predictive(){
+		if(!this.bulbs.find(e=>e.id === this.appliance)){
+			return notice.warning('请选择一个选项！')
+		}
+		this.isLoading = true
+		let name = 'ConsumptionAllResult'
+		let func = 'getServiceDataWithAllBulb'
+		if(this.appliance){
+			name = 'ConsumptionSingleResult'
+			func = 'getServiceDataWithSingleBulb'
+		}
+
+		this[func](this.appliance).then(e=>{
+			this.isLoading = false
+			if(e.success){
+				this.$router.push({name})
+			}else{
+				notice.error(e.message)
+			}
+		}).catch(()=>{
+			notice.error(e.message)
+		})
 	}
 }
 </script>
@@ -68,28 +73,13 @@ export default class Consumption extends Vue{
 <style lang="stylus">
 .consumption-index-component
 	padding 10px 100px 30px
-	.consumption-chart
+	font-beautify()
+	.consumption-form
+		padding 150px 0px 0px
 		width 500px !important
-	.consumption-fore-cast-info
-		font-beautify()
-		font-size .9em
-		margin-top -50px
-		background-color #fff
-		padding 10px 10px 2px
-		box-shadow 0 0 10px #ccc
-		border-radius 5px
-		color #666
-		text-shadow 0 0 3px #000
-		margin-bottom 10px
-		& *
-			margin 10px auto
-	.consumption-forecast
-		border-radius 5px
-		transition .3s
-		&:hover
-			transform translateY(-2px)
-			color #999
+	.pre-button
+		margin-top 80px
 	.consumption-tip
-		font-beautify()
+		margin-top 115px
 		font-size .9em
 </style>

@@ -2,7 +2,7 @@
 .consumption-chart-component
 	.consumption-chart-title(:span="24" type="flex" align="middle" justify="center")
 		| 使用功耗
-	ve-line(:data="chartData" :setting="chartSetting" v-if="bulbs.length!==0")
+	ve-line(:data="chartLineData" :settings="chartSettings" :data-zoom="dataZoom" v-if="bulbs.length!==0" :mark-line="markLine" )
 		router-link.more-info-consumption-link(:to="{name:'ConsumptionIndex'}")
 			| 更多信息
 	consumption-is-null(v-else)
@@ -10,32 +10,54 @@
 
 <script>
 import {Component,Vue} from 'vue-property-decorator'
-import { mapState } from 'vuex'
+import { mapState,mapMutations } from 'vuex'
 import ConsumptionIsNull from '~/consumption/IsNull'
+import 'echarts/lib/component/dataZoom'
+
+import 'echarts/lib/component/markLine'
 
 @Component({
 	components:{
 		ConsumptionIsNull
 	},
 	computed:{
-		...mapState('electrics', ['bulbs'])
+		...mapState('electrics', ['bulbs']),
+		...mapState('forecast',['allBulb'])
+	},
+	methods:{
+		...mapMutations('forecast',['setAllBulb'])
+	},
+	watch:{
+		'$route'(){
+			this.toInit()
+		}
 	}
 })
 export default class Consumption extends Vue{
-
-	chartSetting = {
-		xAxisType: 'time'
+	dataZoom = [ { type: 'slider', start: 0, end: 20 } ]
+	markLine = { data: [ { name: '平均线', type: 'average' } ] }
+	chartSettings = {
+		labelMap: {
+			usageDate:'日期',
+			usageAmount:'使用量(度)',
+			usageTime:'使用时间(时)'
+		},
+		metrics: ['usageAmount', 'usageTime'],
+		dimension: ['usageDate'],
+		// showLine: ['usageAmount']
 	}
-	chartData={
-		columns: ['日期', '功耗', '电量', '使用率'],
-		rows: [
-			{ '日期': '2018-06-01', '功耗': 1393, '电量': 1093, '使用率': 0.32 },
-			{ '日期': '2018-06-02', '功耗': 3530, '电量': 3230, '使用率': 0.26 },
-			{ '日期': '2018-06-03', '功耗': 2923, '电量': 2623, '使用率': 0.76 },
-			{ '日期': '2018-06-05', '功耗': 1723, '电量': 1423, '使用率': 0.49 },
-			{ '日期': '2018-06-10', '功耗': 3792, '电量': 3492, '使用率': 0.323 },
-			{ '日期': '2018-06-20', '功耗': 4593, '电量': 4293, '使用率': 0.78 }
-		]
+	chartLineData = {
+		columns: ['usageDate', 'usageAmount', 'usageTime'],
+		rows: []
+	}
+	toInit(){
+		if(!this.allBulb.length){
+			this.setAllBulb()
+		}
+		this.chartLineData.rows = this.allBulb
+	}
+	created(){
+		this.toInit()
 	}
 }
 </script>

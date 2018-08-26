@@ -2,8 +2,8 @@
 #include <ESP8266WiFi.h>
 #include <string.h>
 
-const char* server = "60.191.74.24";
-const int port = 17017;
+const char* server = "192.168.43.183";
+const int port = 8888;
 
 const char* ClientID = "SmartHome";
 

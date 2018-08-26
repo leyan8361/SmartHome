@@ -6,50 +6,79 @@ const Electric = new mongoose.Schema(
 		id: {
 			type: String,
 			trim: true,
-			required:true
+			required: true
 		},
 		master: {
 			type: String,
 			trim: true,
-			required:true
+			required: true
 		},
 		status: {
 			type: Boolean,
-			default:false
+			default: false
 		},
-    name:{
-      type: String,
+		name: {
+			type: String,
 			trim: true,
-			required:false,
-      default:'灯泡'
-    },
+			required: false,
+			default: '灯泡'
+		},
 		color: {
 			type: String,
 			required: false,
-			enum: ['暖白光', '自然光', '正白光','冷白光'],
+			enum: ['暖白光', '自然光', '正白光', '冷白光'],
 			default: '自然光',
-			trim:true
+			trim: true
 		},
-    brightness: { //亮度
+		brightness: {
+			//亮度
 			type: Number,
 			required: true,
 			max: 300,
 			min: 0
 		},
-		consumption: [{
-			useTime: {
-				type:Number,
-				required: false,
-				min: 0,
-				default:Date.now()
-			},
-			usageAmount: {
-				type: Number,
-				required: false,
-				min: 0,
-				default:100
+		consumption: [
+			{
+				usageTime: {
+					type: Number,
+					required: false,
+					min: 0,
+					default: Date.now()
+				},
+				usageAmount: {
+					type: Number,
+					required: false,
+					min: 0,
+					default: 100
+				}
 			}
-		}]
+		],
+		serviceData: [
+			{
+				usageTime: {
+					type: Number,
+					required: false,
+					min:0,
+					default:0.5
+				},
+				usageAmount: {
+					type: Number,
+					required: false,
+					min: 0,
+					default: 100
+				},
+				usageDate: {
+					type: String,
+					required: false
+				},
+				usageRate: {
+					type: Number,
+					required: false,
+					min: 0,
+					default: 0.5
+				}
+			}
+		]
 	},
 	{
 		collection: 'Electric',
@@ -59,7 +88,7 @@ const Electric = new mongoose.Schema(
 	}
 )
 
-Electric.pre('update', async function (next) {
+Electric.pre('update', async function(next) {
 	// const {status,master,color,brightness} = this
 	// const usagelog = {
 	// 	name: '全部',

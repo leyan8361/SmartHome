@@ -84,9 +84,6 @@
 				return notice.warning('请先录制语音！')
 			}
 
-			console.log(this.recordedTime)
-			console.log(Number.parseInt(this.recordedTime.split(':')[1]))
-
 			if (Number.parseInt(this.recordedTime.split(':')[0]) >= 1){
 				this.recorder.stop()
 				return notice.warning('录制时间不能大于一分钟！')

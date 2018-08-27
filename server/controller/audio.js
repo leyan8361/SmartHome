@@ -8,7 +8,7 @@ module.exports = {
 		const { audio } = ctx.request.body
 		const file = audio.split(',')[1]
 
-		const result = await Recognize(encodeURI(file))
+		const result = await Recognize(Buffer.from(file))
 
 		if (result.desc !== 'success') {
 			return ctx.sendError(result.desc)

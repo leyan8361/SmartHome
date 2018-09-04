@@ -56,8 +56,8 @@ d:\Desktop\bulb\build\core\spiffs_hal.cpp.o: \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/Stream.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/md5.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/debug.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/pins_arduino.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/../generic/common.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/pins_arduino.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/../generic/common.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\spiffs/spiffs.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\spiffs/spiffs_config.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\debug.h \

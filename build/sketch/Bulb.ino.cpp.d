@@ -56,10 +56,8 @@ d:\Desktop\bulb\build\sketch\Bulb.ino.cpp.o: \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/Stream.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/md5.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/debug.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/pins_arduino.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/../generic/common.h \
- E:\arduino-nightly\libraries\Syn6288/Syn6288.h \
- E:\arduino-nightly\libraries\LCD12864RSPI/LCD12864RSPI.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/pins_arduino.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/../generic/common.h \
  C:\Users\Simon\Documents\Arduino\libraries\PubSubClient\src/PubSubClient.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/IPAddress.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/Printable.h \

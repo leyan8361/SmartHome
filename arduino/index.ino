@@ -1,16 +1,14 @@
 #include <Arduino.h>
 
 void setup() {
+	pinMode(ledPin, OUTPUT);
   Serial.begin(115200);
 	WiFiConnect();
 	MQTTSetup();
-	LCDA.Initialise();
 }
 
 void loop() {
-	if (!client.connected()) {
-    reconnect();
-  }
+	reconnect();
   client.loop();
 
 }

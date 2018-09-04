@@ -32,8 +32,8 @@ d:\Desktop\bulb\build\core\uart.c.o: \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1/tools/sdk/include/c_types.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\twi.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\core_esp8266_features.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/pins_arduino.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/../generic/common.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/pins_arduino.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/../generic/common.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\uart.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1/tools/sdk/include/user_interface.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1/tools/sdk/include/os_type.h \

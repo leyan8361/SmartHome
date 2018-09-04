@@ -32,8 +32,8 @@ d:\Desktop\bulb\build\core\core_esp8266_i2s.c.o: \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1/tools/sdk/include/c_types.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\twi.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\core_esp8266_features.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/pins_arduino.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/../generic/common.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/pins_arduino.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/../generic/common.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1/tools/sdk/include/osapi.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/user_config.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1/tools/sdk/include/ets_sys.h \

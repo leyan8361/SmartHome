@@ -7,10 +7,10 @@ module.exports = async () => {
 	if (!scripts || !scripts.length) {
 		return
 	}
-	const syncGenerateTaskQueue = []
+	const asyncGenerateTaskQueue = []
 	scripts.forEach(script => {
-		syncGenerateTaskQueue.push(generateTask(script))
+		asyncGenerateTaskQueue.push(generateTask(script))
 	})
-	await Promise.all(syncGenerateTaskQueue)
+	await Promise.all(asyncGenerateTaskQueue)
 	log.success('用户指令全部开启成功')
 }

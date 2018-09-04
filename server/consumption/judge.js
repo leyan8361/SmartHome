@@ -1,5 +1,6 @@
 const Electric = require('model/Electric')
 const User = require('model/User')
+
 const log = require('utils/log')
 const { filterConsumption } = require('utils/consumption')
 const time = require('utils/time')

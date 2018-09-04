@@ -52,8 +52,8 @@ d:\Desktop\bulb\build\core\Updater.cpp.o: \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/Esp.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/Updater.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/debug.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/pins_arduino.h \
- C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\ESPDuino/../generic/common.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/pins_arduino.h \
+ C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\variants\d1/../generic/common.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/flash_utils.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/MD5Builder.h \
  C:\Users\Simon\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266/WString.h \
